@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" fill="none">
+  <rect width="1200" height="630" fill="#080B12"/>
+  <g opacity="0.18" stroke="#3A4A62" stroke-width="1">
+    <path d="M0 90 H1200 M0 180 H1200 M0 270 H1200 M0 360 H1200 M0 450 H1200 M0 540 H1200"/>
+    <path d="M90 0 V630 M180 0 V630 M270 0 V630 M360 0 V630 M450 0 V630 M540 0 V630 M630 0 V630 M720 0 V630 M810 0 V630 M900 0 V630 M990 0 V630 M1080 0 V630"/>
+  </g>
+  <g stroke="#4A5A70" stroke-width="1.4" fill="none">
+    <path d="M980 120 V170 M980 214 V264 M980 308 V358 M980 402 V452"/>
+  </g>
+  <g fill="none" stroke="#4A5A70" stroke-width="1.2">
+    <rect x="900" y="170" width="160" height="44"/>
+    <rect x="900" y="264" width="160" height="44"/>
+    <rect x="900" y="358" width="160" height="44"/>
+  </g>
+  <rect x="900" y="452" width="160" height="44" fill="#1A0E14" stroke="#C41E3A" stroke-width="1.4"/>
+  <g fill="none" stroke="#7BA3C9" stroke-width="1.4">
+    <rect x="920" y="108" width="12" height="12"/>
+    <rect x="954" y="108" width="12" height="12"/>
+    <rect x="988" y="108" width="12" height="12"/>
+    <rect x="1022" y="108" width="12" height="12"/>
+  </g>
+  <text x="80" y="168" fill="#7BA3C9" font-family="Arial, Helvetica, sans-serif" font-size="18" letter-spacing="4">РАДИУС</text>
+  <text x="80" y="250" fill="#F2F4F7" font-family="Arial, Helvetica, sans-serif" font-size="46" font-weight="700">Безопасный город Тулы</text>
+  <text x="80" y="322" fill="#F2F4F7" font-family="Arial, Helvetica, sans-serif" font-size="34" font-weight="700">Не больше камер.</text>
+  <text x="80" y="368" fill="#C41E3A" font-family="Arial, Helvetica, sans-serif" font-size="34" font-weight="700">Больше работающей системы.</text>
+  <text x="80" y="430" fill="#C5CCD6" font-family="Arial, Helvetica, sans-serif" font-size="21">Единый контур наблюдения, аналитики и реагирования</text>
+  <rect x="80" y="486" width="120" height="3" fill="#C41E3A"/>
+</svg>

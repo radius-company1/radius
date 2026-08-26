@@ -1,0 +1,1182 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <script>
+      document.documentElement.classList.add("js");
+    </script>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#080B12" />
+    <title>Безопасный город Тулы — РАДИУС</title>
+    <meta
+      name="description"
+      content="РАДИУС — партнёр по созданию и эксплуатации ИТ-инфраструктуры систем безопасности городов. Инфраструктурный слой видеонаблюдения и видеоаналитики городского масштаба."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="ru_RU" />
+    <meta property="og:title" content="Безопасный город Тулы — РАДИУС" />
+    <meta
+      property="og:description"
+      content="РАДИУС — партнёр по созданию и эксплуатации ИТ-инфраструктуры систем безопасности городов. Инфраструктурный слой видеонаблюдения и видеоаналитики городского масштаба."
+    />
+    <meta property="og:image" content="assets/og-image.svg" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Безопасный город Тулы — РАДИУС" />
+    <meta
+      name="twitter:description"
+      content="РАДИУС — партнёр по созданию и эксплуатации ИТ-инфраструктуры систем безопасности городов. Инфраструктурный слой видеонаблюдения и видеоаналитики городского масштаба."
+    />
+    <meta name="twitter:image" content="assets/og-image.svg" />
+    <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+    <link rel="icon" href="assets/favicon.png" type="image/png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Manrope:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="tula.css" />
+  </head>
+  <body>
+    <a class="skip" href="#main">К содержанию</a>
+    <div class="scroll-progress" aria-hidden="true"><span id="scroll-bar"></span></div>
+
+    <header class="header" id="header">
+      <div class="header__in">
+        <a class="brand" href="#top" aria-label="РАДИУС — наверх">
+          <img class="brand__logo" src="assets/radius-logo.png" alt="РАДИУС — системный интегратор" width="767" height="125" />
+        </a>
+        <nav class="nav" aria-label="Навигация">
+          <a href="#system">Система</a>
+          <a href="#architecture">Архитектура</a>
+          <a href="#experience">Опыт</a>
+          <a href="#start">Как начать</a>
+          <a href="#contacts">Контакты</a>
+        </nav>
+        <a class="btn btn--primary header__cta" href="#cta">Обсудить проект</a>
+      </div>
+    </header>
+
+    <main id="main">
+      <!-- 1. HERO -->
+      <section class="hero" id="top" data-hero>
+        <svg class="hero__grid" viewBox="0 0 1440 900" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+          <defs>
+            <pattern id="coord" width="90" height="90" patternUnits="userSpaceOnUse">
+              <path d="M90 0 H0 V90" fill="none" stroke="rgba(138,155,180,.09)" stroke-width="1" />
+            </pattern>
+          </defs>
+          <rect width="1440" height="900" fill="url(#coord)" />
+        </svg>
+
+        <div class="wrap hero__in">
+          <div class="hero__content">
+            <p class="hero__kicker reveal">Безопасный город Тулы</p>
+            <p class="eyebrow reveal">РАДИУС × системы безопасности городов</p>
+            <h1 class="hero__title reveal">
+              Не больше камер.<br />
+              Больше работающей системы.
+            </h1>
+            <p class="hero__sub reveal">Ваш партнёр по созданию и эксплуатации ИТ-инфраструктуры для систем безопасности городов.</p>
+            <p class="hero__lead reveal">
+              Российский системный интегратор инфраструктурного слоя комплексов видеонаблюдения и видеоаналитики
+              городского масштаба: вычислительная, сетевая, инженерная и сервисная база «под ключ». Прикладное ПО —
+              зона вендоров. Мы строим среду, в которой их алгоритмы работают предсказуемо, а государственные ведомства
+              получают бесперебойный сервис 24/7.
+            </p>
+            <div class="hero__actions reveal">
+              <a class="btn btn--primary" href="#architecture">Посмотреть архитектуру ↓</a>
+              <a class="btn btn--ghost" href="assets/radius-tula-bezopasnyy-gorod.pdf" download="RADIUS_Tula_Bezopasnyy_gorod.pdf">Скачать презентацию</a>
+              <button type="button" class="btn btn--ghost js-vapi-start" id="tula-vapi-hero">
+                Задать вопрос виртуальному консультанту
+              </button>
+              <p class="hero__sign">Инфраструктура РАДИУС · прикладное ПО вендоров</p>
+            </div>
+          </div>
+
+          <figure class="hero__scheme reveal" data-parallax>
+            <svg class="scheme" viewBox="0 0 640 640" aria-hidden="true">
+              <g class="scheme__flow">
+                <path d="M170 62 L 290 118" /><path d="M204 62 L 290 118" />
+                <path d="M238 62 L 290 118" /><path d="M272 62 L 290 118" />
+                <path d="M306 62 L 290 118" /><path d="M340 62 L 290 118" />
+                <path d="M374 62 L 290 118" /><path d="M408 62 L 290 118" />
+                <path d="M290 162 V 210" />
+                <path d="M290 254 V 302" />
+                <path d="M290 346 V 394" />
+                <path d="M290 438 V 486" />
+                <path d="M290 530 V 578" />
+                <path class="scheme__branch" d="M430 324 H 470" />
+                <path class="scheme__branch" d="M430 416 H 470" />
+              </g>
+
+              <path class="scheme__pulse" d="M290 118 V 578" />
+
+              <g class="scheme__src">
+                <rect x="164" y="42" width="12" height="12" /><rect x="198" y="42" width="12" height="12" />
+                <rect x="232" y="42" width="12" height="12" /><rect x="266" y="42" width="12" height="12" />
+                <rect x="300" y="42" width="12" height="12" /><rect x="334" y="42" width="12" height="12" />
+                <rect x="368" y="42" width="12" height="12" /><rect x="402" y="42" width="12" height="12" />
+              </g>
+
+              <g class="scheme__zone">
+                <rect x="114" y="100" width="328" height="352" />
+                <text x="114" y="90">ЗОНА РАДИУС</text>
+              </g>
+
+              <g class="scheme__ops">
+                <rect x="122" y="112" width="16" height="328" />
+                <text transform="rotate(-90 130 276)" x="130" y="276">МОНИТОРИНГ · CMDB · ЛОГИ</text>
+              </g>
+
+              <g class="scheme__labels">
+                <text x="150" y="30">КАМЕРЫ · ВНЕ ЗОНЫ</text>
+              </g>
+
+              <g class="scheme__box">
+                <rect x="150" y="118" width="280" height="44" />
+                <text x="170" y="145">КОММУТАТОР</text>
+              </g>
+              <g class="scheme__box scheme__box--secure">
+                <rect x="150" y="210" width="280" height="44" />
+                <text x="170" y="237">СКЗИ · КАНАЛ СВЯЗИ</text>
+              </g>
+              <g class="scheme__box">
+                <rect x="150" y="302" width="280" height="44" />
+                <text x="170" y="329">СЕРВЕРЫ · ВИРТУАЛИЗАЦИЯ</text>
+              </g>
+              <g class="scheme__box">
+                <rect x="150" y="394" width="280" height="44" />
+                <text x="170" y="421">СХД · АРХИВ</text>
+              </g>
+              <g class="scheme__box scheme__box--act">
+                <rect x="150" y="486" width="280" height="44" />
+                <text x="170" y="513">АРМ ОПЕРАТОРА</text>
+              </g>
+              <g class="scheme__box scheme__box--act">
+                <rect x="150" y="578" width="280" height="44" />
+                <text x="170" y="605">ОТВЕТСТВЕННАЯ СЛУЖБА</text>
+              </g>
+
+              <g class="scheme__aside">
+                <text class="scheme__aside-cap" x="470" y="288">ВЕНДОР ПО</text>
+                <rect x="470" y="302" width="150" height="44" />
+                <text x="486" y="329">ВИДЕОПЛАТФОРМА</text>
+                <rect x="470" y="394" width="150" height="44" />
+                <text x="486" y="421">ВИДЕОАНАЛИТИКА</text>
+              </g>
+            </svg>
+            <figcaption>Зона РАДИУС: от коммутатора до СХД и архива. АРМ и прикладное ПО — вне зоны</figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <!-- 2. CURRENT STATE -->
+      <section class="section" id="system">
+        <div class="wrap">
+          <div class="story__head">
+            <p class="eyebrow">Текущее состояние</p>
+            <h2>В Тульской области уже создана работающая основа</h2>
+            <p class="lead">Следующая задача — масштабировать её без потери управляемости.</p>
+          </div>
+          <div class="state-board" data-build aria-label="Масштаб системы видеонаблюдения">
+            <svg class="scale-bars" viewBox="0 0 900 300" role="img" aria-hidden="true">
+              <g class="scale-bars__row" data-reveal="1">
+                <text x="60" y="42">1 800 · ГОСУДАРСТВЕННЫХ КАМЕР</text>
+                <rect class="scale-bars__fill" x="60" y="54" width="288" height="22" />
+              </g>
+              <g class="scale-bars__row" data-reveal="2">
+                <text x="60" y="130">963 · ПОДКЛЮЧЕНО К ЕДИНОЙ ПЛАТФОРМЕ</text>
+                <rect class="scale-bars__fill scale-bars__fill--tech" x="60" y="142" width="154" height="22" />
+              </g>
+              <g class="scale-bars__row" data-reveal="3">
+                <text x="60" y="218">5 000 · ЦЕЛЕВОЙ МАСШТАБ</text>
+                <rect class="scale-bars__target" x="60" y="230" width="800" height="22" />
+              </g>
+              <g class="scale-bars__axis">
+                <path d="M60 274 H 860" />
+                <path d="M60 270 V 278" /><path d="M220 270 V 278" /><path d="M380 270 V 278" />
+                <path d="M540 270 V 278" /><path d="M700 270 V 278" /><path d="M860 270 V 278" />
+                <text x="60" y="298">0</text>
+                <text x="220" y="298">1000</text>
+                <text x="380" y="298">2000</text>
+                <text x="540" y="298">3000</text>
+                <text x="700" y="298">4000</text>
+                <text x="860" y="298">5000</text>
+              </g>
+            </svg>
+            <ol class="hud" aria-label="Публичные показатели 2025 года">
+              <li class="hud__item" data-hud="0">
+                <strong data-count="1800">1 800</strong>
+                <span>государственных камер без учёта частных источников</span>
+              </li>
+              <li class="hud__item" data-hud="1">
+                <strong data-count="963">963</strong>
+                <span>камеры были подключены к единой платформе</span>
+              </li>
+              <li class="hud__item hud__item--alert" data-hud="2">
+                <strong>6–15%</strong>
+                <span>камер могли ежедневно находиться в неработоспособном состоянии</span>
+              </li>
+              <li class="hud__item" data-hud="3">
+                <strong data-count="5000">5 000</strong>
+                <span>целевой масштаб единой региональной системы</span>
+              </li>
+            </ol>
+          </div>
+          <p class="note">По публичным данным 2025 года.</p>
+          <p class="lead lead--wide state-copy">
+            С ростом количества камер увеличивается не только покрытие региона. Одновременно растут нагрузка на сеть,
+            объём видеоархива, вычислительная нагрузка, количество оборудования, число интеграций и эксплуатационная
+            сложность.
+          </p>
+          <p class="thesis">Следующий барьер — управляемость роста.</p>
+        </div>
+      </section>
+
+      <!-- 3. SCALE CHANGES THE TASK -->
+      <section class="section section--dark" id="scale">
+          <div class="wrap scale-layout" data-build>
+            <div class="scale-copy">
+              <p class="eyebrow">Масштаб меняет задачу</p>
+              <h2>5 000 камер — это уже не парк камер</h2>
+              <p class="thesis thesis--sub">Это критичная распределённая ИТ-инфраструктура.</p>
+              <ol class="scale-legend" aria-label="Слои системы">
+                <li data-legend="0" tabindex="0"><span>01</span><div><strong>Камеры</strong> Видеопотоки</div></li>
+                <li data-legend="1" tabindex="0"><span>02</span><div><strong>Сеть</strong> Защищённые сегменты</div></li>
+                <li data-legend="2" tabindex="0"><span>03</span><div><strong>Вычисления</strong> Хранение</div></li>
+                <li data-legend="3" tabindex="0"><span>04</span><div><strong>Платформы</strong> Аналитика</div></li>
+                <li data-legend="4" tabindex="0"><span>05</span><div><strong>Интеграции</strong> События</div></li>
+                <li data-legend="5" tabindex="0"><span>06</span><div><strong>Эксплуатация</strong> Управление</div></li>
+              </ol>
+            </div>
+            <div class="scale-viz" aria-hidden="true">
+              <svg viewBox="0 0 520 520" class="scale-svg">
+                <g class="scale-layer" data-layer="0">
+                  <circle cx="70" cy="80" r="5" class="cam" /><circle cx="120" cy="50" r="5" class="cam" />
+                  <circle cx="180" cy="90" r="5" class="cam" /><circle cx="40" cy="150" r="5" class="cam" />
+                  <circle cx="150" cy="160" r="5" class="cam" /><circle cx="90" cy="210" r="5" class="cam" />
+                  <circle cx="200" cy="200" r="5" class="cam" /><circle cx="250" cy="70" r="5" class="cam" />
+                  <circle cx="280" cy="140" r="5" class="cam" /><circle cx="320" cy="40" r="5" class="cam" />
+                  <text x="24" y="36" class="scale-label">CAMERAS</text>
+                </g>
+                <g class="scale-layer" data-layer="1">
+                  <path d="M70 80 L 260 260 L 120 50 M180 90 L 260 260 L 40 150 M150 160 L 260 260 L 280 140" />
+                  <circle cx="260" cy="260" r="10" class="node-core" />
+                  <text x="278" y="264" class="scale-label">NET</text>
+                </g>
+                <g class="scale-layer" data-layer="2">
+                  <rect x="330" y="210" width="64" height="44" rx="2" /><rect x="406" y="210" width="64" height="44" rx="2" />
+                  <text x="338" y="236" class="scale-label">GPU</text>
+                  <text x="414" y="236" class="scale-label">CPU</text>
+                </g>
+                <g class="scale-layer" data-layer="3">
+                  <rect x="330" y="280" width="140" height="36" rx="2" />
+                  <text x="354" y="302" class="scale-label">STORAGE</text>
+                </g>
+                <g class="scale-layer" data-layer="4">
+                  <rect x="330" y="340" width="66" height="32" rx="2" /><rect x="404" y="340" width="66" height="32" rx="2" />
+                  <text x="340" y="360" class="scale-label">VMS</text>
+                  <text x="412" y="360" class="scale-label">ANALYTICS</text>
+                </g>
+                <g class="scale-layer" data-layer="5">
+                  <rect x="330" y="396" width="140" height="36" rx="2" class="monitor-box" />
+                  <text x="352" y="418" class="scale-label">MONITORING</text>
+                  <path class="pulse-line" d="M260 260 L 330 232" />
+                  <path class="pulse-line" d="M398 254 V 280" />
+                  <path class="pulse-line" d="M398 316 V 340" />
+                  <path class="pulse-line" d="M398 372 V 396" />
+                </g>
+              </svg>
+            </div>
+          </div>
+        <div class="wrap scale-foot">
+          <p class="lead">
+            Каждая новая точка увеличивает не только покрытие, но и количество технических зависимостей, объём данных и
+            эксплуатационную нагрузку.
+          </p>
+          <p class="thesis">При таком масштабе ключевой задачей становится управляемость системы.</p>
+        </div>
+      </section>
+
+      <!-- 4. FOUR LEVELS -->
+      <section class="section" id="architecture">
+        <div class="wrap">
+          <p class="eyebrow">Целевая модель</p>
+          <h2>Как выглядит следующий уровень «Безопасного города»</h2>
+          <p class="lead">Не отдельные технологии. Четыре работающих уровня одной системы.</p>
+
+          <div class="stack" id="stack" data-stack>
+            <article class="stack__layer" tabindex="0" data-layer="3">
+              <span class="stack__idx">04</span>
+              <div>
+                <h3>Действие</h3>
+                <p>Рабочие места · подтверждение события · передача ответственному · журналирование · эксплуатация</p>
+              </div>
+            </article>
+            <article class="stack__layer" tabindex="0" data-layer="2">
+              <span class="stack__idx">03</span>
+              <div>
+                <h3>Понимание</h3>
+                <p>Видеоменеджмент · архив · поиск · карта · аналитика · контроль качества</p>
+              </div>
+            </article>
+            <article class="stack__layer" tabindex="0" data-layer="1">
+              <span class="stack__idx">02</span>
+              <div>
+                <h3>Инфраструктура</h3>
+                <p>Связь · сети · защита · вычисления · хранение · питание · резервирование</p>
+              </div>
+            </article>
+            <article class="stack__layer" tabindex="0" data-layer="0">
+              <span class="stack__idx">01</span>
+              <div>
+                <h3>Наблюдение</h3>
+                <p>Камеры и другие подключаемые источники</p>
+              </div>
+            </article>
+          </div>
+
+          <p class="thesis">Видеть. Понимать. Реагировать.</p>
+          <p class="lead">И знать, что вся система действительно работает.</p>
+          <p class="lead lead--wide">
+            Уровень 02 — зона РАДИУС. Уровень 03 — прикладное ПО вендоров: оно работает на нашей мощности, ёмкости и
+            каналах. АРМ оператора — вне зоны. Без инфраструктурного слоя камера не отдаёт поток, аналитика не получает
+            GPU, оператор не видит архив.
+          </p>
+        </div>
+      </section>
+
+      <!-- 4b. PROJECT DRAWINGS -->
+      <section class="section section--surface" id="drawings">
+        <div class="wrap">
+          <p class="eyebrow">Проектные чертежи</p>
+          <h2>Инфраструктура — это шкафы, юниты и ведомость</h2>
+          <p class="lead lead--wide">
+            Так выглядит слой, который мы проектируем: вычислительные ядра, сеть, СКЗИ, СХД и ИБП в конкретной
+            компоновке. Нажмите на чертёж, чтобы рассмотреть подписи.
+          </p>
+          <div class="drawings">
+            <figure class="drawing drawing--dark">
+              <button type="button" class="drawing__open" data-drawing-open aria-label="Открыть схему монтажа в шкафах крупно">
+                <img
+                  src="assets/scheme-cabinets.jpg"
+                  alt="Концептуальная схема монтажа оборудования в трёх серверных шкафах: сеть, СКЗИ, серверы, системы хранения и ИБП. Проект «Безопасный город», РАДИУС."
+                  width="1024"
+                  height="723"
+                />
+              </button>
+              <figcaption>
+                Концептуальная схема монтажа в серверных шкафах. Проект «Безопасный город», стадия П. Не спецификация
+                уже смонтированного объекта и не замена публичных цифр по парку камер.
+              </figcaption>
+            </figure>
+            <figure class="drawing drawing--light">
+              <button type="button" class="drawing__open" data-drawing-open aria-label="Открыть чертёж шкафов сзади крупно">
+                <img
+                  src="assets/scheme-racks-rear.jpg"
+                  alt="Чертёж трёх серверных шкафов, вид сзади, с таблицами комплектации оборудования по юнитам."
+                  width="1024"
+                  height="713"
+                  loading="lazy"
+                  decoding="async"
+                />
+              </button>
+              <figcaption>
+                Компоновка шкафов, вид сзади, с ведомостью оборудования по юнитам. Инженерный чертёж из практики РАДИУС.
+              </figcaption>
+            </figure>
+          </div>
+        </div>
+      </section>
+
+      <dialog class="drawing-dialog" id="drawing-dialog" aria-label="Чертёж крупно">
+        <button type="button" class="drawing-dialog__close" data-drawing-close>Закрыть</button>
+        <img alt="" />
+      </dialog>
+
+      <!-- 5. UNIFIED CONTOUR -->
+      <section class="section" id="contour">
+          <div class="wrap">
+            <p class="eyebrow">Архитектура</p>
+            <h2>Не набор систем. Единый контур.</h2>
+            <p class="lead">
+              Те же четыре уровня, развёрнутые в реальную последовательность: одиннадцать звеньев между камерой на
+              улице и действием городской службы.
+            </p>
+            <ul class="chain__legend">
+              <li class="chain__legend-in">Зона РАДИУС</li>
+              <li class="chain__legend-out">Вне зоны</li>
+            </ul>
+            <div class="chain" data-chain aria-label="Инфраструктурная цепочка">
+              <ol class="chain__track">
+                <li class="chain__node" data-node="0" data-zone="out">
+                  <strong>Камера</strong>
+                  <span>Физическая точка наблюдения</span>
+                </li>
+                <li class="chain__node" data-node="1" data-zone="in">
+                  <strong>Коммутатор</strong>
+                  <span>Приём и агрегация потоков на объекте</span>
+                </li>
+                <li class="chain__node" data-node="2" data-zone="in">
+                  <strong>Сеть передачи данных</strong>
+                  <span>Канал от объекта до ядра системы</span>
+                </li>
+                <li class="chain__node" data-node="3" data-zone="in">
+                  <strong>Защищённый периметр</strong>
+                  <span>Граница доверенной зоны</span>
+                </li>
+                <li class="chain__node" data-node="4" data-zone="in">
+                  <strong>Вычислительные ресурсы</strong>
+                  <span>Мощность под обработку видеопотоков</span>
+                </li>
+                <li class="chain__node" data-node="5" data-zone="in">
+                  <strong>Система хранения</strong>
+                  <span>Ёмкость и отказоустойчивость</span>
+                </li>
+                <li class="chain__node" data-node="6" data-zone="in">
+                  <strong>Видеоархив</strong>
+                  <span>Ресурс под глубину и полноту записи</span>
+                </li>
+                <li class="chain__node" data-node="7" data-zone="out">
+                  <strong>Видеоплатформа</strong>
+                  <span>Прикладное ПО вендора</span>
+                </li>
+                <li class="chain__node" data-node="8" data-zone="out">
+                  <strong>Аналитика</strong>
+                  <span>Алгоритмы детекции и обработки</span>
+                </li>
+                <li class="chain__node" data-node="9" data-zone="out">
+                  <strong>Рабочее место оператора</strong>
+                  <span>АРМ сотрудников ведомств</span>
+                </li>
+                <li class="chain__node" data-node="10" data-zone="out">
+                  <strong>Ответственная служба</strong>
+                  <span>Действие в городе</span>
+                </li>
+              </ol>
+            </div>
+          <p class="thesis">Ценность создаётся только тогда, когда работает вся цепочка.</p>
+          <p class="lead lead--wide">
+            Исправных десяти звеньев из одиннадцати недостаточно: результат в городе не появляется. И отказать может
+            любое из них.
+          </p>
+          <p class="thesis">Шесть звеньев из одиннадцати — инфраструктурные. Это зона РАДИУС.</p>
+          <p class="lead lead--wide">
+            Камеры, прикладное ПО, алгоритмы вендоров и рабочие места операторов остаются за границей. Но работают они
+            ровно настолько, насколько работает инфраструктура под ними.
+          </p>
+          <p class="lead lead--wide">
+            Поверх всей зоны — эксплуатационный слой: мониторинг, учёт активов и CMDB, сбор и хранение логов. Он
+            охватывает каждое из шести звеньев, а не отдельный компонент.
+          </p>
+        </div>
+      </section>
+
+      <!-- 6. CAMERA OFFLINE -->
+      <section class="section section--alert" id="offline">
+          <div class="wrap">
+            <p class="eyebrow">Диагностика отказов</p>
+            <h2>«Камера недоступна» — это симптом. Не диагноз.</h2>
+            <div class="offline-board" data-build>
+              <div class="cam-hud" aria-live="polite">
+                <p class="cam-hud__id">CAMERA 0427</p>
+                <p class="cam-hud__status">OFFLINE</p>
+              </div>
+              <p class="offline-note">
+                Симптом виден на уровне приложения.<br />
+                Причина может находиться значительно глубже.
+              </p>
+              <ol class="dep" aria-label="Карта зависимостей">
+                <li data-dep="1">Питание</li>
+                <li data-dep="1">ИБП</li>
+                <li data-dep="1">Шкаф</li>
+                <li data-dep="2">Узел доступа</li>
+                <li data-dep="2">Коммутатор</li>
+                <li data-dep="2">Канал связи</li>
+                <li data-dep="2">Маршрутизация</li>
+                <li data-dep="2">Защищённый шлюз</li>
+                <li data-dep="3">Сервер</li>
+                <li data-dep="3">Виртуализация</li>
+                <li data-dep="3">СХД</li>
+                <li data-dep="3">RAID / LUN</li>
+                <li data-dep="4">Архив</li>
+                <li data-dep="4">VMS</li>
+                <li data-dep="4">Прикладной сервис</li>
+              </ol>
+            </div>
+          <p class="thesis">Надёжность начинается ниже уровня приложения.</p>
+          <p class="lead">
+            Факт отказа виден сверху. Первопричина может находиться на любом уровне — от питания и сети до СХД,
+            виртуализации или платформы.
+          </p>
+          <p class="lead">
+            А значит, отвечать за работоспособность должен тот, кто видит все уровни сразу. Иначе поиск причины
+            превращается в переписку между подрядчиками — а в комплексах «Безопасный город» их десятки.
+          </p>
+          <p class="lead">
+            Если инцидент затрагивает несколько зон, РАДИУС берёт на себя активную роль в разборе: связывает
+            разрозненные звенья в единую картину и доводит проблему до решения в своей зоне.
+          </p>
+
+          <dl class="instruments" data-build>
+            <div data-reveal="1">
+              <dt>Мониторинг</dt>
+              <dd>видит отказ в момент, когда он произошёл</dd>
+            </div>
+            <div data-reveal="2">
+              <dt>Учёт активов, CMDB, IPAM/DCIM</dt>
+              <dd>показывает, что от этого узла зависит, и держит адреса и оборудование в одном контуре</dd>
+            </div>
+            <div data-reveal="3">
+              <dt>Логи и резерв конфигураций</dt>
+              <dd>даёт доказательство, что именно случилось, и позволяет вернуть узел в известное состояние</dd>
+            </div>
+          </dl>
+          <p class="thesis">Три инструмента, без которых «камера недоступна» так и остаётся симптомом.</p>
+        </div>
+      </section>
+
+      <!-- 7. RADIUS ROLE -->
+      <section class="section" id="role">
+        <div class="wrap">
+          <p class="eyebrow">Роль РАДИУС</p>
+          <h2>РАДИУС берёт в работу весь жизненный цикл инфраструктуры</h2>
+          <ol class="life">
+            <li>
+              <span>01</span>
+              <h3>Обследование</h3>
+              <p>
+                Инвентаризация и учёт активов, аудит архитектурных рисков по критичности, карта текущего состояния и
+                план первоочередных мер.
+              </p>
+            </li>
+            <li>
+              <span>02</span>
+              <h3>Проектирование</h3>
+              <p>Целевая архитектура сети, вычислений, хранения, безопасности и резервирования.</p>
+            </li>
+            <li>
+              <span>03</span>
+              <h3>Инфраструктура</h3>
+              <p>
+                Высокопроизводительные серверы CPU/GPU под видеопотоки и нейросети; аппаратные и программно-определяемые
+                СХД; российская виртуализация и СКЗИ; коммутаторы, каналы с резервированием, ИБП и охлаждение.
+              </p>
+            </li>
+            <li>
+              <span>04</span>
+              <h3>Защищённая среда</h3>
+              <p>
+                Сегментация сетей, СКЗИ на каналах, ролевой доступ, журналирование. Изолированные среды без интернета:
+                локальные зеркала репозиториев и установка ПО внутри контура.
+              </p>
+            </li>
+            <li>
+              <span>05</span>
+              <h3>Интеграция</h3>
+              <p>
+                Подключение источников, ведомств и прикладного ПО вендоров. Мощность, ёмкость, каналы и latency под
+                нейросетевые сценарии — без разработки самих алгоритмов.
+              </p>
+            </li>
+            <li>
+              <span>06</span>
+              <h3>Ввод в эксплуатацию</h3>
+              <p>Настройка, документация, тестирование, обучение и приёмочные испытания.</p>
+            </li>
+            <li>
+              <span>07</span>
+              <h3>Эксплуатация и развитие</h3>
+              <p>
+                ITSM, первая линия поддержки, координация смежных подрядчиков — в масштабных проектах их десятки —
+                мониторинг, CMDB, IPAM/DCIM, логи, гарантийный и постгарантийный периоды.
+              </p>
+            </li>
+          </ol>
+          <p class="thesis">Одна инженерная ответственность на весь цикл — от обследования до эксплуатации.</p>
+
+          <div class="scope">
+            <p class="scope__label">Вне зоны РАДИУС</p>
+            <ul class="scope__list">
+              <li>Сами камеры и их монтаж</li>
+              <li>Прикладное ПО видеоплатформы и аналитики вендоров</li>
+              <li>Разработка алгоритмов детекции и ИИ</li>
+              <li>Рабочие места операторов (АРМ)</li>
+              <li>Регламенты работы государственных ведомств</li>
+            </ul>
+            <p class="scope__note">
+              РАДИУС отвечает за инфраструктуру, без которой прикладное ПО и ведомственный сервис не работают:
+              коммутаторы, СКЗИ, серверы и GPU, российскую виртуализацию, СХД, ИБП, охлаждение — вместе с мониторингом,
+              CMDB, IPAM/DCIM, логами и круглосуточной эксплуатацией.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- 8. FROM VIDEO TO ACTION -->
+      <section class="section section--surface" id="action">
+        <div class="wrap">
+          <p class="eyebrow">От видео к действию</p>
+          <h2>Аналитика ценна только тогда, когда событие приводит к действию</h2>
+          <p class="lead lead--wide">
+            Алгоритмы детекции разрабатывают вендоры прикладных решений — мы их не пишем. Но именно они задают, сколько
+            потребуется GPU, ёмкости хранения, пропускной способности и какой latency допустим. РАДИУС проектирует
+            инфраструктуру так, чтобы специализированное ПО не упиралось в «бутылочное горлышко».
+          </p>
+          <ol class="flow" data-flow aria-label="Цепочка от события к действию">
+            <li>Событие</li>
+            <li>Обнаружение</li>
+            <li>Подтверждение</li>
+            <li>Контекст</li>
+            <li>Ответственная служба</li>
+            <li>Действие</li>
+            <li>Результат</li>
+          </ol>
+          <div class="scenarios">
+            <p class="scenarios__label">Аналитические сценарии</p>
+            <ul>
+              <li>поиск по архиву и признакам</li>
+              <li>общественные пространства</li>
+              <li>оставленные предметы</li>
+              <li>площадки ТКО</li>
+              <li>специализированные ведомственные сценарии</li>
+            </ul>
+            <p>
+              Для каждого сценария заранее определяются пользователь, действие после события и метрика качества.
+            </p>
+            <p>В критичных сценариях — подтверждение человеком перед передачей события в службу.</p>
+          </div>
+          <p class="thesis">Не больше тревог. Больше полезных событий.</p>
+        </div>
+      </section>
+
+      <!-- 9. SECURE CONTOUR -->
+      <section class="section" id="security">
+        <div class="wrap">
+          <p class="eyebrow">Защищённая инфраструктура</p>
+          <h2>Данные и обработка — внутри контролируемого периметра</h2>
+          <ol class="secure-flow" aria-label="Защищённый периметр">
+            <li>источники видео</li>
+            <li>сегментированные сети</li>
+            <li>защищённая межплощадочная связность</li>
+            <li>вычислительная среда</li>
+            <li>системы хранения</li>
+            <li>платформенный слой</li>
+            <li>ролевой доступ пользователей и ведомств</li>
+          </ol>
+          <dl class="principles">
+            <div>
+              <dt>Сегментация сетей</dt>
+              <dd>Изоляция сетевых зон и трафика.</dd>
+            </div>
+            <div>
+              <dt>Разграничение доступа</dt>
+              <dd>Ролевая модель и контроль прав.</dd>
+            </div>
+            <div>
+              <dt>Журналирование</dt>
+              <dd>Аудит действий пользователей и системных событий.</dd>
+            </div>
+            <div>
+              <dt>Контроль конфигураций</dt>
+              <dd>Управление изменениями и соответствие политикам безопасности.</dd>
+            </div>
+            <div>
+              <dt>Российский технологический стек</dt>
+              <dd>
+                Отечественная виртуализация, СКЗИ и системы хранения — с проверкой совместимости и импортозамещения.
+                Опыт РАДИУС включает Astra Linux, ViPNet и работу в контурах с требованиями регуляторов.
+              </dd>
+            </div>
+            <div>
+              <dt>Изолированные среды</dt>
+              <dd>
+                Полноценная инфраструктура обслуживания без доступа в интернет: локальные зеркала репозиториев,
+                внутренние веб-серверы, установка и обновление ПО внутри контура.
+              </dd>
+            </div>
+            <div>
+              <dt>Безопасность в каждом действии</dt>
+              <dd>
+                Отключаем небезопасные протоколы, настраиваем надёжную аутентификацию, ведём персональные учётные
+                записи, планово меняем пароли и фиксируем доступы в защищённых хранилищах.
+              </dd>
+            </div>
+            <div>
+              <dt>Резервирование и DR</dt>
+              <dd>Резервирование критичных уровней и аварийное восстановление.</dd>
+            </div>
+          </dl>
+        </div>
+      </section>
+
+      <!-- 10. REGIONAL EXPERIENCE -->
+      <section class="section" id="experience">
+          <div class="wrap cases" data-cases>
+            <div class="cases__left">
+              <p class="eyebrow">Региональный опыт</p>
+              <h2>Три региона. Разные задачи. Один инженерный подход.</h2>
+              <div class="cases__nav" role="tablist" aria-label="Регионы">
+                <button type="button" class="cases__tab is-on" role="tab" id="case-tab-0" aria-controls="case-panel-0" aria-selected="true" data-case="0">Воронеж</button>
+                <button type="button" class="cases__tab" role="tab" id="case-tab-1" aria-controls="case-panel-1" aria-selected="false" tabindex="-1" data-case="1">Белгород</button>
+                <button type="button" class="cases__tab" role="tab" id="case-tab-2" aria-controls="case-panel-2" aria-selected="false" tabindex="-1" data-case="2">Курск</button>
+              </div>
+            </div>
+            <div class="cases__stage">
+              <article class="case is-on" role="tabpanel" id="case-panel-0" aria-labelledby="case-tab-0" data-case-panel="0">
+                <h3 class="case__city">Воронеж</h3>
+                <p class="case__kind">Инфраструктура и ввод в эксплуатацию</p>
+                <dl class="case__spec">
+                  <div>
+                    <dt>Состав</dt>
+                    <dd>серверы · GPU · СХД · сети · Astra Linux · ViPNet</dd>
+                  </div>
+                  <div>
+                    <dt>Работы</dt>
+                    <dd>мониторинг · документация · пусконаладка · приёмочные испытания</dd>
+                  </div>
+                  <div>
+                    <dt>Ситуация</dt>
+                    <dd>
+                      После отключения питания проблема проявилась на уровне приложения, но затрагивала питание,
+                      инфраструктуру, СХД и протокол доступа.
+                    </dd>
+                  </div>
+                </dl>
+                <p class="case__take">
+                  Инфраструктура и её ввод в эксплуатацию были в одной зоне ответственности.
+                </p>
+              </article>
+              <article class="case" role="tabpanel" id="case-panel-1" aria-labelledby="case-tab-1" data-case-panel="1">
+                <h3 class="case__city">Белгород</h3>
+                <p class="case__kind">Сложная распределённая архитектура</p>
+                <dl class="case__spec">
+                  <div>
+                    <dt>Состав</dt>
+                    <dd>две площадки · виртуализация · несколько СХД · FC/Ethernet</dd>
+                  </div>
+                  <div>
+                    <dt>Работы</dt>
+                    <dd>разбор сетевых и storage-зависимостей между площадками</dd>
+                  </div>
+                  <div>
+                    <dt>Ситуация</dt>
+                    <dd>
+                      Недоступность виртуальных машин возникла на стыке виртуализации, сети и iSCSI-хранилища.
+                    </dd>
+                  </div>
+                </dl>
+                <p class="case__take">
+                  Причина лежала между слоями — там, где обычно проходит граница между подрядчиками.
+                </p>
+              </article>
+              <article class="case" role="tabpanel" id="case-panel-2" aria-labelledby="case-tab-2" data-case-panel="2">
+                <h3 class="case__city">Курск</h3>
+                <p class="case__kind">Эксплуатация и техническая поддержка</p>
+                <dl class="case__spec">
+                  <div>
+                    <dt>Состав</dt>
+                    <dd>167 хостов · 20&nbsp;000+ элементов данных · 13&nbsp;000+ триггеров</dd>
+                  </div>
+                  <div>
+                    <dt>Работы</dt>
+                    <dd>мониторинг и техническая поддержка в режиме 24/7</dd>
+                  </div>
+                  <div>
+                    <dt>Ситуация</dt>
+                    <dd>
+                      У каждого обращения есть срок и ответственный: регистрация — 15 минут, целевое разрешение
+                      P1 — 4 часа, целевая доступность — 99,8%.
+                    </dd>
+                  </div>
+                </dl>
+                <p class="case__take">
+                  Мониторинг здесь не отчёт, а обязательство с измеримым сроком.
+                </p>
+              </article>
+            </div>
+            <figure class="carousel" data-carousel>
+              <div class="carousel__frame" tabindex="0">
+                <ul class="carousel__track">
+                  <li class="carousel__slide is-on">
+                    <div class="cases__shot">
+                      <img
+                        src="assets/infra-servers.jpg"
+                        alt="Серверы в стойке: подключённые линии передачи данных и индикация работающего оборудования"
+                        width="1024"
+                        height="768"
+                        decoding="async"
+                      />
+                    </div>
+                  </li>
+                  <li class="carousel__slide">
+                    <div class="cases__shot">
+                      <img
+                        src="assets/infra-power.jpg"
+                        alt="Силовой щит с автоматами и маркировкой линий, вывод ИБП"
+                        width="768"
+                        height="1024"
+                        loading="lazy"
+                        decoding="async"
+                      />
+                    </div>
+                  </li>
+                  <li class="carousel__slide">
+                    <div class="cases__shot">
+                      <img
+                        src="assets/infra-ports.jpg"
+                        alt="Коммутационные порты и организованные линии передачи данных в стойке"
+                        width="768"
+                        height="1024"
+                        loading="lazy"
+                        decoding="async"
+                      />
+                    </div>
+                  </li>
+                  <li class="carousel__slide">
+                    <div class="cases__shot">
+                      <img
+                        src="assets/infra-storage.jpg"
+                        alt="Система хранения в стойке: массив дисковых модулей с индикацией"
+                        width="768"
+                        height="1024"
+                        loading="lazy"
+                        decoding="async"
+                      />
+                    </div>
+                  </li>
+                  <li class="carousel__slide">
+                    <div class="cases__shot">
+                      <img
+                        src="assets/infra-racks.jpg"
+                        alt="Ряд смонтированных телекоммуникационных шкафов в серверном помещении"
+                        width="768"
+                        height="1024"
+                        loading="lazy"
+                        decoding="async"
+                      />
+                    </div>
+                  </li>
+                  <li class="carousel__slide">
+                    <div class="cases__shot">
+                      <img
+                        src="assets/infra-compute.jpg"
+                        alt="Вычислительная стойка: системы хранения и серверные шасси в монтажной раме"
+                        width="768"
+                        height="1024"
+                        loading="lazy"
+                        decoding="async"
+                      />
+                    </div>
+                  </li>
+                </ul>
+                <button type="button" class="carousel__nav carousel__nav--prev" aria-label="Предыдущий снимок">
+                  <span aria-hidden="true">←</span>
+                </button>
+                <button type="button" class="carousel__nav carousel__nav--next" aria-label="Следующий снимок">
+                  <span aria-hidden="true">→</span>
+                </button>
+              </div>
+              <div class="carousel__dots" role="tablist" aria-label="Снимки инфраструктуры"></div>
+              <figcaption>Инженерная инфраструктура в проектах РАДИУС</figcaption>
+            </figure>
+
+            <div class="cases__foot">
+              <p class="thesis">Разные этапы. Одна зона ответственности.</p>
+              <p class="lead">
+                Построить инфраструктуру, довести её до подтверждённой работоспособности и удерживать в рабочем
+                состоянии — это задачи одного класса, и в трёх регионах их вёл один инженерный подрядчик.
+              </p>
+            </div>
+          </div>
+      </section>
+
+      <!-- 11. WHY RADIUS -->
+      <section class="section section--surface" id="why">
+        <div class="wrap">
+          <p class="eyebrow">Почему РАДИУС</p>
+          <h2>Инженерная компетенция полного цикла</h2>
+          <p class="lead">
+            Не поставить компоненты. Построить управляемую инфраструктуру, на которой вендор развивает софт, а
+            государственные ведомства получают бесперебойный сервис 24/7.
+          </p>
+          <p class="stat-xl"><strong>27+</strong> лет инженерной и ИТ-практики</p>
+          <ul class="proofs">
+            <li>Единое окно: от проектирования до сервисного обслуживания, без потери ответственности на стыках с вендорами и подрядчиками</li>
+            <li>Глубокая экспертиза на всех уровнях: железо, виртуализация, СХД, СКЗИ, ОС — вплоть до драйверов и прошивок</li>
+            <li>В сложных ситуациях берём координацию нескольких участников и указываем на ошибки смежных подрядчиков, если это повышает надёжность</li>
+            <li>Масштабировать функционал и зоны покрытия, а не проблемы: запас по производительности и связности</li>
+            <li>Три уровня технической поддержки через единое окно, первая линия и координация смежных подрядчиков</li>
+            <li>Отечественный стек и изолированные контуры: виртуализация, СКЗИ, СХД — с проверкой совместимости и импортозамещения</li>
+            <li>Прозрачность: CMDB, Service Desk, IPAM/DCIM, мониторинг сотен узлов с десятками тысяч параметров и тысячами триггеров</li>
+          </ul>
+          <div class="method">
+            <article>
+              <h3>Компактные команды</h3>
+              <p>
+                В проект входит узкая группа инженеров и руководителей, которые понимают и инфраструктуру, и специфику
+                прикладного ПО. Гибкость, скорость и персональная ответственность за результат.
+              </p>
+            </article>
+            <article>
+              <h3>Проактивность и аварийная готовность</h3>
+              <p>
+                Сбои предотвращаем мониторингом и CMDB. Если инцидент всё же произошёл, берём активную роль в разборе —
+                даже когда задействовано больше двух подрядчиков — и доводим картину до решения.
+              </p>
+            </article>
+            <article>
+              <h3>Безопасность в каждом действии</h3>
+              <p>
+                Отключаем небезопасные протоколы, настраиваем аутентификацию, ведём персональные учётные записи, планово
+                меняем пароли и фиксируем доступы в защищённых хранилищах.
+              </p>
+            </article>
+            <article>
+              <h3>Работаем в изолированных средах</h3>
+              <p>
+                Разворачиваем инфраструктуру обслуживания без интернета: локальные зеркала репозиториев, внутренние
+                веб-серверы, установка и обновление любого ПО внутри контура.
+              </p>
+            </article>
+          </div>
+          <p class="sla__label">Контрактные обязательства</p>
+          <dl class="sla" aria-label="Операционные SLA РАДИУС">
+            <div>
+              <dt>≥99,8%</dt>
+              <dd>доступность сервисов</dd>
+            </div>
+            <div>
+              <dt>Минуты</dt>
+              <dd>реакция на критические инциденты</dd>
+            </div>
+            <div>
+              <dt>Часы</dt>
+              <dd>устранение критических инцидентов</dd>
+            </div>
+            <div>
+              <dt>Service Desk</dt>
+              <dd>каждое обращение — с приоритетом и уникальным номером</dd>
+            </div>
+            <div>
+              <dt>Read-only</dt>
+              <dd>доступ заказчика к дашбордам мониторинга и системе учёта заявок</dd>
+            </div>
+            <div>
+              <dt>Проактивно</dt>
+              <dd>место на СХД, лицензии, температурные режимы — до сбоя, а не после</dd>
+            </div>
+          </dl>
+          <p class="note sla__note">
+            Измеримый SLA в договоре. Конкретные пороги для Тулы фиксируются после обследования периметра — цифры выше
+            описывают рабочую практику РАДИУС, а не уже утверждённый контракт по Туле.
+          </p>
+          <p class="thesis">Не масштабировать проблемы. Масштабировать покрытие и функционал.</p>
+        </div>
+      </section>
+
+      <!-- 12. RESULT -->
+      <section class="section" id="result">
+        <div class="wrap">
+          <p class="eyebrow">Результат</p>
+          <h2>Результат — не количество установленного оборудования</h2>
+          <p class="thesis thesis--center">Доступный и пригодный к использованию видеопоток</p>
+          <ul class="metrics" aria-label="Показатели работоспособности">
+            <li><strong>ONLINE</strong><span>Доступность камер, потоков и ключевых сервисов.</span></li>
+            <li><strong>QUALITY</strong><span>Целостность потока: без потерь, разрывов и деградации.</span></li>
+            <li><strong>ARCHIVE</strong><span>Полнота записи и фактическая глубина хранения.</span></li>
+            <li><strong>MTTR</strong><span>Время восстановления после отказа.</span></li>
+            <li><strong>SLA</strong><span>Предсказуемость эксплуатации.</span></li>
+            <li><strong>EVENT</strong><span>Время от события до передачи ответственному.</span></li>
+            <li><strong>CAPACITY</strong><span>Запас вычислений и ёмкости под новые сценарии.</span></li>
+            <li><strong>SCALE</strong><span>Срок и сложность подключения новой точки.</span></li>
+          </ul>
+          <p class="thesis thesis--stack">
+            Каждый поток доходит.<br />
+            Каждая неисправность видна.<br />
+            У каждого отказа есть срок устранения.
+          </p>
+        </div>
+      </section>
+
+      <!-- 13. HOW TO START -->
+      <section class="section section--surface" id="start">
+        <div class="wrap">
+          <p class="eyebrow">Как начать</p>
+          <h2>Не менять всё сразу.</h2>
+          <p class="thesis thesis--sub">Сначала получить достоверную картину и создать эталон.</p>
+          <ol class="roadmap">
+            <li>
+              <span>01</span>
+              <div>
+                <h3>Обследование</h3>
+                <p>Камеры, сеть, ЦОД, серверы, СХД, архив, платформы, мониторинг, документация, исходные показатели.</p>
+              </div>
+            </li>
+            <li>
+              <span>02</span>
+              <div>
+                <h3>Целевая архитектура</h3>
+                <p>Стандарты подключения, модель сети, вычисления, хранение, защита, резервирование, план масштабирования.</p>
+              </div>
+            </li>
+            <li>
+              <span>03</span>
+              <div>
+                <h3>Эталонный сегмент</h3>
+                <p class="roadmap__xl">100–300 камер</p>
+                <p>Коммутация, каналы, вычисления, хранение и мониторинг под нагрузкой прикладного ПО.</p>
+                <p class="note">Рабочий ориентир. Точный состав определяется после обследования.</p>
+              </div>
+            </li>
+            <li>
+              <span>04</span>
+              <div>
+                <h3>Измерение</h3>
+                <p>Проверка архитектуры на реальных показателях доступности, целостности потока и времени восстановления.</p>
+              </div>
+            </li>
+            <li>
+              <span>05</span>
+              <div>
+                <h3>Масштабирование</h3>
+                <p>Последовательное развитие системы до целевой региональной сети наблюдения.</p>
+              </div>
+            </li>
+          </ol>
+          <p class="thesis">Не ломать то, что уже работает.</p>
+          <p class="lead">
+            Существующие системы сохраняются там, где это рационально: используется интеграция, федерация или поэтапная
+            миграция.
+          </p>
+          <p class="lead">
+            Эталонный сегмент позволяет проверить архитектуру на реальной инфраструктуре без риска для всего
+            действующего комплекса.
+          </p>
+        </div>
+      </section>
+
+      <!-- 14. FINAL CTA -->
+      <section class="section cta" id="cta">
+        <div class="wrap">
+          <p class="eyebrow">Безопасный город Тулы</p>
+          <h2>От растущего парка инфраструктуры — к единой управляемой системе безопасности.</h2>
+          <ol class="cta__seq">
+            <li>Обследовать</li>
+            <li>Спроектировать</li>
+            <li>Проверить</li>
+            <li>Масштабировать</li>
+          </ol>
+          <p class="thesis">Начать с архитектурно-технического обследования</p>
+          <p class="lead">
+            Зафиксировать фактическое состояние комплекса, определить точки риска, сформировать целевую архитектуру и
+            состав эталонного сегмента.
+          </p>
+          <p class="stat-xl"><strong>4–6 недель</strong></p>
+          <p class="note">
+            Рабочий ориентир первого этапа. Уточняется после согласования периметра и необходимых доступов.
+          </p>
+          <p class="thesis thesis--stack">
+            Не больше камер.<br />
+            Больше работающей системы.
+          </p>
+          <p class="cta__brand">
+            <img src="assets/radius-logo.png" alt="РАДИУС — системный интегратор" width="767" height="125" />
+          </p>
+          <p class="cta__sign">Инфраструктура РАДИУС · прикладное ПО вендоров · 27+ лет практики</p>
+          <div class="cta__actions">
+            <a class="btn btn--primary btn--lg" href="https://radiuscompany.ru" target="_blank" rel="noopener noreferrer">
+              Обсудить проект
+            </a>
+            <a class="btn btn--ghost btn--lg" href="assets/radius-tula-bezopasnyy-gorod.pdf" download="RADIUS_Tula_Bezopasnyy_gorod.pdf">Скачать презентацию</a>
+          </div>
+        </div>
+      </section>
+
+      <!-- 15. CONTACTS -->
+      <section class="section section--surface" id="contacts">
+        <div class="wrap">
+          <p class="eyebrow">Контакты</p>
+          <h2>Обсудить «Безопасный город Тулы»</h2>
+          <div class="contacts">
+            <div class="contacts__about">
+              <img class="contacts__logo" src="assets/radius-logo.png" alt="РАДИУС — системный интегратор" width="767" height="125" />
+              <p>
+                РАДИУС — партнёр по созданию и эксплуатации ИТ-инфраструктуры систем безопасности городов: от
+                коммутатора и СКЗИ до серверов, СХД и круглосуточной поддержки. Прикладное ПО, видеоаналитика и АРМ —
+                вне зоны.
+              </p>
+              <p>
+                <a href="https://radiuscompany.ru" target="_blank" rel="noopener noreferrer">radiuscompany.ru</a>
+              </p>
+            </div>
+            <div class="contact-card">
+              <p class="contact-card__name">Константин Вощев</p>
+              <p class="contact-card__role">Коммерческий директор</p>
+              <div class="contact-card__links">
+                <a class="contact-card__link" href="https://t.me/hiddenvasya" target="_blank" rel="noopener noreferrer">
+                  Telegram @hiddenvasya
+                </a>
+                <a class="contact-card__link contact-card__link--muted" href="mailto:Knv@radiuscompany.ru">Knv@radiuscompany.ru</a>
+              </div>
+            </div>
+            <div class="voice">
+              <p class="voice__label">Голосовой консультант</p>
+              <p class="voice__text">
+                Задайте вопрос по архитектуре, зоне ответственности или порядку работ — голосом, прямо в браузере.
+              </p>
+              <button type="button" class="btn btn--ghost js-vapi-start" id="tula-vapi-start">
+                Поговорить голосом
+              </button>
+              <p class="voice__note">Потребуется доступ к микрофону и включенный VPN.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <p>
+        <img src="assets/radius-logo.png" alt="РАДИУС — системный интегратор" width="767" height="125" />
+      </p>
+      <p class="footer__links">
+        <a href="https://radiuscompany.ru" target="_blank" rel="noopener noreferrer">radiuscompany.ru</a>
+        <a href="https://t.me/hiddenvasya" target="_blank" rel="noopener noreferrer">@hiddenvasya</a>
+        <a href="mailto:Knv@radiuscompany.ru">Knv@radiuscompany.ru</a>
+      </p>
+    </footer>
+
+    <button
+      type="button"
+      class="vapiFab js-vapi-fab"
+      id="tula-vapi-fab"
+      aria-label="Задать вопрос виртуальному консультанту"
+      title="Задать вопрос виртуальному консультанту"
+    >
+      <svg class="vapiFab__icon vapiFab__icon--call" width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+        <path
+          d="M12 3a3 3 0 0 0-3 3v6a3 3 0 0 0 6 0V6a3 3 0 0 0-3-3Z"
+          stroke="currentColor"
+          stroke-width="1.8"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        />
+        <path
+          d="M19 11v1a7 7 0 0 1-14 0v-1M12 19v2"
+          stroke="currentColor"
+          stroke-width="1.8"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        />
+      </svg>
+      <svg class="vapiFab__icon vapiFab__icon--end" width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true" hidden>
+        <rect x="7" y="7" width="10" height="10" rx="1.5" fill="currentColor" />
+      </svg>
+    </button>
+    <p class="vapiToast" id="tula-vapi-status" aria-live="polite" hidden></p>
+
+    <script src="tula.config.js"></script>
+    <script src="tula.js"></script>
+  </body>
+</html>
