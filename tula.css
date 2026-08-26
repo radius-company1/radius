@@ -147,12 +147,24 @@ button {
   width: 100%;
   height: auto;
 }
+.drawing--native .drawing__open {
+  overflow: auto;
+  -webkit-overflow-scrolling: touch;
+}
+.drawing--native .drawing__open img {
+  width: auto;
+  max-width: none;
+  height: auto;
+}
 .drawing figcaption {
   margin-top: 12px;
   max-width: 52rem;
   color: var(--muted);
   font-size: 0.86rem;
   line-height: 1.55;
+}
+.drawings--dash {
+  margin-top: clamp(24px, 3vw, 36px);
 }
 .drawing-dialog {
   width: min(96vw, 1400px);
@@ -190,9 +202,12 @@ button {
   color: var(--text);
 }
 .drawing-dialog img {
-  width: 100%;
+  display: block;
+  width: auto;
+  max-width: 100%;
   height: auto;
   max-height: calc(92vh - 56px);
+  margin-inline: auto;
   object-fit: contain;
 }
 
