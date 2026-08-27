@@ -2621,4 +2621,12 @@ h3 {
   .life--rich li {
     grid-template-columns: 40px 1fr;
   }
+  .drawing--native .drawing__open {
+    overflow: visible;
+  }
+  .drawing--native .drawing__open img {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+  }
 }
