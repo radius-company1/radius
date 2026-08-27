@@ -34,7 +34,6 @@
     });
   });
 
-  /* Hero mouse parallax */
   const field = document.querySelector("[data-parallax]");
   if (field && !reduce && !mobile && matchMedia("(hover: hover)").matches) {
     let raf = 0;
@@ -55,11 +54,9 @@
     );
   }
 
-  /* На узком экране схема кадрируется по колонке блоков — иначе подписи нечитаемы */
   const scheme = document.querySelector(".scheme");
   if (scheme && mobile) scheme.setAttribute("viewBox", "104 12 352 628");
 
-  /* Схемы собираются один раз при появлении секции */
   const builds = document.querySelectorAll("[data-build]");
   if (reduce) {
     builds.forEach((el) => el.classList.add("is-built"));
@@ -77,7 +74,6 @@
     builds.forEach((el) => bio.observe(el));
   }
 
-  /* Слои масштаба: подсветка по наведению и фокусу */
   const scaleViz = document.querySelector(".scale-viz");
   const legendItems = [...document.querySelectorAll(".scale-legend li")];
   if (scaleViz && legendItems.length) {
@@ -96,21 +92,20 @@
     if (legend) legend.addEventListener("mouseleave", () => focusLayer(-1));
   }
 
-  /* Единый контур: импульс по цепочке + наведение */
   const chain = document.querySelector("[data-chain]");
   if (chain) {
-    const nodes = [...chain.querySelectorAll(".chain__node")];
+    const nodes = [...chain.querySelectorAll(".chain__node, .contour-flow__step")];
     nodes.forEach((node, i) => {
-      const idx = document.createElement("span");
-      idx.className = "chain__idx";
-      idx.setAttribute("aria-hidden", "true");
-      idx.textContent = String(i + 1).padStart(2, "0");
-      node.prepend(idx);
+      if (node.classList.contains("chain__node") && !node.querySelector(".chain__idx")) {
+        const idx = document.createElement("span");
+        idx.className = "chain__idx";
+        idx.setAttribute("aria-hidden", "true");
+        idx.textContent = String(i + 1).padStart(2, "0");
+        node.prepend(idx);
+      }
     });
-
     const light = (index) => nodes.forEach((node, i) => node.classList.toggle("is-on", i === index));
     let pinned = false;
-
     nodes.forEach((node, i) => {
       node.addEventListener("mouseenter", () => {
         pinned = true;
@@ -120,32 +115,30 @@
         pinned = false;
       });
     });
-
-    if (!reduce) {
-      let cursor = 0;
-      const pio = new IntersectionObserver(
-        (entries) => {
-          entries.forEach((entry) => {
-            if (!entry.isIntersecting || chain.dataset.live) return;
-            chain.dataset.live = "1";
-            light(0);
-            setInterval(() => {
-              if (pinned) return;
-              cursor = (cursor + 1) % nodes.length;
-              light(cursor);
-            }, 900);
-          });
-        },
-        { threshold: 0.15 }
-      );
-      pio.observe(chain);
+    if (!reduce && nodes.length) {
+      let step = 0;
+      setInterval(() => {
+        if (pinned) return;
+        light(step % nodes.length);
+        step += 1;
+      }, 900);
     }
   }
 
-  /* Stack appear + hover deps */
-  const stack = document.getElementById("stack");
+  const stack = document.querySelector("[data-stack]");
   if (stack) {
     const layers = [...stack.querySelectorAll(".stack__layer")];
+    const setHot = (index) => {
+      layers.forEach((layer, i) => {
+        layer.classList.toggle("is-hot", i === index);
+        layer.classList.toggle("is-near", Math.abs(i - index) === 1);
+      });
+    };
+    layers.forEach((layer, i) => {
+      layer.addEventListener("mouseenter", () => setHot(i));
+      layer.addEventListener("focus", () => setHot(i));
+    });
+    stack.addEventListener("mouseleave", () => setHot(-1));
     const sio = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
@@ -155,115 +148,8 @@
       { threshold: 0.25 }
     );
     sio.observe(stack);
-    if (reduce) stack.classList.add("is-on");
-
-    function heat(index) {
-      layers.forEach((layer, i) => {
-        layer.classList.toggle("is-hot", i === index);
-        layer.classList.toggle("is-near", index >= 0 && Math.abs(i - index) === 1);
-      });
-    }
-    layers.forEach((layer, i) => {
-      layer.addEventListener("mouseenter", () => {
-        if (matchMedia("(hover: hover)").matches) heat(i);
-      });
-      layer.addEventListener("focus", () => heat(i));
-      layer.addEventListener("blur", () => heat(-1));
-    });
-    stack.addEventListener("mouseleave", () => heat(-1));
   }
 
-  /* Count-up */
-  function animateCount(el) {
-    const target = Number(el.dataset.count);
-    if (!Number.isFinite(target)) return;
-    const duration = 900;
-    const start = performance.now();
-    function frame(now) {
-      const t = Math.min(1, (now - start) / duration);
-      const eased = 1 - Math.pow(1 - t, 3);
-      const value = Math.round(target * eased);
-      el.textContent = value.toLocaleString("ru-RU").replace(",", " ");
-      if (t < 1) requestAnimationFrame(frame);
-    }
-    requestAnimationFrame(frame);
-  }
-
-  if (!reduce) {
-    const cio = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (!entry.isIntersecting || entry.target.dataset.counted) return;
-          entry.target.dataset.counted = "1";
-          animateCount(entry.target);
-        });
-      },
-      { threshold: 0.5 }
-    );
-    document.querySelectorAll("[data-count]").forEach((el) => cio.observe(el));
-  }
-
-  /* Action flow pulse */
-  const flow = document.querySelector("[data-flow]");
-  if (flow) {
-    const items = [...flow.children];
-    let idx = 0;
-    function tick() {
-      items.forEach((el, i) => el.classList.toggle("is-on", i <= idx));
-      idx = (idx + 1) % items.length;
-    }
-    if (reduce) {
-      items.forEach((el) => el.classList.add("is-on"));
-    } else {
-      const fio = new IntersectionObserver(
-        (entries) => {
-          entries.forEach((entry) => {
-            if (entry.isIntersecting && !flow.dataset.live) {
-              flow.dataset.live = "1";
-              tick();
-              setInterval(tick, 1100);
-            }
-          });
-        },
-        { threshold: 0.3 }
-      );
-      fio.observe(flow);
-    }
-  }
-
-  /* Региональные кейсы — вкладки */
-  const cases = document.querySelector("[data-cases]");
-  if (cases) {
-    const tabs = [...cases.querySelectorAll(".cases__tab")];
-    const panels = [...cases.querySelectorAll("[data-case-panel]")];
-
-    function selectCase(index, focus) {
-      tabs.forEach((tab, i) => {
-        const on = i === index;
-        tab.classList.toggle("is-on", on);
-        tab.setAttribute("aria-selected", on ? "true" : "false");
-        tab.tabIndex = on ? 0 : -1;
-      });
-      panels.forEach((panel, i) => {
-        panel.hidden = i !== index;
-      });
-      if (focus) tabs[index].focus();
-    }
-
-    tabs.forEach((tab, i) => {
-      tab.addEventListener("click", () => selectCase(i));
-      tab.addEventListener("keydown", (event) => {
-        const step = event.key === "ArrowRight" || event.key === "ArrowDown" ? 1 : event.key === "ArrowLeft" || event.key === "ArrowUp" ? -1 : 0;
-        if (!step) return;
-        event.preventDefault();
-        selectCase((i + step + tabs.length) % tabs.length, true);
-      });
-    });
-
-    selectCase(0);
-  }
-
-  /* Карусель инфраструктуры */
   document.querySelectorAll("[data-carousel]").forEach((root) => {
     const track = root.querySelector(".carousel__track");
     const slides = [...root.querySelectorAll(".carousel__slide")];
@@ -334,7 +220,6 @@
     if (event.target === drawingDialog) closeDrawing();
   });
 })();
-
 /* —— Голосовой консультант (Vapi) —— */
 (function (d, t) {
   const cfg = window.VAPI_TULA_CONFIG || {};

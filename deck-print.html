@@ -2,7 +2,7 @@
 <html lang="ru">
 <head>
   <meta charset="UTF-8" />
-  <title>Безопасный город Тулы — РАДИУС</title>
+  <title>Безопасный регион Тульской области — РАДИУС</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
@@ -68,10 +68,9 @@
       font-family: "IBM Plex Mono", ui-monospace, monospace;
       font-size: 11px; letter-spacing: 0.08em; color: #6a778a;
     }
-    .foot img { height: 16px; width: auto; display: block; }
     .grid2 { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-top: 22px; }
     .grid3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 12px; margin-top: 20px; }
-    .grid4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; margin-top: 20px; }
+    .grid4 { display: grid; grid-template-columns: 1fr 1fr 1fr 1fr; gap: 12px; margin-top: 20px; }
     .card {
       padding: 16px 16px 18px;
       background: #10151f;
@@ -98,27 +97,24 @@
       font-size: 11px; letter-spacing: 0.08em; color: #7ba3c9;
       text-transform: uppercase;
     }
-    .chain {
-      margin-top: 18px;
-      display: grid;
-      grid-template-columns: repeat(6, 1fr);
-      gap: 6px;
+    .flow {
+      display: flex; flex-wrap: wrap; gap: 6px; align-items: center; margin-top: 18px;
     }
-    .node {
-      padding: 10px 10px 12px;
-      background: #10151f;
-      border: 1px solid #2a3548;
-      min-height: 86px;
+    .flow b {
+      padding: 8px 10px; border: 1px solid #2a3548; background: #10151f;
+      font-size: 11px; font-weight: 650; letter-spacing: 0.04em; text-transform: uppercase;
+      font-family: "IBM Plex Mono", ui-monospace, monospace;
     }
-    .node.out { border-style: dashed; color: #8a97a8; }
-    .node strong { display: block; font-size: 12px; line-height: 1.25; }
-    .node span {
-      display: block; margin-top: 4px;
-      font-size: 10px; line-height: 1.35; color: #8a97a8;
+    .flow b.out {
+      border-style: dashed; border-color: #3a4a62; background: none; color: #8a97a8;
     }
-    .legend { display: flex; gap: 22px; margin: 14px 0 0; font-size: 12px; color: #8a97a8; }
-    .legend i { display: inline-block; width: 18px; height: 2px; margin-right: 8px; vertical-align: middle; background: #c41e3a; }
-    .legend .out i { background: none; border-top: 2px dashed #6a778a; height: 0; }
+    .flow .arr { color: #c41e3a; border: 0; padding: 0 2px; font-weight: 800; background: none; }
+    .ops {
+      margin-top: 14px; padding: 12px 14px;
+      border: 1px dashed #3a5a78; background: rgba(123, 163, 201, 0.06);
+      font-family: "IBM Plex Mono", ui-monospace, monospace;
+      font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; color: #7ba3c9;
+    }
     .deps { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 16px; }
     .deps span {
       padding: 6px 10px; border: 1px solid #2a3548;
@@ -128,11 +124,6 @@
     .hud small { display: block; font-family: "IBM Plex Mono", ui-monospace, monospace; letter-spacing: 0.14em; color: #8a97a8; }
     .hud b { display: block; margin-top: 6px; font-size: 28px; letter-spacing: 0.08em; color: #c41e3a; }
     .split { display: grid; grid-template-columns: 280px 1fr; gap: 28px; margin-top: 22px; align-items: start; }
-    .flow { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; margin-top: 18px; }
-    .flow b {
-      padding: 8px 12px; border: 1px solid #2a3548; font-size: 13px; font-weight: 650;
-    }
-    .flow .arr { color: #c41e3a; border: 0; padding: 0 2px; font-weight: 800; }
     .note { margin: 12px 0 0; font-size: 12px; color: #6a778a; }
     .title-mark { width: 88px; height: 3px; background: #c41e3a; margin: 28px 0 0; }
     .logo { height: 28px; width: auto; display: block; margin-bottom: 28px; }
@@ -146,30 +137,44 @@
       background: #07090e;
     }
     .scheme-shot--light { background: #d8dce3; padding: 8px; height: 512px; box-sizing: border-box; }
+    .fail {
+      margin-top: 16px;
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 10px;
+    }
+    .fail article {
+      padding: 12px 14px;
+      background: #10151f;
+      border: 1px solid #2a3548;
+      border-top: 2px solid #c41e3a;
+    }
+    .fail h3 { margin: 0 0 6px; font-size: 14px; }
+    .fail p { margin: 0; font-size: 12px; color: #8a97a8; line-height: 1.4; }
   </style>
 </head>
 <body>
 
   <section class="slide">
     <img class="logo" src="assets/radius-logo.png" alt="РАДИУС" />
-    <p class="kicker">Безопасный город Тулы</p>
-    <p class="eyebrow">РАДИУС × системы безопасности городов</p>
+    <p class="kicker">Безопасный регион Тульской области</p>
+    <p class="eyebrow">РАДИУС × инфраструктура региональных систем безопасности</p>
     <h1>Не больше камер.<br />Больше работающей системы.</h1>
-    <p class="sub">Партнёр по созданию и эксплуатации ИТ-инфраструктуры для систем безопасности городов.</p>
+    <p class="sub">РАДИУС проектирует, создаёт и сопровождает инфраструктуру региональных систем видеонаблюдения и видеоаналитики.</p>
     <p class="lead" style="margin-top:16px">
-      Российский системный интегратор инфраструктурного слоя комплексов видеонаблюдения и видеоаналитики городского
-      масштаба. Прикладное ПО — зона вендоров. Мы строим среду, в которой их алгоритмы работают предсказуемо, а
-      государственные ведомства получают бесперебойный сервис 24/7.
+      Сети, защищённые каналы, серверы, виртуализация, СХД, мониторинг и эксплуатация 24/7.
+      Прикладные алгоритмы — зона профильных вендоров. Наша задача — среда, в которой потоки не теряются,
+      архив доступен, оборудование наблюдаемо, а у каждого инцидента есть владелец и срок.
     </p>
     <div class="title-mark"></div>
-    <p class="note" style="margin-top:16px">Инфраструктура РАДИУС · прикладное ПО вендоров</p>
-    <div class="foot"><span>РАДИУС · Безопасный город Тулы</span><span>01</span></div>
+    <p class="note" style="margin-top:16px">Инфраструктура РАДИУС · прикладное ПО профильных вендоров</p>
+    <div class="foot"><span>РАДИУС · Безопасный регион</span><span>01</span></div>
   </section>
 
   <section class="slide slide--alt">
     <p class="eyebrow">Текущее состояние</p>
-    <h2>В Тульской области уже создана работающая основа</h2>
-    <p class="lead">Следующая задача — масштабировать её без потери управляемости.</p>
+    <h2>В Тульской области уже создана основа региональной системы безопасности</h2>
+    <p class="lead">Следующая задача — масштабировать её без потери производительности, отказоустойчивости и управляемости.</p>
     <div class="grid4">
       <div class="card"><p class="num">1 800</p><p>государственных камер без учёта частных источников</p></div>
       <div class="card"><p class="num">963</p><p>камеры были подключены к единой платформе</p></div>
@@ -178,45 +183,42 @@
     </div>
     <p class="note">По публичным данным 2025 года.</p>
     <p class="thesis">Следующий барьер — управляемость роста.</p>
-    <div class="foot"><span>РАДИУС · Безопасный город Тулы</span><span>02</span></div>
+    <div class="foot"><span>РАДИУС · Безопасный регион</span><span>02</span></div>
   </section>
 
   <section class="slide">
     <p class="eyebrow">Масштаб меняет задачу</p>
     <h2>5 000 камер — это уже не парк камер</h2>
-    <p class="lead">Это критичная распределённая ИТ-инфраструктура. Каждая новая точка увеличивает покрытие, зависимости, объём данных и эксплуатационную нагрузку.</p>
-    <div class="grid3" style="grid-template-columns:repeat(6,1fr)">
-      <div class="card"><span class="idx">01</span><h3>Камеры</h3><p>Видеопотоки</p></div>
-      <div class="card"><span class="idx">02</span><h3>Сеть</h3><p>Защищённые сегменты</p></div>
-      <div class="card"><span class="idx">03</span><h3>Вычисления</h3><p>Хранение</p></div>
-      <div class="card"><span class="idx">04</span><h3>Платформы</h3><p>Аналитика</p></div>
-      <div class="card"><span class="idx">05</span><h3>Интеграции</h3><p>События</p></div>
-      <div class="card"><span class="idx">06</span><h3>Эксплуатация</h3><p>Управление</p></div>
+    <p class="lead">Это критичная распределённая ИТ-инфраструктура регионального масштаба. Отказ всё чаще возникает на стыке слоёв, а не внутри одного компонента.</p>
+    <div class="grid3" style="grid-template-columns:repeat(3,1fr)">
+      <div class="card"><span class="idx">СХД ↔ архив</span><h3>Протокол доступа</h3><p>Проблема видеоархива оказалась связана с протоколом доступа к СХД.</p></div>
+      <div class="card"><span class="idx">VMware ↔ хранилище</span><h3>Heartbeat</h3><p>Недоступность ВМ — с механизмом heartbeat между виртуализацией и хранилищем.</p></div>
+      <div class="card"><span class="idx">NIC firmware</span><h3>Прошивки</h3><p>Многоминутные задержки событий — с прошивками сетевых карт на серверах.</p></div>
     </div>
     <p class="thesis">При таком масштабе ключевой задачей становится управляемость системы.</p>
-    <div class="foot"><span>РАДИУС · Безопасный город Тулы</span><span>03</span></div>
+    <div class="foot"><span>РАДИУС · Безопасный регион</span><span>03</span></div>
   </section>
 
   <section class="slide slide--alt">
     <p class="eyebrow">Целевая модель</p>
-    <h2>Четыре работающих уровня одной системы</h2>
-    <p class="lead">Не отдельные технологии. Видеть. Понимать. Реагировать. И знать, что система действительно работает.</p>
+    <h2>Как выглядит следующий уровень «Безопасного региона»</h2>
+    <p class="lead">Не отдельные технологии, а четыре работающих уровня одной системы.</p>
     <div class="grid2" style="margin-top:24px">
       <div class="card"><span class="idx">01 · наблюдение</span><h3>Камеры и другие источники</h3><p>Вне зоны РАДИУС. Без инфраструктуры поток не доходит.</p></div>
-      <div class="card in"><span class="idx">02 · инфраструктура</span><h3>Связь · сети · защита · вычисления · хранение</h3><p>Зона РАДИУС. АРМ оператора — вне зоны.</p></div>
-      <div class="card"><span class="idx">03 · понимание</span><h3>Видеоменеджмент · архив · аналитика вендоров</h3><p>Прикладное ПО. Работает на мощности и ёмкости РАДИУС.</p></div>
-      <div class="card"><span class="idx">04 · действие</span><h3>АРМ · передача службе</h3><p>Рабочее место оператора и действие в городе — вне зоны РАДИУС.</p></div>
+      <div class="card in"><span class="idx">02 · инфраструктура</span><h3>Связь · сети · СКЗИ · вычисления · СХД</h3><p>Зона РАДИУС. АРМ и прикладное ПО — вне зоны.</p></div>
+      <div class="card"><span class="idx">03 · понимание</span><h3>Видеоменеджмент · архив · аналитика вендоров</h3><p>Прикладные платформы работают на мощности и ёмкости РАДИУС.</p></div>
+      <div class="card"><span class="idx">04 · действие</span><h3>АРМ · передача службе</h3><p>Рабочее место оператора и действие ведомства — вне зоны РАДИУС.</p></div>
     </div>
-    <div class="foot"><span>РАДИУС · Безопасный город Тулы</span><span>04</span></div>
+    <div class="foot"><span>РАДИУС · Безопасный регион</span><span>04</span></div>
   </section>
 
   <section class="slide">
     <p class="eyebrow">Проектные чертежи</p>
     <h2>Концептуальная компоновка шкафов</h2>
-    <p class="lead">Вычисления, сеть, СКЗИ, СХД и ИБП в трёх шкафах. Проект «Безопасный город», стадия П.</p>
+    <p class="lead">Вычисления, сеть, СКЗИ, СХД и ИБП в трёх шкафах. Проект «Безопасный регион», стадия П.</p>
     <img class="scheme-shot" src="assets/scheme-cabinets.jpg" alt="Концептуальная схема монтажа оборудования в серверных шкафах" width="1024" height="723" />
-    <p class="note">Чертёж показывает компоновку инфраструктурного слоя. Не заменяет публичные цифры по парку камер и не фиксирует уже смонтированный объект.</p>
-    <div class="foot"><span>РАДИУС · Безопасный город Тулы</span><span>05</span></div>
+    <p class="note">Чертёж показывает компоновку инфраструктурного слоя. Не заменяет публичные цифры по парку камер.</p>
+    <div class="foot"><span>РАДИУС · Безопасный регион</span><span>05</span></div>
   </section>
 
   <section class="slide slide--alt">
@@ -225,33 +227,34 @@
     <p class="lead">Компоновка шкафов с привязкой оборудования к юнитам — так выглядит инженерная ответственность на чертеже.</p>
     <img class="scheme-shot scheme-shot--light" src="assets/scheme-racks-rear.jpg" alt="Чертёж серверных шкафов, вид сзади, с ведомостью оборудования" width="1024" height="713" />
     <p class="note">Инженерный чертёж из практики РАДИУС.</p>
-    <div class="foot"><span>РАДИУС · Безопасный город Тулы</span><span>06</span></div>
+    <div class="foot"><span>РАДИУС · Безопасный регион</span><span>06</span></div>
   </section>
 
   <section class="slide">
-    <p class="eyebrow">Архитектура</p>
-    <h2>Не набор систем. Единый контур.</h2>
-    <p class="lead">Одиннадцать звеньев между камерой на улице и действием городской службы. Шесть из них — инфраструктурные. Это зона РАДИУС. АРМ и прикладное ПО — вне зоны.</p>
-    <div class="legend"><span><i></i>Зона РАДИУС</span><span class="out"><i></i>Вне зоны</span></div>
-    <div class="chain">
-      <div class="node out"><strong>01 Камера</strong><span>Точка наблюдения</span></div>
-      <div class="node"><strong>02 Коммутатор</strong><span>Приём потоков</span></div>
-      <div class="node"><strong>03 Сеть</strong><span>Канал до ядра</span></div>
-      <div class="node"><strong>04 Периметр</strong><span>Доверенная зона</span></div>
-      <div class="node"><strong>05 Вычисления</strong><span>Серверы · виртуализация</span></div>
-      <div class="node"><strong>06 СХД</strong><span>Ёмкость и отказоустойчивость</span></div>
-      <div class="node"><strong>07 Видеоархив</strong><span>Ресурс под глубину записи</span></div>
-      <div class="node out"><strong>08 Видеоплатформа</strong><span>ПО вендора</span></div>
-      <div class="node out"><strong>09 Аналитика</strong><span>Алгоритмы детекции</span></div>
-      <div class="node out"><strong>10 АРМ</strong><span>Рабочее место ведомства</span></div>
-      <div class="node out"><strong>11 Служба</strong><span>Ведомства · действие в городе</span></div>
+    <p class="eyebrow">Единый контур</p>
+    <h2>Не набор систем. Единый инфраструктурный контур.</h2>
+    <p class="lead">РАДИУС отвечает за инфраструктурную связность и координирует смежных участников, когда причина инцидента выходит за границы одного подрядчика.</p>
+    <div class="flow">
+      <b class="out">Источник</b><span class="arr">→</span>
+      <b>Коммутация</b><span class="arr">→</span>
+      <b>Канал</b><span class="arr">→</span>
+      <b>СКЗИ</b><span class="arr">→</span>
+      <b>Маршрутизация</b><span class="arr">→</span>
+      <b>Вычисления</b><span class="arr">→</span>
+      <b>Виртуализация</b><span class="arr">→</span>
+      <b>СХД</b><span class="arr">→</span>
+      <b>Архив</b><span class="arr">→</span>
+      <b class="out">Платформа</b><span class="arr">→</span>
+      <b class="out">АРМ</b><span class="arr">→</span>
+      <b class="out">Служба</b>
     </div>
-    <p class="thesis">Поверх всей зоны — мониторинг, CMDB и логи. Они охватывают каждое из шести звеньев.</p>
-    <div class="foot"><span>РАДИУС · Безопасный город Тулы</span><span>07</span></div>
+    <div class="ops">Мониторинг · логи · CMDB / IPAM · бэкапы конфигураций · доступы · Service Desk · SLA</div>
+    <p class="thesis">Зона РАДИУС заканчивается на СХД и архиве. АРМ и прикладное ПО — вне зоны.</p>
+    <div class="foot"><span>РАДИУС · Безопасный регион</span><span>07</span></div>
   </section>
 
   <section class="slide slide--alt">
-    <p class="eyebrow">Диагностика отказов</p>
+    <p class="eyebrow">Диагностика</p>
     <h2>«Камера недоступна» — это симптом. Не диагноз.</h2>
     <div class="split">
       <div>
@@ -259,36 +262,39 @@
         <p class="note" style="max-width:28ch">Симптом виден на уровне приложения. Причина может находиться значительно глубже.</p>
       </div>
       <div>
-        <p class="lead">Факт отказа виден сверху. Первопричина — на любом уровне: питание, сеть, СХД, виртуализация, платформа.</p>
+        <p class="lead">Реальная причина — в питании, канале, маршрутизации, виртуализации, СХД, драйвере или прошивке.</p>
         <div class="deps">
-          <span>Питание</span><span>ИБП</span><span>Шкаф</span><span>Коммутатор</span><span>Канал связи</span>
-          <span>Маршрутизация</span><span>СКЗИ</span><span>Сервер</span><span>Виртуализация</span>
-          <span>СХД</span><span>RAID / LUN</span><span>Архив</span><span>VMS</span><span>Прикладной сервис</span>
+          <span>Питание</span><span>ИБП</span><span>Коммутатор</span><span>Канал</span>
+          <span>СКЗИ</span><span>Маршрутизация</span><span>Сервер</span><span>Виртуализация</span>
+          <span>СХД</span><span>Архив</span><span>Прошивка NIC</span><span>Оптика</span>
         </div>
       </div>
     </div>
-    <div class="grid3" style="margin-top:22px">
-      <div class="card in"><h3>Мониторинг</h3><p>видит отказ в момент, когда он произошёл</p></div>
-      <div class="card in"><h3>CMDB · IPAM/DCIM</h3><p>показывает зависимости, адреса и состав оборудования</p></div>
-      <div class="card in"><h3>Логи и резерв конфигураций</h3><p>даёт доказательство и позволяет вернуть узел в известное состояние</p></div>
+    <div class="fail">
+      <article><h3>01 Архив и протокол СХД</h3><p>Критический архив: SMB → iSCSI</p></article>
+      <article><h3>02 Heartbeat VMFS</h3><p>ВМ inaccessible → ATS heartbeat</p></article>
+      <article><h3>03 Прошивка NIC</h3><p>Задержки событий до минут</p></article>
+      <article><h3>04 Маршрутизация и SNAT</h3><p>Сотни тысяч сессий, рост CPU</p></article>
+      <article><h3>05 Питание и охлаждение</h3><p>Каскад двух площадок</p></article>
+      <article><h3>06 Обрыв оптики</h3><p>Обрыв в 30 м от серверной</p></article>
     </div>
-    <div class="foot"><span>РАДИУС · Безопасный город Тулы</span><span>08</span></div>
+    <div class="foot"><span>РАДИУС · Безопасный регион</span><span>08</span></div>
   </section>
 
   <section class="slide">
-    <p class="eyebrow">Роль РАДИУС</p>
-    <h2>Весь жизненный цикл инфраструктуры</h2>
+    <p class="eyebrow">Жизненный цикл</p>
+    <h2>РАДИУС управляет полным жизненным циклом инфраструктуры</h2>
     <div class="grid2" style="grid-template-columns:repeat(4,1fr);margin-top:18px">
-      <div class="card"><span class="idx">01</span><h3>Обследование</h3><p>Аудит архитектурных рисков по критичности, карта точек отказа, план первоочередных мер.</p></div>
+      <div class="card"><span class="idx">01</span><h3>Обследование</h3><p>Аудит рисков, карта точек отказа, план первоочередных мер.</p></div>
       <div class="card"><span class="idx">02</span><h3>Проектирование</h3><p>Сеть, вычисления, хранение, безопасность, резервирование.</p></div>
-      <div class="card"><span class="idx">03</span><h3>Инфраструктура</h3><p>CPU/GPU под видеопотоки, СХД, российская виртуализация и СКЗИ, коммутаторы, ИБП, охлаждение.</p></div>
-      <div class="card"><span class="idx">04</span><h3>Защищённая среда</h3><p>Сегментация, СКЗИ, изолированные контуры без интернета, ролевой доступ.</p></div>
-      <div class="card"><span class="idx">05</span><h3>Интеграция</h3><p>Мощность, ёмкость, каналы и latency под ПО вендоров — без разработки алгоритмов.</p></div>
+      <div class="card"><span class="idx">03</span><h3>Инфраструктура</h3><p>CPU/GPU, СХД, виртуализация, СКЗИ, коммутаторы, ИБП, охлаждение.</p></div>
+      <div class="card"><span class="idx">04</span><h3>Защищённая среда</h3><p>Сегментация, СКЗИ, изолированные контуры без интернета.</p></div>
+      <div class="card"><span class="idx">05</span><h3>Интеграция</h3><p>Мощность, ёмкость, каналы и latency под ПО вендоров.</p></div>
       <div class="card"><span class="idx">06</span><h3>Ввод в эксплуатацию</h3><p>Настройка, документация, испытания, обучение.</p></div>
-      <div class="card"><span class="idx">07</span><h3>Эксплуатация</h3><p>ITSM, первая линия, координация десятков подрядчиков, CMDB, IPAM/DCIM.</p></div>
+      <div class="card"><span class="idx">07</span><h3>Эксплуатация</h3><p>ITSM, первая линия, CMDB, IPAM/DCIM, координация подрядчиков.</p></div>
       <div class="card in"><span class="idx">итог</span><h3>Одна ответственность</h3><p>От обследования до эксплуатации — без стыков между подрядчиками.</p></div>
     </div>
-    <div class="foot"><span>РАДИУС · Безопасный город Тулы</span><span>09</span></div>
+    <div class="foot"><span>РАДИУС · Безопасный регион</span><span>09</span></div>
   </section>
 
   <section class="slide slide--alt">
@@ -318,12 +324,12 @@
       </div>
     </div>
     <p class="thesis">Камеры и прикладное ПО работают ровно настолько, насколько работает инфраструктура под ними.</p>
-    <div class="foot"><span>РАДИУС · Безопасный город Тулы</span><span>10</span></div>
+    <div class="foot"><span>РАДИУС · Безопасный регион</span><span>10</span></div>
   </section>
 
   <section class="slide">
-    <p class="eyebrow">Защищённая инфраструктура</p>
-    <h2>Данные и обработка — внутри контролируемого периметра</h2>
+    <p class="eyebrow">Защищённый контур</p>
+    <h2>Данные и эксплуатация — внутри контролируемого периметра</h2>
     <div class="flow">
       <b>источники</b><span class="arr">→</span>
       <b>сегментированные сети</b><span class="arr">→</span>
@@ -337,26 +343,26 @@
       <div class="card"><h3>Разграничение доступа</h3><p>Ролевая модель, персональные учётки, плановая смена паролей.</p></div>
       <div class="card"><h3>Журналирование</h3><p>Аудит действий пользователей и системных событий.</p></div>
       <div class="card"><h3>Изолированные среды</h3><p>Зеркала репозиториев и обновление ПО внутри контура без интернета.</p></div>
-      <div class="card"><h3>Российский стек</h3><p>Отечественная виртуализация, СКЗИ, СХД. Опыт: Astra Linux, ViPNet, требования регуляторов. Это опыт, не выбранный стек Тулы.</p></div>
+      <div class="card"><h3>Российский стек</h3><p>Опыт: Astra Linux, ViPNet, требования регуляторов. Это опыт регионов, не выбранный стек Тулы.</p></div>
       <div class="card"><h3>Резервирование и DR</h3><p>Резервирование критичных уровней и аварийное восстановление.</p></div>
     </div>
-    <div class="foot"><span>РАДИУС · Безопасный город Тулы</span><span>11</span></div>
+    <div class="foot"><span>РАДИУС · Безопасный регион</span><span>11</span></div>
   </section>
 
   <section class="slide slide--alt">
-    <p class="eyebrow">Региональный опыт</p>
+    <p class="eyebrow">Региональная практика</p>
     <h2>Три региона. Разные задачи. Один инженерный подход.</h2>
     <div class="grid3">
       <div class="card">
         <p class="mono">Воронеж</p>
-        <h3 style="margin-top:8px">Инфраструктура и ввод</h3>
+        <h3 style="margin-top:8px">Ввод и аварийное сопровождение</h3>
         <p>серверы · GPU · СХД · сети · Astra Linux · ViPNet</p>
         <p style="margin-top:10px">После отключения питания проблема проявилась на уровне приложения, но затрагивала питание, инфраструктуру, СХД и протокол доступа.</p>
         <p class="thesis" style="margin-top:12px;font-size:13px">Ввод в эксплуатацию был в одной зоне ответственности.</p>
       </div>
       <div class="card">
         <p class="mono">Белгород</p>
-        <h3 style="margin-top:8px">Распределённая архитектура</h3>
+        <h3 style="margin-top:8px">Отказы между слоями</h3>
         <p>две площадки · виртуализация · несколько СХД · FC/Ethernet</p>
         <p style="margin-top:10px">Недоступность виртуальных машин возникла на стыке виртуализации, сети и iSCSI-хранилища.</p>
         <p class="thesis" style="margin-top:12px;font-size:13px">Причина лежала между слоями — на границе подрядчиков.</p>
@@ -370,14 +376,14 @@
       </div>
     </div>
     <p class="note">Astra Linux и ViPNet — опыт РАДИУС в регионах, не выбранная архитектура для Тулы.</p>
-    <div class="foot"><span>РАДИУС · Безопасный город Тулы</span><span>12</span></div>
+    <div class="foot"><span>РАДИУС · Безопасный регион</span><span>12</span></div>
   </section>
 
   <section class="slide">
     <p class="eyebrow">Результат</p>
     <h2>Не количество установленного оборудования</h2>
-    <p class="lead">Доступный видеопоток. 27+ лет практики. Инфраструктура РАДИУС, прикладное ПО вендоров, сервис для государственных ведомств. SLA: доступность ≥99,8%, реакция на критические — минуты, устранение — часы.</p>
-    <div class="grid4" style="grid-template-columns:repeat(4,1fr)">
+    <p class="lead">Доступный видеопоток. Инфраструктура РАДИУС, прикладное ПО вендоров, сервис для государственных ведомств. SLA практики: доступность ≥99,8%, реакция на критические — минуты, устранение — часы.</p>
+    <div class="grid4">
       <div class="card"><p class="mono">ONLINE</p><p style="margin-top:8px">Доступность камер, потоков и ключевых сервисов</p></div>
       <div class="card"><p class="mono">QUALITY</p><p style="margin-top:8px">Целостность потока: без потерь и разрывов</p></div>
       <div class="card"><p class="mono">ARCHIVE</p><p style="margin-top:8px">Полнота записи и фактическая глубина хранения</p></div>
@@ -388,30 +394,30 @@
       <div class="card"><p class="mono">SCALE</p><p style="margin-top:8px">Срок и сложность подключения новой точки</p></div>
     </div>
     <p class="thesis">Каждый поток доходит. Каждая неисправность видна. У каждого отказа есть срок устранения.</p>
-    <div class="foot"><span>РАДИУС · Безопасный город Тулы</span><span>13</span></div>
+    <div class="foot"><span>РАДИУС · Безопасный регион</span><span>13</span></div>
   </section>
 
   <section class="slide slide--alt">
     <p class="eyebrow">Как начать</p>
-    <h2>Не менять всё сразу.</h2>
-    <p class="lead">Сначала получить достоверную картину и создать эталон. Не ломать то, что уже работает.</p>
+    <h2>Не менять всё сразу</h2>
+    <p class="lead">Сначала получить достоверную картину, определить риски и создать эталон. Не ломать то, что уже работает.</p>
     <div class="grid2" style="grid-template-columns:repeat(5,1fr);margin-top:22px">
-      <div class="card"><span class="idx">01</span><h3>Обследование</h3><p>Камеры, сеть, ЦОД, серверы, СХД, архив, платформы, мониторинг, исходные показатели.</p></div>
-      <div class="card"><span class="idx">02</span><h3>Целевая архитектура</h3><p>Сеть, вычисления, хранение, защита, резервирование, план масштабирования.</p></div>
-      <div class="card in"><span class="idx">03</span><h3>Эталонный сегмент</h3><p>Ориентир 100–300 камер. Коммутация, каналы, вычисления, хранение и мониторинг.</p></div>
-      <div class="card"><span class="idx">04</span><h3>Измерение</h3><p>Доступность, целостность потока, время восстановления.</p></div>
-      <div class="card"><span class="idx">05</span><h3>Масштабирование</h3><p>Последовательное развитие до целевой региональной сети.</p></div>
+      <div class="card"><span class="idx">01</span><h3>Обследование</h3><p>Площадки, серверы, СХД, сеть, каналы, СКЗИ, мониторинг, процессы.</p></div>
+      <div class="card"><span class="idx">02</span><h3>Реестр рисков</h3><p>Блокирующие, существенные, потенциальные и долгосрочные риски.</p></div>
+      <div class="card"><span class="idx">03</span><h3>Целевая архитектура</h3><p>Резервирование, производительность, безопасность, наблюдаемость.</p></div>
+      <div class="card in"><span class="idx">04</span><h3>Эталонный сегмент</h3><p>Одна площадка или инфраструктурный сегмент под реальной нагрузкой.</p></div>
+      <div class="card"><span class="idx">05</span><h3>Масштабирование</h3><p>Распространение модели, Service Desk, SLA, развитие инфраструктуры.</p></div>
     </div>
-    <p class="thesis">Начать с архитектурно-технического обследования · ориентир 4–6 недель.</p>
-    <p class="note">Точный состав эталона определяется после обследования. Существующие системы сохраняются там, где это рационально.</p>
-    <div class="foot"><span>РАДИУС · Безопасный город Тулы</span><span>14</span></div>
+    <p class="thesis">Точный периметр эталона определяется после обследования.</p>
+    <p class="note">Интеграция, модернизация или поэтапная миграция — там, где это рационально.</p>
+    <div class="foot"><span>РАДИУС · Безопасный регион</span><span>14</span></div>
   </section>
 
   <section class="slide">
     <img class="logo" src="assets/radius-logo.png" alt="РАДИУС" />
     <p class="eyebrow">Контакты</p>
-    <h1 style="font-size:36px">Обсудить «Безопасный город Тулы»</h1>
-    <p class="lead">От растущего парка инфраструктуры — к единой управляемой системе безопасности.</p>
+    <h1 style="font-size:36px">Обсудить инфраструктуру «Безопасного региона»</h1>
+    <p class="lead">От растущего набора компонентов — к единой управляемой инфраструктуре безопасности.</p>
     <div class="grid2" style="margin-top:36px;max-width:820px">
       <div class="card">
         <p class="mono">РАДИУС</p>
@@ -427,7 +433,7 @@
       </div>
     </div>
     <p class="thesis">Не больше камер. Больше работающей системы.</p>
-    <div class="foot"><span>РАДИУС · Безопасный город Тулы</span><span>15</span></div>
+    <div class="foot"><span>РАДИУС · Безопасный регион</span><span>15</span></div>
   </section>
 
 </body>

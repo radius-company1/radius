@@ -20,9 +20,9 @@
     <rect x="1022" y="108" width="12" height="12"/>
   </g>
   <text x="80" y="168" fill="#7BA3C9" font-family="Arial, Helvetica, sans-serif" font-size="18" letter-spacing="4">РАДИУС</text>
-  <text x="80" y="250" fill="#F2F4F7" font-family="Arial, Helvetica, sans-serif" font-size="46" font-weight="700">Безопасный город Тулы</text>
+  <text x="80" y="250" fill="#F2F4F7" font-family="Arial, Helvetica, sans-serif" font-size="42" font-weight="700">Безопасный регион Тульской области</text>
   <text x="80" y="322" fill="#F2F4F7" font-family="Arial, Helvetica, sans-serif" font-size="34" font-weight="700">Не больше камер.</text>
   <text x="80" y="368" fill="#C41E3A" font-family="Arial, Helvetica, sans-serif" font-size="34" font-weight="700">Больше работающей системы.</text>
-  <text x="80" y="430" fill="#C5CCD6" font-family="Arial, Helvetica, sans-serif" font-size="21">Единый контур наблюдения, аналитики и реагирования</text>
+  <text x="80" y="430" fill="#C5CCD6" font-family="Arial, Helvetica, sans-serif" font-size="21">Инфраструктура региональных систем безопасности</text>
   <rect x="80" y="486" width="120" height="3" fill="#C41E3A"/>
 </svg>
