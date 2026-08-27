@@ -2022,6 +2022,10 @@ h3 {
 }
 
 /* —— Голосовой консультант (Vapi) —— */
+.vapi-btn {
+  display: none !important;
+  pointer-events: none !important;
+}
 .vapiFab__icon[hidden] {
   display: none;
 }
