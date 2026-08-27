@@ -351,11 +351,15 @@
   }
 
   if (!config.apiKey || !config.assistantId) {
+    const msg =
+      "Консультант недоступен: на сервере нет tula.config.js с ключами Vapi. Локально скопируйте tula.config.example.js.";
     if (fab) fab.hidden = true;
     startBtns.forEach((btn) => {
       btn.disabled = true;
-      btn.title = "Голосовой консультант не настроен";
+      btn.title = msg;
+      btn.setAttribute("aria-disabled", "true");
     });
+    console.warn("Vapi:", msg);
     return;
   }
 
