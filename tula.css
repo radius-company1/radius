@@ -1,21 +1,26 @@
 :root {
-  --bg: #080b12;
-  --bg-2: #0b0f17;
-  --bg-3: #10161f;
-  --surface: #141b26;
-  --steel: #7d8b9e;
-  --steel-2: #4a5a70;
-  --text: #f2f4f7;
+  --bg: #0a0e14;
+  --bg-2: #0c1118;
+  --bg-3: #121821;
+  --surface: #161d28;
+  --steel: #8a97a8;
+  --steel-2: #4f5f75;
+  --text: #e8ecf1;
   --text-2: #c5ccd6;
-  --muted: #8b95a5;
-  --line: rgba(197, 204, 214, 0.1);
-  --line-strong: rgba(197, 204, 214, 0.2);
-  --red: #c41e3a;
-  --red-deep: #8b1528;
-  --red-soft: rgba(196, 30, 58, 0.16);
-  --red-glow: rgba(196, 30, 58, 0.35);
-  --tech: #7ba3c9;
-  --tech-dim: rgba(123, 163, 201, 0.5);
+  --muted: #8a97a8;
+  --line: rgba(200, 210, 222, 0.1);
+  --line-strong: rgba(200, 210, 222, 0.22);
+  /* Brand accent: steel / ops blue (kept as --red* for existing chrome) */
+  --red: #7ba3c9;
+  --red-deep: #4a7fa3;
+  --red-soft: rgba(123, 163, 201, 0.16);
+  --red-glow: rgba(123, 163, 201, 0.35);
+  /* Incident / offline only */
+  --alert: #c41e3a;
+  --alert-deep: #8b1528;
+  --alert-soft: rgba(196, 30, 58, 0.14);
+  --tech: #9bb8d4;
+  --tech-dim: rgba(155, 184, 212, 0.45);
   --nav-h: 64px;
   --max: 1180px;
   --font: "Manrope", "Segoe UI", system-ui, sans-serif;
@@ -384,11 +389,11 @@ h3 {
   transition: background 0.2s, transform 0.2s var(--ease), border-color 0.2s;
 }
 .btn--primary {
-  background: var(--red);
+  background: var(--red-deep);
   color: #fff;
 }
 .btn--primary:hover {
-  background: #d42742;
+  background: #5b91b5;
 }
 .btn--lg {
   min-height: 52px;
@@ -402,7 +407,7 @@ h3 {
 }
 .btn--ghost:hover:not(:disabled) {
   border-color: var(--red);
-  background: rgba(196, 30, 58, 0.08);
+  background: rgba(123, 163, 201, 0.1);
 }
 .btn:disabled {
   opacity: 0.45;
@@ -481,7 +486,7 @@ h3 {
   stroke-dasharray: 3 2;
 }
 .scheme__zone rect {
-  fill: rgba(196, 30, 58, 0.03);
+  fill: rgba(123, 163, 201, 0.04);
   stroke: var(--red);
   stroke-width: 1;
   stroke-dasharray: 6 4;
@@ -723,7 +728,7 @@ h3 {
   padding-left: 14px;
 }
 .hud__item--alert {
-  border-left-color: var(--red);
+  border-left-color: var(--alert);
 }
 .hud__item strong {
   font-size: clamp(1.45rem, 2.4vw, 2.1rem);
@@ -738,7 +743,7 @@ h3 {
   max-width: 30ch;
 }
 .hud__item--alert strong {
-  color: var(--red);
+  color: var(--alert);
 }
 
 /* —— Scale —— */
@@ -773,7 +778,7 @@ h3 {
 .scale-legend li:focus-visible,
 .scale-legend li.is-hot {
   border-left-color: var(--red);
-  background: rgba(196, 30, 58, 0.07);
+  background: rgba(123, 163, 201, 0.08);
 }
 .scale-legend span {
   font-family: var(--mono);
@@ -790,7 +795,7 @@ h3 {
 .scale-viz {
   border: 1px solid var(--line);
   background:
-    linear-gradient(180deg, rgba(196, 30, 58, 0.05), transparent 40%),
+    linear-gradient(180deg, rgba(123, 163, 201, 0.06), transparent 40%),
     var(--bg);
   display: grid;
   place-items: center;
@@ -864,11 +869,11 @@ h3 {
 .stack__layer:focus-visible,
 .stack__layer.is-hot,
 .stack__layer.is-near {
-  border-color: rgba(196, 30, 58, 0.55);
+  border-color: rgba(123, 163, 201, 0.55);
   background: #181f2c;
 }
 .stack__layer.is-near {
-  border-color: rgba(196, 30, 58, 0.28);
+  border-color: rgba(123, 163, 201, 0.3);
 }
 .stack__idx {
   font-family: var(--mono);
@@ -915,7 +920,7 @@ h3 {
 }
 .chain__node.is-on {
   background: #161d2a;
-  border-color: rgba(196, 30, 58, 0.5);
+  border-color: rgba(123, 163, 201, 0.5);
 }
 .chain__node.is-on::before {
   background: var(--red);
@@ -1081,10 +1086,10 @@ h3 {
   margin-top: 32px;
 }
 .cam-hud {
-  border: 1px solid var(--red);
+  border: 1px solid var(--alert);
   padding: 28px 32px;
   width: min(100%, 420px);
-  background: rgba(196, 30, 58, 0.06);
+  background: var(--alert-soft);
 }
 .cam-hud__id {
   margin: 0;
@@ -1098,7 +1103,7 @@ h3 {
   font-size: clamp(2rem, 5vw, 3.2rem);
   font-weight: 800;
   letter-spacing: 0.08em;
-  color: var(--red);
+  color: var(--alert);
 }
 .offline-note {
   margin: 20px 0 28px;
@@ -1281,7 +1286,7 @@ h3 {
 .cases__tab.is-on {
   color: var(--text);
   border-left-color: var(--red);
-  background: rgba(196, 30, 58, 0.07);
+  background: rgba(123, 163, 201, 0.08);
 }
 .carousel {
   grid-column: 1 / -1;
@@ -1337,7 +1342,7 @@ h3 {
   font-size: 1.1rem;
 }
 .carousel__nav:hover {
-  background: rgba(196, 30, 58, 0.85);
+  background: rgba(123, 163, 201, 0.85);
   border-color: var(--red);
 }
 .carousel__nav--prev { left: 12px; }
@@ -1631,7 +1636,7 @@ h3 {
   display: flex;
   align-items: center;
   background:
-    radial-gradient(60% 50% at 80% 10%, rgba(196, 30, 58, 0.1), transparent 60%),
+    radial-gradient(60% 50% at 80% 10%, rgba(123, 163, 201, 0.12), transparent 60%),
     var(--bg);
 }
 .cta h2 {
@@ -1706,8 +1711,8 @@ h3 {
   padding-bottom: 2px;
 }
 .contact-card {
-  border: 1px solid rgba(196, 30, 58, 0.4);
-  background: rgba(196, 30, 58, 0.07);
+  border: 1px solid rgba(123, 163, 201, 0.4);
+  background: rgba(123, 163, 201, 0.08);
   padding: clamp(24px, 3vw, 34px);
 }
 .contact-card__name {
@@ -2062,15 +2067,15 @@ h3 {
   height: 56px;
   display: grid;
   place-items: center;
-  border: 1px solid var(--red);
-  background: var(--red);
+  border: 1px solid var(--red-deep);
+  background: var(--red-deep);
   color: #fff;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.45);
   transition: background 0.25s, transform 0.25s var(--ease), border-color 0.25s;
 }
 .vapiFab:hover:not(:disabled) {
   transform: translateY(-2px);
-  background: #d42742;
+  background: #5b91b5;
 }
 .vapiFab.is-active {
   background: var(--red-deep);
@@ -2079,10 +2084,10 @@ h3 {
 @keyframes vapiPulse {
   0%,
   100% {
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.45), 0 0 0 0 rgba(196, 30, 58, 0.45);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.45), 0 0 0 0 rgba(123, 163, 201, 0.45);
   }
   50% {
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.45), 0 0 0 12px rgba(196, 30, 58, 0);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.45), 0 0 0 12px rgba(123, 163, 201, 0);
   }
 }
 .vapiToast {
@@ -2107,7 +2112,7 @@ h3 {
   transform: none;
 }
 .vapiToast.is-error {
-  border-color: var(--red);
+  border-color: var(--alert);
   color: #ffc9c9;
 }
 
@@ -2191,7 +2196,7 @@ h3 {
 .contour-flow__step.is-on {
   border-color: var(--red);
   color: var(--text);
-  box-shadow: inset 0 0 0 1px rgba(196, 30, 58, 0.35);
+  box-shadow: inset 0 0 0 1px rgba(123, 163, 201, 0.35);
 }
 .contour-flow__step--out.is-on {
   border-color: var(--steel);
@@ -2250,7 +2255,7 @@ h3 {
   font-size: 0.7rem;
   letter-spacing: 0.14em;
   text-transform: uppercase;
-  color: var(--red);
+  color: var(--alert);
 }
 .fail-chain h3 {
   margin: 0 0 12px;
@@ -2275,7 +2280,7 @@ h3 {
   position: absolute;
   right: 6px;
   top: 0;
-  color: var(--red);
+  color: var(--alert);
   font-weight: 500;
 }
 
