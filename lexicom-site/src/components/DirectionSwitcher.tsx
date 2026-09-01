@@ -1,23 +1,18 @@
 import { useCallback, useEffect, useLayoutEffect, useRef, useState } from 'react';
-import { useLocation } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 import { directionModes } from '../theme/directions';
-import { useViewTransitionNavigate } from '../hooks/useViewTransitionNavigate';
 import './DirectionSwitcher.css';
 
-type LensState = {
-  left: number;
-  top: number;
+type LensRect = {
+  x: number;
+  y: number;
   width: number;
   height: number;
-  skew: number;
-  stretch: number;
-  morph: string;
 };
 
-const MORPH_REST = '999px';
-const MORPH_HOVER = '58% 42% 54% 46% / 48% 52% 48% 52%';
-const MORPH_MOVE = '62% 38% 56% 44% / 44% 56% 42% 58%';
-const LENS_MOVE_MS = 560;
+const LENS_PAD_X = 6;
+const LENS_PAD_Y = 2;
+const LENS_MOVE_MS = 300;
 
 type DirectionSwitcherProps = {
   scrolled?: boolean;
@@ -25,104 +20,83 @@ type DirectionSwitcherProps = {
 
 export function DirectionSwitcher({ scrolled = false }: DirectionSwitcherProps) {
   const location = useLocation();
-  const navigate = useViewTransitionNavigate();
+  const navigate = useNavigate();
   const trackRef = useRef<HTMLDivElement>(null);
   const scrollRef = useRef<HTMLDivElement>(null);
   const itemRefs = useRef<(HTMLButtonElement | null)[]>([]);
-  const prevIndexRef = useRef(0);
   const movingTimerRef = useRef<number | null>(null);
   const [hoverIndex, setHoverIndex] = useState<number | null>(null);
   const [ready, setReady] = useState(false);
   const [moving, setMoving] = useState(false);
-  const [lens, setLens] = useState<LensState>({
-    left: 0,
-    top: 0,
-    width: 0,
-    height: 0,
-    skew: 0,
-    stretch: 0,
-    morph: MORPH_REST,
-  });
 
   const activeIndex = directionModes.findIndex((mode) => mode.href === location.pathname);
   const safeActiveIndex = activeIndex >= 0 ? activeIndex : 0;
-  const targetIndex = hoverIndex ?? safeActiveIndex;
+  const [lensTarget, setLensTarget] = useState(safeActiveIndex);
+  const visualIndex = hoverIndex ?? lensTarget;
 
-  const updateLens = useCallback((isMoving = false, index = targetIndex) => {
+  const [lens, setLens] = useState<LensRect>({ x: 0, y: 0, width: 0, height: 0 });
+
+  useEffect(() => {
+    setLensTarget(safeActiveIndex);
+  }, [safeActiveIndex]);
+
+  const measureLens = useCallback((index: number): LensRect | null => {
     const track = trackRef.current;
     const item = itemRefs.current[index];
-    if (!track || !item) return;
+    if (!track || !item) return null;
 
-    const padX = 6;
-    const padY = 2;
-    const direction = index - prevIndexRef.current;
-    let stretch = 0;
-    let skew = 0;
-
-    if (hoverIndex !== null && hoverIndex !== safeActiveIndex) {
-      stretch = 10;
-      skew = hoverIndex > safeActiveIndex ? 2 : -2;
-    } else if (isMoving && direction !== 0) {
-      stretch = 14;
-      skew = direction > 0 ? 3 : -3;
-    }
-
-    const lensHeight = Math.max(item.offsetHeight + padY * 2, track.clientHeight - 4);
+    const lensHeight = Math.max(item.offsetHeight + LENS_PAD_Y * 2, track.clientHeight - 4);
     const lensTop = Math.max(0, (track.clientHeight - lensHeight) / 2);
 
-    setLens({
-      left: item.offsetLeft - padX,
-      top: lensTop,
-      width: item.offsetWidth + padX * 2 + stretch,
+    return {
+      x: item.offsetLeft - LENS_PAD_X,
+      y: lensTop,
+      width: item.offsetWidth + LENS_PAD_X * 2,
       height: lensHeight,
-      skew,
-      stretch,
-      morph: isMoving ? MORPH_MOVE : hoverIndex !== null ? MORPH_HOVER : MORPH_REST,
-    });
-    setReady(true);
-  }, [hoverIndex, safeActiveIndex, targetIndex]);
+    };
+  }, []);
+
+  const applyLens = useCallback(
+    (index: number) => {
+      const rect = measureLens(index);
+      if (!rect) return;
+      setLens(rect);
+      setReady(true);
+    },
+    [measureLens],
+  );
 
   useLayoutEffect(() => {
-    updateLens(moving, targetIndex);
-  }, [targetIndex, location.pathname, moving, hoverIndex, updateLens]);
+    applyLens(visualIndex);
+  }, [visualIndex, applyLens]);
 
   useEffect(() => {
     const track = trackRef.current;
-    const scrollEl = scrollRef.current;
     if (!track) return;
 
-    const onResize = () => updateLens(moving, targetIndex);
-    window.addEventListener('resize', onResize);
-
-    const observer = new ResizeObserver(() => updateLens(moving, targetIndex));
+    const observer = new ResizeObserver(() => applyLens(visualIndex));
     observer.observe(track);
 
-    const onScroll = () => updateLens(moving, targetIndex);
-    scrollEl?.addEventListener('scroll', onScroll, { passive: true });
+    const onResize = () => applyLens(visualIndex);
+    window.addEventListener('resize', onResize);
 
     return () => {
-      window.removeEventListener('resize', onResize);
       observer.disconnect();
-      scrollEl?.removeEventListener('scroll', onScroll);
+      window.removeEventListener('resize', onResize);
     };
-  }, [targetIndex, location.pathname, moving, updateLens]);
+  }, [visualIndex, applyLens]);
 
-  useEffect(() => {
-    const activeEl = itemRefs.current[safeActiveIndex];
+  useLayoutEffect(() => {
+    const activeEl = itemRefs.current[lensTarget];
     const scrollEl = scrollRef.current;
     if (!activeEl || !scrollEl) return;
 
-    const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    const frame = window.requestAnimationFrame(() => {
-      const itemLeft = activeEl.offsetLeft;
-      const itemWidth = activeEl.offsetWidth;
-      const scrollLeft = itemLeft - (scrollEl.clientWidth - itemWidth) / 2;
-      scrollEl.scrollTo({ left: Math.max(0, scrollLeft), behavior: prefersReduced ? 'auto' : 'smooth' });
-      window.requestAnimationFrame(() => updateLens(moving, safeActiveIndex));
-    });
-
-    return () => window.cancelAnimationFrame(frame);
-  }, [safeActiveIndex, location.pathname, moving, updateLens]);
+    const itemLeft = activeEl.offsetLeft;
+    const itemWidth = activeEl.offsetWidth;
+    const scrollLeft = itemLeft - (scrollEl.clientWidth - itemWidth) / 2;
+    scrollEl.scrollTo({ left: Math.max(0, scrollLeft), behavior: 'auto' });
+    applyLens(visualIndex);
+  }, [lensTarget, applyLens, visualIndex]);
 
   useEffect(() => {
     return () => {
@@ -135,8 +109,8 @@ export function DirectionSwitcher({ scrolled = false }: DirectionSwitcherProps) 
   const handleSelect = (href: string, index: number) => {
     if (href === location.pathname) return;
 
+    setLensTarget(index);
     setMoving(true);
-    prevIndexRef.current = safeActiveIndex;
     navigate(href);
 
     if (movingTimerRef.current !== null) {
@@ -145,7 +119,6 @@ export function DirectionSwitcher({ scrolled = false }: DirectionSwitcherProps) 
 
     movingTimerRef.current = window.setTimeout(() => {
       setMoving(false);
-      prevIndexRef.current = index;
       movingTimerRef.current = null;
     }, LENS_MOVE_MS);
   };
@@ -211,10 +184,9 @@ export function DirectionSwitcher({ scrolled = false }: DirectionSwitcherProps) 
               <div
                 className={`direction-switcher__lens ${ready ? 'is-ready' : ''} ${moving ? 'is-moving' : ''}`}
                 style={{
-                  transform: `translate(${lens.left}px, ${lens.top}px) skewX(${lens.skew}deg)`,
+                  transform: `translate3d(${lens.x}px, ${lens.y}px, 0)`,
                   width: lens.width,
                   height: lens.height,
-                  borderRadius: lens.morph,
                 }}
                 aria-hidden="true"
               >

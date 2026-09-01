@@ -106,12 +106,13 @@
   opacity: 0;
   pointer-events: none;
   overflow: hidden;
+  border-radius: 999px;
+  contain: layout paint;
   transition:
-    transform 520ms cubic-bezier(0.22, 1, 0.36, 1),
-    width 520ms cubic-bezier(0.22, 1, 0.36, 1),
-    height 520ms cubic-bezier(0.22, 1, 0.36, 1),
-    border-radius 520ms cubic-bezier(0.22, 1, 0.36, 1),
-    opacity 180ms ease;
+    transform 300ms cubic-bezier(0.22, 1, 0.36, 1),
+    width 300ms cubic-bezier(0.22, 1, 0.36, 1),
+    height 300ms cubic-bezier(0.22, 1, 0.36, 1),
+    opacity 120ms ease;
 }
 
 .direction-switcher__lens.is-ready {
@@ -119,7 +120,7 @@
 }
 
 .direction-switcher__lens.is-moving {
-  transition-duration: 580ms;
+  will-change: transform, width;
 }
 
 .direction-switcher__lens-fill {
@@ -233,7 +234,11 @@
 
 @media (prefers-reduced-motion: reduce) {
   .direction-switcher__lens {
-    transition-duration: 120ms;
+    transition-duration: 80ms;
+  }
+
+  .direction-switcher__lens.is-moving {
+    will-change: auto;
   }
 }
 
