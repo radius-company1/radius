@@ -1,0 +1,129 @@
+.liq-direction-card {
+  padding: 1.45rem;
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.liq-direction-card:hover {
+  transform: translateY(-6px);
+}
+
+.liq-direction-card__glow {
+  position: absolute;
+  inset: -20%;
+  z-index: 0;
+  pointer-events: none;
+  opacity: 0.65;
+  transition: opacity 0.3s ease;
+}
+
+.liq-direction-card--mfc .liq-direction-card__glow {
+  background:
+    radial-gradient(ellipse at 20% 20%, rgba(46, 211, 255, 0.45), transparent 55%),
+    radial-gradient(ellipse at 85% 80%, rgba(255, 212, 59, 0.28), transparent 50%);
+}
+
+.liq-direction-card--122 .liq-direction-card__glow {
+  background:
+    radial-gradient(ellipse at 25% 15%, rgba(155, 92, 255, 0.42), transparent 55%),
+    radial-gradient(ellipse at 80% 75%, rgba(46, 211, 255, 0.3), transparent 50%);
+}
+
+.liq-direction-card--edds .liq-direction-card__glow {
+  background:
+    radial-gradient(ellipse at 15% 25%, rgba(42, 63, 159, 0.48), transparent 55%),
+    radial-gradient(ellipse at 88% 70%, rgba(46, 211, 255, 0.32), transparent 50%);
+}
+
+.liq-direction-card__route {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.25rem;
+  margin-bottom: 1rem;
+  font-size: 0.64rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: rgba(12, 16, 32, 0.55);
+}
+
+.liq-direction-card__route-step {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+}
+
+.liq-direction-card__route-dot {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--card-accent, #2ed3ff);
+  box-shadow: 0 0 8px var(--card-accent, #2ed3ff);
+}
+
+.liq-direction-card__route-line {
+  width: 12px;
+  height: 1px;
+  background: linear-gradient(90deg, var(--card-accent, #2ed3ff), transparent);
+}
+
+.liq-direction-card--mfc { --card-accent: #2ed3ff; }
+.liq-direction-card--122 { --card-accent: #9b5cff; }
+.liq-direction-card--edds { --card-accent: #2a3f9f; }
+
+.liq-direction-card__title {
+  margin: 0 0 0.6rem;
+  font-size: 1.35rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+.liq-direction-card__text {
+  margin: 0 0 1.2rem;
+  flex: 1;
+  font-size: 0.94rem;
+  line-height: 1.5;
+  color: rgba(12, 16, 32, 0.72);
+}
+
+.liq-direction-card__btn {
+  width: 100%;
+  min-height: 46px;
+  padding: 0.7rem 1rem;
+  border: 1px solid rgba(255, 255, 255, 0.65);
+  border-radius: 999px;
+  font-family: inherit;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.liq-direction-card--mfc .liq-direction-card__btn {
+  background: linear-gradient(135deg, rgba(46, 211, 255, 0.35), rgba(255, 212, 59, 0.22));
+  box-shadow: 0 8px 24px rgba(46, 211, 255, 0.2);
+}
+
+.liq-direction-card--122 .liq-direction-card__btn {
+  background: linear-gradient(135deg, rgba(155, 92, 255, 0.32), rgba(46, 211, 255, 0.18));
+  box-shadow: 0 8px 24px rgba(155, 92, 255, 0.18);
+}
+
+.liq-direction-card--edds .liq-direction-card__btn {
+  background: linear-gradient(135deg, rgba(42, 63, 159, 0.38), rgba(46, 211, 255, 0.16));
+  box-shadow: 0 8px 24px rgba(42, 63, 159, 0.2);
+}
+
+.liq-direction-card__btn:hover {
+  transform: translateY(-2px);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .liq-direction-card,
+  .liq-direction-card__btn {
+    transition: none;
+  }
+}

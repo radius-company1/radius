@@ -1,0 +1,124 @@
+.liquid-bg {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
+  pointer-events: none;
+  transition: --liq-base 0.9s ease, --liq-wash-a 0.9s ease, --liq-wash-b 0.9s ease;
+}
+
+.liquid-bg__base {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(155deg, var(--liq-base) 0%, color-mix(in srgb, var(--liq-base) 70%, var(--liq-wash-a)) 100%);
+  transition: background 0.9s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.liquid-bg__wash {
+  position: absolute;
+  filter: blur(72px);
+  transition: background 0.9s cubic-bezier(0.22, 1, 0.36, 1), transform 12s ease-in-out;
+}
+
+.liquid-bg__wash--left {
+  width: 58vw;
+  height: 72vh;
+  top: -8%;
+  left: -12%;
+  background:
+    radial-gradient(ellipse 80% 70% at 40% 45%, var(--liq-wash-a), transparent 68%);
+  animation: liq-drift-left 28s ease-in-out infinite alternate;
+}
+
+.liquid-bg__wash--right {
+  width: 62vw;
+  height: 78vh;
+  top: -5%;
+  right: -18%;
+  background:
+    radial-gradient(ellipse 75% 65% at 55% 40%, var(--liq-wash-b), transparent 62%),
+    radial-gradient(ellipse 50% 45% at 70% 70%, var(--liq-wash-c), transparent 58%);
+  animation: liq-drift-right 32s ease-in-out infinite alternate;
+}
+
+.liquid-bg__wash--mid {
+  width: 45vw;
+  height: 50vh;
+  bottom: 15%;
+  left: 25%;
+  background: radial-gradient(ellipse at center, var(--liq-wash-c), transparent 70%);
+  opacity: 0.55;
+  animation: liq-drift-mid 24s ease-in-out infinite alternate;
+}
+
+.liquid-bg__accent {
+  position: absolute;
+  width: min(42vw, 520px);
+  height: min(42vw, 520px);
+  left: var(--accent-x, 28%);
+  top: var(--accent-y, 62%);
+  transform: translate(-50%, -50%);
+  background: radial-gradient(circle, var(--liq-accent), transparent 68%);
+  filter: blur(48px);
+  opacity: 0.85;
+  transition: left 0.6s ease, top 0.6s ease, background 0.9s ease;
+}
+
+.liquid-bg__waves {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.75;
+}
+
+.liquid-bg__wave--1 {
+  animation: liq-wave-shift 18s ease-in-out infinite alternate;
+}
+
+.liquid-bg__wave--2 {
+  animation: liq-wave-shift 22s ease-in-out infinite alternate-reverse;
+}
+
+.liquid-bg__grain {
+  position: absolute;
+  inset: 0;
+  opacity: 0.07;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  mix-blend-mode: multiply;
+}
+
+.liquid-bg__vignette {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse 90% 80% at 50% 40%, transparent 50%, rgba(12, 16, 32, 0.06) 100%);
+}
+
+@keyframes liq-drift-left {
+  from { transform: translate(0, 0) scale(1); }
+  to { transform: translate(4%, 6%) scale(1.06); }
+}
+
+@keyframes liq-drift-right {
+  from { transform: translate(0, 0) scale(1); }
+  to { transform: translate(-5%, 4%) scale(1.05); }
+}
+
+@keyframes liq-drift-mid {
+  from { transform: translate(0, 0); }
+  to { transform: translate(3%, -4%); }
+}
+
+@keyframes liq-wave-shift {
+  from { transform: translateX(0); }
+  to { transform: translateX(-3%); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .liquid-bg__wash,
+  .liquid-bg__wave--1,
+  .liquid-bg__wave--2 {
+    animation: none;
+  }
+}
