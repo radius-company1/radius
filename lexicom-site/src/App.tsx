@@ -6,7 +6,7 @@ import { ProfilePageShell } from './pages/ProfilePageShell';
 
 export default function App() {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename={import.meta.env.BASE_URL.replace(/\/$/, '') || undefined}>
       <Routes>
         <Route path="/design-preview" element={<DesignPreviewPage />} />
         <Route element={<SiteShell />}>
