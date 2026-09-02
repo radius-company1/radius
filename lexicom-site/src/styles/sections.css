@@ -46,9 +46,22 @@
 
 /* Directions */
 .directions { padding-top: var(--section-pad); }
-.directions__grid { display: grid; gap: 0.9rem; }
-.direction-card { padding: 1.4rem; display: flex; flex-direction: column; }
+.directions__grid {
+  display: grid;
+  gap: 0.9rem;
+}
+.directions__cell {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+}
+.directions__cell > .glass-surface {
+  flex: 1;
+  height: 100%;
+}
+.direction-card { padding: 1.4rem; display: flex; flex-direction: column; height: 100%; }
 .direction-card:hover { transform: translateY(-4px); }
+.direction-card--featured { padding: 1.65rem 1.5rem; }
 .direction-card__route {
   display: flex; align-items: center; gap: 0.35rem; flex-wrap: wrap;
   margin-bottom: 1rem; font-size: 0.68rem; font-weight: 600;
@@ -60,11 +73,12 @@
   background: linear-gradient(90deg, var(--color-cyan), var(--color-blue));
 }
 .direction-card__title { margin: 0 0 0.65rem; font-size: 1.32rem; }
+.direction-card--featured .direction-card__title { font-size: clamp(1.4rem, 2.4vw, 1.7rem); }
 .direction-card__text { margin: 0 0 1.15rem; color: var(--color-text-muted); flex: 1; }
-.direction-card__btn { width: 100%; border: 1px solid rgba(255, 255, 255, 0.5); }
-.direction-card__btn--mfc { background: linear-gradient(135deg, rgba(46, 211, 255, 0.2), rgba(255, 212, 59, 0.15)); }
-.direction-card__btn--122 { background: linear-gradient(135deg, rgba(155, 92, 255, 0.2), rgba(46, 211, 255, 0.12)); }
-.direction-card__btn--edds { background: linear-gradient(135deg, rgba(42, 63, 159, 0.25), rgba(255, 212, 59, 0.12)); }
+.direction-card__btn { width: 100%; margin-top: auto; border: 1px solid rgba(255, 255, 255, 0.5); }
+.direction-card__btn--mfc { background: linear-gradient(135deg, rgba(58, 159, 196, 0.2), rgba(230, 192, 53, 0.15)); }
+.direction-card__btn--122 { background: linear-gradient(135deg, rgba(74, 95, 212, 0.18), rgba(58, 159, 196, 0.12)); }
+.direction-card__btn--edds { background: linear-gradient(135deg, rgba(42, 63, 159, 0.22), rgba(230, 192, 53, 0.12)); }
 
 /* Solutions */
 .solutions { padding-top: calc(var(--section-pad) * 0.9); }
@@ -232,7 +246,14 @@
 
 @media (min-width: 640px) {
   .metrics__grid { grid-template-columns: repeat(3, 1fr); }
-  .directions__grid { grid-template-columns: repeat(3, 1fr); }
+  .directions__grid {
+    grid-template-columns: 1.35fr 1fr 1fr;
+    grid-template-rows: auto auto;
+    align-items: stretch;
+  }
+  .directions__cell--featured {
+    grid-row: 1 / span 2;
+  }
 }
 @media (min-width: 768px) {
   .solutions__grid {

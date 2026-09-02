@@ -15,7 +15,6 @@ export function DemoSection({ onOpenChat, onDiscussClick }: DemoSectionProps) {
       <div className="container">
         <Reveal>
           <SectionHeader
-            eyebrow="Познакомьтесь с Lexicom"
             title="Задайте вопрос ИИ-консультанту"
             titleId="demo-title"
             description="Чат-бот расскажет о возможностях платформы, ответит на вопросы о внедрении и поможет выбрать подходящее направление. Демонстрация показывает, как ИИ работает с базой знаний, понимает контекст диалога и формирует ответ."
@@ -44,7 +43,7 @@ export function DemoSection({ onOpenChat, onDiscussClick }: DemoSectionProps) {
         <Reveal>
           <div className="demo__final-wrap">
             <div className="demo__final-glow" aria-hidden="true" />
-            <GlassSurface className="demo__final-cta" variant="dark" radius="xl" depth="float" tint="violet">
+            <GlassSurface className="demo__final-cta" variant="dark" radius="xl" depth="float" tint="yellow">
               <h3>Обсудим, какие процессы можно автоматизировать в вашей организации</h3>
               <p>
                 Изучим текущую работу с обращениями, предложим конфигурацию платформы и определим, с какого сценария
@@ -55,7 +54,7 @@ export function DemoSection({ onOpenChat, onDiscussClick }: DemoSectionProps) {
                   <Button onClick={onDiscussClick}>Обсудить проект</Button>
                 </span>
                 <Button variant="ghost-light" onClick={onOpenChat}>
-                  Запросить демонстрацию
+                  Поговорить с Лексой
                 </Button>
               </div>
             </GlassSurface>

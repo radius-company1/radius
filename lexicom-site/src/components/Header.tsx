@@ -15,6 +15,7 @@ export function Header({ onDiscussClick, scrolled = false }: HeaderProps) {
   const location = useLocation();
   const navigate = useViewTransitionNavigate();
   const [menuOpen, setMenuOpen] = useState(false);
+  const headerCta = 'Обсудить проект';
 
   useEffect(() => {
     document.body.classList.toggle('menu-open', menuOpen);
@@ -67,7 +68,7 @@ export function Header({ onDiscussClick, scrolled = false }: HeaderProps) {
             </nav>
 
             <Button className="site-header__cta" onClick={() => { closeMenu(); onDiscussClick(); }}>
-              Обсудить проект
+              {headerCta}
             </Button>
 
             <button
@@ -96,7 +97,7 @@ export function Header({ onDiscussClick, scrolled = false }: HeaderProps) {
             ))}
           </nav>
           <Button className="mobile-menu__cta" onClick={() => { closeMenu(); onDiscussClick(); }}>
-            Обсудить проект
+            {headerCta}
           </Button>
         </GlassSurface>
       </div>

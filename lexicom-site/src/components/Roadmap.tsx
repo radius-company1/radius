@@ -23,7 +23,6 @@ export function Roadmap() {
       <div className="container">
         <Reveal>
           <SectionHeader
-            eyebrow="Следующий этап развития"
             title="Один процесс — несколько специализированных ИИ-агентов"
             titleId="roadmap-title"
             light

@@ -9,7 +9,6 @@ export function Implementation() {
       <div className="container">
         <Reveal>
           <SectionHeader
-            eyebrow="Работа над проектом"
             title="От первой задачи до промышленной эксплуатации"
             titleId="implementation-title"
             description="Каждое внедрение Lexicom проектируется под процессы, инфраструктуру и требования конкретной организации. Мы можем начать с одного сценария или пилотного контура, проверить результат и последовательно масштабировать решение."

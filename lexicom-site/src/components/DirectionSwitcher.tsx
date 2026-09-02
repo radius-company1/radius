@@ -1,6 +1,7 @@
 import { useCallback, useEffect, useLayoutEffect, useRef, useState } from 'react';
-import { useLocation, useNavigate } from 'react-router-dom';
+import { useLocation } from 'react-router-dom';
 import { directionModes } from '../theme/directions';
+import { useViewTransitionNavigate } from '../hooks/useViewTransitionNavigate';
 import './DirectionSwitcher.css';
 
 type LensRect = {
@@ -20,7 +21,7 @@ type DirectionSwitcherProps = {
 
 export function DirectionSwitcher({ scrolled = false }: DirectionSwitcherProps) {
   const location = useLocation();
-  const navigate = useNavigate();
+  const navigate = useViewTransitionNavigate();
   const trackRef = useRef<HTMLDivElement>(null);
   const scrollRef = useRef<HTMLDivElement>(null);
   const itemRefs = useRef<(HTMLButtonElement | null)[]>([]);

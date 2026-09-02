@@ -124,6 +124,31 @@ export function ProductVisual({ id }: ProductVisualProps) {
         </svg>
       );
 
+    case 'ekc-110':
+      return (
+        <svg className="product-visual product-visual--ekc-110" viewBox="0 0 320 148" fill="none" aria-hidden="true">
+          <rect x="24" y="24" width="44" height="32" rx="10" fill="rgba(255, 212, 59, 0.12)" stroke="rgba(255, 212, 59, 0.45)" strokeWidth="1.2" />
+          <path d="M36 36h4v10h-4zM42 34v14M46 38v6" stroke="rgba(255, 212, 59, 0.65)" strokeWidth="1.5" strokeLinecap="round" />
+          <rect x="24" y="64" width="44" height="32" rx="10" fill="rgba(83, 103, 255, 0.1)" stroke="rgba(83, 103, 255, 0.38)" strokeWidth="1.2" />
+          <rect x="34" y="74" width="24" height="12" rx="4" fill="rgba(83, 103, 255, 0.16)" stroke="rgba(83, 103, 255, 0.4)" strokeWidth="1" />
+          <rect x="24" y="104" width="44" height="32" rx="10" fill="rgba(46, 211, 255, 0.1)" stroke="rgba(46, 211, 255, 0.38)" strokeWidth="1.2" />
+          <rect x="34" y="114" width="24" height="12" rx="4" fill="rgba(46, 211, 255, 0.16)" stroke="rgba(46, 211, 255, 0.4)" strokeWidth="1" />
+          <path d="M68 40h44M68 80h44M68 120h44" stroke="rgba(255, 212, 59, 0.42)" strokeWidth="1.5" strokeLinecap="round" />
+          <circle cx="160" cy="74" r="34" fill="rgba(255, 212, 59, 0.18)" stroke="rgba(255, 212, 59, 0.55)" strokeWidth="1.4" />
+          <circle cx="160" cy="74" r="24" fill="rgba(21, 34, 56, 0.88)" stroke="rgba(255, 212, 59, 0.65)" strokeWidth="1.2" />
+          <text x="160" y="80" textAnchor="middle" fill="#ffd43b" fontSize="16" fontWeight="700" fontFamily="Onest, system-ui, sans-serif">
+            110
+          </text>
+          <path d="M194 74h28" stroke="rgba(83, 103, 255, 0.42)" strokeWidth="1.5" strokeLinecap="round" />
+          <rect x="222" y="28" width="74" height="28" rx="9" fill={glass.fill} stroke="rgba(83, 103, 255, 0.35)" strokeWidth="1.2" />
+          <rect x="234" y="38" width="44" height="4" rx="2" fill="rgba(12, 16, 32, 0.12)" />
+          <rect x="222" y="60" width="74" height="28" rx="9" fill={glass.fill} stroke="rgba(46, 211, 255, 0.32)" strokeWidth="1.2" />
+          <rect x="234" y="70" width="36" height="4" rx="2" fill="rgba(12, 16, 32, 0.12)" />
+          <rect x="222" y="92" width="74" height="28" rx="9" fill={glass.fill} stroke="rgba(155, 92, 255, 0.32)" strokeWidth="1.2" />
+          <rect x="234" y="102" width="40" height="4" rx="2" fill="rgba(12, 16, 32, 0.12)" />
+        </svg>
+      );
+
     case 'speech-analytics':
       return (
         <svg className="product-visual product-visual--speech-analytics" viewBox="0 0 320 148" fill="none" aria-hidden="true">

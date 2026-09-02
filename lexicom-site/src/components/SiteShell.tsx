@@ -28,8 +28,9 @@ export function SiteShell() {
   }, [location.pathname, location.hash]);
 
   const scrollToContact = () => {
-    if (location.pathname === '/') {
-      document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    const contact = document.getElementById('contact');
+    if (contact) {
+      contact.scrollIntoView({ behavior: 'smooth', block: 'start' });
       return;
     }
     navigate('/#contact');
@@ -37,6 +38,9 @@ export function SiteShell() {
 
   return (
     <div className="app-shell">
+      <a className="skip-link" href="#main-content">
+        Перейти к содержанию
+      </a>
       <AmbientBackground />
       <div
         className={`app-chrome ${scrolled ? 'is-scrolled' : ''}`}
@@ -45,7 +49,7 @@ export function SiteShell() {
         <Header onDiscussClick={scrollToContact} scrolled={scrolled} />
         <DirectionSwitcher scrolled={scrolled} />
       </div>
-      <div className="page-transition-root">
+      <div className="page-transition-root" id="main-content">
         <Outlet />
       </div>
     </div>

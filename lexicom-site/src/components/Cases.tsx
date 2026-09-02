@@ -35,7 +35,6 @@ export function Cases() {
       <div className="container">
         <Reveal>
           <SectionHeader
-            eyebrow="Опыт внедрения"
             title="Решения Lexicom в промышленной эксплуатации"
             titleId="cases-title"
             description="Платформа Lexicom используется для автоматизации массовых обращений, поддержки сотрудников и управления коммуникациями в государственных организациях."

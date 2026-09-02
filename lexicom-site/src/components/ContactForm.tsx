@@ -3,6 +3,9 @@ import { Button } from './ui/Button';
 
 type ContactFormProps = {
   id?: string;
+  organizationLabel?: string;
+  messageRequired?: boolean;
+  submitLabel?: string;
 };
 
 type FormState = {
@@ -21,7 +24,12 @@ const initialState: FormState = {
   message: '',
 };
 
-export function ContactForm({ id = 'contact' }: ContactFormProps) {
+export function ContactForm({
+  id = 'contact',
+  organizationLabel = 'Организация',
+  messageRequired = true,
+  submitLabel = 'Отправить заявку',
+}: ContactFormProps) {
   const [form, setForm] = useState<FormState>(initialState);
   const [submitted, setSubmitted] = useState(false);
 
@@ -48,7 +56,7 @@ export function ContactForm({ id = 'contact' }: ContactFormProps) {
     <form className="contact-form" id={id} onSubmit={handleSubmit} noValidate>
       <div className="contact-form__grid">
         <label className="field">
-          <span>Организация</span>
+          <span>{organizationLabel}</span>
           <input
             type="text"
             name="organization"
@@ -92,17 +100,17 @@ export function ContactForm({ id = 'contact' }: ContactFormProps) {
           />
         </label>
         <label className="field field--full">
-          <span>Краткое описание задачи</span>
+          <span>Краткое описание задачи{messageRequired ? '' : ' — необязательно'}</span>
           <textarea
             name="message"
             rows={4}
-            required
+            required={messageRequired}
             value={form.message}
             onChange={(e) => setForm({ ...form, message: e.target.value })}
           />
         </label>
       </div>
-      <Button type="submit">Отправить заявку</Button>
+      <Button type="submit">{submitLabel}</Button>
     </form>
   );
 }

@@ -30,29 +30,30 @@ export function Hero({ onDiscussClick }: HeroProps) {
           </Reveal>
           <Reveal delay={140}>
             <p className="hero__lead">
-              Нейроботы, контактный центр, речевая аналитика и системы протоколирования совещаний и судебных
-              заседаний. Собственное программное обеспечение Lexicom адаптируется под процессы организации и может
-              разворачиваться в инфраструктуре заказчика.
+              Нейроботы, контактный центр, аналитика речи и протоколы — ПО Lexicom под процессы организации и on-prem.
             </p>
           </Reveal>
           <Reveal delay={200}>
             <div className="hero__actions">
-              <Button href="#directions">Выбрать своё направление</Button>
+              <Button href="#directions">Выбрать направление</Button>
               <Button variant="secondary" onClick={onDiscussClick}>
                 Обсудить проект
               </Button>
             </div>
           </Reveal>
-          <Reveal delay={260}>
-            <p className="hero__trust">
-              Собственное ПО · On-prem · Данные в контуре заказчика ·{' '}
-              <span className="hero__trust-reg">Реестр российского ПО №11115</span>
-            </p>
-          </Reveal>
         </div>
 
         <Reveal className="hero__viz-wrap" delay={120}>
           <HeroVisualization />
+        </Reveal>
+      </div>
+
+      <div className="container">
+        <Reveal delay={240}>
+          <p className="hero__trust">
+            Собственное ПО · On-prem · Данные в контуре заказчика ·{' '}
+            <span className="hero__trust-reg">Реестр российского ПО №11115</span>
+          </p>
         </Reveal>
       </div>
     </section>

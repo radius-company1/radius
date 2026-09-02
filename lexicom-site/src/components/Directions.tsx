@@ -17,22 +17,24 @@ function DirectionCard({
   direction,
   index,
   onNavigate,
+  featured = false,
 }: {
   direction: (typeof directions)[number];
   index: number;
   onNavigate: (href: string) => void;
+  featured?: boolean;
 }) {
   const glow = useSurfaceGlow();
 
   return (
-    <Reveal delay={index * 90}>
+    <Reveal delay={index * 90} className={featured ? 'directions__cell directions__cell--featured' : 'directions__cell'}>
       <GlassSurface
         as="article"
         ref={glow.ref as React.RefObject<HTMLDivElement>}
-        className={`direction-card direction-card--${direction.id}`}
+        className={`direction-card direction-card--${direction.id}${featured ? ' direction-card--featured' : ''}`}
         radius="xl"
         depth="raised"
-        tier="matte"
+        tier={featured ? 'liquid' : 'matte'}
         tint={tintMap[direction.id]}
         onPointerMove={glow.onPointerMove}
         onPointerLeave={glow.onPointerLeave}
@@ -67,16 +69,21 @@ export function Directions() {
       <div className="container">
         <Reveal>
           <SectionHeader
-            eyebrow="Решения для государственных организаций"
             title="Выберите своё направление"
             titleId="directions-title"
-            description="Продукты Lexicom объединяются в конфигурацию под задачи конкретной организации. Задачи МФЦ, службы 122 и ЕДДС различаются, поэтому для каждого направления создана отдельная страница со своими сценариями, составом решения, кейсами и демонстрацией."
+            description="Продукты Lexicom собираются под задачи организации. У МФЦ, 122 и ЕДДС — свои сценарии, состав решения и демонстрация."
           />
         </Reveal>
 
         <div className="directions__grid">
           {directions.map((direction, index) => (
-            <DirectionCard key={direction.id} direction={direction} index={index} onNavigate={navigate} />
+            <DirectionCard
+              key={direction.id}
+              direction={direction}
+              index={index}
+              onNavigate={navigate}
+              featured={index === 0}
+            />
           ))}
         </div>
       </div>

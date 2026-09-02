@@ -1,5 +1,5 @@
 .section--dark {
-  color: #eef3ff; margin-block: 0.35rem;
+  color: #e8edf8; margin-block: 0.35rem;
   padding-block: calc(var(--section-pad) * 1.05);
   background: transparent; position: relative; overflow: hidden;
 }
@@ -7,20 +7,54 @@
 .section--dark::before {
   content: ''; position: absolute; inset: 0; z-index: -1;
   background:
-    linear-gradient(165deg, #0b1020 0%, #121a32 45%, #0d1228 100%);
-  border-block: 1px solid rgba(46, 211, 255, 0.1);
+    linear-gradient(165deg, #1a2238 0%, #1e2740 48%, #182033 100%);
+  border-block: 1px solid rgba(58, 159, 196, 0.12);
 }
 
 .section--dark__grid-bg {
-  position: absolute; inset: 0; z-index: 0; pointer-events: none; opacity: 0.35;
+  position: absolute; inset: 0; z-index: 0; pointer-events: none; opacity: 0.22;
   background-image:
-    linear-gradient(rgba(46, 211, 255, 0.06) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(46, 211, 255, 0.06) 1px, transparent 1px);
+    linear-gradient(rgba(230, 192, 53, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(58, 159, 196, 0.05) 1px, transparent 1px);
   background-size: 48px 48px;
   mask-image: linear-gradient(180deg, transparent, #000 15%, #000 85%, transparent);
 }
 
 .section--dark .container { position: relative; z-index: 1; }
+
+/* Soft ink band — same cool family as page, no hard dark jump */
+.section--ink {
+  position: relative;
+  overflow: hidden;
+  color: var(--color-text);
+  background: transparent;
+  padding-block: calc(var(--section-pad) * 1.05);
+}
+
+.section--ink::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background:
+    linear-gradient(165deg, #e8eef6 0%, #dfe7f2 48%, #e6ecf4 100%);
+  border-block: 1px solid rgba(58, 159, 196, 0.12);
+}
+
+.section--ink__grid-bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  opacity: 0.35;
+  background-image:
+    linear-gradient(rgba(230, 192, 53, 0.06) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(58, 159, 196, 0.05) 1px, transparent 1px);
+  background-size: 48px 48px;
+  mask-image: linear-gradient(180deg, transparent, #000 12%, #000 88%, transparent);
+}
+
+.section--ink .container { position: relative; z-index: 1; }
 
 .government .section-header {
   margin-bottom: 1.5rem;
@@ -79,7 +113,7 @@
 .roadmap__glow {
   position: absolute; top: 10%; left: 50%; width: 80%; height: 60%;
   transform: translateX(-50%); pointer-events: none; z-index: 0;
-  background: radial-gradient(ellipse, rgba(155, 92, 255, 0.25), transparent 65%);
+  background: radial-gradient(ellipse, rgba(230, 192, 53, 0.22), transparent 65%);
   filter: blur(40px);
 }
 

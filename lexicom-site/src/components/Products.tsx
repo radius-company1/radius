@@ -8,7 +8,8 @@ import { SectionHeader } from './ui/SectionHeader';
 const tintMap = {
   neurobot: 'cyan',
   'contact-center': 'blue',
-  'speech-analytics': 'violet',
+  'ekc-110': 'yellow',
+  'speech-analytics': 'yellow',
   protocol: 'cyan',
 } as const;
 
@@ -56,10 +57,9 @@ export function Products() {
       <div className="container">
         <Reveal>
           <SectionHeader
-            eyebrow="Собственные программные продукты"
             title="Продукты Lexicom"
             titleId="products-title"
-            description="Lexicom самостоятельно разрабатывает и развивает четыре продуктовых направления на базе собственных речевых и ИИ-технологий."
+            description="Lexicom самостоятельно разрабатывает и развивает пять продуктовых направлений на базе собственных речевых и ИИ-технологий."
           />
         </Reveal>
 
