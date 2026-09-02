@@ -7,6 +7,7 @@ import { Cases } from '../components/Cases';
 import { ChatWidget } from '../components/ChatWidget';
 import { DemoSection } from '../components/DemoSection';
 import { Directions } from '../components/Directions';
+import { Products } from '../components/Products';
 import { FAQ } from '../components/FAQ';
 import { Flexibility } from '../components/Flexibility';
 import { Footer } from '../components/Footer';
@@ -40,6 +41,7 @@ export function HomePage() {
           <Hero onDiscussClick={scrollToContact} />
           <Metrics />
         </div>
+        <Products />
         <Directions />
         <Solutions />
         <Benefits />

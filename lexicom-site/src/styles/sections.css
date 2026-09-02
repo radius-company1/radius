@@ -45,7 +45,7 @@
 }
 
 /* Directions */
-.directions { padding-top: calc(var(--section-pad) * 0.5); }
+.directions { padding-top: var(--section-pad); }
 .directions__grid { display: grid; gap: 0.9rem; }
 .direction-card { padding: 1.4rem; display: flex; flex-direction: column; }
 .direction-card:hover { transform: translateY(-4px); }
@@ -107,6 +107,7 @@
 }
 .platform-rail__note { margin: 0.85rem 0 0; font-size: 0.88rem; color: var(--color-text-muted); }
 .solutions__flow-wrap { padding: 1.1rem; margin-top: 0.25rem; }
+.solutions__flow-wrap--primary { margin-bottom: 1rem; }
 
 /* Benefits */
 .benefits { padding: 1.25rem 0; }

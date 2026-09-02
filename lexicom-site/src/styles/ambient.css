@@ -99,6 +99,7 @@
 .section-zone { position: relative; }
 .section-zone--hero { padding-top: 0.35rem; }
 .section-zone--metrics { z-index: 2; }
+.section-zone--products { z-index: 1; }
 .section-zone--solutions { z-index: 1; }
 .section-zone--demo { z-index: 1; }
 

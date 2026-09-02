@@ -1,5 +1,5 @@
 export const mainNav = [
-  { label: 'Платформа', href: '#platform' },
+  { label: 'Продукты', href: '#products' },
   { label: 'Направления', href: '#directions' },
   { label: 'Кейсы', href: '#cases' },
   { label: 'Внедрение', href: '#implementation' },

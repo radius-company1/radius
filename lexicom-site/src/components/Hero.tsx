@@ -22,18 +22,17 @@ export function Hero({ onDiscussClick }: HeroProps) {
               style={{ viewTransitionName: 'hero-title' } as React.CSSProperties}
             >
               <span className="hero__title-line">
-                Единая <span className="hero__title-compound">ИИ-платформа</span>
+                <span className="hero__title-compound">ИИ-продукты</span> для
               </span>
-              <span className="hero__title-line">для работы с</span>
-              <span className="hero__title-line">обращениями</span>
+              <span className="hero__title-line">коммуникаций и работы</span>
+              <span className="hero__title-line">с речью</span>
             </h1>
           </Reveal>
           <Reveal delay={140}>
             <p className="hero__lead">
-              Lexicom объединяет ИИ-ассистентов, контактный центр, базу знаний, робот-суфлёр и речевую аналитику.
-              Платформа принимает звонки и сообщения, обрабатывает типовые вопросы и передаёт сложные обращения
-              сотрудникам вместе с собранной информацией. Решение разворачивается в инфраструктуре заказчика и
-              подключается к действующим каналам и информационным системам.
+              Нейроботы, контактный центр, речевая аналитика и системы протоколирования совещаний и судебных
+              заседаний. Собственное программное обеспечение Lexicom адаптируется под процессы организации и может
+              разворачиваться в инфраструктуре заказчика.
             </p>
           </Reveal>
           <Reveal delay={200}>
