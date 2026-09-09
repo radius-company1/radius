@@ -1,4 +1,4 @@
-import { s122WithIntegration, s122WithoutIntegration } from '../../data/directions/s122';
+import { s122ArchitectureLayers } from '../../data/directions/s122';
 import { Reveal } from '../ui/Reveal';
 import { SectionHeader } from '../ui/SectionHeader';
 
@@ -8,38 +8,36 @@ export function S122Integration() {
       <div className="container">
         <Reveal>
           <SectionHeader
-            title="Что работает без интеграции и что открывается после подключения"
+            title="Интеграционный контур проекта"
             titleId="s122-integration-title"
-            description="Базовые сценарии службы 122 можно запускать на согласованной базе знаний. Обмен с системами региона — отдельный этап проекта."
+            description="Lexicom встаёт между каналом обращения и системами заказчика. Конкретный состав подключений зависит от архитектуры проекта."
           />
         </Reveal>
-        <div className="s122-integration__cols">
-          <Reveal>
-            <article className="s122-integration__col surface-plain">
-              <h3>Без интеграции</h3>
-              <ul>
-                {s122WithoutIntegration.map((item) => (
-                  <li key={item}>{item}</li>
-                ))}
-              </ul>
-            </article>
-          </Reveal>
-          <Reveal delay={80}>
-            <article className="s122-integration__col s122-integration__col--accent surface-plain">
-              <h3>При наличии интеграции</h3>
-              <ul>
-                {s122WithIntegration.map((item) => (
-                  <li key={item}>{item}</li>
-                ))}
-              </ul>
-            </article>
-          </Reveal>
-        </div>
+
         <Reveal>
-          <p className="s122-integration__closing">
-            Статус, уведомления на данных региона и синхронизация с ИС не обещаются «из коробки» — только после
-            согласованного подключения.
-          </p>
+          <ol className="s122-arch" aria-label="Архитектура интеграционного контура">
+            {s122ArchitectureLayers.map((layer, index) => (
+              <li key={layer.id} className={`s122-arch__layer s122-arch__layer--${layer.id}`}>
+                <div className="s122-arch__card surface-plain">
+                  <span className="s122-arch__index" aria-hidden="true">
+                    {String(index + 1).padStart(2, '0')}
+                  </span>
+                  <h3>{layer.title}</h3>
+                  <ul>
+                    {layer.items.map((item) => (
+                      <li key={item}>{item}</li>
+                    ))}
+                  </ul>
+                  {'caveat' in layer && layer.caveat ? <p className="s122-arch__caveat">{layer.caveat}</p> : null}
+                </div>
+                {index < s122ArchitectureLayers.length - 1 ? (
+                  <span className="s122-arch__down" aria-hidden="true">
+                    ↓
+                  </span>
+                ) : null}
+              </li>
+            ))}
+          </ol>
         </Reveal>
       </div>
     </section>

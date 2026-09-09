@@ -1,4 +1,4 @@
-import { s122AnalyticsDirections } from '../../data/directions/s122';
+import { s122AnalyticsItems } from '../../data/directions/s122';
 import { GlassSurface } from '../ui/GlassSurface';
 import { Reveal } from '../ui/Reveal';
 import { SectionHeader } from '../ui/SectionHeader';
@@ -14,51 +14,21 @@ export function S122Analytics() {
       <div className="container">
         <Reveal>
           <SectionHeader
-            title="Каждый разговор показывает, что нужно улучшить"
+            title="Каждое обращение становится данными для управления службой"
             titleId="s122-analytics-title"
-            description="Для руководителя службы 122: тематики обращений, повторные контакты, пики нагрузки, качество обслуживания и точки улучшения маршрутов и знаний."
+            description="Речевая аналитика — модуль общей платформы Lexicom. Состав отчётности зависит от сценариев и глубины интеграции."
             light
           />
         </Reveal>
 
-        <div className="s122-analytics__grid">
-          {s122AnalyticsDirections.map((block, index) => (
-            <Reveal
-              key={block.title}
-              delay={index * 60}
-              className={index === 0 ? 's122-analytics__cell s122-analytics__cell--featured' : 's122-analytics__cell'}
-            >
-              <GlassSurface
-                className="s122-analytics__card"
-                radius="lg"
-                depth="raised"
-                tint={index === 2 ? 'yellow' : 'cyan'}
-                variant="dark"
-              >
-                <span className="s122-analytics__card-index" aria-hidden="true">
-                  {String(index + 1).padStart(2, '0')}
-                </span>
-                <h3>{block.title}</h3>
-                <ul>
-                  {block.items.map((item) => (
-                    <li key={item}>{item}</li>
-                  ))}
-                </ul>
-              </GlassSurface>
-            </Reveal>
-          ))}
-        </div>
-
         <Reveal>
-          <div className="s122-analytics__cycle" aria-label="Цикл улучшений">
-            <span>обращения</span>
-            <span aria-hidden="true">→</span>
-            <span>анализ</span>
-            <span aria-hidden="true">→</span>
-            <span>изменения</span>
-            <span aria-hidden="true">→</span>
-            <span>проверка следующих обращений</span>
-          </div>
+          <GlassSurface className="s122-analytics__board" radius="xl" depth="raised" tint="cyan" variant="dark">
+            <ul className="s122-analytics__list">
+              {s122AnalyticsItems.map((item) => (
+                <li key={item}>{item}</li>
+              ))}
+            </ul>
+          </GlassSurface>
         </Reveal>
       </div>
     </section>

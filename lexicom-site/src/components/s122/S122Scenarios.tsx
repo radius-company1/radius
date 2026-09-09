@@ -4,62 +4,45 @@ import { GlassSurface } from '../ui/GlassSurface';
 import { Reveal } from '../ui/Reveal';
 import { SectionHeader } from '../ui/SectionHeader';
 
+type ScenarioId = (typeof s122Scenarios)[number]['id'];
+
 export function S122Scenarios() {
-  const [activeId, setActiveId] = useState<(typeof s122Scenarios)[number]['id']>(s122Scenarios[0].id);
-  const active = s122Scenarios.find((s) => s.id === activeId) ?? s122Scenarios[0];
+  const [activeId, setActiveId] = useState<ScenarioId>(s122Scenarios[0].id);
+  const active = s122Scenarios.find((item) => item.id === activeId) ?? s122Scenarios[0];
 
   return (
     <section className="section s122-scenarios" id="s122-scenarios" aria-labelledby="s122-scenarios-title">
       <div className="container">
         <Reveal>
           <SectionHeader
-            title="Сценарии автоматизации для службы 122"
+            title="Сценарии автоматизации службы 122"
             titleId="s122-scenarios-title"
-            description="Какие задачи закрывает платформа: справочное информирование, маршрутизация в службы, исходящие уведомления и передача сложного вопроса оператору."
+            description="Медицинский контур обращений: от записи и вызова врача до справочной информации и исходящего информирования."
           />
         </Reveal>
 
         <Reveal>
           <GlassSurface className="s122-scenarios__panel" radius="xl" depth="raised" tint="s122">
-            <div className="s122-scenarios__tabs" role="tablist" aria-label="Сценарии службы 122">
-              {s122Scenarios.map((scenario) => (
-                <button
-                  key={scenario.id}
-                  type="button"
-                  role="tab"
-                  aria-selected={scenario.id === activeId}
-                  className={`s122-scenarios__tab ${scenario.id === activeId ? 'is-active' : ''}`}
-                  onClick={() => setActiveId(scenario.id)}
-                >
-                  {scenario.title}
-                  {'integration' in scenario && scenario.integration ? (
-                    <span className="s122-scenarios__tab-note">При наличии интеграции</span>
-                  ) : null}
-                </button>
-              ))}
+            <div className="s122-scenarios__tabs" role="tablist" aria-label="Сценарии 122">
+              {s122Scenarios.map((scenario) => {
+                const selected = scenario.id === active.id;
+                return (
+                  <button
+                    key={scenario.id}
+                    type="button"
+                    role="tab"
+                    aria-selected={selected}
+                    className={`s122-scenarios__tab ${selected ? 'is-active' : ''}`}
+                    onClick={() => setActiveId(scenario.id)}
+                  >
+                    {scenario.title}
+                  </button>
+                );
+              })}
             </div>
-
-            <div className="s122-scenarios__body" role="tabpanel">
-              <dl className="s122-scenarios__flow">
-                <div>
-                  <dt>Задача</dt>
-                  <dd>{active.task}</dd>
-                </div>
-                <div>
-                  <dt>Что делает Lexicom</dt>
-                  <dd>{active.lexicom}</dd>
-                </div>
-                <div>
-                  <dt>Результат</dt>
-                  <dd>{active.outcome}</dd>
-                </div>
-              </dl>
-              {'integration' in active && active.integration ? (
-                <p className="s122-scenarios__integration-note">
-                  Статус из систем региона и уведомления на основе данных региона доступны только при подключении
-                  соответствующей информационной системы.
-                </p>
-              ) : null}
+            <div className="s122-scenarios__content" role="tabpanel">
+              <h3>{active.title}</h3>
+              <p>{active.text}</p>
             </div>
           </GlassSurface>
         </Reveal>

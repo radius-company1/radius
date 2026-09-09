@@ -13,9 +13,9 @@ export function S122Implementation() {
       <div className="container">
         <Reveal>
           <SectionHeader
-            title="От первого сценария до промышленной эксплуатации"
+            title="Как проходит внедрение"
             titleId="s122-implementation-title"
-            description="Как проходит проект для службы 122: от выбора процесса до масштабирования тем, служб и каналов."
+            description="От обследования сценариев и систем до промышленного запуска и развития контура."
           />
         </Reveal>
 
@@ -25,7 +25,7 @@ export function S122Implementation() {
               <span className="s122-implementation__num" aria-hidden="true">
                 {index + 1}
               </span>
-              <Reveal delay={index * 50}>
+              <Reveal delay={index * 40}>
                 <GlassSurface className="s122-implementation__card" radius="lg" depth="raised" tint="s122">
                   <h3>{step.title}</h3>
                   <p>{step.text}</p>
