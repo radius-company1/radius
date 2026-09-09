@@ -6,6 +6,7 @@ type ContactFormProps = {
   organizationLabel?: string;
   messageRequired?: boolean;
   submitLabel?: string;
+  direction?: string;
 };
 
 type FormState = {
@@ -29,6 +30,7 @@ export function ContactForm({
   organizationLabel = 'Организация',
   messageRequired = true,
   submitLabel = 'Отправить заявку',
+  direction,
 }: ContactFormProps) {
   const [form, setForm] = useState<FormState>(initialState);
   const [submitted, setSubmitted] = useState(false);
@@ -54,6 +56,7 @@ export function ContactForm({
 
   return (
     <form className="contact-form" id={id} onSubmit={handleSubmit} noValidate>
+      {direction ? <input type="hidden" name="direction" value={direction} /> : null}
       <div className="contact-form__grid">
         <label className="field">
           <span>{organizationLabel}</span>

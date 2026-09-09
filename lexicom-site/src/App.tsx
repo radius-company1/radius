@@ -1,9 +1,9 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import { SiteShell } from './components/SiteShell';
 import { DesignPreviewPage } from './design-preview/DesignPreviewPage';
+import { EddsPage } from './pages/EddsPage';
 import { HomePage } from './pages/HomePage';
 import { MfcPage } from './pages/MfcPage';
-import { ProfilePageShell } from './pages/ProfilePageShell';
 import { S122Page } from './pages/S122Page';
 
 export default function App() {
@@ -15,7 +15,7 @@ export default function App() {
           <Route path="/" element={<HomePage />} />
           <Route path="/mfc" element={<MfcPage />} />
           <Route path="/122" element={<S122Page />} />
-          <Route path="/edds" element={<ProfilePageShell title="ЕДДС" directionLabel="Я — ЕДДС" />} />
+          <Route path="/edds" element={<EddsPage />} />
         </Route>
       </Routes>
     </BrowserRouter>
