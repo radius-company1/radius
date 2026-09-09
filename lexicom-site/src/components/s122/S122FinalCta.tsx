@@ -24,9 +24,9 @@ export function S122FinalCta({ onRequestDemo, onDiscuss }: S122FinalCtaProps) {
 
         <Reveal>
           <div className="s122-final__actions">
-            <Button onClick={onRequestDemo}>{s122DemoState.demoCtaLabel}</Button>
-            <Button variant="secondary" onClick={onDiscuss}>
-              {s122DemoState.discussCtaLabel}
+            <Button onClick={onDiscuss}>{s122DemoState.discussCtaLabel}</Button>
+            <Button variant="secondary" onClick={onRequestDemo}>
+              {s122DemoState.demoCtaLabel}
             </Button>
           </div>
         </Reveal>

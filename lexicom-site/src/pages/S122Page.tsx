@@ -2,7 +2,6 @@ import { s122DemoState, s122PageMeta } from '../data/directions/s122';
 import { usePageMeta } from '../hooks/usePageMeta';
 import { Footer } from '../components/Footer';
 import { S122Analytics } from '../components/s122/S122Analytics';
-import { S122Benefits } from '../components/s122/S122Benefits';
 import { S122Dialogue } from '../components/s122/S122Dialogue';
 import { S122Faq } from '../components/s122/S122Faq';
 import { S122FinalCta } from '../components/s122/S122FinalCta';
@@ -14,8 +13,8 @@ import { S122Journey } from '../components/s122/S122Journey';
 import { S122OnPrem } from '../components/s122/S122OnPrem';
 import { S122Outcome } from '../components/s122/S122Outcome';
 import { S122Peak } from '../components/s122/S122Peak';
-import { S122Proof } from '../components/s122/S122Proof';
 import { S122Scenarios } from '../components/s122/S122Scenarios';
+import { S122TrustBar } from '../components/s122/S122TrustBar';
 
 export function S122Page() {
   usePageMeta(s122PageMeta);
@@ -43,6 +42,7 @@ export function S122Page() {
     >
       <main>
         <S122Hero onRequestDemo={scrollToDialogue} onDiscuss={scrollToContact} />
+        <S122TrustBar />
         <S122Outcome />
         <S122Journey />
         <S122Scenarios />
@@ -52,11 +52,9 @@ export function S122Page() {
         <S122Integration />
         <S122Analytics />
         <S122OnPrem />
-        <S122Benefits />
-        <S122Proof />
         <S122Implementation />
         <S122Faq />
-        <S122FinalCta onRequestDemo={scrollToDialogue} onDiscuss={scrollToForm} />
+        <S122FinalCta onRequestDemo={scrollToForm} onDiscuss={scrollToForm} />
       </main>
       <Footer />
     </div>

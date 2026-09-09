@@ -176,37 +176,52 @@
   background: color-mix(in srgb, var(--color-yellow) 14%, white);
 }
 
-/* ─── Outcome ────────────────────────────────────────── */
+/* ─── Trust bar ──────────────────────────────────────── */
 
-.s122-outcome__needs {
-  display: grid;
-  grid-template-columns: repeat(5, minmax(0, 1fr));
-  gap: 0.75rem;
-  margin-bottom: 1.5rem;
+.s122-trustbar {
+  padding-block: 0.85rem 1.1rem;
 }
 
-.s122-outcome__need {
-  padding: 1rem 1.05rem;
-  min-height: 100%;
-}
-
-.s122-outcome__need h3 {
-  margin: 0 0 0.35rem;
-  font-size: 1rem;
-}
-
-.s122-outcome__need p {
+.s122-trustbar__row {
   margin: 0;
-  font-size: 0.9rem;
-  color: var(--color-muted);
-  line-height: 1.4;
+  padding: 0.85rem 1rem;
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 0.75rem;
+  border-radius: 18px;
+  background: color-mix(in srgb, white 72%, transparent);
+  border: 1px solid color-mix(in srgb, var(--color-line) 70%, transparent);
 }
+
+.s122-trustbar__item {
+  display: grid;
+  gap: 0.15rem;
+  text-align: center;
+  min-width: 0;
+}
+
+.s122-trustbar__item strong {
+  font-size: clamp(1.15rem, 2.2vw, 1.45rem);
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+}
+
+.s122-trustbar__item span {
+  font-size: 0.82rem;
+  color: var(--color-muted);
+  line-height: 1.3;
+}
+
+/* ─── Outcome ────────────────────────────────────────── */
 
 .s122-outcome__contrast {
   display: grid;
   grid-template-columns: 1fr auto 1.4fr;
   gap: 0.85rem;
   align-items: stretch;
+  margin-top: 0.35rem;
 }
 
 .s122-outcome__side {
@@ -421,10 +436,7 @@
   text-align: right;
 }
 
-.s122-dialogue__note,
-.s122-dialogue__disclaimer,
-.s122-final__form-note,
-.s122-proof__note {
+.s122-dialogue__note {
   margin: 0.85rem 0 0;
   font-size: 0.88rem;
   color: var(--color-muted);
@@ -440,53 +452,59 @@
 
 /* ─── Peak ───────────────────────────────────────────── */
 
+.s122-peak--compact {
+  padding-block: 0.35rem 1.15rem;
+}
+
+.s122-peak__banner {
+  padding: 1.1rem 1.25rem 1.15rem;
+}
+
+.s122-peak__title {
+  margin: 0 0 0.85rem;
+  font-size: clamp(1.15rem, 2.2vw, 1.45rem);
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  line-height: 1.25;
+  text-wrap: balance;
+}
+
 .s122-peak__flow {
   display: grid;
-  grid-template-columns: minmax(10rem, 0.7fr) auto minmax(0, 1.5fr);
-  gap: 0.9rem;
+  grid-template-columns: auto auto 1fr;
+  gap: 0.75rem;
   align-items: center;
 }
 
-.s122-peak__source,
-.s122-peak__stream {
-  padding: 1.1rem 1.2rem;
-}
-
 .s122-peak__source-label {
-  margin: 0 0 0.35rem;
-  font-size: 0.72rem;
+  display: inline-block;
+  padding: 0.45rem 0.75rem;
+  border-radius: 999px;
+  background: color-mix(in srgb, #3f4fd4 10%, white);
+  border: 1px solid color-mix(in srgb, #3f4fd4 22%, var(--color-line));
+  font-size: 0.86rem;
   font-weight: 700;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-  color: var(--color-muted);
-}
-
-.s122-peak__source p:last-child {
-  margin: 0;
-  font-weight: 700;
-  font-size: 1.1rem;
 }
 
 .s122-peak__connector {
-  font-size: 1.4rem;
+  font-size: 1.2rem;
   font-weight: 700;
   color: #3f4fd4;
-  text-align: center;
 }
 
 .s122-peak__streams {
-  display: grid;
-  gap: 0.65rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
 }
 
-.s122-peak__stream h3 {
-  margin: 0 0 0.25rem;
-  font-size: 1rem;
-}
-
-.s122-peak__stream p {
+.s122-peak__stream {
   margin: 0;
-  color: var(--color-muted);
+  padding: 0.45rem 0.75rem;
+  border-radius: 999px;
+  border: 1px solid color-mix(in srgb, var(--color-line) 75%, transparent);
+  background: color-mix(in srgb, white 78%, transparent);
+  font-size: 0.88rem;
 }
 
 .s122-peak__stream--lexa {
@@ -499,30 +517,6 @@
 
 .s122-peak__stream--analytics {
   border-color: color-mix(in srgb, #0f766e 30%, var(--color-line));
-}
-
-/* ─── Channels ───────────────────────────────────────── */
-
-.s122-channels__row {
-  display: grid;
-  grid-template-columns: repeat(5, minmax(0, 1fr));
-  gap: 0.7rem;
-}
-
-.s122-channels__item {
-  padding: 1rem 1.05rem;
-}
-
-.s122-channels__item h3 {
-  margin: 0 0 0.3rem;
-  font-size: 1rem;
-}
-
-.s122-channels__item p {
-  margin: 0;
-  font-size: 0.88rem;
-  color: var(--color-muted);
-  line-height: 1.4;
 }
 
 /* ─── Handoff ────────────────────────────────────────── */
@@ -654,41 +648,37 @@
 
 /* ─── Analytics ──────────────────────────────────────── */
 
-.s122-analytics__board {
-  padding: 1.35rem 1.45rem;
-}
-
-.s122-analytics__list {
-  margin: 0;
-  padding: 0;
-  list-style: none;
+.s122-analytics__dashboard {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 0.65rem 1.25rem;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.85rem;
 }
 
-.s122-analytics__list li {
-  position: relative;
-  padding-left: 1rem;
+.s122-analytics__zone {
+  padding: 1.15rem 1.2rem;
+  min-height: 100%;
+}
+
+.s122-analytics__zone h3 {
+  margin: 0 0 0.75rem;
+  font-size: 1.15rem;
+}
+
+.s122-analytics__zone ul {
+  margin: 0;
+  padding-left: 1.05rem;
+  display: grid;
+  gap: 0.4rem;
+}
+
+.s122-analytics__zone li {
   line-height: 1.4;
-}
-
-.s122-analytics__list li::before {
-  content: '';
-  position: absolute;
-  left: 0;
-  top: 0.55em;
-  width: 0.4rem;
-  height: 0.4rem;
-  border-radius: 50%;
-  background: var(--color-yellow);
 }
 
 /* ─── On-prem ────────────────────────────────────────── */
 
 .s122-onprem__shell {
   padding: 1.25rem;
-  margin-bottom: 1rem;
 }
 
 .s122-onprem__shell-label {
@@ -700,34 +690,37 @@
   color: var(--color-muted);
 }
 
-.s122-onprem__grid {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 0.85rem;
-}
-
-.s122-onprem__grid > .reveal {
+.s122-onprem__markers {
+  margin: 1rem 0 0;
+  padding: 0;
+  list-style: none;
   display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
 }
 
-.s122-onprem__grid > .reveal > .glass-surface {
-  flex: 1;
-  width: 100%;
+.s122-onprem__markers li {
+  padding: 0.45rem 0.75rem;
+  border-radius: 999px;
+  background: color-mix(in srgb, white 78%, transparent);
+  border: 1px solid color-mix(in srgb, var(--color-line) 70%, transparent);
+  font-size: 0.86rem;
+  font-weight: 600;
 }
 
-.s122-onprem__card {
-  padding: 1.15rem 1.2rem;
-}
-
-.s122-onprem__card h3 {
-  margin: 0 0 0.4rem;
-  font-size: 1.05rem;
-}
-
-.s122-onprem__card p {
-  margin: 0;
-  line-height: 1.45;
+.s122-onprem__stack {
+  margin: 0.85rem 0 0;
+  font-size: 0.9rem;
+  font-weight: 700;
   color: var(--color-ink-soft);
+}
+
+.s122-platform__modules--compact .s122-platform__module {
+  padding: 0.75rem 0.85rem;
+}
+
+.s122-platform__modules--compact .s122-platform__module span {
+  font-size: 0.8rem;
 }
 
 /* ─── Platform modules (inside on-prem shell) ────────── */
@@ -760,83 +753,6 @@
   line-height: 1.35;
 }
 
-/* ─── Benefits ───────────────────────────────────────── */
-
-.s122-benefits__list {
-  margin: 0;
-  padding: 0;
-  list-style: none;
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 0.7rem;
-}
-
-.s122-benefits__list > .reveal {
-  display: flex;
-}
-
-.s122-benefits__item {
-  display: grid;
-  grid-template-columns: auto 1fr;
-  gap: 0.75rem;
-  align-items: start;
-  width: 100%;
-  padding: 1rem 1.05rem;
-}
-
-.s122-benefits__mark {
-  font-size: 0.78rem;
-  font-weight: 800;
-  color: #3f4fd4;
-  line-height: 1.4;
-}
-
-/* ─── Proof ──────────────────────────────────────────── */
-
-.s122-proof__grid {
-  display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 0.85rem;
-  margin-bottom: 0.85rem;
-}
-
-.s122-proof__grid > .reveal {
-  display: flex;
-}
-
-.s122-proof__grid > .reveal > .glass-surface {
-  flex: 1;
-  width: 100%;
-}
-
-.s122-proof__card {
-  padding: 1.2rem 1.15rem;
-}
-
-.s122-proof__value {
-  margin: 0 0 0.55rem;
-  font-size: clamp(1.6rem, 3vw, 2.1rem);
-  font-weight: 800;
-  letter-spacing: -0.03em;
-  line-height: 1.05;
-}
-
-.s122-proof__value span {
-  display: block;
-  margin-top: 0.15rem;
-  font-size: 0.95rem;
-  font-weight: 700;
-  letter-spacing: 0;
-  color: var(--color-muted);
-}
-
-.s122-proof__label {
-  margin: 0;
-  font-size: 0.9rem;
-  line-height: 1.4;
-  color: var(--color-ink-soft);
-}
-
 /* ─── Implementation ─────────────────────────────────── */
 
 .s122-implementation__route {
@@ -844,8 +760,8 @@
   padding: 0;
   list-style: none;
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 0.85rem 1rem;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 0.75rem;
 }
 
 .s122-implementation__step {
@@ -913,13 +829,9 @@
 /* ─── Responsive ─────────────────────────────────────── */
 
 @media (max-width: 1100px) {
-  .s122-outcome__needs,
-  .s122-proof__grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-
+  .s122-trustbar__row,
+  .s122-analytics__dashboard,
   .s122-platform__modules,
-  .s122-onprem__grid,
   .s122-implementation__route {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
@@ -931,8 +843,7 @@
   .s122-handoff__roles,
   .s122-outcome__contrast,
   .s122-peak__flow,
-  .s122-benefits__list,
-  .s122-analytics__list,
+  .s122-analytics__dashboard,
   .s122-arch-board {
     grid-template-columns: 1fr;
   }
@@ -945,10 +856,8 @@
 }
 
 @media (max-width: 640px) {
-  .s122-outcome__needs,
+  .s122-trustbar__row,
   .s122-platform__modules,
-  .s122-onprem__grid,
-  .s122-proof__grid,
   .s122-implementation__route {
     grid-template-columns: 1fr;
   }

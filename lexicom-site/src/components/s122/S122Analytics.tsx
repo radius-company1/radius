@@ -1,4 +1,4 @@
-import { s122AnalyticsItems } from '../../data/directions/s122';
+import { s122AnalyticsZones } from '../../data/directions/s122';
 import { GlassSurface } from '../ui/GlassSurface';
 import { Reveal } from '../ui/Reveal';
 import { SectionHeader } from '../ui/SectionHeader';
@@ -16,19 +16,31 @@ export function S122Analytics() {
           <SectionHeader
             title="Каждое обращение становится данными для управления службой"
             titleId="s122-analytics-title"
-            description="Речевая аналитика — модуль общей платформы Lexicom. Состав отчётности зависит от сценариев и глубины интеграции."
+            description="Панель руководителя: нагрузка, автоматизация и качество обслуживания."
             light
           />
         </Reveal>
 
         <Reveal>
-          <GlassSurface className="s122-analytics__board" radius="xl" depth="raised" tint="cyan" variant="dark">
-            <ul className="s122-analytics__list">
-              {s122AnalyticsItems.map((item) => (
-                <li key={item}>{item}</li>
-              ))}
-            </ul>
-          </GlassSurface>
+          <div className="s122-analytics__dashboard" role="list">
+            {s122AnalyticsZones.map((zone, index) => (
+              <GlassSurface
+                key={zone.id}
+                className={`s122-analytics__zone s122-analytics__zone--${zone.id}`}
+                radius="lg"
+                depth="raised"
+                tint={index === 2 ? 'yellow' : 'cyan'}
+                variant="dark"
+              >
+                <h3>{zone.title}</h3>
+                <ul>
+                  {zone.items.map((item) => (
+                    <li key={item}>{item}</li>
+                  ))}
+                </ul>
+              </GlassSurface>
+            ))}
+          </div>
         </Reveal>
       </div>
     </section>
