@@ -53,7 +53,7 @@ export function HomePage() {
         <Implementation />
         <Roadmap />
         <FAQ />
-        <DemoSection onOpenChat={() => setChatOpen(true)} onDiscussClick={scrollToContact} />
+        <DemoSection onOpenChat={() => setChatOpen(true)} />
       </main>
       <Footer />
       <ChatWidget open={chatOpen} onClose={() => setChatOpen(false)} />

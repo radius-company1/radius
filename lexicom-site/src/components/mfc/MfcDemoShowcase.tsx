@@ -25,7 +25,7 @@ export function MfcDemoShowcase({ onRequestDemo }: MfcDemoShowcaseProps) {
       <div className="container">
         <Reveal>
           <SectionHeader
-            title="Посмотрите, как нейробот и контактный центр работают вместе"
+            title="Демонстрация Lexicom на сценарии вашего МФЦ"
             titleId="mfc-demo-title"
             description="Нейробот принимает и уточняет обращение, контактный центр получает историю и контекст, суфлёр помогает сотруднику продолжить диалог."
           />

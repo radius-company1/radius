@@ -47,8 +47,9 @@
 
 .ambient__wash--gov {
   top: 58%;
-  height: 42%;
-  background: linear-gradient(180deg, transparent, rgba(42, 63, 159, 0.22) 30%, rgba(11, 16, 32, 0.5) 100%);
+  height: 36%;
+  background: linear-gradient(180deg, transparent, rgba(42, 63, 159, 0.08) 45%, rgba(42, 63, 159, 0.12) 100%);
+  opacity: 0.55;
 }
 
 .ambient__blob {
@@ -91,8 +92,8 @@
 }
 
 .ambient__footer-fade {
-  position: absolute; bottom: 0; left: 0; right: 0; height: 28vh;
-  background: linear-gradient(180deg, transparent 0%, rgba(10, 15, 30, 0.92) 85%);
+  position: absolute; bottom: 0; left: 0; right: 0; height: 18vh;
+  background: linear-gradient(180deg, transparent 0%, rgba(244, 246, 250, 0.35) 100%);
   pointer-events: none;
 }
 
