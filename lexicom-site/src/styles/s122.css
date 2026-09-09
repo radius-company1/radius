@@ -214,6 +214,14 @@
   line-height: 1.3;
 }
 
+.s122-trustbar__note {
+  margin: 0.55rem 0 0;
+  font-size: 0.78rem;
+  color: var(--color-muted);
+  line-height: 1.35;
+  text-align: center;
+}
+
 /* ─── Outcome ────────────────────────────────────────── */
 
 .s122-outcome__contrast {

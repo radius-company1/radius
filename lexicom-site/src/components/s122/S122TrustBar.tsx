@@ -2,6 +2,8 @@ import { s122TrustBar } from '../../data/directions/s122';
 import { Reveal } from '../ui/Reveal';
 
 export function S122TrustBar() {
+  const showNote = s122TrustBar.some((item) => 'note' in item && item.note);
+
   return (
     <section className="s122-trustbar" aria-label="Показатели Lexicom">
       <div className="container">
@@ -14,6 +16,9 @@ export function S122TrustBar() {
               </li>
             ))}
           </ul>
+          {showNote ? (
+            <p className="s122-trustbar__note">* в зависимости от состава сценариев и глубины интеграции</p>
+          ) : null}
         </Reveal>
       </div>
     </section>
