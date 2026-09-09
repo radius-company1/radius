@@ -1,4 +1,5 @@
-import { mfcOnPremPoints } from '../../data/directions/mfc';
+import { mfcOnPremAccents } from '../../data/directions/mfc';
+import { GlassSurface } from '../ui/GlassSurface';
 import { Reveal } from '../ui/Reveal';
 import { SectionHeader } from '../ui/SectionHeader';
 
@@ -11,17 +12,20 @@ export function MfcOnPrem() {
           <SectionHeader
             title="Платформа работает внутри инфраструктуры заказчика"
             titleId="mfc-onprem-title"
-            description="Lexicom разворачивается в контуре организации. Звонки, записи, данные обращений и отчётность остаются в инфраструктуре заказчика, а для работы контактного центра не требуется публичное облако."
+            description="Размещаем Lexicom в контуре организации и работаем напрямую с разработчиком собственного ПО. Внешний канал связи и размещение платформы — разные вещи."
           />
         </Reveal>
 
-        <Reveal>
-          <ul className="mfc-onprem__list">
-            {mfcOnPremPoints.map((point) => (
-              <li key={point}>{point}</li>
-            ))}
-          </ul>
-        </Reveal>
+        <div className="mfc-onprem__accents">
+          {mfcOnPremAccents.map((accent, index) => (
+            <Reveal key={accent.title} delay={index * 60}>
+              <GlassSurface className="mfc-onprem__accent" radius="lg" depth="raised" tint={index === 1 ? 'yellow' : 'mfc'}>
+                <h3>{accent.title}</h3>
+                <p>{accent.text}</p>
+              </GlassSurface>
+            </Reveal>
+          ))}
+        </div>
       </div>
     </section>
   );

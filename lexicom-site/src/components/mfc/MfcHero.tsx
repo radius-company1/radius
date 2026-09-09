@@ -1,14 +1,32 @@
 import { Button } from '../ui/Button';
 import { GlassSurface } from '../ui/GlassSurface';
 import { Reveal } from '../ui/Reveal';
-import { mfcHeroMetrics } from '../../data/directions/mfc';
+import { mfcDemoState, mfcHeroMetrics } from '../../data/directions/mfc';
 
 type MfcHeroProps = {
-  onTalkToLexa: () => void;
+  onRequestDemo: () => void;
   onDiscuss: () => void;
 };
 
-export function MfcHero({ onTalkToLexa, onDiscuss }: MfcHeroProps) {
+const heroScenario = [
+  {
+    role: 'Гражданин',
+    text: 'Какие документы нужны для пособия?',
+    tone: 'citizen' as const,
+  },
+  {
+    role: 'Лекса',
+    text: 'Уточняет ситуацию и проверяет базу знаний МФЦ',
+    tone: 'lexa' as const,
+  },
+  {
+    role: 'Результат',
+    text: 'Согласованный ответ или сотрудник с историей и контекстом',
+    tone: 'result' as const,
+  },
+];
+
+export function MfcHero({ onRequestDemo, onDiscuss }: MfcHeroProps) {
   return (
     <>
       <section className="mfc-hero section-zone" id="mfc-top" aria-labelledby="mfc-hero-title">
@@ -19,17 +37,18 @@ export function MfcHero({ onTalkToLexa, onDiscuss }: MfcHeroProps) {
             </Reveal>
             <Reveal delay={60}>
               <h1 id="mfc-hero-title" className="mfc-hero__title" style={{ viewTransitionName: 'hero-title' } as React.CSSProperties}>
-                От вопроса гражданина к следующему шагу
+                От вопроса гражданина — к понятному следующему шагу
               </h1>
             </Reveal>
             <Reveal delay={120}>
               <p className="mfc-hero__lead">
-                Лекса принимает обращения, уточняет контекст по базе знаний МФЦ и передаёт сотруднику готовую историю диалога.
+                Нейробот для входящих и исходящих звонков, текстовый ИИ-ассистент в MAX и на сайте, контактный центр с
+                суфлёром и речевая аналитика — на собственной платформе Lexicom для задач МФЦ.
               </p>
             </Reveal>
             <Reveal delay={180}>
               <div className="mfc-hero__actions">
-                <Button onClick={onTalkToLexa}>Поговорить с Лексой</Button>
+                <Button onClick={onRequestDemo}>{mfcDemoState.heroCtaLabel}</Button>
                 <Button variant="secondary" onClick={onDiscuss}>
                   Обсудить проект
                 </Button>
@@ -38,15 +57,27 @@ export function MfcHero({ onTalkToLexa, onDiscuss }: MfcHeroProps) {
           </div>
 
           <Reveal delay={100}>
-            <GlassSurface className="mfc-hero__flow" radius="xl" depth="raised" tint="mfc" style={{ viewTransitionName: 'hero-viz' } as React.CSSProperties}>
-              <p className="mfc-hero__flow-label">Процесс</p>
-              <div className="mfc-hero__flow-track" aria-hidden="true">
-                <div className="mfc-hero__flow-node">обращение</div>
-                <span className="mfc-hero__flow-line" />
-                <div className="mfc-hero__flow-node mfc-hero__flow-node--core">Лекса</div>
-                <span className="mfc-hero__flow-line" />
-                <div className="mfc-hero__flow-node">ответ или сотрудник</div>
-              </div>
+            <GlassSurface
+              className="mfc-hero__viz"
+              radius="xl"
+              depth="raised"
+              tint="mfc"
+              style={{ viewTransitionName: 'hero-viz' } as React.CSSProperties}
+            >
+              <p className="mfc-hero__viz-label">Сценарий обращения</p>
+              <ol className="mfc-hero__scenario" aria-label="Короткий сценарий обращения">
+                {heroScenario.map((step, index) => (
+                  <li key={step.role} className={`mfc-hero__scenario-step mfc-hero__scenario-step--${step.tone}`}>
+                    <span className="mfc-hero__scenario-index" aria-hidden="true">
+                      {index + 1}
+                    </span>
+                    <div className="mfc-hero__scenario-body">
+                      <span className="mfc-hero__scenario-role">{step.role}</span>
+                      <span className="mfc-hero__scenario-text">{step.text}</span>
+                    </div>
+                  </li>
+                ))}
+              </ol>
             </GlassSurface>
           </Reveal>
         </div>

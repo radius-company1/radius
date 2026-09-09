@@ -1,7 +1,5 @@
-import { useState } from 'react';
-import { mfcPageMeta } from '../data/directions/mfc';
+import { mfcDemoState, mfcPageMeta } from '../data/directions/mfc';
 import { usePageMeta } from '../hooks/usePageMeta';
-import { ChatWidget } from '../components/ChatWidget';
 import { Footer } from '../components/Footer';
 import { MfcAnalytics } from '../components/mfc/MfcAnalytics';
 import { MfcCitizenTopics } from '../components/mfc/MfcCitizenTopics';
@@ -18,11 +16,16 @@ import { MfcOnPrem } from '../components/mfc/MfcOnPrem';
 import { MfcScenarios } from '../components/mfc/MfcScenarios';
 
 export function MfcPage() {
-  const [chatOpen, setChatOpen] = useState(false);
-
   usePageMeta(mfcPageMeta);
 
-  const openChat = () => setChatOpen(true);
+  const scrollToForm = () => {
+    const form = document.getElementById(mfcDemoState.formAnchor);
+    const contact = document.getElementById('contact');
+    (form ?? contact)?.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    const field = form?.querySelector<HTMLElement>('input, textarea, button');
+    field?.focus({ preventScroll: true });
+  };
+
   const scrollToContact = () => {
     document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
   };
@@ -30,22 +33,21 @@ export function MfcPage() {
   return (
     <div className="page-view page-view--direction page-view--mfc" style={{ viewTransitionName: 'page-content' } as React.CSSProperties}>
       <main>
-        <MfcHero onTalkToLexa={openChat} onDiscuss={scrollToContact} />
-        <MfcCitizenTopics />
+        <MfcHero onRequestDemo={scrollToForm} onDiscuss={scrollToContact} />
         <MfcEcosystem />
+        <MfcCitizenTopics />
         <MfcScenarios />
+        <MfcDemoShowcase onRequestDemo={scrollToForm} />
         <MfcFlow />
         <MfcIntegration />
         <MfcAnalytics />
         <MfcOnPrem />
         <MfcExperience />
         <MfcImplementation />
-        <MfcDemoShowcase onRequestDemo={scrollToContact} />
         <MfcFaq />
-        <MfcFinalCta onTalkToLexa={openChat} />
+        <MfcFinalCta onRequestDemo={scrollToForm} />
       </main>
       <Footer />
-      <ChatWidget open={chatOpen} onClose={() => setChatOpen(false)} />
     </div>
   );
 }

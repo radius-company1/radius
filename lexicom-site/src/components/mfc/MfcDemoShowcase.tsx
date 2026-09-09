@@ -2,6 +2,7 @@ import { Button } from '../ui/Button';
 import { GlassSurface } from '../ui/GlassSurface';
 import { Reveal } from '../ui/Reveal';
 import { SectionHeader } from '../ui/SectionHeader';
+import { mfcDemoState } from '../../data/directions/mfc';
 
 type MfcDemoShowcaseProps = {
   onRequestDemo: () => void;
@@ -12,8 +13,7 @@ const demoNodes = [
   'Нейробот',
   'База знаний',
   'Передача сотруднику',
-  'История и контекст',
-  'Робот-суфлёр',
+  'Суфлёр',
   'Фиксация результата',
   'Речевая аналитика',
 ] as const;
@@ -27,7 +27,7 @@ export function MfcDemoShowcase({ onRequestDemo }: MfcDemoShowcaseProps) {
           <SectionHeader
             title="Посмотрите, как нейробот и контактный центр работают вместе"
             titleId="mfc-demo-title"
-            description="Нейробот принимает и уточняет обращение, а контактный центр получает историю диалога и собранный контекст для продолжения работы сотрудником."
+            description="Нейробот принимает и уточняет обращение, контактный центр получает историю и контекст, суфлёр помогает сотруднику продолжить диалог."
           />
         </Reveal>
 
@@ -42,10 +42,10 @@ export function MfcDemoShowcase({ onRequestDemo }: MfcDemoShowcaseProps) {
               ))}
             </div>
             <p className="mfc-demo__disclaimer">
-              Демонстрация не подключена к реальным государственным системам, не проверяет настоящий статус заявления и
-              не создаёт реальную запись.
+              Профильная демонстрация для МФЦ запрашивается отдельно. Она не подключена к государственным системам, не
+              проверяет настоящий статус заявления и не создаёт реальную запись.
             </p>
-            <Button onClick={onRequestDemo}>Обсудить проект</Button>
+            <Button onClick={onRequestDemo}>{mfcDemoState.demoCtaLabel}</Button>
           </GlassSurface>
         </Reveal>
       </div>

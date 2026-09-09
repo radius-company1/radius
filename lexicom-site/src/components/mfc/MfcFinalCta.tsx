@@ -3,12 +3,13 @@ import { ContactForm } from '../ContactForm';
 import { GlassSurface } from '../ui/GlassSurface';
 import { Reveal } from '../ui/Reveal';
 import { SectionHeader } from '../ui/SectionHeader';
+import { mfcDemoState } from '../../data/directions/mfc';
 
 type MfcFinalCtaProps = {
-  onTalkToLexa: () => void;
+  onRequestDemo: () => void;
 };
 
-export function MfcFinalCta({ onTalkToLexa }: MfcFinalCtaProps) {
+export function MfcFinalCta({ onRequestDemo }: MfcFinalCtaProps) {
   return (
     <section className="section mfc-final" id="contact" aria-labelledby="mfc-final-title">
       <div className="container">
@@ -16,15 +17,15 @@ export function MfcFinalCta({ onTalkToLexa }: MfcFinalCtaProps) {
           <SectionHeader
             title="Начнём с одного процесса вашего МФЦ"
             titleId="mfc-final-title"
-            description="Разберём поток обращений, выберем первый сценарий, покажем профильную демонстрацию и определим состав решения с учётом вашей инфраструктуры и требований к безопасности."
+            description="Разберём поток обращений, выберем первый сценарий, покажем профильную демонстрацию и определим состав решения с учётом вашей инфраструктуры."
           />
         </Reveal>
 
         <Reveal>
           <div className="mfc-final__actions">
-            <Button href="#mfc-contact-form">Обсудить проект</Button>
-            <Button variant="secondary" onClick={onTalkToLexa}>
-              Поговорить с Лексой
+            <Button onClick={onRequestDemo}>{mfcDemoState.demoCtaLabel}</Button>
+            <Button variant="secondary" href={`#${mfcDemoState.formAnchor}`}>
+              Обсудить проект
             </Button>
           </div>
         </Reveal>
@@ -32,7 +33,7 @@ export function MfcFinalCta({ onTalkToLexa }: MfcFinalCtaProps) {
         <Reveal>
           <GlassSurface className="mfc-final__form-wrap" radius="xl" depth="raised" tint="mfc">
             <ContactForm
-              id="mfc-contact-form"
+              id={mfcDemoState.formAnchor}
               organizationLabel="Организация и регион"
               messageRequired={false}
               submitLabel="Отправить заявку"

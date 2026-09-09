@@ -13,8 +13,9 @@ export function MfcScenarios() {
       <div className="container">
         <Reveal>
           <SectionHeader
-            title="Один вход для разных вопросов граждан"
+            title="Сценарии автоматизации для МФЦ"
             titleId="mfc-scenarios-title"
+            description="Какие задачи МФЦ закрывает платформа: от консультаций и записи до исходящих напоминаний и передачи сложного вопроса сотруднику."
           />
         </Reveal>
 
@@ -39,14 +40,26 @@ export function MfcScenarios() {
             </div>
 
             <div className="mfc-scenarios__body" role="tabpanel">
-              <p className="mfc-scenarios__text">{active.text}</p>
-              <ol className="mfc-scenarios__steps">
-                {active.steps.map((step) => (
-                  <li key={step}>
-                    <span>{step}</span>
-                  </li>
-                ))}
-              </ol>
+              <dl className="mfc-scenarios__flow">
+                <div>
+                  <dt>Задача</dt>
+                  <dd>{active.task}</dd>
+                </div>
+                <div>
+                  <dt>Что делает Lexicom</dt>
+                  <dd>{active.lexicom}</dd>
+                </div>
+                <div>
+                  <dt>Результат</dt>
+                  <dd>{active.outcome}</dd>
+                </div>
+              </dl>
+              {'integration' in active && active.integration ? (
+                <p className="mfc-scenarios__integration-note">
+                  Запись, статус и уведомления на основе данных МФЦ доступны только при подключении соответствующей
+                  информационной системы.
+                </p>
+              ) : null}
             </div>
           </GlassSurface>
         </Reveal>

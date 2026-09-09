@@ -3,36 +3,105 @@ import { GlassSurface } from '../ui/GlassSurface';
 import { Reveal } from '../ui/Reveal';
 import { SectionHeader } from '../ui/SectionHeader';
 
+function LevelIcon({ icon }: { icon: (typeof mfcEcosystemLevels)[number]['icon'] }) {
+  switch (icon) {
+    case 'channels':
+      return (
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <rect x="3" y="5" width="7" height="5" rx="1.5" fill="none" stroke="currentColor" strokeWidth="1.6" />
+          <rect x="14" y="5" width="7" height="5" rx="1.5" fill="none" stroke="currentColor" strokeWidth="1.6" />
+          <rect x="8.5" y="14" width="7" height="5" rx="1.5" fill="none" stroke="currentColor" strokeWidth="1.6" />
+          <path d="M6.5 10v2.5h11V10" fill="none" stroke="currentColor" strokeWidth="1.6" />
+        </svg>
+      );
+    case 'automation':
+      return (
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <circle cx="12" cy="12" r="3.2" fill="none" stroke="currentColor" strokeWidth="1.6" />
+          <path
+            d="M12 3.5v2.2M12 18.3v2.2M3.5 12h2.2M18.3 12h2.2M6.1 6.1l1.6 1.6M16.3 16.3l1.6 1.6M17.9 6.1l-1.6 1.6M7.7 16.3l-1.6 1.6"
+            stroke="currentColor"
+            strokeWidth="1.6"
+            strokeLinecap="round"
+          />
+        </svg>
+      );
+    case 'employees':
+      return (
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <circle cx="9" cy="8" r="2.4" fill="none" stroke="currentColor" strokeWidth="1.6" />
+          <circle cx="16" cy="9" r="2" fill="none" stroke="currentColor" strokeWidth="1.6" />
+          <path
+            d="M4.5 18.5c.6-2.8 2.7-4.2 4.5-4.2s3.9 1.4 4.5 4.2M13.2 14.8c1.1-.5 2.4-.6 3.5.1 1.3.8 2.1 2.2 2.3 3.6"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="1.6"
+            strokeLinecap="round"
+          />
+        </svg>
+      );
+    case 'knowledge':
+      return (
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <path
+            d="M5 6.5h9.5a2.5 2.5 0 0 1 2.5 2.5V19H7.5A2.5 2.5 0 0 0 5 21.5z"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="1.6"
+            strokeLinejoin="round"
+          />
+          <path d="M5 6.5V19" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" />
+          <path d="M8.5 10h6M8.5 13.5h5" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" />
+        </svg>
+      );
+    case 'analytics':
+      return (
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M5 19V11M10 19V7M15 19v-5M20 19V9" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" />
+        </svg>
+      );
+  }
+}
+
 export function MfcEcosystem() {
   return (
-    <section className="section mfc-ecosystem" id="mfc-ecosystem" aria-labelledby="mfc-ecosystem-title">
+    <section className="section mfc-ecosystem mfc-section--dense" id="mfc-ecosystem" aria-labelledby="mfc-ecosystem-title">
       <div className="container">
         <Reveal>
           <SectionHeader
             title="От отдельного бота до единого контура обслуживания"
             titleId="mfc-ecosystem-title"
-            description="Можно начать с одного канала или сценария — например записи через MAX — а затем подключить телефонию, сайт, контактный центр, помощь сотрудникам, интеграции и аналитику."
+            description="Из чего состоит решение: каналы, нейробот, контактный центр с суфлёром, база знаний с интеграциями и речевая аналитика. Можно начать с одного канала или сценария и наращивать контур."
           />
         </Reveal>
 
         <Reveal>
           <GlassSurface className="mfc-ecosystem__stack" radius="xl" depth="float" tint="mfc">
             <p className="mfc-ecosystem__tagline">
-              Lexicom может поставить один бот в MAX, а может собрать весь коммуникационный контур МФЦ.
+              Lexicom может поставить один сценарий в MAX или телефонии, а может собрать весь коммуникационный контур МФЦ.
             </p>
-            <div className="mfc-ecosystem__levels">
+            <div className="mfc-ecosystem__levels" role="list">
               {mfcEcosystemLevels.map((level) => (
-                <div key={level.level} className="mfc-ecosystem__level">
-                  <div className="mfc-ecosystem__level-head">
+                <article key={level.level} className="mfc-ecosystem__level" role="listitem">
+                  <div className="mfc-ecosystem__level-marker" aria-hidden="true">
                     <span className="mfc-ecosystem__level-num">{level.level}</span>
-                    <h3>{level.title}</h3>
+                    <span className="mfc-ecosystem__level-icon">
+                      <LevelIcon icon={level.icon} />
+                    </span>
                   </div>
-                  <ul className="mfc-ecosystem__items">
-                    {level.items.map((item) => (
-                      <li key={item}>{item}</li>
-                    ))}
-                  </ul>
-                </div>
+                  <div className="mfc-ecosystem__level-copy">
+                    <h3>{level.title}</h3>
+                    <p className="mfc-ecosystem__level-summary">{level.summary}</p>
+                    <ul className="mfc-ecosystem__capabilities">
+                      {level.capabilities.map((item) => (
+                        <li key={item.title}>
+                          <span className="mfc-ecosystem__capability-title">{item.title}</span>
+                          <span className="mfc-ecosystem__capability-detail">{item.detail}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                </article>
               ))}
             </div>
           </GlassSurface>
