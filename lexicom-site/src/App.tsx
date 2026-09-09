@@ -4,6 +4,7 @@ import { DesignPreviewPage } from './design-preview/DesignPreviewPage';
 import { HomePage } from './pages/HomePage';
 import { MfcPage } from './pages/MfcPage';
 import { ProfilePageShell } from './pages/ProfilePageShell';
+import { S122Page } from './pages/S122Page';
 
 export default function App() {
   return (
@@ -13,7 +14,7 @@ export default function App() {
         <Route element={<SiteShell />}>
           <Route path="/" element={<HomePage />} />
           <Route path="/mfc" element={<MfcPage />} />
-          <Route path="/122" element={<ProfilePageShell title="Служба 122" directionLabel="Я — служба 122" />} />
+          <Route path="/122" element={<S122Page />} />
           <Route path="/edds" element={<ProfilePageShell title="ЕДДС" directionLabel="Я — ЕДДС" />} />
         </Route>
       </Routes>
