@@ -3,7 +3,6 @@ import { usePageMeta } from '../hooks/usePageMeta';
 import { Footer } from '../components/Footer';
 import { S122Analytics } from '../components/s122/S122Analytics';
 import { S122Benefits } from '../components/s122/S122Benefits';
-import { S122Channels } from '../components/s122/S122Channels';
 import { S122Dialogue } from '../components/s122/S122Dialogue';
 import { S122Faq } from '../components/s122/S122Faq';
 import { S122FinalCta } from '../components/s122/S122FinalCta';
@@ -15,7 +14,6 @@ import { S122Journey } from '../components/s122/S122Journey';
 import { S122OnPrem } from '../components/s122/S122OnPrem';
 import { S122Outcome } from '../components/s122/S122Outcome';
 import { S122Peak } from '../components/s122/S122Peak';
-import { S122Platform } from '../components/s122/S122Platform';
 import { S122Proof } from '../components/s122/S122Proof';
 import { S122Scenarios } from '../components/s122/S122Scenarios';
 
@@ -50,12 +48,10 @@ export function S122Page() {
         <S122Scenarios />
         <S122Dialogue onRequestDemo={scrollToForm} />
         <S122Peak />
-        <S122Channels />
         <S122Handoff />
         <S122Integration />
         <S122Analytics />
         <S122OnPrem />
-        <S122Platform />
         <S122Benefits />
         <S122Proof />
         <S122Implementation />

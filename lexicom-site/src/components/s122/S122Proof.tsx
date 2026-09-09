@@ -9,9 +9,9 @@ export function S122Proof() {
       <div className="container">
         <Reveal>
           <SectionHeader
-            title="Платформа работает в промышленной эксплуатации"
+            title="Промышленный опыт Lexicom"
             titleId="s122-proof-title"
-            description="Показатели Lexicom в целом — не статистика отдельного проекта службы 122."
+            description="Общие показатели проектов на базе платформы Lexicom."
           />
         </Reveal>
 
@@ -31,7 +31,7 @@ export function S122Proof() {
 
         <Reveal>
           <p className="s122-proof__note">
-            Конкретная доля автоматизации определяется составом сценариев, качеством данных и глубиной интеграции.
+            Конкретная доля автоматизации зависит от состава сценариев, качества данных и глубины интеграции.
           </p>
         </Reveal>
       </div>

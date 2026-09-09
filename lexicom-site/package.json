@@ -7,6 +7,7 @@
     "dev": "vite",
     "dev:clean": "rm -rf node_modules/.vite && vite --force",
     "build": "tsc -b && vite build",
+    "deploy:pages": "bash ../scripts/deploy-lexicom.sh",
     "lint": "oxlint",
     "preview": "vite preview"
   },

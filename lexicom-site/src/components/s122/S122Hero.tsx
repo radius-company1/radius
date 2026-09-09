@@ -28,7 +28,7 @@ export function S122Hero({ onRequestDemo, onDiscuss }: S122HeroProps) {
           <Reveal delay={120}>
             <p className="s122-hero__lead">
               Автоматизируем запись к врачу, вызов врача на дом, проверку статуса заявки и типовые медицинские обращения
-              — от первой фразы жителя до результата в подключённой системе.
+              — от первой фразы жителя до результата.
             </p>
           </Reveal>
           <Reveal delay={160}>
@@ -57,18 +57,23 @@ export function S122Hero({ onRequestDemo, onDiscuss }: S122HeroProps) {
             <p className="s122-hero__viz-label">Мини-демонстрация сценария</p>
             <ol className="s122-hero__pipeline" aria-label="Путь обращения от звонка до результата">
               {s122HeroPipeline.map((step, index) => (
-                <li key={step.label} className="s122-hero__pipeline-step">
+                <li
+                  key={step.label}
+                  className={`s122-hero__pipeline-step ${'note' in step && step.note ? 's122-hero__pipeline-step--note' : ''}`}
+                >
                   <span className="s122-hero__pipeline-index" aria-hidden="true">
                     {String(index + 1).padStart(2, '0')}
                   </span>
                   <div className="s122-hero__pipeline-body">
                     <span className="s122-hero__pipeline-label">{step.label}</span>
-                    <span className="s122-hero__pipeline-text">{step.text}</span>
+                    <span className="s122-hero__pipeline-text">{step.text.replace(/\*$/, '')}</span>
+                    {'note' in step && step.note ? (
+                      <span className="s122-hero__pipeline-hint">при наличии интеграции</span>
+                    ) : null}
                   </div>
                 </li>
               ))}
             </ol>
-            <p className="s122-hero__viz-note">* при наличии интеграции</p>
           </GlassSurface>
         </Reveal>
       </div>

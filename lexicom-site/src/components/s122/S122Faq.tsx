@@ -8,7 +8,7 @@ export function S122Faq() {
     <section className="section s122-faq s122-section--compact" id="s122-faq" aria-labelledby="s122-faq-title">
       <div className="container container--narrow">
         <Reveal>
-          <SectionHeader title="Коротко о границах решения" titleId="s122-faq-title" />
+          <SectionHeader title="Вопросы перед стартом проекта" titleId="s122-faq-title" />
         </Reveal>
         <Reveal>
           <div className="s122-faq__panel surface-calm">

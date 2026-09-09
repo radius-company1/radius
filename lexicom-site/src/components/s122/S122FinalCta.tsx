@@ -18,7 +18,7 @@ export function S122FinalCta({ onRequestDemo, onDiscuss }: S122FinalCtaProps) {
           <SectionHeader
             title="Покажем, как Lexicom будет работать в вашем контуре 122"
             titleId="s122-final-title"
-            description="Разберём реальные сценарии, системы и точки интеграции и покажем демонстрацию на логике вашего проекта."
+            description="Разберём реальные сценарии, существующие системы и точки интеграции и покажем демонстрацию на логике вашего проекта."
           />
         </Reveal>
 
@@ -33,10 +33,6 @@ export function S122FinalCta({ onRequestDemo, onDiscuss }: S122FinalCtaProps) {
 
         <Reveal>
           <GlassSurface className="s122-final__form-wrap" radius="xl" depth="raised" tint="s122">
-            <p className="s122-final__form-note">
-              Заявка не означает подключение к действующей медицинской системе — сначала обсуждаем сценарии и контур
-              проекта.
-            </p>
             <ContactForm
               id={s122DemoState.formAnchor}
               organizationLabel="Организация и регион"

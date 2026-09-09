@@ -10,7 +10,7 @@ export function S122Benefits() {
           <SectionHeader
             title="Что получает служба 122"
             titleId="s122-benefits-title"
-            description="Операционные эффекты контура автоматизации — без выдуманных процентов экономии."
+            description="Что меняется в работе службы 122."
           />
         </Reveal>
 

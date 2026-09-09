@@ -20,14 +20,14 @@ export function S122Dialogue({ onRequestDemo }: S122DialogueProps) {
           <SectionHeader
             title="Как выглядит работа сценария"
             titleId="s122-dialogue-title"
-            description="Демонстрация принципа: диалог собирает контекст. Реальные операции в медицинских системах выполняются только при промышленной интеграции."
+            description="По мере диалога формируется структурированный контекст для действия в системе или передачи оператору."
           />
         </Reveal>
 
         <div className="s122-dialogue__layout">
           <Reveal>
             <GlassSurface className="s122-dialogue__chat" radius="xl" depth="raised" tint="s122">
-              <p className="s122-dialogue__label">Диалог</p>
+              <p className="s122-dialogue__label">Демонстрационный сценарий</p>
               <ul className="s122-dialogue__turns">
                 {s122DialogueTurns.map((turn) => (
                   <li key={`${turn.role}-${turn.text}`} className={`s122-dialogue__turn s122-dialogue__turn--${turn.side}`}>
@@ -58,9 +58,6 @@ export function S122Dialogue({ onRequestDemo }: S122DialogueProps) {
         <Reveal>
           <div className="s122-dialogue__actions">
             <Button onClick={onRequestDemo}>{s122DemoState.demoCtaLabel}</Button>
-            <p className="s122-dialogue__disclaimer">
-              Это демонстрация логики сценария, а не подключение к действующей медицинской системе.
-            </p>
           </div>
         </Reveal>
       </div>
