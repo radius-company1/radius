@@ -1,3 +1,4 @@
+import { profileLaunchNote } from '../../data/implementation';
 import { eddsImplementationSteps } from '../../data/directions/edds';
 import { GlassSurface } from '../ui/GlassSurface';
 import { Reveal } from '../ui/Reveal';
@@ -30,6 +31,10 @@ export function EddsImplementation() {
             </li>
           ))}
         </ol>
+
+        <Reveal>
+          <p className="profile-launch-note">{profileLaunchNote}</p>
+        </Reveal>
       </div>
     </section>
   );

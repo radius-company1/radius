@@ -1,7 +1,15 @@
 import { eddsProductFoundation, eddsProducts } from '../../data/directions/edds';
+import { ProductVisual } from '../ProductVisual';
+import type { ProductId } from '../../data/products';
 import { GlassSurface } from '../ui/GlassSurface';
 import { Reveal } from '../ui/Reveal';
 import { SectionHeader } from '../ui/SectionHeader';
+
+const visualByProduct: Record<string, ProductId> = {
+  neurobot: 'neurobot',
+  cc: 'contact-center',
+  analytics: 'speech-analytics',
+};
 
 export function EddsProducts() {
   return (
@@ -24,6 +32,11 @@ export function EddsProducts() {
                 depth="raised"
                 tint={index === 1 ? 'yellow' : 'edds'}
               >
+                {visualByProduct[product.id] ? (
+                  <div className="edds-products__visual" aria-hidden="true">
+                    <ProductVisual id={visualByProduct[product.id]} />
+                  </div>
+                ) : null}
                 <h3>{product.title}</h3>
                 {'highlight' in product && product.highlight ? (
                   <p className="edds-products__highlight">{product.highlight}</p>

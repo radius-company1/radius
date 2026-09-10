@@ -1,6 +1,6 @@
 import { useCallback, useEffect, useLayoutEffect, useRef, useState } from 'react';
 import { useLocation } from 'react-router-dom';
-import { directionModes } from '../theme/directions';
+import { directionModes, getDirectionIndexFromPath, normalizePath } from '../theme/directions';
 import { useViewTransitionNavigate } from '../hooks/useViewTransitionNavigate';
 import './DirectionSwitcher.css';
 
@@ -30,8 +30,8 @@ export function DirectionSwitcher({ scrolled = false }: DirectionSwitcherProps) 
   const [ready, setReady] = useState(false);
   const [moving, setMoving] = useState(false);
 
-  const activeIndex = directionModes.findIndex((mode) => mode.href === location.pathname);
-  const safeActiveIndex = activeIndex >= 0 ? activeIndex : 0;
+  const safeActiveIndex = getDirectionIndexFromPath(location.pathname);
+  const currentPath = normalizePath(location.pathname);
   const [lensTarget, setLensTarget] = useState(safeActiveIndex);
   const visualIndex = hoverIndex ?? lensTarget;
 
@@ -108,7 +108,7 @@ export function DirectionSwitcher({ scrolled = false }: DirectionSwitcherProps) 
   }, []);
 
   const handleSelect = (href: string, index: number) => {
-    if (href === location.pathname) return;
+    if (normalizePath(href) === currentPath) return;
 
     setLensTarget(index);
     setMoving(true);
@@ -199,7 +199,7 @@ export function DirectionSwitcher({ scrolled = false }: DirectionSwitcherProps) 
               </div>
 
               {directionModes.map((mode, index) => {
-                const isActive = mode.href === location.pathname;
+                const isActive = mode.href === currentPath;
                 return (
                   <button
                     key={mode.id}

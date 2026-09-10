@@ -9,7 +9,7 @@ export type PreviewTheme = {
 export const previewThemes: PreviewTheme[] = [
   {
     id: 'overview',
-    label: 'Обзор',
+    label: 'Главная',
     cssVars: {
       '--liq-base': '#ebe6dc',
       '--liq-wash-a': 'rgba(46, 211, 255, 0.72)',
@@ -25,7 +25,7 @@ export const previewThemes: PreviewTheme[] = [
   },
   {
     id: 'mfc',
-    label: 'Я — МФЦ',
+    label: 'Для МФЦ',
     cssVars: {
       '--liq-base': '#e8eef4',
       '--liq-wash-a': 'rgba(46, 211, 255, 0.78)',
@@ -41,7 +41,7 @@ export const previewThemes: PreviewTheme[] = [
   },
   {
     id: '122',
-    label: 'Я — служба 122',
+    label: 'Для службы 122',
     cssVars: {
       '--liq-base': '#ebe8f2',
       '--liq-wash-a': 'rgba(155, 92, 255, 0.65)',
@@ -57,7 +57,7 @@ export const previewThemes: PreviewTheme[] = [
   },
   {
     id: 'edds',
-    label: 'Я — ЕДДС',
+    label: 'Для ЕДДС',
     cssVars: {
       '--liq-base': '#e4eaf4',
       '--liq-wash-a': 'rgba(42, 63, 159, 0.62)',

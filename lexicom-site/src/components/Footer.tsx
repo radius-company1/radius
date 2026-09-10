@@ -1,8 +1,16 @@
-import { Link } from 'react-router-dom';
+import { useLocation, Link } from 'react-router-dom';
 import { footerCompany, footerDirections, footerLegal, footerPlatform } from '../data/footer';
 import { Logo } from './ui/Logo';
 
+function sectionHref(hash: string, isHome: boolean) {
+  const clean = hash.startsWith('#') ? hash : `#${hash}`;
+  return isHome ? clean : `/${clean}`;
+}
+
 export function Footer() {
+  const location = useLocation();
+  const isHome = location.pathname === '/' || location.pathname === '';
+
   return (
     <footer className="site-footer">
       <div className="container site-footer__grid">
@@ -16,7 +24,7 @@ export function Footer() {
           <ul className="site-footer__list">
             {footerPlatform.map((item) => (
               <li key={item}>
-                <a href="#platform">{item}</a>
+                <Link to={sectionHref('#products', isHome)}>{item}</Link>
               </li>
             ))}
           </ul>
@@ -38,7 +46,7 @@ export function Footer() {
           <ul className="site-footer__list">
             {footerCompany.map((item) => (
               <li key={item.label}>
-                <a href={item.href}>{item.label}</a>
+                <Link to={sectionHref(item.href, isHome)}>{item.label}</Link>
               </li>
             ))}
           </ul>

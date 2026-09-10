@@ -2,7 +2,7 @@ import { Button } from '../ui/Button';
 import { GlassSurface } from '../ui/GlassSurface';
 import { Reveal } from '../ui/Reveal';
 import { SectionHeader } from '../ui/SectionHeader';
-import { s122DemoState, s122DialogueContext, s122DialogueTurns } from '../../data/directions/s122';
+import { s122DemoState, s122DialogueContext, s122DialogueNote, s122DialogueTurns } from '../../data/directions/s122';
 
 type S122DialogueProps = {
   onRequestDemo: () => void;
@@ -20,7 +20,7 @@ export function S122Dialogue({ onRequestDemo }: S122DialogueProps) {
           <SectionHeader
             title="Как выглядит работа сценария"
             titleId="s122-dialogue-title"
-            description="По мере диалога формируется структурированный контекст для действия в системе или передачи оператору."
+            description="Демонстрационный пример: нейробот собирает сведения из разговора и передаёт их сотруднику."
           />
         </Reveal>
 
@@ -41,7 +41,7 @@ export function S122Dialogue({ onRequestDemo }: S122DialogueProps) {
 
           <Reveal delay={80}>
             <GlassSurface className="s122-dialogue__context" radius="xl" depth="float" tint="cyan">
-              <p className="s122-dialogue__label">Структурированный контекст</p>
+              <p className="s122-dialogue__label">Сведения из разговора</p>
               <dl className="s122-dialogue__facts">
                 {s122DialogueContext.map((fact) => (
                   <div key={fact.label} className="s122-dialogue__fact">
@@ -50,7 +50,7 @@ export function S122Dialogue({ onRequestDemo }: S122DialogueProps) {
                   </div>
                 ))}
               </dl>
-              <p className="s122-dialogue__note">* при наличии интеграции с информационной системой</p>
+              <p className="s122-dialogue__note">{s122DialogueNote}</p>
             </GlassSurface>
           </Reveal>
         </div>

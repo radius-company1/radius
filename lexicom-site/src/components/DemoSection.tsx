@@ -14,15 +14,15 @@ export function DemoSection({ onOpenChat }: DemoSectionProps) {
       <div className="container">
         <Reveal>
           <SectionHeader
-            title="Задайте вопрос ИИ-консультанту"
+            title="Интерактивный обзор возможностей"
             titleId="demo-title"
-            description="Кратко расскажет о платформе, внедрении и выборе направления."
+            description="Кратко ответит о платформе, внедрении и выборе направления по ключевым словам."
           />
         </Reveal>
 
         <Reveal>
           <div className="demo__chat-cta">
-            <Button onClick={onOpenChat}>Открыть чат</Button>
+            <Button onClick={onOpenChat}>Открыть обзор</Button>
           </div>
         </Reveal>
 

@@ -1,3 +1,4 @@
+import { profileResourceNote } from '../../data/flexibility';
 import { s122OnPremMarkers, s122PlatformModules } from '../../data/directions/s122';
 import { GlassSurface } from '../ui/GlassSurface';
 import { Reveal } from '../ui/Reveal';
@@ -33,6 +34,7 @@ export function S122OnPrem() {
               ))}
             </ul>
             <p className="s122-onprem__stack">Российский технологический стек</p>
+            <p className="profile-resource-note">{profileResourceNote}</p>
           </GlassSurface>
         </Reveal>
       </div>

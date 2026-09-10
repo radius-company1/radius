@@ -1,29 +1,76 @@
-import { casePlaceholders } from '../data/cases';
-import { Button } from './ui/Button';
+import { casePlaceholders, type CasePlaceholder } from '../data/cases';
 import { GlassSurface } from './ui/GlassSurface';
 import { Reveal } from './ui/Reveal';
 import { SectionHeader } from './ui/SectionHeader';
 
-function CaseDetails({ item }: { item: (typeof casePlaceholders)[number] }) {
+function FeaturedCase({ item }: { item: CasePlaceholder }) {
   return (
-    <dl className="case-card__details">
-      <div>
-        <dt>Задача</dt>
-        <dd>{item.task}</dd>
-      </div>
-      <div>
-        <dt>Внедрение</dt>
-        <dd>{item.solution}</dd>
-      </div>
-      <div>
-        <dt>Масштаб</dt>
-        <dd>{item.scale}</dd>
-      </div>
-      <div>
-        <dt>Результат</dt>
-        <dd>{item.result}</dd>
-      </div>
-    </dl>
+    <GlassSurface as="article" className="case-card case-card--featured" radius="xl" depth="float" tint="blue">
+      {item.note ? <p className="case-card__note">{item.note}</p> : null}
+      <h3 className="case-card__title">{item.title}</h3>
+      <p className="case-card__customer">{item.customer}</p>
+      <dl className="case-card__details">
+        <div>
+          <dt>Задача</dt>
+          <dd>{item.task}</dd>
+        </div>
+        <div>
+          <dt>Что внедрили</dt>
+          <dd>{item.solution}</dd>
+        </div>
+      </dl>
+      {item.metrics.length > 0 ? (
+        <div className="case-card__metrics">
+          <p className="case-card__metrics-label">Сравнение показателей</p>
+          <table className="case-card__table">
+            <thead>
+              <tr>
+                <th scope="col">Показатель</th>
+                <th scope="col">До внедрения</th>
+                <th scope="col">После внедрения</th>
+              </tr>
+            </thead>
+            <tbody>
+              {item.metrics.map((row, index) => (
+                <tr key={`${row.metric}-${index}`}>
+                  <td>{row.metric}</td>
+                  <td>{row.before}</td>
+                  <td>{row.after}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      ) : null}
+      <dl className="case-card__details">
+        <div>
+          <dt>Итог</dt>
+          <dd>{item.result}</dd>
+        </div>
+      </dl>
+    </GlassSurface>
+  );
+}
+
+function CompactCase({ item }: { item: CasePlaceholder }) {
+  return (
+    <GlassSurface as="article" className="case-card case-card--compact" radius="lg" depth="raised">
+      <h3 className="case-card__title">{item.title}</h3>
+      <dl className="case-card__details">
+        <div>
+          <dt>Задача</dt>
+          <dd>{item.task}</dd>
+        </div>
+        <div>
+          <dt>Внедрение</dt>
+          <dd>{item.solution}</dd>
+        </div>
+        <div>
+          <dt>Результат</dt>
+          <dd>{item.result}</dd>
+        </div>
+      </dl>
+    </GlassSurface>
   );
 }
 
@@ -43,28 +90,16 @@ export function Cases() {
 
         <div className="cases__mosaic">
           <Reveal>
-            <GlassSurface as="article" className="case-card case-card--featured" radius="xl" depth="float" tint="blue">
-              <h3 className="case-card__title">{featured.title}</h3>
-              <CaseDetails item={featured} />
-            </GlassSurface>
+            <FeaturedCase item={featured} />
           </Reveal>
           <div className="cases__compact">
             {compact.map((item, index) => (
               <Reveal key={item.id} delay={index * 80}>
-                <GlassSurface as="article" className="case-card case-card--compact" radius="lg" depth="raised">
-                  <h3 className="case-card__title">{item.title}</h3>
-                  <CaseDetails item={item} />
-                </GlassSurface>
+                <CompactCase item={item} />
               </Reveal>
             ))}
           </div>
         </div>
-
-        <Reveal>
-          <div className="cases__action">
-            <Button variant="secondary">Смотреть все кейсы</Button>
-          </div>
-        </Reveal>
       </div>
     </section>
   );

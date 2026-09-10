@@ -8,7 +8,7 @@ export const mainNav = [
 ] as const;
 
 export const directionLinks = [
-  { label: 'Я — МФЦ', href: '/mfc', short: 'МФЦ' },
-  { label: 'Я — служба 122', href: '/122', short: '122' },
-  { label: 'Я — ЕДДС', href: '/edds', short: 'ЕДДС' },
+  { label: 'Для МФЦ', href: '/mfc', short: 'МФЦ' },
+  { label: 'Для службы 122', href: '/122', short: '122' },
+  { label: 'Для ЕДДС', href: '/edds', short: 'ЕДДС' },
 ] as const;

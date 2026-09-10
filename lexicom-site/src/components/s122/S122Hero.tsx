@@ -33,7 +33,7 @@ export function S122Hero({ onRequestDemo, onDiscuss }: S122HeroProps) {
           </Reveal>
           <Reveal delay={160}>
             <p className="s122-hero__pillars">
-              Голосовые и цифровые каналы · операторский контур · интеграции · речевая аналитика · on-prem
+              Голосовые и цифровые каналы · контактный центр · ИИ-суфлёр · интеграции · речевая аналитика · on-prem
             </p>
           </Reveal>
           <Reveal delay={200}>

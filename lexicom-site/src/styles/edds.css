@@ -254,6 +254,19 @@
   padding: 1.15rem 1.2rem;
 }
 
+.edds-products__visual {
+  margin: -0.35rem -0.35rem 0.75rem;
+  border-radius: 14px;
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.28);
+}
+
+.edds-products__visual .product-visual {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
 .edds-products__card h3 {
   margin: 0 0 0.45rem;
   font-size: 1.15rem;

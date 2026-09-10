@@ -1,3 +1,4 @@
+import { profileLaunchNote } from '../../data/implementation';
 import { mfcImplementationSteps } from '../../data/directions/mfc';
 import { GlassSurface } from '../ui/GlassSurface';
 import { Reveal } from '../ui/Reveal';
@@ -29,6 +30,10 @@ export function MfcImplementation() {
             </li>
           ))}
         </ol>
+
+        <Reveal>
+          <p className="profile-launch-note">{profileLaunchNote}</p>
+        </Reveal>
       </div>
     </section>
   );

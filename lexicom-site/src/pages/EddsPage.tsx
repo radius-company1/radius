@@ -50,7 +50,7 @@ export function EddsPage() {
         <EddsCase />
         <EddsImplementation />
         <EddsFaq />
-        <EddsFinalCta onDiscuss={scrollToForm} />
+        <EddsFinalCta />
       </main>
       <Footer />
     </div>

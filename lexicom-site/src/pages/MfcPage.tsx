@@ -45,7 +45,7 @@ export function MfcPage() {
         <MfcExperience />
         <MfcImplementation />
         <MfcFaq />
-        <MfcFinalCta onRequestDemo={scrollToForm} />
+        <MfcFinalCta />
       </main>
       <Footer />
     </div>

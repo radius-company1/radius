@@ -1,4 +1,4 @@
-import { s122LexaDoes, s122OperatorGets } from '../../data/directions/s122';
+import { s122ContactCenterPoints, s122LexaDoes, s122OperatorGets } from '../../data/directions/s122';
 import { GlassSurface } from '../ui/GlassSurface';
 import { Reveal } from '../ui/Reveal';
 import { SectionHeader } from '../ui/SectionHeader';
@@ -14,17 +14,28 @@ export function S122Handoff() {
       <div className="container">
         <Reveal>
           <SectionHeader
-            title="Автоматизация там, где она эффективна. Человек — там, где он нужен."
+            title="Контактный центр, оператор и ИИ-суфлёр"
             titleId="s122-handoff-title"
-            description="ИИ снимает повторяющуюся работу. Жителю не приходится начинать разговор заново."
+            description="Нейробот снимает типовые обращения. Сложные случаи принимает оператор в контактном центре с историей диалога и подсказками из базы знаний."
             light
           />
         </Reveal>
 
+        <div className="s122-handoff__points">
+          {s122ContactCenterPoints.map((point, index) => (
+            <Reveal key={point.title} delay={index * 50}>
+              <GlassSurface className="s122-handoff__point" radius="lg" depth="raised" tint="cyan" variant="dark">
+                <h3>{point.title}</h3>
+                <p>{point.text}</p>
+              </GlassSurface>
+            </Reveal>
+          ))}
+        </div>
+
         <div className="s122-handoff__roles">
           <Reveal>
             <GlassSurface className="s122-handoff__role" radius="lg" depth="raised" tint="cyan" variant="dark">
-              <h3>Лекса</h3>
+              <h3>Нейробот</h3>
               <ul>
                 {s122LexaDoes.map((item) => (
                   <li key={item}>{item}</li>

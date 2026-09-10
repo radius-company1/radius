@@ -1,3 +1,4 @@
+import { profileLaunchNote } from '../../data/implementation';
 import { s122ImplementationSteps } from '../../data/directions/s122';
 import { GlassSurface } from '../ui/GlassSurface';
 import { Reveal } from '../ui/Reveal';
@@ -34,6 +35,10 @@ export function S122Implementation() {
             </li>
           ))}
         </ol>
+
+        <Reveal>
+          <p className="profile-launch-note">{profileLaunchNote}</p>
+        </Reveal>
       </div>
     </section>
   );

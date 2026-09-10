@@ -54,7 +54,7 @@ export function S122Page() {
         <S122OnPrem />
         <S122Implementation />
         <S122Faq />
-        <S122FinalCta onRequestDemo={scrollToForm} onDiscuss={scrollToForm} />
+        <S122FinalCta />
       </main>
       <Footer />
     </div>

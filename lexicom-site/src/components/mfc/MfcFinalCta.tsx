@@ -1,15 +1,10 @@
-import { Button } from '../ui/Button';
 import { ContactForm } from '../ContactForm';
 import { GlassSurface } from '../ui/GlassSurface';
 import { Reveal } from '../ui/Reveal';
 import { SectionHeader } from '../ui/SectionHeader';
 import { mfcDemoState } from '../../data/directions/mfc';
 
-type MfcFinalCtaProps = {
-  onRequestDemo: () => void;
-};
-
-export function MfcFinalCta({ onRequestDemo }: MfcFinalCtaProps) {
+export function MfcFinalCta() {
   return (
     <section className="section mfc-final" id="contact" aria-labelledby="mfc-final-title">
       <div className="container">
@@ -17,17 +12,8 @@ export function MfcFinalCta({ onRequestDemo }: MfcFinalCtaProps) {
           <SectionHeader
             title="Начнём с одного процесса вашего МФЦ"
             titleId="mfc-final-title"
-            description="Разберём поток обращений, выберем первый сценарий, покажем профильную демонстрацию и определим состав решения с учётом вашей инфраструктуры."
+            description="Разберём поток обращений, выберем первый сценарий и определим состав решения с учётом вашей инфраструктуры."
           />
-        </Reveal>
-
-        <Reveal>
-          <div className="mfc-final__actions">
-            <Button onClick={onRequestDemo}>{mfcDemoState.demoCtaLabel}</Button>
-            <Button variant="secondary" href={`#${mfcDemoState.formAnchor}`}>
-              Обсудить проект
-            </Button>
-          </div>
         </Reveal>
 
         <Reveal>
@@ -37,6 +23,7 @@ export function MfcFinalCta({ onRequestDemo }: MfcFinalCtaProps) {
               organizationLabel="Организация и регион"
               messageRequired={false}
               submitLabel="Отправить заявку"
+              direction="МФЦ"
             />
           </GlassSurface>
         </Reveal>

@@ -10,8 +10,8 @@ export const chatDemoResponses: Record<string, string> = {
   платформ:
     'Платформа объединяет нейробота и ИИ-ассистентов, контактный центр, базу знаний, робот-суфлёр и речевую аналитику. Решение разворачивается в инфраструктуре заказчика.',
   внедрен:
-    'Внедрение начинается с изучения задачи и может стартовать с пилотного контура. Lexicom проектирует решение под процессы организации и сопровождает его после запуска.',
-  мфц: 'Для МФЦ подготовлена отдельная профильная страница со сценариями и демонстрацией. Перейдите по ссылке «Я — МФЦ» в разделе направлений.',
+    'Запуск решений Lexicom — от 3 дней. Есть опыт полной реализации и сдачи бота в MAX за 3 дня. Срок вашего проекта определим по составу решения, сценариям и интеграциям.',
+  мфц: 'Для МФЦ подготовлена отдельная профильная страница со сценариями и демонстрацией. Перейдите по ссылке «Для МФЦ» в разделе направлений.',
   направлен:
     'Задачи МФЦ, службы 122 и ЕДДС различаются. Для каждого направления создана отдельная страница — выберите своё в разделе «Направления».',
   данн:
@@ -30,7 +30,8 @@ export function getChatResponse(input: string): string {
   const normalized = input.toLowerCase().trim();
   if (!normalized) return chatDemoResponses.default;
   if (normalized.includes('платформ')) return chatDemoResponses.платформ;
-  if (normalized.includes('внедр')) return chatDemoResponses.внедрен;
+  if (normalized.includes('внедр') || normalized.includes('срок') || normalized.includes('3 дн'))
+    return chatDemoResponses.внедрен;
   if (normalized.includes('мфц')) return chatDemoResponses.мфц;
   if (normalized.includes('направлен') || normalized.includes('122') || normalized.includes('еддс'))
     return chatDemoResponses.направлен;

@@ -1,4 +1,4 @@
-import { implementationSteps } from '../data/implementation';
+import { implementationLaunch, implementationSteps } from '../data/implementation';
 import { GlassSurface } from './ui/GlassSurface';
 import { Reveal } from './ui/Reveal';
 import { SectionHeader } from './ui/SectionHeader';
@@ -17,6 +17,13 @@ export function Implementation() {
             titleId="implementation-title"
             description="Как проходит проект: от разбора процессов и проектирования решения до запуска, промышленной эксплуатации и дальнейшего развития."
           />
+        </Reveal>
+
+        <Reveal>
+          <GlassSurface className="implementation-launch" radius="xl" depth="float" tint="yellow">
+            <p className="implementation-launch__title">{implementationLaunch.title}</p>
+            <p className="implementation-launch__text">{implementationLaunch.text}</p>
+          </GlassSurface>
         </Reveal>
 
         <ol className="implementation-route">

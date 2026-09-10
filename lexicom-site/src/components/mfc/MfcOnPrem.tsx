@@ -1,3 +1,4 @@
+import { profileResourceNote } from '../../data/flexibility';
 import { mfcOnPremAccents } from '../../data/directions/mfc';
 import { GlassSurface } from '../ui/GlassSurface';
 import { Reveal } from '../ui/Reveal';
@@ -26,6 +27,10 @@ export function MfcOnPrem() {
             </Reveal>
           ))}
         </div>
+
+        <Reveal>
+          <p className="profile-resource-note">{profileResourceNote}</p>
+        </Reveal>
       </div>
     </section>
   );

@@ -214,14 +214,6 @@
   line-height: 1.3;
 }
 
-.s122-trustbar__note {
-  margin: 0.55rem 0 0;
-  font-size: 0.78rem;
-  color: var(--color-muted);
-  line-height: 1.35;
-  text-align: center;
-}
-
 /* ─── Outcome ────────────────────────────────────────── */
 
 .s122-outcome__contrast {
@@ -528,6 +520,28 @@
 }
 
 /* ─── Handoff ────────────────────────────────────────── */
+
+.s122-handoff__points {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.85rem;
+  margin-bottom: 1rem;
+}
+
+.s122-handoff__point {
+  padding: 1.1rem 1.2rem;
+}
+
+.s122-handoff__point h3 {
+  margin: 0 0 0.4rem;
+  font-size: 1.05rem;
+}
+
+.s122-handoff__point p {
+  margin: 0;
+  color: rgba(232, 237, 248, 0.78);
+  font-size: 0.92rem;
+}
 
 .s122-handoff__roles {
   display: grid;
@@ -848,6 +862,7 @@
 @media (max-width: 900px) {
   .s122-hero__grid,
   .s122-dialogue__layout,
+  .s122-handoff__points,
   .s122-handoff__roles,
   .s122-outcome__contrast,
   .s122-peak__flow,

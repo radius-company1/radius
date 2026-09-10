@@ -33,26 +33,13 @@ export function ContactForm({
   direction,
 }: ContactFormProps) {
   const [form, setForm] = useState<FormState>(initialState);
-  const [submitted, setSubmitted] = useState(false);
+  const [status, setStatus] = useState<'idle' | 'error'>('idle');
 
   const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    setSubmitted(true);
+    // Backend endpoint is not connected yet — do not claim the request was sent.
+    setStatus('error');
   };
-
-  if (submitted) {
-    return (
-      <div className="contact-form contact-form--success" id={id}>
-        <p className="contact-form__success-title">Заявка отправлена</p>
-        <p className="contact-form__success-text">
-          Спасибо за обращение. Мы свяжемся с вами, чтобы обсудить задачу и возможную конфигурацию платформы.
-        </p>
-        <Button variant="secondary" onClick={() => { setSubmitted(false); setForm(initialState); }}>
-          Отправить ещё одну заявку
-        </Button>
-      </div>
-    );
-  }
 
   return (
     <form className="contact-form" id={id} onSubmit={handleSubmit} noValidate>
@@ -113,6 +100,13 @@ export function ContactForm({
           />
         </label>
       </div>
+      {status === 'error' ? (
+        <p className="contact-form__notice" role="status">
+          Форма заявки пока не подключена к отправке. Напишите на{' '}
+          <a href="mailto:info@lexicom.ai">info@lexicom.ai</a> или позвоните по телефону{' '}
+          <a href="tel:+74999578132">+7 (499) 957-81-32</a>.
+        </p>
+      ) : null}
       <Button type="submit">{submitLabel}</Button>
     </form>
   );

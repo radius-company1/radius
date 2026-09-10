@@ -11,7 +11,7 @@ type ChatWidgetProps = {
 const welcomeMessage: ChatMessage = {
   id: 'welcome',
   role: 'bot',
-  text: 'Здравствуйте! Я демонстрационный ИИ-консультант Lexicom. Спросите о платформе, внедрении или выборе направления.',
+  text: 'Здравствуйте! Это интерактивный обзор возможностей Lexicom. Спросите о платформе, внедрении или выборе направления.',
 };
 
 export function ChatWidget({ open, onClose }: ChatWidgetProps) {
@@ -68,13 +68,13 @@ export function ChatWidget({ open, onClose }: ChatWidgetProps) {
         radius="xl"
         role="dialog"
         aria-modal="true"
-        aria-label="Демонстрационный чат ИИ-консультанта"
+        aria-label="Интерактивный обзор возможностей Lexicom"
         onClick={(e) => e.stopPropagation()}
       >
         <header className="chat-panel__header">
           <div>
-            <p className="chat-panel__title">ИИ-консультант Lexicom</p>
-            <p className="chat-panel__subtitle">Демонстрационный режим</p>
+            <p className="chat-panel__title">Интерактивный обзор возможностей</p>
+            <p className="chat-panel__subtitle">Ответы по ключевым словам · до подключения ассистента</p>
           </div>
           <button type="button" className="chat-panel__close" aria-label="Закрыть чат" onClick={onClose}>
             ×
