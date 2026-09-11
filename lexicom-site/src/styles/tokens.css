@@ -39,3 +39,4 @@ html[data-direction='overview'] { --blob-1: #3a9fc4; --blob-2: #4a5fd4; --blob-3
 html[data-direction='mfc'] { --blob-1: #3a9fc4; --blob-2: #7ec8ff; --blob-3: #e6c035; --blob-4: #4a5fd4; }
 html[data-direction='122'] { --blob-1: #4a5fd4; --blob-2: #3a9fc4; --blob-3: #e6c035; --blob-4: #7ec8ff; }
 html[data-direction='edds'] { --blob-1: #2a3f9f; --blob-2: #3a9fc4; --blob-3: #e6c035; --blob-4: #4a5fd4; }
+html[data-direction='social'] { --blob-1: #2f7a6f; --blob-2: #3a9fc4; --blob-3: #e6c035; --blob-4: #4a8f84; }

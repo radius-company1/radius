@@ -20,4 +20,11 @@ export const directions = [
     buttonLabel: 'Для ЕДДС',
     href: '/edds',
   },
+  {
+    id: 'social',
+    title: 'Социальная защита',
+    description: 'Консультации по мерам поддержки, работа специалистов и аналитика обращений.',
+    buttonLabel: 'Для социальной защиты',
+    href: '/social',
+  },
 ] as const;

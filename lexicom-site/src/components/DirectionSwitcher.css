@@ -24,7 +24,7 @@
 
 .direction-switcher {
   position: relative;
-  width: min(100%, 920px);
+  width: min(100%, 1120px);
   min-height: 58px;
   border-radius: 999px;
   padding: 0.28rem;

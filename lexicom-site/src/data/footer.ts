@@ -12,6 +12,7 @@ export const footerDirections = [
   { label: 'МФЦ', href: '/mfc' },
   { label: 'Служба 122', href: '/122' },
   { label: 'ЕДДС', href: '/edds' },
+  { label: 'Социальная защита', href: '/social' },
 ] as const;
 
 export const footerCompany = [

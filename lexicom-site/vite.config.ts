@@ -4,7 +4,7 @@ import react from '@vitejs/plugin-react'
 import { defineConfig, type Plugin } from 'vite'
 
 /** GitHub Pages needs a real index.html under each SPA path, or deep links load a stale/missing page. */
-const SPA_ROUTES = ['mfc', '122', 'edds', 'design-preview'] as const
+const SPA_ROUTES = ['mfc', '122', 'edds', 'social', 'design-preview'] as const
 
 function spaRouteStubs(): Plugin {
   return {

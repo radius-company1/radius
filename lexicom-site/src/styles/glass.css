@@ -132,6 +132,11 @@
     radial-gradient(70% 60% at 20% 30%, rgba(42, 63, 159, 0.35), transparent 55%),
     radial-gradient(50% 40% at 85% 70%, rgba(255, 212, 59, 0.16), transparent 50%);
 }
+.glass-surface--tint-social .glass-surface__reflex {
+  background:
+    radial-gradient(70% 60% at 22% 28%, rgba(47, 122, 111, 0.34), transparent 55%),
+    radial-gradient(50% 40% at 82% 72%, rgba(255, 212, 59, 0.16), transparent 50%);
+}
 
 @supports not ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
   .glass-surface:not(.glass-surface--dark) { background: rgba(255, 255, 255, 0.94); }

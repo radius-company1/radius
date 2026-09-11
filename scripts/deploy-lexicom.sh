@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 # Publish lexicom-site → lexicom/ for GitHub Pages (radius-company1/radius).
-# SPA route stubs (mfc/122/edds/design-preview) are produced by Vite — do not hand-edit them.
+# SPA route stubs (mfc/122/edds/social/design-preview) are produced by Vite — do not hand-edit them.
 set -euo pipefail
 
 ROOT="$(cd "$(dirname "$0")/.." && pwd)"
@@ -17,7 +17,7 @@ rsync -a --delete \
 
 # Sanity: nested route HTML must reference the same hashed bundles as root
 root_js="$(grep -oE 'assets/index-[^"]+\.js' "$PAGES/index.html" | head -1)"
-for route in mfc 122 edds design-preview; do
+for route in mfc 122 edds social design-preview; do
   stub="$PAGES/$route/index.html"
   if [[ ! -f "$stub" ]]; then
     echo "ERROR: missing SPA stub $stub" >&2
