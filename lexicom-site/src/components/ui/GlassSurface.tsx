@@ -2,7 +2,7 @@ import { forwardRef, type CSSProperties, type ElementType, type HTMLAttributes, 
 
 type GlassVariant = 'light' | 'dark';
 type GlassRadius = 'md' | 'lg' | 'xl';
-type GlassTint = 'none' | 'cyan' | 'blue' | 'violet' | 'yellow' | 'mfc' | 's122' | 'edds' | 'social';
+type GlassTint = 'none' | 'cyan' | 'blue' | 'violet' | 'yellow' | 'mfc' | 's122' | 'edds' | 'social' | 'utilities';
 type GlassTier = 'default' | 'matte' | 'liquid';
 
 type GlassSurfaceProps = {

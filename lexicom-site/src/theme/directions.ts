@@ -1,4 +1,4 @@
-export type DirectionId = 'overview' | 'mfc' | '122' | 'edds' | 'social';
+export type DirectionId = 'overview' | 'mfc' | '122' | 'edds' | 'social' | 'utilities';
 
 export type DirectionMode = {
   id: DirectionId;
@@ -13,6 +13,7 @@ export const directionModes: readonly DirectionMode[] = [
   { id: '122', label: 'Для службы 122', href: '/122', shortLabel: '122' },
   { id: 'edds', label: 'Для ЕДДС', href: '/edds', shortLabel: 'ЕДДС' },
   { id: 'social', label: 'Для социальной защиты', href: '/social', shortLabel: 'Соцзащита' },
+  { id: 'utilities', label: 'Для ресурсоснабжения', href: '/utilities', shortLabel: 'РСК' },
 ] as const;
 
 /** Normalize pathname so `/mfc` and `/mfc/` resolve to the same direction. */

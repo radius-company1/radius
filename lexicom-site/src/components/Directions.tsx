@@ -5,13 +5,14 @@ import { GlassSurface } from './ui/GlassSurface';
 import { Reveal } from './ui/Reveal';
 import { SectionHeader } from './ui/SectionHeader';
 
-const tintMap = { mfc: 'mfc', '122': 's122', edds: 'edds', social: 'social' } as const;
+const tintMap = { mfc: 'mfc', '122': 's122', edds: 'edds', social: 'social', utilities: 'utilities' } as const;
 
 const routeMini = {
   mfc: ['Обращение', 'Консультация', 'Результат'],
   '122': ['Звонок', 'Маршрут', 'Служба'],
   edds: ['Приём', 'Классификация', 'Передача'],
   social: ['Ситуация', 'Поддержка', 'Шаг'],
+  utilities: ['Показания', 'Система', 'Оператор'],
 } as const;
 
 function DirectionCard({
@@ -72,7 +73,7 @@ export function Directions() {
           <SectionHeader
             title="Выберите своё направление"
             titleId="directions-title"
-            description="Продукты Lexicom собираются под задачи организации. У МФЦ, 122, ЕДДС и социальной защиты — свои сценарии, состав решения и демонстрация."
+            description="Продукты Lexicom собираются под задачи организации. У МФЦ, 122, ЕДДС, социальной защиты и ресурсоснабжения — свои сценарии, состав решения и демонстрация."
           />
         </Reveal>
 

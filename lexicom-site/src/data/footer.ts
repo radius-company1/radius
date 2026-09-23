@@ -13,6 +13,7 @@ export const footerDirections = [
   { label: 'Служба 122', href: '/122' },
   { label: 'ЕДДС', href: '/edds' },
   { label: 'Социальная защита', href: '/social' },
+  { label: 'Ресурсоснабжение', href: '/utilities' },
 ] as const;
 
 export const footerCompany = [

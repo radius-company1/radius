@@ -27,4 +27,12 @@ export const directions = [
     buttonLabel: 'Для социальной защиты',
     href: '/social',
   },
+  {
+    id: 'utilities',
+    title: 'Ресурсоснабжение',
+    description:
+      'Показания, начисления, отключения и заявки. Автоматизация обращений и помощь сотрудникам ресурсоснабжающих компаний',
+    buttonLabel: 'Для ресурсоснабжения',
+    href: '/utilities',
+  },
 ] as const;

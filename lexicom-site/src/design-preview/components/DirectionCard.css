@@ -43,6 +43,12 @@
     radial-gradient(ellipse at 85% 75%, rgba(46, 211, 255, 0.28), transparent 50%);
 }
 
+.liq-direction-card--utilities .liq-direction-card__glow {
+  background:
+    radial-gradient(ellipse at 18% 22%, rgba(184, 111, 46, 0.45), transparent 55%),
+    radial-gradient(ellipse at 85% 75%, rgba(46, 211, 255, 0.28), transparent 50%);
+}
+
 .liq-direction-card__route {
   display: flex;
   flex-wrap: wrap;
@@ -80,6 +86,7 @@
 .liq-direction-card--122 { --card-accent: #9b5cff; }
 .liq-direction-card--edds { --card-accent: #2a3f9f; }
 .liq-direction-card--social { --card-accent: #2f7a6f; }
+.liq-direction-card--utilities { --card-accent: #b86f2e; }
 
 .liq-direction-card__title {
   margin: 0 0 0.6rem;
@@ -127,6 +134,11 @@
 .liq-direction-card--social .liq-direction-card__btn {
   background: linear-gradient(135deg, rgba(47, 122, 111, 0.36), rgba(46, 211, 255, 0.16));
   box-shadow: 0 8px 24px rgba(47, 122, 111, 0.2);
+}
+
+.liq-direction-card--utilities .liq-direction-card__btn {
+  background: linear-gradient(135deg, rgba(184, 111, 46, 0.36), rgba(46, 211, 255, 0.16));
+  box-shadow: 0 8px 24px rgba(184, 111, 46, 0.2);
 }
 
 .liq-direction-card__btn:hover {

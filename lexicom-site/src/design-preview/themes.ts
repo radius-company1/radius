@@ -1,4 +1,4 @@
-export type PreviewThemeId = 'overview' | 'mfc' | '122' | 'edds' | 'social';
+export type PreviewThemeId = 'overview' | 'mfc' | '122' | 'edds' | 'social' | 'utilities';
 
 export type PreviewTheme = {
   id: PreviewThemeId;
@@ -85,6 +85,22 @@ export const previewThemes: PreviewTheme[] = [
       '--liq-lens-b': 'rgba(46, 211, 255, 0.3)',
       '--liq-lens-c': 'rgba(255, 212, 59, 0.25)',
       '--liq-glass-reflex': 'rgba(47, 122, 111, 0.34)',
+    },
+  },
+  {
+    id: 'utilities',
+    label: 'Для ресурсоснабжения',
+    cssVars: {
+      '--liq-base': '#f0ebe4',
+      '--liq-wash-a': 'rgba(184, 111, 46, 0.58)',
+      '--liq-wash-b': 'rgba(46, 211, 255, 0.42)',
+      '--liq-wash-c': 'rgba(196, 138, 74, 0.36)',
+      '--liq-accent': 'rgba(255, 212, 59, 0.48)',
+      '--liq-wave': 'rgba(184, 111, 46, 0.22)',
+      '--liq-lens-a': 'rgba(184, 111, 46, 0.45)',
+      '--liq-lens-b': 'rgba(46, 211, 255, 0.3)',
+      '--liq-lens-c': 'rgba(255, 212, 59, 0.25)',
+      '--liq-glass-reflex': 'rgba(184, 111, 46, 0.34)',
     },
   },
 ];
