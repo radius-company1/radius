@@ -66,45 +66,70 @@ export function ProductVisual({ id }: ProductVisualProps) {
       return (
         <svg className="product-visual product-visual--contact-center" viewBox="0 0 320 148" fill="none" aria-hidden="true">
           {/* Phone */}
-          <rect x="28" y="28" width="36" height="36" rx="11" fill="rgba(83, 103, 255, 0.12)" stroke="rgba(83, 103, 255, 0.42)" strokeWidth="1.2" />
+          <rect x="28" y="30" width="36" height="32" rx="10" fill="rgba(83, 103, 255, 0.12)" stroke="rgba(83, 103, 255, 0.42)" strokeWidth="1.2" />
           <path
-            d="M38 38c0-1.4 1.2-2.6 2.6-2.6h2c1.4 0 2.6 1.2 2.6 2.6v1.6c0 1.4-1.2 2.6-2.6 2.6h-.8l-1.4 2.8v-2.8h-.8c-1.4 0-2.6-1.2-2.6-2.6V38z"
-            fill="rgba(83, 103, 255, 0.3)"
+            d="M39.2 38.2c1.1-1.1 2.9-1.1 3.9 0l1.1 1.1c.7.7.7 1.8 0 2.5l-1 1c.6 1.5 1.8 2.8 3.3 3.5l1-1c.7-.7 1.8-.7 2.5 0l1.1 1.1c1.1 1.1 1.1 2.9 0 3.9l-.8.8c-1.1 1.1-2.8 1.4-4.2.7-3.1-1.5-5.8-4.2-7.3-7.3-.7-1.4-.4-3.1.7-4.2l.7-.7z"
+            fill="rgba(83, 103, 255, 0.28)"
             stroke="rgba(83, 103, 255, 0.55)"
             strokeWidth="1"
+            strokeLinejoin="round"
           />
 
-          {/* Text message */}
-          <rect x="28" y="68" width="36" height="36" rx="11" fill="rgba(46, 211, 255, 0.1)" stroke="rgba(46, 211, 255, 0.38)" strokeWidth="1.2" />
-          <rect x="36" y="78" width="20" height="14" rx="4" fill="rgba(46, 211, 255, 0.18)" stroke="rgba(46, 211, 255, 0.42)" strokeWidth="1" />
-          <rect x="40" y="82" width="12" height="3" rx="1.5" fill="rgba(12, 16, 32, 0.14)" />
+          {/* Message / email */}
+          <rect x="28" y="58" width="36" height="32" rx="10" fill="rgba(46, 211, 255, 0.1)" stroke="rgba(46, 211, 255, 0.38)" strokeWidth="1.2" />
+          <rect x="36" y="66" width="20" height="14" rx="2.5" fill="rgba(46, 211, 255, 0.16)" stroke="rgba(46, 211, 255, 0.45)" strokeWidth="1" />
+          <path d="M37 67.5l9 6.5 9-6.5" stroke="rgba(46, 211, 255, 0.55)" strokeWidth="1.1" strokeLinecap="round" strokeLinejoin="round" />
 
-          {/* Chat */}
-          <rect x="28" y="108" width="36" height="36" rx="11" fill="rgba(155, 92, 255, 0.1)" stroke="rgba(155, 92, 255, 0.35)" strokeWidth="1.2" />
-          <rect x="36" y="118" width="20" height="14" rx="4" fill="rgba(155, 92, 255, 0.16)" stroke="rgba(155, 92, 255, 0.4)" strokeWidth="1" />
-          <circle cx="50" cy="124" r="2" fill="rgba(155, 92, 255, 0.55)" />
-
-          {/* Connector lines */}
-          <path d="M64 46h36M64 86h36M64 126h36" stroke="rgba(83, 103, 255, 0.4)" strokeWidth="1.5" strokeLinecap="round" />
+          {/* Chat bubble */}
+          <rect x="28" y="86" width="36" height="32" rx="10" fill="rgba(155, 92, 255, 0.1)" stroke="rgba(155, 92, 255, 0.35)" strokeWidth="1.2" />
+          <path
+            d="M36 95.5h16a4 4 0 0 1 4 4v4a4 4 0 0 1-4 4h-5.5L42 111v-3.5H36a4 4 0 0 1-4-4v-4a4 4 0 0 1 4-4z"
+            fill="rgba(155, 92, 255, 0.16)"
+            stroke="rgba(155, 92, 255, 0.45)"
+            strokeWidth="1"
+            strokeLinejoin="round"
+          />
+          <circle cx="41" cy="102" r="1.2" fill="rgba(155, 92, 255, 0.55)" />
+          <circle cx="46" cy="102" r="1.2" fill="rgba(155, 92, 255, 0.55)" />
+          <circle cx="51" cy="102" r="1.2" fill="rgba(155, 92, 255, 0.55)" />
 
           {/* Workspace */}
           <rect
             x="100"
             y="24"
-            width="120"
+            width="118"
             height="100"
-            rx="18"
+            rx="12"
             fill={glass.fill}
             stroke="rgba(83, 103, 255, 0.48)"
             strokeWidth="1.2"
           />
           <rect x="116" y="40" width="64" height="6" rx="3" fill="rgba(83, 103, 255, 0.22)" />
-          <rect x="116" y="56" width="88" height="52" rx="10" fill="rgba(83, 103, 255, 0.08)" stroke="rgba(83, 103, 255, 0.28)" strokeWidth="1" />
+          <rect x="116" y="56" width="86" height="52" rx="10" fill="rgba(83, 103, 255, 0.08)" stroke="rgba(83, 103, 255, 0.28)" strokeWidth="1" />
           <circle cx="136" cy="78" r="10" fill="rgba(83, 103, 255, 0.18)" stroke="rgba(83, 103, 255, 0.42)" strokeWidth="1" />
           <path d="M126 94c4-6 16-6 20 0" stroke="rgba(83, 103, 255, 0.38)" strokeWidth="1.3" strokeLinecap="round" />
           <rect x="156" y="70" width="36" height="4" rx="2" fill="rgba(12, 16, 32, 0.12)" />
           <rect x="156" y="78" width="28" height="4" rx="2" fill="rgba(12, 16, 32, 0.1)" />
           <rect x="156" y="86" width="32" height="4" rx="2" fill="rgba(12, 16, 32, 0.1)" />
+
+          {/* Connectors on flat edge of workspace (y within 36–112 for rx=12) */}
+          <path
+            d="M64 46H100M64 74H100M64 102H100"
+            stroke="rgba(83, 103, 255, 0.62)"
+            strokeWidth="1.7"
+            strokeLinecap="butt"
+          />
+          <circle cx="64" cy="46" r="2.2" fill="rgba(83, 103, 255, 0.7)" />
+          <circle cx="64" cy="74" r="2.2" fill="rgba(83, 103, 255, 0.7)" />
+          <circle cx="64" cy="102" r="2.2" fill="rgba(83, 103, 255, 0.7)" />
+          <circle cx="100" cy="46" r="2.2" fill="rgba(83, 103, 255, 0.7)" />
+          <circle cx="100" cy="74" r="2.2" fill="rgba(83, 103, 255, 0.7)" />
+          <circle cx="100" cy="102" r="2.2" fill="rgba(83, 103, 255, 0.7)" />
+
+          {/* Workspace → sufler */}
+          <path d="M218 62H228" stroke="rgba(230, 176, 40, 0.85)" strokeWidth="1.7" strokeLinecap="butt" />
+          <circle cx="218" cy="62" r="2.2" fill="rgba(230, 176, 40, 0.9)" />
+          <circle cx="228" cy="62" r="2.2" fill="rgba(230, 176, 40, 0.9)" />
 
           {/* Sufler cloud */}
           <rect

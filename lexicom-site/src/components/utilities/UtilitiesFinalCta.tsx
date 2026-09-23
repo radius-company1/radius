@@ -6,13 +6,12 @@ import { SectionHeader } from '../ui/SectionHeader';
 
 export function UtilitiesFinalCta() {
   return (
-    <section className="section utilities-final" id="contact" aria-labelledby="utilities-final-title">
+    <section className="section utilities-final utilities-section--compact" id="contact" aria-labelledby="utilities-final-title">
       <div className="container">
         <Reveal>
           <SectionHeader
-            title="Обсудим задачи вашей службы обслуживания"
+            title="Обсудим задачи вашей службы и покажем решение на ваших сценариях"
             titleId="utilities-final-title"
-            description="Подберём сценарии, продукты и подключения под обращения, нагрузку и инфраструктуру вашей компании."
           />
         </Reveal>
 

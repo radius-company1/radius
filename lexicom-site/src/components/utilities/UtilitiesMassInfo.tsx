@@ -19,7 +19,6 @@ export function UtilitiesMassInfo() {
           <SectionHeader
             title="Один источник информации для всех каналов"
             titleId="utilities-mass-title"
-            description="Актуальные сведения о работах используются нейроботом, операторами и аналитикой."
           />
         </Reveal>
 

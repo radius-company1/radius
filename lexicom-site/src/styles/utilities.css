@@ -17,11 +17,24 @@
 }
 
 .page-view--utilities .utilities-section--compact {
-  padding-block: calc(var(--section-pad) * 0.75);
+  padding-block: calc(var(--section-pad) * 0.55);
 }
 
 .page-view--utilities .utilities-section--tech {
   padding-block: calc(var(--section-pad) * 1.05);
+}
+
+.page-view--utilities .section:not(.section--dark):not(.utilities-section--tech) {
+  padding-block: calc(var(--section-pad) * 0.72);
+}
+
+.page-view--utilities .utilities-vendor,
+.page-view--utilities .utilities-case,
+.page-view--utilities .utilities-integration,
+.page-view--utilities .utilities-scenarios,
+.page-view--utilities .utilities-implementation,
+.page-view--utilities .utilities-faq {
+  padding-block: calc(var(--section-pad) * 0.58);
 }
 
 /* Hero */
@@ -93,64 +106,77 @@
 
 .utilities-hero__flow {
   display: flex;
-  align-items: center;
+  align-items: stretch;
   justify-content: space-between;
-  gap: 0.35rem;
-  margin-bottom: 0.95rem;
-  padding: 0.65rem 0.75rem;
+  gap: 0.15rem;
+  margin: 0 0 0.95rem;
+  padding: 0.7rem 0.65rem 0.75rem;
+  list-style: none;
   border-radius: 14px;
   background: color-mix(in srgb, white 72%, transparent);
   border: 1px solid color-mix(in srgb, var(--color-line) 70%, transparent);
 }
 
-.utilities-hero__icon {
-  width: 2.1rem;
-  height: 2.1rem;
-  border-radius: 10px;
-  flex-shrink: 0;
-  background:
-    radial-gradient(circle at 35% 30%, rgba(255, 255, 255, 0.85), transparent 55%),
-    linear-gradient(145deg, color-mix(in srgb, #b86f2e 28%, white), color-mix(in srgb, #3a9fc4 18%, white));
-  border: 1px solid color-mix(in srgb, #b86f2e 22%, transparent);
-  position: relative;
-}
-
-.utilities-hero__icon::before {
-  content: '';
-  position: absolute;
-  inset: 28%;
-  border-radius: 4px;
-  background: color-mix(in srgb, #0c1020 28%, transparent);
-}
-
-.utilities-hero__icon--bot::before {
-  border-radius: 50%;
-  inset: 30%;
-}
-
-.utilities-hero__icon--system::before {
-  inset: 32% 26%;
-  border-radius: 2px;
-  box-shadow: 0 5px 0 color-mix(in srgb, #0c1020 18%, transparent);
-}
-
-.utilities-hero__icon--person::before {
-  width: 28%;
-  height: 28%;
-  inset: auto;
-  top: 22%;
-  left: 36%;
-  border-radius: 50%;
-  box-shadow: 0 9px 0 -1px color-mix(in srgb, #0c1020 28%, transparent);
-}
-
-.utilities-hero__link {
+.utilities-hero__flow-item {
+  display: flex;
+  align-items: center;
+  gap: 0.2rem;
+  min-width: 0;
   flex: 1;
-  height: 2px;
-  min-width: 0.5rem;
-  border-radius: 999px;
-  background: linear-gradient(90deg, #b86f2e, #3a9fc4);
-  opacity: 0.55;
+}
+
+.utilities-hero__flow-item:first-child {
+  flex: 0.95;
+}
+
+.utilities-hero__flow-arrow {
+  display: grid;
+  place-items: center;
+  flex: 0 0 auto;
+  width: 1.1rem;
+  color: #b86f2e;
+  opacity: 0.75;
+}
+
+.utilities-hero__flow-arrow svg {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.utilities-hero__flow-step {
+  display: grid;
+  justify-items: center;
+  gap: 0.35rem;
+  min-width: 0;
+  flex: 1;
+  text-align: center;
+}
+
+.utilities-hero__glyph {
+  display: grid;
+  place-items: center;
+  width: 2.35rem;
+  height: 2.35rem;
+  border-radius: 11px;
+  color: #8a4f1c;
+  background:
+    radial-gradient(circle at 35% 30%, rgba(255, 255, 255, 0.9), transparent 55%),
+    linear-gradient(145deg, color-mix(in srgb, #b86f2e 22%, white), color-mix(in srgb, #3a9fc4 14%, white));
+  border: 1px solid color-mix(in srgb, #b86f2e 24%, transparent);
+}
+
+.utilities-hero__glyph svg {
+  width: 1.25rem;
+  height: 1.25rem;
+}
+
+.utilities-hero__flow-label {
+  font-size: 0.68rem;
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: 0.01em;
+  color: var(--color-ink);
 }
 
 .utilities-hero__pipeline {
@@ -325,6 +351,56 @@
   font-weight: 600;
 }
 
+.utilities-products__chain {
+  margin: 0.35rem 0 0;
+  padding: 0.75rem 0.85rem;
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 0.35rem 0.15rem;
+  border-radius: 16px;
+  background: color-mix(in srgb, white 74%, transparent);
+  border: 1px solid color-mix(in srgb, var(--color-line) 70%, transparent);
+}
+
+.utilities-products__chain-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.utilities-products__chain-arrow {
+  width: 1.1rem;
+  height: 2px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, #b86f2e, #3a9fc4);
+  position: relative;
+}
+
+.utilities-products__chain-arrow::after {
+  content: '';
+  position: absolute;
+  right: -1px;
+  top: 50%;
+  width: 5px;
+  height: 5px;
+  border-right: 1.6px solid #3a9fc4;
+  border-top: 1.6px solid #3a9fc4;
+  transform: translateY(-50%) rotate(45deg);
+}
+
+.utilities-products__chain-label {
+  padding: 0.4rem 0.7rem;
+  border-radius: 999px;
+  background: color-mix(in srgb, #b86f2e 8%, white);
+  border: 1px solid color-mix(in srgb, #b86f2e 18%, transparent);
+  font-size: 0.82rem;
+  font-weight: 700;
+  line-height: 1.25;
+}
+
 /* Demo */
 
 .utilities-demo__layout {
@@ -332,12 +408,19 @@
   grid-template-columns: 1.2fr 0.8fr;
   gap: 0.9rem;
   margin-bottom: 1rem;
+  align-items: start;
+}
+
+.utilities-demo__layout > .reveal {
+  display: block;
+  min-width: 0;
+  align-self: start;
 }
 
 .utilities-demo__chat,
 .utilities-demo__result {
   padding: 1.15rem 1.2rem;
-  height: 100%;
+  height: auto;
 }
 
 .utilities-demo__badge {
@@ -927,7 +1010,7 @@
   line-height: 1.45;
 }
 
-/* Implementation */
+/* Implementation / outcomes */
 
 .utilities-implementation__route {
   margin: 0;
@@ -935,49 +1018,65 @@
   list-style: none;
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 0.75rem;
+  gap: 0.7rem;
 }
 
-.utilities-implementation__step {
-  display: grid;
-  grid-template-columns: auto 1fr;
-  gap: 0.55rem;
-  align-items: start;
-}
-
-.utilities-implementation__num {
-  width: 1.7rem;
-  height: 1.7rem;
-  border-radius: 50%;
-  display: grid;
-  place-items: center;
-  background: var(--color-yellow);
-  color: var(--color-ink);
-  font-size: 0.85rem;
-  font-weight: 800;
-  margin-top: 0.35rem;
-}
-
-.utilities-implementation__step > .reveal {
+.utilities-implementation__route > .reveal {
   display: flex;
   min-width: 0;
 }
 
 .utilities-implementation__card {
   width: 100%;
-  padding: 1rem 1.05rem;
+  padding: 0.95rem 1rem;
 }
 
 .utilities-implementation__card h3 {
   margin: 0 0 0.35rem;
-  font-size: 1rem;
+  font-size: 0.98rem;
 }
 
 .utilities-implementation__card p {
   margin: 0;
   line-height: 1.4;
   color: var(--color-ink-soft);
-  font-size: 0.92rem;
+  font-size: 0.9rem;
+}
+
+/* Proof strip */
+
+.utilities-proof {
+  padding-block: 0.35rem 0.85rem;
+}
+
+.utilities-proof__row {
+  margin: 0;
+  padding: 0.75rem 0.9rem;
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.65rem;
+  border-radius: 16px;
+  background: color-mix(in srgb, white 74%, transparent);
+  border: 1px solid color-mix(in srgb, var(--color-line) 70%, transparent);
+}
+
+.utilities-proof__item {
+  display: grid;
+  gap: 0.12rem;
+  text-align: center;
+}
+
+.utilities-proof__item strong {
+  font-size: clamp(0.95rem, 1.8vw, 1.15rem);
+  font-weight: 800;
+  letter-spacing: -0.02em;
+}
+
+.utilities-proof__item span {
+  font-size: 0.78rem;
+  line-height: 1.3;
+  color: var(--color-muted);
 }
 
 /* FAQ / Final */
@@ -1018,6 +1117,20 @@
   .utilities-specialist__card-grid {
     grid-template-columns: 1fr;
   }
+
+  .utilities-hero__flow {
+    flex-wrap: wrap;
+    justify-content: center;
+    row-gap: 0.55rem;
+  }
+
+  .utilities-hero__flow-item {
+    flex: 0 0 calc(50% - 0.3rem);
+  }
+
+  .utilities-products__chain {
+    gap: 0.45rem 0.25rem;
+  }
 }
 
 @media (max-width: 640px) {
@@ -1027,8 +1140,18 @@
   .utilities-scenarios__grid,
   .utilities-mass__steps,
   .utilities-specialist__stages,
-  .utilities-implementation__route {
+  .utilities-implementation__route,
+  .utilities-proof__row {
     grid-template-columns: 1fr;
+  }
+
+  .utilities-hero__flow-item {
+    flex: 0 0 100%;
+    justify-content: center;
+  }
+
+  .utilities-hero__flow-arrow {
+    display: none;
   }
 
   .utilities-hero__actions,

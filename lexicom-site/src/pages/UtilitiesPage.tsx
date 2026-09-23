@@ -14,21 +14,51 @@ import { UtilitiesProducts } from '../components/utilities/UtilitiesProducts';
 import { UtilitiesScenarios } from '../components/utilities/UtilitiesScenarios';
 import { UtilitiesSpecialist } from '../components/utilities/UtilitiesSpecialist';
 import { UtilitiesTrustBar } from '../components/utilities/UtilitiesTrustBar';
+import { UtilitiesProofStrip } from '../components/utilities/UtilitiesProofStrip';
 import { UtilitiesVendor } from '../components/utilities/UtilitiesVendor';
 
 export function UtilitiesPage() {
   usePageMeta(utilitiesPageMeta);
 
+  const scrollBelowChrome = (element: HTMLElement, onDone?: () => void) => {
+    const desiredTop = () => {
+      const chrome = document.querySelector('.app-chrome');
+      const chromeBottom = chrome instanceof HTMLElement ? Math.ceil(chrome.getBoundingClientRect().bottom) : 0;
+      return chromeBottom + 20;
+    };
+
+    const align = () => {
+      const top = window.scrollY + element.getBoundingClientRect().top - desiredTop();
+      window.scrollTo({ top: Math.max(0, top), behavior: 'instant' });
+    };
+
+    align();
+    requestAnimationFrame(() => {
+      align();
+      requestAnimationFrame(() => {
+        align();
+        onDone?.();
+      });
+    });
+  };
+
   const scrollToForm = () => {
-    const form = document.getElementById(utilitiesDemoState.formAnchor);
+    const title = document.getElementById('utilities-final-title');
     const contact = document.getElementById('contact');
-    (form ?? contact)?.scrollIntoView({ behavior: 'smooth', block: 'center' });
-    const field = form?.querySelector<HTMLElement>('input, textarea, button');
-    field?.focus({ preventScroll: true });
+    const form = document.getElementById(utilitiesDemoState.formAnchor);
+    const target = title ?? contact ?? form;
+    if (!target) return;
+    scrollBelowChrome(target, () => {
+      const field = form?.querySelector<HTMLElement>('input, textarea, button');
+      field?.focus({ preventScroll: true });
+    });
   };
 
   const scrollToDemo = () => {
-    document.getElementById(utilitiesDemoState.demoAnchor)?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    const demoTitle = document.getElementById('utilities-demo-title');
+    const demo = document.getElementById(utilitiesDemoState.demoAnchor);
+    const target = demoTitle ?? demo;
+    if (target) scrollBelowChrome(target);
   };
 
   return (
@@ -49,6 +79,7 @@ export function UtilitiesPage() {
         <UtilitiesVendor />
         <UtilitiesCase />
         <UtilitiesImplementation />
+        <UtilitiesProofStrip />
         <UtilitiesFaq />
         <UtilitiesFinalCta />
       </main>

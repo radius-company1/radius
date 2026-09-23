@@ -1,4 +1,4 @@
-import { utilitiesProductFoundation, utilitiesProducts } from '../../data/directions/utilities';
+import { utilitiesPlatformChain, utilitiesProducts } from '../../data/directions/utilities';
 import type { ProductId } from '../../data/products';
 import { ProductVisual } from '../ProductVisual';
 import { GlassSurface } from '../ui/GlassSurface';
@@ -19,7 +19,7 @@ export function UtilitiesProducts() {
           <SectionHeader
             title="От типового вопроса до работы специалиста"
             titleId="utilities-products-title"
-            description="Продукты для вашей службы обслуживания. Можно внедрять отдельно или совместно, с подключением к инфраструктуре заказчика."
+            description="Продукты Lexicom работают как единая платформа — отдельно или вместе, в инфраструктуре заказчика."
           />
         </Reveal>
 
@@ -51,11 +51,14 @@ export function UtilitiesProducts() {
         </div>
 
         <Reveal>
-          <ul className="utilities-products__foundation" aria-label="Общая основа платформы">
-            {utilitiesProductFoundation.map((item) => (
-              <li key={item}>{item}</li>
+          <ol className="utilities-products__chain" aria-label="Состав решения Lexicom">
+            {utilitiesPlatformChain.map((item, index) => (
+              <li key={item} className="utilities-products__chain-item">
+                {index > 0 ? <span className="utilities-products__chain-arrow" aria-hidden="true" /> : null}
+                <span className="utilities-products__chain-label">{item}</span>
+              </li>
             ))}
-          </ul>
+          </ol>
         </Reveal>
       </div>
     </section>
