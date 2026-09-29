@@ -14,7 +14,7 @@ export function SocialHero({ onDiscuss, onViewDemo }: SocialHeroProps) {
       <div className="container social-hero__grid">
         <div className="social-hero__content">
           <Reveal>
-            <p className="social-hero__eyebrow">Для органов социальной защиты</p>
+            <p className="social-hero__eyebrow">Lexicom для социальной защиты</p>
           </Reveal>
           <Reveal delay={60}>
             <h1
@@ -22,13 +22,13 @@ export function SocialHero({ onDiscuss, onViewDemo }: SocialHeroProps) {
               className="social-hero__title"
               style={{ viewTransitionName: 'hero-title' } as React.CSSProperties}
             >
-              ИИ-коммуникации для социальной защиты
+              Меры поддержки и порядок обращения{'\u00a0'}— без очереди на типовой вопрос
             </h1>
           </Reveal>
           <Reveal delay={120}>
             <p className="social-hero__lead">
-              Помогайте жителям разобраться в мерах поддержки, автоматизируйте типовые обращения и объединяйте работу
-              специалистов. Нейробот, контактный центр и речевая аналитика на собственной платформе Lexicom.
+              Нейробот консультирует по утверждённой базе знаний, специалист получает сложный случай с контекстом,
+              аналитика показывает, где жители путаются в порядке обращения. Решения по выплатам принимает сотрудник.
             </p>
           </Reveal>
           <Reveal delay={160}>

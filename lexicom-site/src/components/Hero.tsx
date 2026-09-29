@@ -22,16 +22,16 @@ export function Hero({ onDiscussClick }: HeroProps) {
               style={{ viewTransitionName: 'hero-title' } as React.CSSProperties}
             >
               <span className="hero__title-line">
-                <span className="hero__title-compound">ИИ-продукты</span> для
+                <span className="hero__title-compound">ИИ-платформа</span>
               </span>
-              <span className="hero__title-line">коммуникаций и работы</span>
-              <span className="hero__title-line">с речью</span>
+              <span className="hero__title-line">для обращений</span>
+              <span className="hero__title-line">и работы с речью</span>
             </h1>
           </Reveal>
           <Reveal delay={140}>
             <p className="hero__lead">
-              Нейроботы, контактный центр, речевая аналитика и протоколирование. Разрабатываем собственное ПО и
-              адаптируем его под процессы и инфраструктуру заказчика.
+              Нейроботы, контактный центр с ИИ-суфлёром, речевая аналитика и протоколирование. Собственное ПО
+              Lexicom — в инфраструктуре заказчика и под его процессы.
             </p>
           </Reveal>
           <Reveal delay={200}>

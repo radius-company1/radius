@@ -11,7 +11,7 @@ export function MfcExperience() {
       <div className="container">
         <Reveal>
           <SectionHeader
-            title="Lexicom используется в МФЦ в регионах присутствия платформы"
+            title="Кейс МФЦ готовится к публикации"
             titleId="mfc-experience-title"
           />
         </Reveal>

@@ -22,7 +22,7 @@ export function S122Hero({ onRequestDemo, onDiscuss }: S122HeroProps) {
               className="s122-hero__title"
               style={{ viewTransitionName: 'hero-title' } as React.CSSProperties}
             >
-              ИИ-платформа для службы 122
+              Запись, вызов врача и статус заявки{'\u00a0'}— без потери контекста на линии{'\u00a0'}122
             </h1>
           </Reveal>
           <Reveal delay={120}>

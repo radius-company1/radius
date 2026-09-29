@@ -12,4 +12,5 @@ export const directionLinks = [
   { label: 'Для службы 122', href: '/122', short: '122' },
   { label: 'Для ЕДДС', href: '/edds', short: 'ЕДДС' },
   { label: 'Для социальной защиты', href: '/social', short: 'Соцзащита' },
+  { label: 'Для ресурсоснабжения', href: '/utilities', short: 'Ресурсы' },
 ] as const;

@@ -80,13 +80,13 @@ export function UtilitiesHero({ onDiscuss, onViewDemo }: UtilitiesHeroProps) {
               className="utilities-hero__title"
               style={{ viewTransitionName: 'hero-title' } as React.CSSProperties}
             >
-              ИИ для обращений в ресурсоснабжающие компании
+              Показания, начисления и отключения{'\u00a0'}— без перегрузки операторов
             </h1>
           </Reveal>
           <Reveal delay={120}>
             <p className="utilities-hero__lead">
-              Автоматизируйте типовые вопросы о показаниях, начислениях и отключениях. Объединяйте каналы, помогайте
-              операторам и анализируйте обращения на собственной платформе Lexicom.
+              Нейробот принимает показания и отвечает об отключениях по согласованным правилам, спорные начисления
+              передаёт оператору с контекстом. Каналы, суфлёр и аналитика — на собственной платформе Lexicom.
             </p>
           </Reveal>
           <Reveal delay={160}>

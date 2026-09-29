@@ -19,7 +19,7 @@ export function EddsScenarios() {
       <div className="container">
         <Reveal>
           <SectionHeader
-            title="Как это может работать в вашей ЕДДС"
+            title="Сценарии под регламент вашей ЕДДС"
             titleId="edds-scenarios-title"
             description="Предлагаемый состав сценариев. Конкретный набор и границы автоматизации настраиваются под регламенты службы."
           />

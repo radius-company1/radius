@@ -32,7 +32,7 @@ export const eddsHeroViz = [
 export const eddsTrustBar = [
   { value: '25', label: 'регионов' },
   { value: '60+', label: 'промышленных решений' },
-  { value: 'Собственная', label: 'разработка' },
+  { value: 'On-prem', label: 'закрытый контур' },
 ] as const;
 
 export const eddsChallenges = [
