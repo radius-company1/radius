@@ -9,12 +9,21 @@ type VideoDemoModalProps = {
   returnFocusRef?: RefObject<HTMLElement | null>;
 };
 
+function clearVideo(video: HTMLVideoElement) {
+  video.pause();
+  video.removeAttribute('src');
+  while (video.firstChild) video.removeChild(video.firstChild);
+  // Do not call video.load() on an empty element — browsers fire a spurious error.
+}
+
 export function VideoDemoModal({ demo, onClose, returnFocusRef }: VideoDemoModalProps) {
   const dialogRef = useRef<HTMLDialogElement>(null);
   const videoRef = useRef<HTMLVideoElement>(null);
   const closeRef = useRef<HTMLButtonElement>(null);
   const titleId = useId();
   const wasOpenRef = useRef(false);
+  /** Only surface media errors from an intentional demo load, not from teardown. */
+  const acceptErrorsRef = useRef(false);
   const [loadError, setLoadError] = useState(false);
 
   useEffect(() => {
@@ -22,14 +31,9 @@ export function VideoDemoModal({ demo, onClose, returnFocusRef }: VideoDemoModal
     if (!dialog) return;
 
     if (!demo) {
+      acceptErrorsRef.current = false;
       const video = videoRef.current;
-      if (video) {
-        video.pause();
-        video.removeAttribute('src');
-        video.src = '';
-        while (video.firstChild) video.removeChild(video.firstChild);
-        video.load();
-      }
+      if (video) clearVideo(video);
       if (dialog.open) dialog.close();
       document.body.classList.remove('video-demo-open');
       if (wasOpenRef.current) {
@@ -49,15 +53,16 @@ export function VideoDemoModal({ demo, onClose, returnFocusRef }: VideoDemoModal
     if (!dialog.open) dialog.showModal();
 
     const video = videoRef.current;
+    const src = resolveDemoAsset(demo.src);
+
     if (video) {
-      video.pause();
-      while (video.firstChild) video.removeChild(video.firstChild);
-      const source = document.createElement('source');
-      source.src = resolveDemoAsset(demo.src);
-      source.type = 'video/mp4';
-      video.appendChild(source);
+      acceptErrorsRef.current = false;
+      clearVideo(video);
+      acceptErrorsRef.current = true;
+      video.src = src;
       video.load();
       const tryPlay = () => {
+        if (!acceptErrorsRef.current) return;
         void video.play().catch(() => {
           /* Autoplay may be blocked — native Play remains. */
         });
@@ -73,16 +78,10 @@ export function VideoDemoModal({ demo, onClose, returnFocusRef }: VideoDemoModal
     };
     dialog.addEventListener('cancel', onCancel);
     return () => {
+      acceptErrorsRef.current = false;
       dialog.removeEventListener('cancel', onCancel);
       document.body.classList.remove('video-demo-open');
-      const v = videoRef.current;
-      if (v) {
-        v.pause();
-        while (v.firstChild) v.removeChild(v.firstChild);
-        v.removeAttribute('src');
-        v.src = '';
-        v.load();
-      }
+      if (videoRef.current) clearVideo(videoRef.current);
       if (dialog.open) dialog.close();
     };
   }, [demo, onClose, returnFocusRef]);
@@ -122,7 +121,11 @@ export function VideoDemoModal({ demo, onClose, returnFocusRef }: VideoDemoModal
             playsInline
             preload="metadata"
             poster={demo ? resolveDemoAsset(demo.poster) : undefined}
-            onError={() => setLoadError(true)}
+            onError={() => {
+              if (!acceptErrorsRef.current) return;
+              if (!videoRef.current?.getAttribute('src')) return;
+              setLoadError(true);
+            }}
           />
           {loadError ? (
             <p className="video-demo-panel__error" role="alert">
