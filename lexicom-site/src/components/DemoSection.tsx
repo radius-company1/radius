@@ -1,3 +1,4 @@
+import { type RefObject } from 'react';
 import { Button } from './ui/Button';
 import { ContactForm } from './ContactForm';
 import { GlassSurface } from './ui/GlassSurface';
@@ -6,9 +7,10 @@ import { SectionHeader } from './ui/SectionHeader';
 
 type DemoSectionProps = {
   onOpenChat: () => void;
+  openChatRef?: RefObject<HTMLButtonElement | null>;
 };
 
-export function DemoSection({ onOpenChat }: DemoSectionProps) {
+export function DemoSection({ onOpenChat, openChatRef }: DemoSectionProps) {
   return (
     <section className="section section-zone section-zone--demo demo" id="contact" aria-labelledby="demo-title">
       <div className="container">
@@ -22,7 +24,9 @@ export function DemoSection({ onOpenChat }: DemoSectionProps) {
 
         <Reveal>
           <div className="demo__chat-cta">
-            <Button onClick={onOpenChat}>Открыть обзор</Button>
+            <Button ref={openChatRef} onClick={onOpenChat}>
+              Открыть обзор
+            </Button>
           </div>
         </Reveal>
 

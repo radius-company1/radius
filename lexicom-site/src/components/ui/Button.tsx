@@ -1,4 +1,4 @@
-import type { AnchorHTMLAttributes, ButtonHTMLAttributes, ReactNode } from 'react';
+import { forwardRef, type AnchorHTMLAttributes, type ButtonHTMLAttributes, type ReactNode } from 'react';
 
 type Variant = 'primary' | 'secondary' | 'ghost' | 'ghost-light';
 
@@ -8,38 +8,39 @@ type BaseProps = {
   className?: string;
 };
 
-type ButtonProps = BaseProps &
+type ButtonAsButton = BaseProps &
   ButtonHTMLAttributes<HTMLButtonElement> & {
     href?: undefined;
   };
 
-type LinkProps = BaseProps &
+type ButtonAsLink = BaseProps &
   AnchorHTMLAttributes<HTMLAnchorElement> & {
     href: string;
   };
 
-export function Button({
-  variant = 'primary',
-  children,
-  className = '',
-  href,
-  ...rest
-}: ButtonProps | LinkProps) {
-  const classes = `btn btn--${variant} ${className}`.trim();
+export const Button = forwardRef<HTMLButtonElement | HTMLAnchorElement, ButtonAsButton | ButtonAsLink>(
+  function Button({ variant = 'primary', children, className = '', href, ...rest }, ref) {
+    const classes = `btn btn--${variant} ${className}`.trim();
 
-  if (href) {
-    const linkRest = rest as AnchorHTMLAttributes<HTMLAnchorElement>;
+    if (href) {
+      const linkRest = rest as AnchorHTMLAttributes<HTMLAnchorElement>;
+      return (
+        <a className={classes} href={href} ref={ref as React.Ref<HTMLAnchorElement>} {...linkRest}>
+          {children}
+        </a>
+      );
+    }
+
+    const buttonRest = rest as ButtonHTMLAttributes<HTMLButtonElement>;
     return (
-      <a className={classes} href={href} {...linkRest}>
+      <button
+        type={buttonRest.type ?? 'button'}
+        className={classes}
+        ref={ref as React.Ref<HTMLButtonElement>}
+        {...buttonRest}
+      >
         {children}
-      </a>
+      </button>
     );
-  }
-
-  const buttonRest = rest as ButtonHTMLAttributes<HTMLButtonElement>;
-  return (
-    <button type={buttonRest.type ?? 'button'} className={classes} {...buttonRest}>
-      {children}
-    </button>
-  );
-}
+  },
+);

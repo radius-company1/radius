@@ -276,7 +276,7 @@ export const utilitiesLaunchAccent = {
 
 export const utilitiesResourceAccent = {
   title: 'Ресурсы под ваши задачи',
-  text: 'Параметры вычислительных ресурсов согласуются с заказчиком. Конфигурацию подбираем под задачи и нагрузку.',
+  text: 'Параметры вычислительных ресурсов согласуем с заказчиком. Подбираем и оптимизируем конфигурацию под задачи и нагрузку, чтобы избежать избыточных затрат.',
 } as const;
 
 /** Fillable case stub for analysts — keep placeholders until a real utilities case is ready. */

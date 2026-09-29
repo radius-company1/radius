@@ -1,7 +1,11 @@
+import { useCallback, useRef, useState } from 'react';
 import { products } from '../data/products';
+import { productDemoById, type ProductDemo } from '../data/productDemos';
 import { useSurfaceGlow } from '../hooks/useSurfaceGlow';
-import { GlassSurface } from './ui/GlassSurface';
+import { ProductDemoTrigger } from './ProductDemoTrigger';
 import { ProductVisual } from './ProductVisual';
+import { VideoDemoModal } from './VideoDemoModal';
+import { GlassSurface } from './ui/GlassSurface';
 import { Reveal } from './ui/Reveal';
 import { SectionHeader } from './ui/SectionHeader';
 
@@ -13,8 +17,18 @@ const tintMap = {
   protocol: 'cyan',
 } as const;
 
-function ProductCard({ product, index }: { product: (typeof products)[number]; index: number }) {
+function ProductCard({
+  product,
+  index,
+  onOpenDemo,
+}: {
+  product: (typeof products)[number];
+  index: number;
+  onOpenDemo: (demo: ProductDemo, trigger: HTMLButtonElement | null) => void;
+}) {
   const glow = useSurfaceGlow();
+  const triggerRef = useRef<HTMLButtonElement>(null);
+  const demo = product.id === 'ekc-110' ? undefined : productDemoById[product.id];
 
   return (
     <Reveal delay={index * 80}>
@@ -41,6 +55,13 @@ function ProductCard({ product, index }: { product: (typeof products)[number]; i
               <li key={tag}>{tag}</li>
             ))}
           </ul>
+          {demo ? (
+            <ProductDemoTrigger
+              ref={triggerRef}
+              demo={demo}
+              onOpen={() => onOpenDemo(demo, triggerRef.current)}
+            />
+          ) : null}
         </div>
       </GlassSurface>
     </Reveal>
@@ -48,6 +69,16 @@ function ProductCard({ product, index }: { product: (typeof products)[number]; i
 }
 
 export function Products() {
+  const [activeDemo, setActiveDemo] = useState<ProductDemo | null>(null);
+  const returnFocusRef = useRef<HTMLButtonElement | null>(null);
+
+  const onOpenDemo = useCallback((demo: ProductDemo, trigger: HTMLButtonElement | null) => {
+    returnFocusRef.current = trigger;
+    setActiveDemo(demo);
+  }, []);
+
+  const onClose = useCallback(() => setActiveDemo(null), []);
+
   return (
     <section
       className="section section-zone section-zone--products products"
@@ -65,10 +96,12 @@ export function Products() {
 
         <div className="products__grid">
           {products.map((product, index) => (
-            <ProductCard key={product.id} product={product} index={index} />
+            <ProductCard key={product.id} product={product} index={index} onOpenDemo={onOpenDemo} />
           ))}
         </div>
       </div>
+
+      <VideoDemoModal demo={activeDemo} onClose={onClose} returnFocusRef={returnFocusRef} />
     </section>
   );
 }

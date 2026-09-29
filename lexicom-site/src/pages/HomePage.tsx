@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { useLocation } from 'react-router-dom';
 import { ClientMarquee } from '../components/ClientMarquee';
 import { About } from '../components/About';
@@ -21,6 +21,7 @@ import { Solutions } from '../components/Solutions';
 export function HomePage() {
   const location = useLocation();
   const [chatOpen, setChatOpen] = useState(false);
+  const openChatRef = useRef<HTMLButtonElement>(null);
 
   useEffect(() => {
     if (!location.hash) return;
@@ -53,10 +54,10 @@ export function HomePage() {
         <Implementation />
         <Roadmap />
         <FAQ />
-        <DemoSection onOpenChat={() => setChatOpen(true)} />
+        <DemoSection onOpenChat={() => setChatOpen(true)} openChatRef={openChatRef} />
       </main>
       <Footer />
-      <ChatWidget open={chatOpen} onClose={() => setChatOpen(false)} />
+      <ChatWidget open={chatOpen} onClose={() => setChatOpen(false)} returnFocusRef={openChatRef} />
     </div>
   );
 }

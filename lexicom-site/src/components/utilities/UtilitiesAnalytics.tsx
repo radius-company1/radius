@@ -47,7 +47,7 @@ export function UtilitiesAnalytics() {
           <Reveal delay={80}>
             <GlassSurface className="utilities-analytics__chain" radius="xl" depth="raised" tint="yellow" variant="dark">
               <p className="utilities-analytics__label">От разговора к отчёту</p>
-              <p className="utilities-analytics__demo-note">Демонстрационный пример интерфейса</p>
+              <p className="utilities-analytics__demo-note">Как обрабатывается разговор</p>
               <ol className="utilities-analytics__flow">
                 {utilitiesAnalyticsChain.map((step, index) => (
                   <li key={step.label}>

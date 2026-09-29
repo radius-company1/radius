@@ -1,11 +1,13 @@
-import { useEffect, useRef, useState, type FormEvent } from 'react';
+import { useEffect, useId, useRef, useState, type FormEvent, type RefObject } from 'react';
+import { createPortal } from 'react-dom';
 import { chatSuggestions, getChatResponse, type ChatMessage } from '../data/chat';
 import { Button } from './ui/Button';
-import { GlassSurface } from './ui/GlassSurface';
 
 type ChatWidgetProps = {
   open: boolean;
   onClose: () => void;
+  /** Element to restore focus to after close (usually the open button). */
+  returnFocusRef?: RefObject<HTMLElement | null>;
 };
 
 const welcomeMessage: ChatMessage = {
@@ -14,10 +16,14 @@ const welcomeMessage: ChatMessage = {
   text: 'Здравствуйте! Это интерактивный обзор возможностей Lexicom. Спросите о платформе, внедрении или выборе направления.',
 };
 
-export function ChatWidget({ open, onClose }: ChatWidgetProps) {
+export function ChatWidget({ open, onClose, returnFocusRef }: ChatWidgetProps) {
   const [messages, setMessages] = useState<ChatMessage[]>([welcomeMessage]);
   const [input, setInput] = useState('');
   const listRef = useRef<HTMLDivElement>(null);
+  const closeRef = useRef<HTMLButtonElement>(null);
+  const dialogRef = useRef<HTMLDialogElement>(null);
+  const titleId = useId();
+  const wasOpenRef = useRef(false);
 
   useEffect(() => {
     if (open && listRef.current) {
@@ -26,12 +32,39 @@ export function ChatWidget({ open, onClose }: ChatWidgetProps) {
   }, [messages, open]);
 
   useEffect(() => {
-    const onKeyDown = (event: KeyboardEvent) => {
-      if (event.key === 'Escape' && open) onClose();
+    const dialog = dialogRef.current;
+    if (!dialog) return;
+
+    if (!open) {
+      if (dialog.open) dialog.close();
+      document.body.classList.remove('chat-is-open');
+      if (wasOpenRef.current) {
+        const target = returnFocusRef?.current;
+        if (target && typeof target.focus === 'function') {
+          window.requestAnimationFrame(() => target.focus());
+        }
+      }
+      wasOpenRef.current = false;
+      return;
+    }
+
+    wasOpenRef.current = true;
+    document.body.classList.add('chat-is-open');
+    if (!dialog.open) dialog.showModal();
+    window.requestAnimationFrame(() => closeRef.current?.focus());
+
+    const onCancel = (event: Event) => {
+      event.preventDefault();
+      onClose();
     };
-    window.addEventListener('keydown', onKeyDown);
-    return () => window.removeEventListener('keydown', onKeyDown);
-  }, [open, onClose]);
+
+    dialog.addEventListener('cancel', onCancel);
+    return () => {
+      dialog.removeEventListener('cancel', onCancel);
+      document.body.classList.remove('chat-is-open');
+      if (dialog.open) dialog.close();
+    };
+  }, [open, onClose, returnFocusRef]);
 
   const sendMessage = (text: string) => {
     const trimmed = text.trim();
@@ -58,25 +91,32 @@ export function ChatWidget({ open, onClose }: ChatWidgetProps) {
     sendMessage(input);
   };
 
-  if (!open) return null;
+  if (typeof document === 'undefined') return null;
 
-  return (
-    <div className="chat-overlay" role="presentation" onClick={onClose}>
-      <GlassSurface
-        as="aside"
-        className="chat-panel"
-        radius="xl"
-        role="dialog"
-        aria-modal="true"
-        aria-label="Интерактивный обзор возможностей Lexicom"
-        onClick={(e) => e.stopPropagation()}
-      >
+  return createPortal(
+    <dialog
+      ref={dialogRef}
+      className="chat-dialog"
+      aria-labelledby={titleId}
+      onClick={(event) => {
+        if (event.target === dialogRef.current) onClose();
+      }}
+    >
+      <div className="chat-panel" role="document">
         <header className="chat-panel__header">
           <div>
-            <p className="chat-panel__title">Интерактивный обзор возможностей</p>
+            <p className="chat-panel__title" id={titleId}>
+              Интерактивный обзор возможностей
+            </p>
             <p className="chat-panel__subtitle">Ответы по ключевым словам · до подключения ассистента</p>
           </div>
-          <button type="button" className="chat-panel__close" aria-label="Закрыть чат" onClick={onClose}>
+          <button
+            ref={closeRef}
+            type="button"
+            className="chat-panel__close"
+            aria-label="Закрыть обзор"
+            onClick={onClose}
+          >
             ×
           </button>
         </header>
@@ -111,7 +151,8 @@ export function ChatWidget({ open, onClose }: ChatWidgetProps) {
           />
           <Button type="submit">Отправить</Button>
         </form>
-      </GlassSurface>
-    </div>
+      </div>
+    </dialog>,
+    document.body,
   );
 }
