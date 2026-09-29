@@ -23,8 +23,8 @@ export function Footer() {
           <h3 className="site-footer__heading">Платформа</h3>
           <ul className="site-footer__list">
             {footerPlatform.map((item) => (
-              <li key={item}>
-                <Link to={sectionHref('#products', isHome)}>{item}</Link>
+              <li key={item.label}>
+                <Link to={item.to ?? sectionHref('#products', isHome)}>{item.label}</Link>
               </li>
             ))}
           </ul>

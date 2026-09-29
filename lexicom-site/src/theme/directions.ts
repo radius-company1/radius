@@ -29,10 +29,10 @@ export function getDirectionFromPath(pathname: string): DirectionId {
   return match?.id ?? 'overview';
 }
 
+/** Returns -1 for pages outside the direction switcher (e.g. product pages). */
 export function getDirectionIndexFromPath(pathname: string): number {
   const path = normalizePath(pathname);
-  const index = directionModes.findIndex((mode) => mode.href === path);
-  return index >= 0 ? index : 0;
+  return directionModes.findIndex((mode) => mode.href === path);
 }
 
 export function getDirectionHref(id: DirectionId): string {

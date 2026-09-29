@@ -1,12 +1,13 @@
-export const footerPlatform = [
-  'ИИ-ассистенты',
-  'Контактный центр',
-  'ЕКЦ 110',
-  'База знаний',
-  'Робот-суфлёр',
-  'Речевая аналитика',
-  'Интеграции',
-] as const;
+/** Items without `to` link to the home products block. */
+export const footerPlatform: readonly { label: string; to?: string }[] = [
+  { label: 'ИИ-ассистенты' },
+  { label: 'Контактный центр', to: '/products/contact-center' },
+  { label: 'ЕКЦ 110' },
+  { label: 'База знаний' },
+  { label: 'Робот-суфлёр' },
+  { label: 'Речевая аналитика' },
+  { label: 'Интеграции' },
+];
 
 export const footerDirections = [
   { label: 'МФЦ', href: '/mfc' },

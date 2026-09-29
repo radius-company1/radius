@@ -1,5 +1,6 @@
 import { useCallback, useRef, useState } from 'react';
-import { products } from '../data/products';
+import { Link } from 'react-router-dom';
+import { productPageHref, products } from '../data/products';
 import { productDemoById, type ProductDemo } from '../data/productDemos';
 import { useSurfaceGlow } from '../hooks/useSurfaceGlow';
 import { ProductDemoTrigger } from './ProductDemoTrigger';
@@ -29,11 +30,13 @@ function ProductCard({
   const glow = useSurfaceGlow();
   const triggerRef = useRef<HTMLButtonElement>(null);
   const demo = product.id === 'ekc-110' ? undefined : productDemoById[product.id];
+  const detailsHref = productPageHref[product.id];
 
   return (
     <Reveal delay={index * 80}>
       <GlassSurface
         as="article"
+        id={`product-${product.id}`}
         ref={glow.ref as React.RefObject<HTMLDivElement>}
         className={`product-card product-card--${product.id}`}
         radius="xl"
@@ -56,11 +59,19 @@ function ProductCard({
             ))}
           </ul>
           {demo ? (
-            <ProductDemoTrigger
-              ref={triggerRef}
-              demo={demo}
-              onOpen={() => onOpenDemo(demo, triggerRef.current)}
-            />
+            <div className="product-card__actions">
+              <ProductDemoTrigger
+                ref={triggerRef}
+                demo={demo}
+                onOpen={() => onOpenDemo(demo, triggerRef.current)}
+              />
+              {detailsHref ? (
+                <Link className="product-card__more" to={detailsHref}>
+                  Подробнее
+                  <span aria-hidden="true">→</span>
+                </Link>
+              ) : null}
+            </div>
           ) : null}
         </div>
       </GlassSurface>

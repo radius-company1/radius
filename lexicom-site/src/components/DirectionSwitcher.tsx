@@ -59,6 +59,10 @@ export function DirectionSwitcher({ scrolled = false }: DirectionSwitcherProps) 
 
   const applyLens = useCallback(
     (index: number) => {
+      if (index < 0) {
+        setReady(false);
+        return;
+      }
       const rect = measureLens(index);
       if (!rect) return;
       setLens(rect);
@@ -142,7 +146,7 @@ export function DirectionSwitcher({ scrolled = false }: DirectionSwitcherProps) 
 
     if (key === 'ArrowLeft' || key === 'ArrowUp') {
       event.preventDefault();
-      const next = Math.max(safeActiveIndex - 1, 0);
+      const next = safeActiveIndex < 0 ? 0 : Math.max(safeActiveIndex - 1, 0);
       if (next !== safeActiveIndex) handleSelect(directionModes[next].href, next);
       focusItem(next);
       return;
@@ -209,7 +213,7 @@ export function DirectionSwitcher({ scrolled = false }: DirectionSwitcherProps) 
                     type="button"
                     role="tab"
                     aria-selected={isActive}
-                    tabIndex={isActive ? 0 : -1}
+                    tabIndex={isActive || (safeActiveIndex < 0 && index === 0) ? 0 : -1}
                     className={`direction-switcher__item ${isActive ? 'is-active' : ''}`}
                     onClick={() => handleSelect(mode.href, index)}
                     onMouseEnter={() => setHoverIndex(index)}

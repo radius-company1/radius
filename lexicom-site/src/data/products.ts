@@ -50,3 +50,13 @@ export const products: readonly ProductItem[] = [
     tags: ['аудио и видео', 'разделение участников', 'расшифровка', 'подготовка протокола'],
   },
 ] as const;
+
+/** Only products that already have their own page. */
+export const productPageHref: Partial<Record<ProductId, string>> = {
+  'contact-center': '/products/contact-center',
+};
+
+/** Anchor of a product card in the home products block. */
+export function productCardHref(id: ProductId): string {
+  return `/#product-${id}`;
+}

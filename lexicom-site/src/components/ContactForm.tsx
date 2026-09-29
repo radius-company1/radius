@@ -7,6 +7,8 @@ type ContactFormProps = {
   messageRequired?: boolean;
   submitLabel?: string;
   direction?: string;
+  /** Lead source when the form lives on a product page */
+  product?: string;
 };
 
 type FormState = {
@@ -31,6 +33,7 @@ export function ContactForm({
   messageRequired = true,
   submitLabel = 'Отправить заявку',
   direction,
+  product,
 }: ContactFormProps) {
   const [form, setForm] = useState<FormState>(initialState);
   const [status, setStatus] = useState<'idle' | 'error'>('idle');
@@ -44,6 +47,7 @@ export function ContactForm({
   return (
     <form className="contact-form" id={id} onSubmit={handleSubmit} noValidate>
       {direction ? <input type="hidden" name="direction" value={direction} /> : null}
+      {product ? <input type="hidden" name="product" value={product} /> : null}
       <div className="contact-form__grid">
         <label className="field">
           <span>{organizationLabel}</span>
