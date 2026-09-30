@@ -47,7 +47,12 @@ export function ContactForm({
   return (
     <form className="contact-form" id={id} onSubmit={handleSubmit} noValidate>
       {direction ? <input type="hidden" name="direction" value={direction} /> : null}
-      {product ? <input type="hidden" name="product" value={product} /> : null}
+      {product ? (
+        <>
+          <input type="hidden" name="product" value={product} />
+          <input type="hidden" name="page" value={window.location.origin + window.location.pathname} />
+        </>
+      ) : null}
       <div className="contact-form__grid">
         <label className="field">
           <span>{organizationLabel}</span>

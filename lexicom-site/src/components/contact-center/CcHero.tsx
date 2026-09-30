@@ -1,5 +1,5 @@
-import { Link } from 'react-router-dom';
 import { heroShot, type ContactCenterShot } from '../../data/contactCenterPage';
+import { ProductBreadcrumbs } from '../ProductBreadcrumbs';
 import { Button } from '../ui/Button';
 import { GlassSurface } from '../ui/GlassSurface';
 import { Reveal } from '../ui/Reveal';
@@ -15,19 +15,7 @@ export function CcHero({ onWatchVideo, onDiscuss, onOpenShot }: CcHeroProps) {
   return (
     <section className="cc-hero section-zone" id="cc-top" aria-labelledby="cc-hero-title">
       <div className="container">
-        <nav className="cc-breadcrumbs" aria-label="Хлебные крошки">
-          <ol>
-            <li>
-              <Link to="/">Главная</Link>
-            </li>
-            <li>
-              <Link to="/#products">Продукты</Link>
-            </li>
-            <li>
-              <span aria-current="page">Контактный центр</span>
-            </li>
-          </ol>
-        </nav>
+        <ProductBreadcrumbs current="Контактный центр" />
 
         <div className="cc-hero__grid">
           <div className="cc-hero__content">

@@ -1,4 +1,4 @@
-import { productCardHref } from './products';
+import { productHref } from './products';
 
 export const contactCenterPageMeta = {
   title: 'Контактный центр Lexicom — ИИ-помощь оператору',
@@ -161,8 +161,8 @@ export const solutionConfigs: readonly {
     text: 'Автоматизация типовых обращений, передача сложных сотруднику и анализ разговоров.',
     layers: [
       { label: 'Контактный центр' },
-      { label: 'Нейробот', href: productCardHref('neurobot') },
-      { label: 'Речевая аналитика', href: productCardHref('speech-analytics') },
+      { label: 'Нейробот', href: productHref('neurobot') },
+      { label: 'Речевая аналитика', href: productHref('speech-analytics') },
     ],
   },
 ];

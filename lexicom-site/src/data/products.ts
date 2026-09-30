@@ -54,7 +54,13 @@ export const products: readonly ProductItem[] = [
 /** Only products that already have their own page. */
 export const productPageHref: Partial<Record<ProductId, string>> = {
   'contact-center': '/products/contact-center',
+  neurobot: '/products/neurobot',
 };
+
+/** Product page when it exists, otherwise the product card on the home page. */
+export function productHref(id: ProductId): string {
+  return productPageHref[id] ?? productCardHref(id);
+}
 
 /** Anchor of a product card in the home products block. */
 export function productCardHref(id: ProductId): string {
