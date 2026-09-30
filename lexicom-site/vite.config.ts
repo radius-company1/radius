@@ -11,7 +11,7 @@ const SPA_ROUTES = [
   'social',
   'utilities',
   'products/contact-center',
-  'products/neurobot',
+  'products/neurobot', 'products/speech-analytics',
   'design-preview',
 ] as const
 

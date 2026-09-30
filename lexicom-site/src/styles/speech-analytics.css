@@ -1,0 +1,107 @@
+/* Speech analytics product page — reuses contact-center (hero, shots) and neurobot (lists, dark, infra, form) blocks */
+
+.page-view--speech-analytics,
+.page-view--speech-analytics main,
+.page-view--speech-analytics .reveal {
+  min-width: 0;
+}
+
+.page-view--speech-analytics .section:not(.section--dark):not(.section--ink) {
+  padding-block: calc(var(--section-pad) * 0.72);
+}
+
+.page-view--speech-analytics .section-header {
+  margin-bottom: 1.5rem;
+}
+
+.page-view--speech-analytics .cc-shot__frame img {
+  aspect-ratio: 1920 / 780;
+}
+
+/* Text + screenshot split */
+
+.sa-split__layout {
+  display: grid;
+  gap: 1.25rem;
+  align-items: center;
+}
+
+.sa-split__layout > *,
+.sa-split__layout > .reveal {
+  min-width: 0;
+}
+
+.sa-split__points {
+  display: grid;
+  gap: 0.55rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.sa-split__points li {
+  position: relative;
+  padding-left: 1.4rem;
+  font-size: 0.98rem;
+  line-height: 1.5;
+}
+
+.sa-split__points li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0.5em;
+  width: 0.6rem;
+  height: 0.6rem;
+  border-radius: 3px;
+  background: linear-gradient(135deg, #3a9fc4, #4a5fd4);
+}
+
+.sa-split__visual {
+  padding: 0.6rem;
+}
+
+.sa-split__caption {
+  margin: 0.55rem 0.35rem 0.1rem;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--color-text-muted);
+}
+
+/* Dark block note */
+
+.sa-team__note {
+  max-width: 70ch;
+  margin: 1.1rem 0 0;
+  font-size: 0.94rem;
+  color: rgba(232, 237, 248, 0.78);
+}
+
+.sa-infra__note {
+  max-width: 70ch;
+  margin: 0;
+  font-size: 0.94rem;
+  color: var(--color-text-muted);
+}
+
+@media (min-width: 900px) {
+  .sa-review .cc-workspace__grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1.75rem 1.5rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .sa-split__layout {
+    grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr);
+    gap: 2.5rem;
+  }
+
+  .sa-split--reverse .sa-split__layout {
+    grid-template-columns: minmax(0, 1.2fr) minmax(0, 0.8fr);
+  }
+
+  .sa-split--reverse .sa-split__text {
+    order: 2;
+  }
+}

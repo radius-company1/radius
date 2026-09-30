@@ -5,7 +5,7 @@ export const footerPlatform: readonly { label: string; to?: string }[] = [
   { label: 'ЕКЦ 110' },
   { label: 'База знаний' },
   { label: 'Робот-суфлёр' },
-  { label: 'Речевая аналитика' },
+  { label: 'Речевая аналитика', to: '/products/speech-analytics' },
   { label: 'Интеграции' },
 ];
 

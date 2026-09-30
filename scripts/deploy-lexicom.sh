@@ -17,7 +17,7 @@ rsync -a --delete \
 
 # Sanity: nested route HTML must reference the same hashed bundles as root
 root_js="$(grep -oE 'assets/index-[^"]+\.js' "$PAGES/index.html" | head -1)"
-for route in mfc 122 edds social utilities products/contact-center products/neurobot design-preview; do
+for route in mfc 122 edds social utilities products/contact-center products/neurobot products/speech-analytics design-preview; do
   stub="$PAGES/$route/index.html"
   if [[ ! -f "$stub" ]]; then
     echo "ERROR: missing SPA stub $stub" >&2
