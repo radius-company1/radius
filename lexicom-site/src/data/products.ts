@@ -56,6 +56,7 @@ export const productPageHref: Partial<Record<ProductId, string>> = {
   'contact-center': '/products/contact-center',
   neurobot: '/products/neurobot',
   'speech-analytics': '/products/speech-analytics',
+  protocol: '/products/protocol',
 };
 
 /** Product page when it exists, otherwise the product card on the home page. */

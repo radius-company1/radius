@@ -1,20 +1,26 @@
-/* Speech analytics product page — reuses contact-center (hero, shots) and neurobot (lists, dark, infra, form) blocks */
+/* Speech analytics and protocol product pages — reuse contact-center (hero, shots) and neurobot (lists, dark, infra, form) blocks */
 
 .page-view--speech-analytics,
 .page-view--speech-analytics main,
-.page-view--speech-analytics .reveal {
+.page-view--speech-analytics .reveal,
+.page-view--protocol,
+.page-view--protocol main,
+.page-view--protocol .reveal {
   min-width: 0;
 }
 
-.page-view--speech-analytics .section:not(.section--dark):not(.section--ink) {
+.page-view--speech-analytics .section:not(.section--dark):not(.section--ink),
+.page-view--protocol .section:not(.section--dark):not(.section--ink) {
   padding-block: calc(var(--section-pad) * 0.72);
 }
 
-.page-view--speech-analytics .section-header {
+.page-view--speech-analytics .section-header,
+.page-view--protocol .section-header {
   margin-bottom: 1.5rem;
 }
 
-.page-view--speech-analytics .cc-shot__frame img {
+.page-view--speech-analytics .cc-shot__frame img,
+.page-view--protocol .cc-shot__frame img {
   aspect-ratio: 1920 / 780;
 }
 
