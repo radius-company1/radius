@@ -21,12 +21,19 @@ export const ekcDeliverables = [
   'Запуск и сопровождение',
 ] as const;
 
-/** Hero scheme: large labels only, no fake interface. */
-export const ekcHeroScheme = [
-  { id: 'residents', title: 'Обращения жителей', items: ['Телефон', 'MAX', 'Виджет сайта'] },
-  { id: 'center', title: 'ЕКЦ', items: ['Нейробот', 'Операторы', 'База знаний'] },
-  { id: 'services', title: 'Профильные службы', items: ['Передача с контекстом', 'Аналитика обращений'] },
-] as const;
+export type EkcKitIcon = 'server' | 'workplace' | 'platform' | 'team';
+
+/** Hero composition: parts of a turnkey center, not a sequence. */
+export const ekcHeroKit: { icon: EkcKitIcon; title: string; caption: string }[] = [
+  { icon: 'server', title: 'Инфраструктура', caption: 'Серверное оборудование' },
+  { icon: 'workplace', title: 'Рабочие места', caption: 'Компьютеры, мониторы, гарнитуры' },
+  {
+    icon: 'platform',
+    title: 'Платформа Lexicom',
+    caption: 'Нейробот, контактный центр, база знаний, речевая аналитика',
+  },
+  { icon: 'team', title: 'Подготовка команды', caption: 'Операторы, руководители, администраторы' },
+];
 
 export const ekcAudiences = [
   {
@@ -134,7 +141,7 @@ export const ekcPlatform = [
 ] as const;
 
 export const ekcPlatformNotes = [
-  'Телефония, бот в MAX и виджет сайта подключаются в согласованном составе. В MAX и виджете доступны текстовые и голосовые сообщения.',
+  'Телефония, бот в MAX и виджет сайта подключаются в согласованном составе. Бот в MAX и виджет сайта принимают текстовые сообщения и распознают голосовые.',
   'Основной программный контур разворачивается в инфраструктуре заказчика. Подключение внешних каналов проектируется отдельно.',
 ] as const;
 
@@ -176,6 +183,36 @@ export const ekcProjectStages = [
   'Испытания и запуск',
   'Сопровождение',
 ] as const;
+
+export type EkcCaseMetric = {
+  name: string;
+  unit: string;
+  before: string | null;
+  after: string | null;
+  period: string | null;
+};
+
+export type EkcCase = {
+  title: string;
+  status: string;
+  region: string | null;
+  task: string | null;
+  scope: string[];
+  metrics: EkcCaseMetric[];
+};
+
+/**
+ * Fill from approved project materials only. Empty values render as
+ * "готовится к публикации", never as zeros or dashes.
+ */
+export const ekcCase: EkcCase = {
+  title: 'Кейс внедрения ЕКЦ',
+  status: 'Описание проекта и показатели готовятся к публикации',
+  region: null,
+  task: null,
+  scope: [],
+  metrics: [],
+};
 
 export const ekcProjectNote =
   'Можно начать с выбранных направлений и расширять ЕКЦ поэтапно. Сроки определяются составом поставки, готовностью инфраструктуры, интеграциями и порядком приёмки.';

@@ -3,8 +3,10 @@ import {
   ekcAnchors,
   ekcAudiences,
   ekcAudiencesNote,
+  ekcCase,
   ekcDeliverables,
-  ekcHeroScheme,
+  ekcHeroKit,
+  type EkcKitIcon,
   ekcPlatform,
   ekcPlatformNotes,
   ekcProcessIntro,
@@ -25,6 +27,136 @@ import { Button } from '../ui/Button';
 import { GlassSurface } from '../ui/GlassSurface';
 import { Reveal } from '../ui/Reveal';
 import { SectionHeader } from '../ui/SectionHeader';
+
+function EkcKitIconSvg({ icon }: { icon: EkcKitIcon }) {
+  const common = {
+    viewBox: '0 0 48 48',
+    fill: 'none',
+    stroke: 'currentColor',
+    strokeWidth: 2,
+    strokeLinecap: 'round',
+    strokeLinejoin: 'round',
+  } as const;
+
+  switch (icon) {
+    case 'server':
+      return (
+        <svg {...common}>
+          <rect x="8" y="8" width="32" height="13" rx="3.5" />
+          <rect x="8" y="27" width="32" height="13" rx="3.5" />
+          <circle cx="14.5" cy="14.5" r="2" className="ekc-kit__accent" />
+          <circle cx="14.5" cy="33.5" r="2" className="ekc-kit__accent" />
+          <path d="M22 14.5h12M22 33.5h12" />
+        </svg>
+      );
+    case 'workplace':
+      return (
+        <svg {...common}>
+          <rect x="4" y="10" width="26" height="18" rx="3" />
+          <path d="M17 28v6M11 35h12" />
+          <path d="M32 33v-4a7 7 0 0 1 14 0v4" />
+          <rect x="30.5" y="31" width="4" height="7" rx="1.6" className="ekc-kit__accent" />
+          <rect x="43.5" y="31" width="4" height="7" rx="1.6" className="ekc-kit__accent" />
+        </svg>
+      );
+    case 'platform':
+      return (
+        <svg {...common}>
+          <path d="M14 14l5.5 5.5M34 14l-5.5 5.5M14 34l5.5-5.5M34 34l-5.5-5.5" />
+          <circle cx="11" cy="11" r="4" />
+          <circle cx="37" cy="11" r="4" />
+          <circle cx="11" cy="37" r="4" />
+          <circle cx="37" cy="37" r="4" />
+          <circle cx="24" cy="24" r="6.5" className="ekc-kit__accent" />
+        </svg>
+      );
+    case 'team':
+      return (
+        <svg {...common}>
+          <circle cx="11" cy="19" r="4" />
+          <circle cx="37" cy="19" r="4" />
+          <path d="M3.5 37a7.5 7.5 0 0 1 11.5-6.3M44.5 37A7.5 7.5 0 0 0 33 30.7" />
+          <circle cx="24" cy="15" r="5.5" className="ekc-kit__accent" />
+          <path d="M14.5 38a9.5 9.5 0 0 1 19 0" />
+        </svg>
+      );
+  }
+}
+
+function CasePending() {
+  return <p className="ekc-case__pending">Готовится к публикации</p>;
+}
+
+export function EkcCaseStudy() {
+  const { title, status, region, task, scope, metrics } = ekcCase;
+
+  return (
+    <section className="section ekc-case" id="ekc-case" aria-labelledby="ekc-case-title">
+      <div className="container">
+        <Reveal>
+          <SectionHeader title={title} titleId="ekc-case-title" description={status} />
+        </Reveal>
+
+        <Reveal delay={60}>
+          <GlassSurface className="ekc-case__panel" radius="xl" depth="raised" tint="blue" tier="matte">
+            {region ? <p className="ekc-case__region">{region}</p> : null}
+
+            <div className="ekc-case__parts">
+              <article className="ekc-case__part">
+                <h3>Задача региона</h3>
+                {task ? <p>{task}</p> : <CasePending />}
+              </article>
+
+              <article className="ekc-case__part">
+                <h3>Состав поставки и выполненные работы</h3>
+                {scope.length ? (
+                  <ul className="ekc-case__scope">
+                    {scope.map((item) => (
+                      <li key={item}>{item}</li>
+                    ))}
+                  </ul>
+                ) : (
+                  <CasePending />
+                )}
+              </article>
+            </div>
+
+            <article className="ekc-case__part ekc-case__results">
+              <h3>Результаты: до и после</h3>
+              {metrics.length ? (
+                <table className="ekc-case__table">
+                  <thead>
+                    <tr>
+                      <th scope="col">Показатель</th>
+                      <th scope="col">До</th>
+                      <th scope="col">После</th>
+                      <th scope="col">Период сравнения</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {metrics.map((metric) => (
+                      <tr key={metric.name}>
+                        <th scope="row">
+                          {metric.name}
+                          {metric.unit ? <span className="ekc-case__unit">, {metric.unit}</span> : null}
+                        </th>
+                        <td data-label="До">{metric.before ?? <CasePending />}</td>
+                        <td data-label="После">{metric.after ?? <CasePending />}</td>
+                        <td data-label="Период сравнения">{metric.period ?? <CasePending />}</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              ) : (
+                <CasePending />
+              )}
+            </article>
+          </GlassSurface>
+        </Reveal>
+      </div>
+    </section>
+  );
+}
 
 type EkcHeroProps = {
   onDiscuss: () => void;
@@ -78,24 +210,26 @@ export function EkcHero({ onDiscuss, onShowScope }: EkcHeroProps) {
 
           <Reveal delay={100}>
             <GlassSurface
-              className="ekc-scheme"
+              className="ekc-kit"
               radius="xl"
               depth="float"
               tint="yellow"
               style={{ viewTransitionName: 'hero-viz' } as React.CSSProperties}
             >
-              <ol className="ekc-scheme__list" aria-label="Как устроен ЕКЦ">
-                {ekcHeroScheme.map((row) => (
-                  <li key={row.id} className={`ekc-scheme__row ekc-scheme__row--${row.id}`}>
-                    <p className="ekc-scheme__title">{row.title}</p>
-                    <ul className="ekc-scheme__items">
-                      {row.items.map((item) => (
-                        <li key={item}>{item}</li>
-                      ))}
-                    </ul>
+              <p className="ekc-kit__title" id="ekc-kit-title">
+                Состав готового центра
+              </p>
+              <ul className="ekc-kit__grid" aria-labelledby="ekc-kit-title">
+                {ekcHeroKit.map((item) => (
+                  <li key={item.icon} className={`ekc-kit__item ekc-kit__item--${item.icon}`}>
+                    <span className="ekc-kit__icon" aria-hidden="true">
+                      <EkcKitIconSvg icon={item.icon} />
+                    </span>
+                    <p className="ekc-kit__name">{item.title}</p>
+                    <p className="ekc-kit__caption">{item.caption}</p>
                   </li>
                 ))}
-              </ol>
+              </ul>
             </GlassSurface>
           </Reveal>
         </div>

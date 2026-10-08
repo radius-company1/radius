@@ -1,6 +1,7 @@
 import { useCallback } from 'react';
 import {
   EkcAudiences,
+  EkcCaseStudy,
   EkcFinalCta,
   EkcHero,
   EkcPlatform,
@@ -37,6 +38,7 @@ export function EkcPage() {
         <EkcPlatform />
         <EkcTraining />
         <EkcStart />
+        <EkcCaseStudy />
         <EkcFinalCta />
       </main>
       <Footer />
