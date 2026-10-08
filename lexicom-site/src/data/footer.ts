@@ -11,6 +11,7 @@ export const footerPlatform: readonly { label: string; to?: string }[] = [
 ];
 
 export const footerDirections = [
+  { label: 'Для бизнеса', href: '/business' },
   { label: 'МФЦ', href: '/mfc' },
   { label: 'Служба 122', href: '/122' },
   { label: 'ЕДДС', href: '/edds' },

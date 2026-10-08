@@ -76,6 +76,7 @@
 .direction-card--featured .direction-card__title { font-size: clamp(1.4rem, 2.4vw, 1.7rem); }
 .direction-card__text { margin: 0 0 1.15rem; color: var(--color-text-muted); flex: 1; }
 .direction-card__btn { width: 100%; margin-top: auto; border: 1px solid rgba(255, 255, 255, 0.5); }
+.direction-card__btn--business { background: linear-gradient(135deg, rgba(230, 192, 53, 0.32), rgba(58, 159, 196, 0.12)); }
 .direction-card__btn--mfc { background: linear-gradient(135deg, rgba(58, 159, 196, 0.2), rgba(230, 192, 53, 0.15)); }
 .direction-card__btn--122 { background: linear-gradient(135deg, rgba(74, 95, 212, 0.18), rgba(58, 159, 196, 0.12)); }
 .direction-card__btn--edds { background: linear-gradient(135deg, rgba(42, 63, 159, 0.22), rgba(230, 192, 53, 0.12)); }

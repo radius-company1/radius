@@ -10,6 +10,7 @@ const SPA_ROUTES = [
   'edds',
   'social',
   'utilities',
+  'business',
   'products/contact-center',
   'products/neurobot', 'products/speech-analytics', 'products/protocol', 'products/ekc-110',
   'design-preview',

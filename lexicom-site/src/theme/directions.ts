@@ -1,4 +1,4 @@
-export type DirectionId = 'overview' | 'mfc' | '122' | 'edds' | 'social' | 'utilities';
+export type DirectionId = 'overview' | 'business' | 'mfc' | '122' | 'edds' | 'social' | 'utilities';
 
 export type DirectionMode = {
   id: DirectionId;
@@ -9,6 +9,7 @@ export type DirectionMode = {
 
 export const directionModes: readonly DirectionMode[] = [
   { id: 'overview', label: 'Главная', href: '/', shortLabel: 'Главная' },
+  { id: 'business', label: 'Для бизнеса', href: '/business', shortLabel: 'Бизнес' },
   { id: 'mfc', label: 'Для МФЦ', href: '/mfc', shortLabel: 'МФЦ' },
   { id: '122', label: 'Для службы 122', href: '/122', shortLabel: '122' },
   { id: 'edds', label: 'Для ЕДДС', href: '/edds', shortLabel: 'ЕДДС' },

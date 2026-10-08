@@ -21,6 +21,7 @@ import {
   ekcTraining,
   ekcTrainingNote,
 } from '../../data/ekcPage';
+import { CaseStudy } from '../CaseStudy';
 import { ContactForm } from '../ContactForm';
 import { ProductBreadcrumbs } from '../ProductBreadcrumbs';
 import { Button } from '../ui/Button';
@@ -83,78 +84,22 @@ function EkcKitIconSvg({ icon }: { icon: EkcKitIcon }) {
   }
 }
 
-function CasePending() {
-  return <p className="ekc-case__pending">Готовится к публикации</p>;
-}
-
 export function EkcCaseStudy() {
-  const { title, status, region, task, scope, metrics } = ekcCase;
-
   return (
-    <section className="section ekc-case" id="ekc-case" aria-labelledby="ekc-case-title">
-      <div className="container">
-        <Reveal>
-          <SectionHeader title={title} titleId="ekc-case-title" description={status} />
-        </Reveal>
-
-        <Reveal delay={60}>
-          <GlassSurface className="ekc-case__panel" radius="xl" depth="raised" tint="blue" tier="matte">
-            {region ? <p className="ekc-case__region">{region}</p> : null}
-
-            <div className="ekc-case__parts">
-              <article className="ekc-case__part">
-                <h3>Задача региона</h3>
-                {task ? <p>{task}</p> : <CasePending />}
-              </article>
-
-              <article className="ekc-case__part">
-                <h3>Состав поставки и выполненные работы</h3>
-                {scope.length ? (
-                  <ul className="ekc-case__scope">
-                    {scope.map((item) => (
-                      <li key={item}>{item}</li>
-                    ))}
-                  </ul>
-                ) : (
-                  <CasePending />
-                )}
-              </article>
-            </div>
-
-            <article className="ekc-case__part ekc-case__results">
-              <h3>Результаты: до и после</h3>
-              {metrics.length ? (
-                <table className="ekc-case__table">
-                  <thead>
-                    <tr>
-                      <th scope="col">Показатель</th>
-                      <th scope="col">До</th>
-                      <th scope="col">После</th>
-                      <th scope="col">Период сравнения</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    {metrics.map((metric) => (
-                      <tr key={metric.name}>
-                        <th scope="row">
-                          {metric.name}
-                          {metric.unit ? <span className="ekc-case__unit">, {metric.unit}</span> : null}
-                        </th>
-                        <td data-label="До">{metric.before ?? <CasePending />}</td>
-                        <td data-label="После">{metric.after ?? <CasePending />}</td>
-                        <td data-label="Период сравнения">{metric.period ?? <CasePending />}</td>
-                      </tr>
-                    ))}
-                  </tbody>
-                </table>
-              ) : (
-                <CasePending />
-              )}
-            </article>
-          </GlassSurface>
-        </Reveal>
-      </div>
-    </section>
+    <CaseStudy
+      data={{
+        id: 'ekc-case',
+        titleId: 'ekc-case-title',
+        title: ekcCase.title,
+        status: ekcCase.status,
+        subject: ekcCase.region,
+        taskLabel: 'Задача региона',
+        task: ekcCase.task,
+        scopeLabel: 'Состав поставки и выполненные работы',
+        scope: ekcCase.scope,
+        metrics: ekcCase.metrics,
+      }}
+    />
   );
 }
 

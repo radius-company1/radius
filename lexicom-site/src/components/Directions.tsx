@@ -5,9 +5,10 @@ import { GlassSurface } from './ui/GlassSurface';
 import { Reveal } from './ui/Reveal';
 import { SectionHeader } from './ui/SectionHeader';
 
-const tintMap = { mfc: 'mfc', '122': 's122', edds: 'edds', social: 'social', utilities: 'utilities' } as const;
+const tintMap = { business: 'yellow', mfc: 'mfc', '122': 's122', edds: 'edds', social: 'social', utilities: 'utilities' } as const;
 
 const routeMini = {
+  business: ['Задача', 'Настройка', 'Запуск'],
   mfc: ['Обращение', 'Консультация', 'Результат'],
   '122': ['Звонок', 'Маршрут', 'Служба'],
   edds: ['Приём', 'Классификация', 'Передача'],
@@ -73,7 +74,7 @@ export function Directions() {
           <SectionHeader
             title="Выберите своё направление"
             titleId="directions-title"
-            description="Продукты Lexicom собираются под задачи организации. У МФЦ, 122, ЕДДС, социальной защиты и ресурсоснабжения — свои сценарии, состав решения и демонстрация."
+            description="Продукты Lexicom собираются под задачи организации. У бизнеса, МФЦ, службы 122, ЕДДС, социальной защиты и ресурсоснабжения — свои сценарии и состав решения."
           />
         </Reveal>
 
@@ -84,7 +85,7 @@ export function Directions() {
               direction={direction}
               index={index}
               onNavigate={navigate}
-              featured={index === 0}
+              featured={direction.id === 'mfc'}
             />
           ))}
         </div>

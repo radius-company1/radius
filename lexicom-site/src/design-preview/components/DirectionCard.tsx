@@ -4,6 +4,7 @@ import { GlassSurface } from './GlassSurface';
 import './DirectionCard.css';
 
 const routeMini = {
+  business: ['Задача', 'Настройка', 'Запуск'],
   mfc: ['Обращение', 'Консультация', 'Результат'],
   '122': ['Звонок', 'Маршрут', 'Служба'],
   edds: ['Приём', 'Классификация', 'Передача'],

@@ -1,6 +1,7 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import { SiteShell } from './components/SiteShell';
 import { DesignPreviewPage } from './design-preview/DesignPreviewPage';
+import { BusinessPage } from './pages/BusinessPage';
 import { ContactCenterPage } from './pages/ContactCenterPage';
 import { EddsPage } from './pages/EddsPage';
 import { HomePage } from './pages/HomePage';
@@ -20,6 +21,7 @@ export default function App() {
         <Route path="/design-preview" element={<DesignPreviewPage />} />
         <Route element={<SiteShell />}>
           <Route path="/" element={<HomePage />} />
+          <Route path="/business" element={<BusinessPage />} />
           <Route path="/mfc" element={<MfcPage />} />
           <Route path="/122" element={<S122Page />} />
           <Route path="/edds" element={<EddsPage />} />
