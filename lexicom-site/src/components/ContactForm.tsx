@@ -9,6 +9,8 @@ type ContactFormProps = {
   direction?: string;
   /** Lead source when the form lives on a product page */
   product?: string;
+  /** `combined` asks for one «Телефон или email» field instead of two required ones */
+  contactFields?: 'separate' | 'combined';
 };
 
 type FormState = {
@@ -16,6 +18,7 @@ type FormState = {
   name: string;
   phone: string;
   email: string;
+  contact: string;
   message: string;
 };
 
@@ -24,6 +27,7 @@ const initialState: FormState = {
   name: '',
   phone: '',
   email: '',
+  contact: '',
   message: '',
 };
 
@@ -34,6 +38,7 @@ export function ContactForm({
   submitLabel = 'Отправить заявку',
   direction,
   product,
+  contactFields = 'separate',
 }: ContactFormProps) {
   const [form, setForm] = useState<FormState>(initialState);
   const [status, setStatus] = useState<'idle' | 'error'>('idle');
@@ -76,28 +81,44 @@ export function ContactForm({
             autoComplete="name"
           />
         </label>
-        <label className="field">
-          <span>Телефон</span>
-          <input
-            type="tel"
-            name="phone"
-            required
-            value={form.phone}
-            onChange={(e) => setForm({ ...form, phone: e.target.value })}
-            autoComplete="tel"
-          />
-        </label>
-        <label className="field">
-          <span>Email</span>
-          <input
-            type="email"
-            name="email"
-            required
-            value={form.email}
-            onChange={(e) => setForm({ ...form, email: e.target.value })}
-            autoComplete="email"
-          />
-        </label>
+        {contactFields === 'combined' ? (
+          <label className="field field--full">
+            <span>Телефон или email</span>
+            <input
+              type="text"
+              name="contact"
+              required
+              value={form.contact}
+              onChange={(e) => setForm({ ...form, contact: e.target.value })}
+              autoComplete="email"
+            />
+          </label>
+        ) : (
+          <>
+            <label className="field">
+              <span>Телефон</span>
+              <input
+                type="tel"
+                name="phone"
+                required
+                value={form.phone}
+                onChange={(e) => setForm({ ...form, phone: e.target.value })}
+                autoComplete="tel"
+              />
+            </label>
+            <label className="field">
+              <span>Email</span>
+              <input
+                type="email"
+                name="email"
+                required
+                value={form.email}
+                onChange={(e) => setForm({ ...form, email: e.target.value })}
+                autoComplete="email"
+              />
+            </label>
+          </>
+        )}
         <label className="field field--full">
           <span>Краткое описание задачи{messageRequired ? '' : ' — необязательно'}</span>
           <textarea

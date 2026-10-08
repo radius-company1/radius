@@ -2,7 +2,7 @@
 export const footerPlatform: readonly { label: string; to?: string }[] = [
   { label: 'Нейробот', to: '/products/neurobot' },
   { label: 'Контактный центр', to: '/products/contact-center' },
-  { label: 'ЕКЦ 110' },
+  { label: 'ЕКЦ 110', to: '/products/ekc-110' },
   { label: 'База знаний' },
   { label: 'Робот-суфлёр' },
   { label: 'Речевая аналитика', to: '/products/speech-analytics' },

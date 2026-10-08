@@ -4,6 +4,7 @@ import { DesignPreviewPage } from './design-preview/DesignPreviewPage';
 import { ContactCenterPage } from './pages/ContactCenterPage';
 import { EddsPage } from './pages/EddsPage';
 import { HomePage } from './pages/HomePage';
+import { EkcPage } from './pages/EkcPage';
 import { MfcPage } from './pages/MfcPage';
 import { NeurobotPage } from './pages/NeurobotPage';
 import { ProtocolPage } from './pages/ProtocolPage';
@@ -28,6 +29,7 @@ export default function App() {
           <Route path="/products/neurobot" element={<NeurobotPage />} />
           <Route path="/products/speech-analytics" element={<SpeechAnalyticsPage />} />
           <Route path="/products/protocol" element={<ProtocolPage />} />
+          <Route path="/products/ekc-110" element={<EkcPage />} />
         </Route>
       </Routes>
     </BrowserRouter>

@@ -58,13 +58,15 @@ function ProductCard({
               <li key={tag}>{tag}</li>
             ))}
           </ul>
-          {demo ? (
+          {demo || detailsHref ? (
             <div className="product-card__actions">
-              <ProductDemoTrigger
-                ref={triggerRef}
-                demo={demo}
-                onOpen={() => onOpenDemo(demo, triggerRef.current)}
-              />
+              {demo ? (
+                <ProductDemoTrigger
+                  ref={triggerRef}
+                  demo={demo}
+                  onOpen={() => onOpenDemo(demo, triggerRef.current)}
+                />
+              ) : null}
               {detailsHref ? (
                 <Link className="product-card__more" to={detailsHref}>
                   Подробнее
