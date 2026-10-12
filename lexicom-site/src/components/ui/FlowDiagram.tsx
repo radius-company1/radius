@@ -15,12 +15,8 @@ export function FlowDiagram({ steps, variant = 'light', compact = false, classNa
       <ol className="flow-diagram__list">
         {steps.map((step, index) => (
           <li key={step} className="flow-diagram__item">
+            {index > 0 ? <span className="flow-diagram__arrow" aria-hidden="true" /> : null}
             <span className="flow-diagram__node">{step}</span>
-            {index < steps.length - 1 ? (
-              <span className="flow-diagram__arrow" aria-hidden="true">
-                →
-              </span>
-            ) : null}
           </li>
         ))}
       </ol>

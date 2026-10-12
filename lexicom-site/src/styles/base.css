@@ -106,21 +106,70 @@ button, input, textarea { font: inherit; color: inherit; }
 .callout__accent { margin: 0 0 0.45rem; font-weight: 700; }
 .callout__text, .callout p { margin: 0; color: var(--color-text-muted); }
 
-/* Flow diagram */
-.flow-diagram__list {
-  display: flex; flex-wrap: wrap; align-items: center; gap: 0.45rem 0.3rem;
-  margin: 0; padding: 0; list-style: none;
+/* Flow diagram: each step keeps its incoming arrow, so a wrap never leaves an arrow behind. */
+.flow-diagram {
+  container-type: inline-size;
+  max-width: 100%;
 }
-.flow-diagram__item { display: contents; }
+.flow-diagram__list {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.35rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.flow-diagram__item {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.28rem;
+  max-width: 100%;
+  min-width: 0;
+}
 .flow-diagram__node {
-  display: inline-flex; padding: 0.48rem 0.78rem; border-radius: var(--radius-chip);
-  background: rgba(46, 211, 255, 0.14); border: 1px solid rgba(46, 211, 255, 0.32);
-  color: #1a4f7a; font-size: 0.78rem; font-weight: 600;
+  display: inline-flex;
+  max-width: 100%;
+  padding: 0.5rem 0.85rem;
+  border-radius: var(--radius-chip);
+  background: rgba(46, 211, 255, 0.14);
+  border: 1px solid rgba(46, 211, 255, 0.32);
+  color: #1a4f7a;
+  font-size: 0.9rem;
+  font-weight: 600;
+  line-height: 1.35;
 }
 .flow-diagram--dark .flow-diagram__node {
-  background: rgba(46, 211, 255, 0.1); border-color: rgba(46, 211, 255, 0.3); color: #e8edf8;
+  background: rgba(46, 211, 255, 0.1);
+  border-color: rgba(46, 211, 255, 0.3);
+  color: #e8edf8;
 }
-.flow-diagram__arrow { color: var(--color-blue); font-weight: 700; font-size: 0.85rem; }
+.flow-diagram__arrow {
+  color: var(--color-blue);
+  font-weight: 700;
+  font-size: 0.95rem;
+  line-height: 1;
+}
+.flow-diagram__arrow::before { content: "↓"; }
+.flow-diagram--dark .flow-diagram__arrow { color: #b9e4ff; }
+
+@container (min-width: 32rem) {
+  .flow-diagram__list {
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.45rem 0.2rem;
+  }
+
+  .flow-diagram__item {
+    flex-direction: row;
+    align-items: center;
+    gap: 0.35rem;
+  }
+
+  .flow-diagram__arrow::before { content: "→"; }
+}
 
 /* Accordion (legacy) */
 .accordion { display: flex; flex-direction: column; gap: 0.5rem; }

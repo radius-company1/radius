@@ -22,6 +22,30 @@
 
 .section--dark .container { position: relative; z-index: 1; }
 
+.section--dark .nb-process__note {
+  color: rgba(232, 237, 248, 0.86);
+}
+
+.section--dark .nb-process__note a,
+.section--dark .product-page-link {
+  color: #d7ebff;
+}
+
+.section--dark .nb-process__note a:hover,
+.section--dark .nb-process__note a:focus-visible,
+.section--dark .product-page-link:hover,
+.section--dark .product-page-link:focus-visible {
+  color: #ffffff;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.section--dark .nb-process__note a:focus-visible,
+.section--dark .product-page-link:focus-visible {
+  outline: 2px solid #9fd4ff;
+  outline-offset: 3px;
+}
+
 /* Soft ink band — same cool family as page, no hard dark jump */
 .section--ink {
   position: relative;
