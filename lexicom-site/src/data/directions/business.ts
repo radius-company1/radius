@@ -87,8 +87,7 @@ export const businessScenarios: {
   },
 ];
 
-export const businessScenariosNote =
-  'Примеры задач, с которых можно начать. Это не описание завершённых проектов Lexicom.';
+export const businessScenariosNote = 'Примеры задач, с которых можно начать.';
 
 export const businessFlexibility = [
   {
@@ -172,8 +171,8 @@ export const businessSteps = [
 ] as const;
 
 export const businessTiming = {
-  lead: 'Развёртываем продукты Lexicom от 3 дней.',
-  text: 'Срок зависит от выбранного продукта и готовности инфраструктуры. Интеграции, доработки и запуск всего проекта оцениваются отдельно.',
+  lead: 'Развёртывание продуктов — от 3 дней.',
+  text: 'Срок полного внедрения зависит от состава решения, интеграций и готовности инфраструктуры.',
 } as const;
 
 /**

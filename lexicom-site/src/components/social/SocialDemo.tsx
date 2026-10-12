@@ -65,7 +65,7 @@ export function SocialDemo({ onRequestDemo }: SocialDemoProps) {
         <Reveal>
           <div className="social-demo__actions">
             <Button onClick={onRequestDemo}>{socialDemoState.demoCtaLabel}</Button>
-            <p className="social-demo__note">Иллюстративный сценарий — без имитации работающего звонка или ИИ-чата.</p>
+            <p className="social-demo__note">Пример сценария.</p>
           </div>
         </Reveal>
       </div>

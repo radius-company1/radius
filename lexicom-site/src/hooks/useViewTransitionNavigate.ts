@@ -5,10 +5,14 @@ function prefersReducedMotion(): boolean {
   return window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 }
 
+function isModifiedClick(event: React.MouseEvent) {
+  return event.metaKey || event.ctrlKey || event.shiftKey || event.altKey || event.button !== 0;
+}
+
 export function useViewTransitionNavigate() {
   const navigate = useNavigate();
 
-  return useCallback(
+  const go = useCallback(
     (to: string) => {
       if (prefersReducedMotion() || !document.startViewTransition) {
         navigate(to);
@@ -27,4 +31,17 @@ export function useViewTransitionNavigate() {
     },
     [navigate],
   );
+
+  const onLinkClick = useCallback(
+    (event: React.MouseEvent<HTMLAnchorElement>, to?: string) => {
+      if (isModifiedClick(event)) return;
+      const href = to ?? event.currentTarget.getAttribute('href');
+      if (!href) return;
+      event.preventDefault();
+      go(href);
+    },
+    [go],
+  );
+
+  return { navigate: go, onLinkClick };
 }

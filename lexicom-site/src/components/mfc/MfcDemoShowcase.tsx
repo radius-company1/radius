@@ -8,14 +8,16 @@ type MfcDemoShowcaseProps = {
   onRequestDemo: () => void;
 };
 
-const demoNodes = [
-  'Обращение гражданина',
-  'Нейробот',
-  'База знаний',
-  'Передача сотруднику',
-  'Суфлёр',
-  'Фиксация результата',
-  'Речевая аналитика',
+const exampleTurns = [
+  { role: 'Гражданин', text: 'Какие документы нужны, чтобы оформить пособие на ребёнка?' },
+  {
+    role: 'Лекса',
+    text: 'Уточняет, о каком пособии идёт речь и кто обращается, затем отвечает по базе знаний МФЦ перечнем документов и следующим шагом.',
+  },
+  {
+    role: 'Результат',
+    text: 'Гражданин понимает, что подготовить и куда обратиться. Типовой вопрос не занимает первую линию. Если ситуация выходит за сценарий, сотрудник получает историю диалога и собранные сведения.',
+  },
 ] as const;
 
 export function MfcDemoShowcase({ onRequestDemo }: MfcDemoShowcaseProps) {
@@ -25,26 +27,27 @@ export function MfcDemoShowcase({ onRequestDemo }: MfcDemoShowcaseProps) {
       <div className="container">
         <Reveal>
           <SectionHeader
-            title="Демонстрация Lexicom на сценарии вашего МФЦ"
+            title="Пример сценария"
             titleId="mfc-demo-title"
-            description="Нейробот принимает и уточняет обращение, контактный центр получает историю и контекст, суфлёр помогает сотруднику продолжить диалог."
+            description="Один полный путь: вопрос своими словами, уточнение, ответ по базе знаний и понятный результат. Запись и статус подключаются отдельно — после интеграции."
           />
         </Reveal>
 
         <Reveal>
           <GlassSurface className="mfc-demo__diagram" radius="xl" depth="float" tint="mfc">
-            <div className="mfc-demo__track" aria-hidden="true">
-              {demoNodes.map((node, index) => (
-                <div key={node} className="mfc-demo__track-item">
-                  <span className="mfc-demo__node">{node}</span>
-                  {index < demoNodes.length - 1 ? <span className="mfc-demo__arrow">→</span> : null}
-                </div>
+            <ol className="mfc-hero__scenario" aria-label="Пример консультации в МФЦ">
+              {exampleTurns.map((step, index) => (
+                <li key={step.role} className="mfc-hero__scenario-step">
+                  <span className="mfc-hero__scenario-index" aria-hidden="true">
+                    {index + 1}
+                  </span>
+                  <div className="mfc-hero__scenario-body">
+                    <span className="mfc-hero__scenario-role">{step.role}</span>
+                    <span className="mfc-hero__scenario-text">{step.text}</span>
+                  </div>
+                </li>
               ))}
-            </div>
-            <p className="mfc-demo__disclaimer">
-              Профильная демонстрация для МФЦ запрашивается отдельно. Она не подключена к государственным системам, не
-              проверяет настоящий статус заявления и не создаёт реальную запись.
-            </p>
+            </ol>
             <Button onClick={onRequestDemo}>{mfcDemoState.demoCtaLabel}</Button>
           </GlassSurface>
         </Reveal>

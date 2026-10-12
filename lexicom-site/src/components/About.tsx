@@ -1,4 +1,4 @@
-import { aboutTheses } from '../data/about';
+import { aboutConsequences, aboutRoadmapNote, aboutTheses } from '../data/about';
 import { GlassSurface } from './ui/GlassSurface';
 import { Reveal } from './ui/Reveal';
 import { SectionHeader } from './ui/SectionHeader';
@@ -12,9 +12,9 @@ export function About() {
       <div className="container">
         <Reveal>
           <SectionHeader
-            title="Вы работаете напрямую с разработчиком платформы"
+            title="Почему Lexicom"
             titleId="about-title"
-            description="Lexicom отвечает за результат внедрения: собственное ПО, команда 60+ специалистов, контроль развития продукта и полный цикл работ — без сборки решения из продуктов разных поставщиков."
+            description="Собственное ПО, команда 60+ специалистов, контроль развития продукта и полный цикл внедрения. Резидент ИТ-кластера Фонда «Сколково». Lexicom Omnichannel Platform — в Реестре российского ПО №11115."
           />
         </Reveal>
 
@@ -37,6 +37,20 @@ export function About() {
             ))}
           </div>
         </div>
+
+        <Reveal>
+          <ul className="about__consequences">
+            {aboutConsequences.map((item) => (
+              <li key={item}>{item}</li>
+            ))}
+          </ul>
+        </Reveal>
+
+        <Reveal>
+          <p className="about__roadmap" id="roadmap">
+            {aboutRoadmapNote}
+          </p>
+        </Reveal>
       </div>
     </section>
   );

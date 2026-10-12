@@ -18,7 +18,7 @@ export const productDemos: readonly ProductDemo[] = [
   {
     productId: 'neurobot',
     title: 'Нейробот — пример диалога',
-    ctaLabel: 'Посмотреть пример диалога',
+    ctaLabel: 'Посмотреть видео',
     note: 'Тема: поддержка участников СВО',
     src: '/demos/neurobot.mp4',
     poster: '/demos/posters/neurobot.webp',
@@ -28,7 +28,7 @@ export const productDemos: readonly ProductDemo[] = [
   {
     productId: 'contact-center',
     title: 'Контактный центр — рабочее место оператора',
-    ctaLabel: 'Посмотреть рабочее место оператора',
+    ctaLabel: 'Посмотреть видео',
     src: '/demos/contact-center.mp4',
     poster: '/demos/posters/contact-center.webp',
     durationSeconds: 234.801,
@@ -37,7 +37,7 @@ export const productDemos: readonly ProductDemo[] = [
   {
     productId: 'speech-analytics',
     title: 'Речевая аналитика — разбор разговора',
-    ctaLabel: 'Посмотреть разбор разговора',
+    ctaLabel: 'Посмотреть видео',
     src: '/demos/speech-analytics.mp4',
     poster: '/demos/posters/speech-analytics.webp',
     durationSeconds: 161.8,
@@ -46,7 +46,7 @@ export const productDemos: readonly ProductDemo[] = [
   {
     productId: 'protocol',
     title: 'Протоколирование — обработка записи',
-    ctaLabel: 'Посмотреть обработку записи',
+    ctaLabel: 'Посмотреть видео',
     src: '/demos/protocol.mp4',
     poster: '/demos/posters/protocol.webp',
     durationSeconds: 171.7,

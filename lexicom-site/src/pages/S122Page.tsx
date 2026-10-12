@@ -1,4 +1,5 @@
 import { s122DemoState, s122PageMeta } from '../data/directions/s122';
+import { scrollBelowChrome } from '../hooks/scrollBelowChrome';
 import { usePageMeta } from '../hooks/usePageMeta';
 import { Footer } from '../components/Footer';
 import { S122Analytics } from '../components/s122/S122Analytics';
@@ -12,7 +13,6 @@ import { S122Integration } from '../components/s122/S122Integration';
 import { S122Journey } from '../components/s122/S122Journey';
 import { S122OnPrem } from '../components/s122/S122OnPrem';
 import { S122Outcome } from '../components/s122/S122Outcome';
-import { S122Peak } from '../components/s122/S122Peak';
 import { S122Scenarios } from '../components/s122/S122Scenarios';
 import { S122TrustBar } from '../components/s122/S122TrustBar';
 
@@ -20,19 +20,22 @@ export function S122Page() {
   usePageMeta(s122PageMeta);
 
   const scrollToDialogue = () => {
-    document.getElementById(s122DemoState.dialogueAnchor)?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    const el = document.getElementById(s122DemoState.dialogueAnchor);
+    if (el) scrollBelowChrome(el);
   };
 
   const scrollToForm = () => {
     const form = document.getElementById(s122DemoState.formAnchor);
     const contact = document.getElementById('contact');
-    (form ?? contact)?.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    const target = form ?? contact;
+    if (target) scrollBelowChrome(target);
     const field = form?.querySelector<HTMLElement>('input, textarea, button');
     field?.focus({ preventScroll: true });
   };
 
   const scrollToContact = () => {
-    document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    const el = document.getElementById('contact');
+    if (el) scrollBelowChrome(el);
   };
 
   return (
@@ -47,7 +50,6 @@ export function S122Page() {
         <S122Journey />
         <S122Scenarios />
         <S122Dialogue onRequestDemo={scrollToForm} />
-        <S122Peak />
         <S122Handoff />
         <S122Integration />
         <S122Analytics />

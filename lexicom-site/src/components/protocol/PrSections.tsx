@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import {
   prCapabilities,
   prCapabilitiesNote,
@@ -105,6 +106,13 @@ export function PrUseCases() {
             </Reveal>
           ))}
         </div>
+
+        <Reveal>
+          <p className="nb-process__note">
+            Для рабочих встреч и клиентских коммуникаций смотрите также страницу{' '}
+            <Link to="/business">для бизнеса</Link>.
+          </p>
+        </Reveal>
       </div>
     </section>
   );

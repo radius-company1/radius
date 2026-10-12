@@ -1,4 +1,5 @@
 import { mfcDemoState, mfcPageMeta } from '../data/directions/mfc';
+import { scrollBelowChrome } from '../hooks/scrollBelowChrome';
 import { usePageMeta } from '../hooks/usePageMeta';
 import { Footer } from '../components/Footer';
 import { MfcAnalytics } from '../components/mfc/MfcAnalytics';
@@ -8,7 +9,6 @@ import { MfcEcosystem } from '../components/mfc/MfcEcosystem';
 import { MfcExperience } from '../components/mfc/MfcExperience';
 import { MfcFaq } from '../components/mfc/MfcFaq';
 import { MfcFinalCta } from '../components/mfc/MfcFinalCta';
-import { MfcFlow } from '../components/mfc/MfcFlow';
 import { MfcHero } from '../components/mfc/MfcHero';
 import { MfcImplementation } from '../components/mfc/MfcImplementation';
 import { MfcIntegration } from '../components/mfc/MfcIntegration';
@@ -21,13 +21,15 @@ export function MfcPage() {
   const scrollToForm = () => {
     const form = document.getElementById(mfcDemoState.formAnchor);
     const contact = document.getElementById('contact');
-    (form ?? contact)?.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    const target = form ?? contact;
+    if (target) scrollBelowChrome(target);
     const field = form?.querySelector<HTMLElement>('input, textarea, button');
     field?.focus({ preventScroll: true });
   };
 
   const scrollToContact = () => {
-    document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    const el = document.getElementById('contact');
+    if (el) scrollBelowChrome(el);
   };
 
   return (
@@ -38,7 +40,6 @@ export function MfcPage() {
         <MfcCitizenTopics />
         <MfcScenarios />
         <MfcDemoShowcase onRequestDemo={scrollToForm} />
-        <MfcFlow />
         <MfcIntegration />
         <MfcAnalytics />
         <MfcOnPrem />

@@ -2,6 +2,7 @@
 
 html {
   scroll-behavior: smooth;
+  scroll-padding-top: calc(var(--chrome-stack-offset) + 0.75rem);
   background-color: var(--color-bg);
 }
 

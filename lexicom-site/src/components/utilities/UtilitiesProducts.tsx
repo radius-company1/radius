@@ -1,5 +1,6 @@
 import { utilitiesPlatformChain, utilitiesProducts } from '../../data/directions/utilities';
 import type { ProductId } from '../../data/products';
+import { ProductPageLink } from '../ProductPageLink';
 import { ProductVisual } from '../ProductVisual';
 import { GlassSurface } from '../ui/GlassSurface';
 import { Reveal } from '../ui/Reveal';
@@ -45,6 +46,7 @@ export function UtilitiesProducts() {
                 {'note' in product && product.note ? (
                   <p className="utilities-products__meta">{product.note}</p>
                 ) : null}
+                {visualByProduct[product.id] ? <ProductPageLink id={visualByProduct[product.id]} /> : null}
               </GlassSurface>
             </Reveal>
           ))}

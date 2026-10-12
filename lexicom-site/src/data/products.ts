@@ -51,6 +51,16 @@ export const products: readonly ProductItem[] = [
   },
 ] as const;
 
+export const softwareProductIds = ['neurobot', 'contact-center', 'speech-analytics', 'protocol'] as const satisfies readonly ProductId[];
+
+export const productPageLinkLabel: Record<ProductId, string> = {
+  neurobot: 'Подробнее о нейроботе',
+  'contact-center': 'Посмотреть контактный центр',
+  'speech-analytics': 'Возможности речевой аналитики',
+  protocol: 'Подробнее о протоколировании',
+  'ekc-110': 'Подробнее о ЕКЦ 110',
+};
+
 /** Only products that already have their own page. */
 export const productPageHref: Partial<Record<ProductId, string>> = {
   'contact-center': '/products/contact-center',

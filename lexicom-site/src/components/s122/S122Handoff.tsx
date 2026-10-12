@@ -1,4 +1,5 @@
 import { s122ContactCenterPoints, s122LexaDoes, s122OperatorGets } from '../../data/directions/s122';
+import { ProductPageLink } from '../ProductPageLink';
 import { GlassSurface } from '../ui/GlassSurface';
 import { Reveal } from '../ui/Reveal';
 import { SectionHeader } from '../ui/SectionHeader';
@@ -30,6 +31,12 @@ export function S122Handoff() {
               </GlassSurface>
             </Reveal>
           ))}
+        </div>
+
+        <div className="s122-handoff__links">
+          <ProductPageLink id="neurobot" />
+          <ProductPageLink id="contact-center" />
+          <ProductPageLink id="speech-analytics" />
         </div>
 
         <div className="s122-handoff__roles">

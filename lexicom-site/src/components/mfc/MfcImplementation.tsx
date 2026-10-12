@@ -10,8 +10,9 @@ export function MfcImplementation() {
       <div className="container">
         <Reveal>
           <SectionHeader
-            title="От одного сценария до промышленной эксплуатации"
+            title="С чего начинается первый этап"
             titleId="mfc-implementation-title"
+            description="Выбираем сценарий, фиксируем, что нужно для подключения, проверяем работу и затем расширяем состав."
           />
         </Reveal>
 

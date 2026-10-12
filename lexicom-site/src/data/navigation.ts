@@ -1,5 +1,13 @@
+export const productNav = [
+  { label: 'Нейробот', href: '/products/neurobot' },
+  { label: 'Контактный центр', href: '/products/contact-center' },
+  { label: 'Речевая аналитика', href: '/products/speech-analytics' },
+  { label: 'Протоколирование', href: '/products/protocol' },
+  { label: 'ЕКЦ 110', href: '/products/ekc-110' },
+] as const;
+
 export const mainNav = [
-  { label: 'Продукты', href: '#products' },
+  { label: 'Продукты', href: '#products', children: productNav },
   { label: 'Направления', href: '#directions' },
   { label: 'Кейсы', href: '#cases' },
   { label: 'Внедрение', href: '#implementation' },

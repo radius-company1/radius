@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import { directions } from '../data/directions';
 import { useSurfaceGlow } from '../hooks/useSurfaceGlow';
 import { useViewTransitionNavigate } from '../hooks/useViewTransitionNavigate';
@@ -7,85 +8,65 @@ import { SectionHeader } from './ui/SectionHeader';
 
 const tintMap = { business: 'yellow', mfc: 'mfc', '122': 's122', edds: 'edds', social: 'social', utilities: 'utilities' } as const;
 
-const routeMini = {
-  business: ['Задача', 'Настройка', 'Запуск'],
-  mfc: ['Обращение', 'Консультация', 'Результат'],
-  '122': ['Звонок', 'Маршрут', 'Служба'],
-  edds: ['Приём', 'Классификация', 'Передача'],
-  social: ['Ситуация', 'Поддержка', 'Шаг'],
-  utilities: ['Показания', 'Система', 'Оператор'],
-} as const;
-
 function DirectionCard({
   direction,
   index,
   onNavigate,
-  featured = false,
 }: {
   direction: (typeof directions)[number];
   index: number;
-  onNavigate: (href: string) => void;
-  featured?: boolean;
+  onNavigate: (event: React.MouseEvent<HTMLAnchorElement>, href: string) => void;
 }) {
   const glow = useSurfaceGlow();
 
   return (
-    <Reveal delay={index * 90} className={featured ? 'directions__cell directions__cell--featured' : 'directions__cell'}>
+    <Reveal delay={index * 50} className="directions__cell">
       <GlassSurface
         as="article"
         ref={glow.ref as React.RefObject<HTMLDivElement>}
-        className={`direction-card direction-card--${direction.id}${featured ? ' direction-card--featured' : ''}`}
+        className={`direction-card direction-card--compact direction-card--${direction.id}`}
         radius="xl"
         depth="raised"
-        tier={featured ? 'liquid' : 'matte'}
+        tier="matte"
         tint={tintMap[direction.id]}
         onPointerMove={glow.onPointerMove}
         onPointerLeave={glow.onPointerLeave}
       >
-        <div className="direction-card__route" aria-hidden="true">
-          {routeMini[direction.id].map((step, i) => (
-            <span key={step} className="direction-card__route-step">
-              {i > 0 ? <span className="direction-card__route-line" /> : null}
-              {step}
-            </span>
-          ))}
-        </div>
         <h3 className="direction-card__title">{direction.title}</h3>
         <p className="direction-card__text">{direction.description}</p>
-        <button
-          type="button"
+        <Link
           className={`btn direction-card__btn direction-card__btn--${direction.id}`}
-          onClick={() => onNavigate(direction.href)}
+          to={direction.href}
+          onClick={(event) => onNavigate(event, direction.href)}
         >
           {direction.buttonLabel}
-        </button>
+        </Link>
       </GlassSurface>
     </Reveal>
   );
 }
 
 export function Directions() {
-  const navigate = useViewTransitionNavigate();
+  const { onLinkClick } = useViewTransitionNavigate();
 
   return (
     <section className="section section-zone section-zone--directions directions" id="directions" aria-labelledby="directions-title">
       <div className="container">
         <Reveal>
           <SectionHeader
-            title="Выберите своё направление"
+            title="Для вашей организации"
             titleId="directions-title"
-            description="Продукты Lexicom собираются под задачи организации. У бизнеса, МФЦ, службы 122, ЕДДС, социальной защиты и ресурсоснабжения — свои сценарии и состав решения."
+            description="Выберите направление по задаче. Состав продуктов настраивается под процессы организации."
           />
         </Reveal>
 
-        <div className="directions__grid">
+        <div className="directions__grid directions__grid--compact">
           {directions.map((direction, index) => (
             <DirectionCard
               key={direction.id}
               direction={direction}
               index={index}
-              onNavigate={navigate}
-              featured={direction.id === 'mfc'}
+              onNavigate={onLinkClick}
             />
           ))}
         </div>

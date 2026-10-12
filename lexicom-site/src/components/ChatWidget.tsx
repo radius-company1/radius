@@ -13,7 +13,7 @@ type ChatWidgetProps = {
 const welcomeMessage: ChatMessage = {
   id: 'welcome',
   role: 'bot',
-  text: 'Здравствуйте! Это интерактивный обзор возможностей Lexicom. Спросите о платформе, внедрении или выборе направления.',
+  text: 'Здравствуйте! Это сценарный обзор Lexicom по ключевым словам — не живой ИИ. Спросите о продуктах, внедрении или выборе направления.',
 };
 
 export function ChatWidget({ open, onClose, returnFocusRef }: ChatWidgetProps) {
@@ -106,7 +106,7 @@ export function ChatWidget({ open, onClose, returnFocusRef }: ChatWidgetProps) {
         <header className="chat-panel__header">
           <div>
             <p className="chat-panel__title" id={titleId}>
-              Интерактивный обзор возможностей
+              Сценарный обзор платформы
             </p>
             <p className="chat-panel__subtitle">Ответы по ключевым словам · до подключения ассистента</p>
           </div>

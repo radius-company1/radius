@@ -30,13 +30,14 @@ export function Hero({ onDiscussClick }: HeroProps) {
           </Reveal>
           <Reveal delay={140}>
             <p className="hero__lead">
-              Нейроботы, контактный центр с ИИ-суфлёром, речевая аналитика и протоколирование. Собственное ПО
-              Lexicom — в инфраструктуре заказчика и под его процессы.
+              Разрабатываем нейробота, контактный центр с суфлёром, речевую аналитику и протоколирование для
+              организаций, которые принимают обращения и работают с речью. Собственное ПО Lexicom — в инфраструктуре
+              заказчика и под его процессы.
             </p>
           </Reveal>
           <Reveal delay={200}>
             <div className="hero__actions">
-              <Button href="#directions">Выбрать направление</Button>
+              <Button href="#products">Выбрать решение</Button>
               <Button variant="secondary" onClick={onDiscussClick}>
                 Обсудить проект
               </Button>

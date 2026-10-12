@@ -1,6 +1,6 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useId, useRef, useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { mainNav } from '../data/navigation';
+import { mainNav, productNav } from '../data/navigation';
 import { useViewTransitionNavigate } from '../hooks/useViewTransitionNavigate';
 import { Button } from './ui/Button';
 import { GlassSurface } from './ui/GlassSurface';
@@ -11,10 +11,22 @@ type HeaderProps = {
   scrolled?: boolean;
 };
 
+function sectionTo(href: string) {
+  return href.startsWith('#') ? `/${href}` : href;
+}
+
 export function Header({ onDiscussClick, scrolled = false }: HeaderProps) {
   const location = useLocation();
-  const navigate = useViewTransitionNavigate();
+  const { onLinkClick } = useViewTransitionNavigate();
   const [menuOpen, setMenuOpen] = useState(false);
+  const [productsOpen, setProductsOpen] = useState(false);
+  const [mobileProductsOpen, setMobileProductsOpen] = useState(false);
+  const productsRef = useRef<HTMLDivElement>(null);
+  const productsButtonRef = useRef<HTMLButtonElement>(null);
+  const dropdownRef = useRef<HTMLDivElement>(null);
+  const [dropdownPos, setDropdownPos] = useState({ top: 0, left: 0 });
+  const productsMenuId = useId();
+  const mobileProductsId = useId();
   const headerCta = 'Обсудить проект';
 
   useEffect(() => {
@@ -22,16 +34,79 @@ export function Header({ onDiscussClick, scrolled = false }: HeaderProps) {
     return () => document.body.classList.remove('menu-open');
   }, [menuOpen]);
 
-  const closeMenu = () => setMenuOpen(false);
+  useEffect(() => {
+    if (!menuOpen) return;
+    const onKey = (event: KeyboardEvent) => {
+      if (event.key !== 'Escape') return;
+      event.preventDefault();
+      setMenuOpen(false);
+      setMobileProductsOpen(false);
+    };
+    document.addEventListener('keydown', onKey);
+    return () => document.removeEventListener('keydown', onKey);
+  }, [menuOpen]);
 
-  const handleNavClick = (href: string) => {
-    closeMenu();
-    const hash = href.replace('#', '');
-    if (location.pathname !== '/') {
-      navigate(`/#${hash}`);
-      return;
+  useEffect(() => {
+    setProductsOpen(false);
+    setMobileProductsOpen(false);
+  }, [location.pathname]);
+
+  useEffect(() => {
+    if (!productsOpen) return;
+
+    const updatePos = () => {
+      const rect = productsButtonRef.current?.getBoundingClientRect();
+      if (!rect) return;
+      setDropdownPos({ top: rect.bottom + 6, left: rect.left });
+    };
+
+    updatePos();
+
+    const onKey = (event: KeyboardEvent) => {
+      if (event.key !== 'Escape') return;
+      event.preventDefault();
+      setProductsOpen(false);
+      productsButtonRef.current?.focus();
+    };
+
+    const onPointer = (event: PointerEvent) => {
+      const target = event.target as Node;
+      if (productsRef.current?.contains(target) || dropdownRef.current?.contains(target)) return;
+      setProductsOpen(false);
+    };
+
+    document.addEventListener('keydown', onKey);
+    document.addEventListener('pointerdown', onPointer);
+    window.addEventListener('resize', updatePos);
+    window.addEventListener('scroll', updatePos, true);
+    return () => {
+      document.removeEventListener('keydown', onKey);
+      document.removeEventListener('pointerdown', onPointer);
+      window.removeEventListener('resize', updatePos);
+      window.removeEventListener('scroll', updatePos, true);
+    };
+  }, [productsOpen]);
+
+  const closeMenus = () => {
+    setMenuOpen(false);
+    setProductsOpen(false);
+    setMobileProductsOpen(false);
+  };
+
+  const handleSectionClick = (event: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+    closeMenus();
+    onLinkClick(event, sectionTo(href));
+  };
+
+  const handleProductKeyDown = (event: React.KeyboardEvent<HTMLButtonElement>) => {
+    if (event.key === 'ArrowDown' || event.key === 'Enter' || event.key === ' ') {
+      event.preventDefault();
+      setProductsOpen(true);
     }
-    document.getElementById(hash)?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    if (event.key === 'Escape') {
+      event.preventDefault();
+      setProductsOpen(false);
+    }
   };
 
   return (
@@ -44,10 +119,9 @@ export function Header({ onDiscussClick, scrolled = false }: HeaderProps) {
               className="site-header__brand"
               aria-label="Lexicom — на главную"
               onClick={(e) => {
-                closeMenu();
+                closeMenus();
                 if (location.pathname !== '/') {
-                  e.preventDefault();
-                  navigate('/');
+                  onLinkClick(e, '/');
                 }
               }}
             >
@@ -55,19 +129,45 @@ export function Header({ onDiscussClick, scrolled = false }: HeaderProps) {
             </Link>
 
             <nav className="site-header__nav" aria-label="Основная навигация">
-              {mainNav.map((item) => (
-                <button
-                  key={item.href}
-                  type="button"
-                  className="site-header__link"
-                  onClick={() => handleNavClick(item.href)}
-                >
-                  {item.label}
-                </button>
-              ))}
+              {mainNav.map((item) =>
+                'children' in item && item.children ? (
+                  <div
+                    key={item.label}
+                    className={`site-header__item ${productsOpen ? 'is-open' : ''}`}
+                    ref={productsRef}
+                  >
+                    <button
+                      ref={productsButtonRef}
+                      type="button"
+                      className="site-header__link site-header__link--menu"
+                      aria-expanded={productsOpen}
+                      aria-haspopup="menu"
+                      aria-controls={productsMenuId}
+                      onClick={() => {
+                        const rect = productsButtonRef.current?.getBoundingClientRect();
+                        if (rect) setDropdownPos({ top: rect.bottom + 6, left: rect.left });
+                        setProductsOpen((open) => !open);
+                      }}
+                      onKeyDown={handleProductKeyDown}
+                    >
+                      {item.label}
+                      <span className="site-header__caret" aria-hidden="true" />
+                    </button>
+                  </div>
+                ) : (
+                  <Link
+                    key={item.href}
+                    to={sectionTo(item.href)}
+                    className="site-header__link"
+                    onClick={(event) => handleSectionClick(event, item.href)}
+                  >
+                    {item.label}
+                  </Link>
+                ),
+              )}
             </nav>
 
-            <Button className="site-header__cta" onClick={() => { closeMenu(); onDiscussClick(); }}>
+            <Button className="site-header__cta" onClick={() => { closeMenus(); onDiscussClick(); }}>
               {headerCta}
             </Button>
 
@@ -87,16 +187,79 @@ export function Header({ onDiscussClick, scrolled = false }: HeaderProps) {
         </GlassSurface>
       </div>
 
+      {productsOpen ? (
+        <div
+          ref={dropdownRef}
+          id={productsMenuId}
+          className="site-header__dropdown"
+          style={{ top: dropdownPos.top, left: dropdownPos.left }}
+        >
+          <ul className="site-header__menu" role="menu" aria-label="Продукты Lexicom">
+            {productNav.map((product) => (
+              <li key={product.href} role="none">
+                <Link
+                  to={product.href}
+                  role="menuitem"
+                  className="site-header__menu-link"
+                  onClick={(event) => {
+                    closeMenus();
+                    onLinkClick(event, product.href);
+                  }}
+                >
+                  {product.label}
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </div>
+      ) : null}
+
       <div id="mobile-menu" className={`mobile-menu ${menuOpen ? 'is-open' : ''}`} hidden={!menuOpen}>
         <GlassSurface className="mobile-menu__panel" radius="lg">
           <nav aria-label="Мобильная навигация">
-            {mainNav.map((item) => (
-              <button key={item.href} type="button" onClick={() => handleNavClick(item.href)}>
-                {item.label}
-              </button>
-            ))}
+            {mainNav.map((item) =>
+              'children' in item && item.children ? (
+                <div key={item.label} className="mobile-menu__group">
+                  <button
+                    type="button"
+                    className="mobile-menu__parent"
+                    aria-expanded={mobileProductsOpen}
+                    aria-controls={mobileProductsId}
+                    onClick={() => setMobileProductsOpen((open) => !open)}
+                  >
+                    {item.label}
+                    <span className="site-header__caret" aria-hidden="true" />
+                  </button>
+                  <div id={mobileProductsId} hidden={!mobileProductsOpen}>
+                    <ul className="mobile-menu__sub">
+                      {productNav.map((product) => (
+                        <li key={product.href}>
+                          <Link
+                            to={product.href}
+                            onClick={(event) => {
+                              closeMenus();
+                              onLinkClick(event, product.href);
+                            }}
+                          >
+                            {product.label}
+                          </Link>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                </div>
+              ) : (
+                <Link
+                  key={item.href}
+                  to={sectionTo(item.href)}
+                  onClick={(event) => handleSectionClick(event, item.href)}
+                >
+                  {item.label}
+                </Link>
+              ),
+            )}
           </nav>
-          <Button className="mobile-menu__cta" onClick={() => { closeMenu(); onDiscussClick(); }}>
+          <Button className="mobile-menu__cta" onClick={() => { closeMenus(); onDiscussClick(); }}>
             {headerCta}
           </Button>
         </GlassSurface>

@@ -3,6 +3,7 @@ import { CcChannels } from '../components/contact-center/CcChannels';
 import { CcConfigs } from '../components/contact-center/CcConfigs';
 import { CcFinalCta } from '../components/contact-center/CcFinalCta';
 import { CcHero } from '../components/contact-center/CcHero';
+import { CcIndustries } from '../components/contact-center/CcIndustries';
 import { CcInfrastructure } from '../components/contact-center/CcInfrastructure';
 import { CcLaunch } from '../components/contact-center/CcLaunch';
 import { CcPrompter } from '../components/contact-center/CcPrompter';
@@ -65,6 +66,7 @@ export function ContactCenterPage() {
         <CcPrompter />
         <CcSupervisor onOpenShot={openShot} />
         <CcConfigs />
+        <CcIndustries />
         <CcInfrastructure />
         <CcLaunch />
         <CcFinalCta />

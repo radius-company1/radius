@@ -25,10 +25,10 @@ export function CcLaunch() {
 
         <Reveal>
           <GlassSurface className="cc-launch__timing" radius="xl" depth="raised" tint="yellow" tier="matte">
-            <p className="cc-launch__timing-lead">Запуск решений Lexicom — от 3 дней.</p>
+            <p className="cc-launch__timing-lead">Развёртывание продуктов — от 3 дней.</p>
             <p>
-              Есть опыт полной реализации и сдачи бота в MAX за 3 дня. Срок внедрения контактного центра определим по
-              составу решения, нагрузке и интеграциям.
+              Срок полного внедрения контактного центра зависит от состава решения, интеграций и готовности
+              инфраструктуры.
             </p>
           </GlassSurface>
         </Reveal>

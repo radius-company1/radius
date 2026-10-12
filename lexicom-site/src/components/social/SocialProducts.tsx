@@ -1,5 +1,6 @@
 import { socialProductFoundation, socialProducts } from '../../data/directions/social';
 import type { ProductId } from '../../data/products';
+import { ProductPageLink } from '../ProductPageLink';
 import { ProductVisual } from '../ProductVisual';
 import { GlassSurface } from '../ui/GlassSurface';
 import { Reveal } from '../ui/Reveal';
@@ -42,6 +43,7 @@ export function SocialProducts() {
                   <p className="social-products__highlight">{product.highlight}</p>
                 ) : null}
                 <p className="social-products__text">{product.text}</p>
+                {visualByProduct[product.id] ? <ProductPageLink id={visualByProduct[product.id]} /> : null}
               </GlassSurface>
             </Reveal>
           ))}

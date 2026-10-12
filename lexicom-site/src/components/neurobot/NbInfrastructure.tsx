@@ -38,10 +38,10 @@ export function NbInfrastructure() {
 
         <Reveal>
           <GlassSurface className="nb-infra__timing" radius="xl" depth="raised" tint="yellow" tier="matte">
-            <p className="nb-infra__timing-lead">Запуск решений Lexicom — от 3 дней</p>
+            <p className="nb-infra__timing-lead">Развёртывание продуктов — от 3 дней</p>
             <p>
-              Есть опыт полной реализации и сдачи бота в MAX за 3 дня. Срок вашего проекта определим по сценариям,
-              каналам и интеграциям.
+              Есть опыт запуска бота в MAX за три дня — это пример отдельного сценария. Срок полного внедрения зависит от
+              состава решения, интеграций и готовности инфраструктуры.
             </p>
           </GlassSurface>
         </Reveal>

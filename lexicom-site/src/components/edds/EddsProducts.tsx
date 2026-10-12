@@ -1,4 +1,5 @@
 import { eddsProductFoundation, eddsProducts } from '../../data/directions/edds';
+import { ProductPageLink } from '../ProductPageLink';
 import { ProductVisual } from '../ProductVisual';
 import type { ProductId } from '../../data/products';
 import { GlassSurface } from '../ui/GlassSurface';
@@ -47,6 +48,7 @@ export function EddsProducts() {
                     <li key={item}>{item}</li>
                   ))}
                 </ul>
+                {visualByProduct[product.id] ? <ProductPageLink id={visualByProduct[product.id]} /> : null}
               </GlassSurface>
             </Reveal>
           ))}

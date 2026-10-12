@@ -1,4 +1,5 @@
 import { mfcEcosystemLevels } from '../../data/directions/mfc';
+import { ProductPageLink } from '../ProductPageLink';
 import { GlassSurface } from '../ui/GlassSurface';
 import { Reveal } from '../ui/Reveal';
 import { SectionHeader } from '../ui/SectionHeader';
@@ -100,6 +101,7 @@ export function MfcEcosystem() {
                         </li>
                       ))}
                     </ul>
+                    {'productId' in level && level.productId ? <ProductPageLink id={level.productId} /> : null}
                   </div>
                 </article>
               ))}

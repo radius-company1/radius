@@ -21,7 +21,7 @@ type DirectionSwitcherProps = {
 
 export function DirectionSwitcher({ scrolled = false }: DirectionSwitcherProps) {
   const location = useLocation();
-  const navigate = useViewTransitionNavigate();
+  const { navigate } = useViewTransitionNavigate();
   const trackRef = useRef<HTMLDivElement>(null);
   const scrollRef = useRef<HTMLDivElement>(null);
   const itemRefs = useRef<(HTMLButtonElement | null)[]>([]);

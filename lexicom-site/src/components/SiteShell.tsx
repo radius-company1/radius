@@ -3,6 +3,7 @@ import { Outlet, useLocation, useNavigate } from 'react-router-dom';
 import { AmbientBackground } from './AmbientBackground';
 import { DirectionSwitcher } from './DirectionSwitcher';
 import { Header } from './Header';
+import { scrollBelowChrome } from '../hooks/scrollBelowChrome';
 import { getDirectionFromPath } from '../theme/directions';
 
 export function SiteShell() {
@@ -23,14 +24,23 @@ export function SiteShell() {
   }, []);
 
   useEffect(() => {
-    if (location.hash) return;
-    window.scrollTo(0, 0);
+    if (!location.hash) {
+      window.scrollTo(0, 0);
+      return;
+    }
+    const id = decodeURIComponent(location.hash.replace('#', ''));
+    const align = () => {
+      const el = document.getElementById(id);
+      if (el) scrollBelowChrome(el);
+    };
+    align();
+    window.requestAnimationFrame(align);
   }, [location.pathname, location.hash]);
 
   const scrollToContact = () => {
     const contact = document.getElementById('contact');
     if (contact) {
-      contact.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      scrollBelowChrome(contact);
       return;
     }
     navigate('/#contact');

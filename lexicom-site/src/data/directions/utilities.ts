@@ -10,7 +10,7 @@ export const utilitiesPageMeta = {
 export const utilitiesDemoState = {
   discussCtaLabel: 'Обсудить проект',
   demoCtaLabel: 'Запросить демонстрацию',
-  demoSectionCtaLabel: 'Посмотреть пример работы',
+  demoSectionCtaLabel: 'Посмотреть пример сценария',
   formAnchor: 'utilities-contact-form',
   demoAnchor: 'utilities-demo',
   scenariosAnchor: 'utilities-scenarios',
@@ -270,8 +270,8 @@ export const utilitiesVendorPoints = [
 ] as const;
 
 export const utilitiesLaunchAccent = {
-  title: 'Запуск решений Lexicom — от 3 дней',
-  text: 'Есть опыт полной реализации и сдачи бота в MAX за 3 дня. Срок вашего проекта определим по составу решения, сценариям и интеграциям.',
+  title: 'Развёртывание продуктов — от 3 дней',
+  text: 'Срок полного внедрения зависит от состава решения, интеграций и готовности инфраструктуры.',
 } as const;
 
 export const utilitiesResourceAccent = {

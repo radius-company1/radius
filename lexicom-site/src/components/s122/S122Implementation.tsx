@@ -14,9 +14,9 @@ export function S122Implementation() {
       <div className="container">
         <Reveal>
           <SectionHeader
-            title="Как проходит внедрение"
+            title="С чего начинается первый этап"
             titleId="s122-implementation-title"
-            description="От обследования сценариев и систем до промышленного запуска и развития контура."
+            description="Выбираем сценарий, фиксируем, что нужно для подключения, проверяем работу и затем расширяем состав."
           />
         </Reveal>
 

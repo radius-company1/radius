@@ -16,34 +16,9 @@ export function DemoSection({ onOpenChat, openChatRef }: DemoSectionProps) {
       <div className="container">
         <Reveal>
           <SectionHeader
-            title="Интерактивный обзор возможностей"
+            title="Обсудить проект"
             titleId="demo-title"
-            description="Кратко ответит о платформе, внедрении и выборе направления по ключевым словам."
-          />
-        </Reveal>
-
-        <Reveal>
-          <div className="demo__chat-cta">
-            <Button ref={openChatRef} onClick={onOpenChat}>
-              Открыть обзор
-            </Button>
-          </div>
-        </Reveal>
-
-        <Reveal>
-          <p className="demo__profiles-line">
-            Выберите направление, чтобы изучить сценарии и запросить профильную демонстрацию.{' '}
-            <a className="demo__profiles-link" href="#directions">
-              Выбрать направление
-            </a>
-          </p>
-        </Reveal>
-
-        <Reveal>
-          <SectionHeader
-            title="Обсудим, какие процессы можно автоматизировать в вашей организации"
-            titleId="demo-discuss-title"
-            description="Изучим текущую работу с обращениями, предложим конфигурацию платформы и определим, с какого сценария лучше начать."
+            description="Разберём вашу задачу и определим, какие продукты, интеграции и ресурсы нужны для первого этапа."
           />
         </Reveal>
 
@@ -51,6 +26,17 @@ export function DemoSection({ onOpenChat, openChatRef }: DemoSectionProps) {
           <GlassSurface className="demo__form-wrap" radius="xl" depth="raised" tint="cyan">
             <ContactForm />
           </GlassSurface>
+        </Reveal>
+
+        <Reveal>
+          <div className="demo__overview">
+            <p>
+              Сценарный обзор платформы отвечает по ключевым словам о продуктах и начале работы. Это не живой ИИ.
+            </p>
+            <Button ref={openChatRef} variant="secondary" onClick={onOpenChat}>
+              Открыть сценарный обзор
+            </Button>
+          </div>
         </Reveal>
       </div>
     </section>

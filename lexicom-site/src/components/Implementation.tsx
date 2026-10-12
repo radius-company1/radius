@@ -1,4 +1,4 @@
-import { implementationLaunch, implementationSteps } from '../data/implementation';
+import { implementationDiscuss, implementationLaunch, implementationSteps } from '../data/implementation';
 import { GlassSurface } from './ui/GlassSurface';
 import { Reveal } from './ui/Reveal';
 import { SectionHeader } from './ui/SectionHeader';
@@ -13,9 +13,9 @@ export function Implementation() {
       <div className="container">
         <Reveal>
           <SectionHeader
-            title="От первой задачи до промышленной эксплуатации"
+            title="Опыт и начало работы"
             titleId="implementation-title"
-            description="Как проходит проект: от разбора процессов и проектирования решения до запуска, промышленной эксплуатации и дальнейшего развития."
+            description="Сначала запускаем один процесс, проверяем сценарий и затем расширяем состав. Не обещаем готовое техническое задание после первого разговора."
           />
         </Reveal>
 
@@ -41,6 +41,10 @@ export function Implementation() {
             </Reveal>
           ))}
         </ol>
+
+        <Reveal>
+          <p className="implementation__closing">{implementationDiscuss}</p>
+        </Reveal>
       </div>
     </section>
   );

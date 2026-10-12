@@ -11,7 +11,7 @@ export const socialDemoState = {
   profileDemoConnected: false,
   discussCtaLabel: 'Обсудить проект',
   demoCtaLabel: 'Запросить демонстрацию',
-  demoSectionCtaLabel: 'Посмотреть демонстрацию',
+  demoSectionCtaLabel: 'Посмотреть пример сценария',
   formAnchor: 'social-contact-form',
   demoAnchor: 'social-demo',
   scenariosAnchor: 'social-scenarios',
@@ -173,7 +173,7 @@ export const socialAnalyticsDemo = [
 ] as const;
 
 export const socialAnalyticsNote =
-  'Отчёты, критерии оценки и показатели настраиваются под задачи заказчика. Оценку ИИ можно сопоставлять с мнением супервизора.';
+  'Отчёты, критерии оценки и показатели настраиваются под задачи заказчика. Оценка ИИ сохраняется независимо; оценка супервизора может сопоставляться с ней и не подменяет её.';
 
 export const socialIntegrationKb = [
   'Ответы на типовые вопросы',
@@ -219,8 +219,8 @@ export const socialVendorPoints = [
 ] as const;
 
 export const socialLaunchAccent = {
-  title: 'Запуск решений Lexicom — от 3 дней',
-  text: 'Есть опыт полной реализации и сдачи бота в MAX за 3 дня. Срок вашего проекта определим по составу решения, сценариям и интеграциям.',
+  title: 'Развёртывание продуктов — от 3 дней',
+  text: 'Срок полного внедрения зависит от состава решения, интеграций и готовности инфраструктуры.',
 } as const;
 
 export const socialResourceAccent = {

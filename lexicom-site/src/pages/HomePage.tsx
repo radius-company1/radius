@@ -1,8 +1,7 @@
-import { useEffect, useRef, useState } from 'react';
-import { useLocation } from 'react-router-dom';
+import { useRef, useState } from 'react';
+import { scrollBelowChrome } from '../hooks/scrollBelowChrome';
 import { ClientMarquee } from '../components/ClientMarquee';
 import { About } from '../components/About';
-import { Benefits } from '../components/Benefits';
 import { Cases } from '../components/Cases';
 import { ChatWidget } from '../components/ChatWidget';
 import { DemoSection } from '../components/DemoSection';
@@ -15,24 +14,15 @@ import { Government } from '../components/Government';
 import { Hero } from '../components/Hero';
 import { Implementation } from '../components/Implementation';
 import { Metrics } from '../components/Metrics';
-import { Roadmap } from '../components/Roadmap';
 import { Solutions } from '../components/Solutions';
 
 export function HomePage() {
-  const location = useLocation();
   const [chatOpen, setChatOpen] = useState(false);
   const openChatRef = useRef<HTMLButtonElement>(null);
 
-  useEffect(() => {
-    if (!location.hash) return;
-    const id = location.hash.replace('#', '');
-    window.requestAnimationFrame(() => {
-      document.getElementById(id)?.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    });
-  }, [location.hash]);
-
   const scrollToContact = () => {
-    document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    const contact = document.getElementById('contact');
+    if (contact) scrollBelowChrome(contact);
   };
 
   return (
@@ -45,14 +35,12 @@ export function HomePage() {
         <Products />
         <Directions />
         <Solutions />
-        <Benefits />
         <Flexibility />
-        <Cases />
-        <ClientMarquee />
         <About />
         <Government />
+        <Cases />
+        <ClientMarquee />
         <Implementation />
-        <Roadmap />
         <FAQ />
         <DemoSection onOpenChat={() => setChatOpen(true)} openChatRef={openChatRef} />
       </main>

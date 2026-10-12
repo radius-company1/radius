@@ -96,6 +96,7 @@ export const neurobotTeamwork = [
 ] as const;
 
 export const neurobotIndustries = [
+  { label: 'Бизнес', to: '/business', text: 'Клиентский сервис, исходящие коммуникации и поддержка сотрудников.' },
   { label: 'МФЦ', to: '/mfc', text: 'Консультации; запись и статусы обращений — при наличии интеграции.' },
   {
     label: 'Служба 122',
