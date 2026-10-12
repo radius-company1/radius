@@ -13,7 +13,7 @@ type ChatWidgetProps = {
 const welcomeMessage: ChatMessage = {
   id: 'welcome',
   role: 'bot',
-  text: 'Здравствуйте! Это сценарный обзор Lexicom по ключевым словам — не живой ИИ. Спросите о продуктах, внедрении или выборе направления.',
+  text: 'Здравствуйте! Это сценарный обзор Lexicom по ключевым словам. Спросите о продуктах, внедрении или выборе направления.',
 };
 
 export function ChatWidget({ open, onClose, returnFocusRef }: ChatWidgetProps) {

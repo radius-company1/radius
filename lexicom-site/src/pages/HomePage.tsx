@@ -8,7 +8,6 @@ import { DemoSection } from '../components/DemoSection';
 import { Directions } from '../components/Directions';
 import { Products } from '../components/Products';
 import { FAQ } from '../components/FAQ';
-import { Flexibility } from '../components/Flexibility';
 import { Footer } from '../components/Footer';
 import { Government } from '../components/Government';
 import { Hero } from '../components/Hero';
@@ -35,7 +34,6 @@ export function HomePage() {
         <Products />
         <Directions />
         <Solutions />
-        <Flexibility />
         <About />
         <Government />
         <Cases />

@@ -281,18 +281,17 @@
 }
 
 /* About */
-.about__layout { display: grid; gap: 0.85rem; margin-bottom: 1.75rem; }
-.about__stat { padding: 1.75rem; }
-.about__stat-value {
-  margin: 0; font-size: clamp(3.5rem, 8vw, 5rem); font-weight: 800;
-  line-height: 1; letter-spacing: -0.04em;
-  text-shadow: 0 0 48px rgba(255, 212, 59, 0.35);
+.about { padding-top: calc(var(--section-pad) * 0.85); }
+.about__points {
+  display: grid;
+  gap: 0.75rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
 }
-.about__stat-title { margin: 0.5rem 0 0.45rem; font-size: 1.1rem; }
-.about__stat-text { margin: 0; color: var(--color-text-muted); font-size: 0.94rem; }
-.about__cards { display: grid; gap: 0.75rem; }
-.about-card { padding: 1.15rem; }
-.about-card h3 { margin: 0 0 0.4rem; font-size: 1.02rem; }
+.about__points > .reveal { display: flex; min-width: 0; }
+.about-card { padding: 1.05rem 1.15rem; height: 100%; }
+.about-card h3 { margin: 0 0 0.35rem; font-size: 1.02rem; }
 .about-card p { margin: 0; color: var(--color-text-muted); font-size: 0.92rem; }
 .about__closing {
   margin: 0;
@@ -340,22 +339,8 @@
 .implementation__closing { margin: 1.25rem 0 0; color: var(--color-text-muted); max-width: 70ch; }
 
 /* Demo */
-.about__consequences {
-  display: grid;
-  gap: 0.55rem;
-  margin: 1.25rem 0 0;
-  padding: 0;
-  list-style: none;
-}
-.about__consequences li {
-  padding: 0.75rem 0.95rem;
-  border-radius: 16px;
-  background: rgba(255, 255, 255, 0.46);
-  border: 1px solid rgba(255, 255, 255, 0.7);
-  font-size: 0.94rem;
-}
 .about__roadmap {
-  margin: 1rem 0 0;
+  margin: 1.15rem 0 0;
   max-width: 68ch;
   color: var(--color-text-muted);
   font-size: 0.92rem;
@@ -424,10 +409,10 @@
   }
   .flexibility__core { grid-column: 1 / -1; }
   .cases__mosaic { grid-template-columns: 1.2fr 0.8fr; }
-  .about__layout { grid-template-columns: 0.9fr 1.1fr; align-items: start; }
-  .about__consequences { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .about__points { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 }
 
 @media (min-width: 1024px) {
   .metric-card__label { max-width: none; }
+  .about__points { grid-template-columns: repeat(3, minmax(0, 1fr)); }
 }

@@ -44,12 +44,11 @@ export function Solutions() {
 
           <Reveal delay={80}>
             <GlassSurface className="solutions__demo" radius="xl" depth="raised" tint="blue">
-              <p className="solutions__demo-label">Рабочее место контактного центра</p>
+              <p className="solutions__demo-label">Рабочее место оператора в контактном центре Lexicom</p>
               <ProductDemoTrigger
                 demo={togetherDemo}
                 onOpen={() => onOpenDemo(togetherDemo, returnFocusRef.current)}
               />
-              <p className="solutions__demo-note">Запись интерфейса, не живой ИИ.</p>
             </GlassSurface>
           </Reveal>
         </div>

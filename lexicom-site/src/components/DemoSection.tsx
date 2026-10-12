@@ -31,7 +31,7 @@ export function DemoSection({ onOpenChat, openChatRef }: DemoSectionProps) {
         <Reveal>
           <div className="demo__overview">
             <p>
-              Сценарный обзор платформы отвечает по ключевым словам о продуктах и начале работы. Это не живой ИИ.
+              Сценарный обзор платформы отвечает по ключевым словам о продуктах и начале работы.
             </p>
             <Button ref={openChatRef} variant="secondary" onClick={onOpenChat}>
               Открыть сценарный обзор

@@ -1,10 +1,6 @@
-import { aboutConsequences, aboutRoadmapNote, aboutTheses } from '../data/about';
-import { GlassSurface } from './ui/GlassSurface';
+import { aboutPoints, aboutRoadmapNote } from '../data/about';
 import { Reveal } from './ui/Reveal';
 import { SectionHeader } from './ui/SectionHeader';
-
-const teamThesis = aboutTheses[3];
-const cardTheses = aboutTheses.slice(0, 3);
 
 export function About() {
   return (
@@ -14,37 +10,20 @@ export function About() {
           <SectionHeader
             title="Почему Lexicom"
             titleId="about-title"
-            description="Собственное ПО, команда 60+ специалистов, контроль развития продукта и полный цикл внедрения. Резидент ИТ-кластера Фонда «Сколково». Lexicom Omnichannel Platform — в Реестре российского ПО №11115."
+            description="Резидент ИТ-кластера Фонда «Сколково». Lexicom Omnichannel Platform — в Реестре российского ПО №11115."
           />
         </Reveal>
 
-        <div className="about__layout">
-          <Reveal>
-            <GlassSurface className="about__stat" radius="xl" depth="float" tier="matte" tint="yellow">
-              <p className="about__stat-value">60+</p>
-              <h3 className="about__stat-title">{teamThesis.title}</h3>
-              <p className="about__stat-text">{teamThesis.description}</p>
-            </GlassSurface>
-          </Reveal>
-          <div className="about__cards">
-            {cardTheses.map((thesis, index) => (
-              <Reveal key={thesis.title} delay={index * 70}>
-                <div className="surface-plain about-card">
-                  <h3>{thesis.title}</h3>
-                  <p>{thesis.description}</p>
-                </div>
-              </Reveal>
-            ))}
-          </div>
+        <div className="about__points">
+          {aboutPoints.map((point, index) => (
+            <Reveal key={point.title} delay={index * 40}>
+              <article className="surface-plain about-card">
+                <h3>{point.title}</h3>
+                <p>{point.text}</p>
+              </article>
+            </Reveal>
+          ))}
         </div>
-
-        <Reveal>
-          <ul className="about__consequences">
-            {aboutConsequences.map((item) => (
-              <li key={item}>{item}</li>
-            ))}
-          </ul>
-        </Reveal>
 
         <Reveal>
           <p className="about__roadmap" id="roadmap">

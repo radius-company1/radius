@@ -240,7 +240,7 @@
   display: flex;
   flex-wrap: wrap;
   gap: 0.35rem 1.1rem;
-  margin: 0 0 1.15rem;
+  margin: 1rem 0 0;
 }
 
 .s122-outcome__side {
@@ -717,6 +717,25 @@
 }
 
 /* ─── On-prem ────────────────────────────────────────── */
+
+.s122-onprem__notes {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  gap: 0.65rem;
+  max-width: 72ch;
+}
+
+.s122-onprem__notes li {
+  margin: 0;
+  padding: 0.85rem 1rem;
+  border-radius: 16px;
+  background: color-mix(in srgb, white 78%, transparent);
+  border: 1px solid color-mix(in srgb, var(--color-line) 70%, transparent);
+  font-size: 0.95rem;
+  line-height: 1.45;
+}
 
 .s122-onprem__shell {
   padding: 1.25rem;

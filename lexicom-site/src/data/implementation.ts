@@ -28,11 +28,11 @@ export const productDeployTiming =
   'Развёртывание продуктов — от 3 дней. Срок полного внедрения зависит от состава решения, интеграций и готовности инфраструктуры.';
 
 export const maxBotTimingExample =
-  'Есть опыт запуска бота в MAX за три дня. Это пример отдельного сценария, а не срок запуска контактного центра или ЕКЦ.';
+  'Есть опыт полного запуска бота в MAX за три дня. Срок вашего проекта определим по составу решения и интеграциям.';
 
 export const implementationLaunch = {
   title: 'Развёртывание продуктов — от 3 дней',
-  text: `${productDeployTiming} ${maxBotTimingExample}`,
+  text: `Срок полного внедрения зависит от состава решения, интеграций и готовности инфраструктуры. ${maxBotTimingExample}`,
 } as const;
 
 export const implementationDiscuss =

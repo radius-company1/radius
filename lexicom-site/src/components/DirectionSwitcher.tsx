@@ -1,5 +1,5 @@
 import { useCallback, useEffect, useLayoutEffect, useRef, useState } from 'react';
-import { useLocation } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import { directionModes, getDirectionIndexFromPath, normalizePath } from '../theme/directions';
 import { useViewTransitionNavigate } from '../hooks/useViewTransitionNavigate';
 import './DirectionSwitcher.css';
@@ -21,10 +21,10 @@ type DirectionSwitcherProps = {
 
 export function DirectionSwitcher({ scrolled = false }: DirectionSwitcherProps) {
   const location = useLocation();
-  const { navigate } = useViewTransitionNavigate();
+  const { onLinkClick } = useViewTransitionNavigate();
   const trackRef = useRef<HTMLDivElement>(null);
   const scrollRef = useRef<HTMLDivElement>(null);
-  const itemRefs = useRef<(HTMLButtonElement | null)[]>([]);
+  const itemRefs = useRef<(HTMLAnchorElement | null)[]>([]);
   const movingTimerRef = useRef<number | null>(null);
   const [hoverIndex, setHoverIndex] = useState<number | null>(null);
   const [ready, setReady] = useState(false);
@@ -111,12 +111,16 @@ export function DirectionSwitcher({ scrolled = false }: DirectionSwitcherProps) 
     };
   }, []);
 
-  const handleSelect = (href: string, index: number) => {
-    if (normalizePath(href) === currentPath) return;
+  const handleLinkClick = (event: React.MouseEvent<HTMLAnchorElement>, href: string, index: number) => {
+    if (event.metaKey || event.ctrlKey || event.shiftKey || event.altKey || event.button !== 0) return;
+    if (normalizePath(href) === currentPath) {
+      event.preventDefault();
+      return;
+    }
 
     setLensTarget(index);
     setMoving(true);
-    navigate(href);
+    onLinkClick(event, href);
 
     if (movingTimerRef.current !== null) {
       window.clearTimeout(movingTimerRef.current);
@@ -128,47 +132,10 @@ export function DirectionSwitcher({ scrolled = false }: DirectionSwitcherProps) 
     }, LENS_MOVE_MS);
   };
 
-  const focusItem = (index: number) => {
-    itemRefs.current[index]?.focus();
-  };
-
-  const handleTabKeyDown = (event: React.KeyboardEvent<HTMLDivElement>) => {
-    const { key } = event;
-    const lastIndex = directionModes.length - 1;
-
-    if (key === 'ArrowRight' || key === 'ArrowDown') {
-      event.preventDefault();
-      const next = Math.min(safeActiveIndex + 1, lastIndex);
-      if (next !== safeActiveIndex) handleSelect(directionModes[next].href, next);
-      focusItem(next);
-      return;
-    }
-
-    if (key === 'ArrowLeft' || key === 'ArrowUp') {
-      event.preventDefault();
-      const next = safeActiveIndex < 0 ? 0 : Math.max(safeActiveIndex - 1, 0);
-      if (next !== safeActiveIndex) handleSelect(directionModes[next].href, next);
-      focusItem(next);
-      return;
-    }
-
-    if (key === 'Home') {
-      event.preventDefault();
-      if (safeActiveIndex !== 0) handleSelect(directionModes[0].href, 0);
-      focusItem(0);
-      return;
-    }
-
-    if (key === 'End') {
-      event.preventDefault();
-      if (safeActiveIndex !== lastIndex) handleSelect(directionModes[lastIndex].href, lastIndex);
-      focusItem(lastIndex);
-    }
-  };
-
   return (
-    <div
+    <nav
       className={`direction-switcher-wrap ${scrolled ? 'is-scrolled' : ''}`}
+      aria-label="Направления"
       style={{ viewTransitionName: 'direction-switcher' } as React.CSSProperties}
     >
       <div className="container direction-switcher-container">
@@ -179,13 +146,7 @@ export function DirectionSwitcher({ scrolled = false }: DirectionSwitcherProps) 
           </div>
 
           <div className="direction-switcher__scroll" ref={scrollRef}>
-            <div
-              className="direction-switcher__track"
-              ref={trackRef}
-              role="tablist"
-              aria-label="Режим платформы"
-              onKeyDown={handleTabKeyDown}
-            >
+            <div className="direction-switcher__track" ref={trackRef}>
               <div
                 className={`direction-switcher__lens ${ready ? 'is-ready' : ''} ${moving ? 'is-moving' : ''}`}
                 style={{
@@ -205,30 +166,28 @@ export function DirectionSwitcher({ scrolled = false }: DirectionSwitcherProps) 
               {directionModes.map((mode, index) => {
                 const isActive = mode.href === currentPath;
                 return (
-                  <button
+                  <Link
                     key={mode.id}
+                    to={mode.href}
                     ref={(el) => {
                       itemRefs.current[index] = el;
                     }}
-                    type="button"
-                    role="tab"
-                    aria-selected={isActive}
-                    tabIndex={isActive || (safeActiveIndex < 0 && index === 0) ? 0 : -1}
                     className={`direction-switcher__item ${isActive ? 'is-active' : ''}`}
-                    onClick={() => handleSelect(mode.href, index)}
+                    aria-current={isActive ? 'page' : undefined}
+                    onClick={(event) => handleLinkClick(event, mode.href, index)}
                     onMouseEnter={() => setHoverIndex(index)}
                     onMouseLeave={() => setHoverIndex(null)}
                     onFocus={() => setHoverIndex(index)}
                     onBlur={() => setHoverIndex(null)}
                   >
                     {mode.label}
-                  </button>
+                  </Link>
                 );
               })}
             </div>
           </div>
         </div>
       </div>
-    </div>
+    </nav>
   );
 }
