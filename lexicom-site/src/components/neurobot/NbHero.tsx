@@ -43,14 +43,7 @@ export function NbHero({ onPlay, onDiscuss }: NbHeroProps) {
             </Reveal>
             <Reveal delay={160}>
               <div className="nb-hero__actions">
-                <Button onClick={(event) => onPlay(event.currentTarget as HTMLButtonElement)}>
-                  <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true">
-                    <circle cx="12" cy="12" r="10.5" fill="none" stroke="currentColor" strokeWidth="1.6" />
-                    <path d="M10 8.2v7.6L16.5 12 10 8.2z" fill="currentColor" />
-                  </svg>
-                  Послушать пример диалога
-                </Button>
-                <Button variant="secondary" href="#lexa-demo" onClick={scrollToLexaDemo}>
+                <Button href="#lexa-demo" onClick={scrollToLexaDemo}>
                   <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true">
                     <path
                       d="M7.2 3.8h2.1l1.1 3.2-1.7 1.1a9.2 9.2 0 004.2 4.2l1.1-1.7 3.2 1.1v2.1c0 .9-.7 1.6-1.6 1.6C10.2 15.4 5.6 10.8 5.6 5.4c0-.9.7-1.6 1.6-1.6z"
@@ -100,6 +93,17 @@ export function NbHero({ onPlay, onDiscuss }: NbHeroProps) {
                 </span>
               </button>
               <p className="nb-hero__caption">{neurobotHeroFrame.caption}</p>
+              <button
+                type="button"
+                className="nb-hero__video-link"
+                onClick={(event) => onPlay(event.currentTarget)}
+              >
+                <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true">
+                  <circle cx="12" cy="12" r="10.5" fill="none" stroke="currentColor" strokeWidth="1.6" />
+                  <path d="M10 8.2v7.6L16.5 12 10 8.2z" fill="currentColor" />
+                </svg>
+                Послушать пример диалога
+              </button>
             </GlassSurface>
           </Reveal>
         </div>

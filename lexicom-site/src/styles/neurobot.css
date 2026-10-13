@@ -162,6 +162,39 @@
   color: var(--color-text-muted);
 }
 
+.nb-hero__video-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  max-width: 100%;
+  min-height: 44px;
+  margin: 0.15rem 0.15rem 0.1rem;
+  padding: 0.35rem 0.55rem;
+  border: 0;
+  border-radius: var(--radius-btn);
+  background: transparent;
+  color: var(--color-blue);
+  font: inherit;
+  font-size: 0.9rem;
+  font-weight: 700;
+  line-height: 1.3;
+  text-align: left;
+  cursor: pointer;
+}
+
+.nb-hero__video-link svg {
+  flex: 0 0 auto;
+}
+
+.nb-hero__video-link:hover {
+  color: #2f45b8;
+}
+
+.nb-hero__video-link:focus-visible {
+  outline: 2px solid var(--color-blue);
+  outline-offset: 2px;
+}
+
 /* Channels */
 
 .nb-channels__panel {
