@@ -6,7 +6,15 @@ import { GlassSurface } from './ui/GlassSurface';
 import { Reveal } from './ui/Reveal';
 import { SectionHeader } from './ui/SectionHeader';
 
-const tintMap = { business: 'yellow', mfc: 'mfc', '122': 's122', edds: 'edds', social: 'social', utilities: 'utilities' } as const;
+const tintMap = {
+  business: 'yellow',
+  education: 'education',
+  mfc: 'mfc',
+  '122': 's122',
+  edds: 'edds',
+  social: 'social',
+  utilities: 'utilities',
+} as const;
 
 function DirectionCard({
   direction,

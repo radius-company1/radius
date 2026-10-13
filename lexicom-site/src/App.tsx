@@ -4,6 +4,7 @@ import { DesignPreviewPage } from './design-preview/DesignPreviewPage';
 import { BusinessPage } from './pages/BusinessPage';
 import { ContactCenterPage } from './pages/ContactCenterPage';
 import { EddsPage } from './pages/EddsPage';
+import { EducationPage } from './pages/EducationPage';
 import { HomePage } from './pages/HomePage';
 import { EkcPage } from './pages/EkcPage';
 import { MfcPage } from './pages/MfcPage';
@@ -22,6 +23,7 @@ export default function App() {
         <Route element={<SiteShell />}>
           <Route path="/" element={<HomePage />} />
           <Route path="/business" element={<BusinessPage />} />
+          <Route path="/education" element={<EducationPage />} />
           <Route path="/mfc" element={<MfcPage />} />
           <Route path="/122" element={<S122Page />} />
           <Route path="/edds" element={<EddsPage />} />
