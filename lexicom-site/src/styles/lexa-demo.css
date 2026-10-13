@@ -1,0 +1,167 @@
+.lexa-demo {
+  padding-block: calc(var(--section-pad) * 0.72);
+}
+
+.lexa-demo__grid {
+  display: grid;
+  gap: 1.15rem;
+  align-items: center;
+}
+
+.lexa-demo__copy {
+  max-width: 38rem;
+}
+
+.lexa-demo__eyebrow {
+  margin: 0 0 0.55rem;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-blue);
+}
+
+.lexa-demo__title {
+  margin: 0 0 0.7rem;
+  font-size: clamp(1.7rem, 3.2vw, 2.35rem);
+  line-height: 1.12;
+  letter-spacing: -0.03em;
+  font-weight: 800;
+  text-wrap: balance;
+}
+
+.lexa-demo__lead {
+  margin: 0;
+  max-width: 46ch;
+  color: var(--color-text-muted);
+  font-size: 1.02rem;
+  line-height: 1.55;
+}
+
+.lexa-card {
+  width: min(100%, 26rem);
+  margin-inline: auto;
+  padding: 1.15rem 1.2rem 1.15rem;
+  container-type: inline-size;
+}
+
+.lexa-card .glass-surface__content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.28rem;
+  min-width: 0;
+}
+
+.lexa-card__wave {
+  display: block;
+  margin-bottom: 0.35rem;
+  color: #c9a227;
+}
+
+.lexa-card__name {
+  margin: 0;
+  font-size: 1.35rem;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+}
+
+.lexa-card__line {
+  margin: 0;
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: #8a6a12;
+}
+
+.lexa-card__number {
+  margin: 0.15rem 0 0.55rem;
+  max-width: 100%;
+  font-size: clamp(1.45rem, 8.5cqi, 1.85rem);
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  line-height: 1.15;
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+
+.lexa-card__call {
+  width: 100%;
+  min-height: 48px;
+  margin-top: 0.2rem;
+}
+
+.lexa-card__call:disabled {
+  opacity: 0.62;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
+.lexa-card__call:disabled:hover,
+.lexa-card__call:disabled:active {
+  transform: none;
+}
+
+.lexa-card__call:focus-visible,
+.lexa-card__copy:focus-visible {
+  outline: 2px solid var(--color-blue);
+  outline-offset: 3px;
+}
+
+.lexa-card__unavailable,
+.lexa-card__note,
+.lexa-card__copied,
+.lexa-card__copy {
+  margin: 0.35rem 0 0;
+  font-size: 0.86rem;
+  line-height: 1.4;
+}
+
+.lexa-card__copied:empty {
+  display: none;
+}
+
+.lexa-card__copied {
+  font-weight: 700;
+  color: #1a6f4a;
+}
+
+.lexa-card__unavailable {
+  color: #8a6a12;
+  font-weight: 600;
+}
+
+.lexa-card__note {
+  color: var(--color-text-muted);
+}
+
+.lexa-card__copy {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  min-height: 44px;
+  padding: 0.45rem 0.85rem;
+  border: 1px solid rgba(12, 16, 32, 0.12);
+  border-radius: var(--radius-btn);
+  background: rgba(255, 255, 255, 0.55);
+  color: var(--color-text);
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.lexa-card__copy:hover {
+  background: rgba(255, 255, 255, 0.9);
+}
+
+@media (min-width: 768px) {
+  .lexa-demo__grid {
+    grid-template-columns: minmax(0, 1.15fr) minmax(18rem, 0.85fr);
+    gap: 2rem;
+  }
+
+  .lexa-card {
+    margin-inline: 0 0 auto;
+  }
+}

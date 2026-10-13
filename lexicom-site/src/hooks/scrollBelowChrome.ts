@@ -1,3 +1,5 @@
+import { lexaDemoId } from '../data/lexaDemo';
+
 /** Scrolls so `element` sits just below the sticky header + direction switcher. */
 export function scrollBelowChrome(element: HTMLElement, onDone?: () => void) {
   const desiredTop = () => {
@@ -20,6 +22,16 @@ export function scrollBelowChrome(element: HTMLElement, onDone?: () => void) {
       onDone?.();
     });
   });
+}
+
+export function scrollToLexaDemo(event: { preventDefault: () => void }) {
+  const target = document.getElementById(lexaDemoId);
+  if (!target) return;
+  event.preventDefault();
+  scrollBelowChrome(target);
+  if (window.location.hash !== `#${lexaDemoId}`) {
+    window.history.pushState(null, '', `#${lexaDemoId}`);
+  }
 }
 
 /** Scrolls to a product page's final form and focuses its first field. */

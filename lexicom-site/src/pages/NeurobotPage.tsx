@@ -1,5 +1,6 @@
 import { useCallback, useRef, useState } from 'react';
 import { Footer } from '../components/Footer';
+import { LexaDemo } from '../components/LexaDemo';
 import { NbCapabilities } from '../components/neurobot/NbCapabilities';
 import { NbChannels } from '../components/neurobot/NbChannels';
 import { NbFaq, NbFinalCta } from '../components/neurobot/NbFaqAndForm';
@@ -37,6 +38,7 @@ export function NeurobotPage() {
       <main>
         <NbHero onPlay={openDemo} onDiscuss={scrollToForm} />
         <NbChannels />
+        <LexaDemo />
         <NbCapabilities />
         <NbProcess />
         <NbTeamwork />

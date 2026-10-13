@@ -1,12 +1,9 @@
+import { scrollToLexaDemo } from '../hooks/scrollBelowChrome';
 import { Button } from './ui/Button';
 import { HeroVisualization } from './HeroVisualization';
 import { Reveal } from './ui/Reveal';
 
-type HeroProps = {
-  onDiscussClick: () => void;
-};
-
-export function Hero({ onDiscussClick }: HeroProps) {
+export function Hero() {
   return (
     <section className="hero section-zone section-zone--hero" id="top" aria-labelledby="hero-title">
       <div className="hero__atmosphere" aria-hidden="true" />
@@ -38,8 +35,8 @@ export function Hero({ onDiscussClick }: HeroProps) {
           <Reveal delay={200}>
             <div className="hero__actions">
               <Button href="#products">Выбрать решение</Button>
-              <Button variant="secondary" onClick={onDiscussClick}>
-                Обсудить проект
+              <Button variant="secondary" href="#lexa-demo" onClick={scrollToLexaDemo}>
+                Поговорить с Лексой
               </Button>
             </div>
           </Reveal>
