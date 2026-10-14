@@ -68,7 +68,7 @@ export function LexaDemo() {
       <div className="container lexa-demo__grid">
         <Reveal>
           <div className="lexa-demo__copy">
-            <p className="lexa-demo__eyebrow">Голосовой нейробот Lexicom</p>
+            <p className="lexa-demo__eyebrow">ИИ-агент Lexicom</p>
             <h2 id="lexa-demo-title" className="lexa-demo__title">
               Познакомьтесь с Лексой
             </h2>

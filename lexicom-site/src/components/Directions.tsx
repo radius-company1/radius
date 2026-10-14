@@ -1,20 +1,9 @@
 import { Link } from 'react-router-dom';
 import { directions } from '../data/directions';
-import { useSurfaceGlow } from '../hooks/useSurfaceGlow';
 import { useViewTransitionNavigate } from '../hooks/useViewTransitionNavigate';
-import { GlassSurface } from './ui/GlassSurface';
 import { Reveal } from './ui/Reveal';
 import { SectionHeader } from './ui/SectionHeader';
 
-const tintMap = {
-  business: 'yellow',
-  education: 'education',
-  mfc: 'mfc',
-  '122': 's122',
-  edds: 'edds',
-  social: 'social',
-  utilities: 'utilities',
-} as const;
 
 function DirectionCard({
   direction,
@@ -25,31 +14,18 @@ function DirectionCard({
   index: number;
   onNavigate: (event: React.MouseEvent<HTMLAnchorElement>, href: string) => void;
 }) {
-  const glow = useSurfaceGlow();
-
   return (
     <Reveal delay={index * 50} className="directions__cell">
-      <GlassSurface
-        as="article"
-        ref={glow.ref as React.RefObject<HTMLDivElement>}
-        className={`direction-card direction-card--compact direction-card--${direction.id}`}
-        radius="xl"
-        depth="raised"
-        tier="matte"
-        tint={tintMap[direction.id]}
-        onPointerMove={glow.onPointerMove}
-        onPointerLeave={glow.onPointerLeave}
+      <Link
+        className={`direction-card direction-card--compact direction-card--link direction-card--${direction.id}`}
+        to={direction.href}
+        onClick={event => onNavigate(event, direction.href)}
+        aria-labelledby={`direction-title-${direction.id}`}
       >
-        <h3 className="direction-card__title">{direction.title}</h3>
+        <h3 className="direction-card__title" id={`direction-title-${direction.id}`}>{direction.title}</h3>
         <p className="direction-card__text">{direction.description}</p>
-        <Link
-          className={`btn direction-card__btn direction-card__btn--${direction.id}`}
-          to={direction.href}
-          onClick={(event) => onNavigate(event, direction.href)}
-        >
-          {direction.buttonLabel}
-        </Link>
-      </GlassSurface>
+        <span className="direction-card__action">Смотреть решение<svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" strokeWidth="1.6" aria-hidden="true"><path d="M4 12h15m-6-6 6 6-6 6" /></svg></span>
+      </Link>
     </Reveal>
   );
 }

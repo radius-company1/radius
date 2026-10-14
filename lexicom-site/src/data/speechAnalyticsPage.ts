@@ -123,10 +123,10 @@ export const saTeamwork = [
     link: { label: 'Подробнее о контактном центре', to: productHref('contact-center') },
   },
   {
-    badge: 'С нейроботом Lexicom',
+    badge: 'С ИИ-агентом Lexicom',
     title: 'Улучшение знаний и сценариев',
     text: 'Анализ тем и причин обращений помогает находить вопросы, по которым не хватает материалов в базе знаний, и уточнять сценарии и маршруты.',
-    link: { label: 'Подробнее о нейроботе', to: productHref('neurobot') },
+    link: { label: 'Подробнее об ИИ-агенте', to: productHref('neurobot') },
   },
 ] as const;
 

@@ -45,7 +45,7 @@ export function NbChannels() {
     <section className="section nb-channels" id="nb-channels" aria-labelledby="nb-channels-title">
       <div className="container">
         <Reveal>
-          <SectionHeader title="Один нейробот — разные задачи и каналы" titleId="nb-channels-title" />
+          <SectionHeader title="Один ИИ-агент — разные задачи и каналы" titleId="nb-channels-title" />
         </Reveal>
 
         <Reveal delay={60}>

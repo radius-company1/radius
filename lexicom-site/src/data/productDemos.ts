@@ -17,7 +17,7 @@ export type ProductDemo = {
 export const productDemos: readonly ProductDemo[] = [
   {
     productId: 'neurobot',
-    title: 'Нейробот — пример диалога',
+    title: 'ИИ-агент — пример диалога',
     ctaLabel: 'Посмотреть видео',
     note: 'Тема: поддержка участников СВО',
     src: '/demos/neurobot.mp4',

@@ -17,12 +17,12 @@ export function NbHero({ onPlay, onDiscuss }: NbHeroProps) {
   return (
     <section className="nb-hero section-zone" id="nb-top" aria-labelledby="nb-hero-title">
       <div className="container">
-        <ProductBreadcrumbs current="Нейробот" />
+        <ProductBreadcrumbs current="ИИ-агент" />
 
         <div className="nb-hero__grid">
           <div className="nb-hero__content">
             <Reveal>
-              <p className="nb-hero__eyebrow">Нейробот Lexicom</p>
+              <p className="nb-hero__eyebrow">ИИ-агент Lexicom</p>
             </Reveal>
             <Reveal delay={60}>
               <h1

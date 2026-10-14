@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { Outlet, useLocation, useNavigate } from 'react-router-dom';
 import { AmbientBackground } from './AmbientBackground';
-import { DirectionSwitcher } from './DirectionSwitcher';
+import { DesignDirectionNav } from './DesignDirectionNav';
 import { Header } from './Header';
 import { scrollBelowChrome } from '../hooks/scrollBelowChrome';
 import { getDirectionFromPath } from '../theme/directions';
@@ -57,7 +57,7 @@ export function SiteShell() {
         style={{ viewTransitionName: 'app-chrome' } as React.CSSProperties}
       >
         <Header onDiscussClick={scrollToContact} scrolled={scrolled} />
-        <DirectionSwitcher scrolled={scrolled} />
+        <DesignDirectionNav />
       </div>
       <div className="page-transition-root" id="main-content">
         <Outlet />

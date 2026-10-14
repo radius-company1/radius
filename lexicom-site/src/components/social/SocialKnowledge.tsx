@@ -11,7 +11,7 @@ export function SocialKnowledge() {
           <SectionHeader
             title="Согласованные ответы во всех каналах"
             titleId="social-knowledge-title"
-            description="Нейробот и специалисты используют общую базу знаний с учётом региональных мер поддержки и порядка работы вашей организации."
+            description="ИИ-агент и специалисты используют общую базу знаний с учётом региональных мер поддержки и порядка работы вашей организации."
           />
         </Reveal>
 
@@ -35,7 +35,7 @@ export function SocialKnowledge() {
                 <span />
               </div>
               <div className="social-knowledge__pair">
-                <div className="social-knowledge__node">Нейробот</div>
+                <div className="social-knowledge__node">ИИ-агент</div>
                 <div className="social-knowledge__node">ИИ-суфлёр</div>
               </div>
             </div>

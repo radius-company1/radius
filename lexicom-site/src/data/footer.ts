@@ -1,6 +1,6 @@
 /** Items without `to` link to the home products block. */
 export const footerPlatform: readonly { label: string; to?: string }[] = [
-  { label: 'Нейробот', to: '/products/neurobot' },
+  { label: 'ИИ-агент', to: '/products/neurobot' },
   { label: 'Контактный центр', to: '/products/contact-center' },
   { label: 'ЕКЦ 110', to: '/products/ekc-110' },
   { label: 'База знаний' },

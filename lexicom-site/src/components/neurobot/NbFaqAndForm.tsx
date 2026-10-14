@@ -28,7 +28,7 @@ export function NbFinalCta() {
       <div className="container nb-final__layout">
         <Reveal>
           <SectionHeader
-            title="Покажем нейробота на вашем сценарии"
+            title="Покажем ИИ-агента на вашем сценарии"
             titleId={neurobotAnchors.finalTitle}
             description="Расскажите, какие обращения хотите автоматизировать. Обсудим каналы, базу знаний и интеграции и подготовим подходящую демонстрацию."
           />
@@ -39,7 +39,7 @@ export function NbFinalCta() {
             <ContactForm
               id={neurobotAnchors.form}
               messageRequired={false}
-              submitLabel="Запросить демонстрацию нейробота"
+              submitLabel="Запросить демонстрацию ИИ-агента"
               product="Нейробот"
             />
           </GlassSurface>

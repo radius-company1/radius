@@ -20,7 +20,7 @@ export function Header({ onDiscussClick, scrolled = false }: HeaderProps) {
   const { onLinkClick } = useViewTransitionNavigate();
   const [menuOpen, setMenuOpen] = useState(false);
   const [productsOpen, setProductsOpen] = useState(false);
-  const [mobileProductsOpen, setMobileProductsOpen] = useState(false);
+  const [mobileProductsOpen, setMobileProductsOpen] = useState(true);
   const productsRef = useRef<HTMLDivElement>(null);
   const productsButtonRef = useRef<HTMLButtonElement>(null);
   const dropdownRef = useRef<HTMLDivElement>(null);
@@ -36,14 +36,30 @@ export function Header({ onDiscussClick, scrolled = false }: HeaderProps) {
 
   useEffect(() => {
     if (!menuOpen) return;
+    const main = document.querySelector<HTMLElement>('#main-content');
+    const directions = document.querySelector<HTMLElement>('.design-directions');
+    const burger = document.querySelector<HTMLButtonElement>('.burger');
+    if (main) main.inert = true;
+    if (directions) directions.inert = true;
     const onKey = (event: KeyboardEvent) => {
+      if (event.key === 'Tab') {
+        const elements = [...document.querySelectorAll<HTMLElement>('.site-header a, .site-header button')].filter(el => el.offsetParent !== null);
+        const first = elements[0]; const last = elements.at(-1);
+        if (event.shiftKey && document.activeElement === first) {event.preventDefault();last?.focus();}
+        if (!event.shiftKey && document.activeElement === last) {event.preventDefault();first?.focus();}
+      }
       if (event.key !== 'Escape') return;
       event.preventDefault();
       setMenuOpen(false);
       setMobileProductsOpen(false);
     };
     document.addEventListener('keydown', onKey);
-    return () => document.removeEventListener('keydown', onKey);
+    return () => {
+      document.removeEventListener('keydown', onKey);
+      if (main) main.inert = false;
+      if (directions) directions.inert = false;
+      burger?.focus({preventScroll:true});
+    };
   }, [menuOpen]);
 
   useEffect(() => {
@@ -177,7 +193,7 @@ export function Header({ onDiscussClick, scrolled = false }: HeaderProps) {
               aria-label={menuOpen ? 'Закрыть меню' : 'Открыть меню'}
               aria-expanded={menuOpen}
               aria-controls="mobile-menu"
-              onClick={() => setMenuOpen((open) => !open)}
+              onClick={() => {setMenuOpen((open) => !open);setMobileProductsOpen(true);}}
             >
               <span />
               <span />

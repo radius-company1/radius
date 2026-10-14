@@ -10,7 +10,7 @@ export function NbTeamwork() {
       <div className="section--dark__grid-bg" aria-hidden="true" />
       <div className="container">
         <Reveal>
-          <SectionHeader title="Нейробот работает вместе с вашей командой" titleId="nb-team-title" light />
+          <SectionHeader title="ИИ-агент работает вместе с вашей командой" titleId="nb-team-title" light />
         </Reveal>
 
         <div className="nb-team__grid">

@@ -1,5 +1,5 @@
 export const productNav = [
-  { label: 'Нейробот', href: '/products/neurobot' },
+  { label: 'ИИ-агент', href: '/products/neurobot' },
   { label: 'Контактный центр', href: '/products/contact-center' },
   { label: 'Речевая аналитика', href: '/products/speech-analytics' },
   { label: 'Протоколирование', href: '/products/protocol' },

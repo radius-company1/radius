@@ -13,7 +13,7 @@ export type FlowNodeDef = {
 export const flowNodes: FlowNodeDef[] = [
   { id: 'in', label: 'Входящее обращение', status: 'Канал', kind: 'channel' },
   { id: 'core', label: 'Lexicom', status: 'Ядро', core: true, kind: 'core' },
-  { id: 'bot', label: 'Нейробот', status: 'ИИ', kind: 'neurobot' },
+  { id: 'bot', label: 'ИИ-агент', status: 'ИИ', kind: 'neurobot' },
   { id: 'emp', label: 'Сотрудник', status: 'Оператор', kind: 'employee' },
   { id: 'kb', label: 'База знаний', status: 'Знания', support: true, kind: 'knowledge' },
   { id: 'sys', label: 'Система заказчика', status: 'ИС', support: true, kind: 'system' },

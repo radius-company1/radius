@@ -6,30 +6,29 @@ import { ChatWidget } from '../components/ChatWidget';
 import { DemoSection } from '../components/DemoSection';
 import { Directions } from '../components/Directions';
 import { LexaDemo } from '../components/LexaDemo';
-import { Products } from '../components/Products';
+import { DesignProducts as Products } from '../components/DesignProducts';
 import { FAQ } from '../components/FAQ';
 import { Footer } from '../components/Footer';
 import { Government } from '../components/Government';
-import { Hero } from '../components/Hero';
+import { DesignHero as Hero } from '../components/DesignHero';
 import { Implementation } from '../components/Implementation';
-import { Metrics } from '../components/Metrics';
 import { Solutions } from '../components/Solutions';
+import { DemoShowcase } from '../components/DemoShowcase';
+import '../styles/final-experiment.css';
 
 export function HomePage() {
   const [chatOpen, setChatOpen] = useState(false);
   const openChatRef = useRef<HTMLButtonElement>(null);
 
   return (
-    <div className="page-view page-view--home" style={{ viewTransitionName: 'page-content' } as React.CSSProperties}>
+    <div className="page-view page-view--home page-view--final" style={{ viewTransitionName: 'page-content' } as React.CSSProperties}>
       <main>
-        <div className="hero-stack">
-          <Hero />
-          <Metrics />
-        </div>
+        <Hero />
         <Products />
-        <LexaDemo />
-        <Directions />
         <Solutions />
+        <Directions />
+        <DemoShowcase />
+        <LexaDemo />
         <About />
         <Government />
         <Cases />

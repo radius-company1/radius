@@ -20,7 +20,7 @@ export function S122Dialogue({ onRequestDemo }: S122DialogueProps) {
           <SectionHeader
             title="Как выглядит работа сценария"
             titleId="s122-dialogue-title"
-            description="Демонстрационный пример: нейробот собирает сведения из разговора и передаёт их сотруднику."
+            description="Демонстрационный пример: ИИ-агент собирает сведения из разговора и передаёт их сотруднику."
           />
         </Reveal>
 

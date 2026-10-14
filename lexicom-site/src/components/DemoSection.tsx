@@ -22,6 +22,11 @@ export function DemoSection({ onOpenChat, openChatRef }: DemoSectionProps) {
           />
         </Reveal>
 
+        <div className="final-contact-methods">
+          <div><a href="mailto:info@lexicom.ai">info@lexicom.ai <span aria-hidden="true">↗</span></a><a href="tel:+74999578132">+7 (499) 957-81-32 <span aria-hidden="true">↗</span></a></div>
+          <p>Отправка через форму пока не подключена. Связаться можно по email или телефону.</p>
+        </div>
+
         <Reveal>
           <GlassSurface className="demo__form-wrap" radius="xl" depth="raised" tint="cyan">
             <ContactForm />

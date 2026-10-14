@@ -26,7 +26,7 @@ const flowSteps = [
   },
   {
     id: 'bot',
-    label: 'Нейробот',
+    label: 'ИИ-агент',
     icon: (
       <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
         <rect x="5" y="7" width="14" height="11" rx="3" stroke="currentColor" strokeWidth="1.6" />
@@ -85,7 +85,7 @@ export function UtilitiesHero({ onDiscuss, onViewDemo }: UtilitiesHeroProps) {
           </Reveal>
           <Reveal delay={120}>
             <p className="utilities-hero__lead">
-              Нейробот принимает показания и отвечает об отключениях по согласованным правилам, спорные начисления
+              ИИ-агент принимает показания и отвечает об отключениях по согласованным правилам, спорные начисления
               передаёт оператору с контекстом. Каналы, суфлёр и аналитика — на собственной платформе Lexicom.
             </p>
           </Reveal>
@@ -131,7 +131,7 @@ export function UtilitiesHero({ onDiscuss, onViewDemo }: UtilitiesHeroProps) {
                 </li>
               ))}
             </ol>
-            <ol className="utilities-hero__pipeline" aria-label="Обращение, нейробот, учётная система и сотрудник">
+            <ol className="utilities-hero__pipeline" aria-label="Обращение, ИИ-агент, учётная система и сотрудник">
               {utilitiesHeroViz.map((step, index) => (
                 <li key={step.label} className="utilities-hero__pipeline-step">
                   <span className="utilities-hero__pipeline-index" aria-hidden="true">
