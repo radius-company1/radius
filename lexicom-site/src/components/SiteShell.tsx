@@ -25,7 +25,7 @@ export function SiteShell() {
 
   useEffect(() => {
     if (!location.hash) {
-      window.scrollTo(0, 0);
+      window.scrollTo({ top: 0, behavior: 'instant' });
       return;
     }
     const id = decodeURIComponent(location.hash.replace('#', ''));

@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom';
+import { MotionLink as Link } from './ui/MotionLink';
 import { directions } from '../data/directions';
 import { useViewTransitionNavigate } from '../hooks/useViewTransitionNavigate';
 import { Reveal } from './ui/Reveal';

@@ -16,8 +16,9 @@ import { SocialPage } from './pages/SocialPage';
 import { UtilitiesPage } from './pages/UtilitiesPage';
 
 export default function App() {
+  // Native view transitions own the snapshot; commit routes synchronously inside flushSync.
   return (
-    <BrowserRouter basename={import.meta.env.BASE_URL.replace(/\/$/, '') || undefined}>
+    <BrowserRouter useTransitions={false} basename={import.meta.env.BASE_URL.replace(/\/$/, '') || undefined}>
       <Routes>
         <Route path="/design-preview" element={<DesignPreviewPage />} />
         <Route element={<SiteShell />}>

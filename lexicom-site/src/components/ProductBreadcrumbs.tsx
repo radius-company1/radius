@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom';
+import { MotionLink as Link } from './ui/MotionLink';
 
 type ProductBreadcrumbsProps = {
   current: string;

@@ -1,5 +1,6 @@
+import { flushSync } from 'react-dom';
 import { useCallback } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 
 function prefersReducedMotion(): boolean {
   return window.matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -11,10 +12,11 @@ function isModifiedClick(event: React.MouseEvent) {
 
 export function useViewTransitionNavigate() {
   const navigate = useNavigate();
+  const { pathname } = useLocation();
 
   const go = useCallback(
     (to: string) => {
-      if (prefersReducedMotion() || !document.startViewTransition) {
+      if ((to.split(/[?#]/)[0] || pathname) === pathname || prefersReducedMotion() || !document.startViewTransition) {
         navigate(to);
         return;
       }
@@ -22,14 +24,20 @@ export function useViewTransitionNavigate() {
       document.documentElement.classList.add('is-page-transitioning');
 
       const transition = document.startViewTransition(() => {
-        navigate(to);
+        flushSync(() => navigate(to));
+        // The native snapshot must include readable above-the-fold content.
+        const visible = [...document.querySelectorAll<HTMLElement>('.reveal')].filter(node => {
+          const rect = node.getBoundingClientRect();
+          return rect.bottom > 0 && rect.top < innerHeight;
+        });
+        visible.forEach(node => node.classList.add('is-visible'));
       });
 
-      transition.finished.finally(() => {
+      void transition.finished.catch(() => {}).then(() => {
         document.documentElement.classList.remove('is-page-transitioning');
       });
     },
-    [navigate],
+    [navigate, pathname],
   );
 
   const onLinkClick = useCallback(

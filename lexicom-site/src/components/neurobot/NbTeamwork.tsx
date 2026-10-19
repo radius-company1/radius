@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom';
+import { MotionLink as Link } from '../ui/MotionLink';
 import { neurobotTeamwork } from '../../data/neurobotPage';
 import { GlassSurface } from '../ui/GlassSurface';
 import { Reveal } from '../ui/Reveal';

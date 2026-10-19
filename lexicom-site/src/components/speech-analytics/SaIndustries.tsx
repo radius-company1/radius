@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom';
+import { MotionLink as Link } from '../ui/MotionLink';
 import { saIndustries } from '../../data/speechAnalyticsPage';
 import { Reveal } from '../ui/Reveal';
 import { SectionHeader } from '../ui/SectionHeader';

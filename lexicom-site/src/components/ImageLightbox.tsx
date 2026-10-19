@@ -1,3 +1,4 @@
+import { useDialogDismiss } from '../hooks/useDialogDismiss';
 import { useEffect, useId, useRef, useState, type RefObject } from 'react';
 import { createPortal } from 'react-dom';
 
@@ -19,6 +20,7 @@ export function ImageLightbox({ image, onClose, returnFocusRef }: ImageLightboxP
   const dialogRef = useRef<HTMLDialogElement>(null);
   const closeRef = useRef<HTMLButtonElement>(null);
   const titleId = useId();
+  const dismiss = useDialogDismiss(dialogRef, onClose);
   const wasOpenRef = useRef(false);
   const [actualSize, setActualSize] = useState(false);
 
@@ -48,7 +50,7 @@ export function ImageLightbox({ image, onClose, returnFocusRef }: ImageLightboxP
 
     const onCancel = (event: Event) => {
       event.preventDefault();
-      onClose();
+      dismiss();
     };
     dialog.addEventListener('cancel', onCancel);
     return () => {
@@ -56,7 +58,7 @@ export function ImageLightbox({ image, onClose, returnFocusRef }: ImageLightboxP
       document.body.classList.remove('image-lightbox-open');
       if (dialog.open) dialog.close();
     };
-  }, [image, onClose, returnFocusRef]);
+  }, [image, dismiss, returnFocusRef]);
 
   if (typeof document === 'undefined') return null;
 
@@ -66,7 +68,7 @@ export function ImageLightbox({ image, onClose, returnFocusRef }: ImageLightboxP
       className="image-lightbox"
       aria-labelledby={titleId}
       onClick={(event) => {
-        if (event.target === dialogRef.current) onClose();
+        if (event.target === dialogRef.current) dismiss();
       }}
     >
       <div className="image-lightbox__panel" role="document">
@@ -88,7 +90,7 @@ export function ImageLightbox({ image, onClose, returnFocusRef }: ImageLightboxP
               type="button"
               className="image-lightbox__close"
               aria-label="Закрыть изображение"
-              onClick={onClose}
+              onClick={dismiss}
             >
               ×
             </button>

@@ -1,10 +1,13 @@
+import { useOnceInView } from '../hooks/useOnceInView';
 import { Button } from './ui/Button';
 import { GlassSurface } from './ui/GlassSurface';
 import { metrics } from '../data/metrics';
 
 export function DesignHero() {
+  const ref = useOnceInView<HTMLElement>('is-in-view');
+  const flowRef = useOnceInView<HTMLElement>('is-in-view');
   return <>
-    <section className="design-hero" id="top" aria-labelledby="hero-title">
+    <section ref={ref} className="design-hero" id="top" aria-labelledby="hero-title">
       <div className="container design-hero__grid">
         <div className="design-hero__copy">
           <h1 id="hero-title">ИИ-платформа<br />для обращений<br />и работы с речью</h1>
@@ -15,7 +18,7 @@ export function DesignHero() {
           </div>
           <p className="design-hero__trust">Собственное российское ПО<br /><span>Данные в контуре заказчика · Реестр ПО №11115</span></p>
         </div>
-        <GlassSurface className="design-flow" radius="xl" tint="cyan">
+        <GlassSurface ref={flowRef} className="design-flow motion-flow" radius="xl" tint="cyan">
           <div className="design-flow__heading"><strong>От обращения к результату</strong><span>Lexicom</span></div>
           <div className="design-flow__input">Звонки, чаты и сообщения</div>
           <div className="design-flow__connector" aria-hidden="true" />

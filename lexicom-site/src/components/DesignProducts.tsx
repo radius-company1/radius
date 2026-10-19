@@ -1,7 +1,8 @@
+import { Reveal } from './ui/Reveal';
 import { presentationShots } from '../data/presentationShots';
 import '../styles/static-presentation.css';
-import { useCallback, useEffect, useRef, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { useCallback, useEffect, useLayoutEffect, useRef, useState } from 'react';
+import { MotionLink as Link } from './ui/MotionLink';
 import { products, productPageHref, softwareProductIds } from '../data/products';
 import { productDemoById, resolveDemoAsset, type ProductDemo } from '../data/productDemos';
 import { VideoDemoModal } from './VideoDemoModal';
@@ -25,6 +26,34 @@ export function DesignProducts() {
   const [selected, setSelected] = useState<(typeof softwareProductIds)[number]>(softwareProductIds[0]);
   const [wide, setWide] = useState(() => window.matchMedia('(min-width: 1101px)').matches);
   const tabs = useRef<Array<HTMLButtonElement | null>>([]);
+  const marker = useRef<HTMLSpanElement>(null);
+  const grid = useRef<HTMLDivElement>(null);
+  useEffect(() => {
+    if (wide || !grid.current) return;
+    const observer = new IntersectionObserver(entries => {
+      for (const entry of entries) if (entry.isIntersecting) {
+        entry.target.classList.add('is-in-view');
+        observer.unobserve(entry.target);
+      }
+    }, { threshold: 0, rootMargin: '0px 0px -24px 0px' });
+    grid.current.querySelectorAll('.design-product').forEach(panel => observer.observe(panel));
+    return () => observer.disconnect();
+  }, [wide]);
+  useLayoutEffect(() => {
+    if (!wide) return;
+    const list = tabs.current[0]?.parentElement;
+    if (!list) return;
+    const align = () => {
+      const button = tabs.current[softwareProductIds.indexOf(selected)];
+      if (button && marker.current) {
+        marker.current.style.transform = `translateY(${button.offsetTop + 18}px) scaleY(${button.offsetHeight - 36})`;
+      }
+    };
+    align();
+    const observer = new ResizeObserver(align);
+    observer.observe(list);
+    return () => observer.disconnect();
+  }, [selected, wide]);
   useEffect(() => {
     const query = window.matchMedia('(min-width: 1101px)');
     const update = () => setWide(query.matches);
@@ -38,14 +67,16 @@ export function DesignProducts() {
   const closeImage = useCallback(() => setImage(null), []);
   return <section className="design-products section" id="products" aria-labelledby="products-title">
     <div className="container">
-      <div className="design-section-heading">
+      <Reveal variant="fade"><div className="design-section-heading">
         <h2 id="products-title">Продукты Lexicom</h2>
         <p>Выберите продукт под задачу. Четыре решения собственной разработки работают отдельно или вместе.</p>
       </div>
+      </Reveal>
       <div className="final-product-showcase">
         <div className="final-product-selector">
           <p className="final-product-selector__label">Выберите продукт</p>
           <div role="tablist" aria-label="Продукты Lexicom" aria-orientation="vertical">
+            <span ref={marker} className="final-product-marker" aria-hidden="true" />
             {softwareProductIds.map((id, index) => <button
               key={id} id={`product-tab-${id}`} role="tab" type="button"
               ref={element => { tabs.current[index] = element; }}
@@ -63,7 +94,7 @@ export function DesignProducts() {
             ><span className="final-product-selector__name">{products.find(p => p.id === id)!.title}<span aria-hidden="true">→</span></span><span className="final-product-selector__task">{copy[id].task}</span></button>)}
           </div>
         </div>
-      <div className="design-products__grid">
+      <div ref={grid} className="design-products__grid">
         {softwareProductIds.map(id => {
           const product = products.find(p => p.id === id)!;
           const info = copy[id];

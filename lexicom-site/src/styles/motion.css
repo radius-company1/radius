@@ -1,0 +1,59 @@
+:root { --motion-fast: 180ms; --motion-swap: 260ms; --motion-reveal: 440ms; --motion-ease: cubic-bezier(.22,1,.36,1); }
+.reveal { transition-duration: var(--motion-reveal); transition-timing-function: var(--motion-ease); }
+.reveal--fade { transform: none; }
+.reveal--media { transform: translateY(10px) scale(.985); }
+.reveal:focus-within { opacity:1; transform:none; }
+.customer-cases__grid > .reveal, .final-demos__grid > .reveal { min-width:0; display:flex; }
+.customer-cases__grid .customer-cases__card, .final-demos__grid .final-demo { width:100%; height:100%; }
+.customer-case__tver { margin-top:24px; }
+.page-view--final .final-demo { transition: background var(--motion-fast), transform var(--motion-fast) var(--motion-ease); }
+.page-view--final .final-demo__play { transition: transform var(--motion-fast) var(--motion-ease); }
+@media (hover:hover) and (pointer:fine) {
+  .page-view--final .final-demo:hover .final-demo__play { transform:scale(1.06); }
+  .direction-card__action svg { transition:transform var(--motion-fast) var(--motion-ease); }
+  .direction-card:hover .direction-card__action svg { transform:translateX(4px); }
+}
+.final-product-marker { display:none; }
+@media(min-width:1101px) {
+  .page-view--final .final-product-selector [role=tablist] { position:relative; }
+  .page-view--final .final-product-selector button[aria-selected=true]::before { display:none; }
+  .final-product-marker { display:block; position:absolute; z-index:2; left:0; top:0; width:4px; height:1px; background:var(--color-yellow); transform-origin:top; pointer-events:none; transition:transform 300ms var(--motion-ease); }
+  .page-view--final .final-product-showcase .design-product { opacity:0; transform:translateY(8px); pointer-events:none; transition:opacity var(--motion-swap) var(--motion-ease), transform var(--motion-swap) var(--motion-ease), visibility 0s var(--motion-swap); }
+  .page-view--final .final-product-showcase .design-product.is-selected { opacity:1; transform:none; pointer-events:auto; transition-delay:0s; }
+}
+@keyframes motion-enter { from {opacity:0;transform:translateY(10px)} to {opacity:1;transform:none} }
+@keyframes motion-panel { from {opacity:0;transform:translateY(8px) scale(.99)} to {opacity:1;transform:none} }
+@keyframes motion-signal { 0% {opacity:0;transform:scaleY(0)} 30% {opacity:1} 80% {opacity:1;transform:scaleY(1)} 100% {opacity:0;transform:scaleY(1)} }
+@keyframes motion-node { from {transform:translateY(5px);opacity:.65} to {transform:none;opacity:1} }
+.design-hero.is-in-view .design-hero__lead { animation:motion-enter 420ms var(--motion-ease) both; }
+.design-hero.is-in-view .design-hero__actions { animation:motion-enter 420ms 70ms var(--motion-ease) both; }
+.design-flow__connector::before { content:''; position:absolute; inset:0; width:2px; background:var(--color-blue); transform-origin:top; opacity:0; }
+.motion-flow.is-in-view .design-flow__connector::before { animation:motion-signal 550ms 180ms ease-out both; }
+.motion-flow.is-in-view .design-flow__context + .design-flow__connector::before { animation-delay:550ms; }
+.motion-flow.is-in-view .design-flow__handlers { animation:motion-node 450ms 250ms var(--motion-ease) both; }
+.motion-flow.is-in-view .design-flow__result { animation:motion-node 450ms 600ms var(--motion-ease) both; }
+.flow-diagram.is-in-view .flow-diagram__node { animation:motion-node 400ms var(--motion-ease) both; }
+.flow-diagram.is-in-view .flow-diagram__item:nth-child(2) .flow-diagram__node { animation-delay:90ms; }
+.flow-diagram.is-in-view .flow-diagram__item:nth-child(3) .flow-diagram__node { animation-delay:180ms; }
+.flow-diagram.is-in-view .flow-diagram__item:nth-child(n+4) .flow-diagram__node { animation-delay:270ms; }
+.mobile-menu { visibility:hidden; transition:opacity var(--motion-fast),transform var(--motion-fast) var(--motion-ease),visibility 0s var(--motion-fast); }
+.mobile-menu.is-open { visibility:visible; transition-delay:0s; }
+.site-header__dropdown { opacity:0; transform:translateY(-6px); visibility:hidden; transition:opacity var(--motion-fast),transform var(--motion-fast) var(--motion-ease),visibility 0s var(--motion-fast); }
+.site-header__dropdown.is-open { opacity:1; transform:none; visibility:visible; transition-delay:0s; }
+.image-lightbox[open], .video-demo-dialog[open] { animation:motion-panel 200ms var(--motion-ease); }
+.image-lightbox::backdrop, .video-demo-dialog::backdrop { transition:opacity 160ms; }
+.image-lightbox[data-closing=true]::backdrop, .video-demo-dialog[data-closing=true]::backdrop { opacity:0; }
+::view-transition-old(page-content), ::view-transition-new(page-content) { animation-duration:260ms; }
+@media(max-width:639px) { .reveal { transition-delay:0ms !important; } }
+@media(prefers-reduced-motion:reduce) {
+  .reveal { opacity:1; transform:none; transition:none !important; }
+  .design-hero *, .flow-diagram *, .mobile-menu, .site-header__dropdown, .image-lightbox, .video-demo-dialog, .final-product-marker, .page-view--final .design-product, .page-view--final .final-demo, .page-view--final .final-demo__play, .direction-card__action svg { animation:none !important; transition:none !important; }
+  .design-flow__connector::before { animation:none !important; opacity:0; }
+  ::view-transition-group(*), ::view-transition-old(*), ::view-transition-new(*) { animation:none !important; }
+}
+
+@media(max-width:1100px) and (prefers-reduced-motion:no-preference) { .page-view--final .design-product.is-in-view { animation:motion-enter var(--motion-reveal) var(--motion-ease) both; } }
+/* Reduced motion is a site-wide preference, including legacy hover/menu styles. */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation: none !important; transition: none !important; }
+}

@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom';
+import { MotionLink as Link } from './ui/MotionLink';
 import { productHref, productPageLinkLabel, type ProductId } from '../data/products';
 
 type ProductPageLinkProps = {

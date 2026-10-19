@@ -1,3 +1,4 @@
+import { useDialogDismiss } from '../hooks/useDialogDismiss';
 import { useEffect, useId, useRef, useState, type RefObject } from 'react';
 import { createPortal } from 'react-dom';
 import type { ProductDemo } from '../data/productDemos';
@@ -21,6 +22,7 @@ export function VideoDemoModal({ demo, onClose, returnFocusRef }: VideoDemoModal
   const videoRef = useRef<HTMLVideoElement>(null);
   const closeRef = useRef<HTMLButtonElement>(null);
   const titleId = useId();
+  const dismiss = useDialogDismiss(dialogRef, onClose);
   const wasOpenRef = useRef(false);
   /** Only surface media errors from an intentional demo load, not from teardown. */
   const acceptErrorsRef = useRef(false);
@@ -74,7 +76,7 @@ export function VideoDemoModal({ demo, onClose, returnFocusRef }: VideoDemoModal
 
     const onCancel = (event: Event) => {
       event.preventDefault();
-      onClose();
+      dismiss();
     };
     dialog.addEventListener('cancel', onCancel);
     return () => {
@@ -84,7 +86,7 @@ export function VideoDemoModal({ demo, onClose, returnFocusRef }: VideoDemoModal
       if (videoRef.current) clearVideo(videoRef.current);
       if (dialog.open) dialog.close();
     };
-  }, [demo, onClose, returnFocusRef]);
+  }, [demo, dismiss, returnFocusRef]);
 
   if (typeof document === 'undefined') return null;
 
@@ -94,7 +96,7 @@ export function VideoDemoModal({ demo, onClose, returnFocusRef }: VideoDemoModal
       className="video-demo-dialog"
       aria-labelledby={titleId}
       onClick={(event) => {
-        if (event.target === dialogRef.current) onClose();
+        if (event.target === dialogRef.current) dismiss();
       }}
     >
       <div className="video-demo-panel" role="document" onClick={(event) => event.stopPropagation()}>
@@ -107,7 +109,7 @@ export function VideoDemoModal({ demo, onClose, returnFocusRef }: VideoDemoModal
             type="button"
             className="video-demo-panel__close"
             aria-label="Закрыть видео"
-            onClick={onClose}
+            onClick={dismiss}
           >
             ×
           </button>

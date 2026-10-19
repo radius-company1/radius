@@ -1,35 +1,19 @@
-import { useEffect, useRef, type ReactNode } from 'react';
+import { isValidElement, type ReactNode } from 'react';
+import { useOnceInView } from '../../hooks/useOnceInView';
+import { SectionHeader } from './SectionHeader';
 
 type RevealProps = {
   children: ReactNode;
   className?: string;
   delay?: number;
+  variant?: 'auto' | 'rise' | 'fade' | 'media';
 };
 
-export function Reveal({ children, className = '', delay = 0 }: RevealProps) {
-  const ref = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    const node = ref.current;
-    if (!node) return;
-
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          node.classList.add('is-visible');
-          observer.disconnect();
-        }
-      },
-      { threshold: 0.12, rootMargin: '0px 0px -40px 0px' },
-    );
-
-    observer.observe(node);
-    return () => observer.disconnect();
-  }, []);
-
-  return (
-    <div ref={ref} className={`reveal ${className}`} style={{ transitionDelay: `${delay}ms` }}>
-      {children}
-    </div>
-  );
+export function Reveal({ children, className = '', delay = 0, variant = 'auto' }: RevealProps) {
+  const ref = useOnceInView<HTMLDivElement>();
+  const effect = variant === 'auto'
+    ? (isValidElement(children) && children.type === SectionHeader ? 'fade' : 'rise')
+    : variant;
+  return <div ref={ref} className={`reveal reveal--${effect} ${className}`}
+    style={{ transitionDelay: `${Math.min(200, Math.max(0, delay))}ms` }}>{children}</div>;
 }

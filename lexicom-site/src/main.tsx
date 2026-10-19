@@ -4,6 +4,7 @@ import '@fontsource-variable/onest'
 import './index.css'
 import './styles/design-experiment.css'
 import App from './App.tsx'
+import './styles/motion.css'
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>

@@ -1,4 +1,5 @@
-import { useLocation, Link } from 'react-router-dom';
+import { useLocation } from 'react-router-dom';
+import { MotionLink as Link } from './ui/MotionLink';
 import { footerCompany, footerDirections, footerLegal, footerPlatform } from '../data/footer';
 import { Logo } from './ui/Logo';
 

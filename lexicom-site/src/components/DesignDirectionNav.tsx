@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
-import { Link, useLocation } from 'react-router-dom';
+import { useLocation } from 'react-router-dom';
+import { MotionLink as Link } from './ui/MotionLink';
 import { directionModes, normalizePath } from '../theme/directions';
 const industryModes = directionModes.filter(mode => mode.id !== 'overview');
 export function DesignDirectionNav() {

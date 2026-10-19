@@ -1,5 +1,6 @@
 import { useEffect, useId, useRef, useState } from 'react';
-import { Link, useLocation } from 'react-router-dom';
+import { useLocation } from 'react-router-dom';
+import { MotionLink as Link } from './ui/MotionLink';
 import { mainNav, productNav } from '../data/navigation';
 import { useViewTransitionNavigate } from '../hooks/useViewTransitionNavigate';
 import { Button } from './ui/Button';
@@ -30,6 +31,13 @@ export function Header({ onDiscussClick, scrolled = false }: HeaderProps) {
   const headerCta = 'Обсудить проект';
 
   useEffect(() => {
+    const desktop = matchMedia('(min-width: 1024px)');
+    const reset = () => { if (desktop.matches) setMenuOpen(false); };
+    desktop.addEventListener('change', reset);
+    return () => desktop.removeEventListener('change', reset);
+  }, []);
+
+  useEffect(() => {
     document.body.classList.toggle('menu-open', menuOpen);
     return () => document.body.classList.remove('menu-open');
   }, [menuOpen]);
@@ -58,7 +66,7 @@ export function Header({ onDiscussClick, scrolled = false }: HeaderProps) {
       document.removeEventListener('keydown', onKey);
       if (main) main.inert = false;
       if (directions) directions.inert = false;
-      burger?.focus({preventScroll:true});
+      if (burger?.offsetParent !== null) burger?.focus({preventScroll:true});
     };
   }, [menuOpen]);
 
@@ -118,6 +126,7 @@ export function Header({ onDiscussClick, scrolled = false }: HeaderProps) {
     if (event.key === 'ArrowDown' || event.key === 'Enter' || event.key === ' ') {
       event.preventDefault();
       setProductsOpen(true);
+      requestAnimationFrame(() => dropdownRef.current?.querySelector<HTMLAnchorElement>('a')?.focus());
     }
     if (event.key === 'Escape') {
       event.preventDefault();
@@ -157,7 +166,6 @@ export function Header({ onDiscussClick, scrolled = false }: HeaderProps) {
                       type="button"
                       className="site-header__link site-header__link--menu"
                       aria-expanded={productsOpen}
-                      aria-haspopup="menu"
                       aria-controls={productsMenuId}
                       onClick={() => {
                         const rect = productsButtonRef.current?.getBoundingClientRect();
@@ -203,19 +211,18 @@ export function Header({ onDiscussClick, scrolled = false }: HeaderProps) {
         </GlassSurface>
       </div>
 
-      {productsOpen ? (
-        <div
+      <div
           ref={dropdownRef}
           id={productsMenuId}
-          className="site-header__dropdown"
+          className={`site-header__dropdown ${productsOpen ? 'is-open' : ''}`}
+          inert={!productsOpen} aria-hidden={!productsOpen}
           style={{ top: dropdownPos.top, left: dropdownPos.left }}
         >
-          <ul className="site-header__menu" role="menu" aria-label="Продукты Lexicom">
+          <ul className="site-header__menu" aria-label="Продукты Lexicom">
             {productNav.map((product) => (
-              <li key={product.href} role="none">
+              <li key={product.href}>
                 <Link
                   to={product.href}
-                  role="menuitem"
                   className="site-header__menu-link"
                   onClick={(event) => {
                     closeMenus();
@@ -228,9 +235,8 @@ export function Header({ onDiscussClick, scrolled = false }: HeaderProps) {
             ))}
           </ul>
         </div>
-      ) : null}
 
-      <div id="mobile-menu" className={`mobile-menu ${menuOpen ? 'is-open' : ''}`} hidden={!menuOpen}>
+      <div id="mobile-menu" className={`mobile-menu ${menuOpen ? 'is-open' : ''}`} inert={!menuOpen} aria-hidden={!menuOpen}>
         <GlassSurface className="mobile-menu__panel" radius="lg">
           <nav aria-label="Мобильная навигация">
             {mainNav.map((item) =>

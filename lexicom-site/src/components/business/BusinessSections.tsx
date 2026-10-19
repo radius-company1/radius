@@ -1,5 +1,5 @@
 import { useRef } from 'react';
-import { Link } from 'react-router-dom';
+import { MotionLink as Link } from '../ui/MotionLink';
 import {
   businessAnchors,
   businessAudiences,

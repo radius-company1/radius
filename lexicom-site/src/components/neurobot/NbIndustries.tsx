@@ -1,5 +1,5 @@
 import { CustomerCaseLinks } from '../CustomerCase';
-import { Link } from 'react-router-dom';
+import { MotionLink as Link } from '../ui/MotionLink';
 import { neurobotIndustries } from '../../data/neurobotPage';
 import { Reveal } from '../ui/Reveal';
 import { SectionHeader } from '../ui/SectionHeader';

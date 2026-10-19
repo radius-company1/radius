@@ -1,3 +1,4 @@
+import { useOnceInView } from '../../hooks/useOnceInView';
 type FlowDiagramProps = {
   steps: readonly string[];
   variant?: 'light' | 'dark';
@@ -6,8 +7,9 @@ type FlowDiagramProps = {
 };
 
 export function FlowDiagram({ steps, variant = 'light', compact = false, className = '' }: FlowDiagramProps) {
+  const ref = useOnceInView<HTMLDivElement>('is-in-view');
   return (
-    <div
+    <div ref={ref}
       className={`flow-diagram flow-diagram--${variant} ${compact ? 'flow-diagram--compact' : ''} ${className}`}
       role="img"
       aria-label={steps.join(' → ')}

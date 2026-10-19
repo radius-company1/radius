@@ -1,3 +1,4 @@
+import { scrollBelowChrome } from '../hooks/scrollBelowChrome';
 import { socialDemoState, socialPageMeta } from '../data/directions/social';
 import { usePageMeta } from '../hooks/usePageMeta';
 import { Footer } from '../components/Footer';
@@ -22,13 +23,15 @@ export function SocialPage() {
   const scrollToForm = () => {
     const form = document.getElementById(socialDemoState.formAnchor);
     const contact = document.getElementById('contact');
-    (form ?? contact)?.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    const target = form ?? contact;
+    if (target) scrollBelowChrome(target);
     const field = form?.querySelector<HTMLElement>('input, textarea, button');
     field?.focus({ preventScroll: true });
   };
 
   const scrollToDemo = () => {
-    document.getElementById(socialDemoState.demoAnchor)?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    const target = document.getElementById(socialDemoState.demoAnchor);
+    if (target) scrollBelowChrome(target);
   };
 
   return (
