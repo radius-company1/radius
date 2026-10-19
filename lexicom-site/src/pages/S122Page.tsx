@@ -1,3 +1,4 @@
+import { CustomerCase } from '../components/CustomerCase';
 import { s122DemoState, s122PageMeta } from '../data/directions/s122';
 import { scrollBelowChrome } from '../hooks/scrollBelowChrome';
 import { usePageMeta } from '../hooks/usePageMeta';
@@ -54,6 +55,7 @@ export function S122Page() {
         <S122Integration />
         <S122Analytics />
         <S122OnPrem />
+        <CustomerCase index={0} />
         <S122Implementation />
         <S122Faq />
         <S122FinalCta />

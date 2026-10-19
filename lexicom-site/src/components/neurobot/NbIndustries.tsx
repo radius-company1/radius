@@ -1,3 +1,4 @@
+import { CustomerCaseLinks } from '../CustomerCase';
 import { Link } from 'react-router-dom';
 import { neurobotIndustries } from '../../data/neurobotPage';
 import { Reveal } from '../ui/Reveal';
@@ -12,6 +13,7 @@ export function NbIndustries() {
         </Reveal>
 
         <Reveal delay={60}>
+          <div>
           <ul className="nb-industries__list">
             {neurobotIndustries.map((item) => (
               <li key={item.to}>
@@ -25,6 +27,8 @@ export function NbIndustries() {
               </li>
             ))}
           </ul>
+          <CustomerCaseLinks />
+          </div>
         </Reveal>
       </div>
     </section>
