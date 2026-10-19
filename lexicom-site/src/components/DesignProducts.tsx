@@ -1,3 +1,5 @@
+import { presentationShots } from '../data/presentationShots';
+import '../styles/static-presentation.css';
 import { useCallback, useEffect, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { products, productPageHref, softwareProductIds } from '../data/products';
@@ -5,11 +7,11 @@ import { productDemoById, resolveDemoAsset, type ProductDemo } from '../data/pro
 import { VideoDemoModal } from './VideoDemoModal';
 import { ImageLightbox, type LightboxImage } from './ImageLightbox';
 
-const media = {
+const media: Record<string, LightboxImage & { srcSmall?: string; srcMobile?: string; mobileWidth?: number; mobileHeight?: number; presentation?: boolean }> = {
   neurobot: { src: '/products/neurobot/hero-dialog.webp', width: 507, height: 750, alt: 'Голосовые и текстовые сообщения в диалоге ИИ-агента', caption: 'Пример консультации ИИ-агента' },
-  'contact-center': { src: '/products/contact-center/workspace-desk-call-960.webp', width: 960, height: 460, alt: 'Рабочее место оператора: данные, звонок и аналитика', caption: 'Рабочее место оператора' },
-  'speech-analytics': { src: '/products/speech-analytics/hero-overview-960.webp', width: 960, height: 390, alt: 'Экран речевой аналитики: обзор, риски и рекомендации', caption: 'Обзор результатов анализа диалогов' },
-  protocol: { src: '/products/protocol/hero-transcript-960.webp', width: 960, height: 390, alt: 'Распознавание записи: расшифровка и список участников', caption: 'Расшифровка с разделением участников' },
+  'contact-center': { src: '/products/contact-center/workspace-desk-call-960.webp', width: 960, height: 460, alt: 'Рабочее место оператора: данные, звонок и аналитика', caption: 'Рабочее место оператора', ...presentationShots['workspace-desk-call'] },
+  'speech-analytics': { src: '/products/speech-analytics/hero-overview-960.webp', width: 960, height: 390, alt: 'Экран речевой аналитики: обзор, риски и рекомендации', caption: 'Обзор результатов анализа диалогов', ...presentationShots['hero-overview'] },
+  protocol: { src: '/products/protocol/hero-transcript-960.webp', width: 960, height: 390, alt: 'Распознавание записи: расшифровка и список участников', caption: 'Расшифровка с разделением участников', ...presentationShots['hero-transcript'] },
 };
 
 const copy = {
@@ -72,12 +74,15 @@ export function DesignProducts() {
             <div className="design-product__head"><h3>{product.title}</h3></div>
             <p className="design-product__task">{info.task}</p>
             <p className="design-product__description">{info.text}</p>
-            <figure className={`design-product__media design-product__media--${id}`}>
+            <figure className={`design-product__media design-product__media--${id}${shot.presentation ? ' static-presentation' : ''}`}>
               <button className="design-product__image-button" type="button" aria-label={`Увеличить изображение: ${product.title}`} onClick={event => {
                 imageTrigger.current = event.currentTarget;
                 setImage({...shot, src: resolveDemoAsset(shot.src)});
               }}>
-                <img src={resolveDemoAsset(shot.src)} alt={shot.alt} width={shot.width} height={shot.height} loading="lazy" />
+                {shot.presentation ? <picture>
+                  {shot.srcMobile ? <source media="(max-width: 1100px)" srcSet={resolveDemoAsset(shot.srcMobile)} width={shot.mobileWidth} height={shot.mobileHeight} /> : null}
+                  <img src={resolveDemoAsset(shot.srcSmall ?? shot.src)} srcSet={shot.srcSmall ? `${resolveDemoAsset(shot.srcSmall)} 1200w, ${resolveDemoAsset(shot.src)} 2400w` : undefined} sizes="(min-width: 1101px) 800px, (min-width: 768px) 640px, calc(100vw - 80px)" alt={shot.alt} width={shot.width} height={shot.height} loading="lazy" />
+                </picture> : <img src={resolveDemoAsset(shot.src)} alt={shot.alt} width={shot.width} height={shot.height} loading="lazy" />}
                 {id === 'neurobot' ? <span className="design-product__media-note"><strong>Голос и текст</strong><span>Пример консультации из демонстрации ИИ-агента.</span></span> : null}
               </button>
               <figcaption><span>{shot.caption}</span><button type="button" onClick={event => {imageTrigger.current=event.currentTarget;setImage({...shot,src:resolveDemoAsset(shot.src)});}} aria-label={`Рассмотреть изображение: ${product.title}`}>Увеличить <svg viewBox="0 0 16 16" width="14" height="14" fill="none" stroke="currentColor" strokeWidth="1.4" aria-hidden="true"><path d="M6 2H2v4m8-4h4v4M2 10v4h4m8-4v4h-4" /></svg></button></figcaption>

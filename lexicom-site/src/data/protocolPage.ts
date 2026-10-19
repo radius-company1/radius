@@ -1,3 +1,4 @@
+import { presentationShots } from './presentationShots';
 import type { ContactCenterShot } from './contactCenterPage';
 
 export const protocolPageMeta = {
@@ -21,6 +22,7 @@ const shot = (id: string) => ({
   srcSmall: `/products/protocol/${id}-960.webp`,
   width: 1920,
   height: 780,
+  ...presentationShots[id],
 });
 
 export const prHeroShot: ProtocolShot = {

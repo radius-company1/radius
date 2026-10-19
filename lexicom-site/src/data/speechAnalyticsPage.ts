@@ -1,3 +1,4 @@
+import { presentationShots } from './presentationShots';
 import type { ContactCenterShot } from './contactCenterPage';
 import { productHref } from './products';
 
@@ -22,6 +23,7 @@ const shot = (id: string) => ({
   srcSmall: `/products/speech-analytics/${id}-960.webp`,
   width: 1920,
   height: 780,
+  ...presentationShots[id],
 });
 
 export const saHeroShot: SpeechAnalyticsShot = {

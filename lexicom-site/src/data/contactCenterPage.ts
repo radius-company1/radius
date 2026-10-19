@@ -1,3 +1,4 @@
+import { presentationShots } from './presentationShots';
 import { productHref } from './products';
 
 export const contactCenterPageMeta = {
@@ -22,6 +23,10 @@ export type ContactCenterShot = {
   caption: string;
   alt: string;
   features: readonly string[];
+  srcMobile?: string;
+  mobileWidth?: number;
+  mobileHeight?: number;
+  presentation?: boolean;
 };
 
 const shot = (id: string) => ({
@@ -29,6 +34,7 @@ const shot = (id: string) => ({
   srcSmall: `/products/contact-center/${id}-960.webp`,
   width: 1920,
   height: 920,
+  ...presentationShots[id],
 });
 
 export const heroShot: ContactCenterShot = {

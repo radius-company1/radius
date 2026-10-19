@@ -1,3 +1,4 @@
+import '../../styles/static-presentation.css';
 import type { ContactCenterShot } from '../../data/contactCenterPage';
 import { resolveDemoAsset } from '../../data/productDemos';
 
@@ -13,14 +14,16 @@ export function CcShot({ shot, onOpen, sizes, priority = false, className = '' }
   return (
     <button
       type="button"
-      className={`cc-shot ${className}`.trim()}
+      className={`cc-shot ${shot.presentation ? 'cc-shot--presentation' : ''} ${className}`.trim()}
       onClick={(event) => onOpen(shot, event.currentTarget)}
       aria-label={`Увеличить: ${shot.caption}`}
     >
       <span className="cc-shot__frame">
+        <picture>
+          {shot.srcMobile ? <source media={shot.id === "supervisor-monitoring" ? "all" : "(max-width: 767px)"} srcSet={resolveDemoAsset(shot.srcMobile)} width={shot.mobileWidth} height={shot.mobileHeight} /> : null}
         <img
           src={resolveDemoAsset(shot.srcSmall)}
-          srcSet={`${resolveDemoAsset(shot.srcSmall)} 960w, ${resolveDemoAsset(shot.src)} 1920w`}
+          srcSet={`${resolveDemoAsset(shot.srcSmall)} ${shot.presentation ? 1200 : 960}w, ${resolveDemoAsset(shot.src)} ${shot.width}w`}
           sizes={sizes}
           alt={shot.alt}
           width={shot.width}
@@ -28,7 +31,9 @@ export function CcShot({ shot, onOpen, sizes, priority = false, className = '' }
           loading={priority ? 'eager' : 'lazy'}
           decoding="async"
         />
+        </picture>
       </span>
+
       <span className="cc-shot__zoom" aria-hidden="true">
         <svg viewBox="0 0 24 24" width="16" height="16" fill="none">
           <circle cx="10.5" cy="10.5" r="6" stroke="currentColor" strokeWidth="1.8" />
