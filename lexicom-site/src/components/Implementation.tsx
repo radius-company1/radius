@@ -28,8 +28,9 @@ export function Implementation() {
 
         <ol className="implementation-route">
           {implementationSteps.map((step, index) => (
-            <Reveal key={step.step} delay={index * 50}>
-              <li className="implementation-route__step">
+            <li key={step.step}>
+            <Reveal delay={index * 50}>
+              <div className="implementation-route__step">
                 <span className="implementation-route__node" aria-hidden="true">
                   {step.step}
                 </span>
@@ -37,8 +38,9 @@ export function Implementation() {
                   <h3>{step.title}</h3>
                   <p>{step.description}</p>
                 </GlassSurface>
-              </li>
+              </div>
             </Reveal>
+            </li>
           ))}
         </ol>
 

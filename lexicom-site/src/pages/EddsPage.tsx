@@ -1,5 +1,4 @@
-import { eddsDemoState, eddsPageMeta } from '../data/directions/edds';
-import { usePageMeta } from '../hooks/usePageMeta';
+import { eddsDemoState } from '../data/directions/edds';
 import { Footer } from '../components/Footer';
 import { EddsAnalytics } from '../components/edds/EddsAnalytics';
 import { EddsCase } from '../components/edds/EddsCase';
@@ -17,7 +16,6 @@ import { EddsTrustBar } from '../components/edds/EddsTrustBar';
 import { EddsVendor } from '../components/edds/EddsVendor';
 
 export function EddsPage() {
-  usePageMeta(eddsPageMeta);
 
   const scrollToForm = () => {
     const form = document.getElementById(eddsDemoState.formAnchor);

@@ -14,17 +14,14 @@ import { ImageLightbox, type LightboxImage } from '../components/ImageLightbox';
 import { VideoDemoModal } from '../components/VideoDemoModal';
 import {
   contactCenterAnchors,
-  contactCenterPageMeta,
   type ContactCenterShot,
 } from '../data/contactCenterPage';
 import { productDemoById, resolveDemoAsset, type ProductDemo } from '../data/productDemos';
-import { usePageMeta } from '../hooks/usePageMeta';
 import { scrollToProductForm } from '../hooks/scrollBelowChrome';
 
 const contactCenterDemo = productDemoById['contact-center'];
 
 export function ContactCenterPage() {
-  usePageMeta(contactCenterPageMeta);
 
   const [activeDemo, setActiveDemo] = useState<ProductDemo | null>(null);
   const [activeImage, setActiveImage] = useState<LightboxImage | null>(null);

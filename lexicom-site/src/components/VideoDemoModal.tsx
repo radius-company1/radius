@@ -1,3 +1,4 @@
+import { useClientReady } from '../hooks/useClientReady';
 import { useDialogDismiss } from '../hooks/useDialogDismiss';
 import { useEffect, useId, useRef, useState, type RefObject } from 'react';
 import { createPortal } from 'react-dom';
@@ -18,6 +19,7 @@ function clearVideo(video: HTMLVideoElement) {
 }
 
 export function VideoDemoModal({ demo, onClose, returnFocusRef }: VideoDemoModalProps) {
+  const clientReady = useClientReady();
   const dialogRef = useRef<HTMLDialogElement>(null);
   const videoRef = useRef<HTMLVideoElement>(null);
   const closeRef = useRef<HTMLButtonElement>(null);
@@ -88,7 +90,7 @@ export function VideoDemoModal({ demo, onClose, returnFocusRef }: VideoDemoModal
     };
   }, [demo, dismiss, returnFocusRef]);
 
-  if (typeof document === 'undefined') return null;
+  if (!clientReady || typeof document === 'undefined') return null;
 
   return createPortal(
     <dialog

@@ -11,13 +11,11 @@ import {
 import { CaseStudy } from '../components/CaseStudy';
 import { Footer } from '../components/Footer';
 import { VideoDemoModal } from '../components/VideoDemoModal';
-import { businessAnchors, businessCase, businessPageMeta } from '../data/directions/business';
+import { businessAnchors, businessCase } from '../data/directions/business';
 import type { ProductDemo } from '../data/productDemos';
 import { scrollBelowChrome, scrollToProductForm } from '../hooks/scrollBelowChrome';
-import { usePageMeta } from '../hooks/usePageMeta';
 
 export function BusinessPage() {
-  usePageMeta(businessPageMeta);
   const [activeDemo, setActiveDemo] = useState<ProductDemo | null>(null);
   const returnFocusRef = useRef<HTMLButtonElement | null>(null);
 

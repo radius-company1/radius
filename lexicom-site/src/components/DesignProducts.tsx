@@ -24,7 +24,7 @@ const copy = {
 
 export function DesignProducts() {
   const [selected, setSelected] = useState<(typeof softwareProductIds)[number]>(softwareProductIds[0]);
-  const [wide, setWide] = useState(() => window.matchMedia('(min-width: 1101px)').matches);
+  const [wide, setWide] = useState(false);
   const tabs = useRef<Array<HTMLButtonElement | null>>([]);
   const marker = useRef<HTMLSpanElement>(null);
   const grid = useRef<HTMLDivElement>(null);
@@ -57,6 +57,7 @@ export function DesignProducts() {
   useEffect(() => {
     const query = window.matchMedia('(min-width: 1101px)');
     const update = () => setWide(query.matches);
+    update();
     query.addEventListener('change', update);
     return () => query.removeEventListener('change', update);
   }, []);
@@ -116,11 +117,11 @@ export function DesignProducts() {
                 </picture> : <img src={resolveDemoAsset(shot.src)} alt={shot.alt} width={shot.width} height={shot.height} loading="lazy" />}
                 {id === 'neurobot' ? <span className="design-product__media-note"><strong>Голос и текст</strong><span>Пример консультации из демонстрации ИИ-агента.</span></span> : null}
               </button>
-              <figcaption><span>{shot.caption}</span><button type="button" onClick={event => {imageTrigger.current=event.currentTarget;setImage({...shot,src:resolveDemoAsset(shot.src)});}} aria-label={`Рассмотреть изображение: ${product.title}`}>Увеличить <svg viewBox="0 0 16 16" width="14" height="14" fill="none" stroke="currentColor" strokeWidth="1.4" aria-hidden="true"><path d="M6 2H2v4m8-4h4v4M2 10v4h4m8-4v4h-4" /></svg></button></figcaption>
+              <figcaption><span>{shot.caption}</span><button type="button" onClick={event => {imageTrigger.current=event.currentTarget;setImage({...shot,src:resolveDemoAsset(shot.src)});}} aria-label={`Увеличить изображение: ${product.title}`}>Увеличить <svg viewBox="0 0 16 16" width="14" height="14" fill="none" stroke="currentColor" strokeWidth="1.4" aria-hidden="true"><path d="M6 2H2v4m8-4h4v4M2 10v4h4m8-4v4h-4" /></svg></button></figcaption>
             </figure>
             <div className="design-product__actions">
               <Link to={productPageHref[id]!}>О продукте <span aria-hidden="true">↗</span></Link>
-              <button type="button" onClick={e => {trigger.current = e.currentTarget; setDemo(productDemoById[id]);}} aria-label={`Видео: ${product.title}`}>
+              <button type="button" onClick={e => {trigger.current = e.currentTarget; setDemo(productDemoById[id]);}} aria-label={`Видео ${productDemoById[id].durationLabel}: ${product.title}`}>
                 <svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="m5 3 8 5-8 5Z" fill="currentColor" /></svg>
                 Видео <span>{productDemoById[id].durationLabel}</span>
               </button>

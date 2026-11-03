@@ -10,8 +10,8 @@ export function DesignHero() {
     <section ref={ref} className="design-hero" id="top" aria-labelledby="hero-title">
       <div className="container design-hero__grid">
         <div className="design-hero__copy">
-          <h1 id="hero-title">ИИ-платформа<br />для обращений<br />и работы с речью</h1>
-          <p className="design-hero__lead">ИИ-агент, контактный центр, речевая аналитика и протоколирование — в инфраструктуре вашей организации.</p>
+          <h1 id="hero-title">ИИ-платформа<br />для обработки<br />обращений</h1>
+          <p className="design-hero__lead">Автоматизируйте звонки и сообщения, помогайте операторам и анализируйте диалоги. ИИ-агент, контактный центр, речевая аналитика и протоколирование — в инфраструктуре вашей организации.</p>
           <div className="design-hero__actions">
             <Button href="#products">Выбрать решение <span aria-hidden="true">↗</span></Button>
             <a href="#platform" className="design-text-link">Как работает платформа <span aria-hidden="true">↓</span></a>

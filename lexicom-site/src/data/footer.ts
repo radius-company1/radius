@@ -22,6 +22,7 @@ export const footerDirections = [
 
 export const footerCompany = [
   { label: 'О Lexicom', href: '#about' },
+  { label: 'Сведения о компании', href: '/company' },
   { label: 'Кейсы', href: '#cases' },
   { label: 'Внедрение', href: '#implementation' },
   { label: 'Карьера', href: '#contact' },
@@ -29,7 +30,7 @@ export const footerCompany = [
 ] as const;
 
 export const footerLegal = [
-  { label: 'Реквизиты', href: '#' },
+  { label: 'Реквизиты', href: '/company' },
   { label: 'Политика обработки персональных данных', href: '#' },
   { label: 'Согласие на обработку персональных данных', href: '#' },
   { label: 'Политика использования файлов cookie', href: '#' },

@@ -1,6 +1,5 @@
-import { mfcDemoState, mfcPageMeta } from '../data/directions/mfc';
+import { mfcDemoState } from '../data/directions/mfc';
 import { scrollBelowChrome } from '../hooks/scrollBelowChrome';
-import { usePageMeta } from '../hooks/usePageMeta';
 import { Footer } from '../components/Footer';
 import { MfcAnalytics } from '../components/mfc/MfcAnalytics';
 import { MfcCitizenTopics } from '../components/mfc/MfcCitizenTopics';
@@ -16,7 +15,6 @@ import { MfcOnPrem } from '../components/mfc/MfcOnPrem';
 import { MfcScenarios } from '../components/mfc/MfcScenarios';
 
 export function MfcPage() {
-  usePageMeta(mfcPageMeta);
 
   const scrollToForm = () => {
     const form = document.getElementById(mfcDemoState.formAnchor);

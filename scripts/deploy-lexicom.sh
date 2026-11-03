@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 # Publish lexicom-site → lexicom/ for GitHub Pages (radius-company1/radius).
-# SPA route stubs (mfc/122/edds/social/utilities/products/contact-center/products/neurobot/design-preview) are produced by Vite — do not hand-edit them.
+# Static route HTML is produced by the prerender build — do not hand-edit it.
 set -euo pipefail
 
 ROOT="$(cd "$(dirname "$0")/.." && pwd)"
@@ -10,17 +10,17 @@ PAGES="$ROOT/lexicom"
 cd "$SITE"
 npm run build
 
-# Full replace of Pages tree from dist (stubs + assets stay in sync)
+# Full replace of Pages tree from dist (HTML + assets stay in sync)
 rsync -a --delete \
   --filter='P .gitkeep' \
   "$SITE/dist/" "$PAGES/"
 
 # Sanity: nested route HTML must reference the same hashed bundles as root
 root_js="$(grep -oE 'assets/index-[^"]+\.js' "$PAGES/index.html" | head -1)"
-for route in mfc 122 edds social utilities business education products/contact-center products/neurobot products/speech-analytics products/protocol products/ekc-110 design-preview; do
+for route in company mfc 122 edds social utilities business education products/contact-center products/neurobot products/speech-analytics products/protocol products/ekc-110 design-preview; do
   stub="$PAGES/$route/index.html"
   if [[ ! -f "$stub" ]]; then
-    echo "ERROR: missing SPA stub $stub" >&2
+    echo "ERROR: missing static route $stub" >&2
     exit 1
   fi
   stub_js="$(grep -oE 'assets/index-[^"]+\.js' "$stub" | head -1)"

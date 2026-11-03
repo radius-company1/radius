@@ -2,9 +2,9 @@ import { presentationShots } from './presentationShots';
 import type { ContactCenterShot } from './contactCenterPage';
 
 export const protocolPageMeta = {
-  title: 'Протоколирование Lexicom — стенограмма и протокол по записи совещания',
+  title: 'Протоколирование совещаний и заседаний с ИИ — Lexicom',
   description:
-    'Протоколирование Lexicom распознаёт речь в аудио- и видеозаписях, разделяет участников, формирует стенограмму и готовит протокол с задачами, ответственными и сроками. Развёртывание в инфраструктуре заказчика.',
+    'Превращайте записи совещаний и заседаний в текст и проекты протоколов. Протоколирование Lexicom в инфраструктуре организации с проверкой результата сотрудником.',
   canonicalPath: '/products/protocol',
 } as const;
 

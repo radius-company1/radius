@@ -290,6 +290,8 @@
   list-style: none;
 }
 .about__points > .reveal { display: flex; min-width: 0; }
+.about__activity { margin: 0 0 1.15rem; max-width: 80ch; font-size: 0.98rem; }
+.about__activity a { color: var(--color-blue); text-decoration: underline; text-underline-offset: 2px; white-space: nowrap; }
 .about-card { padding: 1.05rem 1.15rem; height: 100%; }
 .about-card h3 { margin: 0 0 0.35rem; font-size: 1.02rem; }
 .about-card p { margin: 0; color: var(--color-text-muted); font-size: 0.92rem; }

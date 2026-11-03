@@ -1,3 +1,4 @@
+import { useClientReady } from '../hooks/useClientReady';
 import { useEffect, useId, useRef, useState, type FormEvent, type RefObject } from 'react';
 import { createPortal } from 'react-dom';
 import { chatSuggestions, getChatResponse, type ChatMessage } from '../data/chat';
@@ -17,6 +18,7 @@ const welcomeMessage: ChatMessage = {
 };
 
 export function ChatWidget({ open, onClose, returnFocusRef }: ChatWidgetProps) {
+  const clientReady = useClientReady();
   const [messages, setMessages] = useState<ChatMessage[]>([welcomeMessage]);
   const [input, setInput] = useState('');
   const listRef = useRef<HTMLDivElement>(null);
@@ -91,7 +93,7 @@ export function ChatWidget({ open, onClose, returnFocusRef }: ChatWidgetProps) {
     sendMessage(input);
   };
 
-  if (typeof document === 'undefined') return null;
+  if (!clientReady || typeof document === 'undefined') return null;
 
   return createPortal(
     <dialog

@@ -17,16 +17,13 @@ import {
   saQualityPoints,
   saQualityShot,
   speechAnalyticsAnchors,
-  speechAnalyticsPageMeta,
   type SpeechAnalyticsShot,
 } from '../data/speechAnalyticsPage';
 import { scrollToProductForm } from '../hooks/scrollBelowChrome';
-import { usePageMeta } from '../hooks/usePageMeta';
 
 const speechAnalyticsDemo = productDemoById['speech-analytics'];
 
 export function SpeechAnalyticsPage() {
-  usePageMeta(speechAnalyticsPageMeta);
 
   const [activeDemo, setActiveDemo] = useState<ProductDemo | null>(null);
   const [activeImage, setActiveImage] = useState<LightboxImage | null>(null);

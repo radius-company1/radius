@@ -1,6 +1,5 @@
 import { scrollBelowChrome } from '../hooks/scrollBelowChrome';
-import { socialDemoState, socialPageMeta } from '../data/directions/social';
-import { usePageMeta } from '../hooks/usePageMeta';
+import { socialDemoState } from '../data/directions/social';
 import { Footer } from '../components/Footer';
 import { SocialAnalytics } from '../components/social/SocialAnalytics';
 import { SocialCase } from '../components/social/SocialCase';
@@ -18,7 +17,6 @@ import { SocialTrustBar } from '../components/social/SocialTrustBar';
 import { SocialVendor } from '../components/social/SocialVendor';
 
 export function SocialPage() {
-  usePageMeta(socialPageMeta);
 
   const scrollToForm = () => {
     const form = document.getElementById(socialDemoState.formAnchor);

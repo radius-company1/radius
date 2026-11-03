@@ -1,4 +1,6 @@
+import { useClientReady } from '../hooks/useClientReady';
 import { useState, type FormEvent } from 'react';
+import { companyContacts } from '../data/company';
 import { Button } from './ui/Button';
 
 type ContactFormProps = {
@@ -32,7 +34,7 @@ const initialState: FormState = {
 };
 
 export function ContactForm({
-  id = 'contact',
+  id = 'contact-form',
   organizationLabel = 'Организация',
   messageRequired = true,
   submitLabel = 'Отправить заявку',
@@ -40,6 +42,7 @@ export function ContactForm({
   product,
   contactFields = 'separate',
 }: ContactFormProps) {
+  const clientReady = useClientReady();
   const [form, setForm] = useState<FormState>(initialState);
   const [status, setStatus] = useState<'idle' | 'error'>('idle');
 
@@ -50,94 +53,97 @@ export function ContactForm({
   };
 
   return (
-    <form className="contact-form" id={id} onSubmit={handleSubmit} noValidate>
-      {direction ? <input type="hidden" name="direction" value={direction} /> : null}
-      {product ? (
-        <>
-          <input type="hidden" name="product" value={product} />
-          <input type="hidden" name="page" value={window.location.origin + window.location.pathname} />
-        </>
-      ) : null}
-      <div className="contact-form__grid">
-        <label className="field">
-          <span>{organizationLabel}</span>
-          <input
-            type="text"
-            name="organization"
-            required
-            value={form.organization}
-            onChange={(e) => setForm({ ...form, organization: e.target.value })}
-            autoComplete="organization"
-          />
-        </label>
-        <label className="field">
-          <span>Имя</span>
-          <input
-            type="text"
-            name="name"
-            required
-            value={form.name}
-            onChange={(e) => setForm({ ...form, name: e.target.value })}
-            autoComplete="name"
-          />
-        </label>
-        {contactFields === 'combined' ? (
-          <label className="field field--full">
-            <span>Телефон или email</span>
+    <form className="contact-form" id={id} onSubmit={handleSubmit} method="post" noValidate>
+      <fieldset disabled={!clientReady} style={{ border: 0, padding: 0, margin: 0, minWidth: 0 }}>
+        {direction ? <input type="hidden" name="direction" value={direction} /> : null}
+        {product ? (
+          <>
+            <input type="hidden" name="product" value={product} />
+            <input type="hidden" name="page" value={clientReady ? window.location.origin + window.location.pathname : ''} />
+          </>
+        ) : null}
+        <div className="contact-form__grid">
+          <label className="field">
+            <span>{organizationLabel}</span>
             <input
               type="text"
-              name="contact"
+              name="organization"
               required
-              value={form.contact}
-              onChange={(e) => setForm({ ...form, contact: e.target.value })}
-              autoComplete="email"
+              value={form.organization}
+              onChange={(e) => setForm({ ...form, organization: e.target.value })}
+              autoComplete="organization"
             />
           </label>
-        ) : (
-          <>
-            <label className="field">
-              <span>Телефон</span>
+          <label className="field">
+            <span>Имя</span>
+            <input
+              type="text"
+              name="name"
+              required
+              value={form.name}
+              onChange={(e) => setForm({ ...form, name: e.target.value })}
+              autoComplete="name"
+            />
+          </label>
+          {contactFields === 'combined' ? (
+            <label className="field field--full">
+              <span>Телефон или email</span>
               <input
-                type="tel"
-                name="phone"
+                type="text"
+                name="contact"
                 required
-                value={form.phone}
-                onChange={(e) => setForm({ ...form, phone: e.target.value })}
-                autoComplete="tel"
-              />
-            </label>
-            <label className="field">
-              <span>Email</span>
-              <input
-                type="email"
-                name="email"
-                required
-                value={form.email}
-                onChange={(e) => setForm({ ...form, email: e.target.value })}
+                value={form.contact}
+                onChange={(e) => setForm({ ...form, contact: e.target.value })}
                 autoComplete="email"
               />
             </label>
-          </>
-        )}
-        <label className="field field--full">
-          <span>Краткое описание задачи{messageRequired ? '' : ' — необязательно'}</span>
-          <textarea
-            name="message"
-            rows={4}
-            required={messageRequired}
-            value={form.message}
-            onChange={(e) => setForm({ ...form, message: e.target.value })}
-          />
-        </label>
-      </div>
-      {status === 'error' ? (
-        <p className="contact-form__notice" role="status">
-          Форма заявки пока не подключена к отправке. Напишите на{' '}
-          <a href="mailto:info@lexicom.ai">info@lexicom.ai</a> или позвоните по телефону{' '}
-          <a href="tel:+74999578132">+7 (499) 957-81-32</a>.
-        </p>
-      ) : null}
-      <Button type="submit">{submitLabel}</Button>
+          ) : (
+            <>
+              <label className="field">
+                <span>Телефон</span>
+                <input
+                  type="tel"
+                  name="phone"
+                  required
+                  value={form.phone}
+                  onChange={(e) => setForm({ ...form, phone: e.target.value })}
+                  autoComplete="tel"
+                />
+              </label>
+              <label className="field">
+                <span>Email</span>
+                <input
+                  type="email"
+                  name="email"
+                  required
+                  value={form.email}
+                  onChange={(e) => setForm({ ...form, email: e.target.value })}
+                  autoComplete="email"
+                />
+              </label>
+            </>
+          )}
+          <label className="field field--full">
+            <span>Краткое описание задачи{messageRequired ? '' : ' — необязательно'}</span>
+            <textarea
+              name="message"
+              rows={4}
+              required={messageRequired}
+              value={form.message}
+              onChange={(e) => setForm({ ...form, message: e.target.value })}
+            />
+          </label>
+        </div>
+        {status === 'error' ? (
+          <p className="contact-form__notice" role="status">
+            Форма заявки пока не подключена к отправке. Напишите на{' '}
+            <a href={`mailto:${companyContacts.email}`}>{companyContacts.email}</a> или позвоните по телефону{' '}
+            <a href={companyContacts.phoneHref}>{companyContacts.phone}</a>.
+          </p>
+        ) : null}
+        <Button type="submit" disabled={!clientReady}>{submitLabel}</Button>
+      </fieldset>
+      <noscript><p>Отправка через форму пока недоступна. Напишите на <a href={`mailto:${companyContacts.email}`}>{companyContacts.email}</a> или позвоните <a href={companyContacts.phoneHref}>{companyContacts.phone}</a>.</p></noscript>
     </form>
   );
 }

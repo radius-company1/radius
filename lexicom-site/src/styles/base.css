@@ -361,6 +361,7 @@ body.chat-is-open {
 .site-footer__legal-links a { font-size: 0.82rem; color: rgba(238, 243, 255, 0.75); }
 .site-footer__legal-links a:hover { color: #fff; }
 .site-footer__status p { margin: 0 0 0.4rem; font-size: 0.82rem; color: rgba(238, 243, 255, 0.72); max-width: 60ch; }
+.site-footer__status a { color: inherit; text-decoration: underline; text-underline-offset: 2px; }
 .site-footer__copy { margin: 1.1rem 0 0; font-size: 0.82rem; color: rgba(238, 243, 255, 0.6); }
 
 /* Profile */

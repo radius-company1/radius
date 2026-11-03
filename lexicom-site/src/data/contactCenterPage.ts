@@ -2,9 +2,9 @@ import { presentationShots } from './presentationShots';
 import { productHref } from './products';
 
 export const contactCenterPageMeta = {
-  title: 'Контактный центр Lexicom — ИИ-помощь оператору',
+  title: 'Платформа контактного центра с ИИ-помощником — Lexicom',
   description:
-    'Контактный центр Lexicom: звонки и текстовые обращения в одном рабочем пространстве, очереди, история взаимодействий и ИИ-суфлёр. Развёртывание в инфраструктуре заказчика.',
+    'Контактный центр Lexicom объединяет звонки и текстовые обращения. Рабочее место оператора, маршрутизация, история диалогов и ИИ-подсказки.',
   canonicalPath: '/products/contact-center',
 } as const;
 

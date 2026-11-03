@@ -1,3 +1,4 @@
+import { useClientReady } from '../hooks/useClientReady';
 import { useDialogDismiss } from '../hooks/useDialogDismiss';
 import { useEffect, useId, useRef, useState, type RefObject } from 'react';
 import { createPortal } from 'react-dom';
@@ -17,6 +18,7 @@ type ImageLightboxProps = {
 };
 
 export function ImageLightbox({ image, onClose, returnFocusRef }: ImageLightboxProps) {
+  const clientReady = useClientReady();
   const dialogRef = useRef<HTMLDialogElement>(null);
   const closeRef = useRef<HTMLButtonElement>(null);
   const titleId = useId();
@@ -60,7 +62,7 @@ export function ImageLightbox({ image, onClose, returnFocusRef }: ImageLightboxP
     };
   }, [image, dismiss, returnFocusRef]);
 
-  if (typeof document === 'undefined') return null;
+  if (!clientReady || typeof document === 'undefined') return null;
 
   return createPortal(
     <dialog

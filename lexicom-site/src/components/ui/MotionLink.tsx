@@ -4,6 +4,9 @@ import { useViewTransitionNavigate } from '../../hooks/useViewTransitionNavigate
 
 /** Internal navigation shares one transition policy; modified clicks remain native. */
 export const MotionLink = forwardRef<HTMLAnchorElement, LinkProps>(function MotionLink({ onClick, ...props }, ref) {
+  if (typeof props.to === 'string' && /^\/(?!\/)/.test(props.to)) {
+    props = { ...props, to: props.to.replace(/^([^?#]*[^/])([?#].*)?$/, '$1/$2') };
+  }
   const { onLinkClick } = useViewTransitionNavigate();
   return <Link ref={ref} {...props} onClick={event => {
     onClick?.(event);

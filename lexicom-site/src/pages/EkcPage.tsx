@@ -11,12 +11,10 @@ import {
   EkcTraining,
 } from '../components/ekc/EkcSections';
 import { Footer } from '../components/Footer';
-import { ekcAnchors, ekcPageMeta } from '../data/ekcPage';
+import { ekcAnchors } from '../data/ekcPage';
 import { scrollBelowChrome, scrollToProductForm } from '../hooks/scrollBelowChrome';
-import { usePageMeta } from '../hooks/usePageMeta';
 
 export function EkcPage() {
-  usePageMeta(ekcPageMeta);
 
   const scrollToForm = useCallback(() => scrollToProductForm(ekcAnchors.finalTitle, ekcAnchors.form), []);
   const scrollToScope = useCallback(() => {

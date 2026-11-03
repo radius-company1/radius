@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+# Preview pages carry noindex; crawling must stay allowed to read it.

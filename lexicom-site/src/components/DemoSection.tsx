@@ -1,5 +1,6 @@
 import { type RefObject } from 'react';
 import { Button } from './ui/Button';
+import { companyContacts } from '../data/company';
 import { ContactForm } from './ContactForm';
 import { GlassSurface } from './ui/GlassSurface';
 import { Reveal } from './ui/Reveal';
@@ -23,7 +24,7 @@ export function DemoSection({ onOpenChat, openChatRef }: DemoSectionProps) {
         </Reveal>
 
         <div className="final-contact-methods">
-          <div><a href="mailto:info@lexicom.ai">info@lexicom.ai <span aria-hidden="true">↗</span></a><a href="tel:+74999578132">+7 (499) 957-81-32 <span aria-hidden="true">↗</span></a></div>
+          <div><a href={`mailto:${companyContacts.email}`}>{companyContacts.email} <span aria-hidden="true">↗</span></a><a href={companyContacts.phoneHref}>{companyContacts.phone} <span aria-hidden="true">↗</span></a></div>
           <p>Отправка через форму пока не подключена. Связаться можно по email или телефону.</p>
         </div>
 

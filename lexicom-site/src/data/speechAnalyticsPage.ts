@@ -3,9 +3,9 @@ import type { ContactCenterShot } from './contactCenterPage';
 import { productHref } from './products';
 
 export const speechAnalyticsPageMeta = {
-  title: 'Речевая аналитика Lexicom — анализ разговоров и качества обслуживания',
+  title: 'Речевая аналитика звонков и контроль качества — Lexicom',
   description:
-    'Речевая аналитика Lexicom расшифровывает разговоры, оценивает работу операторов по чек-листам заказчика, определяет темы и причины обращений и формирует рекомендации. Развёртывание в инфраструктуре заказчика.',
+    'Анализ разговоров и качества обслуживания с речевой аналитикой Lexicom. Темы обращений, оценка по вашим критериям и поиск проблемных диалогов.',
   canonicalPath: '/products/speech-analytics',
 } as const;
 

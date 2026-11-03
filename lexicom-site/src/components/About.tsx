@@ -1,4 +1,6 @@
 import { aboutPoints, aboutRoadmapNote } from '../data/about';
+import { companyActivity } from '../data/company';
+import { MotionLink as Link } from './ui/MotionLink';
 import { Reveal } from './ui/Reveal';
 import { SectionHeader } from './ui/SectionHeader';
 
@@ -12,6 +14,13 @@ export function About() {
             titleId="about-title"
             description="Резидент ИТ-кластера Фонда «Сколково». Lexicom Omnichannel Platform — в Реестре российского ПО №11115."
           />
+        </Reveal>
+
+        <Reveal>
+          <p className="about__activity">
+            {companyActivity}{' '}
+            <Link to="/company">Сведения о компании</Link>
+          </p>
         </Reveal>
 
         <div className="about__points">

@@ -1,7 +1,6 @@
 import { CustomerCase } from '../components/CustomerCase';
-import { s122DemoState, s122PageMeta } from '../data/directions/s122';
+import { s122DemoState } from '../data/directions/s122';
 import { scrollBelowChrome } from '../hooks/scrollBelowChrome';
-import { usePageMeta } from '../hooks/usePageMeta';
 import { Footer } from '../components/Footer';
 import { S122Analytics } from '../components/s122/S122Analytics';
 import { S122Dialogue } from '../components/s122/S122Dialogue';
@@ -18,7 +17,6 @@ import { S122Scenarios } from '../components/s122/S122Scenarios';
 import { S122TrustBar } from '../components/s122/S122TrustBar';
 
 export function S122Page() {
-  usePageMeta(s122PageMeta);
 
   const scrollToDialogue = () => {
     const el = document.getElementById(s122DemoState.dialogueAnchor);

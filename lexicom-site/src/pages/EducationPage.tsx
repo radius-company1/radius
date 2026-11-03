@@ -13,13 +13,11 @@ import {
 } from '../components/education/EducationSections';
 import { Footer } from '../components/Footer';
 import { VideoDemoModal } from '../components/VideoDemoModal';
-import { educationAnchors, educationCase, educationPageMeta } from '../data/directions/education';
+import { educationAnchors, educationCase } from '../data/directions/education';
 import type { ProductDemo } from '../data/productDemos';
 import { scrollBelowChrome, scrollToProductForm } from '../hooks/scrollBelowChrome';
-import { usePageMeta } from '../hooks/usePageMeta';
 
 export function EducationPage() {
-  usePageMeta(educationPageMeta);
   const [activeDemo, setActiveDemo] = useState<ProductDemo | null>(null);
   const returnFocusRef = useRef<HTMLButtonElement | null>(null);
 

@@ -17,16 +17,13 @@ import {
   prProtocolPoints,
   prProtocolShot,
   protocolAnchors,
-  protocolPageMeta,
   type ProtocolShot,
 } from '../data/protocolPage';
 import { scrollToProductForm } from '../hooks/scrollBelowChrome';
-import { usePageMeta } from '../hooks/usePageMeta';
 
 const protocolDemo = productDemoById.protocol;
 
 export function ProtocolPage() {
-  usePageMeta(protocolPageMeta);
 
   const [activeDemo, setActiveDemo] = useState<ProductDemo | null>(null);
   const [activeImage, setActiveImage] = useState<LightboxImage | null>(null);

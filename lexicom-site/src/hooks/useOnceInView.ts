@@ -9,11 +9,13 @@ export function useOnceInView<T extends HTMLElement>(className = 'is-visible') {
     const preference = matchMedia('(prefers-reduced-motion: reduce)');
     let observer: IntersectionObserver | undefined;
     const show = () => { node.classList.add(className); observer?.disconnect(); };
+    const visibleOnArrival = node.getBoundingClientRect().top < window.innerHeight;
     const change = () => { if (preference.matches) show(); };
-    if (preference.matches || !('IntersectionObserver' in window)) show();
+    if (preference.matches || !('IntersectionObserver' in window) || visibleOnArrival) show();
     else {
       observer = new IntersectionObserver(([entry]) => { if (entry.isIntersecting) show(); },
         { threshold: 0, rootMargin: '0px 0px -24px 0px' });
+      node.dataset.revealPending = '';
       observer.observe(node);
     }
     preference.addEventListener('change', change);

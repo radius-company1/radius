@@ -1,5 +1,4 @@
-import { utilitiesDemoState, utilitiesPageMeta } from '../data/directions/utilities';
-import { usePageMeta } from '../hooks/usePageMeta';
+import { utilitiesDemoState } from '../data/directions/utilities';
 import { Footer } from '../components/Footer';
 import { UtilitiesAnalytics } from '../components/utilities/UtilitiesAnalytics';
 import { UtilitiesCase } from '../components/utilities/UtilitiesCase';
@@ -18,7 +17,6 @@ import { UtilitiesProofStrip } from '../components/utilities/UtilitiesProofStrip
 import { UtilitiesVendor } from '../components/utilities/UtilitiesVendor';
 
 export function UtilitiesPage() {
-  usePageMeta(utilitiesPageMeta);
 
   const scrollBelowChrome = (element: HTMLElement, onDone?: () => void) => {
     const desiredTop = () => {

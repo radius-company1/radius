@@ -3,9 +3,9 @@ import type { ProductDemo } from '../productDemos';
 import { productHref, type ProductId } from '../products';
 
 export const businessPageMeta = {
-  title: 'Lexicom для бизнеса — ИИ-коммуникации под ваши процессы',
+  title: 'Автоматизация клиентского сервиса и обращений — Lexicom',
   description:
-    'ИИ-агент, контактный центр с ИИ-суфлёром, речевая аналитика и протоколирование. Адаптация собственного ПО Lexicom, интеграции и развёртывание в инфраструктуре заказчика.',
+    'ИИ для клиентского сервиса, продаж и поддержки: обработка звонков и сообщений, помощь сотрудникам и анализ качества коммуникаций. Решения Lexicom для бизнеса.',
   canonicalPath: '/business',
 } as const;
 

@@ -10,15 +10,13 @@ import { NbInfrastructure } from '../components/neurobot/NbInfrastructure';
 import { NbProcess } from '../components/neurobot/NbProcess';
 import { NbTeamwork } from '../components/neurobot/NbTeamwork';
 import { VideoDemoModal } from '../components/VideoDemoModal';
-import { neurobotAnchors, neurobotPageMeta } from '../data/neurobotPage';
+import { neurobotAnchors } from '../data/neurobotPage';
 import { productDemoById, type ProductDemo } from '../data/productDemos';
 import { scrollToProductForm } from '../hooks/scrollBelowChrome';
-import { usePageMeta } from '../hooks/usePageMeta';
 
 const neurobotDemo = productDemoById.neurobot;
 
 export function NeurobotPage() {
-  usePageMeta(neurobotPageMeta);
 
   const [activeDemo, setActiveDemo] = useState<ProductDemo | null>(null);
   const returnFocusRef = useRef<HTMLElement | null>(null);

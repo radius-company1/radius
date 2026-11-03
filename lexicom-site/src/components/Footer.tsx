@@ -1,9 +1,11 @@
 import { useLocation } from 'react-router-dom';
 import { MotionLink as Link } from './ui/MotionLink';
+import { companyContacts, companyLegal, companySoftwareRights } from '../data/company';
 import { footerCompany, footerDirections, footerLegal, footerPlatform } from '../data/footer';
 import { Logo } from './ui/Logo';
 
 function sectionHref(hash: string, isHome: boolean) {
+  if (hash.startsWith('/')) return hash;
   const clean = hash.startsWith('#') ? hash : `#${hash}`;
   return isHome ? clean : `/${clean}`;
 }
@@ -56,14 +58,12 @@ export function Footer() {
         <div className="site-footer__contacts">
           <h3 className="site-footer__heading">Контакты</h3>
           <p>
-            <a href="tel:+74999578132">+7 (499) 957-81-32</a>
+            <a href={companyContacts.phoneHref}>{companyContacts.phone}</a>
           </p>
           <p>
-            <a href="mailto:info@lexicom.ai">info@lexicom.ai</a>
+            <a href={`mailto:${companyContacts.email}`}>{companyContacts.email}</a>
           </p>
-          <p className="site-footer__address">
-            121205, г. Москва, территория Сколково Инновационного Центра, ул. Нобеля, дом 7, помещение 75
-          </p>
+          <p className="site-footer__address">{companyLegal.address}</p>
         </div>
       </div>
 
@@ -71,18 +71,31 @@ export function Footer() {
         <ul className="site-footer__legal-links">
           {footerLegal.map((item) => (
             <li key={item.label}>
-              <a href={item.href}>{item.label}</a>
+              {item.href.startsWith('/') ? (
+                <Link to={item.href}>{item.label}</Link>
+              ) : (
+                <a href={item.href}>{item.label}</a>
+              )}
             </li>
           ))}
         </ul>
 
         <div className="site-footer__status">
-          <p>Lexicom Omnichannel Platform включена в Реестр российского программного обеспечения под №11115.</p>
+          <p>
+            Lexicom Omnichannel Platform включена в{' '}
+            <a href={companySoftwareRights.registryUrl} target="_blank" rel="noreferrer">
+              единый реестр российских программ
+            </a>{' '}
+            под № 11115 от 20.07.2021, классы 05.08 и 05.09.
+          </p>
           <p>Lexicom — резидент ИТ-кластера Фонда «Сколково».</p>
           <p>Деятельность осуществляется при грантовой поддержке Фонда «Сколково».</p>
+          <p>
+            {companyLegal.shortName} · ИНН {companyLegal.inn} · КПП {companyLegal.kpp} · ОГРН {companyLegal.ogrn}
+          </p>
         </div>
 
-        <p className="site-footer__copy">© Lexicom. Все права защищены.</p>
+        <p className="site-footer__copy">© {companyLegal.shortName}. Все права защищены.</p>
       </div>
     </footer>
   );

@@ -6,9 +6,11 @@
   "scripts": {
     "dev": "vite",
     "dev:clean": "rm -rf node_modules/.vite && vite --force",
-    "build": "tsc -b && vite build",
+    "build": "tsc -b && vite build && vite build --ssr src/entry-server.tsx --outDir .prerender && node scripts/prerender.mjs",
     "lint": "oxlint",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "build:launch": "tsc -b && vite build --mode launch && vite build --mode launch --ssr src/entry-server.tsx --outDir .prerender && node scripts/prerender.mjs --launch",
+    "verify:launch": "node scripts/verify-launch.mjs"
   },
   "dependencies": {
     "@fontsource-variable/onest": "^5.3.1",
