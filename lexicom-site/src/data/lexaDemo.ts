@@ -4,9 +4,9 @@
  * Телефон отдела продаж здесь не хранится.
  */
 export const lexaDemoLine = {
-  displayNumber: '+7 (000) 000-00-00',
-  tel: '+70000000000',
-  callAvailable: false,
+  displayNumber: '+7 (499) 113-41-15',
+  tel: '+74991134115',
+  callAvailable: true,
 } as const;
 
 export const lexaDemoId = 'lexa-demo';

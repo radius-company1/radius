@@ -1,6 +1,7 @@
 import { Reveal } from './ui/Reveal';
 import { MotionLink as Link } from './ui/MotionLink';
 import { customerCases, s122CaseScenarios } from '../data/cases';
+import { kuzbassMfcCase } from '../data/mfcCases';
 import { GlassSurface } from './ui/GlassSurface';
 import { SectionHeader } from './ui/SectionHeader';
 import '../styles/customer-cases.css';
@@ -26,5 +27,5 @@ export function CustomerCase({ index }: { index: 0 | 1 | 2 }) {
 }
 
 export function CustomerCaseLinks() {
-  return <div className="customer-case-links"><h3>Примеры внедрений</h3><ul>{customerCases.map(item => <li key={item.id}><Link to={item.to}>{item.title}<span>{item.value} — {item.label} →</span></Link></li>)}</ul></div>;
+  return <div className="customer-case-links"><h3>Примеры внедрений</h3><ul><li><Link to={kuzbassMfcCase.href}>{kuzbassMfcCase.title}<span>Поиск ответов по {kuzbassMfcCase.documents} нормативным документам →</span></Link></li>{customerCases.map(item => <li key={item.id}><Link to={item.to}>{item.title}<span>{item.value} — {item.label} →</span></Link></li>)}</ul></div>;
 }

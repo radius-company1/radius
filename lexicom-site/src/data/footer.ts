@@ -31,7 +31,7 @@ export const footerCompany = [
 
 export const footerLegal = [
   { label: 'Реквизиты', href: '/company' },
-  { label: 'Политика обработки персональных данных', href: '#' },
-  { label: 'Согласие на обработку персональных данных', href: '#' },
-  { label: 'Политика использования файлов cookie', href: '#' },
+  { label: 'Политика обработки персональных данных', href: '/privacy' },
+  { label: 'Согласие на обработку персональных данных', href: '/consent' },
+  { label: 'Политика использования файлов cookie', href: '/cookies' },
 ] as const;

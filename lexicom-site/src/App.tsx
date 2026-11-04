@@ -5,6 +5,8 @@ import { SiteShell } from './components/SiteShell';
 import { DesignPreviewPage } from './design-preview/DesignPreviewPage';
 import { BusinessPage } from './pages/BusinessPage';
 import { CompanyPage } from './pages/CompanyPage';
+import { LegalPage } from './pages/LegalPage';
+import { consentDocument, cookiePolicy, privacyPolicy } from './data/legal';
 import { ContactCenterPage } from './pages/ContactCenterPage';
 import { EddsPage } from './pages/EddsPage';
 import { EducationPage } from './pages/EducationPage';
@@ -26,6 +28,9 @@ export function AppRoutes() {
         <Route element={<SiteShell />}>
           <Route path="/" element={<HomePage />} />
           <Route path="/company" element={<CompanyPage />} />
+          <Route path="/privacy" element={<LegalPage doc={privacyPolicy} />} />
+          <Route path="/consent" element={<LegalPage doc={consentDocument} />} />
+          <Route path="/cookies" element={<LegalPage doc={cookiePolicy} />} />
           <Route path="/business" element={<BusinessPage />} />
           <Route path="/education" element={<EducationPage />} />
           <Route path="/mfc" element={<MfcPage />} />

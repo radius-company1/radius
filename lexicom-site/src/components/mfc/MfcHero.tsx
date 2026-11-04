@@ -1,4 +1,7 @@
 import { Button } from '../ui/Button';
+import { MotionLink as Link } from '../ui/MotionLink';
+import { kuzbassMfcCase } from '../../data/mfcCases';
+import '../../styles/mfc-case.css';
 import { GlassSurface } from '../ui/GlassSurface';
 import { Reveal } from '../ui/Reveal';
 import { mfcDemoState, mfcHeroMetrics } from '../../data/directions/mfc';
@@ -54,6 +57,11 @@ export function MfcHero({ onRequestDemo, onDiscuss }: MfcHeroProps) {
                   Обсудить проект
                 </Button>
               </div>
+            </Reveal>
+            <Reveal>
+              <Link className="mfc-case-hero-link" to={kuzbassMfcCase.href}>
+                Помощник МФЦ Кузбасса — победитель всероссийского конкурса <span aria-hidden="true">→</span>
+              </Link>
             </Reveal>
           </div>
 

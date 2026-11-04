@@ -2,6 +2,7 @@ import { useClientReady } from '../hooks/useClientReady';
 import { useState, type FormEvent } from 'react';
 import { companyContacts } from '../data/company';
 import { Button } from './ui/Button';
+import { MotionLink as Link } from './ui/MotionLink';
 
 type ContactFormProps = {
   id?: string;
@@ -45,6 +46,7 @@ export function ContactForm({
   const clientReady = useClientReady();
   const [form, setForm] = useState<FormState>(initialState);
   const [status, setStatus] = useState<'idle' | 'error'>('idle');
+  const [consent, setConsent] = useState(false);
 
   const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
@@ -134,6 +136,26 @@ export function ContactForm({
             />
           </label>
         </div>
+        <label className="contact-form__consent">
+          <input
+            type="checkbox"
+            name="consent"
+            required
+            checked={consent}
+            onChange={(e) => setConsent(e.target.checked)}
+          />
+          <span>
+            Даю{' '}
+            <Link to="/consent" target="_blank" rel="noopener">
+              согласие на обработку персональных данных
+            </Link>{' '}
+            и подтверждаю, что ознакомлен(а) с{' '}
+            <Link to="/privacy" target="_blank" rel="noopener">
+              Политикой обработки персональных данных
+            </Link>
+            .
+          </span>
+        </label>
         {status === 'error' ? (
           <p className="contact-form__notice" role="status">
             Форма заявки пока не подключена к отправке. Напишите на{' '}
@@ -141,7 +163,7 @@ export function ContactForm({
             <a href={companyContacts.phoneHref}>{companyContacts.phone}</a>.
           </p>
         ) : null}
-        <Button type="submit" disabled={!clientReady}>{submitLabel}</Button>
+        <Button type="submit" disabled={!clientReady || !consent}>{submitLabel}</Button>
       </fieldset>
       <noscript><p>Отправка через форму пока недоступна. Напишите на <a href={`mailto:${companyContacts.email}`}>{companyContacts.email}</a> или позвоните <a href={companyContacts.phoneHref}>{companyContacts.phone}</a>.</p></noscript>
     </form>

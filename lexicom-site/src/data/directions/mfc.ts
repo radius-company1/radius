@@ -1,7 +1,9 @@
+import { kuzbassMfcCase } from '../mfcCases';
+
 export const mfcHeroMetrics = [
   { value: '25 регионов', label: 'География решений Lexicom.' },
   { value: '60+ промышленных решений', label: 'Работают на базе платформы.' },
-  { value: 'До 90% типовых запросов', label: 'Может обрабатывать ИИ-ассистент при настроенных сценариях.' },
+  { value: `${kuzbassMfcCase.documents} документа`, label: 'В базе знаний помощника МФЦ Кузбасса.' },
 ] as const;
 
 export const mfcTopics = [
@@ -244,20 +246,6 @@ export const mfcImplementationSteps = [
   },
 ] as const;
 
-/** Профильный кейс — шаблон для внутреннего обсуждения. Перед публикацией требует заполнения заказчика, региона, состава, масштаба и эффекта. */
-export const mfcCasePlaceholder = {
-  status: 'draft-for-internal-review' as const,
-  requiresFillBeforePublish: true,
-  fields: {
-    task: '—',
-    region: '—',
-    solution: '—',
-    scale: '—',
-    result: '—',
-  },
-  note: 'Профильный кейс будет добавлен после согласования заказчика, состава внедрения, масштаба и публичных результатов.',
-} as const;
-
 export const mfcFaqItems = [
   {
     question: 'Можно ли начать без замены действующего контактного центра?',
@@ -316,6 +304,6 @@ export const mfcDemoState = {
 export const mfcPageMeta = {
   title: 'Автоматизация звонков и консультаций МФЦ — Lexicom',
   description:
-    'ИИ-агент Lexicom для МФЦ: консультации по документам, подготовка к визиту, запись и информирование. Поддержка операторов и обработка типовых обращений.',
+    'ИИ-агенты Lexicom для консультаций жителей и поддержки сотрудников МФЦ. Кейс Кузбасса: поиск ответов по 1 234 нормативным документам.',
   canonicalPath: '/mfc',
 } as const;

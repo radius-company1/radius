@@ -17,7 +17,7 @@ rsync -a --delete \
 
 # Sanity: nested route HTML must reference the same hashed bundles as root
 root_js="$(grep -oE 'assets/index-[^"]+\.js' "$PAGES/index.html" | head -1)"
-for route in company mfc 122 edds social utilities business education products/contact-center products/neurobot products/speech-analytics products/protocol products/ekc-110 design-preview; do
+for route in company privacy consent cookies mfc 122 edds social utilities business education products/contact-center products/neurobot products/speech-analytics products/protocol products/ekc-110 design-preview; do
   stub="$PAGES/$route/index.html"
   if [[ ! -f "$stub" ]]; then
     echo "ERROR: missing static route $stub" >&2

@@ -34,6 +34,7 @@ export function MfcPage() {
     <div className="page-view page-view--direction page-view--mfc" style={{ viewTransitionName: 'page-content' } as React.CSSProperties}>
       <main>
         <MfcHero onRequestDemo={scrollToForm} onDiscuss={scrollToContact} />
+        <MfcExperience />
         <MfcEcosystem />
         <MfcCitizenTopics />
         <MfcScenarios />
@@ -41,7 +42,6 @@ export function MfcPage() {
         <MfcIntegration />
         <MfcAnalytics />
         <MfcOnPrem />
-        <MfcExperience />
         <MfcImplementation />
         <MfcFaq />
         <MfcFinalCta />

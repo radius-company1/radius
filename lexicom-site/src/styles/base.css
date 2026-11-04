@@ -263,6 +263,12 @@ button, input, textarea { font: inherit; color: inherit; }
   box-shadow: 0 0 0 3px rgba(83, 103, 255, 0.14);
 }
 .field--full { grid-column: 1 / -1; }
+.contact-form__consent {
+  display: flex; align-items: flex-start; gap: 0.6rem; margin: 0 0 1.1rem;
+  font-size: 0.84rem; line-height: 1.45; color: var(--color-text-muted); cursor: pointer;
+}
+.contact-form__consent input { flex: none; width: 1.1rem; height: 1.1rem; margin: 0.1rem 0 0; accent-color: var(--color-blue); }
+.contact-form__consent a { color: var(--color-blue); text-decoration: underline; text-underline-offset: 2px; }
 .contact-form--success { text-align: center; }
 .contact-form__success-title { margin: 0 0 0.45rem; font-size: 1.3rem; font-weight: 700; }
 .contact-form__success-text { margin: 0 0 1.1rem; color: var(--color-text-muted); }
