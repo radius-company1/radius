@@ -16,7 +16,12 @@ export function DesignHero() {
             <Button href="#products">Выбрать решение <span aria-hidden="true">↗</span></Button>
             <a href="#platform" className="design-text-link">Как работает платформа <span aria-hidden="true">↓</span></a>
           </div>
-          <p className="design-hero__trust">Собственное российское ПО<br /><span>Данные в контуре заказчика · Реестр ПО №11115</span></p>
+          <div className="design-hero__credentials">
+            <a className="design-hero__skolkovo" href="https://sk.ru/" target="_blank" rel="noopener noreferrer" aria-label="Lexicom — участник проекта «Сколково» (сайт фонда, новая вкладка)">
+              <img src={`${import.meta.env.BASE_URL}brand/skolkovo-participant.png`} width="702" height="206" alt="Сколково — участник проекта" />
+            </a>
+            <p className="design-hero__trust">Собственное российское ПО<br /><span>Данные в контуре заказчика · Реестр ПО №11115</span></p>
+          </div>
         </div>
         <GlassSurface ref={flowRef} className="design-flow motion-flow" radius="xl" tint="cyan">
           <div className="design-flow__heading"><strong>От обращения к результату</strong><span>Lexicom</span></div>
