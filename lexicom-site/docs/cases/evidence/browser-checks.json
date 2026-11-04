@@ -1,0 +1,129 @@
+[
+  {
+    "route": "/",
+    "width": 390,
+    "status": 200,
+    "overflow": false,
+    "errors": []
+  },
+  {
+    "route": "/mfc/",
+    "width": 390,
+    "status": 200,
+    "overflow": false,
+    "errors": []
+  },
+  {
+    "route": "/products/neurobot/",
+    "width": 390,
+    "status": 200,
+    "overflow": false,
+    "errors": []
+  },
+  {
+    "route": "/products/contact-center/",
+    "width": 390,
+    "status": 200,
+    "overflow": false,
+    "errors": []
+  },
+  {
+    "route": "/",
+    "width": 768,
+    "status": 200,
+    "overflow": false,
+    "errors": []
+  },
+  {
+    "route": "/mfc/",
+    "width": 768,
+    "status": 200,
+    "overflow": false,
+    "errors": []
+  },
+  {
+    "route": "/products/neurobot/",
+    "width": 768,
+    "status": 200,
+    "overflow": false,
+    "errors": []
+  },
+  {
+    "route": "/products/contact-center/",
+    "width": 768,
+    "status": 200,
+    "overflow": false,
+    "errors": []
+  },
+  {
+    "route": "/",
+    "width": 1440,
+    "status": 200,
+    "overflow": false,
+    "errors": []
+  },
+  {
+    "test": "axe-new-content",
+    "route": "/",
+    "violations": []
+  },
+  {
+    "route": "/mfc/",
+    "width": 1440,
+    "status": 200,
+    "overflow": false,
+    "errors": []
+  },
+  {
+    "test": "axe-new-content",
+    "route": "/mfc/",
+    "violations": []
+  },
+  {
+    "route": "/products/neurobot/",
+    "width": 1440,
+    "status": 200,
+    "overflow": false,
+    "errors": []
+  },
+  {
+    "test": "axe-new-content",
+    "route": "/products/neurobot/",
+    "violations": []
+  },
+  {
+    "route": "/products/contact-center/",
+    "width": 1440,
+    "status": 200,
+    "overflow": false,
+    "errors": []
+  },
+  {
+    "test": "axe-new-content",
+    "route": "/products/contact-center/",
+    "violations": []
+  },
+  {
+    "test": "home-to-case",
+    "url": "http://127.0.0.1:5275/mfc/#mfc-experience",
+    "top": 153.296875
+  },
+  {
+    "test": "details-keyboard",
+    "open": true
+  },
+  {
+    "test": "context-link",
+    "from": "/products/neurobot/",
+    "url": "http://127.0.0.1:5275/mfc/#mfc-experience"
+  },
+  {
+    "test": "context-link",
+    "from": "/products/contact-center/",
+    "url": "http://127.0.0.1:5275/mfc/#mfc-experience"
+  },
+  {
+    "test": "no-js-case",
+    "pass": true
+  }
+]

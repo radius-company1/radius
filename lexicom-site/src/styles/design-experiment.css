@@ -141,7 +141,7 @@
   .mobile-menu nav .mobile-menu__parent { font-size: 22px; letter-spacing: -.02em; font-weight: 600; padding: 8px 0 12px; }
   .mobile-menu__sub { padding: 0 0 12px; }
   .mobile-menu nav .mobile-menu__sub a { padding: 8px 0; border: 0; font-size: 14px; font-weight: 450; display: flex; align-items: center; justify-content: space-between; min-height: 40px; }
-  .mobile-menu__sub a:after { content: '↗'; color: #667a99; }
+  .mobile-menu__arrow { color: #667a99; }
   .mobile-menu__cta { margin-top: 20px; }
   body.menu-open .design-directions { visibility: hidden; }
 }

@@ -1,3 +1,4 @@
+import { MobileDetails } from './ui/MobileDetails';
 import { implementationDiscuss, implementationLaunch, implementationSteps } from '../data/implementation';
 import { GlassSurface } from './ui/GlassSurface';
 import { Reveal } from './ui/Reveal';
@@ -35,8 +36,7 @@ export function Implementation() {
                   {step.step}
                 </span>
                 <GlassSurface className="implementation-route__card" radius="lg" depth="raised">
-                  <h3>{step.title}</h3>
-                  <p>{step.description}</p>
+                  <MobileDetails title={<h3>{step.title}</h3>}><p>{step.description}</p></MobileDetails>
                 </GlassSurface>
               </div>
             </Reveal>

@@ -1,0 +1,29 @@
+[
+  {
+    "url": "https://lexicom.ai/company",
+    "status": 404,
+    "title": [
+      "Страница не найдена | Lexicom"
+    ],
+    "lexicom404": false,
+    "sample": null
+  },
+  {
+    "url": "https://lexicom.ai/og-image.png",
+    "status": 404,
+    "title": [
+      "Страница не найдена | Lexicom"
+    ],
+    "lexicom404": false,
+    "sample": null
+  },
+  {
+    "url": "https://radius-company1.github.io/radius/lexicom/does-not-exist-audit/",
+    "status": 404,
+    "title": [
+      "Page not found &middot; GitHub Pages"
+    ],
+    "lexicom404": false,
+    "sample": " \n \n   \n     \n     \n     Page not found &middot; GitHub Pages \n     \n      body {\n        background-color: #f1f1f1;\n        margin: 0;\n        font-family: \"Helvetica Neue\", Helvetica, Arial, sans-serif;\n      }\n\n      .container { margin: 50px auto 40px auto; width: 600px; text-align: center; }\n\n      a { color: #4183c4; text-decoration: none; }\n      a:hover { text-decoration: underline; }\n\n      h1 { width: 800px; position:relative; left: -100px; letter-spacing: -1px; line-height: 60px; font"
+  }
+]

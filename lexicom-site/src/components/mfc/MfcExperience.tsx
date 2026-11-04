@@ -1,3 +1,4 @@
+import { MobileDetails } from '../ui/MobileDetails';
 import { kuzbassMfcCase as item, novosibirskMfcCase } from '../../data/mfcCases';
 import { GlassSurface } from '../ui/GlassSurface';
 import { Reveal } from '../ui/Reveal';
@@ -35,12 +36,12 @@ export function MfcExperience() {
               </dl>
             </div>
             <div className="mfc-case-detail__workflow">
-              <h3>От вопроса — к ответу на основе документов</h3>
+              <MobileDetails title={<h3>От вопроса — к ответу на основе документов</h3>}>
               <p>RAG — это подготовка ответа с опорой на найденные материалы. В этом проекте источником служат нормативно-правовые документы МФЦ.</p>
-              <ol>{item.steps.map(step => <li key={step.title}><h4>{step.title}</h4><p>{step.text}</p></li>)}</ol>
+              <ol>{item.steps.map(step => <li key={step.title}><h4>{step.title}</h4><p>{step.text}</p></li>)}</ol></MobileDetails>
             </div>
             <ul className="mfc-case-detail__benefits">
-              {item.benefits.map(benefit => <li key={benefit.title}><h4>{benefit.title}</h4><p>{benefit.text}</p></li>)}
+              {item.benefits.map(benefit => <li key={benefit.title}><MobileDetails title={<h4>{benefit.title}</h4>}><p>{benefit.text}</p></MobileDetails></li>)}
             </ul>
             <details className="mfc-case-detail__engineering">
               <summary>Как настроили поиск и подготовку ответов</summary>

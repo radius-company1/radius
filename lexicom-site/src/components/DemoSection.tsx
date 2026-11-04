@@ -23,10 +23,10 @@ export function DemoSection({ onOpenChat, openChatRef }: DemoSectionProps) {
           />
         </Reveal>
 
-        <div className="final-contact-methods">
+        {import.meta.env.VITE_CONTACT_ENDPOINT ? <div className="final-contact-methods">
           <div><a href={`mailto:${companyContacts.email}`}>{companyContacts.email} <span aria-hidden="true">↗</span></a><a href={companyContacts.phoneHref}>{companyContacts.phone} <span aria-hidden="true">↗</span></a></div>
-          <p>Отправка через форму пока не подключена. Связаться можно по email или телефону.</p>
-        </div>
+          <p>Можно написать нам напрямую или позвонить, чтобы обсудить задачу.</p>
+        </div> : null}
 
         <Reveal>
           <GlassSurface className="demo__form-wrap" radius="xl" depth="raised" tint="cyan">

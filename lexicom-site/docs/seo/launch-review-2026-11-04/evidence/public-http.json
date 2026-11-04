@@ -1,0 +1,122 @@
+[
+  {
+    "url": "https://lexicom.ai/",
+    "final_url": "https://lexicom.ai/",
+    "status": 200,
+    "bytes": 424869,
+    "server": "Apache/2.4.41 (Ubuntu)",
+    "title": [
+      "Lexicom - речевые технологии с искусственным интеллектом для контакт-центров"
+    ],
+    "robots": [],
+    "sha256": "70d2b5be675c26ea3b713cb7a92cef1bfab538d7693caa150f5d017758b9a5c9",
+    "body": null
+  },
+  {
+    "url": "http://lexicom.ai/",
+    "final_url": "https://lexicom.ai/",
+    "status": 200,
+    "bytes": 424869,
+    "server": "Apache/2.4.41 (Ubuntu)",
+    "title": [
+      "Lexicom - речевые технологии с искусственным интеллектом для контакт-центров"
+    ],
+    "robots": [],
+    "sha256": "b16d94b71c8877395629d21cf0a9aef89a36cf9651fc594c3dee83ca1834d4e1",
+    "body": null
+  },
+  {
+    "url": "https://www.lexicom.ai/",
+    "error": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Hostname mismatch, certificate is not valid for 'www.lexicom.ai'. (_ssl.c:1129)>"
+  },
+  {
+    "url": "https://lexicom.ai/robots.txt",
+    "final_url": "https://lexicom.ai/robots.txt",
+    "status": 200,
+    "bytes": 120,
+    "server": "Apache/2.4.41 (Ubuntu)",
+    "title": [],
+    "robots": [],
+    "sha256": "690acdbc83bcf8d2181fa76ab759456e68e93b285dfb0d20b914c2c3b1096c0e",
+    "body": "# *\nUser-agent: *\nAllow: /\n\n# Host\nHost: https://localhost:3000\n\n# Sitemaps\nSitemap: https://localhost:3000/sitemap.xml\n"
+  },
+  {
+    "url": "https://lexicom.ai/sitemap.xml",
+    "final_url": "https://lexicom.ai/sitemap.xml",
+    "status": 200,
+    "bytes": 188,
+    "server": "Apache/2.4.41 (Ubuntu)",
+    "title": [],
+    "robots": [],
+    "sha256": "e1791fb5029e9b63293f1bf4367c56a133774d24d9ee0c8e483586991e228fd4",
+    "body": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<sitemapindex xmlns=\"http://www.sitemaps.org/schemas/sitemap/0.9\">\n<sitemap><loc>https://localhost:3000/sitemap-0.xml</loc></sitemap>\n</sitemapindex>"
+  },
+  {
+    "url": "https://lexicom.ai/sitemap-0.xml",
+    "final_url": "https://lexicom.ai/sitemap-0.xml",
+    "status": 200,
+    "bytes": 6217,
+    "server": "Apache/2.4.41 (Ubuntu)",
+    "title": [],
+    "robots": [],
+    "sha256": "81e6054471375eba04be7f80a41f2e87d3efdb35bdbd96aa9675cbbd9be6d0d0",
+    "body": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<urlset xmlns=\"http://www.sitemaps.org/schemas/sitemap/0.9\" xmlns:news=\"http://www.google.com/schemas/sitemap-news/0.9\" xmlns:xhtml=\"http://www.w3.org/1999/xhtml\" xmlns:mobile=\"http://www.google.com/schemas/sitemap-mobile/1.0\" xmlns:image=\"http://www.google.com/schemas/sitemap-image/1.1\" xmlns:video=\"http://www.google.com/schemas/sitemap-video/1.1\">\n<url><loc>https://lexicom.ai</loc><changefreq>daily</changefreq><priority>0.7</priority><lastmod>2022-02-22T11:49:22.138Z</lastmod></url>\n<url><loc>https://lexicom.ai/cases</loc><changefreq>daily</changefreq><priority>0.7</priority><lastmod>2022-02-22T11:49:22.139Z</lastmod></url>\n<url><loc>https://lexicom.ai/price.php</loc><changefreq>daily</changefreq><priority>0.7</priority><lastmod>2022-02-22T11:49:22.139Z</lastmod></url>\n<url><loc>https://lexicom.ai/cases/transkribacziya-i-protokolirovanie-sudebnyh-zasedanij</loc><changefreq>daily</changefreq><priority>0.7</priority><lastmod>2022-02-22T11:49:22.139Z</lastmod></url>\n<url><loc>https://lexicom.ai/cases/transkribacziya-i-protokolirovanie-vseh-vidov-soveshhanij</loc><changefreq>daily</changefreq><priority>0.7</priority><lastmod>2022-02-22T11:49:22.139Z</lastmod></url>\n<url><loc>https://lexicom.ai/cases/kompleksnaya-robotizacziya-kontakt-czentra-v-zdravoohranenii</loc><changefreq>daily</changefreq><priority>0.7</priority><lastmod>2022-02-22T11:49:22.139Z</lastmod></url>\n<url><loc>https://lexicom.ai/cases/kompleksnaya-robotizacziya-kontakt-czentra-edds</loc><changefreq>daily</changefreq><priority>0.7</priority><lastmod>2022-02-22T11:49:22.139Z</lastmod></url>\n<url><loc>https://lexicom.ai/cases/robotizacziya-goryachej-linii-covid-19</loc><changefreq>daily</changefreq><priority>0.7</priority><lastmod>2022-02-22T11:49:22.139Z</lastmod></url>\n<url><loc>https://lexicom.ai/cases/kompleksnaya-robotizacziya-kontakt-czentra-uslug-zh-kh</loc><changefreq>daily</changefreq><priority>0.7</priority><lastmod>2022-02-22T11:49:22.139Z</lastmod></url>\n<url><loc>https://lexicom.ai/cases/kompleksnaya-robotizacziya-kontakt-czentra-mf-cz</loc><changefreq>daily</changefreq><priority>0.7</priority><lastmod>2022-02-22T11:49:22.139Z</lastmod></url>\n<url><loc>https://lexicom.ai/cases/bezopasnost-i-zashhita-ot-utechek-dannyh</loc><changefreq>daily</changefreq><priority>0.7</priority><lastmod>2022-02-22T11:49:22.139Z</lastmod></url>\n<url><loc>https://lexicom.ai/cases/kontrol-i-analiz-zvonkov</loc><changefreq>daily</changefreq><priority>0.7</priority><lastmod>2022-02-22T11:49:22.139Z</lastmod></url>\n<url><loc>https://lexicom.ai/platform/upravlenie-telefoniej</loc><changefreq>daily</changefreq><priority>0.7</priority><lastmod>2022-02-22T11:49:22.139Z</lastmod></url>\n<url><loc>https://lexicom.ai/platform/raspoznavanie-i-sintez-rechi</loc><changefreq>daily</changefreq><priority>0.7</priority><lastmod>2022-02-22T11:49:22.139Z</lastmod></url>\n<url><loc>https://lexicom.ai/platform/golosovaya-biometriya</loc><changefreq>daily</changefreq><priority>0.7</priority><lastmod>2022-02-22T11:49:22.139Z</lastmod></url>\n<url><loc>https://lexicom.ai/platform/omnikanalnye-dialogi</loc><changefreq>daily</changefreq><priority>0.7</priority><lastmod>2022-02-22T11:49:22.139Z</lastmod></url>\n<url><loc>https://lexicom.ai/platform/analiticheskie-otchyoty</loc><changefreq>daily</changefreq><priority>0.7</priority><lastmod>2022-02-22T11:49:22.139Z</lastmod></url>\n<url><loc>https://lexicom.ai/platform/shirokie-vozmozhnosti-integraczii</loc><changefreq>daily</changefreq><priority>0.7</priority><lastmod>2022-02-22T11:49:22.139Z</lastmod></url>\n<url><loc>https://lexicom.ai/technologies/raspoznavanie-rechi</loc><changefreq>daily</changefreq><priority>0.7</priority><lastmod>2022-02-22T11:49:22.139Z</lastmod></url>\n<url><loc>https://lexicom.ai/technologies/sintez-rechi</loc><changefreq>daily</changefreq><priority>0.7</priority><lastmod>2022-02-22T11:49:22.139Z</lastmod></url>\n<url><loc>https://lexicom.ai/technologies/golosovaya-biometriya</loc><changefreq>daily</changefreq><priority>0.7</priority><lastmod>2022-02-22T11:49:22.139Z</lastmod></url>\n<url><loc>https://lexicom.ai/technologies/golosovoj-robot</loc><changefreq>daily</changefreq><priority>0.7</priority><lastmod>2022-02-22T11:49:22.139Z</lastmod></url>\n<url><loc>https://lexicom.ai/technologies/chat-bot</loc><changefreq>daily</changefreq><priority>0.7</priority><lastmod>2022-02-22T11:49:22.139Z</lastmod></url>\n<url><loc>https://lexicom.ai/technologies/robot-sufler</loc><changefreq>daily</changefreq><priority>0.7</priority><lastmod>2022-02-22T11:49:22.139Z</lastmod></url>\n<url><loc>https://lexicom.ai/technologies/rechevaya-analitika</loc><changefreq>daily</changefreq><priority>0.7</priority><lastmod>2022-02-22T11:49:22.139Z</lastmod></url>\n<url><loc>https://lexicom.ai/technologies/obzvony</loc><changefreq>daily</changefreq><priority>0.7</priority><lastmod>2022-02-22T11:49:22.139Z</lastmod></url>\n<url><loc>https://lexicom.ai/technologies/golosovoj-nabor-teksta</loc><changefreq>daily</changefreq><priority>0.7</priority><lastmod>2022-02-22T11:49:22.139Z</lastmod></url>\n<url><loc>https://lexicom.ai/technologies/diarizacziya</loc><changefreq>daily</changefreq><priority>0.7</priority><lastmod>2022-02-22T11:49:22.139Z</lastmod></url>\n<url><loc>https://lexicom.ai/companies/o-nas</loc><changefreq>daily</changefreq><priority>0.7</priority><lastmod>2022-02-22T11:49:22.139Z</lastmod></url>\n<url><loc>https://lexicom.ai/companies/opyt-vnedreniya</loc><changefreq>daily</changefreq><priority>0.7</priority><lastmod>2022-02-22T11:49:22.139Z</lastmod></url>\n<url><loc>https://lexicom.ai/companies/kontakty</loc><changefreq>daily</changefreq><priority>0.7</priority><lastmod>2022-02-22T11:49:22.139Z</lastmod></url>\n<url><loc>https://lexicom.ai/companies/blagodarstvennye-pisma</loc><changefreq>daily</changefreq><priority>0.7</priority><lastmod>2022-02-22T11:49:22.139Z</lastmod></url>\n<url><loc>https://lexicom.ai/companies/vakansii</loc><changefreq>daily</changefreq><priority>0.7</priority><lastmod>2022-02-22T11:49:22.139Z</lastmod></url>\n<url><loc>https://lexicom.ai/server-sitemap.xml</loc><changefreq>daily</changefreq><priority>0.7</priority><lastmod>2022-02-22T11:49:22.139Z</lastmod></url>\n</urlset>"
+  },
+  {
+    "url": "https://lexicom.ai/company/",
+    "error": "HTTP Error 308: Permanent Redirect"
+  },
+  {
+    "url": "https://radius-company1.github.io/radius/lexicom/",
+    "final_url": "https://radius-company1.github.io/radius/lexicom/",
+    "status": 200,
+    "bytes": 82662,
+    "server": "GitHub.com",
+    "title": [
+      "Автоматизация обращений с ИИ — платформа Lexicom",
+      "РЖД",
+      "РЖД",
+      "РЖД",
+      "РЖД",
+      "РЖД",
+      "РЖД",
+      "РЖД",
+      "РЖД",
+      "РЖД",
+      "РЖД",
+      "РЖД",
+      "РЖД"
+    ],
+    "robots": [
+      "noindex,follow"
+    ],
+    "sha256": "5da3d3d20fc3dc168578bdfecc48ee93a8513469ebdec812443d798496e3ec7e",
+    "body": null
+  },
+  {
+    "url": "https://radius-company1.github.io/radius/lexicom/company/",
+    "final_url": "https://radius-company1.github.io/radius/lexicom/company/",
+    "status": 200,
+    "bytes": 20781,
+    "server": "GitHub.com",
+    "title": [
+      "Сведения о компании — ООО «Лексиком»"
+    ],
+    "robots": [
+      "noindex,follow"
+    ],
+    "sha256": "1d7ab5425d674dd0d9e32b5a44331a76dcdfaac3f1b79071c0b89b6566d1912c",
+    "body": null
+  },
+  {
+    "url": "https://radius-company1.github.io/radius/lexicom/robots.txt",
+    "final_url": "https://radius-company1.github.io/radius/lexicom/robots.txt",
+    "status": 200,
+    "bytes": 93,
+    "server": "GitHub.com",
+    "title": [],
+    "robots": [],
+    "sha256": "e28beb5d358644d329f588fa902e53567c1cb7f911e270a34907d5d6f5dd865c",
+    "body": "User-agent: *\nAllow: /\n# Preview pages carry noindex; crawling must stay allowed to read it.\n"
+  }
+]

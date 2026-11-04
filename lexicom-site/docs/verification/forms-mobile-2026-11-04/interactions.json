@@ -1,0 +1,125 @@
+[
+  {
+    "test": "validation-consent-double-click",
+    "passed": true
+  },
+  {
+    "test": "smtp-rejection-retry-preserves-input",
+    "passed": true
+  },
+  {
+    "test": "lost-response-retry-no-duplicate",
+    "passed": true
+  },
+  {
+    "test": "page-form-to-local-smtp",
+    "path": "/",
+    "passed": true
+  },
+  {
+    "test": "page-form-to-local-smtp",
+    "path": "/products/speech-analytics/",
+    "passed": true
+  },
+  {
+    "test": "page-form-to-local-smtp",
+    "path": "/products/contact-center/",
+    "passed": true
+  },
+  {
+    "test": "page-form-to-local-smtp",
+    "path": "/products/protocol/",
+    "passed": true
+  },
+  {
+    "test": "page-form-to-local-smtp",
+    "path": "/products/ekc-110/",
+    "passed": true
+  },
+  {
+    "test": "page-form-to-local-smtp",
+    "path": "/products/neurobot/",
+    "passed": true
+  },
+  {
+    "test": "page-form-to-local-smtp",
+    "path": "/mfc/",
+    "passed": true
+  },
+  {
+    "test": "page-form-to-local-smtp",
+    "path": "/utilities/",
+    "passed": true
+  },
+  {
+    "test": "page-form-to-local-smtp",
+    "path": "/business/",
+    "passed": true
+  },
+  {
+    "test": "page-form-to-local-smtp",
+    "path": "/education/",
+    "passed": true
+  },
+  {
+    "test": "page-form-to-local-smtp",
+    "path": "/edds/",
+    "passed": true
+  },
+  {
+    "test": "page-form-to-local-smtp",
+    "path": "/122/",
+    "passed": true
+  },
+  {
+    "test": "page-form-to-local-smtp",
+    "path": "/social/",
+    "passed": true
+  },
+  {
+    "test": "industry-keyboard",
+    "path": "/mfc/",
+    "passed": true
+  },
+  {
+    "test": "industry-keyboard",
+    "path": "/edds/",
+    "passed": true
+  },
+  {
+    "test": "industry-keyboard",
+    "path": "/122/",
+    "passed": true
+  },
+  {
+    "test": "industry-keyboard",
+    "path": "/social/",
+    "passed": true
+  },
+  {
+    "test": "industry-keyboard",
+    "path": "/education/",
+    "passed": true
+  },
+  {
+    "test": "product-selector-mobile-desktop",
+    "passed": true
+  },
+  {
+    "test": "mobile-details-faq",
+    "passed": true
+  },
+  {
+    "test": "menu-accessible-name-canonical-url",
+    "passed": true
+  },
+  {
+    "test": "all-routes-no-js-and-native-faq",
+    "passed": true
+  },
+  {
+    "test": "local-smtp-total",
+    "messages": 16,
+    "externalEmails": 0
+  }
+]

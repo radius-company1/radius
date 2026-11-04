@@ -1,0 +1,110 @@
+{
+  "results": [
+    {
+      "width": 320,
+      "route": "mfc/",
+      "menu": "pass",
+      "favicon": "/favicon.svg?v=mic-20261104",
+      "overflow": false
+    },
+    {
+      "width": 320,
+      "route": "products/neurobot/",
+      "menu": "pass",
+      "favicon": "/favicon.svg?v=mic-20261104",
+      "overflow": false
+    },
+    {
+      "width": 320,
+      "route": "",
+      "menu": "pass",
+      "favicon": "/favicon.svg?v=mic-20261104",
+      "overflow": false
+    },
+    {
+      "width": 390,
+      "route": "mfc/",
+      "menu": "pass",
+      "favicon": "/favicon.svg?v=mic-20261104",
+      "overflow": false
+    },
+    {
+      "width": 390,
+      "route": "products/neurobot/",
+      "menu": "pass",
+      "favicon": "/favicon.svg?v=mic-20261104",
+      "overflow": false
+    },
+    {
+      "width": 390,
+      "route": "",
+      "menu": "pass",
+      "favicon": "/favicon.svg?v=mic-20261104",
+      "overflow": false
+    },
+    {
+      "width": 768,
+      "route": "mfc/",
+      "menu": "pass",
+      "favicon": "/favicon.svg?v=mic-20261104",
+      "overflow": false
+    },
+    {
+      "width": 768,
+      "route": "products/neurobot/",
+      "menu": "pass",
+      "favicon": "/favicon.svg?v=mic-20261104",
+      "overflow": false
+    },
+    {
+      "width": 768,
+      "route": "",
+      "menu": "pass",
+      "favicon": "/favicon.svg?v=mic-20261104",
+      "overflow": false
+    },
+    {
+      "width": 1024,
+      "route": "mfc/",
+      "menu": "pass",
+      "favicon": "/favicon.svg?v=mic-20261104",
+      "overflow": false
+    },
+    {
+      "width": 1024,
+      "route": "products/neurobot/",
+      "menu": "pass",
+      "favicon": "/favicon.svg?v=mic-20261104",
+      "overflow": false
+    },
+    {
+      "width": 1024,
+      "route": "",
+      "menu": "pass",
+      "favicon": "/favicon.svg?v=mic-20261104",
+      "overflow": false
+    },
+    {
+      "width": 1440,
+      "route": "mfc/",
+      "menu": "pass",
+      "favicon": "/favicon.svg?v=mic-20261104",
+      "overflow": false
+    },
+    {
+      "width": 1440,
+      "route": "products/neurobot/",
+      "menu": "pass",
+      "favicon": "/favicon.svg?v=mic-20261104",
+      "overflow": false
+    },
+    {
+      "width": 1440,
+      "route": "",
+      "menu": "pass",
+      "favicon": "/favicon.svg?v=mic-20261104",
+      "overflow": false
+    }
+  ],
+  "errors": []
+}

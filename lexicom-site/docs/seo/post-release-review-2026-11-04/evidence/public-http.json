@@ -1,0 +1,225 @@
+[
+  {
+    "url": "https://lexicom.ai/",
+    "status": 200,
+    "finalUrl": "https://lexicom.ai/",
+    "headers": {
+      "Server": "Apache/2.4.41 (Ubuntu)",
+      "Content-Type": "text/html; charset=utf-8",
+      "Content-Length": "424869",
+      "Cache-Control": "private, no-cache, no-store, max-age=0, must-revalidate"
+    },
+    "title": [
+      "Lexicom - речевые технологии с искусственным интеллектом для контакт-центров"
+    ],
+    "robots": []
+  },
+  {
+    "url": "http://lexicom.ai/",
+    "status": 200,
+    "finalUrl": "https://lexicom.ai/",
+    "headers": {
+      "Server": "Apache/2.4.41 (Ubuntu)",
+      "Content-Type": "text/html; charset=utf-8",
+      "Content-Length": "424869",
+      "Cache-Control": "private, no-cache, no-store, max-age=0, must-revalidate"
+    },
+    "title": [
+      "Lexicom - речевые технологии с искусственным интеллектом для контакт-центров"
+    ],
+    "robots": []
+  },
+  {
+    "url": "https://www.lexicom.ai/",
+    "error": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Hostname mismatch, certificate is not valid for 'www.lexicom.ai'. (_ssl.c:1129)>"
+  },
+  {
+    "url": "https://lexicom.ai/robots.txt",
+    "status": 200,
+    "finalUrl": "https://lexicom.ai/robots.txt",
+    "headers": {
+      "Server": "Apache/2.4.41 (Ubuntu)",
+      "Cache-Control": "public, max-age=0",
+      "Content-Type": "text/plain; charset=UTF-8",
+      "Content-Length": "120"
+    },
+    "body": "# *\nUser-agent: *\nAllow: /\n\n# Host\nHost: https://localhost:3000\n\n# Sitemaps\nSitemap: https://localhost:3000/sitemap.xml\n"
+  },
+  {
+    "url": "https://lexicom.ai/sitemap.xml",
+    "status": 200,
+    "finalUrl": "https://lexicom.ai/sitemap.xml",
+    "headers": {
+      "Server": "Apache/2.4.41 (Ubuntu)",
+      "Cache-Control": "public, max-age=0",
+      "Content-Type": "application/xml",
+      "Content-Length": "188"
+    },
+    "body": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<sitemapindex xmlns=\"http://www.sitemaps.org/schemas/sitemap/0.9\">\n<sitemap><loc>https://localhost:3000/sitemap-0.xml</loc></sitemap>\n</sitemapindex>"
+  },
+  {
+    "url": "https://lexicom.ai/company/",
+    "status": 308,
+    "error": "HTTP Error 308: Permanent Redirect"
+  },
+  {
+    "url": "https://lexicom.ai/price.php",
+    "status": 200,
+    "finalUrl": "https://lexicom.ai/price.php",
+    "headers": {
+      "Server": "Apache/2.4.41 (Ubuntu)",
+      "Content-Type": "text/html; charset=utf-8",
+      "Content-Length": "267914",
+      "Cache-Control": "private, no-cache, no-store, max-age=0, must-revalidate"
+    },
+    "title": [
+      " | Lexicom"
+    ],
+    "robots": []
+  },
+  {
+    "url": "https://lexicom.ai/distributives/documentation.zip",
+    "status": 200,
+    "finalUrl": "https://lexicom.ai/distributives/documentation.zip",
+    "headers": {
+      "Server": "Apache/2.4.41 (Ubuntu)",
+      "Content-Length": "10099549",
+      "Content-Type": "application/zip"
+    },
+    "title": [],
+    "robots": []
+  },
+  {
+    "url": "https://radius-company1.github.io/radius/lexicom/",
+    "status": 200,
+    "finalUrl": "https://radius-company1.github.io/radius/lexicom/",
+    "headers": {
+      "Content-Length": "84777",
+      "Server": "GitHub.com",
+      "Content-Type": "text/html; charset=utf-8",
+      "Strict-Transport-Security": "max-age=31556952",
+      "Cache-Control": "max-age=600"
+    },
+    "matchesRelease": true,
+    "title": [
+      "Автоматизация обращений с ИИ — платформа Lexicom",
+      "РЖД",
+      "РЖД",
+      "РЖД",
+      "РЖД",
+      "РЖД",
+      "РЖД",
+      "РЖД",
+      "РЖД",
+      "РЖД",
+      "РЖД",
+      "РЖД",
+      "РЖД"
+    ],
+    "robots": [
+      "noindex,follow"
+    ]
+  },
+  {
+    "url": "https://radius-company1.github.io/radius/lexicom/mfc/",
+    "status": 200,
+    "finalUrl": "https://radius-company1.github.io/radius/lexicom/mfc/",
+    "headers": {
+      "Content-Length": "67920",
+      "Server": "GitHub.com",
+      "Content-Type": "text/html; charset=utf-8",
+      "Strict-Transport-Security": "max-age=31556952",
+      "Cache-Control": "max-age=600"
+    },
+    "matchesRelease": true,
+    "title": [
+      "Автоматизация звонков и консультаций МФЦ — Lexicom"
+    ],
+    "robots": [
+      "noindex,follow"
+    ]
+  },
+  {
+    "url": "https://radius-company1.github.io/radius/lexicom/privacy/",
+    "status": 200,
+    "finalUrl": "https://radius-company1.github.io/radius/lexicom/privacy/",
+    "headers": {
+      "Content-Length": "26217",
+      "Server": "GitHub.com",
+      "Content-Type": "text/html; charset=utf-8",
+      "Strict-Transport-Security": "max-age=31556952",
+      "Cache-Control": "max-age=600"
+    },
+    "matchesRelease": true,
+    "title": [
+      "Политика обработки персональных данных — ООО «Лексиком»"
+    ],
+    "robots": [
+      "noindex,follow"
+    ]
+  },
+  {
+    "url": "https://radius-company1.github.io/radius/lexicom/consent/",
+    "status": 200,
+    "finalUrl": "https://radius-company1.github.io/radius/lexicom/consent/",
+    "headers": {
+      "Content-Length": "19544",
+      "Server": "GitHub.com",
+      "Content-Type": "text/html; charset=utf-8",
+      "Strict-Transport-Security": "max-age=31556952",
+      "Cache-Control": "max-age=600"
+    },
+    "matchesRelease": true,
+    "title": [
+      "Согласие на обработку персональных данных — ООО «Лексиком»"
+    ],
+    "robots": [
+      "noindex,follow"
+    ]
+  },
+  {
+    "url": "https://radius-company1.github.io/radius/lexicom/cookies/",
+    "status": 200,
+    "finalUrl": "https://radius-company1.github.io/radius/lexicom/cookies/",
+    "headers": {
+      "Content-Length": "18853",
+      "Server": "GitHub.com",
+      "Content-Type": "text/html; charset=utf-8",
+      "Strict-Transport-Security": "max-age=31556952",
+      "Cache-Control": "max-age=600"
+    },
+    "matchesRelease": true,
+    "title": [
+      "Политика использования файлов cookie — ООО «Лексиком»"
+    ],
+    "robots": [
+      "noindex,follow"
+    ]
+  },
+  {
+    "url": "https://radius-company1.github.io/radius/lexicom/does-not-exist-audit/",
+    "status": 404,
+    "error": "HTTP Error 404: Not Found"
+  },
+  {
+    "url": "https://reestr.digital.gov.ru/",
+    "error": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1129)>"
+  },
+  {
+    "url": "https://kemerovo-news.ru/other/2026/11/03/54503.html",
+    "status": 200,
+    "finalUrl": "https://kemerovo-news.ru/other/2026/11/03/54503.html",
+    "headers": {
+      "Server": "nginx",
+      "Content-Type": "text/html; charset=windows-1251",
+      "Strict-Transport-Security": "max-age=31536000; includeSubDomains; preload",
+      "X-Content-Type-Options": "nosniff"
+    },
+    "title": [
+      "���� �������� ������� ������ � ������ - ����� �������� ��������"
+    ],
+    "robots": [
+      "max-image-preview:large"
+    ]
+  }
+]

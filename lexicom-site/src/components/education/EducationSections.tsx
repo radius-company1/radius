@@ -1,3 +1,4 @@
+import { useScenarioTabs } from '../../hooks/useScenarioTabs';
 import { useRef, useState } from 'react';
 import { MotionLink as Link } from '../ui/MotionLink';
 import {
@@ -232,6 +233,7 @@ function EducationProductCard({
 
 export function EducationScenarios() {
   const [activeId, setActiveId] = useState<(typeof educationScenarios)[number]['id']>(educationScenarios[0].id);
+  const { tabProps, panelProps } = useScenarioTabs(educationScenarios.map(item => item.id), activeId, setActiveId);
   const active = educationScenarios.find((item) => item.id === activeId) ?? educationScenarios[0];
 
   return (
@@ -250,10 +252,8 @@ export function EducationScenarios() {
                   <button
                     key={scenario.id}
                     type="button"
-                    role="tab"
-                    aria-selected={selected}
+                    {...tabProps(scenario.id)}
                     className={`edu-scenarios__tab ${selected ? 'is-active' : ''}`}
-                    onClick={() => setActiveId(scenario.id)}
                   >
                     <span className="edu-scenarios__tab-title">{scenario.title}</span>
                     <span className="edu-scenarios__tab-sub">{scenario.subtitle}</span>
@@ -262,7 +262,7 @@ export function EducationScenarios() {
               })}
             </div>
 
-            <div className="edu-scenarios__body" role="tabpanel">
+            <div className="edu-scenarios__body" {...panelProps}>
               <h3>
                 {active.title}
                 <span className="edu-scenarios__subtitle">{active.subtitle}</span>

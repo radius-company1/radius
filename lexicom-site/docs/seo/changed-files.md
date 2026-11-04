@@ -1,0 +1,46 @@
+# Изменённые и добавленные файлы
+
+Относительно опубликованной ревизии 9005a4d. Сборочные dist/ и .prerender/ не входят в исходники.
+
+- `.gitignore`
+- `docs/seo/apache-redirects.example.conf`
+- `docs/seo/changed-files.md`
+- `docs/seo/evidence/browser-checks.json`
+- `docs/seo/evidence/build-launch.log`
+- `docs/seo/evidence/build-pages.log`
+- `docs/seo/evidence/interaction-checks.json`
+- `docs/seo/evidence/lexicom-robots.txt`
+- `docs/seo/evidence/lexicom-sitemap-0.xml`
+- `docs/seo/evidence/lexicom-sitemap.xml`
+- `docs/seo/evidence/lint.log`
+- `docs/seo/evidence/old-urls.json`
+- `docs/seo/keyword-map.md`
+- `docs/seo/launch-audit.md`
+- `docs/seo/launch-blockers.md`
+- `docs/seo/redirect-map.md`
+- `index.html`
+- `package.json`
+- `public/og-image.png`
+- `scripts/prerender.mjs`
+- `scripts/serve-static.mjs`
+- `scripts/verify-launch.mjs`
+- `src/App.tsx`
+- `src/components/ContactForm.tsx`
+- `src/components/DesignProducts.tsx`
+- `src/components/ui/MotionLink.tsx`
+- `src/entry-server.tsx`
+- `src/hooks/usePageMeta.ts`
+- `src/pages/BusinessPage.tsx`
+- `src/pages/ContactCenterPage.tsx`
+- `src/pages/EddsPage.tsx`
+- `src/pages/EducationPage.tsx`
+- `src/pages/EkcPage.tsx`
+- `src/pages/MfcPage.tsx`
+- `src/pages/NeurobotPage.tsx`
+- `src/pages/ProtocolPage.tsx`
+- `src/pages/S122Page.tsx`
+- `src/pages/SocialPage.tsx`
+- `src/pages/SpeechAnalyticsPage.tsx`
+- `src/pages/UtilitiesPage.tsx`
+- `src/seo.ts`
+- `vite.config.ts`

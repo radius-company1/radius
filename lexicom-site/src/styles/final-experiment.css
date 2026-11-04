@@ -16,8 +16,8 @@
   .page-view--final .final-product-selector button:focus-visible { outline: 3px solid #4a5fd4; outline-offset: 2px; }
   .page-view--final .final-product-showcase .design-products__grid { grid-template-columns: minmax(0,1fr); gap: 0; }
   /* Overlaid grid cells reserve the actual tallest panel, without fixed heights. */
-  .page-view--final .final-product-showcase .design-product { grid-area: 1 / 1; visibility: hidden; }
-  .page-view--final .final-product-showcase .design-product.is-selected { visibility: visible; }
+  .page-view--final .final-product-showcase.is-interactive .design-product { grid-area: 1 / 1; visibility: hidden; }
+  .page-view--final .final-product-showcase.is-interactive .design-product.is-selected { visibility: visible; }
   .page-view--final .design-product__task { max-width: none; }
   .page-view--final .design-product__description { max-width: 70ch; }
 }
@@ -65,4 +65,41 @@
   .page-view--final .demo .section-header { margin-inline: 24px; }
   .page-view--final .final-contact-methods { margin-inline: 24px; }
   .page-view--final .final-contact-methods a { font-size: 16px; }
+}
+
+.page-view--final .final-product-showcase:not(.is-interactive) .final-product-selector { display: none; }
+.page-view--final .final-product-showcase:not(.is-interactive) { display: block; }
+@media (max-width: 1100px) {
+  .page-view--final .is-interactive .final-product-selector { display: block; margin-bottom: 16px; }
+  .page-view--final .final-product-selector__label { margin: 0 0 10px; font-size: 14px; color: #4c5569; }
+  .page-view--final .final-product-selector [role="tablist"] { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 8px; }
+  .page-view--final .final-product-selector button { padding: 12px; min-height: 64px; border: 1px solid #c9d2df; border-radius: 14px; background: #ffffff80; color: #26364c; text-align: left; cursor: pointer; }
+  .page-view--final .final-product-selector button[aria-selected="true"] { background: #fff3b5; border-color: #b39530; }
+  .page-view--final .final-product-selector button:focus-visible { outline: 3px solid #4a5fd4; outline-offset: 2px; }
+  .page-view--final .final-product-selector__name { display: flex; justify-content: space-between; gap: 6px; font-size: 16px; line-height: 1.25; font-weight: 600; }
+  .page-view--final .final-product-selector__task, .page-view--final .final-product-marker { display: none; }
+  .page-view--final .is-interactive .design-products__grid { grid-template-columns: minmax(0,1fr); }
+  .page-view--final .is-interactive .design-product:not(.is-selected) { display: none; }
+}
+@media (max-width: 639px) {
+  .page-view--final .final-demo { display: grid; grid-template-columns: 88px minmax(0,1fr); align-items: center; gap: 14px; padding: 12px; border-radius: 18px; width: 100%; }
+  .page-view--final .final-demo__preview { width: 88px; aspect-ratio: 1; border-radius: 12px; }
+  .page-view--final .final-demo__play { width: 36px; height: 36px; }
+  .page-view--final .final-demo__copy { padding: 0; gap: 6px; }
+  .page-view--final .final-demo__copy strong { font-size: 17px; }
+  .page-view--final .final-demo__copy > span:not(.final-demo__action) { font-size: 14px; line-height: 1.4; }
+  .page-view--final .final-demo__action { min-height: 24px; }
+  .page-view--final .design-product__media { height: auto; }
+  .page-view--final .design-product__image-button { height: 200px; min-height: 0; }
+  .page-view--final .design-product__image-button img { height: 100%; width: 100%; object-fit: contain; }
+  .page-view--final .design-product__media-note { display: none; }
+}
+
+@media (max-width: 639px) {
+  .page-view--final .direction-card--link { grid-template-columns: minmax(0,1fr) 20px; gap: 6px 14px; padding: 16px 20px; }
+  .page-view--final .direction-card__title { grid-column: 1; }
+  .page-view--final .direction-card__text { grid-column: 1; font-size: 15px; line-height: 1.45; }
+  .page-view--final .direction-card__action { grid-column: 2; grid-row: 1 / 3; align-self: center; min-height: 0; }
+  .page-view--final .direction-card__action > span { display: none; }
+  .page-view--final .final-product-selector__name > span { display: none; }
 }

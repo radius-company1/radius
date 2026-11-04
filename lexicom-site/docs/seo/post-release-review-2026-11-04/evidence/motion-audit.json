@@ -1,0 +1,31 @@
+[
+  {
+    "test": "scroll-animation",
+    "path": "/",
+    "hiddenReveals": 0,
+    "unloadedImages": []
+  },
+  {
+    "test": "scroll-animation",
+    "path": "/mfc/",
+    "hiddenReveals": 0,
+    "unloadedImages": []
+  },
+  {
+    "test": "scroll-animation",
+    "path": "/utilities/",
+    "hiddenReveals": 0,
+    "unloadedImages": []
+  },
+  {
+    "test": "scroll-animation",
+    "path": "/products/protocol/",
+    "hiddenReveals": 0,
+    "unloadedImages": []
+  },
+  {
+    "test": "contact-cta",
+    "scrollY": 9957,
+    "targetTop": 160.984375
+  }
+]

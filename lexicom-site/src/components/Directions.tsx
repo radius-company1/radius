@@ -24,7 +24,7 @@ function DirectionCard({
       >
         <h3 className="direction-card__title" id={`direction-title-${direction.id}`}>{direction.title}</h3>
         <p className="direction-card__text">{direction.description}</p>
-        <span className="direction-card__action">Смотреть решение<svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" strokeWidth="1.6" aria-hidden="true"><path d="M4 12h15m-6-6 6 6-6 6" /></svg></span>
+        <span className="direction-card__action"><span>Смотреть решение</span><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" strokeWidth="1.6" aria-hidden="true"><path d="M4 12h15m-6-6 6 6-6 6" /></svg></span>
       </Link>
     </Reveal>
   );

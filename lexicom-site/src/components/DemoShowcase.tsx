@@ -25,7 +25,7 @@ export function DemoShowcase() {
           const title = products.find(product => product.id === id)!.title;
           return <Reveal key={id} delay={index * 60} variant="media"><button type="button" className="final-demo" key={id} aria-label={`Смотреть демонстрацию: ${title}`} onClick={event => {trigger.current = event.currentTarget;setDemo(item);}}>
             <span className="final-demo__preview"><img src={resolveDemoAsset(item.poster)} alt="" loading="lazy" width="960" height="540" /><span className="final-demo__play" aria-hidden="true"><svg viewBox="0 0 24 24" width="22" height="22"><path d="M8 5 19 12 8 19Z" fill="currentColor" /></svg></span></span>
-            <span className="final-demo__copy"><strong>{title}</strong><span>{descriptions[id]}</span><span className="final-demo__action">Смотреть видео <span aria-hidden="true">↗</span></span></span>
+            <span className="final-demo__copy"><strong>{title}</strong><span>{descriptions[id]}</span><span className="final-demo__action">{item.durationLabel} <span aria-hidden="true">↗</span></span></span>
           </button></Reveal>;
         })}
       </div>

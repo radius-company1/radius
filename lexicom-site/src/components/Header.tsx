@@ -263,7 +263,7 @@ export function Header({ onDiscussClick, scrolled = false }: HeaderProps) {
                               onLinkClick(event, product.href);
                             }}
                           >
-                            {product.label}
+                            {product.label}<span className="mobile-menu__arrow" aria-hidden="true">↗</span>
                           </Link>
                         </li>
                       ))}

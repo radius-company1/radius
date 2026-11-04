@@ -1,3 +1,4 @@
+import { useScenarioTabs } from '../../hooks/useScenarioTabs';
 import { useState } from 'react';
 import { eddsDemoState, eddsScenarios } from '../../data/directions/edds';
 import { GlassSurface } from '../ui/GlassSurface';
@@ -8,6 +9,7 @@ type ScenarioId = (typeof eddsScenarios)[number]['id'];
 
 export function EddsScenarios() {
   const [activeId, setActiveId] = useState<ScenarioId>(eddsScenarios[0].id);
+  const { tabProps, panelProps } = useScenarioTabs(eddsScenarios.map(item => item.id), activeId, setActiveId);
   const active = eddsScenarios.find((item) => item.id === activeId) ?? eddsScenarios[0];
 
   return (
@@ -32,16 +34,14 @@ export function EddsScenarios() {
                 <button
                   key={scenario.id}
                   type="button"
-                  role="tab"
-                  aria-selected={scenario.id === activeId}
+                  {...tabProps(scenario.id)}
                   className={`edds-scenarios__tab ${scenario.id === activeId ? 'is-active' : ''}`}
-                  onClick={() => setActiveId(scenario.id)}
                 >
                   {scenario.title}
                 </button>
               ))}
             </div>
-            <div className="edds-scenarios__body" role="tabpanel">
+            <div className="edds-scenarios__body" {...panelProps}>
               <dl className="edds-scenarios__flow">
                 <div>
                   <dt>Ситуация</dt>

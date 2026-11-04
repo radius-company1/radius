@@ -1,0 +1,34 @@
+/* Native disclosures keep the full copy accessible, including without JS. */
+.mobile-details > summary { list-style: none; pointer-events: none; }
+.mobile-details > summary::-webkit-details-marker, .faq-disclosure > summary::-webkit-details-marker { display: none; }
+.mobile-details > summary > h3, .mobile-details__title > h3 { margin: 0; }
+.mobile-details__icon { display: none; }
+.customer-cases__card .mobile-details > summary, .mfc-ecosystem .mobile-details > summary { display: none; }
+.faq-disclosure > summary { display: flex; align-items: center; justify-content: space-between; gap: 20px; list-style: none; cursor: pointer; min-height: 48px; }
+.faq-disclosure > summary .faq-list__q { margin: 0; }
+.faq-disclosure > summary > span { flex: 0 0 auto; font-size: 24px; line-height: 1; }
+.faq-disclosure[open] > summary > span, .mobile-details[open] .mobile-details__icon { transform: rotate(45deg); }
+.faq-disclosure > .faq-list__a { margin-top: 16px; }
+.faq-disclosure > summary:focus-visible, .mobile-details > summary:focus-visible { outline: 3px solid #4a5fd4; outline-offset: 4px; border-radius: 4px; }
+@media (max-width: 639px) {
+  .mobile-details > summary { display: flex; align-items: center; justify-content: space-between; gap: 16px; min-height: 44px; pointer-events: auto; cursor: pointer; }
+  .mobile-details__icon { display: inline-block; font-size: 24px; line-height: 1; flex: 0 0 auto; }
+  .customer-cases__card .mobile-details > summary, .mfc-ecosystem .mobile-details > summary { display: flex; font-size: 16px; font-weight: 600; }
+  .mobile-details__content { padding-top: 12px; }
+  .mobile-details__content > p { margin-top: 0; }
+  .page-view .section { padding-block: 36px; }
+  .page-view .about-card, .page-view .gov-card, .page-view .implementation-route__card { padding: 16px 20px; }
+  .page-view .government__grid, .page-view .about__points { gap: 12px; }
+}
+
+.about-card { width: 100%; }
+.about__activity .mobile-details > summary { display: none; }
+@media (max-width: 639px) {
+  .about__activity .mobile-details > summary { display: flex; font-weight: 600; }
+  .page-view--final .faq-list { gap: 0; }
+  .page-view--final .faq-list__item { padding-block: 12px; }
+  .mobile-details > summary > h4 { margin: 0; }
+  .page-view--final .about-card { border-radius: 18px; }
+}
+
+.customer-cases__card .mobile-details__title, .mfc-ecosystem .mobile-details__title, .about__activity .mobile-details__title { display: none; }

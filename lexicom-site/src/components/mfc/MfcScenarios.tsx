@@ -1,3 +1,4 @@
+import { useScenarioTabs } from '../../hooks/useScenarioTabs';
 import { useState } from 'react';
 import { mfcScenarios } from '../../data/directions/mfc';
 import { GlassSurface } from '../ui/GlassSurface';
@@ -6,6 +7,7 @@ import { SectionHeader } from '../ui/SectionHeader';
 
 export function MfcScenarios() {
   const [activeId, setActiveId] = useState<(typeof mfcScenarios)[number]['id']>(mfcScenarios[0].id);
+  const { tabProps, panelProps } = useScenarioTabs(mfcScenarios.map(item => item.id), activeId, setActiveId);
   const active = mfcScenarios.find((s) => s.id === activeId) ?? mfcScenarios[0];
 
   return (
@@ -26,10 +28,8 @@ export function MfcScenarios() {
                 <button
                   key={scenario.id}
                   type="button"
-                  role="tab"
-                  aria-selected={scenario.id === activeId}
+                  {...tabProps(scenario.id)}
                   className={`mfc-scenarios__tab ${scenario.id === activeId ? 'is-active' : ''}`}
-                  onClick={() => setActiveId(scenario.id)}
                 >
                   {scenario.title}
                   {'integration' in scenario && scenario.integration ? (
@@ -39,7 +39,7 @@ export function MfcScenarios() {
               ))}
             </div>
 
-            <div className="mfc-scenarios__body" role="tabpanel">
+            <div className="mfc-scenarios__body" {...panelProps}>
               <dl className="mfc-scenarios__flow">
                 <div>
                   <dt>Задача</dt>

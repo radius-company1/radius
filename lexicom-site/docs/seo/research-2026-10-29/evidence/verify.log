@@ -1,0 +1,5 @@
+
+> lexicom-site@0.0.0 verify:launch
+> node scripts/verify-launch.mjs
+
+PASS: 13 static pages, unique metadata, canonical/OG/assets, 12 slash + 13 index redirects, 3 real 404s, sitemap/robots.

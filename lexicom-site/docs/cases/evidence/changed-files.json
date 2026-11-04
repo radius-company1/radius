@@ -1,0 +1,62 @@
+[
+  {
+    "path": "src/data/mfcCases.ts",
+    "new": true,
+    "linesBefore": 0,
+    "linesAfter": 42
+  },
+  {
+    "path": "src/components/MfcCaseFeature.tsx",
+    "new": true,
+    "linesBefore": 0,
+    "linesAfter": 27
+  },
+  {
+    "path": "src/components/mfc/MfcExperience.tsx",
+    "new": false,
+    "linesBefore": 52,
+    "linesAfter": 61
+  },
+  {
+    "path": "src/components/Cases.tsx",
+    "new": false,
+    "linesBefore": 20,
+    "linesAfter": 22
+  },
+  {
+    "path": "src/pages/MfcPage.tsx",
+    "new": false,
+    "linesBefore": 52,
+    "linesAfter": 52
+  },
+  {
+    "path": "src/components/mfc/MfcHero.tsx",
+    "new": false,
+    "linesBefore": 107,
+    "linesAfter": 115
+  },
+  {
+    "path": "src/components/CustomerCase.tsx",
+    "new": false,
+    "linesBefore": 30,
+    "linesAfter": 31
+  },
+  {
+    "path": "src/components/contact-center/CcPrompter.tsx",
+    "new": false,
+    "linesBefore": 35,
+    "linesAfter": 46
+  },
+  {
+    "path": "src/data/directions/mfc.ts",
+    "new": false,
+    "linesBefore": 321,
+    "linesAfter": 309
+  },
+  {
+    "path": "src/styles/mfc-case.css",
+    "new": true,
+    "linesBefore": 0,
+    "linesAfter": 56
+  }
+]

@@ -1,0 +1,36 @@
+
+> lexicom-site@0.0.0 build
+> tsc -b && vite build && vite build --ssr src/entry-server.tsx --outDir .prerender && node scripts/prerender.mjs
+
+vite v8.2.2 building client environment for production...
+transforming...
+✓ 249 modules transformed.
+rendering chunks...
+computing gzip size...
+dist/index.html                                              1.00 kB │ gzip:   0.51 kB
+dist/assets/onest-cyrillic-ext-wght-normal-DOFToQv1.woff2   10.54 kB
+dist/assets/onest-vietnamese-wght-normal-BBxOatbv.woff2     12.40 kB
+dist/assets/onest-cyrillic-wght-normal-DayYxulF.woff2       15.86 kB
+dist/assets/onest-symbols-wght-normal-DxQzqQfC.woff2        18.16 kB
+dist/assets/onest-math-wght-normal-Bl4ZGkZl.woff2           25.48 kB
+dist/assets/onest-latin-ext-wght-normal-QAhDxQuo.woff2      28.45 kB
+dist/assets/onest-latin-wght-normal-Dun_Rd-l.woff2          33.76 kB
+dist/assets/index-DzNmLOdO.css                             243.60 kB │ gzip:  41.88 kB
+dist/assets/index-DZ9Qlnyz.js                              723.04 kB │ gzip: 174.47 kB
+
+✓ built in 412ms
+[plugin builtin:vite-reporter] 
+(!) Some chunks are larger than 500 kB after minification. Consider:
+- Using dynamic import() to code-split the application
+- Use build.rolldownOptions.output.codeSplitting to improve chunking: https://rolldown.rs/reference/OutputOptions.codeSplitting
+- Adjust chunk size limit for this warning via build.chunkSizeWarningLimit.
+vite v8.2.2 building ssr environment for production...
+transforming...
+✓ 224 modules transformed.
+rendering chunks...
+computing gzip size...
+.prerender/entry-server.js  681.16 kB │ gzip: 126.46 kB
+
+✓ built in 231ms
+Prerendered 17 pages + 404; launch=false
+Deploy tree ready: /Users/romaborovik/Desktop/lexicom_landing/projects/tula/lexicom (bundle assets/index-DZ9Qlnyz.js)

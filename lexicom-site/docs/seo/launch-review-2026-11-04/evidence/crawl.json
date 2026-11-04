@@ -1,0 +1,237 @@
+{
+  "routes": [
+    {
+      "path": "/",
+      "h1": 1,
+      "headTitles": 1,
+      "canonical": [
+        "https://lexicom.ai/"
+      ],
+      "duplicateIds": [],
+      "imagesWithoutAlt": [],
+      "description": [
+        "ИИ-агент, контактный центр, речевая аналитика и протоколирование. Автоматизация звонков и сообщений для бизнеса и госсектора в инфраструктуре организации."
+      ],
+      "robots": [
+        "index,follow"
+      ]
+    },
+    {
+      "path": "/products/speech-analytics/",
+      "h1": 1,
+      "headTitles": 1,
+      "canonical": [
+        "https://lexicom.ai/products/speech-analytics/"
+      ],
+      "duplicateIds": [],
+      "imagesWithoutAlt": [],
+      "description": [
+        "Анализ разговоров и качества обслуживания с речевой аналитикой Lexicom. Темы обращений, оценка по вашим критериям и поиск проблемных диалогов."
+      ],
+      "robots": [
+        "index,follow"
+      ]
+    },
+    {
+      "path": "/products/contact-center/",
+      "h1": 1,
+      "headTitles": 1,
+      "canonical": [
+        "https://lexicom.ai/products/contact-center/"
+      ],
+      "duplicateIds": [],
+      "imagesWithoutAlt": [],
+      "description": [
+        "Контактный центр Lexicom объединяет звонки и текстовые обращения. Рабочее место оператора, маршрутизация, история диалогов и ИИ-подсказки."
+      ],
+      "robots": [
+        "index,follow"
+      ]
+    },
+    {
+      "path": "/products/protocol/",
+      "h1": 1,
+      "headTitles": 1,
+      "canonical": [
+        "https://lexicom.ai/products/protocol/"
+      ],
+      "duplicateIds": [],
+      "imagesWithoutAlt": [],
+      "description": [
+        "Превращайте записи совещаний и заседаний в текст и проекты протоколов. Протоколирование Lexicom в инфраструктуре организации с проверкой результата сотрудником."
+      ],
+      "robots": [
+        "index,follow"
+      ]
+    },
+    {
+      "path": "/products/ekc-110/",
+      "h1": 1,
+      "headTitles": 1,
+      "canonical": [
+        "https://lexicom.ai/products/ekc-110/"
+      ],
+      "duplicateIds": [],
+      "imagesWithoutAlt": [],
+      "description": [
+        "Создание и развитие единой первой линии обращений жителей. ЕКЦ 110: платформа Lexicom, инфраструктура, рабочие места и подготовка команды."
+      ],
+      "robots": [
+        "index,follow"
+      ]
+    },
+    {
+      "path": "/products/neurobot/",
+      "h1": 1,
+      "headTitles": 1,
+      "canonical": [
+        "https://lexicom.ai/products/neurobot/"
+      ],
+      "duplicateIds": [],
+      "imagesWithoutAlt": [],
+      "description": [
+        "Голосовой ИИ-агент Lexicom: входящие звонки, обзвоны и текстовые обращения. Ответы по базе знаний, интеграции и передача сложных вопросов сотруднику."
+      ],
+      "robots": [
+        "index,follow"
+      ]
+    },
+    {
+      "path": "/mfc/",
+      "h1": 1,
+      "headTitles": 1,
+      "canonical": [
+        "https://lexicom.ai/mfc/"
+      ],
+      "duplicateIds": [],
+      "imagesWithoutAlt": [],
+      "description": [
+        "ИИ-агент Lexicom для МФЦ: консультации по документам, подготовка к визиту, запись и информирование. Поддержка операторов и обработка типовых обращений."
+      ],
+      "robots": [
+        "index,follow"
+      ]
+    },
+    {
+      "path": "/utilities/",
+      "h1": 1,
+      "headTitles": 1,
+      "canonical": [
+        "https://lexicom.ai/utilities/"
+      ],
+      "duplicateIds": [],
+      "imagesWithoutAlt": [],
+      "description": [
+        "Lexicom для ресурсоснабжающих организаций: приём показаний, вопросы по начислениям, отключения и заявки жителей. Автоматизация звонков и помощь операторам."
+      ],
+      "robots": [
+        "index,follow"
+      ]
+    },
+    {
+      "path": "/business/",
+      "h1": 1,
+      "headTitles": 1,
+      "canonical": [
+        "https://lexicom.ai/business/"
+      ],
+      "duplicateIds": [],
+      "imagesWithoutAlt": [],
+      "description": [
+        "ИИ для клиентского сервиса, продаж и поддержки: обработка звонков и сообщений, помощь сотрудникам и анализ качества коммуникаций. Решения Lexicom для бизнеса."
+      ],
+      "robots": [
+        "index,follow"
+      ]
+    },
+    {
+      "path": "/education/",
+      "h1": 1,
+      "headTitles": 1,
+      "canonical": [
+        "https://lexicom.ai/education/"
+      ],
+      "duplicateIds": [],
+      "imagesWithoutAlt": [],
+      "description": [
+        "Автоматизация консультаций вуза и приёмной кампании. ИИ-агент, контактный центр и протоколирование Lexicom для работы с абитуриентами, студентами и сотрудниками."
+      ],
+      "robots": [
+        "index,follow"
+      ]
+    },
+    {
+      "path": "/edds/",
+      "h1": 1,
+      "headTitles": 1,
+      "canonical": [
+        "https://lexicom.ai/edds/"
+      ],
+      "duplicateIds": [],
+      "imagesWithoutAlt": [],
+      "description": [
+        "Lexicom для ЕДДС: приём обращений жителей, информирование об отключениях и поддержка диспетчеров. ИИ-агент, база знаний и анализ разговоров."
+      ],
+      "robots": [
+        "index,follow"
+      ]
+    },
+    {
+      "path": "/122/",
+      "h1": 1,
+      "headTitles": 1,
+      "canonical": [
+        "https://lexicom.ai/122/"
+      ],
+      "duplicateIds": [],
+      "imagesWithoutAlt": [],
+      "description": [
+        "Решения Lexicom для линии 122: запись к врачу, вызов врача, отмена записи и типовые вопросы пациентов. ИИ-агент и передача обращения оператору."
+      ],
+      "robots": [
+        "index,follow"
+      ]
+    },
+    {
+      "path": "/social/",
+      "h1": 1,
+      "headTitles": 1,
+      "canonical": [
+        "https://lexicom.ai/social/"
+      ],
+      "duplicateIds": [],
+      "imagesWithoutAlt": [],
+      "description": [
+        "Автоматизация типовых обращений социальной защиты: консультации по мерам поддержки, информирование и помощь специалистам. Решения Lexicom для горячей линии."
+      ],
+      "robots": [
+        "index,follow"
+      ]
+    },
+    {
+      "path": "/company/",
+      "h1": 1,
+      "headTitles": 1,
+      "canonical": [
+        "https://lexicom.ai/company/"
+      ],
+      "duplicateIds": [],
+      "imagesWithoutAlt": [],
+      "description": [
+        "Реквизиты ООО «Лексиком», виды деятельности, используемые технологии, права на программное обеспечение, условия лицензирования и стоимость."
+      ],
+      "robots": [
+        "index,follow"
+      ]
+    }
+  ],
+  "brokenTargets": [],
+  "externalLinks": [
+    "https://reestr.digital.gov.ru/"
+  ],
+  "contacts": [
+    "mailto:info@lexicom-ai.ru",
+    "tel:+74999578132"
+  ],
+  "anchorCount": 930
+}

@@ -34,7 +34,7 @@ export function SocialAnalytics() {
           </Reveal>
 
           <Reveal delay={80}>
-            <div className="social-analytics__demo" role="list">
+            <div className="social-analytics__demo">
               {socialAnalyticsDemo.map((item) => (
                 <GlassSurface
                   key={item.label}

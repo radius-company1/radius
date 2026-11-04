@@ -1,0 +1,149 @@
+[
+  {
+    "url": "http://lexicom.ai/",
+    "status": 200,
+    "final": "https://lexicom.ai/",
+    "redirects": [
+      {
+        "url": "http://lexicom.ai/",
+        "code": 301,
+        "location": "https://lexicom.ai/"
+      }
+    ],
+    "server": "Apache/2.4.41 (Ubuntu)",
+    "title": [
+      "Lexicom - речевые технологии с искусственным интеллектом для контакт-центров"
+    ],
+    "canonical": [],
+    "robots_meta": [],
+    "bytes": 424869,
+    "h1_count": 1,
+    "has_analytics_markers": {
+      "mc.yandex": false,
+      "googletagmanager": false,
+      "google-analytics": false,
+      "GTM-": false
+    }
+  },
+  {
+    "url": "https://lexicom.ai/",
+    "status": 200,
+    "final": "https://lexicom.ai/",
+    "redirects": [],
+    "server": "Apache/2.4.41 (Ubuntu)",
+    "title": [
+      "Lexicom - речевые технологии с искусственным интеллектом для контакт-центров"
+    ],
+    "canonical": [],
+    "robots_meta": [],
+    "bytes": 424869,
+    "h1_count": 1,
+    "has_analytics_markers": {
+      "mc.yandex": false,
+      "googletagmanager": false,
+      "google-analytics": false,
+      "GTM-": false
+    }
+  },
+  {
+    "url": "https://www.lexicom.ai/",
+    "error": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Hostname mismatch, certificate is not valid for 'www.lexicom.ai'. (_ssl.c:1129)>",
+    "redirects": []
+  },
+  {
+    "url": "https://lexicom.ai/__seo_audit_missing_20261029/",
+    "status": 308,
+    "final": "https://lexicom.ai/__seo_audit_missing_20261029/",
+    "redirects": [],
+    "server": "Apache/2.4.41 (Ubuntu)",
+    "title": [],
+    "canonical": [],
+    "robots_meta": [],
+    "bytes": 29,
+    "h1_count": 0,
+    "has_analytics_markers": {
+      "mc.yandex": false,
+      "googletagmanager": false,
+      "google-analytics": false,
+      "GTM-": false
+    }
+  },
+  {
+    "url": "https://lexicom.ai/robots.txt",
+    "status": 200,
+    "final": "https://lexicom.ai/robots.txt",
+    "redirects": [],
+    "server": "Apache/2.4.41 (Ubuntu)",
+    "title": [],
+    "canonical": [],
+    "robots_meta": [],
+    "bytes": 120,
+    "h1_count": 0,
+    "has_analytics_markers": {
+      "mc.yandex": false,
+      "googletagmanager": false,
+      "google-analytics": false,
+      "GTM-": false
+    },
+    "body": "# *\nUser-agent: *\nAllow: /\n\n# Host\nHost: https://localhost:3000\n\n# Sitemaps\nSitemap: https://localhost:3000/sitemap.xml\n"
+  },
+  {
+    "url": "https://lexicom.ai/sitemap.xml",
+    "status": 200,
+    "final": "https://lexicom.ai/sitemap.xml",
+    "redirects": [],
+    "server": "Apache/2.4.41 (Ubuntu)",
+    "title": [],
+    "canonical": [],
+    "robots_meta": [],
+    "bytes": 188,
+    "h1_count": 0,
+    "has_analytics_markers": {
+      "mc.yandex": false,
+      "googletagmanager": false,
+      "google-analytics": false,
+      "GTM-": false
+    },
+    "body": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<sitemapindex xmlns=\"http://www.sitemaps.org/schemas/sitemap/0.9\">\n<sitemap><loc>https://localhost:3000/sitemap-0.xml</loc></sitemap>\n</sitemapindex>"
+  },
+  {
+    "url": "https://radius-company1.github.io/radius/lexicom/",
+    "status": 200,
+    "final": "https://radius-company1.github.io/radius/lexicom/",
+    "redirects": [],
+    "server": "GitHub.com",
+    "title": [
+      "Lexicom — единая ИИ-платформа для работы с обращениями"
+    ],
+    "canonical": [],
+    "robots_meta": [],
+    "bytes": 964,
+    "h1_count": 0,
+    "has_analytics_markers": {
+      "mc.yandex": false,
+      "googletagmanager": false,
+      "google-analytics": false,
+      "GTM-": false
+    }
+  },
+  {
+    "url": "https://radius-company1.github.io/radius/lexicom/products/neurobot/",
+    "status": 200,
+    "final": "https://radius-company1.github.io/radius/lexicom/products/neurobot/",
+    "redirects": [],
+    "server": "GitHub.com",
+    "title": [
+      "Lexicom — единая ИИ-платформа для работы с обращениями"
+    ],
+    "canonical": [],
+    "robots_meta": [],
+    "bytes": 964,
+    "h1_count": 0,
+    "has_analytics_markers": {
+      "mc.yandex": false,
+      "googletagmanager": false,
+      "google-analytics": false,
+      "GTM-": false
+    }
+  }
+]

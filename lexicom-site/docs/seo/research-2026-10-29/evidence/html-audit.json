@@ -1,0 +1,93 @@
+[
+  {
+    "path": "/",
+    "images": 9,
+    "images_missing_alt": 0,
+    "placeholder_links": 4,
+    "missing_local_anchors": []
+  },
+  {
+    "path": "/products/contact-center",
+    "images": 5,
+    "images_missing_alt": 0,
+    "placeholder_links": 4,
+    "missing_local_anchors": []
+  },
+  {
+    "path": "/products/ekc-110",
+    "images": 0,
+    "images_missing_alt": 0,
+    "placeholder_links": 4,
+    "missing_local_anchors": []
+  },
+  {
+    "path": "/products/neurobot",
+    "images": 1,
+    "images_missing_alt": 0,
+    "placeholder_links": 4,
+    "missing_local_anchors": []
+  },
+  {
+    "path": "/products/protocol",
+    "images": 2,
+    "images_missing_alt": 0,
+    "placeholder_links": 4,
+    "missing_local_anchors": []
+  },
+  {
+    "path": "/products/speech-analytics",
+    "images": 7,
+    "images_missing_alt": 0,
+    "placeholder_links": 4,
+    "missing_local_anchors": []
+  },
+  {
+    "path": "/education",
+    "images": 4,
+    "images_missing_alt": 0,
+    "placeholder_links": 4,
+    "missing_local_anchors": []
+  },
+  {
+    "path": "/business",
+    "images": 4,
+    "images_missing_alt": 0,
+    "placeholder_links": 4,
+    "missing_local_anchors": []
+  },
+  {
+    "path": "/utilities",
+    "images": 0,
+    "images_missing_alt": 0,
+    "placeholder_links": 4,
+    "missing_local_anchors": []
+  },
+  {
+    "path": "/social",
+    "images": 0,
+    "images_missing_alt": 0,
+    "placeholder_links": 4,
+    "missing_local_anchors": []
+  },
+  {
+    "path": "/edds",
+    "images": 0,
+    "images_missing_alt": 0,
+    "placeholder_links": 4,
+    "missing_local_anchors": []
+  },
+  {
+    "path": "/mfc",
+    "images": 0,
+    "images_missing_alt": 0,
+    "placeholder_links": 4,
+    "missing_local_anchors": []
+  },
+  {
+    "path": "/122",
+    "images": 0,
+    "images_missing_alt": 0,
+    "placeholder_links": 4,
+    "missing_local_anchors": []
+  }
+]

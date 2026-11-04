@@ -1,0 +1,27 @@
+{
+  "rows": [
+    {
+      "width": 320,
+      "height": 16639,
+      "axe": []
+    },
+    {
+      "width": 390,
+      "height": 15391,
+      "axe": []
+    },
+    {
+      "width": 768,
+      "height": 13878,
+      "axe": []
+    },
+    {
+      "width": 1440,
+      "height": 10810,
+      "axe": []
+    }
+  ],
+  "errors": [],
+  "directContactRoutes": 13,
+  "noTestEndpoint": true
+}

@@ -1,0 +1,67 @@
+[
+  {
+    "file": "lighthouse-home.json",
+    "version": "13.6.0",
+    "url": "http://127.0.0.1:5286/",
+    "scores": {
+      "performance": 96,
+      "accessibility": 100,
+      "best-practices": 100,
+      "seo": 100
+    },
+    "metrics": {
+      "largest-contentful-paint": 2257.0572,
+      "cumulative-layout-shift": 0,
+      "total-blocking-time": 11.5,
+      "total-byte-weight": 1294784
+    }
+  },
+  {
+    "file": "lighthouse-live-speech.json",
+    "version": "13.6.0",
+    "url": "https://radius-company1.github.io/radius/lexicom/products/speech-analytics/",
+    "scores": {
+      "performance": 95
+    },
+    "metrics": {
+      "largest-contentful-paint": 2637.739,
+      "cumulative-layout-shift": 0.01341667764759656,
+      "total-blocking-time": 16,
+      "total-byte-weight": 469467
+    }
+  },
+  {
+    "file": "lighthouse-mfc.json",
+    "version": "13.6.0",
+    "url": "http://127.0.0.1:5286/mfc/",
+    "scores": {
+      "performance": 97,
+      "accessibility": 100,
+      "best-practices": 100,
+      "seo": 100
+    },
+    "metrics": {
+      "largest-contentful-paint": 2103.186,
+      "cumulative-layout-shift": 2.773064048681108e-05,
+      "total-blocking-time": 13,
+      "total-byte-weight": 1083715
+    }
+  },
+  {
+    "file": "lighthouse-speech.json",
+    "version": "13.6.0",
+    "url": "http://127.0.0.1:5286/products/speech-analytics/",
+    "scores": {
+      "performance": 74,
+      "accessibility": 100,
+      "best-practices": 100,
+      "seo": 100
+    },
+    "metrics": {
+      "largest-contentful-paint": 7208.8879,
+      "cumulative-layout-shift": 0.01341667764759656,
+      "total-blocking-time": 0.5,
+      "total-byte-weight": 1230730
+    }
+  }
+]

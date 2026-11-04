@@ -1,0 +1,380 @@
+[
+  {
+    "path": "/",
+    "width": 390,
+    "js": true,
+    "status": 200,
+    "h1": "ИИ-платформа\nдля обработки\nобращений",
+    "schema": true,
+    "errors": []
+  },
+  {
+    "path": "/products/speech-analytics/",
+    "width": 390,
+    "js": true,
+    "status": 200,
+    "h1": "Анализ разговоров и качества обслуживания",
+    "schema": true,
+    "errors": []
+  },
+  {
+    "path": "/products/contact-center/",
+    "width": 390,
+    "js": true,
+    "status": 200,
+    "h1": "Контактный центр с ИИ‑помощью оператору",
+    "schema": true,
+    "errors": []
+  },
+  {
+    "path": "/products/protocol/",
+    "width": 390,
+    "js": true,
+    "status": 200,
+    "h1": "Стенограмма и протокол совещания по записи",
+    "schema": true,
+    "errors": []
+  },
+  {
+    "path": "/products/ekc-110/",
+    "width": 390,
+    "js": true,
+    "status": 200,
+    "h1": "ЕКЦ 110 под ключ для вашего региона",
+    "schema": true,
+    "errors": []
+  },
+  {
+    "path": "/products/neurobot/",
+    "width": 390,
+    "js": true,
+    "status": 200,
+    "h1": "Голосовой и текстовый ИИ для обращений клиентов",
+    "schema": true,
+    "errors": []
+  },
+  {
+    "path": "/mfc/",
+    "width": 390,
+    "js": true,
+    "status": 200,
+    "h1": "От вопроса гражданина — к понятному следующему шагу",
+    "schema": true,
+    "errors": []
+  },
+  {
+    "path": "/utilities/",
+    "width": 390,
+    "js": true,
+    "status": 200,
+    "h1": "Показания, начисления и отключения — без перегрузки операторов",
+    "schema": true,
+    "errors": []
+  },
+  {
+    "path": "/business/",
+    "width": 390,
+    "js": true,
+    "status": 200,
+    "h1": "ИИ-коммуникации под задачи вашего бизнеса",
+    "schema": true,
+    "errors": []
+  },
+  {
+    "path": "/education/",
+    "width": 390,
+    "js": true,
+    "status": 200,
+    "h1": "ИИ-коммуникации для абитуриентов, студентов и сотрудников",
+    "schema": true,
+    "errors": []
+  },
+  {
+    "path": "/edds/",
+    "width": 390,
+    "js": true,
+    "status": 200,
+    "h1": "Типовые вопросы — ИИ-агенту, контекст и решения — диспетчеру ЕДДС",
+    "schema": true,
+    "errors": []
+  },
+  {
+    "path": "/122/",
+    "width": 390,
+    "js": true,
+    "status": 200,
+    "h1": "Запись, вызов врача и статус заявки — без потери контекста на линии 122",
+    "schema": true,
+    "errors": []
+  },
+  {
+    "path": "/social/",
+    "width": 390,
+    "js": true,
+    "status": 200,
+    "h1": "Меры поддержки и порядок обращения — без очереди на типовой вопрос",
+    "schema": true,
+    "errors": []
+  },
+  {
+    "path": "/unknown-seo-test/",
+    "width": 390,
+    "js": true,
+    "status": 404,
+    "h1": "404 — страница не найдена",
+    "schema": false,
+    "errors": []
+  },
+  {
+    "path": "/",
+    "width": 1440,
+    "js": true,
+    "status": 200,
+    "h1": "ИИ-платформа\nдля обработки\nобращений",
+    "schema": true,
+    "errors": []
+  },
+  {
+    "path": "/products/speech-analytics/",
+    "width": 1440,
+    "js": true,
+    "status": 200,
+    "h1": "Анализ разговоров и качества обслуживания",
+    "schema": true,
+    "errors": []
+  },
+  {
+    "path": "/products/contact-center/",
+    "width": 1440,
+    "js": true,
+    "status": 200,
+    "h1": "Контактный центр с ИИ‑помощью оператору",
+    "schema": true,
+    "errors": []
+  },
+  {
+    "path": "/products/protocol/",
+    "width": 1440,
+    "js": true,
+    "status": 200,
+    "h1": "Стенограмма и протокол совещания по записи",
+    "schema": true,
+    "errors": []
+  },
+  {
+    "path": "/products/ekc-110/",
+    "width": 1440,
+    "js": true,
+    "status": 200,
+    "h1": "ЕКЦ 110 под ключ для вашего региона",
+    "schema": true,
+    "errors": []
+  },
+  {
+    "path": "/products/neurobot/",
+    "width": 1440,
+    "js": true,
+    "status": 200,
+    "h1": "Голосовой и текстовый ИИ для обращений клиентов",
+    "schema": true,
+    "errors": []
+  },
+  {
+    "path": "/mfc/",
+    "width": 1440,
+    "js": true,
+    "status": 200,
+    "h1": "От вопроса гражданина — к понятному следующему шагу",
+    "schema": true,
+    "errors": []
+  },
+  {
+    "path": "/utilities/",
+    "width": 1440,
+    "js": true,
+    "status": 200,
+    "h1": "Показания, начисления и отключения — без перегрузки операторов",
+    "schema": true,
+    "errors": []
+  },
+  {
+    "path": "/business/",
+    "width": 1440,
+    "js": true,
+    "status": 200,
+    "h1": "ИИ-коммуникации под задачи вашего бизнеса",
+    "schema": true,
+    "errors": []
+  },
+  {
+    "path": "/education/",
+    "width": 1440,
+    "js": true,
+    "status": 200,
+    "h1": "ИИ-коммуникации для абитуриентов, студентов и сотрудников",
+    "schema": true,
+    "errors": []
+  },
+  {
+    "path": "/edds/",
+    "width": 1440,
+    "js": true,
+    "status": 200,
+    "h1": "Типовые вопросы — ИИ-агенту, контекст и решения — диспетчеру ЕДДС",
+    "schema": true,
+    "errors": []
+  },
+  {
+    "path": "/122/",
+    "width": 1440,
+    "js": true,
+    "status": 200,
+    "h1": "Запись, вызов врача и статус заявки — без потери контекста на линии 122",
+    "schema": true,
+    "errors": []
+  },
+  {
+    "path": "/social/",
+    "width": 1440,
+    "js": true,
+    "status": 200,
+    "h1": "Меры поддержки и порядок обращения — без очереди на типовой вопрос",
+    "schema": true,
+    "errors": []
+  },
+  {
+    "path": "/unknown-seo-test/",
+    "width": 1440,
+    "js": true,
+    "status": 404,
+    "h1": "404 — страница не найдена",
+    "schema": false,
+    "errors": []
+  },
+  {
+    "path": "/",
+    "width": 1440,
+    "js": false,
+    "status": 200,
+    "h1": "ИИ-платформа\nдля обработки\nобращений",
+    "schema": true,
+    "errors": []
+  },
+  {
+    "path": "/products/speech-analytics/",
+    "width": 1440,
+    "js": false,
+    "status": 200,
+    "h1": "Анализ разговоров и качества обслуживания",
+    "schema": true,
+    "errors": []
+  },
+  {
+    "path": "/products/contact-center/",
+    "width": 1440,
+    "js": false,
+    "status": 200,
+    "h1": "Контактный центр с ИИ‑помощью оператору",
+    "schema": true,
+    "errors": []
+  },
+  {
+    "path": "/products/protocol/",
+    "width": 1440,
+    "js": false,
+    "status": 200,
+    "h1": "Стенограмма и протокол совещания по записи",
+    "schema": true,
+    "errors": []
+  },
+  {
+    "path": "/products/ekc-110/",
+    "width": 1440,
+    "js": false,
+    "status": 200,
+    "h1": "ЕКЦ 110 под ключ для вашего региона",
+    "schema": true,
+    "errors": []
+  },
+  {
+    "path": "/products/neurobot/",
+    "width": 1440,
+    "js": false,
+    "status": 200,
+    "h1": "Голосовой и текстовый ИИ для обращений клиентов",
+    "schema": true,
+    "errors": []
+  },
+  {
+    "path": "/mfc/",
+    "width": 1440,
+    "js": false,
+    "status": 200,
+    "h1": "От вопроса гражданина — к понятному следующему шагу",
+    "schema": true,
+    "errors": []
+  },
+  {
+    "path": "/utilities/",
+    "width": 1440,
+    "js": false,
+    "status": 200,
+    "h1": "Показания, начисления и отключения — без перегрузки операторов",
+    "schema": true,
+    "errors": []
+  },
+  {
+    "path": "/business/",
+    "width": 1440,
+    "js": false,
+    "status": 200,
+    "h1": "ИИ-коммуникации под задачи вашего бизнеса",
+    "schema": true,
+    "errors": []
+  },
+  {
+    "path": "/education/",
+    "width": 1440,
+    "js": false,
+    "status": 200,
+    "h1": "ИИ-коммуникации для абитуриентов, студентов и сотрудников",
+    "schema": true,
+    "errors": []
+  },
+  {
+    "path": "/edds/",
+    "width": 1440,
+    "js": false,
+    "status": 200,
+    "h1": "Типовые вопросы — ИИ-агенту, контекст и решения — диспетчеру ЕДДС",
+    "schema": true,
+    "errors": []
+  },
+  {
+    "path": "/122/",
+    "width": 1440,
+    "js": false,
+    "status": 200,
+    "h1": "Запись, вызов врача и статус заявки — без потери контекста на линии 122",
+    "schema": true,
+    "errors": []
+  },
+  {
+    "path": "/social/",
+    "width": 1440,
+    "js": false,
+    "status": 200,
+    "h1": "Меры поддержки и порядок обращения — без очереди на типовой вопрос",
+    "schema": true,
+    "errors": []
+  },
+  {
+    "path": "/unknown-seo-test/",
+    "width": 1440,
+    "js": false,
+    "status": 404,
+    "h1": "404 — страница не найдена",
+    "schema": false,
+    "errors": []
+  }
+]

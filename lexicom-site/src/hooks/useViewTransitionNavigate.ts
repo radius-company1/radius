@@ -16,6 +16,7 @@ export function useViewTransitionNavigate() {
 
   const go = useCallback(
     (to: string) => {
+      if (/^\/(?!\/)/.test(to)) to = to.replace(/^([^?#]*[^/])([?#].*)?$/, '$1/$2');
       if ((to.split(/[?#]/)[0] || pathname) === pathname || prefersReducedMotion() || !document.startViewTransition) {
         navigate(to);
         return;

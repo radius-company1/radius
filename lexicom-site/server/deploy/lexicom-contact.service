@@ -1,0 +1,25 @@
+[Unit]
+Description=Lexicom website contact form
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=lexicom-contact
+Group=lexicom-contact
+WorkingDirectory=/opt/lexicom-contact
+# Adjust the Node executable path to the installed Node 24 binary.
+ExecStart=/usr/bin/node --env-file=/etc/lexicom-contact.env /opt/lexicom-contact/index.mjs
+Restart=on-failure
+RestartSec=10
+StateDirectory=lexicom-contact
+StateDirectoryMode=0700
+UMask=0077
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectSystem=strict
+ProtectHome=true
+ReadWritePaths=/var/lib/lexicom-contact
+
+[Install]
+WantedBy=multi-user.target

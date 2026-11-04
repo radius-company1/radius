@@ -1,0 +1,189 @@
+{
+  "commit": "8f28975f3f79b387cb34c7a0a3c505c09dfb5819",
+  "files": [
+    {
+      "file": "122/index.html",
+      "url": "https://radius-company1.github.io/radius/lexicom/122/?release=8f28975f3f79b387cb34c7a0a3c505c09dfb5819",
+      "status": 200,
+      "match": true,
+      "sha256": "f961b105709c21f763c4837839fba112268023a15ef5ceb984e46e99b0655efc",
+      "expected": "f961b105709c21f763c4837839fba112268023a15ef5ceb984e46e99b0655efc"
+    },
+    {
+      "file": "404.html",
+      "url": "https://radius-company1.github.io/radius/lexicom/404.html?release=8f28975f3f79b387cb34c7a0a3c505c09dfb5819",
+      "status": 200,
+      "match": true,
+      "sha256": "5d20bfeff6cbdac754a7b914d1fd1b26302b1bdee7cdf999d4652a56cf67092d",
+      "expected": "5d20bfeff6cbdac754a7b914d1fd1b26302b1bdee7cdf999d4652a56cf67092d"
+    },
+    {
+      "file": "business/index.html",
+      "url": "https://radius-company1.github.io/radius/lexicom/business/?release=8f28975f3f79b387cb34c7a0a3c505c09dfb5819",
+      "status": 200,
+      "match": true,
+      "sha256": "5875ef83318de2407e14924c7e4752d16c4c205a7ff1f2783638e65478bdf022",
+      "expected": "5875ef83318de2407e14924c7e4752d16c4c205a7ff1f2783638e65478bdf022"
+    },
+    {
+      "file": "company/index.html",
+      "url": "https://radius-company1.github.io/radius/lexicom/company/?release=8f28975f3f79b387cb34c7a0a3c505c09dfb5819",
+      "status": 200,
+      "match": true,
+      "sha256": "321908f7418aca51dd5c2e0acf05b17427cb71dca975301194ac4ae63629f162",
+      "expected": "321908f7418aca51dd5c2e0acf05b17427cb71dca975301194ac4ae63629f162"
+    },
+    {
+      "file": "consent/index.html",
+      "url": "https://radius-company1.github.io/radius/lexicom/consent/?release=8f28975f3f79b387cb34c7a0a3c505c09dfb5819",
+      "status": 200,
+      "match": true,
+      "sha256": "85e20f23b3f6123c24a04aeaae11447a290b376dcbcab848c8731b1cd572c202",
+      "expected": "85e20f23b3f6123c24a04aeaae11447a290b376dcbcab848c8731b1cd572c202"
+    },
+    {
+      "file": "cookies/index.html",
+      "url": "https://radius-company1.github.io/radius/lexicom/cookies/?release=8f28975f3f79b387cb34c7a0a3c505c09dfb5819",
+      "status": 200,
+      "match": true,
+      "sha256": "1228cd79b96cc8012b448d79a6d308a6c36a11bac685268b096c2018970380d6",
+      "expected": "1228cd79b96cc8012b448d79a6d308a6c36a11bac685268b096c2018970380d6"
+    },
+    {
+      "file": "design-preview/index.html",
+      "url": "https://radius-company1.github.io/radius/lexicom/design-preview/?release=8f28975f3f79b387cb34c7a0a3c505c09dfb5819",
+      "status": 200,
+      "match": true,
+      "sha256": "fc4a2701501ea9c7503a8aa5e0dbd69fa04cd9a6111d95e5a3da197582a9f1d7",
+      "expected": "fc4a2701501ea9c7503a8aa5e0dbd69fa04cd9a6111d95e5a3da197582a9f1d7"
+    },
+    {
+      "file": "edds/index.html",
+      "url": "https://radius-company1.github.io/radius/lexicom/edds/?release=8f28975f3f79b387cb34c7a0a3c505c09dfb5819",
+      "status": 200,
+      "match": true,
+      "sha256": "378e1ac0357cf56858137656187caf02100675ba2cc918f7b712428bded1e3cb",
+      "expected": "378e1ac0357cf56858137656187caf02100675ba2cc918f7b712428bded1e3cb"
+    },
+    {
+      "file": "education/index.html",
+      "url": "https://radius-company1.github.io/radius/lexicom/education/?release=8f28975f3f79b387cb34c7a0a3c505c09dfb5819",
+      "status": 200,
+      "match": true,
+      "sha256": "bacb8828237d00acc4832e3f5d58211bbbcd9ca3c56202df02e02dcfc27f0b2f",
+      "expected": "bacb8828237d00acc4832e3f5d58211bbbcd9ca3c56202df02e02dcfc27f0b2f"
+    },
+    {
+      "file": "index.html",
+      "url": "https://radius-company1.github.io/radius/lexicom/?release=8f28975f3f79b387cb34c7a0a3c505c09dfb5819",
+      "status": 200,
+      "match": true,
+      "sha256": "de8457e1b31e249a241204754b735c2c65ad417aebb41c5e032f392290b4d55d",
+      "expected": "de8457e1b31e249a241204754b735c2c65ad417aebb41c5e032f392290b4d55d"
+    },
+    {
+      "file": "mfc/index.html",
+      "url": "https://radius-company1.github.io/radius/lexicom/mfc/?release=8f28975f3f79b387cb34c7a0a3c505c09dfb5819",
+      "status": 200,
+      "match": true,
+      "sha256": "8a0aa9e8d502445d8ce66b2a1e11243b3f250d1ab2ed1dedc5b801a87f44425b",
+      "expected": "8a0aa9e8d502445d8ce66b2a1e11243b3f250d1ab2ed1dedc5b801a87f44425b"
+    },
+    {
+      "file": "privacy/index.html",
+      "url": "https://radius-company1.github.io/radius/lexicom/privacy/?release=8f28975f3f79b387cb34c7a0a3c505c09dfb5819",
+      "status": 200,
+      "match": true,
+      "sha256": "4354ee685f037b165911e87f961458ef1eaca8fab25cb1c468ffdfad3deba305",
+      "expected": "4354ee685f037b165911e87f961458ef1eaca8fab25cb1c468ffdfad3deba305"
+    },
+    {
+      "file": "products/contact-center/index.html",
+      "url": "https://radius-company1.github.io/radius/lexicom/products/contact-center/?release=8f28975f3f79b387cb34c7a0a3c505c09dfb5819",
+      "status": 200,
+      "match": true,
+      "sha256": "4e8da7a78f9274e5ace84612d6bfca573a4423a70d37fa48abd79822711e9143",
+      "expected": "4e8da7a78f9274e5ace84612d6bfca573a4423a70d37fa48abd79822711e9143"
+    },
+    {
+      "file": "products/ekc-110/index.html",
+      "url": "https://radius-company1.github.io/radius/lexicom/products/ekc-110/?release=8f28975f3f79b387cb34c7a0a3c505c09dfb5819",
+      "status": 200,
+      "match": true,
+      "sha256": "b8124d0e5944309f6291ba641a425940b4fdfa0df246046dec50130e9057c54f",
+      "expected": "b8124d0e5944309f6291ba641a425940b4fdfa0df246046dec50130e9057c54f"
+    },
+    {
+      "file": "products/neurobot/index.html",
+      "url": "https://radius-company1.github.io/radius/lexicom/products/neurobot/?release=8f28975f3f79b387cb34c7a0a3c505c09dfb5819",
+      "status": 200,
+      "match": true,
+      "sha256": "ee7194cba472a60179dfc7a9a744c259591d2e472562bc474625d52dcf4b5b64",
+      "expected": "ee7194cba472a60179dfc7a9a744c259591d2e472562bc474625d52dcf4b5b64"
+    },
+    {
+      "file": "products/protocol/index.html",
+      "url": "https://radius-company1.github.io/radius/lexicom/products/protocol/?release=8f28975f3f79b387cb34c7a0a3c505c09dfb5819",
+      "status": 200,
+      "match": true,
+      "sha256": "1d64e44f0e98aca49e6d4d018b3646f67bb6cdf8fa469d40073e414eb39db5af",
+      "expected": "1d64e44f0e98aca49e6d4d018b3646f67bb6cdf8fa469d40073e414eb39db5af"
+    },
+    {
+      "file": "products/speech-analytics/index.html",
+      "url": "https://radius-company1.github.io/radius/lexicom/products/speech-analytics/?release=8f28975f3f79b387cb34c7a0a3c505c09dfb5819",
+      "status": 200,
+      "match": true,
+      "sha256": "8a1ecdd6a3ff69b81edf1549cb9f5deda005ddebd8667abace802ccce95fe65e",
+      "expected": "8a1ecdd6a3ff69b81edf1549cb9f5deda005ddebd8667abace802ccce95fe65e"
+    },
+    {
+      "file": "social/index.html",
+      "url": "https://radius-company1.github.io/radius/lexicom/social/?release=8f28975f3f79b387cb34c7a0a3c505c09dfb5819",
+      "status": 200,
+      "match": true,
+      "sha256": "37ab4a6db7daa27f1a00b5003ccb404de470f8b219ec0d5bf76f8cbdd1c852ed",
+      "expected": "37ab4a6db7daa27f1a00b5003ccb404de470f8b219ec0d5bf76f8cbdd1c852ed"
+    },
+    {
+      "file": "utilities/index.html",
+      "url": "https://radius-company1.github.io/radius/lexicom/utilities/?release=8f28975f3f79b387cb34c7a0a3c505c09dfb5819",
+      "status": 200,
+      "match": true,
+      "sha256": "b2ae64964525d51e6204b0210a57a733ca625299944740d913095711cc67c1c5",
+      "expected": "b2ae64964525d51e6204b0210a57a733ca625299944740d913095711cc67c1c5"
+    },
+    {
+      "file": "assets/index-DZ9Qlnyz.js",
+      "url": "https://radius-company1.github.io/radius/lexicom/assets/index-DZ9Qlnyz.js?release=8f28975f3f79b387cb34c7a0a3c505c09dfb5819",
+      "status": 200,
+      "match": true,
+      "sha256": "417a2b847ce7a6ee6e945cb3572f5e577a5cadaa0ca5b1b9c792af4432a71cc0",
+      "expected": "417a2b847ce7a6ee6e945cb3572f5e577a5cadaa0ca5b1b9c792af4432a71cc0"
+    },
+    {
+      "file": "assets/index-DzNmLOdO.css",
+      "url": "https://radius-company1.github.io/radius/lexicom/assets/index-DzNmLOdO.css?release=8f28975f3f79b387cb34c7a0a3c505c09dfb5819",
+      "status": 200,
+      "match": true,
+      "sha256": "24ab3019659d9e67d5da33e60c01e3601fea342044b87c2193ab7e2cdddaeb24",
+      "expected": "24ab3019659d9e67d5da33e60c01e3601fea342044b87c2193ab7e2cdddaeb24"
+    },
+    {
+      "file": "robots.txt",
+      "url": "https://radius-company1.github.io/radius/lexicom/robots.txt?release=8f28975f3f79b387cb34c7a0a3c505c09dfb5819",
+      "status": 200,
+      "match": true,
+      "sha256": "e28beb5d358644d329f588fa902e53567c1cb7f911e270a34907d5d6f5dd865c",
+      "expected": "e28beb5d358644d329f588fa902e53567c1cb7f911e270a34907d5d6f5dd865c"
+    },
+    {
+      "file": "sitemap.xml",
+      "url": "https://radius-company1.github.io/radius/lexicom/sitemap.xml?release=8f28975f3f79b387cb34c7a0a3c505c09dfb5819",
+      "status": 200,
+      "match": true,
+      "sha256": "68ab08991efaca902bcb8a6518106d8b29964c5651f39abbb7eb7c9713ca2770",
+      "expected": "68ab08991efaca902bcb8a6518106d8b29964c5651f39abbb7eb7c9713ca2770"
+    }
+  ]
+}

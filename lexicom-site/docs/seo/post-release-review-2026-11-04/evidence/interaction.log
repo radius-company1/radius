@@ -1,0 +1,27 @@
+axe / []
+axe /products/speech-analytics/ [ 'color-contrast' ]
+axe /products/contact-center/ []
+axe /products/protocol/ [ 'color-contrast' ]
+axe /products/ekc-110/ [ 'color-contrast' ]
+axe /products/neurobot/ [ 'color-contrast' ]
+axe /mfc/ []
+axe /utilities/ [ 'color-contrast' ]
+axe /business/ []
+axe /education/ []
+axe /edds/ [ 'aria-required-children' ]
+axe /122/ [ 'aria-required-children' ]
+axe /social/ [ 'aria-required-children' ]
+axe /company/ []
+axe /privacy/ []
+axe /consent/ []
+axe /cookies/ []
+locator.click: Timeout 30000ms exceeded.
+Call log:
+[2m  - waiting for locator('#mobile-menu').getByRole('link', { name: 'ИИ-агент', exact: true })[22m
+
+    at /private/tmp/lexicom-post-release-review-2026-11-04/interaction-audit.cjs:11:264 {
+  log: [
+    "  - waiting for locator('#mobile-menu').getByRole('link', { name: 'ИИ-агент', exact: true })"
+  ],
+  name: 'TimeoutError'
+}

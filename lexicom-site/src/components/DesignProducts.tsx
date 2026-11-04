@@ -1,3 +1,4 @@
+import { useClientReady } from '../hooks/useClientReady';
 import { Reveal } from './ui/Reveal';
 import { presentationShots } from '../data/presentationShots';
 import '../styles/static-presentation.css';
@@ -23,6 +24,7 @@ const copy = {
 };
 
 export function DesignProducts() {
+  const ready = useClientReady();
   const [selected, setSelected] = useState<(typeof softwareProductIds)[number]>(softwareProductIds[0]);
   const [wide, setWide] = useState(false);
   const tabs = useRef<Array<HTMLButtonElement | null>>([]);
@@ -38,7 +40,7 @@ export function DesignProducts() {
     }, { threshold: 0, rootMargin: '0px 0px -24px 0px' });
     grid.current.querySelectorAll('.design-product').forEach(panel => observer.observe(panel));
     return () => observer.disconnect();
-  }, [wide]);
+  }, [wide, selected]);
   useLayoutEffect(() => {
     if (!wide) return;
     const list = tabs.current[0]?.parentElement;
@@ -73,10 +75,10 @@ export function DesignProducts() {
         <p>Выберите продукт под задачу. Четыре решения собственной разработки работают отдельно или вместе.</p>
       </div>
       </Reveal>
-      <div className="final-product-showcase">
+      <div className={`final-product-showcase${ready ? ' is-interactive' : ''}`}>
         <div className="final-product-selector">
           <p className="final-product-selector__label">Выберите продукт</p>
-          <div role="tablist" aria-label="Продукты Lexicom" aria-orientation="vertical">
+          <div role="tablist" aria-label="Продукты Lexicom" aria-orientation={wide ? 'vertical' : 'horizontal'}>
             <span ref={marker} className="final-product-marker" aria-hidden="true" />
             {softwareProductIds.map((id, index) => <button
               key={id} id={`product-tab-${id}`} role="tab" type="button"
@@ -85,10 +87,12 @@ export function DesignProducts() {
               tabIndex={selected === id ? 0 : -1}
               onClick={() => setSelected(id)}
               onKeyDown={event => {
-                const keys = ['ArrowDown', 'ArrowUp', 'Home', 'End'];
+                const forward = wide ? 'ArrowDown' : 'ArrowRight';
+                const backward = wide ? 'ArrowUp' : 'ArrowLeft';
+                const keys = [forward, backward, 'Home', 'End'];
                 if (!keys.includes(event.key)) return;
                 event.preventDefault();
-                const next = event.key === 'Home' ? 0 : event.key === 'End' ? 3 : (index + (event.key === 'ArrowDown' ? 1 : 3)) % 4;
+                const next = event.key === 'Home' ? 0 : event.key === 'End' ? 3 : (index + (event.key === forward ? 1 : 3)) % 4;
                 setSelected(softwareProductIds[next]);
                 tabs.current[next]?.focus();
               }}
@@ -101,8 +105,8 @@ export function DesignProducts() {
           const info = copy[id];
           const shot = media[id];
           return <article className={`design-product design-product--${id}${selected === id ? ' is-selected' : ''}`} id={`product-${id}`} key={id}
-            role={wide ? 'tabpanel' : undefined} aria-labelledby={wide ? `product-tab-${id}` : undefined}
-            aria-hidden={wide && selected !== id ? true : undefined} inert={wide && selected !== id ? true : undefined}>
+            role={ready ? 'tabpanel' : undefined} aria-labelledby={ready ? `product-tab-${id}` : undefined}
+            aria-hidden={ready && selected !== id ? true : undefined} inert={ready && selected !== id ? true : undefined}>
             <div className="design-product__head"><h3>{product.title}</h3></div>
             <p className="design-product__task">{info.task}</p>
             <p className="design-product__description">{info.text}</p>

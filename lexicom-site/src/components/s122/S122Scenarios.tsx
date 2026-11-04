@@ -1,3 +1,4 @@
+import { useScenarioTabs } from '../../hooks/useScenarioTabs';
 import { useState } from 'react';
 import { s122Scenarios } from '../../data/directions/s122';
 import { GlassSurface } from '../ui/GlassSurface';
@@ -8,6 +9,7 @@ type ScenarioId = (typeof s122Scenarios)[number]['id'];
 
 export function S122Scenarios() {
   const [activeId, setActiveId] = useState<ScenarioId>(s122Scenarios[0].id);
+  const { tabProps, panelProps } = useScenarioTabs(s122Scenarios.map(item => item.id), activeId, setActiveId);
   const active = s122Scenarios.find((item) => item.id === activeId) ?? s122Scenarios[0];
 
   return (
@@ -30,17 +32,15 @@ export function S122Scenarios() {
                   <button
                     key={scenario.id}
                     type="button"
-                    role="tab"
-                    aria-selected={selected}
+                    {...tabProps(scenario.id)}
                     className={`s122-scenarios__tab ${selected ? 'is-active' : ''}`}
-                    onClick={() => setActiveId(scenario.id)}
                   >
                     {scenario.title}
                   </button>
                 );
               })}
             </div>
-            <div className="s122-scenarios__content" role="tabpanel">
+            <div className="s122-scenarios__content" {...panelProps}>
               <h3>{active.title}</h3>
               <p>{active.text}</p>
             </div>

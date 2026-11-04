@@ -1,0 +1,229 @@
+{
+  "pages": [
+    {
+      "path": "/",
+      "h1": 1,
+      "main_words": 1757,
+      "duplicate_ids": [],
+      "missing_alt": 0,
+      "unreserved_images": 0,
+      "placeholder_links": [
+        "#"
+      ],
+      "internal_redirect_links": [],
+      "broken_internal_links": []
+    },
+    {
+      "path": "/products/contact-center/",
+      "h1": 1,
+      "main_words": 674,
+      "duplicate_ids": [],
+      "missing_alt": 0,
+      "unreserved_images": 0,
+      "placeholder_links": [
+        "#"
+      ],
+      "internal_redirect_links": [],
+      "broken_internal_links": []
+    },
+    {
+      "path": "/products/ekc-110/",
+      "h1": 1,
+      "main_words": 790,
+      "duplicate_ids": [],
+      "missing_alt": 0,
+      "unreserved_images": 0,
+      "placeholder_links": [
+        "#"
+      ],
+      "internal_redirect_links": [],
+      "broken_internal_links": []
+    },
+    {
+      "path": "/products/neurobot/",
+      "h1": 1,
+      "main_words": 833,
+      "duplicate_ids": [],
+      "missing_alt": 0,
+      "unreserved_images": 0,
+      "placeholder_links": [
+        "#"
+      ],
+      "internal_redirect_links": [],
+      "broken_internal_links": []
+    },
+    {
+      "path": "/products/protocol/",
+      "h1": 1,
+      "main_words": 477,
+      "duplicate_ids": [],
+      "missing_alt": 0,
+      "unreserved_images": 0,
+      "placeholder_links": [
+        "#"
+      ],
+      "internal_redirect_links": [],
+      "broken_internal_links": []
+    },
+    {
+      "path": "/products/speech-analytics/",
+      "h1": 1,
+      "main_words": 771,
+      "duplicate_ids": [],
+      "missing_alt": 0,
+      "unreserved_images": 0,
+      "placeholder_links": [
+        "#"
+      ],
+      "internal_redirect_links": [],
+      "broken_internal_links": []
+    },
+    {
+      "path": "/education/",
+      "h1": 1,
+      "main_words": 858,
+      "duplicate_ids": [],
+      "missing_alt": 0,
+      "unreserved_images": 0,
+      "placeholder_links": [
+        "#"
+      ],
+      "internal_redirect_links": [],
+      "broken_internal_links": []
+    },
+    {
+      "path": "/business/",
+      "h1": 1,
+      "main_words": 805,
+      "duplicate_ids": [],
+      "missing_alt": 0,
+      "unreserved_images": 0,
+      "placeholder_links": [
+        "#"
+      ],
+      "internal_redirect_links": [],
+      "broken_internal_links": []
+    },
+    {
+      "path": "/utilities/",
+      "h1": 1,
+      "main_words": 1127,
+      "duplicate_ids": [],
+      "missing_alt": 0,
+      "unreserved_images": 0,
+      "placeholder_links": [
+        "#"
+      ],
+      "internal_redirect_links": [],
+      "broken_internal_links": []
+    },
+    {
+      "path": "/social/",
+      "h1": 1,
+      "main_words": 1086,
+      "duplicate_ids": [],
+      "missing_alt": 0,
+      "unreserved_images": 0,
+      "placeholder_links": [
+        "#"
+      ],
+      "internal_redirect_links": [],
+      "broken_internal_links": []
+    },
+    {
+      "path": "/edds/",
+      "h1": 1,
+      "main_words": 1029,
+      "duplicate_ids": [],
+      "missing_alt": 0,
+      "unreserved_images": 0,
+      "placeholder_links": [
+        "#"
+      ],
+      "internal_redirect_links": [],
+      "broken_internal_links": []
+    },
+    {
+      "path": "/mfc/",
+      "h1": 1,
+      "main_words": 1320,
+      "duplicate_ids": [],
+      "missing_alt": 0,
+      "unreserved_images": 0,
+      "placeholder_links": [
+        "#"
+      ],
+      "internal_redirect_links": [],
+      "broken_internal_links": []
+    },
+    {
+      "path": "/122/",
+      "h1": 1,
+      "main_words": 1281,
+      "duplicate_ids": [],
+      "missing_alt": 0,
+      "unreserved_images": 0,
+      "placeholder_links": [
+        "#"
+      ],
+      "internal_redirect_links": [],
+      "broken_internal_links": []
+    },
+    {
+      "path": "/company/",
+      "h1": 1,
+      "main_words": 305,
+      "duplicate_ids": [],
+      "missing_alt": 0,
+      "unreserved_images": 0,
+      "placeholder_links": [
+        "#"
+      ],
+      "internal_redirect_links": [],
+      "broken_internal_links": []
+    }
+  ],
+  "most_similar": [
+    {
+      "a": "/",
+      "b": "/company/",
+      "main_5gram_jaccard": 0.073
+    },
+    {
+      "a": "/education/",
+      "b": "/business/",
+      "main_5gram_jaccard": 0.054
+    },
+    {
+      "a": "/products/protocol/",
+      "b": "/products/speech-analytics/",
+      "main_5gram_jaccard": 0.049
+    },
+    {
+      "a": "/utilities/",
+      "b": "/social/",
+      "main_5gram_jaccard": 0.044
+    },
+    {
+      "a": "/",
+      "b": "/122/",
+      "main_5gram_jaccard": 0.037
+    },
+    {
+      "a": "/",
+      "b": "/products/neurobot/",
+      "main_5gram_jaccard": 0.034
+    },
+    {
+      "a": "/products/ekc-110/",
+      "b": "/business/",
+      "main_5gram_jaccard": 0.033
+    },
+    {
+      "a": "/mfc/",
+      "b": "/122/",
+      "main_5gram_jaccard": 0.03
+    }
+  ],
+  "method": "Lexical similarity of main text; not a search-engine duplicate-content classification."
+}

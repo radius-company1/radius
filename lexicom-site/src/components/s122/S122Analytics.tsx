@@ -22,7 +22,7 @@ export function S122Analytics() {
         </Reveal>
 
         <Reveal>
-          <div className="s122-analytics__dashboard" role="list">
+          <div className="s122-analytics__dashboard">
             {s122AnalyticsZones.map((zone, index) => (
               <GlassSurface
                 key={zone.id}

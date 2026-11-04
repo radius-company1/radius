@@ -1,3 +1,4 @@
+import { MobileDetails } from '../ui/MobileDetails';
 import { mfcEcosystemLevels } from '../../data/directions/mfc';
 import { ProductPageLink } from '../ProductPageLink';
 import { GlassSurface } from '../ui/GlassSurface';
@@ -93,14 +94,14 @@ export function MfcEcosystem() {
                   <div className="mfc-ecosystem__level-copy">
                     <h3>{level.title}</h3>
                     <p className="mfc-ecosystem__level-summary">{level.summary}</p>
-                    <ul className="mfc-ecosystem__capabilities">
+                    <MobileDetails title="Возможности модуля"><ul className="mfc-ecosystem__capabilities">
                       {level.capabilities.map((item) => (
                         <li key={item.title}>
                           <span className="mfc-ecosystem__capability-title">{item.title}</span>
                           <span className="mfc-ecosystem__capability-detail">{item.detail}</span>
                         </li>
                       ))}
-                    </ul>
+                    </ul></MobileDetails>
                     {'productId' in level && level.productId ? <ProductPageLink id={level.productId} /> : null}
                   </div>
                 </article>

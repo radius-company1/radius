@@ -1,0 +1,262 @@
+[
+  {
+    "path": "/",
+    "width": 390,
+    "errors": [],
+    "h1": 1,
+    "overflow": false
+  },
+  {
+    "path": "/products/speech-analytics/",
+    "width": 390,
+    "errors": [],
+    "h1": 1,
+    "overflow": false
+  },
+  {
+    "path": "/products/contact-center/",
+    "width": 390,
+    "errors": [],
+    "h1": 1,
+    "overflow": false
+  },
+  {
+    "path": "/products/protocol/",
+    "width": 390,
+    "errors": [],
+    "h1": 1,
+    "overflow": false
+  },
+  {
+    "path": "/products/ekc-110/",
+    "width": 390,
+    "errors": [],
+    "h1": 1,
+    "overflow": false
+  },
+  {
+    "path": "/products/neurobot/",
+    "width": 390,
+    "errors": [],
+    "h1": 1,
+    "overflow": false
+  },
+  {
+    "path": "/mfc/",
+    "width": 390,
+    "errors": [],
+    "h1": 1,
+    "overflow": false
+  },
+  {
+    "path": "/utilities/",
+    "width": 390,
+    "errors": [],
+    "h1": 1,
+    "overflow": false
+  },
+  {
+    "path": "/business/",
+    "width": 390,
+    "errors": [],
+    "h1": 1,
+    "overflow": false
+  },
+  {
+    "path": "/education/",
+    "width": 390,
+    "errors": [],
+    "h1": 1,
+    "overflow": false
+  },
+  {
+    "path": "/edds/",
+    "width": 390,
+    "errors": [],
+    "h1": 1,
+    "overflow": false
+  },
+  {
+    "path": "/122/",
+    "width": 390,
+    "errors": [],
+    "h1": 1,
+    "overflow": false
+  },
+  {
+    "path": "/social/",
+    "width": 390,
+    "errors": [],
+    "h1": 1,
+    "overflow": false
+  },
+  {
+    "path": "/company/",
+    "width": 390,
+    "errors": [],
+    "h1": 1,
+    "overflow": false
+  },
+  {
+    "path": "/",
+    "width": 1440,
+    "errors": [],
+    "h1": 1,
+    "overflow": false
+  },
+  {
+    "path": "/products/speech-analytics/",
+    "width": 1440,
+    "errors": [],
+    "h1": 1,
+    "overflow": false
+  },
+  {
+    "path": "/products/contact-center/",
+    "width": 1440,
+    "errors": [],
+    "h1": 1,
+    "overflow": false
+  },
+  {
+    "path": "/products/protocol/",
+    "width": 1440,
+    "errors": [],
+    "h1": 1,
+    "overflow": false
+  },
+  {
+    "path": "/products/ekc-110/",
+    "width": 1440,
+    "errors": [],
+    "h1": 1,
+    "overflow": false
+  },
+  {
+    "path": "/products/neurobot/",
+    "width": 1440,
+    "errors": [],
+    "h1": 1,
+    "overflow": false
+  },
+  {
+    "path": "/mfc/",
+    "width": 1440,
+    "errors": [],
+    "h1": 1,
+    "overflow": false
+  },
+  {
+    "path": "/utilities/",
+    "width": 1440,
+    "errors": [],
+    "h1": 1,
+    "overflow": false
+  },
+  {
+    "path": "/business/",
+    "width": 1440,
+    "errors": [],
+    "h1": 1,
+    "overflow": false
+  },
+  {
+    "path": "/education/",
+    "width": 1440,
+    "errors": [],
+    "h1": 1,
+    "overflow": false
+  },
+  {
+    "path": "/edds/",
+    "width": 1440,
+    "errors": [],
+    "h1": 1,
+    "overflow": false
+  },
+  {
+    "path": "/122/",
+    "width": 1440,
+    "errors": [],
+    "h1": 1,
+    "overflow": false
+  },
+  {
+    "path": "/social/",
+    "width": 1440,
+    "errors": [],
+    "h1": 1,
+    "overflow": false
+  },
+  {
+    "path": "/company/",
+    "width": 1440,
+    "errors": [],
+    "h1": 1,
+    "overflow": false
+  },
+  {
+    "test": "axe-home",
+    "violations": []
+  },
+  {
+    "mode": "blocked",
+    "path": "/",
+    "hidden": 0,
+    "forms": [
+      {
+        "method": "post",
+        "fieldsetDisabled": true,
+        "buttonDisabled": true
+      }
+    ]
+  },
+  {
+    "mode": "blocked",
+    "path": "/company/",
+    "hidden": 0,
+    "forms": []
+  },
+  {
+    "mode": "blocked",
+    "path": "/products/neurobot/",
+    "hidden": 0,
+    "forms": [
+      {
+        "method": "post",
+        "fieldsetDisabled": true,
+        "buttonDisabled": true
+      }
+    ]
+  },
+  {
+    "mode": "no-js",
+    "path": "/",
+    "hidden": 0,
+    "forms": [
+      {
+        "method": "post",
+        "fieldsetDisabled": true,
+        "buttonDisabled": true
+      }
+    ]
+  },
+  {
+    "mode": "no-js",
+    "path": "/company/",
+    "hidden": 0,
+    "forms": []
+  },
+  {
+    "mode": "no-js",
+    "path": "/products/neurobot/",
+    "hidden": 0,
+    "forms": [
+      {
+        "method": "post",
+        "fieldsetDisabled": true,
+        "buttonDisabled": true
+      }
+    ]
+  }
+]

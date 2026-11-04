@@ -1,0 +1,9 @@
+.contact-form__trap { position: absolute; left: -10000px; width: 1px; height: 1px; overflow: hidden; }
+.contact-form .field__error { color: #a52222; font-size: 14px; }
+.contact-form__notice { overflow-wrap: anywhere; }
+.contact-form__notice--success { border-left: 3px solid #247447; padding-left: 16px; }
+.contact-form__notice--error { border-left: 3px solid #a52222; padding-left: 16px; }
+.contact-form--direct p { margin: 0 0 18px; }
+.contact-form--direct > p:last-child { margin-top: 20px; overflow-wrap: anywhere; }
+.contact-form--direct a:not(.btn) { text-decoration: underline; text-underline-offset: 3px; }
+.contact-form .btn { white-space: normal; text-align: center; }

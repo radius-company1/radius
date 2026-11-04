@@ -22,7 +22,7 @@ export function EddsAnalytics() {
         </Reveal>
 
         <Reveal>
-          <div className="edds-analytics__dashboard" role="list">
+          <div className="edds-analytics__dashboard">
             {eddsAnalyticsZones.map((zone, index) => (
               <GlassSurface
                 key={zone.id}

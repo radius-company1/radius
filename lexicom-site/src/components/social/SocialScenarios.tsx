@@ -1,3 +1,4 @@
+import { useScenarioTabs } from '../../hooks/useScenarioTabs';
 import { useState } from 'react';
 import { socialDemoState, socialScenarios, socialScenariosNote } from '../../data/directions/social';
 import { GlassSurface } from '../ui/GlassSurface';
@@ -8,6 +9,7 @@ type ScenarioId = (typeof socialScenarios)[number]['id'];
 
 export function SocialScenarios() {
   const [activeId, setActiveId] = useState<ScenarioId>(socialScenarios[0].id);
+  const { tabProps, panelProps } = useScenarioTabs(socialScenarios.map(item => item.id), activeId, setActiveId);
   const active = socialScenarios.find((item) => item.id === activeId) ?? socialScenarios[0];
 
   return (
@@ -32,16 +34,14 @@ export function SocialScenarios() {
                 <button
                   key={scenario.id}
                   type="button"
-                  role="tab"
-                  aria-selected={scenario.id === activeId}
+                  {...tabProps(scenario.id)}
                   className={`social-scenarios__tab ${scenario.id === activeId ? 'is-active' : ''}`}
-                  onClick={() => setActiveId(scenario.id)}
                 >
                   {scenario.title}
                 </button>
               ))}
             </div>
-            <div className="social-scenarios__body" role="tabpanel">
+            <div className="social-scenarios__body" {...panelProps}>
               <dl className="social-scenarios__flow">
                 <div>
                   <dt>Вопрос жителя</dt>

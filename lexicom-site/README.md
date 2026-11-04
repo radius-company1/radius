@@ -1,51 +1,35 @@
-# Lexicom — новый корпоративный сайт (шаблон v1)
+# Корпоративный сайт Lexicom
 
-Интерактивный шаблон главной страницы в стиле **Liquid Intelligence**: жидкое стекло, цветовые слои, переключение режимов направлений.
+React + Vite, 17 страниц с готовым HTML для поисковых систем.
 
-## Запуск
+Единственный локальный источник: `/Users/romaborovik/lexicom-final-experiment/2026-10-14/final`. Клон публикации: `projects/tula/lexicom-site` в рабочем пространстве `lexicom_landing`, репозиторий `radius-company1/radius`.
 
-```bash
-cd projects/lexicom-site
-npm install
+## Разработка и проверки
+
+```sh
+npm ci
 npm run dev
+npm run build:launch
+npm run verify:launch
+npm exec -- oxlint src scripts server vite.config.ts
 ```
 
-Откройте URL из терминала (обычно http://localhost:5173).
+`build:launch` создаёт `dist/` для основного домена. `npm run build` создаёт предварительную версию для GitHub Pages по пути `/radius/lexicom/` с noindex. HTML формируется для каждого маршрута; неизвестный маршрут получает отдельную 404.
 
-**Важно:** сайт живёт в `projects/lexicom-site`, не в корневом `index.html` и не в `projects/lexicom/`.
+## Публикация
 
-### Если видите старую версию (схема, стили)
+Перенести актуальные исходники в клон публикации, затем из `projects/tula` выполнить `bash scripts/deploy-lexicom.sh`. Команда готовит `lexicom/`; публикация происходит после commit/push в `main`. Проверять завершение GitHub Pages и содержимое открытых страниц. Не менять DNS или действующий lexicom.ai без отдельного поручения.
 
-Vite может отдавать закэшированные модули. Остановите dev-сервер (`Ctrl+C`) и запустите:
+## Заявки
 
-```bash
-npm run dev:clean
-```
+Сервер и инструкция подготовлены для специалиста: [подключение почты и формы](docs/contact-form-handoff.md). До установки обработчика не задавать `VITE_CONTACT_ENDPOINT`: посетителям доступны email и телефон. SMTP-пароли хранятся только в приватном env сервера.
 
-Затем в браузере: **Cmd+Shift+R** (жёсткое обновление).
+Для проверки серверной части: `npm ci --prefix server --ignore-scripts`, затем `npm test --prefix server`. Тесты используют локальный SMTP-приёмник.
 
-## Сборка
+## Основные файлы
 
-```bash
-npm run build
-npm run preview
-```
-
-## Структура
-
-- `src/data/` — тексты и данные блоков
-- `src/components/` — секции, `GlassSurface`, `DirectionSwitcher`, `HeroVisualization`
-- `src/theme/` — темы направлений (CSS-переменные)
-- `src/hooks/` — View Transition API, параллакс
-- `src/pages/` — главная и заглушки `/mfc`, `/122`, `/edds`
-
-## Маршруты
-
-| URL | Режим |
-|-----|--------|
-| `/` | Обзор |
-| `/mfc` | МФЦ (заглушка) |
-| `/122` | Служба 122 (заглушка) |
-| `/edds` | ЕДДС (заглушка) |
-
-Переключение направлений меняет цветовую тему фона и использует View Transition API (с fallback).
+- `src/data/company.ts` — реквизиты, контакты и стоимость.
+- `src/seo.ts` — маршруты, метаданные и разметка страниц.
+- `src/components/DesignDirectionNav.tsx` — меню направлений с пунктом «Главная».
+- `public/favicon.svg` — фирменный микрофон для вкладки браузера.
+- [Фактура Lexicom](docs/LEXICOM_MASTER_FACTS.md), [кейсы](docs/cases/register.md), [задачи до запуска](docs/seo/launch-blockers.md).

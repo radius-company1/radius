@@ -1,0 +1,5 @@
+{
+  "consentVersion": "2026-11-04",
+  "recipient": "info@lexicom-ai.ru",
+  "limits": { "organization": 200, "name": 160, "contact": 254, "message": 4000, "direction": 120, "product": 120, "page": 240 }
+}

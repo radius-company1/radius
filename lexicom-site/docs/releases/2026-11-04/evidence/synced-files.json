@@ -1,0 +1,21 @@
+[
+  "src/App.tsx",
+  "src/seo.ts",
+  "src/styles/legal.css",
+  "src/styles/base.css",
+  "src/styles/mfc-case.css",
+  "src/components/MfcCaseFeature.tsx",
+  "src/components/CustomerCase.tsx",
+  "src/components/ContactForm.tsx",
+  "src/components/Cases.tsx",
+  "src/components/contact-center/CcPrompter.tsx",
+  "src/components/mfc/MfcExperience.tsx",
+  "src/components/mfc/MfcHero.tsx",
+  "src/data/mfcCases.ts",
+  "src/data/footer.ts",
+  "src/data/lexaDemo.ts",
+  "src/data/legal.ts",
+  "src/data/directions/mfc.ts",
+  "src/pages/MfcPage.tsx",
+  "src/pages/LegalPage.tsx"
+]

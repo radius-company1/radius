@@ -1,0 +1,6 @@
+{
+  "name": "lexicom-contact", "version": "1.0.0", "private": true, "type": "module",
+  "engines": { "node": ">=24" },
+  "scripts": { "start": "node --env-file=.env index.mjs", "test": "node --test test/*.test.mjs", "check:smtp": "node --env-file=.env index.mjs --check-smtp" },
+  "dependencies": { "nodemailer": "10.3.1" }
+}

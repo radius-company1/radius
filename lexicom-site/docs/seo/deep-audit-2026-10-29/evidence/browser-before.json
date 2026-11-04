@@ -1,0 +1,240 @@
+[
+  {
+    "mode": "normal",
+    "path": "/",
+    "title": "Автоматизация обращений с ИИ — платформа Lexicom",
+    "reveal": {
+      "total": 52,
+      "invisible": 52
+    },
+    "forms": [
+      {
+        "method": "get",
+        "action": "http://127.0.0.1:5243/",
+        "submitDisabled": false
+      },
+      {
+        "method": "get",
+        "action": "http://127.0.0.1:5243/",
+        "submitDisabled": false
+      }
+    ],
+    "h1": [
+      {
+        "text": "ИИ-платформадля обработкиобращений",
+        "visible": true
+      }
+    ],
+    "axe": [
+      {
+        "id": "list",
+        "impact": "serious",
+        "help": "<ul> and <ol> must only directly contain <li>, <script> or <template> elements",
+        "nodes": [
+          {
+            "target": [
+              ".implementation-route"
+            ],
+            "summary": "Fix all of the following:\n  List element has direct children that are not allowed: div"
+          }
+        ]
+      },
+      {
+        "id": "listitem",
+        "impact": "serious",
+        "help": "<li> elements must be contained in a <ul> or <ol>",
+        "nodes": [
+          {
+            "target": [
+              ".reveal--rise.reveal:nth-child(1) > .implementation-route__step"
+            ],
+            "summary": "Fix any of the following:\n  List item does not have a <ul>, <ol> parent element"
+          },
+          {
+            "target": [
+              ".reveal--rise.reveal:nth-child(2) > .implementation-route__step"
+            ],
+            "summary": "Fix any of the following:\n  List item does not have a <ul>, <ol> parent element"
+          },
+          {
+            "target": [
+              ".reveal--rise.reveal:nth-child(3) > .implementation-route__step"
+            ],
+            "summary": "Fix any of the following:\n  List item does not have a <ul>, <ol> parent element"
+          },
+          {
+            "target": [
+              ".reveal--rise.reveal:nth-child(4) > .implementation-route__step"
+            ],
+            "summary": "Fix any of the following:\n  List item does not have a <ul>, <ol> parent element"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "mode": "normal",
+    "path": "/company/",
+    "title": "Сведения о компании — ООО «Лексиком»",
+    "reveal": {
+      "total": 6,
+      "invisible": 4
+    },
+    "forms": [],
+    "h1": [
+      {
+        "text": "Сведения о компании",
+        "visible": true
+      }
+    ],
+    "axe": []
+  },
+  {
+    "mode": "normal",
+    "path": "/products/neurobot/",
+    "title": "ИИ-агент для звонков и сообщений — Lexicom",
+    "reveal": {
+      "total": 31,
+      "invisible": 26
+    },
+    "forms": [
+      {
+        "method": "get",
+        "action": "http://127.0.0.1:5243/products/neurobot/",
+        "submitDisabled": false
+      }
+    ],
+    "h1": [
+      {
+        "text": "Голосовой и текстовый ИИ для обращений клиентов",
+        "visible": true
+      }
+    ],
+    "axe": []
+  },
+  {
+    "mode": "blocked-js",
+    "path": "/",
+    "title": "Автоматизация обращений с ИИ — платформа Lexicom",
+    "reveal": {
+      "total": 52,
+      "invisible": 52
+    },
+    "forms": [
+      {
+        "method": "get",
+        "action": "http://127.0.0.1:5243/",
+        "submitDisabled": false
+      }
+    ],
+    "h1": [
+      {
+        "text": "ИИ-платформадля обработкиобращений",
+        "visible": true
+      }
+    ]
+  },
+  {
+    "mode": "blocked-js",
+    "path": "/company/",
+    "title": "Сведения о компании — ООО «Лексиком»",
+    "reveal": {
+      "total": 6,
+      "invisible": 6
+    },
+    "forms": [],
+    "h1": [
+      {
+        "text": "Сведения о компании",
+        "visible": false
+      }
+    ]
+  },
+  {
+    "mode": "blocked-js",
+    "path": "/products/neurobot/",
+    "title": "ИИ-агент для звонков и сообщений — Lexicom",
+    "reveal": {
+      "total": 31,
+      "invisible": 31
+    },
+    "forms": [
+      {
+        "method": "get",
+        "action": "http://127.0.0.1:5243/products/neurobot/",
+        "submitDisabled": false
+      }
+    ],
+    "h1": [
+      {
+        "text": "Голосовой и текстовый ИИ для обращений клиентов",
+        "visible": false
+      }
+    ]
+  },
+  {
+    "mode": "no-js",
+    "path": "/",
+    "title": "Автоматизация обращений с ИИ — платформа Lexicom",
+    "reveal": {
+      "total": 52,
+      "invisible": 0
+    },
+    "forms": [
+      {
+        "method": "get",
+        "action": "http://127.0.0.1:5243/",
+        "submitDisabled": false
+      }
+    ],
+    "h1": [
+      {
+        "text": "ИИ-платформадля обработкиобращений",
+        "visible": true
+      }
+    ]
+  },
+  {
+    "mode": "no-js",
+    "path": "/company/",
+    "title": "Сведения о компании — ООО «Лексиком»",
+    "reveal": {
+      "total": 6,
+      "invisible": 0
+    },
+    "forms": [],
+    "h1": [
+      {
+        "text": "Сведения о компании",
+        "visible": true
+      }
+    ]
+  },
+  {
+    "mode": "no-js",
+    "path": "/products/neurobot/",
+    "title": "ИИ-агент для звонков и сообщений — Lexicom",
+    "reveal": {
+      "total": 31,
+      "invisible": 0
+    },
+    "forms": [
+      {
+        "method": "get",
+        "action": "http://127.0.0.1:5243/products/neurobot/",
+        "submitDisabled": false
+      }
+    ],
+    "h1": [
+      {
+        "text": "Голосовой и текстовый ИИ для обращений клиентов",
+        "visible": true
+      }
+    ]
+  },
+  {
+    "mode": "no-js",
+    "test": "synthetic-submit-no-js",
+    "url": "http://127.0.0.1:5243/products/neurobot/?product=%D0%9D%D0%B5%D0%B9%D1%80%D0%BE%D0%B1%D0%BE%D1%82&page=&organization=SEO+TEST+ONLY&name=Test&phone=&email=test%40example.invalid&message="
+  }
+]

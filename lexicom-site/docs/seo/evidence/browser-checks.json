@@ -1,0 +1,394 @@
+[
+  {
+    "js": false,
+    "path": "/",
+    "status": 200,
+    "title": "Lexicom — ИИ-платформа для работы с обращениями",
+    "h1": [
+      "ИИ-платформадля обращенийи работы с речью"
+    ],
+    "canonical": "https://lexicom.ai/",
+    "robots": "index,follow",
+    "text": 12314,
+    "overflow": false,
+    "errors": []
+  },
+  {
+    "js": false,
+    "path": "/products/speech-analytics/",
+    "status": 200,
+    "title": "Речевая аналитика Lexicom — анализ разговоров и качества обслуживания",
+    "h1": [
+      "Анализ разговоров и качества обслуживания"
+    ],
+    "canonical": "https://lexicom.ai/products/speech-analytics/",
+    "robots": "index,follow",
+    "text": 6088,
+    "overflow": false,
+    "errors": []
+  },
+  {
+    "js": false,
+    "path": "/products/contact-center/",
+    "status": 200,
+    "title": "Контактный центр Lexicom — ИИ-помощь оператору",
+    "h1": [
+      "Контактный центр с ИИ‑помощью оператору"
+    ],
+    "canonical": "https://lexicom.ai/products/contact-center/",
+    "robots": "index,follow",
+    "text": 5854,
+    "overflow": false,
+    "errors": []
+  },
+  {
+    "js": false,
+    "path": "/products/protocol/",
+    "status": 200,
+    "title": "Протоколирование Lexicom — стенограмма и протокол по записи совещания",
+    "h1": [
+      "Стенограмма и протокол совещания по записи"
+    ],
+    "canonical": "https://lexicom.ai/products/protocol/",
+    "robots": "index,follow",
+    "text": 4251,
+    "overflow": false,
+    "errors": []
+  },
+  {
+    "js": false,
+    "path": "/products/ekc-110/",
+    "status": 200,
+    "title": "ЕКЦ 110 под ключ — единый контактный центр для обращений жителей | Lexicom",
+    "h1": [
+      "ЕКЦ 110 под ключ для вашего региона"
+    ],
+    "canonical": "https://lexicom.ai/products/ekc-110/",
+    "robots": "index,follow",
+    "text": 7303,
+    "overflow": false,
+    "errors": []
+  },
+  {
+    "js": false,
+    "path": "/products/neurobot/",
+    "status": 200,
+    "title": "ИИ-агент Lexicom — работа с голосовыми и текстовыми обращениями",
+    "h1": [
+      "Голосовой и текстовый ИИ для обращений клиентов"
+    ],
+    "canonical": "https://lexicom.ai/products/neurobot/",
+    "robots": "index,follow",
+    "text": 6431,
+    "overflow": false,
+    "errors": []
+  },
+  {
+    "js": false,
+    "path": "/mfc/",
+    "status": 200,
+    "title": "Lexicom для МФЦ — ИИ-агент, контактный центр и речевая аналитика",
+    "h1": [
+      "От вопроса гражданина — к понятному следующему шагу"
+    ],
+    "canonical": "https://lexicom.ai/mfc/",
+    "robots": "index,follow",
+    "text": 9608,
+    "overflow": false,
+    "errors": []
+  },
+  {
+    "js": false,
+    "path": "/utilities/",
+    "status": 200,
+    "title": "Lexicom для ресурсоснабжения — ИИ для обращений энергосбыта, тепла и воды",
+    "h1": [
+      "Показания, начисления и отключения — без перегрузки операторов"
+    ],
+    "canonical": "https://lexicom.ai/utilities/",
+    "robots": "index,follow",
+    "text": 9444,
+    "overflow": false,
+    "errors": []
+  },
+  {
+    "js": false,
+    "path": "/business/",
+    "status": 200,
+    "title": "Lexicom для бизнеса — ИИ-коммуникации под ваши процессы",
+    "h1": [
+      "ИИ-коммуникации под задачи вашего бизнеса"
+    ],
+    "canonical": "https://lexicom.ai/business/",
+    "robots": "index,follow",
+    "text": 7227,
+    "overflow": false,
+    "errors": []
+  },
+  {
+    "js": false,
+    "path": "/education/",
+    "status": 200,
+    "title": "Lexicom для образования — ИИ-коммуникации для вузов и колледжей",
+    "h1": [
+      "ИИ-коммуникации для абитуриентов, студентов и сотрудников"
+    ],
+    "canonical": "https://lexicom.ai/education/",
+    "robots": "index,follow",
+    "text": 7885,
+    "overflow": false,
+    "errors": []
+  },
+  {
+    "js": false,
+    "path": "/edds/",
+    "status": 200,
+    "title": "Lexicom для ЕДДС — приём обращений и поддержка диспетчеров",
+    "h1": [
+      "Типовые вопросы — ИИ-агенту, контекст и решения — диспетчеру ЕДДС"
+    ],
+    "canonical": "https://lexicom.ai/edds/",
+    "robots": "index,follow",
+    "text": 8515,
+    "overflow": false,
+    "errors": []
+  },
+  {
+    "js": false,
+    "path": "/122/",
+    "status": 200,
+    "title": "Lexicom для службы 122 — ИИ-платформа автоматизации медицинских обращений",
+    "h1": [
+      "Запись, вызов врача и статус заявки — без потери контекста на линии 122"
+    ],
+    "canonical": "https://lexicom.ai/122/",
+    "robots": "index,follow",
+    "text": 9999,
+    "overflow": false,
+    "errors": []
+  },
+  {
+    "js": false,
+    "path": "/social/",
+    "status": 200,
+    "title": "Lexicom для социальной защиты — консультации по мерам поддержки и работа с обращениями",
+    "h1": [
+      "Меры поддержки и порядок обращения — без очереди на типовой вопрос"
+    ],
+    "canonical": "https://lexicom.ai/social/",
+    "robots": "index,follow",
+    "text": 9025,
+    "overflow": false,
+    "errors": []
+  },
+  {
+    "js": false,
+    "path": "/unknown-seo-test/",
+    "status": 404,
+    "title": "Страница не найдена — Lexicom",
+    "h1": [
+      "404 — страница не найдена"
+    ],
+    "canonical": "https://lexicom.ai/404/",
+    "robots": "noindex,follow",
+    "text": 246,
+    "overflow": false,
+    "errors": []
+  },
+  {
+    "js": true,
+    "path": "/",
+    "status": 200,
+    "title": "Lexicom — ИИ-платформа для работы с обращениями",
+    "h1": [
+      "ИИ-платформадля обращенийи работы с речью"
+    ],
+    "canonical": "https://lexicom.ai/",
+    "robots": "index,follow",
+    "text": 11594,
+    "overflow": false,
+    "errors": []
+  },
+  {
+    "js": true,
+    "path": "/products/speech-analytics/",
+    "status": 200,
+    "title": "Речевая аналитика Lexicom — анализ разговоров и качества обслуживания",
+    "h1": [
+      "Анализ разговоров и качества обслуживания"
+    ],
+    "canonical": "https://lexicom.ai/products/speech-analytics/",
+    "robots": "index,follow",
+    "text": 6088,
+    "overflow": false,
+    "errors": []
+  },
+  {
+    "js": true,
+    "path": "/products/contact-center/",
+    "status": 200,
+    "title": "Контактный центр Lexicom — ИИ-помощь оператору",
+    "h1": [
+      "Контактный центр с ИИ‑помощью оператору"
+    ],
+    "canonical": "https://lexicom.ai/products/contact-center/",
+    "robots": "index,follow",
+    "text": 5854,
+    "overflow": false,
+    "errors": []
+  },
+  {
+    "js": true,
+    "path": "/products/protocol/",
+    "status": 200,
+    "title": "Протоколирование Lexicom — стенограмма и протокол по записи совещания",
+    "h1": [
+      "Стенограмма и протокол совещания по записи"
+    ],
+    "canonical": "https://lexicom.ai/products/protocol/",
+    "robots": "index,follow",
+    "text": 4251,
+    "overflow": false,
+    "errors": []
+  },
+  {
+    "js": true,
+    "path": "/products/ekc-110/",
+    "status": 200,
+    "title": "ЕКЦ 110 под ключ — единый контактный центр для обращений жителей | Lexicom",
+    "h1": [
+      "ЕКЦ 110 под ключ для вашего региона"
+    ],
+    "canonical": "https://lexicom.ai/products/ekc-110/",
+    "robots": "index,follow",
+    "text": 7303,
+    "overflow": false,
+    "errors": []
+  },
+  {
+    "js": true,
+    "path": "/products/neurobot/",
+    "status": 200,
+    "title": "ИИ-агент Lexicom — работа с голосовыми и текстовыми обращениями",
+    "h1": [
+      "Голосовой и текстовый ИИ для обращений клиентов"
+    ],
+    "canonical": "https://lexicom.ai/products/neurobot/",
+    "robots": "index,follow",
+    "text": 6431,
+    "overflow": false,
+    "errors": []
+  },
+  {
+    "js": true,
+    "path": "/mfc/",
+    "status": 200,
+    "title": "Lexicom для МФЦ — ИИ-агент, контактный центр и речевая аналитика",
+    "h1": [
+      "От вопроса гражданина — к понятному следующему шагу"
+    ],
+    "canonical": "https://lexicom.ai/mfc/",
+    "robots": "index,follow",
+    "text": 9608,
+    "overflow": false,
+    "errors": []
+  },
+  {
+    "js": true,
+    "path": "/utilities/",
+    "status": 200,
+    "title": "Lexicom для ресурсоснабжения — ИИ для обращений энергосбыта, тепла и воды",
+    "h1": [
+      "Показания, начисления и отключения — без перегрузки операторов"
+    ],
+    "canonical": "https://lexicom.ai/utilities/",
+    "robots": "index,follow",
+    "text": 9444,
+    "overflow": false,
+    "errors": []
+  },
+  {
+    "js": true,
+    "path": "/business/",
+    "status": 200,
+    "title": "Lexicom для бизнеса — ИИ-коммуникации под ваши процессы",
+    "h1": [
+      "ИИ-коммуникации под задачи вашего бизнеса"
+    ],
+    "canonical": "https://lexicom.ai/business/",
+    "robots": "index,follow",
+    "text": 7227,
+    "overflow": false,
+    "errors": []
+  },
+  {
+    "js": true,
+    "path": "/education/",
+    "status": 200,
+    "title": "Lexicom для образования — ИИ-коммуникации для вузов и колледжей",
+    "h1": [
+      "ИИ-коммуникации для абитуриентов, студентов и сотрудников"
+    ],
+    "canonical": "https://lexicom.ai/education/",
+    "robots": "index,follow",
+    "text": 7885,
+    "overflow": false,
+    "errors": []
+  },
+  {
+    "js": true,
+    "path": "/edds/",
+    "status": 200,
+    "title": "Lexicom для ЕДДС — приём обращений и поддержка диспетчеров",
+    "h1": [
+      "Типовые вопросы — ИИ-агенту, контекст и решения — диспетчеру ЕДДС"
+    ],
+    "canonical": "https://lexicom.ai/edds/",
+    "robots": "index,follow",
+    "text": 8515,
+    "overflow": false,
+    "errors": []
+  },
+  {
+    "js": true,
+    "path": "/122/",
+    "status": 200,
+    "title": "Lexicom для службы 122 — ИИ-платформа автоматизации медицинских обращений",
+    "h1": [
+      "Запись, вызов врача и статус заявки — без потери контекста на линии 122"
+    ],
+    "canonical": "https://lexicom.ai/122/",
+    "robots": "index,follow",
+    "text": 9999,
+    "overflow": false,
+    "errors": []
+  },
+  {
+    "js": true,
+    "path": "/social/",
+    "status": 200,
+    "title": "Lexicom для социальной защиты — консультации по мерам поддержки и работа с обращениями",
+    "h1": [
+      "Меры поддержки и порядок обращения — без очереди на типовой вопрос"
+    ],
+    "canonical": "https://lexicom.ai/social/",
+    "robots": "index,follow",
+    "text": 9025,
+    "overflow": false,
+    "errors": []
+  },
+  {
+    "js": true,
+    "path": "/unknown-seo-test/",
+    "status": 404,
+    "title": "Страница не найдена — Lexicom",
+    "h1": [
+      "404 — страница не найдена"
+    ],
+    "canonical": "https://lexicom.ai/404/",
+    "robots": "noindex,follow",
+    "text": 246,
+    "overflow": false,
+    "errors": []
+  }
+]

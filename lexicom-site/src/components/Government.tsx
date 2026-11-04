@@ -1,3 +1,4 @@
+import { MobileDetails } from './ui/MobileDetails';
 import { governmentItems } from '../data/government';
 import { GlassSurface } from './ui/GlassSurface';
 import { Reveal } from './ui/Reveal';
@@ -6,8 +7,7 @@ import { SectionHeader } from './ui/SectionHeader';
 function GovCard({ item }: { item: (typeof governmentItems)[number] }) {
   return (
     <GlassSurface as="article" className="gov-card" variant="dark" radius="lg" depth="raised">
-      <h3>{item.title}</h3>
-      <p>{item.description}</p>
+      <MobileDetails title={<h3>{item.title}</h3>}><p>{item.description}</p></MobileDetails>
     </GlassSurface>
   );
 }

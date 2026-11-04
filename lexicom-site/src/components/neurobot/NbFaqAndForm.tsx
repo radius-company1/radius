@@ -40,7 +40,7 @@ export function NbFinalCta() {
               id={neurobotAnchors.form}
               messageRequired={false}
               submitLabel="Запросить демонстрацию ИИ-агента"
-              product="Нейробот"
+              product="ИИ-агент"
             />
           </GlassSurface>
         </Reveal>

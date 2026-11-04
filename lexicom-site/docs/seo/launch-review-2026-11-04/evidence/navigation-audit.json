@@ -1,0 +1,311 @@
+[
+  {
+    "test": "mobile-menu",
+    "run": 1,
+    "url": "http://127.0.0.1:5274/products/neurobot",
+    "closed": true,
+    "mainInert": false
+  },
+  {
+    "test": "mobile-menu",
+    "run": 2,
+    "url": "http://127.0.0.1:5274/products/neurobot",
+    "closed": true,
+    "mainInert": false
+  },
+  {
+    "test": "mobile-menu",
+    "run": 3,
+    "url": "http://127.0.0.1:5274/products/neurobot",
+    "closed": true,
+    "mainInert": false
+  },
+  {
+    "test": "mobile-industry",
+    "url": "http://127.0.0.1:5274/mfc/",
+    "expanded": "false"
+  },
+  {
+    "test": "scenario-tabs",
+    "path": "/edds/",
+    "before": [
+      {
+        "text": "Информация об отключении",
+        "selected": "true",
+        "controls": null,
+        "tabIndex": 0
+      },
+      {
+        "text": "Сбор сведений",
+        "selected": "false",
+        "controls": null,
+        "tabIndex": 0
+      },
+      {
+        "text": "Повторные вопросы",
+        "selected": "false",
+        "controls": null,
+        "tabIndex": 0
+      },
+      {
+        "text": "Исходящее информирование",
+        "selected": "false",
+        "controls": null,
+        "tabIndex": 0
+      },
+      {
+        "text": "Помощь диспетчеру",
+        "selected": "false",
+        "controls": null,
+        "tabIndex": 0
+      }
+    ],
+    "after": [
+      {
+        "selected": "true",
+        "focused": true
+      },
+      {
+        "selected": "false",
+        "focused": false
+      },
+      {
+        "selected": "false",
+        "focused": false
+      },
+      {
+        "selected": "false",
+        "focused": false
+      },
+      {
+        "selected": "false",
+        "focused": false
+      }
+    ]
+  },
+  {
+    "test": "scenario-tabs",
+    "path": "/122/",
+    "before": [
+      {
+        "text": "Запись к врачу",
+        "selected": "true",
+        "controls": null,
+        "tabIndex": 0
+      },
+      {
+        "text": "Вызов врача на дом",
+        "selected": "false",
+        "controls": null,
+        "tabIndex": 0
+      },
+      {
+        "text": "Статус заявки",
+        "selected": "false",
+        "controls": null,
+        "tabIndex": 0
+      },
+      {
+        "text": "Справочная информация",
+        "selected": "false",
+        "controls": null,
+        "tabIndex": 0
+      },
+      {
+        "text": "Лекарственное обеспечение",
+        "selected": "false",
+        "controls": null,
+        "tabIndex": 0
+      },
+      {
+        "text": "Исходящее информирование",
+        "selected": "false",
+        "controls": null,
+        "tabIndex": 0
+      }
+    ],
+    "after": [
+      {
+        "selected": "true",
+        "focused": true
+      },
+      {
+        "selected": "false",
+        "focused": false
+      },
+      {
+        "selected": "false",
+        "focused": false
+      },
+      {
+        "selected": "false",
+        "focused": false
+      },
+      {
+        "selected": "false",
+        "focused": false
+      },
+      {
+        "selected": "false",
+        "focused": false
+      }
+    ]
+  },
+  {
+    "test": "scenario-tabs",
+    "path": "/social/",
+    "before": [
+      {
+        "text": "Меры поддержки",
+        "selected": "true",
+        "controls": null,
+        "tabIndex": 0
+      },
+      {
+        "text": "Документы и порядок обращения",
+        "selected": "false",
+        "controls": null,
+        "tabIndex": 0
+      },
+      {
+        "text": "Социальное обслуживание",
+        "selected": "false",
+        "controls": null,
+        "tabIndex": 0
+      },
+      {
+        "text": "Запись и статус",
+        "selected": "false",
+        "controls": null,
+        "tabIndex": 0
+      },
+      {
+        "text": "Напоминания и уведомления",
+        "selected": "false",
+        "controls": null,
+        "tabIndex": 0
+      },
+      {
+        "text": "Сложный вопрос",
+        "selected": "false",
+        "controls": null,
+        "tabIndex": 0
+      }
+    ],
+    "after": [
+      {
+        "selected": "true",
+        "focused": true
+      },
+      {
+        "selected": "false",
+        "focused": false
+      },
+      {
+        "selected": "false",
+        "focused": false
+      },
+      {
+        "selected": "false",
+        "focused": false
+      },
+      {
+        "selected": "false",
+        "focused": false
+      },
+      {
+        "selected": "false",
+        "focused": false
+      }
+    ]
+  },
+  {
+    "test": "scenario-tabs",
+    "path": "/mfc/",
+    "before": [
+      {
+        "text": "Консультации и подготовка к визиту",
+        "selected": "true",
+        "controls": null,
+        "tabIndex": 0
+      },
+      {
+        "text": "Запись на приёмПри наличии интеграции",
+        "selected": "false",
+        "controls": null,
+        "tabIndex": 0
+      },
+      {
+        "text": "Статус обращения и готовность документовПри наличии интеграции",
+        "selected": "false",
+        "controls": null,
+        "tabIndex": 0
+      },
+      {
+        "text": "Исходящее информирование и напоминанияПри наличии интеграции",
+        "selected": "false",
+        "controls": null,
+        "tabIndex": 0
+      },
+      {
+        "text": "Передача сложного вопроса сотруднику",
+        "selected": "false",
+        "controls": null,
+        "tabIndex": 0
+      }
+    ],
+    "after": [
+      {
+        "selected": "true",
+        "focused": true
+      },
+      {
+        "selected": "false",
+        "focused": false
+      },
+      {
+        "selected": "false",
+        "focused": false
+      },
+      {
+        "selected": "false",
+        "focused": false
+      },
+      {
+        "selected": "false",
+        "focused": false
+      }
+    ]
+  },
+  {
+    "test": "image-recheck",
+    "images": [
+      {
+        "src": "/products/presentation/protocol-result-1200.webp",
+        "outer": "<img src=\"/products/presentation/protocol-result-1200.webp\" srcset=\"/products/presentation/protocol-result-1200.webp 1200w, /products/presentation/protocol-result.webp 2400w\" sizes=\"(min-width: 1024px) 640px, calc(100vw - 3rem)\" alt=\"Интерфейс Lexicom: протокол совещания по разделам и вложение summary.docx для скачивания\" width=\"2400\" height=\"1600\" loading=\"lazy\" decoding=\"async\">",
+        "visible": true
+      }
+    ]
+  },
+  {
+    "test": "no-js",
+    "path": "/",
+    "textLength": 13573,
+    "h1": "ИИ-платформа\nдля обработки\nобращений",
+    "hiddenReveals": 0
+  },
+  {
+    "test": "no-js",
+    "path": "/products/speech-analytics/",
+    "textLength": 5174,
+    "h1": "Анализ разговоров и качества обслуживания",
+    "hiddenReveals": 0
+  },
+  {
+    "test": "no-js",
+    "path": "/company/",
+    "textLength": 2398,
+    "h1": "Сведения о компании",
+    "hiddenReveals": 0
+  }
+]

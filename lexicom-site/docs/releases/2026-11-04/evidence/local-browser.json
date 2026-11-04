@@ -1,0 +1,113 @@
+[
+  {
+    "path": "/",
+    "width": 390,
+    "status": 200,
+    "h1": "ИИ-платформа\nдля обработки\nобращений",
+    "errors": []
+  },
+  {
+    "path": "/mfc/",
+    "width": 390,
+    "status": 200,
+    "h1": "От вопроса гражданина — к понятному следующему шагу",
+    "errors": []
+  },
+  {
+    "path": "/products/neurobot/",
+    "width": 390,
+    "status": 200,
+    "h1": "Голосовой и текстовый ИИ для обращений клиентов",
+    "errors": []
+  },
+  {
+    "path": "/products/contact-center/",
+    "width": 390,
+    "status": 200,
+    "h1": "Контактный центр с ИИ‑помощью оператору",
+    "errors": []
+  },
+  {
+    "path": "/privacy/",
+    "width": 390,
+    "status": 200,
+    "h1": "Политика в отношении обработки персональных данных",
+    "errors": []
+  },
+  {
+    "path": "/consent/",
+    "width": 390,
+    "status": 200,
+    "h1": "Согласие на обработку персональных данных",
+    "errors": []
+  },
+  {
+    "path": "/cookies/",
+    "width": 390,
+    "status": 200,
+    "h1": "Политика использования файлов cookie",
+    "errors": []
+  },
+  {
+    "path": "/",
+    "width": 1440,
+    "status": 200,
+    "h1": "ИИ-платформа\nдля обработки\nобращений",
+    "errors": []
+  },
+  {
+    "path": "/mfc/",
+    "width": 1440,
+    "status": 200,
+    "h1": "От вопроса гражданина — к понятному следующему шагу",
+    "errors": []
+  },
+  {
+    "path": "/products/neurobot/",
+    "width": 1440,
+    "status": 200,
+    "h1": "Голосовой и текстовый ИИ для обращений клиентов",
+    "errors": []
+  },
+  {
+    "path": "/products/contact-center/",
+    "width": 1440,
+    "status": 200,
+    "h1": "Контактный центр с ИИ‑помощью оператору",
+    "errors": []
+  },
+  {
+    "path": "/privacy/",
+    "width": 1440,
+    "status": 200,
+    "h1": "Политика в отношении обработки персональных данных",
+    "errors": []
+  },
+  {
+    "path": "/consent/",
+    "width": 1440,
+    "status": 200,
+    "h1": "Согласие на обработку персональных данных",
+    "errors": []
+  },
+  {
+    "path": "/cookies/",
+    "width": 1440,
+    "status": 200,
+    "h1": "Политика использования файлов cookie",
+    "errors": []
+  },
+  {
+    "test": "new-case-navigation",
+    "url": "http://127.0.0.1:5276/radius/lexicom/mfc/#mfc-experience"
+  },
+  {
+    "test": "consent-checkbox",
+    "uncheckedBlocksSubmit": true,
+    "checkedEnablesSubmit": true
+  },
+  {
+    "test": "legal-navigation",
+    "pass": true
+  }
+]
