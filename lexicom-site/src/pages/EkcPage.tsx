@@ -10,6 +10,7 @@ import {
   EkcStart,
   EkcTraining,
 } from '../components/ekc/EkcSections';
+import { TicketProductReference } from '../components/TicketProductReference';
 import { Footer } from '../components/Footer';
 import { ekcAnchors } from '../data/ekcPage';
 import { scrollBelowChrome, scrollToProductForm } from '../hooks/scrollBelowChrome';
@@ -34,6 +35,7 @@ export function EkcPage() {
         <EkcScope />
         <EkcProcess />
         <EkcPlatform />
+        <TicketProductReference context="ekc" />
         <EkcTraining />
         <EkcStart />
         <EkcCaseStudy />

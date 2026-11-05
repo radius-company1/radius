@@ -11,6 +11,7 @@ import {
   EducationScenarios,
   EducationTasks,
 } from '../components/education/EducationSections';
+import { TicketProductReference } from '../components/TicketProductReference';
 import { Footer } from '../components/Footer';
 import { VideoDemoModal } from '../components/VideoDemoModal';
 import { educationAnchors, educationCase } from '../data/directions/education';
@@ -47,6 +48,7 @@ export function EducationPage() {
         <EducationTasks />
         <EducationProducts onOpenDemo={onOpenDemo} />
         <EducationScenarios />
+        <TicketProductReference context="education" />
         <EducationKnowledge />
         <EducationAnalytics />
         <EducationInfrastructure />

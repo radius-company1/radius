@@ -14,6 +14,7 @@ import { HomePage } from './pages/HomePage';
 import { EkcPage } from './pages/EkcPage';
 import { MfcPage } from './pages/MfcPage';
 import { NeurobotPage } from './pages/NeurobotPage';
+import { TicketSystemPage } from './pages/TicketSystemPage';
 import { ProtocolPage } from './pages/ProtocolPage';
 import { SpeechAnalyticsPage } from './pages/SpeechAnalyticsPage';
 import { S122Page } from './pages/S122Page';
@@ -41,6 +42,7 @@ export function AppRoutes() {
           <Route path="/products/contact-center" element={<ContactCenterPage />} />
           <Route path="/products/neurobot" element={<NeurobotPage />} />
           <Route path="/products/speech-analytics" element={<SpeechAnalyticsPage />} />
+          <Route path="/products/ticket-system" element={<TicketSystemPage />} />
           <Route path="/products/protocol" element={<ProtocolPage />} />
           <Route path="/products/ekc-110" element={<EkcPage />} />
           <Route path="*" element={<main className="container section"><h1>404 — страница не найдена</h1><p>Проверьте адрес или вернитесь на <a href={import.meta.env.BASE_URL}>главную страницу Lexicom</a>.</p></main>} />

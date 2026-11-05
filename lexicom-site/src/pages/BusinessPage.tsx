@@ -8,10 +8,10 @@ import {
   BusinessProducts,
   BusinessScenarios,
 } from '../components/business/BusinessSections';
-import { CaseStudy } from '../components/CaseStudy';
+import { RzdCase } from '../components/business/RzdCase';
 import { Footer } from '../components/Footer';
 import { VideoDemoModal } from '../components/VideoDemoModal';
-import { businessAnchors, businessCase } from '../data/directions/business';
+import { businessAnchors } from '../data/directions/business';
 import type { ProductDemo } from '../data/productDemos';
 import { scrollBelowChrome, scrollToProductForm } from '../hooks/scrollBelowChrome';
 
@@ -41,9 +41,9 @@ export function BusinessPage() {
         <BusinessScenarios />
         <BusinessFlexibility onDiscuss={scrollToForm} />
         <BusinessProducts onOpenDemo={onOpenDemo} />
+        <RzdCase />
         <BusinessInfrastructure />
         <BusinessLaunch />
-        <CaseStudy data={businessCase} />
         <BusinessFinalCta />
       </main>
       <Footer />

@@ -9,6 +9,7 @@ import { CcLaunch } from '../components/contact-center/CcLaunch';
 import { CcPrompter } from '../components/contact-center/CcPrompter';
 import { CcSupervisor } from '../components/contact-center/CcSupervisor';
 import { CcWorkspace } from '../components/contact-center/CcWorkspace';
+import { TicketProductReference } from '../components/TicketProductReference';
 import { Footer } from '../components/Footer';
 import { ImageLightbox, type LightboxImage } from '../components/ImageLightbox';
 import { VideoDemoModal } from '../components/VideoDemoModal';
@@ -62,6 +63,7 @@ export function ContactCenterPage() {
         <CcChannels />
         <CcPrompter />
         <CcSupervisor onOpenShot={openShot} />
+        <TicketProductReference context="contact-center" />
         <CcConfigs />
         <CcIndustries />
         <CcInfrastructure />

@@ -1,0 +1,8 @@
+.ticket-reference { margin-block: 32px; }
+.ticket-reference__body { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 24px; align-items: center; padding: 28px; border: 1px solid #d4deee; border-radius: 24px; background: #eef3fb; }
+.ticket-reference h2 { font-size: clamp(1.25rem, 2vw, 1.6rem); margin: 6px 0 12px; line-height: 1.35; }
+.ticket-reference p { margin: 0; line-height: 1.6; max-width: 54rem; }
+.ticket-reference .ticket-reference__eyebrow { color: #3e5280; font-size: .85rem; font-weight: 700; }
+.ticket-reference a { color: #3a49be; font-weight: 700; line-height: 1.5; text-underline-offset: 4px; }
+.ticket-reference a:focus-visible { outline: 3px solid #4865cc; outline-offset: 5px; border-radius: 4px; }
+@media (max-width: 767px) { .ticket-reference__body { grid-template-columns: minmax(0, 1fr); padding: 22px; gap: 18px; } }

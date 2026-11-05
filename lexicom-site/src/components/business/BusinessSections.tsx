@@ -1,5 +1,6 @@
 import { useRef } from 'react';
 import { MotionLink as Link } from '../ui/MotionLink';
+import { rzdCase } from '../../data/rzdCase';
 import {
   businessAnchors,
   businessAudiences,
@@ -96,7 +97,7 @@ export function BusinessHero({ onDiscuss, onShowScenarios }: BusinessHeroProps) 
             <Reveal delay={120}>
               <p className="cc-hero__lead">
                 Автоматизируем общение с клиентами, помогаем сотрудникам и превращаем разговоры в рабочие данные.
-                ИИ-агент, контактный центр, речевая аналитика и протоколирование — в составе решения под ваши процессы.
+                ИИ-агент, контактный центр, управление обращениями, речевая аналитика и протоколирование — под ваши процессы.
               </p>
               <p className="biz-hero__vendor">
                 Разрабатываем собственное ПО: настраиваем, интегрируем и дорабатываем платформу под вашу задачу.
@@ -109,6 +110,9 @@ export function BusinessHero({ onDiscuss, onShowScenarios }: BusinessHeroProps) 
                   Посмотреть сценарии
                 </Button>
               </div>
+              <Link className="biz-hero__case-link" to={rzdCase.href}>
+                Кейс РЖД: контактный центр и обращения с вокзалов →
+              </Link>
             </Reveal>
           </div>
 
@@ -237,7 +241,7 @@ export function BusinessProducts({
       <div className="container">
         <Reveal>
           <SectionHeader
-            title="Четыре продукта. Состав решения — под вашу компанию"
+            title="Пять продуктов. Состав решения — под вашу компанию"
             titleId="business-products-title"
             description="Продукты Lexicom могут работать вместе или дополнять действующие системы заказчика."
           />
@@ -267,7 +271,7 @@ function BusinessProductCard({
   onOpenDemo: (demo: ProductDemo, trigger: HTMLButtonElement | null) => void;
 }) {
   const triggerRef = useRef<HTMLButtonElement>(null);
-  const demo = productDemoById[product.id];
+  const demo = product.id === 'ticket-system' ? undefined : productDemoById[product.id];
 
   return (
     <Reveal delay={index * 60}>
@@ -278,7 +282,7 @@ function BusinessProductCard({
           Подробнее о продукте
           <span aria-hidden="true">→</span>
         </Link>
-        <ProductDemoTrigger ref={triggerRef} demo={demo} onOpen={() => onOpenDemo(demo, triggerRef.current)} />
+        {demo ? <ProductDemoTrigger ref={triggerRef} demo={demo} onOpen={() => onOpenDemo(demo, triggerRef.current)} /> : null}
       </GlassSurface>
     </Reveal>
   );

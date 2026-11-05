@@ -1,11 +1,10 @@
-import type { CaseMetric } from '../../components/CaseStudy';
 import type { ProductDemo } from '../productDemos';
 import { productHref, type ProductId } from '../products';
 
 export const businessPageMeta = {
   title: 'Автоматизация клиентского сервиса и обращений — Lexicom',
   description:
-    'ИИ для клиентского сервиса, продаж и поддержки: обработка звонков и сообщений, помощь сотрудникам и анализ качества коммуникаций. Решения Lexicom для бизнеса.',
+    'Lexicom для клиентского сервиса и поддержки: контактный центр, ИИ-агент, аналитика. Кейс РЖД: единая платформа ДЖВ, 17 отчётов и обращения с вокзалов по QR-коду.',
   canonicalPath: '/business',
 } as const;
 
@@ -45,6 +44,7 @@ export const businessScenarios: {
     products: [
       { label: 'ИИ-агент', to: productHref('neurobot') },
       { label: 'Контактный центр с суфлёром', to: productHref('contact-center') },
+      { label: 'Управление обращениями', to: productHref('ticket-system') },
       { label: 'Речевая аналитика', to: productHref('speech-analytics') },
     ],
   },
@@ -66,6 +66,7 @@ export const businessScenarios: {
       'Ассистент помогает найти ответ в согласованной базе знаний, уточняет проблему и направляет запрос в нужную команду. При интеграции с системой заявок регистрирует обращение и получает его статус.',
     products: [
       { label: 'ИИ-агент', to: productHref('neurobot') },
+      { label: 'Управление обращениями', to: productHref('ticket-system') },
       { label: 'База знаний' },
       { label: 'Контактный центр', to: productHref('contact-center') },
       { label: 'Интеграции' },
@@ -107,7 +108,7 @@ export const businessFlexibility = [
 export const businessFlexibilityClosing =
   'Можно начать с одной задачи, проверить результат и расширить решение на другие команды, филиалы и процессы.';
 
-export const businessProductIds = ['neurobot', 'contact-center', 'speech-analytics', 'protocol'] as const satisfies readonly ProductId[];
+export const businessProductIds = ['neurobot', 'contact-center', 'ticket-system', 'speech-analytics', 'protocol'] as const satisfies readonly ProductId[];
 
 export const businessProducts: {
   id: (typeof businessProductIds)[number];
@@ -123,6 +124,11 @@ export const businessProducts: {
     id: 'contact-center',
     title: 'Контактный центр',
     text: 'Каналы, очереди, маршрутизация, история взаимодействий, рабочие места операторов и руководителей. ИИ-суфлёр помогает находить ответ и подсказывает следующий шаг во время разговора.',
+  },
+  {
+    id: 'ticket-system',
+    title: 'Управление обращениями',
+    text: 'Карточки, ответственные и сроки обработки. Автоматическое распределение, база знаний и отчётность. Самостоятельный продукт для клиентского сервиса и внутренних служб.',
   },
   {
     id: 'speech-analytics',
@@ -174,20 +180,3 @@ export const businessTiming = {
   lead: 'Развёртывание продуктов — от 3 дней.',
   text: 'Срок полного внедрения зависит от состава решения, интеграций и готовности инфраструктуры.',
 } as const;
-
-/**
- * Fill from approved project materials only. Empty values render as
- * "готовится к публикации", never as zeros or dashes.
- */
-export const businessCase = {
-  id: 'business-case',
-  titleId: 'business-case-title',
-  title: 'Кейс для бизнеса',
-  status: 'Описание проекта и показатели готовятся к публикации',
-  subject: null,
-  taskLabel: 'Задача компании',
-  task: null,
-  scopeLabel: 'Продукты и выполненные работы',
-  scope: [] as string[],
-  metrics: [] as CaseMetric[],
-};

@@ -2,7 +2,7 @@ import type { ProductId } from './products';
 
 /** Demo reels for home product cards. Paths are site-root relative; resolve with BASE_URL. */
 export type ProductDemo = {
-  productId: Exclude<ProductId, 'ekc-110'>;
+  productId: Exclude<ProductId, 'ekc-110' | 'ticket-system'>;
   title: string;
   ctaLabel: string;
   /** Optional second line under the CTA label */

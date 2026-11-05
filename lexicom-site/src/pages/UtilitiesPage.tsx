@@ -1,4 +1,5 @@
 import { utilitiesDemoState } from '../data/directions/utilities';
+import { TicketProductReference } from '../components/TicketProductReference';
 import { Footer } from '../components/Footer';
 import { UtilitiesAnalytics } from '../components/utilities/UtilitiesAnalytics';
 import { UtilitiesCase } from '../components/utilities/UtilitiesCase';
@@ -70,6 +71,7 @@ export function UtilitiesPage() {
         <UtilitiesProducts />
         <UtilitiesDemo onRequestDemo={scrollToForm} />
         <UtilitiesScenarios />
+        <TicketProductReference context="utilities" />
         <UtilitiesMassInfo />
         <UtilitiesSpecialist />
         <UtilitiesAnalytics />

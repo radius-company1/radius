@@ -1,6 +1,7 @@
 export const productNav = [
   { label: 'ИИ-агент', href: '/products/neurobot' },
   { label: 'Контактный центр', href: '/products/contact-center' },
+  { label: 'Управление обращениями', href: '/products/ticket-system' },
   { label: 'Речевая аналитика', href: '/products/speech-analytics' },
   { label: 'Протоколирование', href: '/products/protocol' },
   { label: 'ЕКЦ 110', href: '/products/ekc-110' },

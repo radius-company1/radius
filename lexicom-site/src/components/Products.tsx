@@ -13,6 +13,7 @@ import { SectionHeader } from './ui/SectionHeader';
 const tintMap = {
   neurobot: 'cyan',
   'contact-center': 'blue',
+  'ticket-system': 'blue',
   'ekc-110': 'yellow',
   'speech-analytics': 'yellow',
   protocol: 'cyan',
@@ -35,7 +36,7 @@ function ProductCard({
 }) {
   const glow = useSurfaceGlow();
   const triggerRef = useRef<HTMLButtonElement>(null);
-  const demo = product.id === 'ekc-110' ? undefined : productDemoById[product.id];
+  const demo = product.id === 'ekc-110' || product.id === 'ticket-system' ? undefined : productDemoById[product.id];
   const detailsHref = productPageHref[product.id];
 
   return (
@@ -110,7 +111,7 @@ export function Products() {
           <SectionHeader
             title="Продукты и комплексные решения"
             titleId="products-title"
-            description="Четыре программных продукта собственной разработки. ЕКЦ 110 — комплексная поставка под ключ на их базе: программное обеспечение, оборудование, рабочие места, обучение и запуск."
+            description="Пять программных продуктов собственной разработки. ЕКЦ 110 — комплексная поставка под ключ на их базе: программное обеспечение, оборудование, рабочие места, обучение и запуск."
           />
         </Reveal>
 

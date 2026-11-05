@@ -1,5 +1,6 @@
 import { useClientReady } from '../hooks/useClientReady';
 import { Reveal } from './ui/Reveal';
+import { ticketShots } from '../data/ticketSystemPage';
 import { presentationShots } from '../data/presentationShots';
 import '../styles/static-presentation.css';
 import { useCallback, useEffect, useLayoutEffect, useRef, useState } from 'react';
@@ -10,6 +11,7 @@ import { VideoDemoModal } from './VideoDemoModal';
 import { ImageLightbox, type LightboxImage } from './ImageLightbox';
 
 const media: Record<string, LightboxImage & { srcSmall?: string; srcMobile?: string; mobileWidth?: number; mobileHeight?: number; presentation?: boolean }> = {
+  'ticket-system': ticketShots[0],
   neurobot: { src: '/products/neurobot/hero-dialog.webp', width: 507, height: 750, alt: 'Голосовые и текстовые сообщения в диалоге ИИ-агента', caption: 'Пример консультации ИИ-агента' },
   'contact-center': { src: '/products/contact-center/workspace-desk-call-960.webp', width: 960, height: 460, alt: 'Рабочее место оператора: данные, звонок и аналитика', caption: 'Рабочее место оператора', ...presentationShots['workspace-desk-call'] },
   'speech-analytics': { src: '/products/speech-analytics/hero-overview-960.webp', width: 960, height: 390, alt: 'Экран речевой аналитики: обзор, риски и рекомендации', caption: 'Обзор результатов анализа диалогов', ...presentationShots['hero-overview'] },
@@ -17,6 +19,7 @@ const media: Record<string, LightboxImage & { srcSmall?: string; srcMobile?: str
 };
 
 const copy = {
+  'ticket-system': { task: 'Довести обращение до решения.', text: 'Карточки, ответственные, статусы и сроки. Автоматические правила, база знаний и отчёты помогают организовать работу службы.', tags: 'Обращения · Исполнители · Сроки' },
   neurobot: { task: 'Ответить. Помочь. Передать контекст.', text: 'Голосовой и текстовый ИИ-агент: отвечает по базе знаний, выполняет типовые сценарии и передаёт сложные обращения сотруднику.', tags: 'Звонки · MAX · Чаты и виджет' },
   'contact-center': { task: 'Все обращения — в рабочем месте сотрудника.', text: 'Телефония, текстовые каналы и история взаимодействий. Робот-суфлёр помогает сотруднику подсказками из базы знаний.', tags: 'Очереди · Маршрутизация · Суфлёр' },
   'speech-analytics': { task: 'Понять, что стоит за разговором.', text: 'Темы и причины обращений, качество работы, нарушения и повторные контакты. Основа для улучшения обслуживания.', tags: 'Расшифровка · Анализ · Рекомендации' },
@@ -72,7 +75,7 @@ export function DesignProducts() {
     <div className="container">
       <Reveal variant="fade"><div className="design-section-heading">
         <h2 id="products-title">Продукты Lexicom</h2>
-        <p>Четыре решения собственной разработки работают отдельно или вместе: ИИ-агент отвечает на типовые обращения, сложные передаёт сотруднику в контактный центр с историей диалога, а аналитика показывает темы и качество работы.</p>
+        <p>Пять программных продуктов работают отдельно или вместе: ИИ-агент и контактный центр ведут общение, управление обращениями организует дальнейшую работу, аналитика оценивает качество, а протоколирование сохраняет итоги встреч.</p>
       </div>
       </Reveal>
       <div className={`final-product-showcase${ready ? ' is-interactive' : ''}`}>
@@ -92,7 +95,7 @@ export function DesignProducts() {
                 const keys = [forward, backward, 'Home', 'End'];
                 if (!keys.includes(event.key)) return;
                 event.preventDefault();
-                const next = event.key === 'Home' ? 0 : event.key === 'End' ? 3 : (index + (event.key === forward ? 1 : 3)) % 4;
+                const next = event.key === 'Home' ? 0 : event.key === 'End' ? softwareProductIds.length - 1 : (index + (event.key === forward ? 1 : softwareProductIds.length - 1)) % softwareProductIds.length;
                 setSelected(softwareProductIds[next]);
                 tabs.current[next]?.focus();
               }}
@@ -104,6 +107,7 @@ export function DesignProducts() {
           const product = products.find(p => p.id === id)!;
           const info = copy[id];
           const shot = media[id];
+          const productDemo = id === 'ticket-system' ? undefined : productDemoById[id];
           return <article className={`design-product design-product--${id}${selected === id ? ' is-selected' : ''}`} id={`product-${id}`} key={id}
             role={ready ? 'tabpanel' : undefined} aria-labelledby={ready ? `product-tab-${id}` : undefined}
             aria-hidden={ready && selected !== id ? true : undefined} inert={ready && selected !== id ? true : undefined}>
@@ -125,10 +129,10 @@ export function DesignProducts() {
             </figure>
             <div className="design-product__actions">
               <Link to={productPageHref[id]!}>О продукте <span aria-hidden="true">↗</span></Link>
-              <button type="button" onClick={e => {trigger.current = e.currentTarget; setDemo(productDemoById[id]);}} aria-label={`Видео ${productDemoById[id].durationLabel}: ${product.title}`}>
+              {productDemo ? <button type="button" onClick={e => {trigger.current = e.currentTarget; setDemo(productDemo);}} aria-label={`Видео ${productDemo.durationLabel}: ${product.title}`}>
                 <svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="m5 3 8 5-8 5Z" fill="currentColor" /></svg>
-                Видео <span>{productDemoById[id].durationLabel}</span>
-              </button>
+                Видео <span>{productDemo.durationLabel}</span>
+              </button> : null}
             </div>
           </article>;
         })}

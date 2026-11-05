@@ -1,4 +1,4 @@
-export type ProductId = 'neurobot' | 'contact-center' | 'ekc-110' | 'speech-analytics' | 'protocol';
+export type ProductId = 'neurobot' | 'contact-center' | 'ekc-110' | 'speech-analytics' | 'protocol' | 'ticket-system';
 
 export type ProductItem = {
   id: ProductId;
@@ -26,6 +26,13 @@ export const products: readonly ProductItem[] = [
     tags: ['каналы', 'рабочее место', 'маршрутизация', 'история', 'отчётность', 'суфлёр'],
   },
   {
+    id: 'ticket-system',
+    title: 'Управление обращениями',
+    subtitle: 'От регистрации до решения',
+    description: 'Самостоятельная тикет-система для клиентов и сотрудников: карточки обращений, распределение по очередям, ответственные, сроки реакции и решения, база знаний и отчётность.',
+    tags: ['ответственные', 'статусы', 'сроки', 'автоматизация', 'база знаний'],
+  },
+  {
     id: 'ekc-110',
     title: 'ЕКЦ 110',
     subtitle: 'Единая первая линия региона',
@@ -51,11 +58,12 @@ export const products: readonly ProductItem[] = [
   },
 ] as const;
 
-export const softwareProductIds = ['neurobot', 'contact-center', 'speech-analytics', 'protocol'] as const satisfies readonly ProductId[];
+export const softwareProductIds = ['neurobot', 'contact-center', 'ticket-system', 'speech-analytics', 'protocol'] as const satisfies readonly ProductId[];
 
 export const productPageLinkLabel: Record<ProductId, string> = {
   neurobot: 'Подробнее об ИИ-агенте',
   'contact-center': 'Посмотреть контактный центр',
+  'ticket-system': 'Подробнее об управлении обращениями',
   'speech-analytics': 'Возможности речевой аналитики',
   protocol: 'Подробнее о протоколировании',
   'ekc-110': 'Подробнее о ЕКЦ 110',
@@ -64,6 +72,7 @@ export const productPageLinkLabel: Record<ProductId, string> = {
 /** Only products that already have their own page. */
 export const productPageHref: Partial<Record<ProductId, string>> = {
   'contact-center': '/products/contact-center',
+  'ticket-system': '/products/ticket-system',
   neurobot: '/products/neurobot',
   'speech-analytics': '/products/speech-analytics',
   protocol: '/products/protocol',

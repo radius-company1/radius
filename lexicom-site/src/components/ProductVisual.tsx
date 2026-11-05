@@ -149,6 +149,15 @@ export function ProductVisual({ id }: ProductVisualProps) {
         </svg>
       );
 
+    case 'ticket-system':
+      return <svg className="product-visual" viewBox="0 0 320 148" fill="none" aria-hidden="true">
+        <rect x="72" y="18" width="176" height="112" rx="18" fill={glass.fill} stroke="rgba(83,103,255,.45)" />
+        {[44, 74, 104].map((y, i) => <g key={y}>
+          <rect x="90" y={y - 9} width="20" height="20" rx="6" fill={i === 2 ? '#dceede' : '#dce6fa'} />
+          <path d={`M95 ${y}l4 4 7-8`} stroke="#47628b" strokeWidth="2" />
+          <path d={`M124 ${y - 3}h80 M124 ${y + 5}h50`} stroke="#a5b7ce" strokeWidth="4" strokeLinecap="round" />
+        </g>)}
+      </svg>;
     case 'ekc-110':
       return (
         <svg className="product-visual product-visual--ekc-110" viewBox="0 0 320 148" fill="none" aria-hidden="true">

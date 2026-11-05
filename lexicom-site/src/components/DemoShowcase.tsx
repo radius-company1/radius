@@ -1,7 +1,7 @@
 import { Reveal } from './ui/Reveal';
 import { useCallback, useRef, useState } from 'react';
-import { products, softwareProductIds } from '../data/products';
-import { productDemoById, resolveDemoAsset, type ProductDemo } from '../data/productDemos';
+import { products } from '../data/products';
+import { productDemos, productDemoById, resolveDemoAsset, type ProductDemo } from '../data/productDemos';
 import { VideoDemoModal } from './VideoDemoModal';
 import { SectionHeader } from './ui/SectionHeader';
 
@@ -20,7 +20,7 @@ export function DemoShowcase() {
     <div className="container">
       <Reveal variant="fade"><SectionHeader title="Посмотрите в работе" titleId="product-demos-title" description="Четыре короткие видеодемонстрации. Выберите, с чего начать знакомство." /></Reveal>
       <div className="final-demos__grid">
-        {softwareProductIds.map((id, index) => {
+        {productDemos.map((entry) => entry.productId).map((id, index) => {
           const item = productDemoById[id];
           const title = products.find(product => product.id === id)!.title;
           return <Reveal key={id} delay={index * 60} variant="media"><button type="button" className="final-demo" key={id} aria-label={`Смотреть демонстрацию: ${title}`} onClick={event => {trigger.current = event.currentTarget;setDemo(item);}}>

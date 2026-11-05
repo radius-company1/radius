@@ -1,4 +1,5 @@
 import { useCallback, useRef, useState } from 'react';
+import { TicketProductReference } from '../components/TicketProductReference';
 import { Footer } from '../components/Footer';
 import { LexaDemo } from '../components/LexaDemo';
 import { NbCapabilities } from '../components/neurobot/NbCapabilities';
@@ -40,6 +41,7 @@ export function NeurobotPage() {
         <NbCapabilities />
         <NbProcess />
         <NbTeamwork />
+        <TicketProductReference context="neurobot" />
         <NbIndustries />
         <NbInfrastructure />
         <NbFaq />
