@@ -43,6 +43,11 @@ export const utilitiesProducts = [
     text: 'Каналы, очереди и история в одном контуре. Оператор получает контекст и подсказки по базе знаний во время разговора.',
   },
   {
+    id: 'ticket-system',
+    title: 'Управление обращениями',
+    text: 'Заявки по начислениям, отключениям и обслуживанию: очередь, ответственный, приоритет и срок решения. История обращения и результат работы сохраняются в карточке; руководитель видит нагрузку и соблюдение сроков.',
+  },
+  {
     id: 'analytics',
     title: 'Речевая аналитика',
     text: 'Темы и причины обращений, повторные контакты и качество консультаций — для контроля обслуживания и базы знаний.',
@@ -60,6 +65,7 @@ export const utilitiesProductFoundation = [
 export const utilitiesPlatformChain = [
   'ИИ-агент',
   'Контактный центр + ИИ-суфлёр',
+  'Управление обращениями',
   'Речевая аналитика',
   'Интеграции с системами заказчика',
   'Работа в инфраструктуре заказчика',
@@ -277,21 +283,6 @@ export const utilitiesLaunchAccent = {
 export const utilitiesResourceAccent = {
   title: 'Ресурсы под ваши задачи',
   text: 'Параметры вычислительных ресурсов согласуем с заказчиком. Подбираем и оптимизируем конфигурацию под задачи и нагрузку, чтобы избежать избыточных затрат.',
-} as const;
-
-/** Fillable case stub for analysts — keep placeholders until a real utilities case is ready. */
-export const utilitiesCasePlaceholder = {
-  title: 'Кейс направления',
-  customer: '—',
-  task: '—',
-  solution: '—',
-  result: '—',
-  metrics: [
-    { metric: 'Время ожидания', before: '—', after: '—' },
-    { metric: 'Доля типовых обращений, обработанных автоматически', before: '—', after: '—' },
-    { metric: 'Время обработки обращения оператором', before: '—', after: '—' },
-  ],
-  note: 'Кейс готовится к публикации',
 } as const;
 
 export const utilitiesImplementationSteps = [

@@ -1,5 +1,7 @@
 import { neurobotHeroFrame } from '../../data/neurobotPage';
+import { useRef, useState } from 'react';
 import { productDemoById, resolveDemoAsset } from '../../data/productDemos';
+import { ImageLightbox, type LightboxImage } from '../ImageLightbox';
 import { scrollToLexaDemo } from '../../hooks/scrollBelowChrome';
 import { ProductBreadcrumbs } from '../ProductBreadcrumbs';
 import { Button } from '../ui/Button';
@@ -14,6 +16,8 @@ type NbHeroProps = {
 const demo = productDemoById.neurobot;
 
 export function NbHero({ onPlay, onDiscuss }: NbHeroProps) {
+  const [image, setImage] = useState<LightboxImage | null>(null);
+  const imageTrigger = useRef<HTMLButtonElement>(null);
   return (
     <section className="nb-hero section-zone" id="nb-top" aria-labelledby="nb-hero-title">
       <div className="container">
@@ -72,25 +76,18 @@ export function NbHero({ onPlay, onDiscuss }: NbHeroProps) {
             >
               <button
                 type="button"
-                className="nb-hero__video"
-                onClick={(event) => onPlay(event.currentTarget)}
-                aria-label={`Смотреть видео: ${neurobotHeroFrame.caption}, ${demo.durationLabel}`}
+                className="nb-hero__image"
+                ref={imageTrigger}
+                onClick={() => setImage({ ...neurobotHeroFrame, src: resolveDemoAsset(neurobotHeroFrame.srcMobile), width: neurobotHeroFrame.mobileWidth, height: neurobotHeroFrame.mobileHeight })}
+                aria-label={`Увеличить изображение: ${neurobotHeroFrame.caption}`}
               >
                 <img
-                  src={resolveDemoAsset(neurobotHeroFrame.src)}
+                  src={resolveDemoAsset(neurobotHeroFrame.srcMobile)}
                   alt={neurobotHeroFrame.alt}
-                  width={neurobotHeroFrame.width}
-                  height={neurobotHeroFrame.height}
+                  width={neurobotHeroFrame.mobileWidth}
+                  height={neurobotHeroFrame.mobileHeight}
                   decoding="async"
                 />
-                <span className="nb-hero__play" aria-hidden="true">
-                  <svg viewBox="0 0 24 24" width="26" height="26">
-                    <path d="M9 6.8v10.4L17.5 12 9 6.8z" fill="currentColor" />
-                  </svg>
-                </span>
-                <span className="nb-hero__duration" aria-hidden="true">
-                  {demo.durationLabel}
-                </span>
               </button>
               <p className="nb-hero__caption">{neurobotHeroFrame.caption}</p>
               <button
@@ -102,12 +99,13 @@ export function NbHero({ onPlay, onDiscuss }: NbHeroProps) {
                   <circle cx="12" cy="12" r="10.5" fill="none" stroke="currentColor" strokeWidth="1.6" />
                   <path d="M10 8.2v7.6L16.5 12 10 8.2z" fill="currentColor" />
                 </svg>
-                Послушать пример диалога
+                Видеодемонстрация · {demo.durationLabel}
               </button>
             </GlassSurface>
           </Reveal>
         </div>
       </div>
+      <ImageLightbox image={image} onClose={() => setImage(null)} returnFocusRef={imageTrigger} />
     </section>
   );
 }

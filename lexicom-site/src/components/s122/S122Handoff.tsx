@@ -36,6 +36,7 @@ export function S122Handoff() {
         <div className="s122-handoff__links">
           <ProductPageLink id="neurobot" />
           <ProductPageLink id="contact-center" />
+          <ProductPageLink id="ticket-system" />
           <ProductPageLink id="speech-analytics" />
         </div>
       </div>

@@ -29,7 +29,6 @@
 }
 
 .page-view--utilities .utilities-vendor,
-.page-view--utilities .utilities-case,
 .page-view--utilities .utilities-integration,
 .page-view--utilities .utilities-scenarios,
 .page-view--utilities .utilities-implementation,
@@ -283,7 +282,7 @@
 
 .utilities-products__grid {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 0.85rem;
   margin-bottom: 1rem;
 }
@@ -954,62 +953,6 @@
   color: var(--color-ink-soft);
 }
 
-/* Case */
-
-.utilities-case__panel {
-  padding: 1.25rem 1.35rem;
-}
-
-.utilities-case__grid {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 0.9rem 1.25rem;
-  margin-bottom: 1.1rem;
-}
-
-.utilities-case__label {
-  margin: 0 0 0.25rem;
-  font-size: 12px;
-  font-weight: 700;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-  color: var(--color-muted);
-}
-
-.utilities-case__value {
-  margin: 0;
-  font-weight: 600;
-  color: var(--color-ink-soft);
-}
-
-.utilities-case__metrics table {
-  width: 100%;
-  border-collapse: collapse;
-  margin-top: 0.45rem;
-}
-
-.utilities-case__metrics th,
-.utilities-case__metrics td {
-  padding: 0.55rem 0.65rem;
-  text-align: left;
-  border-bottom: 1px solid color-mix(in srgb, var(--color-line) 80%, transparent);
-  font-size: 0.92rem;
-}
-
-.utilities-case__metrics th {
-  font-size: 12px;
-  letter-spacing: 0.05em;
-  text-transform: uppercase;
-  color: var(--color-muted);
-}
-
-.utilities-case__note {
-  margin: 1rem 0 0;
-  font-size: 0.9rem;
-  color: var(--color-muted);
-  line-height: 1.45;
-}
-
 /* Implementation / outcomes */
 
 .utilities-implementation__route {
@@ -1113,7 +1056,6 @@
   .utilities-analytics__layout,
   .utilities-integration__cols,
   .utilities-vendor__accents,
-  .utilities-case__grid,
   .utilities-specialist__card-grid {
     grid-template-columns: 1fr;
   }
@@ -1160,9 +1102,6 @@
     align-items: stretch;
   }
 
-  .utilities-case__metrics {
-    overflow-x: auto;
-  }
 }
 
 @media (min-width: 960px) {

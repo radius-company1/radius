@@ -9,6 +9,7 @@ import { SectionHeader } from '../ui/SectionHeader';
 const visualByProduct: Record<string, ProductId> = {
   neurobot: 'neurobot',
   cc: 'contact-center',
+  'ticket-system': 'ticket-system',
   analytics: 'speech-analytics',
 };
 

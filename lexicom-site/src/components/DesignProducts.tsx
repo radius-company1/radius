@@ -2,6 +2,7 @@ import { useClientReady } from '../hooks/useClientReady';
 import { Reveal } from './ui/Reveal';
 import { ticketShots } from '../data/ticketSystemPage';
 import { presentationShots } from '../data/presentationShots';
+import { neurobotHeroFrame } from '../data/neurobotPage';
 import '../styles/static-presentation.css';
 import { useCallback, useEffect, useLayoutEffect, useRef, useState } from 'react';
 import { MotionLink as Link } from './ui/MotionLink';
@@ -10,9 +11,9 @@ import { productDemoById, resolveDemoAsset, type ProductDemo } from '../data/pro
 import { VideoDemoModal } from './VideoDemoModal';
 import { ImageLightbox, type LightboxImage } from './ImageLightbox';
 
-const media: Record<string, LightboxImage & { srcSmall?: string; srcMobile?: string; mobileWidth?: number; mobileHeight?: number; presentation?: boolean }> = {
+const media: Record<string, LightboxImage & { srcSmall?: string; srcMobile?: string; mobileWidth?: number; mobileHeight?: number; mobileMedia?: string; presentation?: boolean }> = {
   'ticket-system': ticketShots[0],
-  neurobot: { src: '/products/neurobot/hero-dialog.webp', width: 507, height: 750, alt: 'Голосовые и текстовые сообщения в диалоге ИИ-агента', caption: 'Пример консультации ИИ-агента' },
+  neurobot: neurobotHeroFrame,
   'contact-center': { src: '/products/contact-center/workspace-desk-call-960.webp', width: 960, height: 460, alt: 'Рабочее место оператора: данные, звонок и аналитика', caption: 'Рабочее место оператора', ...presentationShots['workspace-desk-call'] },
   'speech-analytics': { src: '/products/speech-analytics/hero-overview-960.webp', width: 960, height: 390, alt: 'Экран речевой аналитики: обзор, риски и рекомендации', caption: 'Обзор результатов анализа диалогов', ...presentationShots['hero-overview'] },
   protocol: { src: '/products/protocol/hero-transcript-960.webp', width: 960, height: 390, alt: 'Распознавание записи: расшифровка и список участников', caption: 'Расшифровка с разделением участников', ...presentationShots['hero-transcript'] },
@@ -71,6 +72,11 @@ export function DesignProducts() {
   const [image, setImage] = useState<LightboxImage | null>(null);
   const imageTrigger = useRef<HTMLButtonElement | null>(null);
   const closeImage = useCallback(() => setImage(null), []);
+  const showImage = (id: string, shot: (typeof media)[string], button: HTMLButtonElement) => {
+    imageTrigger.current = button;
+    const useMobile = id === 'neurobot' && shot.srcMobile && window.matchMedia(shot.mobileMedia ?? '(max-width: 1100px)').matches;
+    setImage({ ...shot, src: resolveDemoAsset(useMobile ? shot.srcMobile! : shot.src), width: useMobile ? shot.mobileWidth! : shot.width, height: useMobile ? shot.mobileHeight! : shot.height });
+  };
   return <section className="design-products section" id="products" aria-labelledby="products-title">
     <div className="container">
       <Reveal variant="fade"><div className="design-section-heading">
@@ -116,16 +122,14 @@ export function DesignProducts() {
             <p className="design-product__description">{info.text}</p>
             <figure className={`design-product__media design-product__media--${id}${shot.presentation ? ' static-presentation' : ''}`}>
               <button className="design-product__image-button" type="button" aria-label={`Увеличить изображение: ${product.title}`} onClick={event => {
-                imageTrigger.current = event.currentTarget;
-                setImage({...shot, src: resolveDemoAsset(shot.src)});
+                showImage(id, shot, event.currentTarget);
               }}>
                 {shot.presentation ? <picture>
-                  {shot.srcMobile ? <source media="(max-width: 1100px)" srcSet={resolveDemoAsset(shot.srcMobile)} width={shot.mobileWidth} height={shot.mobileHeight} /> : null}
+                  {shot.srcMobile ? <source media={shot.mobileMedia ?? '(max-width: 1100px)'} srcSet={resolveDemoAsset(shot.srcMobile)} width={shot.mobileWidth} height={shot.mobileHeight} /> : null}
                   <img src={resolveDemoAsset(shot.srcSmall ?? shot.src)} srcSet={shot.srcSmall ? `${resolveDemoAsset(shot.srcSmall)} 1200w, ${resolveDemoAsset(shot.src)} 2400w` : undefined} sizes="(min-width: 1101px) 800px, (min-width: 768px) 640px, calc(100vw - 80px)" alt={shot.alt} width={shot.width} height={shot.height} loading="lazy" />
                 </picture> : <img src={resolveDemoAsset(shot.src)} alt={shot.alt} width={shot.width} height={shot.height} loading="lazy" />}
-                {id === 'neurobot' ? <span className="design-product__media-note"><strong>Голос и текст</strong><span>Пример консультации из демонстрации ИИ-агента.</span></span> : null}
               </button>
-              <figcaption><span>{shot.caption}</span><button type="button" onClick={event => {imageTrigger.current=event.currentTarget;setImage({...shot,src:resolveDemoAsset(shot.src)});}} aria-label={`Увеличить изображение: ${product.title}`}>Увеличить <svg viewBox="0 0 16 16" width="14" height="14" fill="none" stroke="currentColor" strokeWidth="1.4" aria-hidden="true"><path d="M6 2H2v4m8-4h4v4M2 10v4h4m8-4v4h-4" /></svg></button></figcaption>
+              <figcaption><span>{shot.caption}</span><button type="button" onClick={event => {showImage(id, shot, event.currentTarget);}} aria-label={`Увеличить изображение: ${product.title}`}>Увеличить <svg viewBox="0 0 16 16" width="14" height="14" fill="none" stroke="currentColor" strokeWidth="1.4" aria-hidden="true"><path d="M6 2H2v4m8-4h4v4M2 10v4h4m8-4v4h-4" /></svg></button></figcaption>
             </figure>
             <div className="design-product__actions">
               <Link to={productPageHref[id]!}>О продукте <span aria-hidden="true">↗</span></Link>

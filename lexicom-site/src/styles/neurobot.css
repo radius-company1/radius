@@ -87,8 +87,9 @@
   padding: 0.6rem;
 }
 
-.nb-hero__video {
+.nb-hero__image {
   position: relative;
+  cursor: zoom-in;
   display: block;
   width: 100%;
   padding: 0;
@@ -96,60 +97,19 @@
   border-radius: 16px;
   overflow: hidden;
   background: #fff;
-  cursor: pointer;
   box-shadow:
     0 0 0 1px rgba(12, 16, 32, 0.08),
     0 16px 40px rgba(12, 16, 32, 0.14);
 }
 
-.nb-hero__video img {
+.nb-hero__image img {
   display: block;
   width: 100%;
   height: auto;
-  aspect-ratio: 507 / 750;
   object-fit: contain;
 }
 
-.nb-hero__play {
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  display: grid;
-  place-items: center;
-  width: 4rem;
-  height: 4rem;
-  border-radius: 50%;
-  transform: translate(-50%, -50%);
-  background: var(--color-yellow);
-  color: var(--color-accent-ink);
-  box-shadow:
-    0 0 0 8px rgba(255, 255, 255, 0.55),
-    0 14px 32px rgba(12, 16, 32, 0.25);
-  transition: transform 0.2s var(--ease);
-}
-
-.nb-hero__play svg {
-  margin-left: 3px;
-}
-
-.nb-hero__duration {
-  position: absolute;
-  right: 0.6rem;
-  bottom: 0.6rem;
-  padding: 0.25rem 0.55rem;
-  border-radius: 999px;
-  background: rgba(12, 16, 32, 0.78);
-  color: #fff;
-  font-size: 14px;
-  font-weight: 700;
-}
-
-.nb-hero__video:hover .nb-hero__play,
-.nb-hero__video:focus-visible .nb-hero__play {
-  transform: translate(-50%, -50%) scale(1.07);
-}
-
-.nb-hero__video:focus-visible {
+.nb-hero__image:focus-visible {
   outline: 2px solid rgba(83, 103, 255, 0.55);
   outline-offset: 3px;
 }

@@ -42,6 +42,13 @@ function LevelIcon({ icon }: { icon: (typeof mfcEcosystemLevels)[number]['icon']
           />
         </svg>
       );
+    case 'tickets':
+      return (
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <rect x="5" y="3" width="14" height="18" rx="2" fill="none" stroke="currentColor" strokeWidth="1.6" />
+          <path d="M9 8h6M9 12h6M9 16h3" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" />
+        </svg>
+      );
     case 'knowledge':
       return (
         <svg viewBox="0 0 24 24" aria-hidden="true">
@@ -73,7 +80,7 @@ export function MfcEcosystem() {
           <SectionHeader
             title="От отдельного бота до единого контура обслуживания"
             titleId="mfc-ecosystem-title"
-            description="Из чего состоит решение: каналы, ИИ-агент, контактный центр с суфлёром, база знаний с интеграциями и речевая аналитика. Можно начать с одного канала или сценария и наращивать контур."
+            description="Из чего состоит решение: каналы, ИИ-агент, контактный центр с суфлёром, управление обращениями, база знаний с интеграциями и речевая аналитика. Можно начать с одного канала или сценария и наращивать контур."
           />
         </Reveal>
 

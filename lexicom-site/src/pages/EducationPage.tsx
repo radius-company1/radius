@@ -1,5 +1,4 @@
 import { useCallback, useRef, useState } from 'react';
-import { CaseStudy } from '../components/CaseStudy';
 import {
   EducationAnalytics,
   EducationFinalCta,
@@ -14,7 +13,7 @@ import {
 import { TicketProductReference } from '../components/TicketProductReference';
 import { Footer } from '../components/Footer';
 import { VideoDemoModal } from '../components/VideoDemoModal';
-import { educationAnchors, educationCase } from '../data/directions/education';
+import { educationAnchors } from '../data/directions/education';
 import type { ProductDemo } from '../data/productDemos';
 import { scrollBelowChrome, scrollToProductForm } from '../hooks/scrollBelowChrome';
 
@@ -53,7 +52,6 @@ export function EducationPage() {
         <EducationAnalytics />
         <EducationInfrastructure />
         <EducationLaunch />
-        <CaseStudy data={educationCase} />
         <EducationFinalCta />
       </main>
       <Footer />

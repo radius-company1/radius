@@ -1,4 +1,3 @@
-import type { CaseMetric } from '../../components/CaseStudy';
 import type { ProductDemo } from '../productDemos';
 import { productHref, type ProductId } from '../products';
 
@@ -41,6 +40,7 @@ export const educationTasks: {
     products: [
       { label: 'ИИ-агент', to: productHref('neurobot') },
       { label: 'Контактный центр', to: productHref('contact-center') },
+      { label: 'Управление обращениями', to: productHref('ticket-system') },
     ],
   },
   {
@@ -55,10 +55,11 @@ export const educationTasks: {
   },
   {
     title: 'Поддержка сотрудников',
-    text: 'Ответы по внутренним инструкциям и корпоративным сервисам, уточнение проблемы и направление запроса в ИТ, кадровые или административные службы. Создание заявки в действующей системе — при подключении интеграции.',
+    text: 'Ответы по внутренним инструкциям и корпоративным сервисам, уточнение проблемы и направление запроса в ИТ, кадровые или административные службы. Обработка заявок — в тикет-системе Lexicom или действующей системе при подключении интеграции.',
     products: [
       { label: 'ИИ-агент', to: productHref('neurobot') },
       { label: 'Контактный центр', to: productHref('contact-center') },
+      { label: 'Управление обращениями', to: productHref('ticket-system') },
     ],
   },
   {
@@ -71,6 +72,7 @@ export const educationTasks: {
 export const educationProductIds = [
   'neurobot',
   'contact-center',
+  'ticket-system',
   'speech-analytics',
   'protocol',
 ] as const satisfies readonly ProductId[];
@@ -89,6 +91,11 @@ export const educationProducts: {
     id: 'contact-center',
     title: 'Контактный центр с ИИ-суфлёром',
     text: 'Общая работа с обращениями: очереди, распределение между подразделениями, история диалогов и рабочие места сотрудников. ИИ-суфлёр помогает находить ответы в базе знаний во время разговора.',
+  },
+  {
+    id: 'ticket-system',
+    title: 'Управление обращениями',
+    text: 'Обращения студентов и сотрудников в ИТ, кадровые и административные службы: распределение по подразделениям, ответственные, статусы и сроки. База знаний помогает сотрудникам находить инструкции, отчёты — оценивать нагрузку и результаты.',
   },
   {
     id: 'speech-analytics',
@@ -226,20 +233,3 @@ export const educationTiming = {
   lead: 'Развёртывание продуктов — от 3 дней.',
   text: 'Срок полного внедрения зависит от состава решения, интеграций и готовности инфраструктуры.',
 } as const;
-
-/**
- * Fill from approved project materials only. Empty values render as
- * "готовится к публикации", never as zeros or invented education metrics.
- */
-export const educationCase = {
-  id: 'education-case',
-  titleId: 'education-case-title',
-  title: 'Кейс в образовании',
-  status: 'Описание проекта и показатели готовятся к публикации.',
-  subject: null,
-  taskLabel: 'Задача организации',
-  task: null,
-  scopeLabel: 'Продукты и выполненные работы',
-  scope: [] as string[],
-  metrics: [] as CaseMetric[],
-};

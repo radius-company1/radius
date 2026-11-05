@@ -201,16 +201,17 @@ export type EkcCase = {
   metrics: EkcCaseMetric[];
 };
 
-/**
- * Fill from approved project materials only. Empty values render as
- * "готовится к публикации", never as zeros or dashes.
- */
+/** Owner-confirmed project and current status; see docs/LEXICOM_MASTER_FACTS.md. */
 export const ekcCase: EkcCase = {
-  title: 'Кейс внедрения ЕКЦ',
-  status: 'Описание проекта и показатели готовятся к публикации',
-  region: null,
-  task: null,
-  scope: [],
+  title: 'Проект Lexicom: ЕКЦ 110 Белгородской области',
+  status: 'Внедрение продолжается.',
+  region: 'Белгородская область',
+  task: 'Создание единого контактного центра с номером 110 для обращений жителей и работы ответственных исполнителей.',
+  scope: [
+    'Объединение каналов обращений на одной платформе.',
+    'Классификация и маршрутизация обращений.',
+    'Организация работы ответственных исполнителей.',
+  ],
   metrics: [],
 };
 

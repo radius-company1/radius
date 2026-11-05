@@ -182,7 +182,7 @@ export function EducationProducts({
       <div className="container">
         <Reveal>
           <SectionHeader
-            title="Четыре продукта для задач вашей организации"
+            title="Продукты для задач вашей организации"
             titleId="education-products-title"
             description="Продукты могут работать вместе или дополнять существующие системы. База знаний и интеграции связывают их с процессами организации."
           />
@@ -208,7 +208,7 @@ function EducationProductCard({
   onOpenDemo: (demo: ProductDemo, trigger: HTMLButtonElement | null) => void;
 }) {
   const triggerRef = useRef<HTMLButtonElement>(null);
-  const demo = productDemoById[product.id];
+  const demo = product.id === 'ticket-system' ? undefined : productDemoById[product.id];
 
   return (
     <Reveal delay={index * 50}>
@@ -225,7 +225,7 @@ function EducationProductCard({
         <h3>{product.title}</h3>
         <p>{product.text}</p>
         <ProductPageLink id={product.id} className="edu-product__more" />
-        <ProductDemoTrigger ref={triggerRef} demo={demo} onOpen={() => onOpenDemo(demo, triggerRef.current)} />
+        {demo ? <ProductDemoTrigger ref={triggerRef} demo={demo} onOpen={() => onOpenDemo(demo, triggerRef.current)} /> : null}
       </GlassSurface>
     </Reveal>
   );

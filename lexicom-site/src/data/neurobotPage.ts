@@ -12,13 +12,18 @@ export const neurobotAnchors = {
   finalTitle: 'nb-final-title',
 } as const;
 
-/** Frame from the neurobot demo video (0:175); site-root relative, resolve with BASE_URL. */
+/** Seven-message dialogue showing context retention; see docs/products/neurobot-screen-2026-11-05.md. */
 export const neurobotHeroFrame = {
-  src: '/products/neurobot/hero-dialog.webp',
-  width: 507,
-  height: 750,
-  alt: 'Кадр из видео: окно консультации Lexicom с голосовыми сообщениями и уточняющим вопросом ИИ-агента',
-  caption: 'Пример голосовой консультации о мерах социальной поддержки',
+  src: '/products/presentation/hero-agent-dialog.webp',
+  srcMobile: '/products/presentation/hero-agent-dialog-mobile.webp',
+  width: 1536,
+  height: 1024,
+  mobileWidth: 1024,
+  mobileHeight: 1536,
+  mobileMedia: '(max-width: 639px)',
+  presentation: true,
+  alt: 'Диалог из семи сообщений: ИИ-агент понимает просьбу заменить паспорт, запоминает утренний приём и учитывает смену района с Центрального на Северный',
+  caption: 'Понимает свободную речь и сохраняет контекст',
 } as const;
 
 export const neurobotChannels = [

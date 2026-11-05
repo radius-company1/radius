@@ -286,20 +286,6 @@
   padding-left: 1.1rem;
 }
 
-.ekc-case__part .ekc-case__pending {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.45rem;
-  padding: 0.32rem 0.75rem;
-  border-radius: 999px;
-  border: 1px dashed rgba(12, 16, 32, 0.22);
-  background: rgba(255, 255, 255, 0.6);
-  font-size: 14px;
-  font-weight: 600;
-  font-style: italic;
-  color: var(--color-text-muted);
-}
-
 .ekc-case__table {
   width: 100%;
   border-collapse: collapse;

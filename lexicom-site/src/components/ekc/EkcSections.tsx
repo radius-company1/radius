@@ -95,7 +95,7 @@ export function EkcCaseStudy() {
         subject: ekcCase.region,
         taskLabel: 'Задача региона',
         task: ekcCase.task,
-        scopeLabel: 'Состав поставки и выполненные работы',
+        scopeLabel: 'Состав проекта',
         scope: ekcCase.scope,
         metrics: ekcCase.metrics,
       }}

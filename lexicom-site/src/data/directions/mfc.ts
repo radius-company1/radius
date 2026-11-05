@@ -83,6 +83,17 @@ export const mfcEcosystemLevels = [
   },
   {
     level: 4,
+    title: 'Управление обращениями',
+    summary: 'Вопросы, требующие дальнейшей работы, и внутренние заявки отделений — с ответственным, статусом и сроком.',
+    icon: 'tickets' as const,
+    productId: 'ticket-system' as const,
+    capabilities: [
+      { title: 'Распределение и контроль сроков', detail: 'Очереди, ответственные и правила обработки' },
+      { title: 'История и результат', detail: 'Ход работы, итог решения и отчёты по обращениям' },
+    ],
+  },
+  {
+    level: 5,
     title: 'База знаний и интеграции',
     summary: 'Согласованные ответы и подключение к информационным системам МФЦ.',
     icon: 'knowledge' as const,
@@ -92,7 +103,7 @@ export const mfcEcosystemLevels = [
     ],
   },
   {
-    level: 5,
+    level: 6,
     title: 'Речевая аналитика и отчётность',
     summary: 'Для руководителя: темы, качество и точки улучшения обслуживания.',
     icon: 'analytics' as const,

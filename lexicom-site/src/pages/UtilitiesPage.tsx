@@ -2,7 +2,6 @@ import { utilitiesDemoState } from '../data/directions/utilities';
 import { TicketProductReference } from '../components/TicketProductReference';
 import { Footer } from '../components/Footer';
 import { UtilitiesAnalytics } from '../components/utilities/UtilitiesAnalytics';
-import { UtilitiesCase } from '../components/utilities/UtilitiesCase';
 import { UtilitiesDemo } from '../components/utilities/UtilitiesDemo';
 import { UtilitiesFaq } from '../components/utilities/UtilitiesFaq';
 import { UtilitiesFinalCta } from '../components/utilities/UtilitiesFinalCta';
@@ -77,7 +76,6 @@ export function UtilitiesPage() {
         <UtilitiesAnalytics />
         <UtilitiesIntegration />
         <UtilitiesVendor />
-        <UtilitiesCase />
         <UtilitiesImplementation />
         <UtilitiesProofStrip />
         <UtilitiesFaq />
