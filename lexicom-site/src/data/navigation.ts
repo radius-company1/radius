@@ -7,6 +7,7 @@ export const productNav = [
 ] as const;
 
 export const directionNav = [
+  { label: 'Главная', href: '/' },
   { label: 'Для бизнеса', href: '/business' },
   { label: 'Образование', href: '/education' },
   { label: 'МФЦ', href: '/mfc' },

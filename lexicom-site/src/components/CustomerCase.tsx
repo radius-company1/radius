@@ -1,6 +1,6 @@
 import { Reveal } from './ui/Reveal';
 import { MotionLink as Link } from './ui/MotionLink';
-import { customerCases, s122CaseScenarios } from '../data/cases';
+import { customerCases, launchSpeedCase, s122CaseScenarios } from '../data/cases';
 import { kuzbassMfcCase } from '../data/mfcCases';
 import { GlassSurface } from './ui/GlassSurface';
 import { SectionHeader } from './ui/SectionHeader';
@@ -18,7 +18,7 @@ export function CustomerCase({ index }: { index: 0 | 1 | 2 }) {
         </div>
         {index === 0 && <div className="customer-case__scenarios"><h3>11 сценариев ИИ-агента</h3><ol>{s122CaseScenarios.map(s => <li key={s}>{s}</li>)}</ol></div>}
       </GlassSurface></Reveal>
-      {index === 0 && <Reveal><GlassSurface as="article" className="customer-case__tver" radius="xl" tint="yellow">
+      {index === 0 && <Reveal><GlassSurface as="article" id={launchSpeedCase.id} className="customer-case__tver" radius="xl" tint="yellow">
         <div><p className="customer-case__eyebrow">Скорость запуска · отдельный проект</p><h3>Служба 122, Тверь</h3><p>Нужно было быстро запустить цифровой канал взаимодействия жителей с медицинской службой.</p><p>Реализовали и развернули решение для автоматизации взаимодействия с гражданами. Команда подготовила сервис к запуску за одну неделю.</p></div>
         <div className="customer-case__result"><strong>1 неделя</strong><span>Сервис внедрён за неделю.</span><p>Срок полного проекта зависит от состава решения и интеграций.</p></div>
       </GlassSurface></Reveal>}
