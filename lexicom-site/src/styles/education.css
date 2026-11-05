@@ -135,7 +135,7 @@
 
 .edu-kit__caption {
   margin: 0;
-  font-size: 0.8rem;
+  font-size: 14px;
   line-height: 1.35;
   color: var(--color-text-muted);
 }
@@ -200,7 +200,7 @@
   border-radius: 999px;
   border: 1px solid rgba(12, 16, 32, 0.1);
   background: rgba(255, 255, 255, 0.55);
-  font-size: 0.8rem;
+  font-size: 14px;
   font-weight: 700;
   color: #2f45b8;
 }
@@ -325,7 +325,7 @@
 }
 
 .edu-scenarios__tab-sub {
-  font-size: 0.82rem;
+  font-size: 14px;
   color: var(--color-text-muted);
 }
 
@@ -553,7 +553,7 @@
   height: 1.85rem;
   border-radius: 50%;
   background: rgba(230, 192, 53, 0.35);
-  font-size: 0.82rem;
+  font-size: 14px;
   font-weight: 800;
 }
 

@@ -18,7 +18,7 @@ export const s122DemoState = {
 
 export const s122TrustBar = [
   { value: '25', label: 'регионов' },
-  { value: '60+', label: 'промышленных решений' },
+  { value: '60+', label: 'решений в промышленной эксплуатации' },
   { value: 'On-prem', label: 'закрытый контур' },
 ] as const;
 

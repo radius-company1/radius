@@ -19,7 +19,7 @@ export const productDemos: readonly ProductDemo[] = [
     productId: 'neurobot',
     title: 'ИИ-агент — пример диалога',
     ctaLabel: 'Посмотреть видео',
-    note: 'Тема: поддержка участников СВО',
+    note: 'Тема: меры социальной поддержки',
     src: '/demos/neurobot.mp4',
     poster: '/demos/posters/neurobot.webp',
     durationSeconds: 235.2,

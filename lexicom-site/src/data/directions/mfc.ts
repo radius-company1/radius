@@ -2,7 +2,7 @@ import { kuzbassMfcCase } from '../mfcCases';
 
 export const mfcHeroMetrics = [
   { value: '25 регионов', label: 'География решений Lexicom.' },
-  { value: '60+ промышленных решений', label: 'Работают на базе платформы.' },
+  { value: '60+ решений', label: 'В промышленной эксплуатации на базе платформы.' },
   { value: `${kuzbassMfcCase.documents} документа`, label: 'В базе знаний помощника МФЦ Кузбасса.' },
 ] as const;
 

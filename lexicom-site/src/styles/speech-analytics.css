@@ -69,7 +69,7 @@
 
 .sa-split__caption {
   margin: 0.55rem 0.35rem 0.1rem;
-  font-size: 0.8rem;
+  font-size: 14px;
   font-weight: 600;
   color: var(--color-text-muted);
 }

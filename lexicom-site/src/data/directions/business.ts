@@ -136,7 +136,7 @@ export const businessProducts: {
   },
 ];
 
-export const businessScale = 'Опыт компании: 25 регионов и 60+ промышленных решений.';
+export const businessScale = 'Опыт компании: 25 регионов и 60+ решений в промышленной эксплуатации.';
 
 export function businessProductHref(id: (typeof businessProductIds)[number]): string {
   return productHref(id);

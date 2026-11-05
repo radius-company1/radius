@@ -27,11 +27,6 @@
 @keyframes motion-node { from {transform:translateY(5px);opacity:.65} to {transform:none;opacity:1} }
 .design-hero.is-in-view .design-hero__lead { animation:none; }
 .design-hero.is-in-view .design-hero__actions { animation:motion-enter 420ms 70ms var(--motion-ease) both; }
-.design-flow__connector::before { content:''; position:absolute; inset:0; width:2px; background:var(--color-blue); transform-origin:top; opacity:0; }
-.motion-flow.is-in-view .design-flow__connector::before { animation:motion-signal 550ms 180ms ease-out both; }
-.motion-flow.is-in-view .design-flow__context + .design-flow__connector::before { animation-delay:550ms; }
-.motion-flow.is-in-view .design-flow__handlers { animation:motion-node 450ms 250ms var(--motion-ease) both; }
-.motion-flow.is-in-view .design-flow__result { animation:motion-node 450ms 600ms var(--motion-ease) both; }
 .flow-diagram.is-in-view .flow-diagram__node { animation:motion-node 400ms var(--motion-ease) both; }
 .flow-diagram.is-in-view .flow-diagram__item:nth-child(2) .flow-diagram__node { animation-delay:90ms; }
 .flow-diagram.is-in-view .flow-diagram__item:nth-child(3) .flow-diagram__node { animation-delay:180ms; }
@@ -48,7 +43,6 @@
 @media(prefers-reduced-motion:reduce) {
   .reveal { opacity:1; transform:none; transition:none !important; }
   .design-hero *, .flow-diagram *, .mobile-menu, .site-header__dropdown, .image-lightbox, .video-demo-dialog, .final-product-marker, .page-view--final .design-product, .page-view--final .final-demo, .page-view--final .final-demo__play, .direction-card__action svg { animation:none !important; transition:none !important; }
-  .design-flow__connector::before { animation:none !important; opacity:0; }
   ::view-transition-group(*), ::view-transition-old(*), ::view-transition-new(*) { animation:none !important; }
 }
 

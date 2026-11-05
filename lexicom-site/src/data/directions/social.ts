@@ -26,7 +26,7 @@ export const socialHeroViz = [
 
 export const socialTrustBar = [
   { value: '25 регионов', label: 'География решений Lexicom' },
-  { value: '60+ промышленных решений', label: 'Работают на базе платформы' },
+  { value: '60+ решений', label: 'В промышленной эксплуатации на базе платформы' },
   { value: 'On-prem', label: 'Работа в инфраструктуре заказчика' },
 ] as const;
 

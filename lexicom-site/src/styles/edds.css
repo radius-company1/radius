@@ -95,7 +95,7 @@
   border-radius: 999px;
   background: color-mix(in srgb, white 74%, transparent);
   border: 1px solid color-mix(in srgb, var(--color-line) 70%, transparent);
-  font-size: 0.84rem;
+  font-size: 14px;
   font-weight: 600;
 }
 
@@ -105,7 +105,7 @@
 
 .edds-hero__viz-label {
   margin: 0 0 0.85rem;
-  font-size: 0.72rem;
+  font-size: 12px;
   font-weight: 700;
   letter-spacing: 0.08em;
   text-transform: uppercase;
@@ -171,7 +171,7 @@
 
 .edds-trustbar__caption {
   margin: 0 0 0.55rem;
-  font-size: 0.72rem;
+  font-size: 12px;
   font-weight: 700;
   letter-spacing: 0.08em;
   text-transform: uppercase;
@@ -204,7 +204,7 @@
 }
 
 .edds-trustbar__item span {
-  font-size: 0.82rem;
+  font-size: 14px;
   color: var(--color-muted);
 }
 
@@ -278,7 +278,7 @@
   padding: 0.25rem 0.55rem;
   border-radius: 999px;
   background: color-mix(in srgb, var(--color-yellow) 35%, white);
-  font-size: 0.78rem;
+  font-size: 14px;
   font-weight: 700;
 }
 
@@ -354,7 +354,7 @@
 
 .edds-scenarios__flow dt {
   margin: 0 0 0.25rem;
-  font-size: 0.72rem;
+  font-size: 12px;
   font-weight: 700;
   letter-spacing: 0.06em;
   text-transform: uppercase;
@@ -527,7 +527,7 @@
 
 .edds-case__label {
   margin: 0 0 0.25rem;
-  font-size: 0.72rem;
+  font-size: 12px;
   font-weight: 700;
   letter-spacing: 0.06em;
   text-transform: uppercase;

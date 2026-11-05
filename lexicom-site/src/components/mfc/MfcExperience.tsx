@@ -37,7 +37,7 @@ export function MfcExperience() {
             </div>
             <div className="mfc-case-detail__workflow">
               <MobileDetails title={<h3>От вопроса — к ответу на основе документов</h3>}>
-              <p>RAG — это подготовка ответа с опорой на найденные материалы. В этом проекте источником служат нормативно-правовые документы МФЦ.</p>
+              <p>Помощник не сочиняет ответ, а опирается на найденные фрагменты нормативно-правовых документов МФЦ.</p>
               <ol>{item.steps.map(step => <li key={step.title}><h4>{step.title}</h4><p>{step.text}</p></li>)}</ol></MobileDetails>
             </div>
             <ul className="mfc-case-detail__benefits">

@@ -24,7 +24,7 @@
   margin: 0 0 1.35rem;
   padding: 0;
   list-style: none;
-  font-size: 0.84rem;
+  font-size: 14px;
   color: var(--color-text-muted);
 }
 
@@ -137,7 +137,7 @@
 
 .cc-hero__caption {
   margin: 0.55rem 0.35rem 0.1rem;
-  font-size: 0.8rem;
+  font-size: 14px;
   font-weight: 600;
   color: var(--color-text-muted);
 }
@@ -284,7 +284,7 @@
   border-radius: 999px;
   background: rgba(58, 159, 196, 0.14);
   color: #1a5f8a;
-  font-size: 0.72rem;
+  font-size: 12px;
   font-weight: 700;
   letter-spacing: 0.04em;
   text-transform: uppercase;
@@ -481,7 +481,7 @@
 
 .cc-supervisor__shot figcaption {
   margin-top: 0.45rem;
-  font-size: 0.82rem;
+  font-size: 14px;
   font-weight: 600;
   color: var(--color-text-muted);
 }
@@ -606,7 +606,7 @@
   border-radius: var(--radius-chip);
   background: rgba(255, 255, 255, 0.72);
   border: 1px solid rgba(12, 16, 32, 0.1);
-  font-size: 0.78rem;
+  font-size: 14px;
   font-weight: 600;
 }
 
@@ -682,7 +682,7 @@
   position: absolute;
   top: 0.75rem;
   left: 1.2rem;
-  font-size: 0.72rem;
+  font-size: 12px;
   font-weight: 700;
   letter-spacing: 0.08em;
   text-transform: uppercase;
@@ -756,7 +756,7 @@
   border-radius: 50%;
   background: rgba(83, 103, 255, 0.12);
   color: #3f4fd4;
-  font-size: 0.8rem;
+  font-size: 14px;
   font-weight: 700;
 }
 

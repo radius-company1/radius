@@ -84,7 +84,7 @@
 
 .social-hero__viz-label {
   margin: 0 0 0.85rem;
-  font-size: 0.72rem;
+  font-size: 12px;
   font-weight: 700;
   letter-spacing: 0.08em;
   text-transform: uppercase;
@@ -154,7 +154,7 @@
 
 .social-trustbar__caption {
   margin: 0 0 0.55rem;
-  font-size: 0.72rem;
+  font-size: 12px;
   font-weight: 700;
   letter-spacing: 0.08em;
   text-transform: uppercase;
@@ -187,7 +187,7 @@
 }
 
 .social-trustbar__item span {
-  font-size: 0.82rem;
+  font-size: 14px;
   color: var(--color-muted);
 }
 
@@ -237,7 +237,7 @@
   padding: 0.25rem 0.55rem;
   border-radius: 999px;
   background: color-mix(in srgb, var(--color-yellow) 35%, white);
-  font-size: 0.78rem;
+  font-size: 14px;
   font-weight: 700;
 }
 
@@ -306,7 +306,7 @@
 
 .social-scenarios__flow dt {
   margin: 0 0 0.25rem;
-  font-size: 0.72rem;
+  font-size: 12px;
   font-weight: 700;
   letter-spacing: 0.06em;
   text-transform: uppercase;
@@ -346,7 +346,7 @@
 
 .social-demo__label {
   margin: 0 0 0.75rem;
-  font-size: 0.72rem;
+  font-size: 12px;
   font-weight: 700;
   letter-spacing: 0.06em;
   text-transform: uppercase;
@@ -375,7 +375,7 @@
 .social-demo__role {
   display: block;
   margin-bottom: 0.25rem;
-  font-size: 0.72rem;
+  font-size: 12px;
   font-weight: 700;
   letter-spacing: 0.04em;
   text-transform: uppercase;
@@ -518,7 +518,7 @@
 
 .social-specialist__col-label {
   margin: 0 0 0.45rem;
-  font-size: 0.72rem;
+  font-size: 12px;
   font-weight: 700;
   letter-spacing: 0.06em;
   text-transform: uppercase;
@@ -594,7 +594,7 @@
 
 .social-analytics__label {
   margin: 0 0 0.75rem;
-  font-size: 0.72rem;
+  font-size: 12px;
   font-weight: 700;
   letter-spacing: 0.06em;
   text-transform: uppercase;
@@ -619,7 +619,7 @@
 
 .social-analytics__card-label {
   margin: 0 0 0.25rem;
-  font-size: 0.72rem;
+  font-size: 12px;
   font-weight: 700;
   letter-spacing: 0.05em;
   text-transform: uppercase;
@@ -634,7 +634,7 @@
 
 .social-analytics__card-note {
   margin: 0;
-  font-size: 0.78rem;
+  font-size: 14px;
   color: color-mix(in srgb, white 58%, transparent);
 }
 
@@ -736,7 +736,7 @@
 
 .social-case__label {
   margin: 0 0 0.25rem;
-  font-size: 0.72rem;
+  font-size: 12px;
   font-weight: 700;
   letter-spacing: 0.06em;
   text-transform: uppercase;
@@ -764,7 +764,7 @@
 }
 
 .social-case__metrics th {
-  font-size: 0.72rem;
+  font-size: 12px;
   letter-spacing: 0.05em;
   text-transform: uppercase;
   color: var(--color-muted);

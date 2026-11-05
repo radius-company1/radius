@@ -118,6 +118,8 @@
   color: rgba(238, 243, 255, 0.78);
   line-height: 1.55;
 }
+.government__closing a { color: #eef3ff; font-weight: 600; text-decoration: none; }
+.government__closing a:hover { text-decoration: underline; text-underline-offset: 4px; }
 
 .government.section--dark {
   padding-block: calc(var(--section-pad) * 0.85);
@@ -205,7 +207,7 @@
 .roadmap-card p {
   margin: 0;
   color: rgba(238, 243, 255, 0.78);
-  font-size: 0.84rem;
+  font-size: 14px;
   line-height: 1.45;
 }
 
@@ -228,12 +230,8 @@
     gap: 0.9rem;
   }
 
-  .government__cell:nth-child(-n + 3) {
+  .government__cell {
     grid-column: span 2;
-  }
-
-  .government__cell:nth-child(n + 4) {
-    grid-column: span 3;
   }
 }
 

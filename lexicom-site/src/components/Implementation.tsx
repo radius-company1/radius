@@ -1,5 +1,5 @@
 import { MobileDetails } from './ui/MobileDetails';
-import { implementationDiscuss, implementationLaunch, implementationSteps } from '../data/implementation';
+import { implementationDiscuss, implementationSteps, productDeployTiming } from '../data/implementation';
 import { GlassSurface } from './ui/GlassSurface';
 import { Reveal } from './ui/Reveal';
 import { SectionHeader } from './ui/SectionHeader';
@@ -14,17 +14,10 @@ export function Implementation() {
       <div className="container">
         <Reveal>
           <SectionHeader
-            title="Опыт и начало работы"
+            title="Как начинается проект"
             titleId="implementation-title"
-            description="Сначала запускаем один процесс, проверяем сценарий и затем расширяем состав."
+            description={productDeployTiming}
           />
-        </Reveal>
-
-        <Reveal>
-          <GlassSurface className="implementation-launch" radius="xl" depth="float" tint="yellow">
-            <p className="implementation-launch__title">{implementationLaunch.title}</p>
-            <p className="implementation-launch__text">{implementationLaunch.text}</p>
-          </GlassSurface>
         </Reveal>
 
         <ol className="implementation-route">

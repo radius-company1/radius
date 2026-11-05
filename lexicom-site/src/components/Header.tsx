@@ -1,8 +1,9 @@
 import { useEffect, useId, useRef, useState } from 'react';
 import { useLocation } from 'react-router-dom';
 import { MotionLink as Link } from './ui/MotionLink';
-import { mainNav, productNav } from '../data/navigation';
+import { mainNav } from '../data/navigation';
 import { useViewTransitionNavigate } from '../hooks/useViewTransitionNavigate';
+import { normalizePath } from '../theme/directions';
 import { Button } from './ui/Button';
 import { GlassSurface } from './ui/GlassSurface';
 import { Logo } from './ui/Logo';
@@ -12,23 +13,28 @@ type HeaderProps = {
   scrolled?: boolean;
 };
 
+type NavChild = { label: string; href: string };
+
 function sectionTo(href: string) {
   return href.startsWith('#') ? `/${href}` : href;
 }
 
+const menus = mainNav.filter((item): item is Extract<(typeof mainNav)[number], { children: readonly NavChild[] }> => 'children' in item);
+
 export function Header({ onDiscussClick, scrolled = false }: HeaderProps) {
   const location = useLocation();
+  const currentPath = normalizePath(location.pathname);
   const { onLinkClick } = useViewTransitionNavigate();
   const [menuOpen, setMenuOpen] = useState(false);
-  const [productsOpen, setProductsOpen] = useState(false);
-  const [mobileProductsOpen, setMobileProductsOpen] = useState(true);
-  const productsRef = useRef<HTMLDivElement>(null);
-  const productsButtonRef = useRef<HTMLButtonElement>(null);
+  const [openMenu, setOpenMenu] = useState<string | null>(null);
+  const [mobileOpen, setMobileOpen] = useState<Record<string, boolean>>({});
+  const buttonRefs = useRef<Record<string, HTMLButtonElement | null>>({});
   const dropdownRef = useRef<HTMLDivElement>(null);
   const [dropdownPos, setDropdownPos] = useState({ top: 0, left: 0 });
-  const productsMenuId = useId();
-  const mobileProductsId = useId();
+  const menuIdBase = useId();
+  const menuId = (label: string) => `${menuIdBase}-${menus.findIndex((m) => m.label === label)}`;
   const headerCta = 'Обсудить проект';
+  const activeMenu = menus.find((m) => m.label === openMenu);
 
   useEffect(() => {
     const desktop = matchMedia('(min-width: 1024px)');
@@ -45,10 +51,8 @@ export function Header({ onDiscussClick, scrolled = false }: HeaderProps) {
   useEffect(() => {
     if (!menuOpen) return;
     const main = document.querySelector<HTMLElement>('#main-content');
-    const directions = document.querySelector<HTMLElement>('.design-directions');
     const burger = document.querySelector<HTMLButtonElement>('.burger');
     if (main) main.inert = true;
-    if (directions) directions.inert = true;
     const onKey = (event: KeyboardEvent) => {
       if (event.key === 'Tab') {
         const elements = [...document.querySelectorAll<HTMLElement>('.site-header a, .site-header button')].filter(el => el.offsetParent !== null);
@@ -59,27 +63,24 @@ export function Header({ onDiscussClick, scrolled = false }: HeaderProps) {
       if (event.key !== 'Escape') return;
       event.preventDefault();
       setMenuOpen(false);
-      setMobileProductsOpen(false);
     };
     document.addEventListener('keydown', onKey);
     return () => {
       document.removeEventListener('keydown', onKey);
       if (main) main.inert = false;
-      if (directions) directions.inert = false;
       if (burger?.offsetParent !== null) burger?.focus({preventScroll:true});
     };
   }, [menuOpen]);
 
   useEffect(() => {
-    setProductsOpen(false);
-    setMobileProductsOpen(false);
+    setOpenMenu(null);
   }, [location.pathname]);
 
   useEffect(() => {
-    if (!productsOpen) return;
+    if (!openMenu) return;
 
     const updatePos = () => {
-      const rect = productsButtonRef.current?.getBoundingClientRect();
+      const rect = buttonRefs.current[openMenu]?.getBoundingClientRect();
       if (!rect) return;
       setDropdownPos({ top: rect.bottom + 6, left: rect.left });
     };
@@ -89,14 +90,14 @@ export function Header({ onDiscussClick, scrolled = false }: HeaderProps) {
     const onKey = (event: KeyboardEvent) => {
       if (event.key !== 'Escape') return;
       event.preventDefault();
-      setProductsOpen(false);
-      productsButtonRef.current?.focus();
+      buttonRefs.current[openMenu]?.focus();
+      setOpenMenu(null);
     };
 
     const onPointer = (event: PointerEvent) => {
       const target = event.target as Node;
-      if (productsRef.current?.contains(target) || dropdownRef.current?.contains(target)) return;
-      setProductsOpen(false);
+      if (buttonRefs.current[openMenu]?.contains(target) || dropdownRef.current?.contains(target)) return;
+      setOpenMenu(null);
     };
 
     document.addEventListener('keydown', onKey);
@@ -109,12 +110,11 @@ export function Header({ onDiscussClick, scrolled = false }: HeaderProps) {
       window.removeEventListener('resize', updatePos);
       window.removeEventListener('scroll', updatePos, true);
     };
-  }, [productsOpen]);
+  }, [openMenu]);
 
   const closeMenus = () => {
     setMenuOpen(false);
-    setProductsOpen(false);
-    setMobileProductsOpen(false);
+    setOpenMenu(null);
   };
 
   const handleSectionClick = (event: React.MouseEvent<HTMLAnchorElement>, href: string) => {
@@ -122,17 +122,26 @@ export function Header({ onDiscussClick, scrolled = false }: HeaderProps) {
     onLinkClick(event, sectionTo(href));
   };
 
-  const handleProductKeyDown = (event: React.KeyboardEvent<HTMLButtonElement>) => {
+  const toggleMenu = (label: string) => {
+    const rect = buttonRefs.current[label]?.getBoundingClientRect();
+    if (rect) setDropdownPos({ top: rect.bottom + 6, left: rect.left });
+    setOpenMenu((open) => (open === label ? null : label));
+  };
+
+  const handleMenuKeyDown = (event: React.KeyboardEvent<HTMLButtonElement>, label: string) => {
     if (event.key === 'ArrowDown' || event.key === 'Enter' || event.key === ' ') {
       event.preventDefault();
-      setProductsOpen(true);
+      toggleMenu(label);
       requestAnimationFrame(() => dropdownRef.current?.querySelector<HTMLAnchorElement>('a')?.focus());
     }
     if (event.key === 'Escape') {
       event.preventDefault();
-      setProductsOpen(false);
+      setOpenMenu(null);
     }
   };
+
+  const isMobileGroupOpen = (label: string) =>
+    mobileOpen[label] ?? (label === 'Продукты' || menus.find((m) => m.label === label)?.children.some((c) => c.href === currentPath));
 
   return (
     <header className={`site-header ${scrolled ? 'is-scrolled' : ''}`}>
@@ -155,24 +164,16 @@ export function Header({ onDiscussClick, scrolled = false }: HeaderProps) {
 
             <nav className="site-header__nav" aria-label="Основная навигация">
               {mainNav.map((item) =>
-                'children' in item && item.children ? (
-                  <div
-                    key={item.label}
-                    className={`site-header__item ${productsOpen ? 'is-open' : ''}`}
-                    ref={productsRef}
-                  >
+                'children' in item ? (
+                  <div key={item.label} className={`site-header__item ${openMenu === item.label ? 'is-open' : ''}`}>
                     <button
-                      ref={productsButtonRef}
+                      ref={(element) => { buttonRefs.current[item.label] = element; }}
                       type="button"
-                      className="site-header__link site-header__link--menu"
-                      aria-expanded={productsOpen}
-                      aria-controls={productsMenuId}
-                      onClick={() => {
-                        const rect = productsButtonRef.current?.getBoundingClientRect();
-                        if (rect) setDropdownPos({ top: rect.bottom + 6, left: rect.left });
-                        setProductsOpen((open) => !open);
-                      }}
-                      onKeyDown={handleProductKeyDown}
+                      className={`site-header__link site-header__link--menu${item.children.some((c) => c.href === currentPath) ? ' is-current' : ''}`}
+                      aria-expanded={openMenu === item.label}
+                      aria-controls={menuId(item.label)}
+                      onClick={() => toggleMenu(item.label)}
+                      onKeyDown={(event) => handleMenuKeyDown(event, item.label)}
                     >
                       {item.label}
                       <span className="site-header__caret" aria-hidden="true" />
@@ -201,7 +202,7 @@ export function Header({ onDiscussClick, scrolled = false }: HeaderProps) {
               aria-label={menuOpen ? 'Закрыть меню' : 'Открыть меню'}
               aria-expanded={menuOpen}
               aria-controls="mobile-menu"
-              onClick={() => {setMenuOpen((open) => !open);setMobileProductsOpen(true);}}
+              onClick={() => setMenuOpen((open) => !open)}
             >
               <span />
               <span />
@@ -213,57 +214,61 @@ export function Header({ onDiscussClick, scrolled = false }: HeaderProps) {
 
       <div
           ref={dropdownRef}
-          id={productsMenuId}
-          className={`site-header__dropdown ${productsOpen ? 'is-open' : ''}`}
-          inert={!productsOpen} aria-hidden={!productsOpen}
+          id={activeMenu ? menuId(activeMenu.label) : undefined}
+          className={`site-header__dropdown ${activeMenu ? 'is-open' : ''}`}
+          inert={!activeMenu} aria-hidden={!activeMenu}
           style={{ top: dropdownPos.top, left: dropdownPos.left }}
         >
-          <ul className="site-header__menu" aria-label="Продукты Lexicom">
-            {productNav.map((product) => (
-              <li key={product.href}>
-                <Link
-                  to={product.href}
-                  className="site-header__menu-link"
-                  onClick={(event) => {
-                    closeMenus();
-                    onLinkClick(event, product.href);
-                  }}
-                >
-                  {product.label}
-                </Link>
-              </li>
-            ))}
-          </ul>
+          {activeMenu ? (
+            <ul className="site-header__menu" aria-label={activeMenu.label}>
+              {activeMenu.children.map((child) => (
+                <li key={child.href}>
+                  <Link
+                    to={child.href}
+                    className="site-header__menu-link"
+                    aria-current={child.href === currentPath ? 'page' : undefined}
+                    onClick={(event) => {
+                      closeMenus();
+                      onLinkClick(event, child.href);
+                    }}
+                  >
+                    {child.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          ) : null}
         </div>
 
       <div id="mobile-menu" className={`mobile-menu ${menuOpen ? 'is-open' : ''}`} inert={!menuOpen} aria-hidden={!menuOpen}>
         <GlassSurface className="mobile-menu__panel" radius="lg">
           <nav aria-label="Мобильная навигация">
             {mainNav.map((item) =>
-              'children' in item && item.children ? (
+              'children' in item ? (
                 <div key={item.label} className="mobile-menu__group">
                   <button
                     type="button"
                     className="mobile-menu__parent"
-                    aria-expanded={mobileProductsOpen}
-                    aria-controls={mobileProductsId}
-                    onClick={() => setMobileProductsOpen((open) => !open)}
+                    aria-expanded={isMobileGroupOpen(item.label)}
+                    aria-controls={`${menuId(item.label)}-mobile`}
+                    onClick={() => setMobileOpen((state) => ({ ...state, [item.label]: !isMobileGroupOpen(item.label) }))}
                   >
                     {item.label}
                     <span className="site-header__caret" aria-hidden="true" />
                   </button>
-                  <div id={mobileProductsId} hidden={!mobileProductsOpen}>
+                  <div id={`${menuId(item.label)}-mobile`} hidden={!isMobileGroupOpen(item.label)}>
                     <ul className="mobile-menu__sub">
-                      {productNav.map((product) => (
-                        <li key={product.href}>
+                      {item.children.map((child) => (
+                        <li key={child.href}>
                           <Link
-                            to={product.href}
+                            to={child.href}
+                            aria-current={child.href === currentPath ? 'page' : undefined}
                             onClick={(event) => {
                               closeMenus();
-                              onLinkClick(event, product.href);
+                              onLinkClick(event, child.href);
                             }}
                           >
-                            {product.label}<span className="mobile-menu__arrow" aria-hidden="true">↗</span>
+                            {child.label}<span className="mobile-menu__arrow" aria-hidden="true">↗</span>
                           </Link>
                         </li>
                       ))}

@@ -140,7 +140,7 @@
   border-radius: 999px;
   background: rgba(12, 16, 32, 0.78);
   color: #fff;
-  font-size: 0.76rem;
+  font-size: 14px;
   font-weight: 700;
 }
 
@@ -156,7 +156,7 @@
 
 .nb-hero__caption {
   margin: 0.6rem 0.35rem 0.15rem;
-  font-size: 0.84rem;
+  font-size: 14px;
   font-weight: 600;
   line-height: 1.4;
   color: var(--color-text-muted);
@@ -255,7 +255,7 @@
 
 .nb-channels__zone > .nb-channels__examples-label {
   margin: 0 0 0.4rem;
-  font-size: 0.72rem;
+  font-size: 12px;
   font-weight: 700;
   letter-spacing: 0.08em;
   text-transform: uppercase;
@@ -276,7 +276,7 @@
   border-radius: var(--radius-chip);
   background: rgba(255, 255, 255, 0.72);
   border: 1px solid rgba(12, 16, 32, 0.08);
-  font-size: 0.82rem;
+  font-size: 14px;
   font-weight: 600;
 }
 
@@ -653,7 +653,7 @@
   border-radius: 50%;
   background: rgba(58, 159, 196, 0.14);
   color: #1a6f8a;
-  font-size: 0.8rem;
+  font-size: 14px;
   font-weight: 700;
 }
 

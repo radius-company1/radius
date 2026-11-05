@@ -6,7 +6,7 @@ import { VideoDemoModal } from './VideoDemoModal';
 import { SectionHeader } from './ui/SectionHeader';
 
 const descriptions = {
-  neurobot: 'Пример диалога. Тема: поддержка участников СВО.',
+  neurobot: 'Пример голосовой консультации о мерах социальной поддержки.',
   'contact-center': 'Рабочее место оператора в действии.',
   'speech-analytics': 'Разбор разговора в интерфейсе аналитики.',
   protocol: 'Обработка записи в системе протоколирования.',

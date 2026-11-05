@@ -1,6 +1,7 @@
 import { MobileDetails } from './ui/MobileDetails';
 import { governmentItems } from '../data/government';
 import { GlassSurface } from './ui/GlassSurface';
+import { MotionLink as Link } from './ui/MotionLink';
 import { Reveal } from './ui/Reveal';
 import { SectionHeader } from './ui/SectionHeader';
 
@@ -16,18 +17,18 @@ export function Government() {
   return (
     <section
       className="section section--dark section-zone section-zone--gov government"
-      id="gov"
-      aria-labelledby="gov-title"
+      id="about"
+      aria-labelledby="about-title"
     >
       <div className="section--dark__grid-bg" aria-hidden="true" />
       <div className="container">
         <Reveal>
           <SectionHeader
-            eyebrow="Государственный контур"
-            title="Специализируемся на государственном секторе"
-            titleId="gov-title"
+            eyebrow="Российский разработчик для госсектора"
+            title="Почему Lexicom"
+            titleId="about-title"
             light
-            description="Мы понимаем технологические задачи государственных организаций и путь проекта: от закупочной процедуры до развёртывания, приёмки и промышленной эксплуатации."
+            description="Резидент ИТ-кластера Фонда «Сколково» и разработчик собственного ПО из реестра №11115. Ведём проект от закупочной процедуры до приёмки и промышленной эксплуатации."
           />
         </Reveal>
 
@@ -41,8 +42,7 @@ export function Government() {
 
         <Reveal>
           <p className="government__closing">
-            Государственный сектор для нас — привычная среда, в которой мы доводим технологическое решение до
-            промышленной эксплуатации.
+            <Link to="/company">Сведения о компании и реквизиты <span aria-hidden="true">→</span></Link>
           </p>
         </Reveal>
       </div>

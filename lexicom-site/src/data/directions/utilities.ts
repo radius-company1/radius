@@ -25,7 +25,7 @@ export const utilitiesHeroViz = [
 
 export const utilitiesTrustBar = [
   { value: '25 регионов', label: 'География решений Lexicom' },
-  { value: '60+ промышленных решений', label: 'Работают на базе платформы' },
+  { value: '60+ решений', label: 'В промышленной эксплуатации на базе платформы' },
   { value: 'On-prem', label: 'Работа в инфраструктуре заказчика' },
 ] as const;
 
@@ -315,7 +315,7 @@ export const utilitiesImplementationSteps = [
 
 export const utilitiesProofStrip = [
   { value: '25 регионов', label: 'География решений Lexicom' },
-  { value: '60+ промышленных решений', label: 'На базе платформы' },
+  { value: '60+ решений', label: 'В промышленной эксплуатации на базе платформы' },
   { value: 'до 90%', label: 'Типовых обращений — при настроенных сценариях' },
 ] as const;
 

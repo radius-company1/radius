@@ -6,9 +6,19 @@ export const productNav = [
   { label: 'ЕКЦ 110', href: '/products/ekc-110' },
 ] as const;
 
+export const directionNav = [
+  { label: 'Для бизнеса', href: '/business' },
+  { label: 'Образование', href: '/education' },
+  { label: 'МФЦ', href: '/mfc' },
+  { label: 'Служба 122', href: '/122' },
+  { label: 'ЕДДС', href: '/edds' },
+  { label: 'Социальная защита', href: '/social' },
+  { label: 'Ресурсоснабжение', href: '/utilities' },
+] as const;
+
 export const mainNav = [
   { label: 'Продукты', href: '#products', children: productNav },
-  { label: 'Направления', href: '#directions' },
+  { label: 'Направления', href: '#directions', children: directionNav },
   { label: 'Кейсы', href: '#cases' },
   { label: 'Внедрение', href: '#implementation' },
   { label: 'О компании', href: '#about' },

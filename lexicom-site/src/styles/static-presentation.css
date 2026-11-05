@@ -2,7 +2,7 @@
 .cc-shot.cc-shot--presentation .cc-shot__frame img { aspect-ratio: auto; height: auto; }
 .cc-shot--presentation picture { display: block; }
 .cc-shot--presentation .cc-shot__zoom { position: static; margin: .4rem 0 0 auto; display: flex; width: fit-content; }
-.static-presentation-label { display: block; margin-top: .5rem; font-size: .75rem; line-height: 1.4; color: var(--color-text-muted); }
+.static-presentation-label { display: block; margin-top: .5rem; font-size: 14px; line-height: 1.4; color: var(--color-text-muted); }
 .static-presentation-mobile-note { display: none; }
 .page-view--final .static-presentation .design-product__image-button { aspect-ratio: auto; display: block; }
 .page-view--final .static-presentation picture { display: block; width: 100%; }

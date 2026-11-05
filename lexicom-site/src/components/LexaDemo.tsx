@@ -1,9 +1,9 @@
-import { useState } from 'react';
+import { useCopyText } from '../hooks/useCopyText';
 import { lexaDemoId, lexaDemoLine } from '../data/lexaDemo';
 import { GlassSurface } from './ui/GlassSurface';
 import { Reveal } from './ui/Reveal';
 
-function PhoneIcon() {
+export function PhoneIcon() {
   return (
     <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true">
       <path
@@ -32,36 +32,8 @@ function WaveMark() {
 }
 
 export function LexaDemo() {
-  const [copied, setCopied] = useState(false);
   const { displayNumber, tel, callAvailable } = lexaDemoLine;
-
-  const copyWithFallback = () => {
-    const field = document.createElement('textarea');
-    field.value = displayNumber;
-    field.setAttribute('readonly', '');
-    field.style.position = 'fixed';
-    field.style.left = '-999px';
-    document.body.append(field);
-    field.select();
-    const ok = document.execCommand('copy');
-    field.remove();
-    return ok;
-  };
-
-  const copyNumber = async () => {
-    if (copyWithFallback()) {
-      setCopied(true);
-      window.setTimeout(() => setCopied(false), 2500);
-      return;
-    }
-    try {
-      await navigator.clipboard.writeText(displayNumber);
-      setCopied(true);
-      window.setTimeout(() => setCopied(false), 2500);
-    } catch {
-      setCopied(false);
-    }
-  };
+  const { copied, copy: copyNumber } = useCopyText(displayNumber);
 
   return (
     <section className="section lexa-demo" id={lexaDemoId} aria-labelledby="lexa-demo-title">
@@ -73,7 +45,7 @@ export function LexaDemo() {
               Познакомьтесь с Лексой
             </h2>
             <p className="lexa-demo__lead">
-              Позвоните и поговорите с нашим ИИ-ассистентом. Оцените, как Лекса распознаёт речь, отвечает на вопросы
+              Позвоните и поговорите с ИИ-агентом Lexicom. Оцените, как Лекса распознаёт речь, отвечает на вопросы
               и ведёт диалог.
             </p>
           </div>

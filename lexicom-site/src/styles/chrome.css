@@ -60,7 +60,7 @@
 .site-header__nav { display: none; align-items: center; gap: 0.2rem; margin-left: 0.35rem; }
 .site-header__link {
   padding: 0.42rem 0.62rem; border: 0; background: transparent;
-  font-size: 0.86rem; font-weight: 500; color: var(--color-text-muted);
+  font-size: 14px; font-weight: 500; color: var(--color-text-muted);
   border-radius: 999px; cursor: pointer; transition: color 0.15s, background 0.15s;
 }
 .site-header__link:hover, .site-header__link:focus-visible {
@@ -113,6 +113,11 @@
 .site-header__menu-link:focus-visible {
   box-shadow: 0 0 0 2px rgba(83, 103, 255, 0.4);
 }
+.site-header__menu-link[aria-current='page'],
+.mobile-menu__sub a[aria-current='page'] {
+  background: rgba(83, 103, 255, 0.08);
+}
+.site-header__link--menu.is-current { color: var(--color-text); font-weight: 650; }
 .btn.site-header__cta { display: none; margin-left: auto; }
 
 .burger {

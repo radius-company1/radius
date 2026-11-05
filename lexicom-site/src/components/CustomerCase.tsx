@@ -16,7 +16,7 @@ export function CustomerCase({ index }: { index: 0 | 1 | 2 }) {
           <div><h3>Задача</h3><p>{item.task}</p><h3>Что внедрили</h3><p>{item.solution}</p></div>
           <div className="customer-case__result"><strong>{item.value}</strong><span>{item.label}</span><h3>Результат</h3><p>{item.result}</p></div>
         </div>
-        {index === 0 && <div className="customer-case__scenarios"><h3>11 сценариев цифрового помощника</h3><ol>{s122CaseScenarios.map(s => <li key={s}>{s}</li>)}</ol></div>}
+        {index === 0 && <div className="customer-case__scenarios"><h3>11 сценариев ИИ-агента</h3><ol>{s122CaseScenarios.map(s => <li key={s}>{s}</li>)}</ol></div>}
       </GlassSurface></Reveal>
       {index === 0 && <Reveal><GlassSurface as="article" className="customer-case__tver" radius="xl" tint="yellow">
         <div><p className="customer-case__eyebrow">Скорость запуска · отдельный проект</p><h3>Служба 122, Тверь</h3><p>Нужно было быстро запустить цифровой канал взаимодействия жителей с медицинской службой.</p><p>Реализовали и развернули решение для автоматизации взаимодействия с гражданами. Команда подготовила сервис к запуску за одну неделю.</p></div>
