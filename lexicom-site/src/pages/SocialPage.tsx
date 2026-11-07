@@ -1,3 +1,4 @@
+import '../styles/social.css';
 import { scrollBelowChrome } from '../hooks/scrollBelowChrome';
 import { socialDemoState } from '../data/directions/social';
 import { Footer } from '../components/Footer';

@@ -37,9 +37,8 @@ export function DirectionSwitcher({ scrolled = false }: DirectionSwitcherProps) 
 
   const [lens, setLens] = useState<LensRect>({ x: 0, y: 0, width: 0, height: 0 });
 
-  useEffect(() => {
-    setLensTarget(safeActiveIndex);
-  }, [safeActiveIndex]);
+  const [previousIndex, setPreviousIndex] = useState(safeActiveIndex);
+  if (previousIndex !== safeActiveIndex) { setPreviousIndex(safeActiveIndex); setLensTarget(safeActiveIndex); }
 
   const measureLens = useCallback((index: number): LensRect | null => {
     const track = trackRef.current;
@@ -71,9 +70,6 @@ export function DirectionSwitcher({ scrolled = false }: DirectionSwitcherProps) 
     [measureLens],
   );
 
-  useLayoutEffect(() => {
-    applyLens(visualIndex);
-  }, [visualIndex, applyLens]);
 
   useEffect(() => {
     const track = trackRef.current;

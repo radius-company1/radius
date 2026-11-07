@@ -1,3 +1,4 @@
+import '../styles/edds.css';
 import { eddsDemoState } from '../data/directions/edds';
 import { Footer } from '../components/Footer';
 import { EddsAnalytics } from '../components/edds/EddsAnalytics';

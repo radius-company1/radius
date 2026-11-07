@@ -1,3 +1,5 @@
+import '../styles/education.css';
+import '../styles/neurobot.css';
 import { useCallback, useRef, useState } from 'react';
 import {
   EducationAnalytics,

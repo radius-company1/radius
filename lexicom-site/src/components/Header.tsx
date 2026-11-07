@@ -72,9 +72,11 @@ export function Header({ onDiscussClick, scrolled = false }: HeaderProps) {
     };
   }, [menuOpen]);
 
-  useEffect(() => {
+  const [menuPath, setMenuPath] = useState(location.pathname);
+  if (menuPath !== location.pathname) {
+    setMenuPath(location.pathname);
     setOpenMenu(null);
-  }, [location.pathname]);
+  }
 
   useEffect(() => {
     if (!openMenu) return;

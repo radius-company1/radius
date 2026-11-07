@@ -1,3 +1,4 @@
+import { MobileDetails } from '../ui/MobileDetails';
 import {
   utilitiesAnalyticsChain,
   utilitiesAnalyticsNote,
@@ -25,6 +26,7 @@ export function UtilitiesAnalytics() {
             light
           />
         </Reveal>
+        <MobileDetails className="mobile-details--section" title="Показатели и причины обращений">
 
         <div className="utilities-analytics__layout">
           <Reveal>
@@ -62,6 +64,7 @@ export function UtilitiesAnalytics() {
             </GlassSurface>
           </Reveal>
         </div>
+        </MobileDetails>
       </div>
     </section>
   );

@@ -1,7 +1,28 @@
 import { readFileSync, writeFileSync, mkdirSync } from 'node:fs';
-import { render, pages, pageMeta, canonicalPath, origin, serializeStructuredData } from '../.prerender/entry-server.js';
+import { render, pages, pageMeta, canonicalPath, origin, serializeStructuredData, pageRoutes } from '../.prerender/entry-server.js';
 const launch = process.argv.includes('--launch');
 const template = readFileSync('dist/index.html', 'utf8');
+const manifest = JSON.parse(readFileSync('dist/.vite/manifest.json', 'utf8'));
+const assetBase = launch ? '/' : '/radius/lexicom/';
+function pageAssets(path) {
+ const source = pageRoutes.find(route => canonicalPath(route.path) === path)?.source;
+ const key = path === '/design-preview/' ? 'src/design-preview/DesignPreviewPage.tsx' : source ? `src/pages/${source}.tsx` : null;
+ if (!key) return '';
+ if (!manifest[key]) throw new Error(`Missing page in manifest: ${key}`);
+ const seen = new Set(), css = new Set(), js = new Set();
+ function collect(name) {
+  if (seen.has(name)) return;
+  seen.add(name);
+  const chunk = manifest[name];
+  if (!chunk) throw new Error(`Missing chunk: ${name}`);
+  for (const imported of chunk.imports ?? []) collect(imported);
+  for (const file of chunk.css ?? []) css.add(file);
+  if (chunk.file.endsWith('.js')) js.add(chunk.file);
+ }
+ collect(key);
+ return [...css].filter(file => !template.includes(assetBase + file)).map(file => `<link rel="stylesheet" href="${assetBase}${file}">`).join('')
+  + [...js].filter(file => !template.includes(assetBase + file)).map(file => `<link rel="modulepreload" href="${assetBase}${file}">`).join('');
+}
 const escape = s => s.replaceAll('&','&amp;').replaceAll('"','&quot;').replaceAll('<','&lt;').replaceAll('>','&gt;');
 for (const path of [...pages.map(p => canonicalPath(p.canonicalPath)), '/404/', ...(!launch ? ['/design-preview/'] : [])]) {
  const meta = pageMeta(path);
@@ -11,8 +32,8 @@ for (const path of [...pages.map(p => canonicalPath(p.canonicalPath)), '/404/', 
  const structuredHead = jsonLd ? `<script id="seo-structured-data" type="application/ld+json">${jsonLd}</script>` : '';
  const dir = 'dist' + (path === '/404/' ? '/' : path);
  mkdirSync(dir, {recursive:true});
- const body = render(path);
- writeFileSync(dir + (path === '/404/' ? '404.html' : 'index.html'), template.replace('<!--seo-head-->', head + structuredHead).replace('<!--app-html-->', body));
+ const body = await render(path);
+ writeFileSync(dir + (path === '/404/' ? '404.html' : 'index.html'), template.replace('</head>', pageAssets(path) + '</head>').replace('<!--seo-head-->', head + structuredHead).replace('<!--app-html-->', body));
 }
 writeFileSync('dist/sitemap.xml', `<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">${launch ? pages.map(p=>`<url><loc>${origin}${canonicalPath(p.canonicalPath)}</loc></url>`).join('') : ''}</urlset>`);
 writeFileSync('dist/robots.txt', launch ? `User-agent: *\nAllow: /\nSitemap: ${origin}/sitemap.xml\n` : 'User-agent: *\nAllow: /\n# Preview pages carry noindex; crawling must stay allowed to read it.\n');

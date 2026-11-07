@@ -1,3 +1,4 @@
+import { MobileDetails } from '../ui/MobileDetails';
 import { eddsIntegrationExternal, eddsIntegrationInternal } from '../../data/directions/edds';
 import { Reveal } from '../ui/Reveal';
 import { SectionHeader } from '../ui/SectionHeader';
@@ -13,6 +14,7 @@ export function EddsIntegration() {
             description="Состав интеграций зависит от используемых систем, доступных интерфейсов и регламентов обмена данными."
           />
         </Reveal>
+        <MobileDetails className="mobile-details--section" title="Внутренние и внешние системы">
 
         <div className="edds-integration__cols">
           <Reveal>
@@ -36,6 +38,7 @@ export function EddsIntegration() {
             </article>
           </Reveal>
         </div>
+        </MobileDetails>
       </div>
     </section>
   );

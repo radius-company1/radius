@@ -1,6 +1,10 @@
 import { flushSync } from 'react-dom';
 import { useCallback } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
+import { preloadPage } from '../pageRoutes';
+
+let pendingNavigation = 0;
+export function cancelPendingNavigation() { pendingNavigation += 1; }
 
 function prefersReducedMotion(): boolean {
   return window.matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -15,8 +19,18 @@ export function useViewTransitionNavigate() {
   const { pathname } = useLocation();
 
   const go = useCallback(
-    (to: string) => {
+    async (to: string) => {
+      const request = ++pendingNavigation;
       if (/^\/(?!\/)/.test(to)) to = to.replace(/^([^?#]*[^/])([?#].*)?$/, '$1/$2');
+      try {
+        await preloadPage(to);
+      } catch {
+        // A fresh document also recovers from stale chunk URLs after a release.
+        if (request !== pendingNavigation) return;
+        window.location.assign(import.meta.env.BASE_URL.replace(/\/$/, '') + to);
+        return;
+      }
+      if (request !== pendingNavigation) return;
       if ((to.split(/[?#]/)[0] || pathname) === pathname || prefersReducedMotion() || !document.startViewTransition) {
         navigate(to);
         return;

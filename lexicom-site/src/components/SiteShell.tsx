@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import { Outlet, useLocation, useNavigate } from 'react-router-dom';
+import { cancelPendingNavigation } from '../hooks/useViewTransitionNavigate';
 import { AmbientBackground } from './AmbientBackground';
 import { Header } from './Header';
 import { scrollBelowChrome } from '../hooks/scrollBelowChrome';
@@ -10,6 +11,8 @@ export function SiteShell() {
   const navigate = useNavigate();
   const direction = getDirectionFromPath(location.pathname);
   const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => { cancelPendingNavigation(); }, [location.key]);
 
   useEffect(() => {
     document.documentElement.dataset.direction = direction;
@@ -22,19 +25,7 @@ export function SiteShell() {
     return () => window.removeEventListener('scroll', onScroll);
   }, []);
 
-  useEffect(() => {
-    if (!location.hash) {
-      window.scrollTo({ top: 0, behavior: 'instant' });
-      return;
-    }
-    const id = decodeURIComponent(location.hash.replace('#', ''));
-    const align = () => {
-      const el = document.getElementById(id);
-      if (el) scrollBelowChrome(el);
-    };
-    align();
-    window.requestAnimationFrame(align);
-  }, [location.pathname, location.hash]);
+
 
   const scrollToContact = () => {
     const contact = document.getElementById('contact');

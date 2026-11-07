@@ -1,3 +1,4 @@
+import '../styles/s122.css';
 import { CustomerCase } from '../components/CustomerCase';
 import { s122DemoState } from '../data/directions/s122';
 import { scrollBelowChrome } from '../hooks/scrollBelowChrome';

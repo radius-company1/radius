@@ -1,3 +1,4 @@
+import { MobileDetails } from '../ui/MobileDetails';
 import { mfcAnalyticsDirections } from '../../data/directions/mfc';
 import { GlassSurface } from '../ui/GlassSurface';
 import { Reveal } from '../ui/Reveal';
@@ -16,6 +17,7 @@ export function MfcAnalytics() {
             light
           />
         </Reveal>
+        <MobileDetails className="mobile-details--section" title="Показатели и цикл улучшений">
 
         <div className="mfc-analytics__grid">
           {mfcAnalyticsDirections.map((block, index) => (
@@ -56,6 +58,7 @@ export function MfcAnalytics() {
             <span>проверка следующих обращений</span>
           </div>
         </Reveal>
+        </MobileDetails>
       </div>
     </section>
   );

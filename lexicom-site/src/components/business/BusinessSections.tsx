@@ -1,3 +1,4 @@
+import { MobileDetails } from '../ui/MobileDetails';
 import { useRef } from 'react';
 import { MotionLink as Link } from '../ui/MotionLink';
 import { rzdCase } from '../../data/rzdCase';
@@ -301,6 +302,7 @@ export function BusinessInfrastructure() {
           />
           <p className="biz-infra__note">{businessInfraNote}</p>
         </Reveal>
+        <MobileDetails className="mobile-details--section" title="Интеграции и развитие решения">
 
         <div className="biz-infra__points">
           {businessInfraPoints.map((point, index) => (
@@ -312,6 +314,7 @@ export function BusinessInfrastructure() {
             </Reveal>
           ))}
         </div>
+        </MobileDetails>
       </div>
     </section>
   );
@@ -324,6 +327,7 @@ export function BusinessLaunch() {
         <Reveal>
           <SectionHeader title="Начинаем с процесса, в котором нужен результат" titleId="business-launch-title" />
         </Reveal>
+        <MobileDetails className="mobile-details--section" title="Этапы и условия подключения">
 
         <Reveal>
           <ol className="nb-infra__route biz-launch__route" aria-label="Путь от задачи до запуска">
@@ -342,6 +346,7 @@ export function BusinessLaunch() {
             <p>{businessTiming.text}</p>
           </GlassSurface>
         </Reveal>
+        </MobileDetails>
       </div>
     </section>
   );

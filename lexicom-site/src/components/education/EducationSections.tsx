@@ -1,3 +1,4 @@
+import { MobileDetails } from '../ui/MobileDetails';
 import { useScenarioTabs } from '../../hooks/useScenarioTabs';
 import { useRef, useState } from 'react';
 import { MotionLink as Link } from '../ui/MotionLink';
@@ -339,6 +340,7 @@ export function EducationAnalytics() {
             light
           />
         </Reveal>
+        <MobileDetails className="mobile-details--section" title="Критерии и показатели">
 
         <Reveal>
           <GlassSurface className="edu-analytics__panel" radius="xl" depth="raised" tint="cyan" variant="dark">
@@ -351,6 +353,7 @@ export function EducationAnalytics() {
             <p className="edu-analytics__closing">{educationAnalyticsClosing}</p>
           </GlassSurface>
         </Reveal>
+        </MobileDetails>
       </div>
     </section>
   );
@@ -368,6 +371,7 @@ export function EducationInfrastructure() {
             description="Платформа разворачивается в инфраструктуре заказчика. Состав подключений и доступные действия определяем после изучения действующих систем и интерфейсов обмена."
           />
         </Reveal>
+        <MobileDetails className="mobile-details--section" title="Системы и точки подключения">
 
         <Reveal>
           <ul className="edu-infra__points-list" aria-label="Возможные точки подключения">
@@ -387,6 +391,7 @@ export function EducationInfrastructure() {
             </Reveal>
           ))}
         </div>
+        </MobileDetails>
       </div>
     </section>
   );
@@ -399,6 +404,7 @@ export function EducationLaunch() {
         <Reveal>
           <SectionHeader title="Начните с одного процесса" titleId="education-launch-title" />
         </Reveal>
+        <MobileDetails className="mobile-details--section" title="Этапы и условия подключения">
 
         <Reveal>
           <ul className="edu-launch__starts">
@@ -429,6 +435,7 @@ export function EducationLaunch() {
             <p>{educationTiming.text}</p>
           </GlassSurface>
         </Reveal>
+        </MobileDetails>
       </div>
     </section>
   );

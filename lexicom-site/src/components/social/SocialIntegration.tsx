@@ -1,3 +1,4 @@
+import { MobileDetails } from '../ui/MobileDetails';
 import { socialIntegrationKb, socialIntegrationNote, socialIntegrationSystems } from '../../data/directions/social';
 import { Reveal } from '../ui/Reveal';
 import { SectionHeader } from '../ui/SectionHeader';
@@ -13,6 +14,7 @@ export function SocialIntegration() {
             description={socialIntegrationNote}
           />
         </Reveal>
+        <MobileDetails className="mobile-details--section" title="База знаний и подключение систем">
 
         <div className="social-integration__cols">
           <Reveal>
@@ -36,6 +38,7 @@ export function SocialIntegration() {
             </article>
           </Reveal>
         </div>
+        </MobileDetails>
       </div>
     </section>
   );

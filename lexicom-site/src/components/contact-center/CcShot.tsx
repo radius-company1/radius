@@ -1,4 +1,6 @@
 import '../../styles/static-presentation.css';
+import { ProductMotion } from '../ProductMotion';
+import { shotMotion } from '../../data/productMotion';
 import type { ContactCenterShot } from '../../data/contactCenterPage';
 import { resolveDemoAsset } from '../../data/productDemos';
 
@@ -11,6 +13,8 @@ type CcShotProps = {
 };
 
 export function CcShot({ shot, onOpen, sizes, priority = false, className = '' }: CcShotProps) {
+  const motion = shotMotion[shot.id];
+  if (motion) return <div className={`pm-shot ${className}`}><ProductMotion kind={motion} onZoom={button => onOpen(shot, button)} /></div>;
   return (
     <button
       type="button"

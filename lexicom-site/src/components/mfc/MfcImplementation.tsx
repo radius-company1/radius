@@ -1,3 +1,4 @@
+import { MobileDetails } from '../ui/MobileDetails';
 import { profileLaunchNote } from '../../data/implementation';
 import { mfcImplementationSteps } from '../../data/directions/mfc';
 import { GlassSurface } from '../ui/GlassSurface';
@@ -15,6 +16,7 @@ export function MfcImplementation() {
             description="Выбираем сценарий, фиксируем, что нужно для подключения, проверяем работу и затем расширяем состав."
           />
         </Reveal>
+        <MobileDetails className="mobile-details--section" title="Этапы подключения">
 
         <ol className="mfc-implementation__route">
           {mfcImplementationSteps.map((step, index) => (
@@ -35,6 +37,7 @@ export function MfcImplementation() {
         <Reveal>
           <p className="profile-launch-note">{profileLaunchNote}</p>
         </Reveal>
+        </MobileDetails>
       </div>
     </section>
   );

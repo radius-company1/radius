@@ -1,3 +1,4 @@
+import { MobileDetails } from '../ui/MobileDetails';
 import {
   socialLaunchAccent,
   socialResourceAccent,
@@ -15,6 +16,7 @@ export function SocialVendor() {
         <Reveal>
           <SectionHeader title="Внедрение и развитие — напрямую от Lexicom" titleId="social-vendor-title" />
         </Reveal>
+        <MobileDetails className="mobile-details--section" title="Разработка, размещение и сопровождение">
 
         <div className="social-vendor__grid">
           {socialVendorPoints.map((point, index) => (
@@ -41,6 +43,7 @@ export function SocialVendor() {
             </GlassSurface>
           </Reveal>
         </div>
+        </MobileDetails>
       </div>
     </section>
   );

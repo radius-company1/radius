@@ -1,3 +1,4 @@
+import { MobileDetails } from '../ui/MobileDetails';
 import { profileResourceNote } from '../../data/flexibility';
 import { mfcOnPremAccents } from '../../data/directions/mfc';
 import { GlassSurface } from '../ui/GlassSurface';
@@ -16,6 +17,7 @@ export function MfcOnPrem() {
             description="Мы разрабатываем Lexicom и разворачиваем платформу в инфраструктуре МФЦ. Вы работаете напрямую с производителем программного обеспечения."
           />
         </Reveal>
+        <MobileDetails className="mobile-details--section" title="Размещение и работа с разработчиком">
 
         <div className="mfc-onprem__accents">
           {mfcOnPremAccents.map((accent, index) => (
@@ -31,6 +33,7 @@ export function MfcOnPrem() {
         <Reveal>
           <p className="profile-resource-note">{profileResourceNote}</p>
         </Reveal>
+        </MobileDetails>
       </div>
     </section>
   );

@@ -1,3 +1,4 @@
+import { MobileDetails } from '../ui/MobileDetails';
 import { eddsAnalyticsZones } from '../../data/directions/edds';
 import { GlassSurface } from '../ui/GlassSurface';
 import { Reveal } from '../ui/Reveal';
@@ -20,6 +21,7 @@ export function EddsAnalytics() {
             light
           />
         </Reveal>
+        <MobileDetails className="mobile-details--section" title="Показатели работы службы">
 
         <Reveal>
           <div className="edds-analytics__dashboard">
@@ -42,6 +44,7 @@ export function EddsAnalytics() {
             ))}
           </div>
         </Reveal>
+        </MobileDetails>
       </div>
     </section>
   );

@@ -1,3 +1,4 @@
+import { MobileDetails } from '../ui/MobileDetails';
 import { mfcWithIntegration, mfcWithoutIntegration } from '../../data/directions/mfc';
 import { Reveal } from '../ui/Reveal';
 import { SectionHeader } from '../ui/SectionHeader';
@@ -12,6 +13,7 @@ export function MfcIntegration() {
             titleId="mfc-integration-title"
           />
         </Reveal>
+        <MobileDetails className="mobile-details--section" title="Источники данных и доступные действия">
 
         <div className="mfc-integration__cols">
           <Reveal>
@@ -41,6 +43,7 @@ export function MfcIntegration() {
             Конкретное действие возможно после подключения соответствующей системы и согласования правил обмена.
           </p>
         </Reveal>
+        </MobileDetails>
       </div>
     </section>
   );

@@ -37,24 +37,51 @@ export function ClientMarquee({ variant = 'default' }: { variant?: 'default' | '
   useEffect(() => {
     const viewport = viewportRef.current;
     if (!viewport || !ready || paused || hovered || focused) return;
+    const track = viewport.querySelector<HTMLElement>('.client-marquee__track');
+    if (!track) return;
     let frame = 0;
     let previous = 0;
     let position = viewport.scrollLeft;
+    let trackWidth = track.getBoundingClientRect().width;
     let visible = false;
+    const stop = () => {
+      cancelAnimationFrame(frame);
+      frame = 0;
+      previous = 0;
+    };
     const tick = (time: number) => {
+      frame = 0;
+      if (!visible || document.hidden || !trackWidth) return;
       const elapsed = previous ? Math.min(time - previous, 64) : 0;
       previous = time;
-      const trackWidth = viewport.firstElementChild?.firstElementChild?.getBoundingClientRect().width ?? 0;
-      if (visible && !document.hidden && trackWidth) {
-        position = (position + elapsed * 0.035) % trackWidth;
-        viewport.scrollLeft = position;
-      }
+      position = (position + elapsed * 0.035) % trackWidth;
+      viewport.scrollLeft = position;
       frame = requestAnimationFrame(tick);
     };
-    const observer = new IntersectionObserver(([entry]) => { visible = entry.isIntersecting; });
+    const sync = () => {
+      if (!visible || document.hidden || !trackWidth) stop();
+      else if (!frame) {
+        position = viewport.scrollLeft;
+        frame = requestAnimationFrame(tick);
+      }
+    };
+    const observer = new IntersectionObserver(([entry]) => {
+      visible = entry.isIntersecting;
+      sync();
+    });
+    const resize = new ResizeObserver(() => {
+      trackWidth = track.getBoundingClientRect().width;
+      sync();
+    });
     observer.observe(viewport);
-    frame = requestAnimationFrame(tick);
-    return () => { cancelAnimationFrame(frame); observer.disconnect(); };
+    resize.observe(track);
+    document.addEventListener('visibilitychange', sync);
+    return () => {
+      stop();
+      observer.disconnect();
+      resize.disconnect();
+      document.removeEventListener('visibilitychange', sync);
+    };
   }, [ready, paused, hovered, focused]);
 
   const move = (direction: -1 | 1) => {

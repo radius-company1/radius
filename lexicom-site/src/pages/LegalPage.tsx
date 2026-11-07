@@ -1,7 +1,7 @@
 import { Footer } from '../components/Footer';
 import { MotionLink as Link } from '../components/ui/MotionLink';
 import { companyLegal } from '../data/company';
-import { legalDocuments, legalRevision, type LegalDocument } from '../data/legal';
+import { legalDocuments, legalRevision, privacyPolicy, consentDocument, cookiePolicy, type LegalDocument } from '../data/legal';
 import '../styles/legal.css';
 
 export function LegalPage({ doc }: { doc: LegalDocument }) {
@@ -59,3 +59,7 @@ export function LegalPage({ doc }: { doc: LegalDocument }) {
     </div>
   );
 }
+
+export function PrivacyPage() { return <LegalPage doc={privacyPolicy} />; }
+export function ConsentPage() { return <LegalPage doc={consentDocument} />; }
+export function CookiesPage() { return <LegalPage doc={cookiePolicy} />; }

@@ -1,3 +1,4 @@
+import { MobileDetails } from '../ui/MobileDetails';
 import {
   utilitiesCcCapabilities,
   utilitiesSpecialistExample,
@@ -24,6 +25,7 @@ export function UtilitiesSpecialist() {
             light
           />
         </Reveal>
+        <MobileDetails className="mobile-details--section" title="Рабочее место и возможности">
 
         <Reveal>
           <GlassSurface className="utilities-specialist__workspace" radius="xl" depth="raised" tint="cyan" variant="dark">
@@ -57,6 +59,7 @@ export function UtilitiesSpecialist() {
             ))}
           </ul>
         </Reveal>
+        </MobileDetails>
       </div>
     </section>
   );

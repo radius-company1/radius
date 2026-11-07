@@ -34,7 +34,7 @@ function ProductCard({
   index: number;
   onOpenDemo: (demo: ProductDemo, trigger: HTMLButtonElement | null) => void;
 }) {
-  const glow = useSurfaceGlow();
+  const { ref: glowRef, onPointerMove, onPointerLeave } = useSurfaceGlow();
   const triggerRef = useRef<HTMLButtonElement>(null);
   const demo = product.id === 'ekc-110' || product.id === 'ticket-system' ? undefined : productDemoById[product.id];
   const detailsHref = productPageHref[product.id];
@@ -44,14 +44,14 @@ function ProductCard({
       <GlassSurface
         as="article"
         id={`product-${product.id}`}
-        ref={glow.ref as React.RefObject<HTMLDivElement>}
+        ref={glowRef as React.RefObject<HTMLDivElement>}
         className={`product-card product-card--${product.id}`}
         radius="xl"
         depth="raised"
         tier="matte"
         tint={tintMap[product.id]}
-        onPointerMove={glow.onPointerMove}
-        onPointerLeave={glow.onPointerLeave}
+        onPointerMove={onPointerMove}
+        onPointerLeave={onPointerLeave}
       >
         <div className="product-card__visual-wrap">
           <ProductVisual id={product.id} />
@@ -91,7 +91,7 @@ function ProductCard({
 export function Products() {
   const [activeDemo, setActiveDemo] = useState<ProductDemo | null>(null);
   const returnFocusRef = useRef<HTMLButtonElement | null>(null);
-  const glow = useSurfaceGlow();
+  const { ref: glowRef, onPointerMove, onPointerLeave } = useSurfaceGlow();
 
   const onOpenDemo = useCallback((demo: ProductDemo, trigger: HTMLButtonElement | null) => {
     returnFocusRef.current = trigger;
@@ -126,14 +126,14 @@ export function Products() {
             <GlassSurface
               as="article"
               id={`product-${ekcProduct.id}`}
-              ref={glow.ref as React.RefObject<HTMLDivElement>}
+              ref={glowRef as React.RefObject<HTMLDivElement>}
               className="product-card product-card--ekc-110 product-card--complex"
               radius="xl"
               depth="raised"
               tier="matte"
               tint="yellow"
-              onPointerMove={glow.onPointerMove}
-              onPointerLeave={glow.onPointerLeave}
+              onPointerMove={onPointerMove}
+              onPointerLeave={onPointerLeave}
             >
               <div className="product-card__visual-wrap">
                 <ProductVisual id={ekcProduct.id} />

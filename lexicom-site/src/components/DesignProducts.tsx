@@ -1,3 +1,4 @@
+import { ProductMotion } from './ProductMotion';
 import { useClientReady } from '../hooks/useClientReady';
 import { Reveal } from './ui/Reveal';
 import { ticketShots } from '../data/ticketSystemPage';
@@ -121,15 +122,8 @@ export function DesignProducts() {
             <p className="design-product__task">{info.task}</p>
             <p className="design-product__description">{info.text}</p>
             <figure className={`design-product__media design-product__media--${id}${shot.presentation ? ' static-presentation' : ''}`}>
-              <button className="design-product__image-button" type="button" aria-label={`Увеличить изображение: ${product.title}`} onClick={event => {
-                showImage(id, shot, event.currentTarget);
-              }}>
-                {shot.presentation ? <picture>
-                  {shot.srcMobile ? <source media={shot.mobileMedia ?? '(max-width: 1100px)'} srcSet={resolveDemoAsset(shot.srcMobile)} width={shot.mobileWidth} height={shot.mobileHeight} /> : null}
-                  <img src={resolveDemoAsset(shot.srcSmall ?? shot.src)} srcSet={shot.srcSmall ? `${resolveDemoAsset(shot.srcSmall)} 1200w, ${resolveDemoAsset(shot.src)} 2400w` : undefined} sizes="(min-width: 1101px) 800px, (min-width: 768px) 640px, calc(100vw - 80px)" alt={shot.alt} width={shot.width} height={shot.height} loading="lazy" />
-                </picture> : <img src={resolveDemoAsset(shot.src)} alt={shot.alt} width={shot.width} height={shot.height} loading="lazy" />}
-              </button>
-              <figcaption><span>{shot.caption}</span><button type="button" onClick={event => {showImage(id, shot, event.currentTarget);}} aria-label={`Увеличить изображение: ${product.title}`}>Увеличить <svg viewBox="0 0 16 16" width="14" height="14" fill="none" stroke="currentColor" strokeWidth="1.4" aria-hidden="true"><path d="M6 2H2v4m8-4h4v4M2 10v4h4m8-4v4h-4" /></svg></button></figcaption>
+              <ProductMotion kind={id} active={selected === id && !image && !demo} onZoom={button => showImage(id, shot, button)} />
+              <figcaption><span>{shot.caption}</span></figcaption>
             </figure>
             <div className="design-product__actions">
               <Link to={productPageHref[id]!}>О продукте <span aria-hidden="true">↗</span></Link>

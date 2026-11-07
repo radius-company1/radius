@@ -1,3 +1,4 @@
+import { MobileDetails } from '../ui/MobileDetails';
 import { socialSpecialistNote, socialSpecialistPoints } from '../../data/directions/social';
 import { GlassSurface } from '../ui/GlassSurface';
 import { Reveal } from '../ui/Reveal';
@@ -20,6 +21,7 @@ export function SocialSpecialist() {
             light
           />
         </Reveal>
+        <MobileDetails className="mobile-details--section" title="Контекст обращения и рабочее место">
 
         <Reveal>
           <GlassSurface className="social-specialist__workspace" radius="xl" depth="raised" tint="cyan" variant="dark">
@@ -29,7 +31,7 @@ export function SocialSpecialist() {
                 <ul>
                   <li>Канал: виджет сайта</li>
                   <li>Тема: помощь на дому</li>
-                  <li>Регион: уточнён</li>
+                  <li>Запрос: порядок оформления помощи</li>
                 </ul>
               </aside>
               <div className="social-specialist__dialog">
@@ -58,6 +60,7 @@ export function SocialSpecialist() {
         <Reveal>
           <p className="social-specialist__closing">{socialSpecialistNote}</p>
         </Reveal>
+        </MobileDetails>
       </div>
     </section>
   );

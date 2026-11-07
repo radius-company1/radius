@@ -1,3 +1,4 @@
+import { MobileDetails } from '../ui/MobileDetails';
 import { profileLaunchNote } from '../../data/implementation';
 import { eddsImplementationSteps } from '../../data/directions/edds';
 import { GlassSurface } from '../ui/GlassSurface';
@@ -15,6 +16,7 @@ export function EddsImplementation() {
         <Reveal>
           <SectionHeader title="Начинаем с конкретного сценария" titleId="edds-implementation-title" />
         </Reveal>
+        <MobileDetails className="mobile-details--section" title="Этапы подключения">
 
         <ol className="edds-implementation__route">
           {eddsImplementationSteps.map((step, index) => (
@@ -35,6 +37,7 @@ export function EddsImplementation() {
         <Reveal>
           <p className="profile-launch-note">{profileLaunchNote}</p>
         </Reveal>
+        </MobileDetails>
       </div>
     </section>
   );

@@ -1,3 +1,4 @@
+import { MobileDetails } from '../ui/MobileDetails';
 import { s122Channels, s122ArchitectureLayers } from '../../data/directions/s122';
 import { Reveal } from '../ui/Reveal';
 import { SectionHeader } from '../ui/SectionHeader';
@@ -17,6 +18,7 @@ export function S122Integration() {
             description="Каналы подключаются к общей бизнес-логике Lexicom. Операции в информационных системах выполняются через интеграционный слой — в зависимости от архитектуры проекта и при наличии соответствующих API."
           />
         </Reveal>
+        <MobileDetails className="mobile-details--section" title="Каналы и подключение систем">
 
         <Reveal>
           <div className="s122-arch-board" aria-label="Архитектура каналов, платформы и систем">
@@ -57,6 +59,7 @@ export function S122Integration() {
             </div>
           </div>
         </Reveal>
+        </MobileDetails>
       </div>
     </section>
   );

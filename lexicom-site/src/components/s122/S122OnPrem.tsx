@@ -1,3 +1,4 @@
+import { MobileDetails } from '../ui/MobileDetails';
 import { s122PlacementNotes } from '../../data/directions/s122';
 import { Reveal } from '../ui/Reveal';
 import { SectionHeader } from '../ui/SectionHeader';
@@ -18,6 +19,7 @@ export function S122OnPrem() {
             description="Платформа стоит у заказчика. Каналы, доступ к медицинским системам и ресурсы согласуются отдельно."
           />
         </Reveal>
+        <MobileDetails className="mobile-details--section" title="Размещение и сопровождение">
 
         <Reveal>
           <ul className="s122-onprem__notes">
@@ -26,6 +28,7 @@ export function S122OnPrem() {
             ))}
           </ul>
         </Reveal>
+        </MobileDetails>
       </div>
     </section>
   );

@@ -29,6 +29,11 @@ export function VideoDemoModal({ demo, onClose, returnFocusRef }: VideoDemoModal
   /** Only surface media errors from an intentional demo load, not from teardown. */
   const acceptErrorsRef = useRef(false);
   const [loadError, setLoadError] = useState(false);
+  const [previousItem, setPreviousItem] = useState(demo);
+  if (previousItem !== demo) {
+    setPreviousItem(demo);
+    setLoadError(false);
+  }
 
   useEffect(() => {
     const dialog = dialogRef.current;
@@ -47,12 +52,10 @@ export function VideoDemoModal({ demo, onClose, returnFocusRef }: VideoDemoModal
         }
       }
       wasOpenRef.current = false;
-      setLoadError(false);
       return;
     }
 
     wasOpenRef.current = true;
-    setLoadError(false);
     document.body.classList.add('video-demo-open');
     if (!dialog.open) dialog.showModal();
 
@@ -85,7 +88,7 @@ export function VideoDemoModal({ demo, onClose, returnFocusRef }: VideoDemoModal
       acceptErrorsRef.current = false;
       dialog.removeEventListener('cancel', onCancel);
       document.body.classList.remove('video-demo-open');
-      if (videoRef.current) clearVideo(videoRef.current);
+      if (video) clearVideo(video);
       if (dialog.open) dialog.close();
     };
   }, [demo, dismiss, returnFocusRef]);

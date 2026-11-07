@@ -1,3 +1,4 @@
+import { MobileDetails } from '../ui/MobileDetails';
 import { profileLaunchNote } from '../../data/implementation';
 import { socialImplementationSteps } from '../../data/directions/social';
 import { GlassSurface } from '../ui/GlassSurface';
@@ -15,6 +16,7 @@ export function SocialImplementation() {
         <Reveal>
           <SectionHeader title="От задачи — к работающему решению" titleId="social-implementation-title" />
         </Reveal>
+        <MobileDetails className="mobile-details--section" title="Этапы подключения">
 
         <ol className="social-implementation__route">
           {socialImplementationSteps.map((step, index) => (
@@ -35,6 +37,7 @@ export function SocialImplementation() {
         <Reveal>
           <p className="profile-launch-note">{profileLaunchNote}</p>
         </Reveal>
+        </MobileDetails>
       </div>
     </section>
   );

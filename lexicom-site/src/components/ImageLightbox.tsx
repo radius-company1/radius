@@ -25,6 +25,11 @@ export function ImageLightbox({ image, onClose, returnFocusRef }: ImageLightboxP
   const dismiss = useDialogDismiss(dialogRef, onClose);
   const wasOpenRef = useRef(false);
   const [actualSize, setActualSize] = useState(false);
+  const [previousItem, setPreviousItem] = useState(image);
+  if (previousItem !== image) {
+    setPreviousItem(image);
+    setActualSize(false);
+  }
 
   useEffect(() => {
     const dialog = dialogRef.current;
@@ -40,12 +45,10 @@ export function ImageLightbox({ image, onClose, returnFocusRef }: ImageLightboxP
         }
       }
       wasOpenRef.current = false;
-      setActualSize(false);
       return;
     }
 
     wasOpenRef.current = true;
-    setActualSize(false);
     document.body.classList.add('image-lightbox-open');
     if (!dialog.open) dialog.showModal();
     window.requestAnimationFrame(() => closeRef.current?.focus());

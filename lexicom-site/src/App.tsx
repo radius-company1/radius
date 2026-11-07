@@ -2,53 +2,26 @@ import { BrowserRouter, Route, Routes, useLocation }  from 'react-router-dom';
 import { usePageMeta } from './hooks/usePageMeta';
 import { pageMeta } from './seo';
 import { SiteShell } from './components/SiteShell';
-import { DesignPreviewPage } from './design-preview/DesignPreviewPage';
-import { BusinessPage } from './pages/BusinessPage';
-import { CompanyPage } from './pages/CompanyPage';
-import { LegalPage } from './pages/LegalPage';
-import { consentDocument, cookiePolicy, privacyPolicy } from './data/legal';
-import { ContactCenterPage } from './pages/ContactCenterPage';
-import { EddsPage } from './pages/EddsPage';
-import { EducationPage } from './pages/EducationPage';
-import { HomePage } from './pages/HomePage';
-import { EkcPage } from './pages/EkcPage';
-import { MfcPage } from './pages/MfcPage';
-import { NeurobotPage } from './pages/NeurobotPage';
-import { TicketSystemPage } from './pages/TicketSystemPage';
-import { ProtocolPage } from './pages/ProtocolPage';
-import { SpeechAnalyticsPage } from './pages/SpeechAnalyticsPage';
-import { S122Page } from './pages/S122Page';
-import { SocialPage } from './pages/SocialPage';
-import { UtilitiesPage } from './pages/UtilitiesPage';
+import { Suspense } from 'react';
+import { PageScroll } from './components/PageScroll';
+import { PageErrorBoundary } from './components/PageErrorBoundary';
+import { pageRoutes } from './pageRoutes';
+const loading = <main className="container section" role="status">Открываем страницу…</main>;
 
 export function AppRoutes() {
  const { pathname } = useLocation();
+ const DesignPreviewPage = pageRoutes.find(route => route.path === '/design-preview')?.Component;
  usePageMeta(pageMeta(pathname));
  return (<Routes>
-        {import.meta.env.MODE !== 'launch' && <Route path="/design-preview" element={<DesignPreviewPage />} />}
+        {DesignPreviewPage && <Route path="/design-preview" element={<Suspense fallback={loading}><DesignPreviewPage /></Suspense>} />}
         <Route element={<SiteShell />}>
-          <Route path="/" element={<HomePage />} />
-          <Route path="/company" element={<CompanyPage />} />
-          <Route path="/privacy" element={<LegalPage doc={privacyPolicy} />} />
-          <Route path="/consent" element={<LegalPage doc={consentDocument} />} />
-          <Route path="/cookies" element={<LegalPage doc={cookiePolicy} />} />
-          <Route path="/business" element={<BusinessPage />} />
-          <Route path="/education" element={<EducationPage />} />
-          <Route path="/mfc" element={<MfcPage />} />
-          <Route path="/122" element={<S122Page />} />
-          <Route path="/edds" element={<EddsPage />} />
-          <Route path="/social" element={<SocialPage />} />
-          <Route path="/utilities" element={<UtilitiesPage />} />
-          <Route path="/products/contact-center" element={<ContactCenterPage />} />
-          <Route path="/products/neurobot" element={<NeurobotPage />} />
-          <Route path="/products/speech-analytics" element={<SpeechAnalyticsPage />} />
-          <Route path="/products/ticket-system" element={<TicketSystemPage />} />
-          <Route path="/products/protocol" element={<ProtocolPage />} />
-          <Route path="/products/ekc-110" element={<EkcPage />} />
+          {pageRoutes.filter(route => route.path !== '/design-preview').map(({ path, Component }) => <Route key={path} path={path} element={
+            <Suspense fallback={loading}><PageScroll><Component /></PageScroll></Suspense>
+          } />)}
           <Route path="*" element={<main className="container section"><h1>404 — страница не найдена</h1><p>Проверьте адрес или вернитесь на <a href={import.meta.env.BASE_URL}>главную страницу Lexicom</a>.</p></main>} />
         </Route>
       </Routes>);
 }
 export default function App() {
- return <BrowserRouter useTransitions={false} basename={import.meta.env.BASE_URL.replace(/\/$/, '') || undefined}><AppRoutes /></BrowserRouter>;
+ return <BrowserRouter useTransitions={false} basename={import.meta.env.BASE_URL.replace(/\/$/, '') || undefined}><PageErrorBoundary><AppRoutes /></PageErrorBoundary></BrowserRouter>;
 }

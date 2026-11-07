@@ -1,17 +1,11 @@
-import { type RefObject } from 'react';
-import { Button } from './ui/Button';
+import { ProductFinder } from './ProductFinder';
 import { companyContacts } from '../data/company';
 import { ContactForm } from './ContactForm';
 import { GlassSurface } from './ui/GlassSurface';
 import { Reveal } from './ui/Reveal';
 import { SectionHeader } from './ui/SectionHeader';
 
-type DemoSectionProps = {
-  onOpenChat: () => void;
-  openChatRef?: RefObject<HTMLButtonElement | null>;
-};
-
-export function DemoSection({ onOpenChat, openChatRef }: DemoSectionProps) {
+export function DemoSection() {
   return (
     <section className="section section-zone section-zone--demo demo" id="contact" aria-labelledby="demo-title">
       <div className="container">
@@ -34,16 +28,7 @@ export function DemoSection({ onOpenChat, openChatRef }: DemoSectionProps) {
           </GlassSurface>
         </Reveal>
 
-        <Reveal>
-          <div className="demo__overview">
-            <p>
-              Сценарный обзор платформы отвечает по ключевым словам о продуктах и начале работы.
-            </p>
-            <Button ref={openChatRef} variant="secondary" onClick={onOpenChat}>
-              Открыть сценарный обзор
-            </Button>
-          </div>
-        </Reveal>
+        <ProductFinder />
       </div>
     </section>
   );

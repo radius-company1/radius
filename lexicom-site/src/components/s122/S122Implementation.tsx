@@ -1,3 +1,4 @@
+import { MobileDetails } from '../ui/MobileDetails';
 import { profileLaunchNote } from '../../data/implementation';
 import { s122ImplementationSteps } from '../../data/directions/s122';
 import { GlassSurface } from '../ui/GlassSurface';
@@ -19,6 +20,7 @@ export function S122Implementation() {
             description="Выбираем сценарий, фиксируем, что нужно для подключения, проверяем работу и затем расширяем состав."
           />
         </Reveal>
+        <MobileDetails className="mobile-details--section" title="Этапы подключения">
 
         <ol className="s122-implementation__route">
           {s122ImplementationSteps.map((step, index) => (
@@ -39,6 +41,7 @@ export function S122Implementation() {
         <Reveal>
           <p className="profile-launch-note">{profileLaunchNote}</p>
         </Reveal>
+        </MobileDetails>
       </div>
     </section>
   );

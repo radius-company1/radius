@@ -8,7 +8,8 @@ export function DesignDirectionNav() {
   const [open, setOpen] = useState(false);
   const root = useRef<HTMLElement>(null);
   const button = useRef<HTMLButtonElement>(null);
-  useEffect(() => {setOpen(false);},[pathname]);
+  const [menuPath, setMenuPath] = useState(pathname);
+  if (menuPath !== pathname) { setMenuPath(pathname); setOpen(false); }
   useEffect(() => {
     if (!open) return;
     const close = (e: PointerEvent) => {if (!root.current?.contains(e.target as Node)) setOpen(false);};

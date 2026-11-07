@@ -1,3 +1,4 @@
+import { MobileDetails } from '../ui/MobileDetails';
 import {
   utilitiesIntegrationKb,
   utilitiesIntegrationNote,
@@ -23,6 +24,7 @@ export function UtilitiesIntegration() {
             description={utilitiesIntegrationNote}
           />
         </Reveal>
+        <MobileDetails className="mobile-details--section" title="Источники данных и сценарии">
 
         <Reveal>
           <GlassSurface className="utilities-integration__sources" radius="xl" depth="raised" tint="utilities">
@@ -57,6 +59,7 @@ export function UtilitiesIntegration() {
             </article>
           </Reveal>
         </div>
+        </MobileDetails>
       </div>
     </section>
   );

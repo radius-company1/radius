@@ -1,3 +1,4 @@
+import { MobileDetails } from '../ui/MobileDetails';
 import { s122AnalyticsZones } from '../../data/directions/s122';
 import { GlassSurface } from '../ui/GlassSurface';
 import { Reveal } from '../ui/Reveal';
@@ -20,6 +21,7 @@ export function S122Analytics() {
             light
           />
         </Reveal>
+        <MobileDetails className="mobile-details--section" title="Нагрузка, автоматизация и качество">
 
         <Reveal>
           <div className="s122-analytics__dashboard">
@@ -42,6 +44,7 @@ export function S122Analytics() {
             ))}
           </div>
         </Reveal>
+        </MobileDetails>
       </div>
     </section>
   );

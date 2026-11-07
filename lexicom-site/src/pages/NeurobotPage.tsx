@@ -1,3 +1,4 @@
+import '../styles/neurobot.css';
 import { useCallback, useRef, useState } from 'react';
 import { TicketProductReference } from '../components/TicketProductReference';
 import { Footer } from '../components/Footer';

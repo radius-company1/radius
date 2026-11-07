@@ -1,6 +1,6 @@
 # Корпоративный сайт Lexicom
 
-React + Vite, 17 страниц с готовым HTML для поисковых систем.
+React + Vite, 18 страниц с готовым HTML для поисковых систем.
 
 Единственный локальный источник: `/Users/romaborovik/lexicom-final-experiment/2026-10-14/final`. Клон публикации: `projects/tula/lexicom-site` в рабочем пространстве `lexicom_landing`, репозиторий `radius-company1/radius`.
 

@@ -1,3 +1,4 @@
+import '../styles/mfc.css';
 import { mfcDemoState } from '../data/directions/mfc';
 import { scrollBelowChrome } from '../hooks/scrollBelowChrome';
 import { Footer } from '../components/Footer';

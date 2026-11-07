@@ -1,3 +1,4 @@
+import { MobileDetails } from '../ui/MobileDetails';
 import { utilitiesScenarios, utilitiesScenariosNote } from '../../data/directions/utilities';
 import { GlassSurface } from '../ui/GlassSurface';
 import { Reveal } from '../ui/Reveal';
@@ -23,8 +24,7 @@ export function UtilitiesScenarios() {
           {utilitiesScenarios.map((scenario, index) => (
             <Reveal key={scenario.id} delay={index * 40}>
               <GlassSurface className="utilities-scenarios__card" radius="lg" depth="raised" tint="utilities">
-                <h3>{scenario.title}</h3>
-                <p>{scenario.text}</p>
+                <MobileDetails title={<h3>{scenario.title}</h3>}><p>{scenario.text}</p></MobileDetails>
               </GlassSurface>
             </Reveal>
           ))}

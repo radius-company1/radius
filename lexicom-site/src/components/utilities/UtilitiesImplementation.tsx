@@ -1,3 +1,4 @@
+import { MobileDetails } from '../ui/MobileDetails';
 import { utilitiesImplementationSteps } from '../../data/directions/utilities';
 import { GlassSurface } from '../ui/GlassSurface';
 import { Reveal } from '../ui/Reveal';
@@ -14,6 +15,7 @@ export function UtilitiesImplementation() {
         <Reveal>
           <SectionHeader title="Что получает ваша служба" titleId="utilities-implementation-title" />
         </Reveal>
+        <MobileDetails className="mobile-details--section" title="Этапы подключения">
 
         <div className="utilities-implementation__route">
           {utilitiesImplementationSteps.map((step, index) => (
@@ -25,6 +27,7 @@ export function UtilitiesImplementation() {
             </Reveal>
           ))}
         </div>
+        </MobileDetails>
       </div>
     </section>
   );

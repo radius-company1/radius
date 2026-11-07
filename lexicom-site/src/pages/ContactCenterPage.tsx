@@ -1,3 +1,6 @@
+import '../styles/contact-center.css';
+import '../styles/neurobot.css';
+import '../styles/speech-analytics.css';
 import { useCallback, useRef, useState } from 'react';
 import { CcChannels } from '../components/contact-center/CcChannels';
 import { CcConfigs } from '../components/contact-center/CcConfigs';

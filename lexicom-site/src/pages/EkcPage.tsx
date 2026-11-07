@@ -1,3 +1,4 @@
+import '../styles/ekc.css';
 import { useCallback } from 'react';
 import {
   EkcAudiences,

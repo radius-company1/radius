@@ -1,3 +1,4 @@
+import { MobileDetails } from '../ui/MobileDetails';
 import { eddsDispatcherOwns, eddsPlatformHelps } from '../../data/directions/edds';
 import { GlassSurface } from '../ui/GlassSurface';
 import { Reveal } from '../ui/Reveal';
@@ -19,6 +20,7 @@ export function EddsHandoff() {
             light
           />
         </Reveal>
+        <MobileDetails className="mobile-details--section" title="Задачи платформы и диспетчера">
 
         <div className="edds-handoff__roles">
           <Reveal>
@@ -48,6 +50,7 @@ export function EddsHandoff() {
             Правила передачи сотруднику и границы автоматизации определяются при настройке решения.
           </p>
         </Reveal>
+        </MobileDetails>
       </div>
     </section>
   );

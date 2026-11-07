@@ -1,4 +1,5 @@
-import { socialAnalyticsDemo, socialAnalyticsNote, socialAnalyticsQuestions } from '../../data/directions/social';
+import { socialAnalyticsNote, socialAnalyticsQuestions } from '../../data/directions/social';
+import { MotionLink as Link } from '../ui/MotionLink';
 import { GlassSurface } from '../ui/GlassSurface';
 import { Reveal } from '../ui/Reveal';
 import { SectionHeader } from '../ui/SectionHeader';
@@ -34,22 +35,12 @@ export function SocialAnalytics() {
           </Reveal>
 
           <Reveal delay={80}>
-            <div className="social-analytics__demo">
-              {socialAnalyticsDemo.map((item) => (
-                <GlassSurface
-                  key={item.label}
-                  className="social-analytics__card"
-                  radius="lg"
-                  depth="raised"
-                  tint="yellow"
-                  variant="dark"
-                >
-                  <p className="social-analytics__card-label">{item.label}</p>
-                  <p className="social-analytics__card-value">{item.value}</p>
-                  <p className="social-analytics__card-note">{item.note}</p>
-                </GlassSurface>
-              ))}
-            </div>
+            <GlassSurface className="social-analytics__card" radius="lg" depth="raised" tint="yellow" variant="dark">
+              <p className="social-analytics__card-label">От отчёта — к разговору</p>
+              <p className="social-analytics__card-value">Разбирайте причины повторных вопросов</p>
+              <p>Откройте нужный диалог, проверьте оценку по критериям и определите, что уточнить в базе знаний или работе специалистов.</p>
+              <Link to="/products/speech-analytics">Возможности речевой аналитики →</Link>
+            </GlassSurface>
           </Reveal>
         </div>
       </div>

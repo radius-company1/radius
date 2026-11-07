@@ -1,0 +1,1 @@
+import{n as e}from"./Logo-DcUy7QUU.js";import{ci as t,l as n,ui as r}from"./index-Db7CAXFS.js";var i=e();function a({id:e,className:a=``}){return(0,i.jsxs)(n,{className:`product-page-link ${a}`.trim(),to:t(e),children:[r[e],(0,i.jsx)(`span`,{"aria-hidden":`true`,children:`→`})]})}export{a as t};

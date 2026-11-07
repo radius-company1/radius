@@ -1,3 +1,6 @@
+import '../styles/contact-center.css';
+import '../styles/neurobot.css';
+import '../styles/speech-analytics.css';
 import { useCallback, useRef, useState } from 'react';
 import { Footer } from '../components/Footer';
 import { ImageLightbox, type LightboxImage } from '../components/ImageLightbox';

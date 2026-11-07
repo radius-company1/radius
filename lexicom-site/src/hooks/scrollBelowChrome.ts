@@ -41,6 +41,9 @@ export function scrollToProductForm(titleId: string, formId: string) {
   const target = title ?? form;
   if (!target) return;
   scrollBelowChrome(target, () => {
-    form?.querySelector<HTMLElement>('input:not([type="hidden"]), textarea')?.focus({ preventScroll: true });
+    const field = [...(form?.querySelectorAll<HTMLInputElement | HTMLTextAreaElement>('input, textarea') ?? [])]
+      .find(input => !input.disabled && input.type !== 'hidden' && input.tabIndex >= 0
+        && !input.closest('[aria-hidden="true"], [inert]') && input.getClientRects().length > 0);
+    field?.focus({ preventScroll: true });
   });
 }

@@ -1,4 +1,4 @@
-import { useEffect, useLayoutEffect, useRef, useState } from 'react';
+import { useCallback, useEffect, useLayoutEffect, useRef, useState } from 'react';
 import { previewThemes, type PreviewThemeId } from '../themes';
 import './LiquidSwitcher.css';
 
@@ -39,7 +39,7 @@ export function LiquidSwitcher({ active, onChange }: LiquidSwitcherProps) {
   const safeActive = activeIndex >= 0 ? activeIndex : 0;
   const targetIndex = hoverIndex ?? safeActive;
 
-  const updateLens = (isMoving = false) => {
+  const updateLens = useCallback((isMoving = false) => {
     const track = trackRef.current;
     const item = itemRefs.current[targetIndex];
     if (!track || !item) return;
@@ -67,17 +67,17 @@ export function LiquidSwitcher({ active, onChange }: LiquidSwitcherProps) {
       morph: isMoving ? MORPH_MOVE : hoverIndex !== null ? MORPH_HOVER : MORPH_REST,
     });
     setReady(true);
-  };
+  }, [targetIndex, hoverIndex, safeActive]);
 
   useLayoutEffect(() => {
     updateLens(moving);
-  }, [targetIndex, active, moving, hoverIndex]);
+  }, [updateLens, moving]);
 
   useEffect(() => {
     const onResize = () => updateLens();
     window.addEventListener('resize', onResize);
     return () => window.removeEventListener('resize', onResize);
-  }, [targetIndex, active]);
+  }, [updateLens]);
 
   useEffect(() => {
     const el = itemRefs.current[safeActive];

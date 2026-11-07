@@ -10,7 +10,7 @@ export type FlowNodeDef = {
   kind?: 'channel' | 'core' | 'neurobot' | 'employee' | 'knowledge' | 'system' | 'analytics';
 };
 
-export const flowNodes: FlowNodeDef[] = [
+const flowNodes: FlowNodeDef[] = [
   { id: 'in', label: 'Входящее обращение', status: 'Канал', kind: 'channel' },
   { id: 'core', label: 'Lexicom', status: 'Ядро', core: true, kind: 'core' },
   { id: 'bot', label: 'ИИ-агент', status: 'ИИ', kind: 'neurobot' },

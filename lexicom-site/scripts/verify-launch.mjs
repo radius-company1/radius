@@ -27,6 +27,8 @@ try{
   assert.equal(schema['@graph'][0].url,'https://lexicom.ai'+path);
   assert.equal(schema['@graph'][0].name,title);
   assert.equal(schema['@graph'].some(node=>node['@type']==='Organization'),path==='/');
+  assert(!html.includes('<!--$?-->') && !html.includes('<!--$!-->'), 'Unresolved page in static HTML: '+path);
+  assert(!html.includes('Открываем страницу…'), 'Loading placeholder in static HTML: '+path);
   assert(html.includes('content="index,follow"'));assert.match(html,/<h1[\s>]/);assert(html.length>10000);assert(!html.includes('<!--app-html-->'));
   assert(!html.includes('/radius/lexicom/'));
   for(const [,asset] of html.matchAll(/(?:src|href)="(\/(?:assets\/[^"#]+|favicon.svg|og-image.png))"/g))assert(existsSync('dist'+asset),asset);

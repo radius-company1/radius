@@ -1,3 +1,4 @@
+import { ProductMotion } from '../ProductMotion';
 import { neurobotHeroFrame } from '../../data/neurobotPage';
 import { useRef, useState } from 'react';
 import { productDemoById, resolveDemoAsset } from '../../data/productDemos';
@@ -74,21 +75,10 @@ export function NbHero({ onPlay, onDiscuss }: NbHeroProps) {
               tint="cyan"
               style={{ viewTransitionName: 'hero-viz' } as React.CSSProperties}
             >
-              <button
-                type="button"
-                className="nb-hero__image"
-                ref={imageTrigger}
-                onClick={() => setImage({ ...neurobotHeroFrame, src: resolveDemoAsset(neurobotHeroFrame.srcMobile), width: neurobotHeroFrame.mobileWidth, height: neurobotHeroFrame.mobileHeight })}
-                aria-label={`Увеличить изображение: ${neurobotHeroFrame.caption}`}
-              >
-                <img
-                  src={resolveDemoAsset(neurobotHeroFrame.srcMobile)}
-                  alt={neurobotHeroFrame.alt}
-                  width={neurobotHeroFrame.mobileWidth}
-                  height={neurobotHeroFrame.mobileHeight}
-                  decoding="async"
-                />
-              </button>
+              <ProductMotion kind="neurobot" active={!image} onZoom={button => {
+                imageTrigger.current = button;
+                setImage({ ...neurobotHeroFrame, src: resolveDemoAsset(neurobotHeroFrame.srcMobile), width: neurobotHeroFrame.mobileWidth, height: neurobotHeroFrame.mobileHeight });
+              }} />
               <p className="nb-hero__caption">{neurobotHeroFrame.caption}</p>
               <button
                 type="button"

@@ -32,3 +32,14 @@
 }
 
 .customer-cases__card .mobile-details__title, .mfc-ecosystem .mobile-details__title, .about__activity .mobile-details__title { display: none; }
+
+/* Keep desktop composition unchanged, including when JavaScript is unavailable. */
+.mobile-details--section, .mobile-details--section > .mobile-details__content { display: contents; }
+.mobile-details--section > .mobile-details__title { display: none; }
+@media (max-width: 639px) {
+  details.mobile-details--section { display: block; min-width:0; border-block:1px solid currentColor; border-color:color-mix(in srgb,currentColor 24%,transparent); }
+  details.mobile-details--section > summary { padding:14px 0; font-size:16px; font-weight:600; }
+  details.mobile-details--section > .mobile-details__content { display:block; padding-block:8px 20px; }
+  details.mobile-details--section:not([open]) > .mobile-details__content { display:none; }
+  .page-view--direction .section .section-header { margin-bottom:24px; }
+}

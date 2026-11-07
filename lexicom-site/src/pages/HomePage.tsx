@@ -1,7 +1,6 @@
-import { useRef, useState } from 'react';
+import '../styles/design-experiment.css';
 import { ClientMarquee } from '../components/ClientMarquee';
 import { Cases } from '../components/Cases';
-import { ChatWidget } from '../components/ChatWidget';
 import { DemoSection } from '../components/DemoSection';
 import { Directions } from '../components/Directions';
 import { DesignProducts as Products } from '../components/DesignProducts';
@@ -14,9 +13,6 @@ import { DemoShowcase } from '../components/DemoShowcase';
 import '../styles/final-experiment.css';
 
 export function HomePage() {
-  const [chatOpen, setChatOpen] = useState(false);
-  const openChatRef = useRef<HTMLButtonElement>(null);
-
   return (
     <div className="page-view page-view--home page-view--final" style={{ viewTransitionName: 'page-content' } as React.CSSProperties}>
       <main>
@@ -29,10 +25,9 @@ export function HomePage() {
         <Government />
         <Implementation />
         <FAQ />
-        <DemoSection onOpenChat={() => setChatOpen(true)} openChatRef={openChatRef} />
+        <DemoSection />
       </main>
       <Footer />
-      <ChatWidget open={chatOpen} onClose={() => setChatOpen(false)} returnFocusRef={openChatRef} />
     </div>
   );
 }

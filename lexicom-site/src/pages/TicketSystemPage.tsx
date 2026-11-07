@@ -1,3 +1,5 @@
+import '../styles/contact-center.css';
+import { ProductMotion } from '../components/ProductMotion';
 import { useRef, useState } from 'react';
 import { ContactForm } from '../components/ContactForm';
 import { Footer } from '../components/Footer';
@@ -84,10 +86,10 @@ export function TicketSystemPage() {
           </div>
           {ticketShots.map((shot, i) => <div key={shot.id} role={ready ? 'tabpanel' : undefined} id={`tk-shot-panel-${shot.id}`} aria-labelledby={`tk-shot-tab-${shot.id}`} hidden={ready && shotIndex !== i} className="tk-shot-panel">
             <figure>
-              <button className="tk-shot-button" type="button" onClick={e => openImage(shot, e.currentTarget)} aria-label={`Увеличить: ${shot.caption}`}>
+              {shot.id === 'queue' ? <ProductMotion kind="ticket-system" active={shotIndex === i && !image} onZoom={button => openImage(shot, button)} /> : <button className="tk-shot-button" type="button" onClick={e => openImage(shot, e.currentTarget)} aria-label={`Увеличить: ${shot.caption}`}>
                 <img src={resolveDemoAsset(shot.src)} alt={shot.alt} width={shot.width} height={shot.height} loading="lazy" decoding="async" />
                 <span aria-hidden="true">Увеличить ↗</span>
-              </button>
+              </button>}
               <figcaption><h3>{shot.caption}</h3><p>{shot.text}</p></figcaption>
             </figure>
           </div>)}
