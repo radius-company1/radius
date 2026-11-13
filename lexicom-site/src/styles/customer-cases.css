@@ -18,15 +18,16 @@
 .customer-case__body > div > h3:not(:first-child) { margin-top:26px; }
 .customer-case__body .customer-case__result { border-top:0; border-left:1px solid var(--color-line); padding:0 0 0 32px; }
 .customer-case__scenarios { margin-top:32px; border-top:1px solid var(--color-line); padding-top:28px; }
-.customer-case__scenarios ol { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:12px 40px; padding-left:24px; line-height:1.5; }
-.customer-case__scenarios li { padding-left:5px; }
+.customer-case__scenarios ol { columns:2; column-gap:40px; padding-left:24px; line-height:1.5; }
+.customer-case__scenarios li { padding-left:5px; margin-bottom:12px; break-inside:avoid; }
 .customer-case__tver { margin-top:24px; }
 .customer-case__tver > .glass-surface__content { padding:32px; display:grid; grid-template-columns:minmax(0,1.4fr) minmax(0,1fr); gap:48px; }
 .customer-case__tver .customer-case__result { border:0; padding-top:0; }
 .customer-case-links { margin-top:32px; }
-.customer-case-links ul { list-style:none; padding:0; margin:0; }
-.customer-case-links li { border-top:1px solid var(--color-line); padding:16px 0; }
-.customer-case-links a { display:block; font-weight:650; text-underline-offset:4px; }
+.customer-case-links ul { list-style:none; padding:0; margin:0; display:grid; grid-template-columns:repeat(auto-fit, minmax(min(100%, 15rem), 1fr)); gap:12px; }
+.customer-case-links li { display:flex; }
+.customer-case-links a { display:block; flex:1; padding:18px 20px; border:1px solid rgba(12,16,32,.08); border-radius:18px; background:#fff; font-weight:650; text-underline-offset:4px; transition:border-color .2s; }
+.customer-case-links a:hover { border-color:rgba(61,79,158,.35); }
 .customer-case-links span { display:block; margin-top:7px; font-size:14px; font-weight:400; line-height:1.5; }
 @media(max-width:1000px) { .customer-cases__grid { grid-template-columns:1fr; } }
-@media(max-width:600px) { .customer-cases__card > .glass-surface__content, .customer-case__panel > .glass-surface__content, .customer-case__tver > .glass-surface__content { padding:24px; } .customer-case__body, .customer-case__tver > .glass-surface__content { grid-template-columns:1fr; gap:24px; } .customer-case__body .customer-case__result { border-left:0; border-top:1px solid var(--color-line); padding:24px 0 0; } .customer-case__scenarios ol { grid-template-columns:1fr; } }
+@media(max-width:600px) { .customer-cases__card > .glass-surface__content, .customer-case__panel > .glass-surface__content, .customer-case__tver > .glass-surface__content { padding:24px; } .customer-case__body, .customer-case__tver > .glass-surface__content { grid-template-columns:1fr; gap:24px; } .customer-case__body .customer-case__result { border-left:0; border-top:1px solid var(--color-line); padding:24px 0 0; } .customer-case__scenarios ol { columns:1; } }

@@ -349,11 +349,30 @@
 .edds-scenarios__flow {
   margin: 0;
   display: grid;
-  gap: 0.85rem;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.75rem;
+}
+
+.edds-scenarios__flow > div {
+  padding: 1rem 1.1rem 1.1rem;
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.82);
+  border: 1px solid rgba(12, 16, 32, 0.07);
+}
+
+.edds-scenarios__flow > div:last-child {
+  background: #fff8dc;
+  border-color: rgba(230, 192, 53, 0.4);
+}
+
+@media (max-width: 767px) {
+  .edds-scenarios__flow {
+    grid-template-columns: 1fr;
+  }
 }
 
 .edds-scenarios__flow dt {
-  margin: 0 0 0.25rem;
+  margin: 0 0 0.5rem;
   font-size: 12px;
   font-weight: 700;
   letter-spacing: 0.06em;

@@ -3,6 +3,7 @@ import { saTeamwork, saTeamworkNote } from '../../data/speechAnalyticsPage';
 import { GlassSurface } from '../ui/GlassSurface';
 import { Reveal } from '../ui/Reveal';
 import { SectionHeader } from '../ui/SectionHeader';
+import { Icon } from '../ui/Icon';
 
 export function SaTeamwork() {
   return (
@@ -28,7 +29,7 @@ export function SaTeamwork() {
                 <p>{part.text}</p>
                 <Link className="nb-team__link" to={part.link.to}>
                   {part.link.label}
-                  <span aria-hidden="true">→</span>
+                  <Icon name="arrow-right" />
                 </Link>
               </GlassSurface>
             </Reveal>

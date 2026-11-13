@@ -1,5 +1,6 @@
 import { MotionLink as Link } from './ui/MotionLink';
 import '../styles/ticket-reference.css';
+import { Icon } from './ui/Icon';
 
 type Context = 'contact-center' | 'neurobot' | 'ekc' | 'utilities' | 'education';
 const copy: Record<Context, { title: string; text: string }> = {
@@ -15,7 +16,7 @@ export function TicketProductReference({ context }: { context: Context }) {
     <div className="ticket-reference__body">
       <div><p className="ticket-reference__eyebrow">Управление обращениями</p>
         <h2 id={`ticket-reference-${context}`}>{item.title}</h2><p>{item.text}</p></div>
-      <Link to="/products/ticket-system">Посмотреть продукт <span aria-hidden="true">→</span></Link>
+      <Link to="/products/ticket-system">Посмотреть продукт <Icon name="arrow-right" /></Link>
     </div>
   </section>;
 }

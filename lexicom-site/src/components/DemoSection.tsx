@@ -4,6 +4,7 @@ import { ContactForm } from './ContactForm';
 import { GlassSurface } from './ui/GlassSurface';
 import { Reveal } from './ui/Reveal';
 import { SectionHeader } from './ui/SectionHeader';
+import { Icon } from './ui/Icon';
 
 export function DemoSection() {
   return (
@@ -18,7 +19,7 @@ export function DemoSection() {
         </Reveal>
 
         {import.meta.env.VITE_CONTACT_ENDPOINT ? <div className="final-contact-methods">
-          <div><a href={`mailto:${companyContacts.email}`}>{companyContacts.email} <span aria-hidden="true">↗</span></a><a href={companyContacts.phoneHref}>{companyContacts.phone} <span aria-hidden="true">↗</span></a></div>
+          <div><a href={`mailto:${companyContacts.email}`}>{companyContacts.email} <Icon name="arrow-up-right" /></a><a href={companyContacts.phoneHref}>{companyContacts.phone} <Icon name="arrow-up-right" /></a></div>
           <p>Можно написать нам напрямую или позвонить, чтобы обсудить задачу.</p>
         </div> : null}
 

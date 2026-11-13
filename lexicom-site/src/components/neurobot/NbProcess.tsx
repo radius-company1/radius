@@ -1,3 +1,4 @@
+import { Icon } from '../ui/Icon';
 import {
   neurobotProcessBranch,
   neurobotProcessBranchStep,
@@ -38,7 +39,7 @@ export function NbProcess() {
                     <div className="nb-process__branch">
                       <p className="nb-process__branch-condition">{neurobotProcessBranch.condition}</p>
                       <p className="nb-process__branch-result">
-                        <span aria-hidden="true">→ </span>
+                        <Icon name="arrow-right" />
                         {neurobotProcessBranch.result}
                       </p>
                     </div>

@@ -862,9 +862,8 @@
   margin: 0;
   padding-left: 1.1rem;
   display: grid;
-  gap: 0.35rem;
-  columns: 2;
-  column-gap: 1.5rem;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 18rem), 1fr));
+  gap: 0.5rem 1.75rem;
 }
 
 .utilities-integration__sources li {
@@ -1044,9 +1043,6 @@
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
-  .utilities-integration__sources ul {
-    columns: 1;
-  }
 }
 
 @media (max-width: 900px) {

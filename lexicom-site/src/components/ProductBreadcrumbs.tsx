@@ -1,4 +1,5 @@
 import { MotionLink as Link } from './ui/MotionLink';
+import '../styles/breadcrumbs.css';
 
 type ProductBreadcrumbsProps = {
   current: string;

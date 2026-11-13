@@ -6,6 +6,7 @@ import { homeCases } from '../data/cases';
 import { GlassSurface } from './ui/GlassSurface';
 import { SectionHeader } from './ui/SectionHeader';
 import '../styles/customer-cases.css';
+import { Icon } from './ui/Icon';
 
 export function Cases() {
   return <section className="section section-zone section-zone--cases customer-cases" id="cases" aria-labelledby="cases-title">
@@ -16,7 +17,7 @@ export function Cases() {
         <p className="customer-case__eyebrow">{item.direction}</p><h3>{item.title}</h3>
         <MobileDetails title="Задача и решение"><dl><div><dt>Задача</dt><dd>{item.task}</dd></div><div><dt>Что внедрили</dt><dd>{item.solution}</dd></div></dl></MobileDetails>
         <div className="customer-case__result"><strong>{item.value}</strong><span>{item.label}</span><p>{item.result}</p></div>
-        <Link className="customer-case__link" to={item.to}>Подробнее о внедрении <span aria-hidden="true">→</span></Link>
+        <Link className="customer-case__link" to={item.to}>Подробнее о внедрении <Icon name="arrow-right" /></Link>
       </GlassSurface></Reveal>)}</div>
     </div>
   </section>;

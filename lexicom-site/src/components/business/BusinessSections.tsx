@@ -2,6 +2,7 @@ import { MobileDetails } from '../ui/MobileDetails';
 import { useRef } from 'react';
 import { MotionLink as Link } from '../ui/MotionLink';
 import { rzdCase } from '../../data/rzdCase';
+import { Icon } from '../ui/Icon';
 import {
   businessAnchors,
   businessAudiences,
@@ -112,7 +113,7 @@ export function BusinessHero({ onDiscuss, onShowScenarios }: BusinessHeroProps) 
                 </Button>
               </div>
               <Link className="biz-hero__case-link" to={rzdCase.href}>
-                Кейс РЖД: контактный центр и обращения с вокзалов →
+                Кейс РЖД: контактный центр и обращения с вокзалов <Icon name="arrow-right" />
               </Link>
             </Reveal>
           </div>
@@ -281,7 +282,7 @@ function BusinessProductCard({
         <p>{product.text}</p>
         <Link className="biz-product__more" to={businessProductHref(product.id)}>
           Подробнее о продукте
-          <span aria-hidden="true">→</span>
+          <Icon name="arrow-right" />
         </Link>
         {demo ? <ProductDemoTrigger ref={triggerRef} demo={demo} onOpen={() => onOpenDemo(demo, triggerRef.current)} /> : null}
       </GlassSurface>

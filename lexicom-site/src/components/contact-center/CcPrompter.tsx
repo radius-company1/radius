@@ -4,6 +4,7 @@ import { MotionLink as Link } from '../ui/MotionLink';
 import '../../styles/mfc-case.css';
 import { Reveal } from '../ui/Reveal';
 import { SectionHeader } from '../ui/SectionHeader';
+import { Icon } from '../ui/Icon';
 
 export function CcPrompter() {
   return (
@@ -37,7 +38,7 @@ export function CcPrompter() {
             <p>Помощь сотруднику на практике</p>
             <h3>{kuzbassMfcCase.title}</h3>
             <p>Отдельный пример работы с базой знаний: сотрудник задаёт вопрос, а ИИ-помощник находит правовые основания среди {kuzbassMfcCase.documents} нормативных документов и готовит ответ.</p>
-            <Link className="mfc-case__link" to={kuzbassMfcCase.href}>Читать кейс Кузбасса <span aria-hidden="true">→</span></Link>
+            <Link className="mfc-case__link" to={kuzbassMfcCase.href}>Читать кейс Кузбасса <Icon name="arrow-right" /></Link>
           </aside>
         </Reveal>
       </div>

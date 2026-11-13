@@ -2,6 +2,7 @@ import { useRef, type CSSProperties, type ReactNode } from 'react';
 import { agentMessages, handoffMessages, motionScenes, type ProductMotionKind } from '../data/productMotion';
 import { useProductPlayback } from '../hooks/useProductPlayback';
 import '../styles/product-motion.css';
+import { Icon } from './ui/Icon';
 
 type Props = { kind: ProductMotionKind; active?: boolean; onZoom?: (button: HTMLButtonElement) => void };
 
@@ -54,9 +55,9 @@ function Analytics({ step }: { step: number }) {
     <div className="pm-row pm-analysis-source"><span>Записи разговоров</span><span className="pm-badge">12 диалогов</span></div>
     <div className="pm-card pm-analysis-summary"><strong>Главное за день</strong><RevealPart visible={step >= 1}><p>12 обращений в поддержку: 8 вопросов решены в разговоре, 4 переданы специалисту.</p><div className="pm-splitbar"><span style={{ transform: `scaleX(${step >= 1 ? 1 : 0})` }} /></div><div className="pm-row"><small>8 решены</small><small>4 переданы</small></div><small>Среднее время разговора — 4 минуты</small></RevealPart></div>
     <div className="pm-analysis-cards">
-      <RevealPart visible={step >= 2} className="pm-card"><span className="pm-card__mark">↗</span><strong>Что улучшилось</strong><p>Оператор представился в 10 из 12 диалогов.</p><small>Днём ранее — в 8 из 12.</small></RevealPart>
-      <RevealPart visible={step >= 3} className="pm-card"><span className="pm-card__mark pm-card__mark--amber">!</span><strong>Риски</strong><p>В 2 диалогах оператор не представился.</p><small>В 4 обращениях нужен ответ специалиста.</small></RevealPart>
-      <RevealPart visible={step >= 4} className="pm-card"><span className="pm-card__mark">✓</span><strong>Рекомендации</strong><p>Разобрать 2 диалога без представления.</p><small>Проверить ответы по 4 переданным обращениям.</small></RevealPart>
+      <RevealPart visible={step >= 2} className="pm-card"><span className="pm-card__mark"><Icon name="trend-up" /></span><strong>Что улучшилось</strong><p>Оператор представился в 10 из 12 диалогов.</p><small>Днём ранее — в 8 из 12.</small></RevealPart>
+      <RevealPart visible={step >= 3} className="pm-card"><span className="pm-card__mark pm-card__mark--amber"><Icon name="alert" /></span><strong>Риски</strong><p>В 2 диалогах оператор не представился.</p><small>В 4 обращениях нужен ответ специалиста.</small></RevealPart>
+      <RevealPart visible={step >= 4} className="pm-card"><span className="pm-card__mark"><Icon name="check" /></span><strong>Рекомендации</strong><p>Разобрать 2 диалога без представления.</p><small>Проверить ответы по 4 переданным обращениям.</small></RevealPart>
     </div>
   </div>;
 }
@@ -75,16 +76,16 @@ function ProtocolResult({ step }: { step: number }) {
   return <div className="pm-stack"><div className="pm-request">Сделай протокол совещания.</div><div className="pm-card pm-protocol-result"><strong>Поддержка: график и порядок эскалации</strong><small>16 октября 2026 · Дмитрий, Ксения</small>
     <RevealPart visible={step >= 1}><strong>Решения</strong><p>Работаем по будням, 09:00–18:00. На каждую смену назначаем резерв. Спорные платежи передаём специалисту; до сверки срок возврата не обещаем.</p></RevealPart>
     <RevealPart visible={step >= 2}><strong>Поручения · 19 октября</strong><p>12:00 — Ксения: подготовить график и назначить резерв.<br />15:00 — Дмитрий: проверить порядок передачи платёжных вопросов.<br />16:00 — Ксения: разослать команде график и инструкцию.</p></RevealPart>
-    <RevealPart visible={step >= 3}><strong>Контроль</strong><p>23 октября, 16:00 — обсудить итоги работы по новому порядку.</p><span className="pm-file">↓ summary.docx</span></RevealPart>
+    <RevealPart visible={step >= 3}><strong>Контроль</strong><p>23 октября, 16:00 — обсудить итоги работы по новому порядку.</p><span className="pm-file"><Icon name="download" size={14} /> summary.docx</span></RevealPart>
   </div></div>;
 }
 
 function Tickets({ step }: { step: number }) {
   return <div className="pm-stack">
-    <div className="pm-ticket-flow">{['Новое', 'Назначено', 'В работе', 'Решено'].map((text, i) => <span className={i <= step ? 'is-current' : ''} key={text}><i>{i < step ? '✓' : i + 1}</i>{text}</span>)}</div>
-    <div className="pm-card pm-ticket"><div className="pm-row"><small>Веб-форма → Поддержка</small><span className={`pm-badge ${step < 3 ? 'pm-badge--amber' : ''}`}>{['Новое', 'Назначено', 'В работе', 'Решено'][step]}</span></div><strong className="pm-ticket__title">Проблема с экспортом в Excel</strong>
+    <div className="pm-ticket-flow">{['Новое', 'Назначено', 'В работе', 'Решено'].map((text, i) => <span className={i <= step ? 'is-current' : ''} key={text}><i>{i < step ? <Icon name="check" size={14} /> : i + 1}</i>{text}</span>)}</div>
+    <div className="pm-card pm-ticket"><div className="pm-row"><small className="pm-route">Веб-форма <Icon name="arrow-right" size={12} /> Поддержка</small><span className={`pm-badge ${step < 3 ? 'pm-badge--amber' : ''}`}>{['Новое', 'Назначено', 'В работе', 'Решено'][step]}</span></div><strong className="pm-ticket__title">Проблема с экспортом в Excel</strong>
       <dl><div><dt>Приоритет</dt><dd>Средний</dd></div><div><dt>Ответственный</dt><dd>{step >= 1 ? 'Специалист поддержки' : 'Назначается'}</dd></div><div><dt>Сроки</dt><dd>{step >= 3 ? 'Выполнены' : 'Под контролем'}</dd></div></dl>
-      <div className="pm-ticket-history"><strong>История обращения</strong>{['Обращение зарегистрировано', 'Правило назначило очередь и ответственного', 'Специалист взял обращение в работу', 'Результат сохранён в карточке'].map((text, i) => <RevealPart visible={step >= i} key={text}><span>✓</span>{text}</RevealPart>)}</div>
+      <div className="pm-ticket-history"><strong>История обращения</strong>{['Обращение зарегистрировано', 'Правило назначило очередь и ответственного', 'Специалист взял обращение в работу', 'Результат сохранён в карточке'].map((text, i) => <RevealPart visible={step >= i} key={text}><span><Icon name="check" size={14} /></span>{text}</RevealPart>)}</div>
     </div>
     <div className="pm-inline-note">Описание, действия и результат — в одной карточке</div>
   </div>;
@@ -106,6 +107,6 @@ export function ProductMotion({ kind, active = true, onZoom }: Props) {
         </div>
       </div>
     </div>
-    {onZoom ? <div className="pm-controls"><button type="button" className="pm-zoom" onClick={e => onZoom(e.currentTarget)} aria-label={`Увеличить изображение: ${scene.title}`}>Увеличить <span aria-hidden="true">↗</span></button></div> : null}
+    {onZoom ? <div className="pm-controls"><button type="button" className="pm-zoom" onClick={e => onZoom(e.currentTarget)} aria-label={`Увеличить изображение: ${scene.title}`}>Увеличить <Icon name="arrow-up-right" size={14} /></button></div> : null}
   </div>;
 }

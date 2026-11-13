@@ -12,7 +12,6 @@ export function AmbientBackground() {
       <div className="ambient__blob ambient__blob--3" />
       <div className="ambient__blob ambient__blob--4" />
       <div className="ambient__grain" />
-      <div className="ambient__footer-fade" />
     </div>
   );
 }

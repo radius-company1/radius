@@ -49,12 +49,14 @@ export function NbChannels() {
         </Reveal>
 
         <Reveal delay={60}>
-          <GlassSurface className="nb-channels__panel" radius="xl" depth="raised" tint="cyan" tier="matte">
+          <GlassSurface className="nb-channels__panel" radius="xl" depth="raised" tier="matte">
             <div className="nb-channels__zones">
               {neurobotChannels.map((zone) => (
                 <article key={zone.id} className={`nb-channels__zone nb-channels__zone--${zone.id}`}>
-                  <span className="nb-channels__icon">{icons[zone.id]}</span>
-                  <h3>{zone.title}</h3>
+                  <div className="nb-channels__head">
+                    <span className="nb-channels__icon">{icons[zone.id]}</span>
+                    <h3>{zone.title}</h3>
+                  </div>
                   <p>{zone.text}</p>
                   <p className="nb-channels__examples-label">Например</p>
                   <ul>

@@ -4,6 +4,7 @@ import { GlassSurface } from './ui/GlassSurface';
 import { MotionLink as Link } from './ui/MotionLink';
 import { Reveal } from './ui/Reveal';
 import { SectionHeader } from './ui/SectionHeader';
+import { Icon } from './ui/Icon';
 
 function GovCard({ item }: { item: (typeof governmentItems)[number] }) {
   return (
@@ -42,7 +43,7 @@ export function Government() {
 
         <Reveal>
           <p className="government__closing">
-            <Link to="/company">Сведения о компании и реквизиты <span aria-hidden="true">→</span></Link>
+            <Link to="/company">Сведения о компании и реквизиты <Icon name="arrow-right" /></Link>
           </p>
         </Reveal>
       </div>

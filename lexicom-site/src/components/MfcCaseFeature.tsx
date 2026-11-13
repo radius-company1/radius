@@ -3,6 +3,7 @@ import { GlassSurface } from './ui/GlassSurface';
 import { MotionLink as Link } from './ui/MotionLink';
 import { Reveal } from './ui/Reveal';
 import '../styles/mfc-case.css';
+import { Icon } from './ui/Icon';
 
 export function MfcCaseFeature() {
   return (
@@ -18,7 +19,7 @@ export function MfcCaseFeature() {
           <h3>{item.title}</h3>
           <p>{item.summary}</p>
           <Link className="mfc-case__link" to={item.href}>
-            Как устроен помощник <span aria-hidden="true">→</span>
+            Как устроен помощник <Icon name="arrow-right" />
           </Link>
         </div>
       </GlassSurface>

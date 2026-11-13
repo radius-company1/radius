@@ -25,11 +25,11 @@ export function S122Implementation() {
         <ol className="s122-implementation__route">
           {s122ImplementationSteps.map((step, index) => (
             <li key={step.title} className="s122-implementation__step">
-              <span className="s122-implementation__num" aria-hidden="true">
-                {index + 1}
-              </span>
               <Reveal delay={index * 40}>
-                <GlassSurface className="s122-implementation__card" radius="lg" depth="raised" tint="s122">
+                <GlassSurface className="s122-implementation__card" radius="lg" depth="raised">
+                  <span className="s122-implementation__num" aria-hidden="true">
+                    {index + 1}
+                  </span>
                   <h3>{step.title}</h3>
                   <p>{step.text}</p>
                 </GlassSurface>

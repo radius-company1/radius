@@ -47,8 +47,8 @@
 
 .ambient__wash--gov {
   top: 58%;
-  height: 36%;
-  background: linear-gradient(180deg, transparent, rgba(42, 63, 159, 0.08) 45%, rgba(42, 63, 159, 0.12) 100%);
+  bottom: 0;
+  background: linear-gradient(180deg, transparent, rgba(42, 63, 159, 0.08) 45%, rgba(42, 63, 159, 0.1) 100%);
   opacity: 0.55;
 }
 
@@ -91,11 +91,14 @@
   mix-blend-mode: multiply;
 }
 
-.ambient__footer-fade {
-  position: absolute; bottom: 0; left: 0; right: 0; height: 18vh;
-  background: linear-gradient(180deg, transparent 0%, rgba(244, 246, 250, 0.35) 100%);
-  pointer-events: none;
-}
+.ambient__blob { opacity: 0.2; }
+.ambient__blob--3 { opacity: 0.15; }
+.ambient__blob--4 { opacity: 0.17; }
+.ambient__wash--hero { opacity: 0.55; }
+.ambient__wash--tech,
+.ambient__wash--cta { opacity: 0.55; }
+.ambient__wash--flex { opacity: 0.4; }
+.ambient__wash--gov { opacity: 0.3; }
 
 .section-zone { position: relative; }
 .section-zone--hero { padding-top: 0.35rem; }

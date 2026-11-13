@@ -4,6 +4,7 @@ import { GlassSurface } from '../ui/GlassSurface';
 import { Reveal } from '../ui/Reveal';
 import { SectionHeader } from '../ui/SectionHeader';
 import '../../styles/mfc-case.css';
+import { Icon } from '../ui/Icon';
 
 export function MfcExperience() {
   return (
@@ -13,14 +14,14 @@ export function MfcExperience() {
           <SectionHeader title={item.title} titleId="mfc-experience-title" description="Поиск правовых оснований и подготовка консультаций в обычном диалоге." />
         </Reveal>
         <Reveal>
-          <GlassSurface as="article" className="mfc-case-detail" radius="xl" tint="mfc" tier="matte">
+          <GlassSurface as="article" className="mfc-case-detail" radius="xl" tier="matte">
             <div className="mfc-case-detail__award">
               <strong>{item.award.place}</strong>
               <div>
                 <h3>«{item.award.category}»</h3>
                 <p>{item.award.competition} {item.award.period}.</p>
                 <p>Проект УМФЦ Кузбасса «{item.award.project}».</p>
-                <a className="mfc-case__link" href={item.award.sourceUrl} target="_blank" rel="noopener noreferrer">О победе проекта <span aria-hidden="true">↗</span></a>
+                <a className="mfc-case__link" href={item.award.sourceUrl} target="_blank" rel="noopener noreferrer">О победе проекта <Icon name="arrow-up-right" /></a>
               </div>
             </div>
             <div className="mfc-case-detail__overview">
@@ -44,7 +45,7 @@ export function MfcExperience() {
               {item.benefits.map(benefit => <li key={benefit.title}><MobileDetails title={<h4>{benefit.title}</h4>}><p>{benefit.text}</p></MobileDetails></li>)}
             </ul>
             <details className="mfc-case-detail__engineering">
-              <summary>Как настроили поиск и подготовку ответов</summary>
+              <summary>Как настроили поиск и подготовку ответов<span className="mfc-case-detail__chevron" aria-hidden="true"><Icon name="chevron-down" size={18} /></span></summary>
               <div>{item.adaptations.map(part => <div key={part.title}><h4>{part.title}</h4><p>{part.text}</p></div>)}</div>
             </details>
             <div className="mfc-case-detail__result"><h3>Что изменилось в работе сотрудника</h3><p>{item.result}</p></div>

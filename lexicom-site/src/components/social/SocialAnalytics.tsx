@@ -3,6 +3,7 @@ import { MotionLink as Link } from '../ui/MotionLink';
 import { GlassSurface } from '../ui/GlassSurface';
 import { Reveal } from '../ui/Reveal';
 import { SectionHeader } from '../ui/SectionHeader';
+import { Icon } from '../ui/Icon';
 
 export function SocialAnalytics() {
   return (
@@ -39,7 +40,7 @@ export function SocialAnalytics() {
               <p className="social-analytics__card-label">От отчёта — к разговору</p>
               <p className="social-analytics__card-value">Разбирайте причины повторных вопросов</p>
               <p>Откройте нужный диалог, проверьте оценку по критериям и определите, что уточнить в базе знаний или работе специалистов.</p>
-              <Link to="/products/speech-analytics">Возможности речевой аналитики →</Link>
+              <Link to="/products/speech-analytics">Возможности речевой аналитики <Icon name="arrow-right" /></Link>
             </GlassSurface>
           </Reveal>
         </div>

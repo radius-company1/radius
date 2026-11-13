@@ -9,6 +9,7 @@ import { VideoDemoModal } from './VideoDemoModal';
 import { GlassSurface } from './ui/GlassSurface';
 import { Reveal } from './ui/Reveal';
 import { SectionHeader } from './ui/SectionHeader';
+import { Icon } from './ui/Icon';
 
 const tintMap = {
   neurobot: 'cyan',
@@ -77,7 +78,7 @@ function ProductCard({
               {detailsHref ? (
                 <Link className="product-card__more" to={detailsHref}>
                   {productPageLinkLabel[product.id]}
-                  <span aria-hidden="true">→</span>
+                  <Icon name="arrow-right" />
                 </Link>
               ) : null}
             </div>
@@ -151,7 +152,7 @@ export function Products() {
                 <div className="product-card__actions">
                   <Link className="product-card__more" to={productPageHref[ekcProduct.id] ?? '/products/ekc-110'}>
                     {productPageLinkLabel['ekc-110']}
-                    <span aria-hidden="true">→</span>
+                    <Icon name="arrow-right" />
                   </Link>
                 </div>
               </div>

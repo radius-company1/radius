@@ -379,7 +379,7 @@
 
 .s122-dialogue__chat,
 .s122-dialogue__context {
-  padding: 1.2rem 1.25rem;
+  padding: 1.5rem;
   min-height: 100%;
 }
 
@@ -432,15 +432,22 @@
 .s122-dialogue__facts {
   margin: 0;
   display: grid;
-  gap: 0.65rem;
+  border: 1px solid rgba(12, 16, 32, 0.08);
+  border-radius: 14px;
+  background: #fff;
+  overflow: hidden;
 }
 
 .s122-dialogue__fact {
   display: grid;
-  grid-template-columns: 1fr auto;
-  gap: 0.75rem;
-  padding-bottom: 0.55rem;
-  border-bottom: 1px solid color-mix(in srgb, var(--color-line) 65%, transparent);
+  grid-template-columns: minmax(7.5rem, 0.8fr) 1.2fr;
+  gap: 1rem;
+  padding: 0.8rem 1rem;
+  align-items: baseline;
+}
+
+.s122-dialogue__fact + .s122-dialogue__fact {
+  border-top: 1px solid rgba(12, 16, 32, 0.08);
 }
 
 .s122-dialogue__fact dt {
@@ -451,8 +458,8 @@
 
 .s122-dialogue__fact dd {
   margin: 0;
-  font-weight: 700;
-  text-align: right;
+  font-weight: 650;
+  line-height: 1.4;
 }
 
 .s122-dialogue__note {
@@ -723,13 +730,19 @@
   padding: 0;
   list-style: none;
   display: grid;
-  gap: 0.65rem;
-  max-width: 72ch;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.75rem;
+}
+
+@media (max-width: 767px) {
+  .s122-onprem__notes {
+    grid-template-columns: 1fr;
+  }
 }
 
 .s122-onprem__notes li {
   margin: 0;
-  padding: 0.85rem 1rem;
+  padding: 1rem 1.15rem;
   border-radius: 16px;
   background: color-mix(in srgb, white 78%, transparent);
   border: 1px solid color-mix(in srgb, var(--color-line) 70%, transparent);
@@ -826,27 +839,29 @@
 }
 
 .s122-implementation__step {
-  display: grid;
-  grid-template-columns: auto 1fr;
-  gap: 0.65rem;
-  align-items: stretch;
+  display: flex;
 }
 
 .s122-implementation__num {
-  width: 1.7rem;
-  height: 1.7rem;
+  width: 2rem;
+  height: 2rem;
+  margin-bottom: 0.85rem;
   border-radius: 50%;
   display: grid;
   place-items: center;
-  background: var(--color-yellow);
-  color: var(--color-ink);
-  font-size: 0.85rem;
-  font-weight: 800;
-  margin-top: 0.35rem;
+  background: #fdf3d2;
+  color: #8a6a12;
+  font-size: 0.9rem;
+  font-weight: 700;
+}
+
+.s122-implementation .profile-launch-note {
+  margin-top: 1.5rem;
 }
 
 .s122-implementation__step > .reveal {
   display: flex;
+  flex: 1;
   min-width: 0;
   height: 100%;
 }

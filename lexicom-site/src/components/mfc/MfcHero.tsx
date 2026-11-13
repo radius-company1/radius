@@ -5,6 +5,7 @@ import '../../styles/mfc-case.css';
 import { GlassSurface } from '../ui/GlassSurface';
 import { Reveal } from '../ui/Reveal';
 import { mfcDemoState, mfcHeroMetrics } from '../../data/directions/mfc';
+import { Icon } from '../ui/Icon';
 
 type MfcHeroProps = {
   onRequestDemo: () => void;
@@ -60,7 +61,7 @@ export function MfcHero({ onRequestDemo, onDiscuss }: MfcHeroProps) {
             </Reveal>
             <Reveal>
               <Link className="mfc-case-hero-link" to={kuzbassMfcCase.href}>
-                Помощник МФЦ Кузбасса — победитель всероссийского конкурса <span aria-hidden="true">→</span>
+                Помощник МФЦ Кузбасса — победитель всероссийского конкурса <Icon name="arrow-right" />
               </Link>
             </Reveal>
           </div>

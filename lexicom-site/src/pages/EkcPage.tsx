@@ -1,3 +1,6 @@
+import '../styles/contact-center.css';
+import '../styles/neurobot.css';
+import '../styles/speech-analytics.css';
 import '../styles/ekc.css';
 import { useCallback } from 'react';
 import {

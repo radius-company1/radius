@@ -1,4 +1,5 @@
 import { useId, useState } from 'react';
+import { Icon } from './Icon';
 
 type AccordionItem = {
   question: string;
@@ -32,17 +33,19 @@ export function Accordion({ items }: AccordionProps) {
                 onClick={() => setOpenIndex(isOpen ? null : index)}
               >
                 <span>{item.question}</span>
-                <span className="accordion__icon" aria-hidden="true" />
+                <span className="accordion__icon"><Icon name="chevron-down" size={18} /></span>
               </button>
             </h3>
             <div
               id={panelId}
               role="region"
               aria-labelledby={buttonId}
-              className="accordion__panel"
-              hidden={!isOpen}
+              className="accordion__panel disclosure-panel"
+              inert={!isOpen}
             >
-              <p>{item.answer}</p>
+              <div className="disclosure-panel__inner">
+                <p>{item.answer}</p>
+              </div>
             </div>
           </div>
         );

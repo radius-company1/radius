@@ -3,6 +3,7 @@ import { MotionLink as Link } from '../ui/MotionLink';
 import { neurobotIndustries } from '../../data/neurobotPage';
 import { Reveal } from '../ui/Reveal';
 import { SectionHeader } from '../ui/SectionHeader';
+import { Icon } from '../ui/Icon';
 
 export function NbIndustries() {
   return (
@@ -20,9 +21,7 @@ export function NbIndustries() {
                 <Link to={item.to} className="nb-industries__link">
                   <span className="nb-industries__label">{item.label}</span>
                   <span className="nb-industries__text">{item.text}</span>
-                  <span className="nb-industries__arrow" aria-hidden="true">
-                    →
-                  </span>
+                  <span className="nb-industries__arrow" aria-hidden="true"><Icon name="arrow-right" /></span>
                 </Link>
               </li>
             ))}

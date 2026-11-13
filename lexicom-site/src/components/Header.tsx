@@ -7,6 +7,7 @@ import { normalizePath } from '../theme/directions';
 import { Button } from './ui/Button';
 import { GlassSurface } from './ui/GlassSurface';
 import { Logo } from './ui/Logo';
+import { Icon } from './ui/Icon';
 
 type HeaderProps = {
   onDiscussClick: () => void;
@@ -270,7 +271,7 @@ export function Header({ onDiscussClick, scrolled = false }: HeaderProps) {
                               onLinkClick(event, child.href);
                             }}
                           >
-                            {child.label}<span className="mobile-menu__arrow" aria-hidden="true">↗</span>
+                            {child.label}<Icon name="arrow-up-right" className="mobile-menu__arrow" />
                           </Link>
                         </li>
                       ))}

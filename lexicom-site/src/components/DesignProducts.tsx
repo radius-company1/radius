@@ -11,6 +11,7 @@ import { products, productPageHref, softwareProductIds } from '../data/products'
 import { productDemoById, resolveDemoAsset, type ProductDemo } from '../data/productDemos';
 import { VideoDemoModal } from './VideoDemoModal';
 import { ImageLightbox, type LightboxImage } from './ImageLightbox';
+import { Icon } from './ui/Icon';
 
 const media: Record<string, LightboxImage & { srcSmall?: string; srcMobile?: string; mobileWidth?: number; mobileHeight?: number; mobileMedia?: string; presentation?: boolean }> = {
   'ticket-system': ticketShots[0],
@@ -106,7 +107,7 @@ export function DesignProducts() {
                 setSelected(softwareProductIds[next]);
                 tabs.current[next]?.focus();
               }}
-            ><span className="final-product-selector__name">{products.find(p => p.id === id)!.title}<span aria-hidden="true">→</span></span><span className="final-product-selector__task">{copy[id].task}</span></button>)}
+            ><span className="final-product-selector__name">{products.find(p => p.id === id)!.title}<Icon name="arrow-right" /></span><span className="final-product-selector__task">{copy[id].task}</span></button>)}
           </div>
         </div>
       <div ref={grid} className="design-products__grid">
@@ -126,7 +127,7 @@ export function DesignProducts() {
               <figcaption><span>{shot.caption}</span></figcaption>
             </figure>
             <div className="design-product__actions">
-              <Link to={productPageHref[id]!}>О продукте <span aria-hidden="true">↗</span></Link>
+              <Link to={productPageHref[id]!}>О продукте <Icon name="arrow-up-right" /></Link>
               {productDemo ? <button type="button" onClick={e => {trigger.current = e.currentTarget; setDemo(productDemo);}} aria-label={`Видео ${productDemo.durationLabel}: ${product.title}`}>
                 <svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="m5 3 8 5-8 5Z" fill="currentColor" /></svg>
                 Видео <span>{productDemo.durationLabel}</span>
@@ -138,7 +139,7 @@ export function DesignProducts() {
       </div>
       <article className="design-ekc" id="product-ekc-110">
         <div className="design-ekc__identity"><h3>ЕКЦ <span>110</span></h3><p>Единая первая линия региона</p></div>
-        <div className="design-ekc__body"><h4>От программного обеспечения<br />до запуска под ключ.</h4><p>Каналы региона, ИИ-агент и операторы, маршрутизация между ведомствами и управленческая аналитика.</p><ul>{['Программное обеспечение','Оборудование и рабочие места','Обучение и запуск'].map(x=><li key={x}>{x}</li>)}</ul><Link to="/products/ekc-110">Подробнее о ЕКЦ 110 <span aria-hidden="true">↗</span></Link></div>
+        <div className="design-ekc__body"><h4>От программного обеспечения<br />до запуска под ключ.</h4><p>Каналы региона, ИИ-агент и операторы, маршрутизация между ведомствами и управленческая аналитика.</p><ul>{['Программное обеспечение','Оборудование и рабочие места','Обучение и запуск'].map(x=><li key={x}>{x}</li>)}</ul><Link to="/products/ekc-110">Подробнее о ЕКЦ 110 <Icon name="arrow-up-right" /></Link></div>
       </article>
     </div>
     <VideoDemoModal demo={demo} onClose={()=>setDemo(null)} returnFocusRef={trigger} />

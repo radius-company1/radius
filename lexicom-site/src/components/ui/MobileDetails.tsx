@@ -1,4 +1,5 @@
 import { useEffect, useState, type ReactNode } from 'react';
+import { Icon } from './Icon';
 
 /** Full text on desktop and without JS; native disclosures on small screens. */
 export function MobileDetails({ title, children, className = '' }: { title: ReactNode; children: ReactNode; className?: string }) {
@@ -15,7 +16,7 @@ export function MobileDetails({ title, children, className = '' }: { title: Reac
     <div className="mobile-details__content">{children}</div>
   </div>;
   return <details className={`mobile-details ${className}`}>
-    <summary>{title}<span className="mobile-details__icon" aria-hidden="true">+</span></summary>
+    <summary>{title}<span className="mobile-details__icon"><Icon name="plus" size={18} /></span></summary>
     <div className="mobile-details__content">{children}</div>
   </details>;
 }

@@ -26,7 +26,7 @@ export function S122Dialogue({ onRequestDemo }: S122DialogueProps) {
 
         <div className="s122-dialogue__layout">
           <Reveal>
-            <GlassSurface className="s122-dialogue__chat" radius="xl" depth="raised" tint="s122">
+            <GlassSurface className="s122-dialogue__chat" radius="xl" depth="raised">
               <p className="s122-dialogue__label">Демонстрационный сценарий</p>
               <ul className="s122-dialogue__turns">
                 {s122DialogueTurns.map((turn) => (
@@ -40,7 +40,7 @@ export function S122Dialogue({ onRequestDemo }: S122DialogueProps) {
           </Reveal>
 
           <Reveal delay={80}>
-            <GlassSurface className="s122-dialogue__context" radius="xl" depth="float" tint="cyan">
+            <GlassSurface className="s122-dialogue__context" radius="xl" depth="float">
               <p className="s122-dialogue__label">Сведения из разговора</p>
               <dl className="s122-dialogue__facts">
                 {s122DialogueContext.map((fact) => (

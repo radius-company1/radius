@@ -63,9 +63,6 @@
 .tk-connection h3 { margin: 12px 0; font-size: 1.2rem; line-height: 1.4; }
 .tk-connection p { margin: 0; color: var(--color-text-muted); }
 .tk-connection a { display: inline-block; margin-top: 18px; font-weight: 650; font-size: .94rem; color: #3c4cc6; text-underline-offset: 4px; }
-.tk-faq details { border-top: 1px solid var(--color-line); padding: 6px 0; }
-.tk-faq summary { cursor: pointer; padding: 18px 0; font-weight: 650; line-height: 1.5; }
-.tk-faq details p { margin: 0 0 18px; max-width: 60rem; color: var(--color-text-muted); }
 .page-view--tickets :is(button, a, summary, [tabindex]):focus-visible { outline: 3px solid #4865cc; outline-offset: 5px; }
 @media (max-width: 1023px) { .tk-hero__grid { grid-template-columns: minmax(0, 1fr); gap: 32px; }.tk-hero__scheme { max-width: 640px; }.tk-connection__grid { grid-template-columns: minmax(0, 1fr); }.tk-connection article { padding: 22px; } }
 @media (max-width: 767px) {

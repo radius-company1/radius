@@ -1,5 +1,6 @@
 import { MotionLink as Link } from './ui/MotionLink';
 import { productHref, productPageLinkLabel, type ProductId } from '../data/products';
+import { Icon } from './ui/Icon';
 
 type ProductPageLinkProps = {
   id: ProductId;
@@ -10,7 +11,7 @@ export function ProductPageLink({ id, className = '' }: ProductPageLinkProps) {
   return (
     <Link className={`product-page-link ${className}`.trim()} to={productHref(id)}>
       {productPageLinkLabel[id]}
-      <span aria-hidden="true">→</span>
+      <Icon name="arrow-right" />
     </Link>
   );
 }

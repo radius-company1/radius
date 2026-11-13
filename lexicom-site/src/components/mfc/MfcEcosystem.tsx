@@ -85,28 +85,22 @@ export function MfcEcosystem() {
         </Reveal>
 
         <Reveal>
-          <GlassSurface className="mfc-ecosystem__stack" radius="xl" depth="float" tint="mfc">
+          <GlassSurface className="mfc-ecosystem__stack" radius="xl" depth="float">
             <p className="mfc-ecosystem__tagline">
               Lexicom может поставить один сценарий в MAX или телефонии, а может собрать весь коммуникационный контур МФЦ.
             </p>
             <div className="mfc-ecosystem__levels" role="list">
               {mfcEcosystemLevels.map((level) => (
                 <article key={level.level} className="mfc-ecosystem__level" role="listitem">
-                  <div className="mfc-ecosystem__level-marker" aria-hidden="true">
-                    <span className="mfc-ecosystem__level-num">{level.level}</span>
-                    <span className="mfc-ecosystem__level-icon">
-                      <LevelIcon icon={level.icon} />
-                    </span>
-                  </div>
+                  <span className="mfc-ecosystem__level-icon" aria-hidden="true">
+                    <LevelIcon icon={level.icon} />
+                  </span>
                   <div className="mfc-ecosystem__level-copy">
                     <h3>{level.title}</h3>
                     <p className="mfc-ecosystem__level-summary">{level.summary}</p>
                     <MobileDetails title="Возможности модуля"><ul className="mfc-ecosystem__capabilities">
                       {level.capabilities.map((item) => (
-                        <li key={item.title}>
-                          <span className="mfc-ecosystem__capability-title">{item.title}</span>
-                          <span className="mfc-ecosystem__capability-detail">{item.detail}</span>
-                        </li>
+                        <li key={item.title}>{item.title}</li>
                       ))}
                     </ul></MobileDetails>
                     {'productId' in level && level.productId ? <ProductPageLink id={level.productId} /> : null}

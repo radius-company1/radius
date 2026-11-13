@@ -1,5 +1,6 @@
 import { s122PeakStreams } from '../../data/directions/s122';
 import { Reveal } from '../ui/Reveal';
+import { Icon } from '../ui/Icon';
 
 export function S122Peak() {
   return (
@@ -14,13 +15,11 @@ export function S122Peak() {
               <div className="s122-peak__source">
                 <span className="s122-peak__source-label">Входящий поток</span>
               </div>
-              <span className="s122-peak__connector" aria-hidden="true">
-                →
-              </span>
+              <Icon name="arrow-right" className="s122-peak__connector" />
               <div className="s122-peak__streams">
                 {s122PeakStreams.map((stream) => (
                   <p key={stream.id} className={`s122-peak__stream s122-peak__stream--${stream.tone}`}>
-                    {stream.title} → <strong>{stream.target}</strong>
+                    {stream.title} <Icon name="arrow-right" size={14} /> <strong>{stream.target}</strong>
                   </p>
                 ))}
               </div>

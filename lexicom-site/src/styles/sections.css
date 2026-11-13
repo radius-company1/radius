@@ -320,21 +320,21 @@
   max-width: 70ch;
 }
 .implementation-route {
-  margin: 0 0 1.75rem; padding: 0 0 0 1.25rem; list-style: none;
-  border-left: 2px solid transparent;
-  border-image: linear-gradient(180deg, var(--color-cyan), var(--color-violet), var(--color-blue)) 1;
+  margin: 0 0 1.75rem; padding: 0; list-style: none;
 }
 .implementation-route__step {
-  position: relative; display: grid; grid-template-columns: auto 1fr;
-  gap: 0.85rem; margin-bottom: 0.85rem;
+  position: relative; display: grid; grid-template-columns: 3rem 1fr;
+  align-items: center; gap: 1rem; margin-bottom: 0.85rem;
 }
 .implementation-route__node {
   display: flex; align-items: center; justify-content: center;
-  width: 2.35rem; height: 2.35rem; margin-top: 0.65rem;
-  border-radius: 50%; font-weight: 800; font-size: 0.88rem;
-  background: rgba(46, 211, 255, 0.2); border: 1px solid rgba(46, 211, 255, 0.45);
-  box-shadow: 0 0 16px rgba(46, 211, 255, 0.25);
+  width: 3rem; height: 3rem;
+  border-radius: 50%; font-weight: 700; font-size: 1.2rem;
+  color: #3d4f9e; background: #e8ecfd;
 }
+.implementation-route li:nth-child(2) .implementation-route__node { color: #23738a; background: #e0f5fa; }
+.implementation-route li:nth-child(3) .implementation-route__node { color: #8a6a12; background: #fdf3d2; }
+.implementation-route li:nth-child(4) .implementation-route__node { color: #5b3f9a; background: #efe8fb; }
 .implementation-route__card { padding: 1.1rem 1.2rem; }
 .implementation-route__card h3 { margin: 0 0 0.3rem; font-size: 1.05rem; }
 .implementation-route__card p { margin: 0; color: var(--color-text-muted); font-size: 0.92rem; }

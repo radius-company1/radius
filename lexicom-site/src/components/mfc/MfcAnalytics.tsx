@@ -3,6 +3,7 @@ import { mfcAnalyticsDirections } from '../../data/directions/mfc';
 import { GlassSurface } from '../ui/GlassSurface';
 import { Reveal } from '../ui/Reveal';
 import { SectionHeader } from '../ui/SectionHeader';
+import { Icon } from '../ui/Icon';
 
 export function MfcAnalytics() {
   return (
@@ -50,11 +51,11 @@ export function MfcAnalytics() {
         <Reveal>
           <div className="mfc-analytics__cycle" aria-label="Цикл улучшений">
             <span>обращения</span>
-            <span aria-hidden="true">→</span>
+            <Icon name="arrow-right" />
             <span>анализ</span>
-            <span aria-hidden="true">→</span>
+            <Icon name="arrow-right" />
             <span>изменения</span>
-            <span aria-hidden="true">→</span>
+            <Icon name="arrow-right" />
             <span>проверка следующих обращений</span>
           </div>
         </Reveal>

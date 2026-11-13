@@ -15,6 +15,8 @@ import { resolveDemoAsset } from '../data/productDemos';
 import { ticketCapabilities, ticketFaq, ticketShots, ticketSteps, type TicketShot } from '../data/ticketSystemPage';
 import { useClientReady } from '../hooks/useClientReady';
 import '../styles/ticket-system.css';
+import { Icon } from '../components/ui/Icon';
+import { FaqList } from '../components/ui/FaqList';
 
 export function TicketSystemPage() {
   const ready = useClientReady();
@@ -47,15 +49,15 @@ export function TicketSystemPage() {
               <p className="tk-lead">Собирайте обращения в одной системе, распределяйте работу и контролируйте её выполнение. От первого сообщения до решения — с понятной историей и отчётностью.</p>
               <p className="tk-hero__standalone">Самостоятельный продукт. Работает отдельно или вместе с контактным центром и ИИ-агентом Lexicom.</p>
               <div className="tk-actions"><Button href="#contact">Обсудить подключение</Button><Button href="#ticket-workflow" variant="secondary">Как это работает</Button></div>
-              <Link className="tk-text-link" to="/business#business-rzd-tickets">В работе у РЖД: обращения с вокзалов по QR-коду →</Link>
+              <Link className="tk-text-link" to="/business#business-rzd-tickets">В работе у РЖД: обращения с вокзалов по QR-коду <Icon name="arrow-right" /></Link>
             </Reveal>
             <Reveal delay={80}>
               <GlassSurface className="tk-hero__scheme" radius="xl" tint="blue" tier="matte">
                 <MobileDetails title={<p className="tk-eyebrow">От контакта к выполненной работе</p>}>
                 <div className="tk-sources"><span>Веб-форма</span><span>Контактный центр</span><span>ИИ-агент</span></div>
-                <span className="tk-connector" aria-hidden="true">↓</span>
-                <div className="tk-hub"><span className="tk-hub__icon" aria-hidden="true">✓</span><div><strong>Единое обращение</strong><p>Описание · тема · приоритет</p></div></div>
-                <span className="tk-connector" aria-hidden="true">↓</span>
+                <Icon name="arrow-down" className="tk-connector" />
+                <div className="tk-hub"><Icon name="check" className="tk-hub__icon" /><div><strong>Единое обращение</strong><p>Описание · тема · приоритет</p></div></div>
+                <Icon name="arrow-down" className="tk-connector" />
                 <div className="tk-assignment"><div><span>Кто отвечает</span><strong>Исполнитель</strong></div><div><span>Когда выполнить</span><strong>Срок решения</strong></div></div>
                 <div className="tk-outcome"><span aria-hidden="true">↳</span> Результат сохраняется в истории</div>
                 </MobileDetails>
@@ -73,7 +75,7 @@ export function TicketSystemPage() {
           </div>
           {ticketSteps.map((item, i) => <div className="tk-step-panel" id={`tk-step-panel-${i}`} key={item.title} role={ready ? 'tabpanel' : undefined} aria-labelledby={`tk-step-tab-${i}`} hidden={ready && step !== i} tabIndex={0}>
             <div><p className="tk-eyebrow">{item.status}</p><h3>{item.heading}</h3><p>{item.text}</p></div>
-            <ul aria-label="Данные этого этапа">{item.fields.map(field => <li key={field}><span aria-hidden="true">✓</span>{field}</li>)}</ul>
+            <ul aria-label="Данные этого этапа">{item.fields.map(field => <li key={field}><Icon name="check" />{field}</li>)}</ul>
           </div>)}
         </div>
       </section>
@@ -88,7 +90,7 @@ export function TicketSystemPage() {
             <figure>
               {shot.id === 'queue' ? <ProductMotion kind="ticket-system" active={shotIndex === i && !image} onZoom={button => openImage(shot, button)} /> : <button className="tk-shot-button" type="button" onClick={e => openImage(shot, e.currentTarget)} aria-label={`Увеличить: ${shot.caption}`}>
                 <img src={resolveDemoAsset(shot.src)} alt={shot.alt} width={shot.width} height={shot.height} loading="lazy" decoding="async" />
-                <span aria-hidden="true">Увеличить ↗</span>
+                <span aria-hidden="true">Увеличить <Icon name="arrow-up-right" /></span>
               </button>}
               <figcaption><h3>{shot.caption}</h3><p>{shot.text}</p></figcaption>
             </figure>
@@ -110,7 +112,7 @@ export function TicketSystemPage() {
           <Reveal><GlassSurface className="tk-case__panel" radius="xl" tint="yellow" tier="matte">
             <div><p className="tk-eyebrow">ОАО «РЖД» · сервисы ДЖВ</p><h2 id="tk-case-title">Сообщения с вокзалов — в едином процессе</h2>
               <p>Посетитель сканирует QR-код и открывает форму без регистрации. Вокзал подставляется автоматически. Обращение проходит через региональную дирекцию в нужную очередь, а итог работ сохраняется в истории.</p>
-              <Link to="/business#business-rzd-tickets" className="tk-text-link">Посмотреть кейс РЖД →</Link></div>
+              <Link to="/business#business-rzd-tickets" className="tk-text-link">Посмотреть кейс РЖД <Icon name="arrow-right" /></Link></div>
             <dl><div><dt>тематик сообщений</dt><dd>6</dd></div><div><dt>на реакцию</dt><dd>15 мин</dd></div><div><dt>на решение</dt><dd>12 ч</dd></div></dl>
             <p className="tk-case__note">Сроки настроены для QR-обращений этого проекта. Расчёт — 24/7, с эскалацией при нарушении срока.</p>
           </GlassSurface></Reveal>
@@ -122,15 +124,15 @@ export function TicketSystemPage() {
           <Reveal><SectionHeader title="Отдельный продукт или часть решения Lexicom" titleId="tk-connection-title" description="На подключении определяем источники обращений, роли сотрудников, правила распределения и сроки обслуживания." /></Reveal>
           <div className="tk-connection__grid">
             <article><span className="tk-eyebrow">Самостоятельно</span><MobileDetails title={<h3>Для вашей службы</h3>}><p>Ведите обращения клиентов и сотрудников в едином интерфейсе. Контактный центр и ИИ-агент для использования продукта не требуются.</p></MobileDetails></article>
-            <article><span className="tk-eyebrow">Вместе с контактным центром</span><MobileDetails title={<h3>Продолжение разговора</h3>}><p>Оператор принимает контакт, а ответственная команда продолжает работу с обращением и контролирует его исполнение.</p><Link to="/products/contact-center">О контактном центре →</Link></MobileDetails></article>
-            <article><span className="tk-eyebrow">Вместе с ИИ-агентом</span><MobileDetails title={<h3>Передача собранного запроса</h3>}><p>ИИ-агент уточняет вопрос. Подключённая тикет-система принимает обращение для дальнейшей работы сотрудников.</p><Link to="/products/neurobot">Об ИИ-агенте →</Link></MobileDetails></article>
+            <article><span className="tk-eyebrow">Вместе с контактным центром</span><MobileDetails title={<h3>Продолжение разговора</h3>}><p>Оператор принимает контакт, а ответственная команда продолжает работу с обращением и контролирует его исполнение.</p><Link to="/products/contact-center">О контактном центре <Icon name="arrow-right" /></Link></MobileDetails></article>
+            <article><span className="tk-eyebrow">Вместе с ИИ-агентом</span><MobileDetails title={<h3>Передача собранного запроса</h3>}><p>ИИ-агент уточняет вопрос. Подключённая тикет-система принимает обращение для дальнейшей работы сотрудников.</p><Link to="/products/neurobot">Об ИИ-агенте <Icon name="arrow-right" /></Link></MobileDetails></article>
           </div>
         </div>
       </section>
 
       <section className="section tk-faq" aria-labelledby="tk-faq-title"><div className="container">
         <SectionHeader title="Вопросы о подключении и работе" titleId="tk-faq-title" />
-        {ticketFaq.map(item => <details key={item.question}><summary>{item.question}</summary><p>{item.answer}</p></details>)}
+        <FaqList items={ticketFaq} />
       </div></section>
       <section className="section cc-final" id="contact" aria-labelledby="tk-contact-title"><div className="container cc-final__layout">
         <Reveal><SectionHeader title="Обсудим работу вашей службы" titleId="tk-contact-title" description="Расскажите, откуда приходят обращения, кто их обрабатывает и какие сроки нужно контролировать. Подберём состав подключения." /></Reveal>

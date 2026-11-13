@@ -2,6 +2,7 @@ import { MotionLink as Link } from '../ui/MotionLink';
 import { solutionConfigs } from '../../data/contactCenterPage';
 import { Reveal } from '../ui/Reveal';
 import { SectionHeader } from '../ui/SectionHeader';
+import { Icon } from '../ui/Icon';
 
 export function CcConfigs() {
   return (
@@ -32,7 +33,7 @@ export function CcConfigs() {
                       {layer.href ? (
                         <Link to={layer.href}>
                           {layer.label}
-                          <span aria-hidden="true"> ↗</span>
+                          <Icon name="arrow-up-right" />
                         </Link>
                       ) : (
                         <span>{layer.label}</span>

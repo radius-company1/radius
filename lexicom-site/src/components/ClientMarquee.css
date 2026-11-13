@@ -29,7 +29,6 @@
   transition: background .18s ease, border-color .18s ease;
 }
 .client-marquee__controls button:hover { background: #fff; border-color: #9aacc8; }
-.client-marquee__controls .client-marquee__pause { padding-inline: 12px; font-size: 12px; font-weight: 600; }
 .client-marquee__controls button:focus-visible, .client-marquee__viewport:focus-visible { outline: 3px solid #5367e7; outline-offset: 3px; }
 .client-marquee__viewport { overflow-x: auto; overflow-y: hidden; border-radius: 16px; scrollbar-width: none; overscroll-behavior-x: contain; }
 .client-marquee__viewport::-webkit-scrollbar { display: none; }
@@ -52,7 +51,6 @@
   .client-marquee__label { max-width: 125px; font-size: 18px; }
   .client-marquee__controls { gap: 4px; }
   .client-marquee__controls button { min-width: 36px; min-height: 40px; padding: 6px; }
-  .client-marquee__controls .client-marquee__pause { padding-inline: 8px; }
   .client-marquee__item { flex-basis: 172px; width: 172px; padding: 10px; }
   .client-marquee__track { gap: 10px; padding-right: 10px; }
   .client-marquee__logo-frame { height: 62px; }

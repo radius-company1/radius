@@ -2,6 +2,7 @@ import { useClientReady } from '../hooks/useClientReady';
 import { useDialogDismiss } from '../hooks/useDialogDismiss';
 import { useEffect, useId, useRef, useState, type RefObject } from 'react';
 import { createPortal } from 'react-dom';
+import { Icon } from './ui/Icon';
 
 export type LightboxImage = {
   src: string;
@@ -97,7 +98,7 @@ export function ImageLightbox({ image, onClose, returnFocusRef }: ImageLightboxP
               aria-label="Закрыть изображение"
               onClick={dismiss}
             >
-              ×
+              <Icon name="close" size={20} />
             </button>
           </div>
         </header>

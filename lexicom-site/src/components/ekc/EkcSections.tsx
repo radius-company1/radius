@@ -1,4 +1,5 @@
 import { MotionLink as Link } from '../ui/MotionLink';
+import { Icon } from '../ui/Icon';
 import {
   ekcAnchors,
   ekcAudiences,
@@ -332,7 +333,7 @@ export function EkcPlatform() {
                   {'link' in item ? (
                     <Link className="ekc-platform__link" to={item.link}>
                       Подробнее о продукте
-                      <span aria-hidden="true">→</span>
+                      <Icon name="arrow-right" />
                     </Link>
                   ) : null}
                 </div>

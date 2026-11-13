@@ -2,6 +2,7 @@ import { MotionLink as Link } from '../ui/MotionLink';
 import { saIndustries } from '../../data/speechAnalyticsPage';
 import { Reveal } from '../ui/Reveal';
 import { SectionHeader } from '../ui/SectionHeader';
+import { Icon } from '../ui/Icon';
 
 export function SaIndustries() {
   return (
@@ -22,9 +23,7 @@ export function SaIndustries() {
                 <Link to={item.to} className="nb-industries__link">
                   <span className="nb-industries__label">{item.label}</span>
                   <span className="nb-industries__text">{item.text}</span>
-                  <span className="nb-industries__arrow" aria-hidden="true">
-                    →
-                  </span>
+                  <Icon name="arrow-right" className="nb-industries__arrow" />
                 </Link>
               </li>
             ))}

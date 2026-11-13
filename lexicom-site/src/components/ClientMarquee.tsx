@@ -1,7 +1,8 @@
-import { useEffect, useRef, useState, useSyncExternalStore, type KeyboardEvent } from 'react';
+import { useRef, useSyncExternalStore, type KeyboardEvent } from 'react';
 import { clients } from '../data/clients';
 import { useClientReady } from '../hooks/useClientReady';
 import { ClientLogo } from './clients/ClientLogo';
+import { Icon } from './ui/Icon';
 import './ClientMarquee.css';
 
 const motionQuery = '(prefers-reduced-motion: reduce)';
@@ -28,68 +29,12 @@ function MarqueeTrack({ duplicate = false }: { duplicate?: boolean }) {
 export function ClientMarquee({ variant = 'default' }: { variant?: 'default' | 'liquid' }) {
   const ready = useClientReady();
   const reducedMotion = useSyncExternalStore(subscribeMotion, getMotionPreference, serverMotionPreference);
-  const [manualPause, setManualPause] = useState<boolean | null>(null);
-  const [hovered, setHovered] = useState(false);
-  const [focused, setFocused] = useState(false);
-  const paused = manualPause ?? reducedMotion;
   const viewportRef = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    const viewport = viewportRef.current;
-    if (!viewport || !ready || paused || hovered || focused) return;
-    const track = viewport.querySelector<HTMLElement>('.client-marquee__track');
-    if (!track) return;
-    let frame = 0;
-    let previous = 0;
-    let position = viewport.scrollLeft;
-    let trackWidth = track.getBoundingClientRect().width;
-    let visible = false;
-    const stop = () => {
-      cancelAnimationFrame(frame);
-      frame = 0;
-      previous = 0;
-    };
-    const tick = (time: number) => {
-      frame = 0;
-      if (!visible || document.hidden || !trackWidth) return;
-      const elapsed = previous ? Math.min(time - previous, 64) : 0;
-      previous = time;
-      position = (position + elapsed * 0.035) % trackWidth;
-      viewport.scrollLeft = position;
-      frame = requestAnimationFrame(tick);
-    };
-    const sync = () => {
-      if (!visible || document.hidden || !trackWidth) stop();
-      else if (!frame) {
-        position = viewport.scrollLeft;
-        frame = requestAnimationFrame(tick);
-      }
-    };
-    const observer = new IntersectionObserver(([entry]) => {
-      visible = entry.isIntersecting;
-      sync();
-    });
-    const resize = new ResizeObserver(() => {
-      trackWidth = track.getBoundingClientRect().width;
-      sync();
-    });
-    observer.observe(viewport);
-    resize.observe(track);
-    document.addEventListener('visibilitychange', sync);
-    return () => {
-      stop();
-      observer.disconnect();
-      resize.disconnect();
-      document.removeEventListener('visibilitychange', sync);
-    };
-  }, [ready, paused, hovered, focused]);
 
   const move = (direction: -1 | 1) => {
     const viewport = viewportRef.current;
-    if (!viewport) return;
-    setManualPause(true);
-    const track = viewport.querySelector<HTMLElement>('.client-marquee__track');
-    if (!track) return;
+    const track = viewport?.querySelector<HTMLElement>('.client-marquee__track');
+    if (!viewport || !track) return;
     // Both copies have identical geometry: crossing their boundary is seamless.
     if (direction < 0 && viewport.scrollLeft < 1) viewport.scrollLeft = track.offsetWidth;
     if (direction > 0 && viewport.scrollLeft >= track.offsetWidth) viewport.scrollLeft -= track.offsetWidth;
@@ -103,7 +48,6 @@ export function ClientMarquee({ variant = 'default' }: { variant?: 'default' | '
     }
     if (event.key === 'Home' || event.key === 'End') {
       event.preventDefault();
-      setManualPause(true);
       const viewport = viewportRef.current;
       const track = viewport?.querySelector<HTMLElement>('.client-marquee__track');
       if (viewport && track) viewport.scrollLeft = event.key === 'Home' ? 0 : track.offsetWidth - viewport.clientWidth;
@@ -115,17 +59,11 @@ export function ClientMarquee({ variant = 'default' }: { variant?: 'default' | '
       <div className="client-marquee__heading">
         <h2 id="customers-title" className="client-marquee__label">Наши заказчики</h2>
         <div className="client-marquee__controls" hidden={!ready}>
-          <button type="button" className="client-marquee__pause" onClick={() => setManualPause(!paused)} aria-label={paused ? 'Включить автопрокрутку заказчиков' : 'Остановить автопрокрутку заказчиков'} aria-controls="customers-list">
-            <span aria-hidden="true">{paused ? '▶' : 'Ⅱ'}</span>{paused ? 'Авто' : 'Пауза'}
-          </button>
-          <button type="button" onClick={() => move(-1)} aria-label="Предыдущие заказчики" aria-controls="customers-list">←</button>
-          <button type="button" onClick={() => move(1)} aria-label="Следующие заказчики" aria-controls="customers-list">→</button>
+          <button type="button" onClick={() => move(-1)} aria-label="Предыдущие заказчики" aria-controls="customers-list"><Icon name="arrow-left" size={18} /></button>
+          <button type="button" onClick={() => move(1)} aria-label="Следующие заказчики" aria-controls="customers-list"><Icon name="arrow-right" size={18} /></button>
         </div>
       </div>
-      <div id="customers-list" className="client-marquee__viewport" ref={viewportRef} role="region" aria-label="Логотипы и названия заказчиков" tabIndex={0} onKeyDown={handleKeyDown}
-        onPointerEnter={event => { if (event.pointerType === 'mouse') setHovered(true); }} onPointerLeave={() => setHovered(false)}
-        onPointerDown={() => setManualPause(true)} onWheel={() => setManualPause(true)}
-        onFocus={() => setFocused(true)} onBlur={() => setFocused(false)}>
+      <div id="customers-list" className="client-marquee__viewport" ref={viewportRef} role="region" aria-label="Логотипы и названия заказчиков" tabIndex={0} onKeyDown={handleKeyDown}>
         <div className="client-marquee__runner"><MarqueeTrack />{ready && <MarqueeTrack duplicate />}</div>
       </div>
     </div>

@@ -147,6 +147,7 @@
     radial-gradient(70% 60% at 22% 28%, rgba(42, 111, 143, 0.34), transparent 55%),
     radial-gradient(50% 40% at 82% 72%, rgba(230, 192, 53, 0.16), transparent 50%);
 }
+.glass-surface:not(.glass-surface--dark) > .glass-surface__reflex { display: none; }
 
 @supports not ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
   .glass-surface:not(.glass-surface--dark) { background: rgba(255, 255, 255, 0.94); }

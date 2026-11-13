@@ -4,7 +4,6 @@
 .site-header__inner { gap: 20px; }
 .site-header__nav { margin-left: 12px; gap: 4px; }
 .site-header__link { color: var(--color-text-muted); }
-.app-chrome.is-scrolled { background: #f4f6fa; }
 .design-hero { padding: 52px 0 40px; }
 .design-hero__grid { display: grid; grid-template-columns: 1.12fr 1fr; gap: 56px; align-items: center; }
 .design-hero h1 { margin: 0; font-size: clamp(40px,4.2vw,60px); font-weight: 750; line-height: 1.04; letter-spacing: -.04em; }

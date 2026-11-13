@@ -5,6 +5,7 @@ import { GlassSurface } from './ui/GlassSurface';
 import { PhoneIcon } from './LexaDemo';
 import { lexaDemoLine } from '../data/lexaDemo';
 import { metrics } from '../data/metrics';
+import { Icon } from './ui/Icon';
 
 const waveBars = [10, 18, 28, 16, 34, 22, 40, 26, 14, 30, 44, 24, 36, 18, 28, 12, 32, 20, 38, 16, 26, 12, 22, 10];
 
@@ -58,14 +59,14 @@ export function DesignHero() {
           <h1 id="hero-title">ИИ-платформа<br />для обработки<br />обращений</h1>
           <p className="design-hero__lead">Автоматизируйте звонки и сообщения, помогайте операторам и анализируйте диалоги. ИИ-агент, контактный центр, речевая аналитика и протоколирование — в инфраструктуре вашей организации.</p>
           <div className="design-hero__actions">
-            <Button href="#products">Выбрать решение <span aria-hidden="true">↗</span></Button>
-            <a href="#product-demos" className="design-text-link">Смотреть видео продуктов <span aria-hidden="true">↓</span></a>
+            <Button href="#products">Выбрать решение <Icon name="arrow-up-right" /></Button>
+            <a href="#product-demos" className="design-text-link">Смотреть видео продуктов <Icon name="arrow-down" /></a>
           </div>
           <div className="design-hero__credentials">
             <a className="design-hero__skolkovo" href="https://sk.ru/" target="_blank" rel="noopener noreferrer" aria-label="Lexicom — участник проекта «Сколково» (сайт фонда, новая вкладка)">
               <img src={`${import.meta.env.BASE_URL}brand/skolkovo-participant.png`} width="702" height="206" alt="Сколково — участник проекта" />
             </a>
-            <p className="design-hero__trust">Собственное российское ПО<br /><span>Данные в контуре заказчика · Реестр ПО №11115</span><br /><a href="#cases" className="design-hero__award">1-е место — конкурс «Лучший МФЦ России» 2025 <span aria-hidden="true">→</span></a></p>
+            <p className="design-hero__trust">Собственное российское ПО<br /><span>Данные в контуре заказчика · Реестр ПО №11115</span><br /><a href="#cases" className="design-hero__award">1-е место — конкурс «Лучший МФЦ России» 2025 <Icon name="arrow-right" /></a></p>
           </div>
         </div>
         <HeroCallCard />

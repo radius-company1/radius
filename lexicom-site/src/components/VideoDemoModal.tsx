@@ -4,6 +4,7 @@ import { useEffect, useId, useRef, useState, type RefObject } from 'react';
 import { createPortal } from 'react-dom';
 import type { ProductDemo } from '../data/productDemos';
 import { resolveDemoAsset } from '../data/productDemos';
+import { Icon } from './ui/Icon';
 
 type VideoDemoModalProps = {
   demo: ProductDemo | null;
@@ -116,7 +117,7 @@ export function VideoDemoModal({ demo, onClose, returnFocusRef }: VideoDemoModal
             aria-label="Закрыть видео"
             onClick={dismiss}
           >
-            ×
+            <Icon name="close" size={20} />
           </button>
         </header>
 

@@ -6,7 +6,7 @@ import { SectionHeader } from './ui/SectionHeader';
 export function FAQ() {
   return (
     <section className="section faq" id="faq" aria-labelledby="faq-title">
-      <div className="container">
+      <div className="container faq__layout">
         <Reveal>
           <SectionHeader
             title="Что важно знать до начала проекта"
