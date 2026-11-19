@@ -6,14 +6,9 @@ export function NbCapabilities() {
   return (
     <section className="section nb-capabilities" id="nb-capabilities" aria-labelledby="nb-capabilities-title">
       <div className="container nb-capabilities__layout">
-        <div className="nb-capabilities__intro">
-          <Reveal>
-            <SectionHeader title="От ответа на вопрос до действия в вашей системе" titleId="nb-capabilities-title" />
-          </Reveal>
-          <Reveal delay={60}>
-            <p className="nb-capabilities__combine">{neurobotCapabilitiesNote}</p>
-          </Reveal>
-        </div>
+        <Reveal>
+          <SectionHeader title="От ответа на вопрос до действия в вашей системе" titleId="nb-capabilities-title" />
+        </Reveal>
 
         <ol className="nb-capabilities__list">
           {neurobotCapabilities.map((item, index) => (
@@ -30,6 +25,10 @@ export function NbCapabilities() {
             </li>
           ))}
         </ol>
+
+        <Reveal>
+          <p className="nb-capabilities__combine">{neurobotCapabilitiesNote}</p>
+        </Reveal>
       </div>
     </section>
   );

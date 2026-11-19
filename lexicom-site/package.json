@@ -10,7 +10,8 @@
     "lint": "oxlint",
     "preview": "vite preview",
     "build:launch": "tsc -b && vite build --mode launch && vite build --mode launch --ssr src/entry-server.tsx --outDir .prerender && node scripts/prerender.mjs --launch",
-    "verify:launch": "node scripts/verify-launch.mjs"
+    "verify:launch": "node scripts/verify-launch.mjs",
+    "qa:ios": "node scripts/qa-ios.mjs"
   },
   "dependencies": {
     "@fontsource-variable/onest": "^5.3.1",

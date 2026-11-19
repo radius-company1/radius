@@ -20,16 +20,11 @@ export function CcConfigs() {
           {solutionConfigs.map((config, index) => (
             <li key={config.title} className="cc-configs__item">
               <Reveal delay={index * 80}>
-                <div className="cc-configs__stack" aria-hidden="true">
-                  {config.layers.map((layer, layerIndex) => (
-                    <span key={layer.label} className={`cc-configs__layer cc-configs__layer--${layerIndex + 1}`} />
-                  ))}
-                </div>
                 <h3>{config.title}</h3>
                 <p>{config.text}</p>
                 <ul className="cc-configs__parts" aria-label="Состав">
-                  {config.layers.map((layer) => (
-                    <li key={layer.label}>
+                  {config.layers.map((layer, layerIndex) => (
+                    <li key={layer.label} className={`cc-configs__layer cc-configs__layer--${layerIndex + 1}`}>
                       {layer.href ? (
                         <Link to={layer.href}>
                           {layer.label}

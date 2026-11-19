@@ -37,7 +37,7 @@ export function UtilitiesAnalytics() {
                   <li key={item}>{item}</li>
                 ))}
               </ul>
-              <p className="utilities-analytics__topics-label">Примеры тем</p>
+              <p className="utilities-analytics__label utilities-analytics__topics-label">Примеры тем</p>
               <ul className="utilities-analytics__topics">
                 {utilitiesAnalyticsTopics.map((topic) => (
                   <li key={topic}>{topic}</li>

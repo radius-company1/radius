@@ -11,10 +11,14 @@
   .mobile-details__icon { display: inline-grid; place-items: center; flex: 0 0 auto; width: 32px; height: 32px; border-radius: 50%; background: rgba(74, 95, 212, 0.08); color: var(--color-blue); transition: transform 0.3s ease; }
   .customer-cases__card .mobile-details > summary, .mfc-ecosystem .mobile-details > summary { display: flex; font-size: 16px; font-weight: 600; }
   .mobile-details__content { padding-top: 12px; }
+  /* Safari keeps the hidden copy's height inside a closed <details>. */
+  details.mobile-details:not([open]) > .mobile-details__content { display: none; }
   .mobile-details__content > p { margin-top: 0; }
   .page-view .section { padding-block: 36px; }
   .page-view .about-card, .page-view .gov-card, .page-view .implementation-route__card { padding: 16px 20px; }
   .page-view .government__grid, .page-view .about__points { gap: 12px; }
+  /* WebKit keeps a percentage min-height resolved against the expanded row after <details> collapses. */
+  .government__cell { min-height: auto; }
 }
 
 .about-card { width: 100%; }

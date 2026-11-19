@@ -3,6 +3,7 @@ import { Outlet, useLocation, useNavigate } from 'react-router-dom';
 import { cancelPendingNavigation } from '../hooks/useViewTransitionNavigate';
 import { AmbientBackground } from './AmbientBackground';
 import { Header } from './Header';
+import { ScrollTopButton } from './ScrollTopButton';
 import { scrollBelowChrome } from '../hooks/scrollBelowChrome';
 import { getDirectionFromPath } from '../theme/directions';
 
@@ -51,6 +52,7 @@ export function SiteShell() {
       <div className="page-transition-root" id="main-content">
         <Outlet />
       </div>
+      <ScrollTopButton />
     </div>
   );
 }

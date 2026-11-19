@@ -20,8 +20,6 @@
   .page-view--final .final-product-showcase.is-interactive .design-product.is-selected { visibility: visible; }
   .page-view--final .design-product__task { max-width: none; }
   .page-view--final .design-product__description { max-width: 70ch; }
-  .page-view--final .final-product-showcase { align-items: start; }
-  .page-view--final .final-product-selector [role="tablist"] { flex: 0 0 auto; grid-auto-rows: auto; }
   .page-view--final .final-product-selector button { padding: 16px 20px; gap: 6px; }
   .page-view--final .final-product-showcase .design-product__media { display: flex; flex-direction: column; justify-content: center; flex: 1; margin-top: 0; }
   .page-view--final .final-product-showcase .product-motion { width: 100%; zoom: .82; }

@@ -322,20 +322,17 @@
 .implementation-route {
   margin: 0 0 1.75rem; padding: 0; list-style: none;
 }
-.implementation-route__step {
-  position: relative; display: grid; grid-template-columns: 3rem 1fr;
-  align-items: center; gap: 1rem; margin-bottom: 0.85rem;
-}
+.implementation-route li + li { margin-top: 0.75rem; }
 .implementation-route__node {
   display: flex; align-items: center; justify-content: center;
-  width: 3rem; height: 3rem;
-  border-radius: 50%; font-weight: 700; font-size: 1.2rem;
-  color: #3d4f9e; background: #e8ecfd;
+  width: 2.5rem; height: 2.5rem;
+  border-radius: 50%; font-weight: 700; font-size: 1.05rem;
+  color: var(--step-num-ink); background: var(--step-num-bg);
 }
-.implementation-route li:nth-child(2) .implementation-route__node { color: #23738a; background: #e0f5fa; }
-.implementation-route li:nth-child(3) .implementation-route__node { color: #8a6a12; background: #fdf3d2; }
-.implementation-route li:nth-child(4) .implementation-route__node { color: #5b3f9a; background: #efe8fb; }
 .implementation-route__card { padding: 1.1rem 1.2rem; }
+.implementation-route__card > .glass-surface__content {
+  display: grid; grid-template-columns: auto minmax(0, 1fr); align-items: center; gap: 1rem;
+}
 .implementation-route__card h3 { margin: 0 0 0.3rem; font-size: 1.05rem; }
 .implementation-route__card p { margin: 0; color: var(--color-text-muted); font-size: 0.92rem; }
 .implementation__closing { margin: 1.25rem 0 0; color: var(--color-text-muted); max-width: 70ch; }

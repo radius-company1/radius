@@ -428,12 +428,6 @@
   gap: 1rem;
 }
 
-.social-demo__note {
-  margin: 0;
-  font-size: 0.88rem;
-  color: var(--color-muted);
-}
-
 /* Knowledge */
 
 .social-knowledge__layout {
@@ -461,12 +455,23 @@
   color: var(--color-muted);
 }
 
+.social-knowledge__layout > .reveal {
+  display: flex;
+}
+
+.social-knowledge__layout > .reveal > * {
+  flex: 1;
+}
+
 .social-knowledge__links {
   display: grid;
   gap: 0.85rem;
   align-content: center;
-  min-height: 100%;
-  padding: 0.5rem;
+  padding: 1.25rem;
+  border-radius: var(--radius-xl);
+  background: #fff;
+  border: 1px solid rgba(12, 16, 32, 0.08);
+  box-shadow: 0 10px 28px rgba(12, 16, 32, 0.06);
 }
 
 .social-knowledge__node {
@@ -474,13 +479,14 @@
   border-radius: 16px;
   text-align: center;
   font-weight: 700;
-  background: color-mix(in srgb, white 74%, transparent);
-  border: 1px solid color-mix(in srgb, var(--color-line) 70%, transparent);
+  background: #e0f5fa;
+  color: #23738a;
 }
 
 .social-knowledge__node--core {
-  background: color-mix(in srgb, #2f7a6f 12%, white);
-  color: #1f5249;
+  padding-block: 1.1rem;
+  background: linear-gradient(145deg, #1e2740, #182033);
+  color: #fff;
 }
 
 .social-knowledge__connectors {
@@ -493,7 +499,7 @@
 .social-knowledge__connectors span {
   width: 2px;
   height: 1.1rem;
-  background: linear-gradient(180deg, #2f7a6f, var(--color-cyan));
+  background: #23738a;
   border-radius: 999px;
 }
 
@@ -789,33 +795,32 @@
 }
 
 .social-implementation__step {
-  display: grid;
-  grid-template-columns: auto 1fr;
-  gap: 0.55rem;
-  align-items: start;
+  display: flex;
+  min-width: 0;
 }
 
 .social-implementation__num {
-  width: 1.7rem;
-  height: 1.7rem;
+  width: 2rem;
+  height: 2rem;
+  margin-bottom: 0.75rem;
   border-radius: 50%;
   display: grid;
   place-items: center;
-  background: var(--color-yellow);
-  color: var(--color-ink);
-  font-size: 0.85rem;
-  font-weight: 800;
-  margin-top: 0.35rem;
+  background: var(--step-num-bg);
+  color: var(--step-num-ink);
+  font-size: 0.9rem;
+  font-weight: 700;
 }
 
 .social-implementation__step > .reveal {
   display: flex;
+  flex: 1;
   min-width: 0;
 }
 
 .social-implementation__card {
   width: 100%;
-  padding: 1rem 1.05rem;
+  padding: 1.1rem 1.15rem;
 }
 
 .social-implementation__card h3 {

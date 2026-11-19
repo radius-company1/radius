@@ -23,6 +23,8 @@
   --radius-xl: 32px;
   --radius-chip: var(--radius-sm);
   --radius-btn: 999px;
+  --step-num-bg: #e8ecfd;
+  --step-num-ink: #3d4f9e;
   --max: 1180px;
   --ease: cubic-bezier(0.22, 1, 0.36, 1);
   --transition-theme: 1s var(--ease);

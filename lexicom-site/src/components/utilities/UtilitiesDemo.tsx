@@ -62,6 +62,7 @@ export function UtilitiesDemo({ onRequestDemo }: UtilitiesDemoProps) {
               <p className="utilities-demo__meaning">
                 Свободная речь, уточнение, исправление по ходу разговора и подтверждённое действие.
               </p>
+              <p className="utilities-demo__note">{utilitiesDemoNote}</p>
             </GlassSurface>
           </Reveal>
         </div>
@@ -69,7 +70,6 @@ export function UtilitiesDemo({ onRequestDemo }: UtilitiesDemoProps) {
         <Reveal>
           <div className="utilities-demo__actions">
             <Button onClick={onRequestDemo}>{utilitiesDemoState.demoCtaLabel}</Button>
-            <p className="utilities-demo__note">{utilitiesDemoNote}</p>
           </div>
         </Reveal>
       </div>

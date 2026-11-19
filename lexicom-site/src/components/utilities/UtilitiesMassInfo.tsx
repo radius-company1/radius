@@ -26,10 +26,10 @@ export function UtilitiesMassInfo() {
           <ol className="utilities-mass__steps" aria-label="Процесс информирования">
             {utilitiesMassSteps.map((step, index) => (
               <li key={step.title} className="utilities-mass__step">
-                <span className="utilities-mass__num" aria-hidden="true">
-                  {index + 1}
-                </span>
                 <GlassSurface className="utilities-mass__card" radius="lg" depth="raised" tint="utilities">
+                  <span className="utilities-mass__num" aria-hidden="true">
+                    {index + 1}
+                  </span>
                   <h3>{step.title}</h3>
                   <p>{step.text}</p>
                 </GlassSurface>

@@ -62,11 +62,9 @@
   position: fixed; z-index: 130;
   min-width: 15.5rem; padding: 0.4rem;
   border-radius: 16px;
-  background: rgba(255, 255, 255, 0.94);
-  backdrop-filter: blur(20px) saturate(160%);
-  -webkit-backdrop-filter: blur(20px) saturate(160%);
-  border: 1px solid rgba(255, 255, 255, 0.9);
-  box-shadow: 0 16px 36px rgba(12, 16, 32, 0.14);
+  background: #fff;
+  border: 1px solid rgba(12, 16, 32, 0.1);
+  box-shadow: 0 18px 40px rgba(12, 16, 32, 0.16);
 }
 .site-header__menu {
   margin: 0; padding: 0; list-style: none;
@@ -109,13 +107,35 @@
 
 .mobile-menu {
   position: fixed; inset: calc(var(--chrome-top) + 4.75rem) 1rem auto; z-index: 99;
-  max-height: calc(100dvh - 7.5rem); overflow: auto;
   opacity: 0; pointer-events: none; transform: translateY(-8px);
   transition: opacity 0.2s, transform 0.2s;
 }
 .mobile-menu.is-open { opacity: 1; transform: none; pointer-events: auto; }
-.mobile-menu__panel { padding: 0.9rem; }
-.mobile-menu nav { display: flex; flex-direction: column; gap: 0.2rem; }
+.mobile-menu .mobile-menu__panel.glass-surface {
+  padding: 0.9rem;
+  background: #fff;
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+  border: 1px solid rgba(12, 16, 32, 0.08);
+  box-shadow: 0 24px 60px rgba(12, 16, 32, 0.18);
+}
+.mobile-menu__panel > .glass-surface__reflex,
+.mobile-menu__panel > .glass-surface__depth-glow,
+.mobile-menu__panel > .glass-surface__sheen { display: none; }
+.mobile-menu__panel > .glass-surface__content {
+  display: flex; flex-direction: column;
+  max-height: calc(100dvh - var(--chrome-top) - 7rem);
+}
+.mobile-menu nav { display: flex; flex-direction: column; gap: 0.2rem; min-height: 0; overflow-y: auto; overscroll-behavior: contain; }
+.mobile-menu__footer {
+  flex: 0 0 auto; display: grid; gap: 0.6rem;
+  margin-top: 0.6rem; padding-top: 0.75rem;
+  border-top: 1px solid rgba(12, 16, 32, 0.08);
+}
+.mobile-menu__phone {
+  display: inline-flex; align-items: center; justify-content: center; gap: 0.5rem;
+  min-height: 44px; font-weight: 650; color: var(--color-text);
+}
 .mobile-menu nav a,
 .mobile-menu nav button {
   display: block; width: 100%; padding: 0.7rem 0.45rem; border: 0; background: transparent;
@@ -138,7 +158,7 @@
   border-bottom-color: rgba(12, 16, 32, 0.05);
   font-size: 0.92rem; font-weight: 500;
 }
-.mobile-menu__cta { width: 100%; margin-top: 0.75rem; }
+.mobile-menu__cta { width: 100%; }
 
 @media (min-width: 1024px) {
   .site-header__nav { display: flex; }

@@ -578,33 +578,32 @@
 }
 
 .edds-implementation__step {
-  display: grid;
-  grid-template-columns: auto 1fr;
-  gap: 0.55rem;
-  align-items: start;
+  display: flex;
+  min-width: 0;
 }
 
 .edds-implementation__num {
-  width: 1.7rem;
-  height: 1.7rem;
+  width: 2rem;
+  height: 2rem;
+  margin-bottom: 0.75rem;
   border-radius: 50%;
   display: grid;
   place-items: center;
-  background: var(--color-yellow);
-  color: var(--color-ink);
-  font-size: 0.85rem;
-  font-weight: 800;
-  margin-top: 0.35rem;
+  background: var(--step-num-bg);
+  color: var(--step-num-ink);
+  font-size: 0.9rem;
+  font-weight: 700;
 }
 
 .edds-implementation__step > .reveal {
   display: flex;
+  flex: 1;
   min-width: 0;
 }
 
 .edds-implementation__card {
   width: 100%;
-  padding: 1rem 1.05rem;
+  padding: 1.1rem 1.15rem;
 }
 
 .edds-implementation__card h3 {

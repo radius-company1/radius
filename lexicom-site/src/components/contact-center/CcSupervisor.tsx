@@ -25,20 +25,20 @@ export function CcSupervisor({ onOpenShot }: CcSupervisorProps) {
         <div className="cc-supervisor__layout">
           <Reveal>
             <GlassSurface className="cc-supervisor__part cc-supervisor__part--ops" radius="xl" depth="raised" tint="blue">
-              <h3>Работа контактного центра</h3>
-              <ul className="cc-supervisor__list">
-                {supervisorOperations.map((item) => (
-                  <li key={item}>{item}</li>
-                ))}
-              </ul>
-              <div className="cc-supervisor__shots">
-                {supervisorShots.map((shot) => (
-                  <figure key={shot.id} className="cc-supervisor__shot">
-                    <CcShot shot={shot} onOpen={onOpenShot} sizes="(min-width: 1024px) 300px, calc(50vw - 2rem)" />
-                    <figcaption>{shot.caption}</figcaption>
-                  </figure>
-                ))}
+              <div className="cc-supervisor__ops-intro">
+                <h3>Работа контактного центра</h3>
+                <ul className="cc-supervisor__list">
+                  {supervisorOperations.map((item) => (
+                    <li key={item}>{item}</li>
+                  ))}
+                </ul>
               </div>
+              {supervisorShots.map((shot) => (
+                <figure key={shot.id} className="cc-supervisor__shot">
+                  <CcShot shot={shot} onOpen={onOpenShot} sizes="(min-width: 1024px) 300px, calc(50vw - 2rem)" />
+                  <figcaption>{shot.caption}</figcaption>
+                </figure>
+              ))}
             </GlassSurface>
           </Reveal>
 

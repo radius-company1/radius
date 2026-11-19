@@ -24,14 +24,12 @@ export function Implementation() {
           {implementationSteps.map((step, index) => (
             <li key={step.step}>
             <Reveal delay={index * 50}>
-              <div className="implementation-route__step">
+              <GlassSurface className="implementation-route__card" radius="lg" depth="raised">
                 <span className="implementation-route__node" aria-hidden="true">
                   {step.step}
                 </span>
-                <GlassSurface className="implementation-route__card" radius="lg" depth="raised">
-                  <MobileDetails title={<h3>{step.title}</h3>}><p>{step.description}</p></MobileDetails>
-                </GlassSurface>
-              </div>
+                <MobileDetails title={<h3>{step.title}</h3>}><p>{step.description}</p></MobileDetails>
+              </GlassSurface>
             </Reveal>
             </li>
           ))}

@@ -1,6 +1,7 @@
 import { useEffect, useId, useRef, useState } from 'react';
 import { useLocation } from 'react-router-dom';
 import { MotionLink as Link } from './ui/MotionLink';
+import { companyContacts } from '../data/company';
 import { mainNav } from '../data/navigation';
 import { useViewTransitionNavigate } from '../hooks/useViewTransitionNavigate';
 import { normalizePath } from '../theme/directions';
@@ -143,8 +144,7 @@ export function Header({ onDiscussClick, scrolled = false }: HeaderProps) {
     }
   };
 
-  const isMobileGroupOpen = (label: string) =>
-    mobileOpen[label] ?? (label === 'Продукты' || menus.find((m) => m.label === label)?.children.some((c) => c.href === currentPath));
+  const isMobileGroupOpen = (label: string) => mobileOpen[label] ?? false;
 
   return (
     <header className={`site-header ${scrolled ? 'is-scrolled' : ''}`}>
@@ -289,9 +289,15 @@ export function Header({ onDiscussClick, scrolled = false }: HeaderProps) {
               ),
             )}
           </nav>
-          <Button className="mobile-menu__cta" onClick={() => { closeMenus(); onDiscussClick(); }}>
-            {headerCta}
-          </Button>
+          <div className="mobile-menu__footer">
+            <a className="mobile-menu__phone" href={companyContacts.phoneHref}>
+              <Icon name="phone" size={18} />
+              {companyContacts.phone}
+            </a>
+            <Button className="mobile-menu__cta" onClick={() => { closeMenus(); onDiscussClick(); }}>
+              {headerCta}
+            </Button>
+          </div>
         </GlassSurface>
       </div>
     </header>

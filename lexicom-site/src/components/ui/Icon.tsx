@@ -1,10 +1,11 @@
-export type IconName = 'arrow-right' | 'arrow-left' | 'arrow-up-right' | 'arrow-down' | 'plus' | 'close' | 'check' | 'play' | 'pause' | 'chevron-down' | 'download' | 'alert' | 'trend-up' | 'users' | 'chart' | 'phone' | 'shield';
+export type IconName = 'arrow-right' | 'arrow-left' | 'arrow-up-right' | 'arrow-down' | 'arrow-up' | 'plus' | 'close' | 'check' | 'play' | 'pause' | 'chevron-down' | 'download' | 'alert' | 'trend-up' | 'users' | 'chart' | 'phone' | 'shield';
 
 const paths: Record<IconName, string> = {
   'arrow-right': 'M4 10h11m-4.5-4.5L15 10l-4.5 4.5',
   'arrow-left': 'M16 10H5m4.5-4.5L5 10l4.5 4.5',
   'arrow-up-right': 'M6 14 14 6m-6.5 0H14v6.5',
   'arrow-down': 'M10 4v11m-4.5-4.5L10 15l4.5-4.5',
+  'arrow-up': 'M10 16V5M5.5 9.5 10 5l4.5 4.5',
   plus: 'M10 4.5v11M4.5 10h11',
   close: 'm5.5 5.5 9 9m0-9-9 9',
   check: 'm4.5 10.5 3.5 3.5 7.5-8',

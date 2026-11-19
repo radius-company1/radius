@@ -38,26 +38,20 @@ export function UtilitiesSpecialist() {
                 </div>
               ))}
             </div>
+            <div className="utilities-specialist__stages">
+              {utilitiesSpecialistStages.map((stage) => (
+                <article key={stage.title} className="utilities-specialist__stage">
+                  <h3>{stage.title}</h3>
+                  <p>{stage.text}</p>
+                </article>
+              ))}
+            </div>
+            <ul className="utilities-specialist__caps" aria-label="Возможности контактного центра">
+              {utilitiesCcCapabilities.map((item) => (
+                <li key={item}>{item}</li>
+              ))}
+            </ul>
           </GlassSurface>
-        </Reveal>
-
-        <div className="utilities-specialist__stages">
-          {utilitiesSpecialistStages.map((stage, index) => (
-            <Reveal key={stage.title} delay={index * 40}>
-              <GlassSurface className="utilities-specialist__stage" radius="lg" depth="raised" tint="utilities" variant="dark">
-                <h3>{stage.title}</h3>
-                <p>{stage.text}</p>
-              </GlassSurface>
-            </Reveal>
-          ))}
-        </div>
-
-        <Reveal>
-          <ul className="utilities-specialist__caps" aria-label="Возможности контактного центра">
-            {utilitiesCcCapabilities.map((item) => (
-              <li key={item}>{item}</li>
-            ))}
-          </ul>
         </Reveal>
         </MobileDetails>
       </div>

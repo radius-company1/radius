@@ -26,6 +26,7 @@ import { ProductPageLink } from '../ProductPageLink';
 import { ProductVisual } from '../ProductVisual';
 import { Button } from '../ui/Button';
 import { GlassSurface } from '../ui/GlassSurface';
+import { Icon } from '../ui/Icon';
 import { Reveal } from '../ui/Reveal';
 import { SectionHeader } from '../ui/SectionHeader';
 
@@ -151,23 +152,30 @@ export function EducationTasks() {
           />
         </Reveal>
 
-        <div className="edu-tasks__grid">
-          {educationTasks.map((task, index) => (
-            <Reveal key={task.title} delay={index * 40}>
-              <GlassSurface className="edu-task" radius="xl" depth="raised" tint={index % 2 === 0 ? 'education' : 'yellow'}>
+        <Reveal>
+          <ul className="edu-tasks__grid">
+            {educationTasks.map((task) => (
+              <li key={task.title} className="edu-task">
                 <h3>{task.title}</h3>
                 <p>{task.text}</p>
-                <ul className="edu-task__products">
+                <ul className="edu-task__products" aria-label="Продукты">
                   {task.products.map((product) => (
                     <li key={product.label}>
-                      {product.to ? <Link to={product.to}>{product.label}</Link> : <span>{product.label}</span>}
+                      {product.to ? (
+                        <Link to={product.to}>
+                          {product.label}
+                          <Icon name="arrow-right" size={14} />
+                        </Link>
+                      ) : (
+                        <span>{product.label}</span>
+                      )}
                     </li>
                   ))}
                 </ul>
-              </GlassSurface>
-            </Reveal>
-          ))}
-        </div>
+              </li>
+            ))}
+          </ul>
+        </Reveal>
       </div>
     </section>
   );

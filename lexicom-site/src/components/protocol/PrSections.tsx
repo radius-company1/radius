@@ -52,14 +52,9 @@ export function PrCapabilities() {
   return (
     <section className="section nb-capabilities" id="pr-capabilities" aria-labelledby="pr-capabilities-title">
       <div className="container nb-capabilities__layout">
-        <div className="nb-capabilities__intro">
-          <Reveal>
-            <SectionHeader title="Стенограмма, протокол и краткая выжимка" titleId="pr-capabilities-title" />
-          </Reveal>
-          <Reveal delay={60}>
-            <p className="nb-capabilities__combine">{prCapabilitiesNote}</p>
-          </Reveal>
-        </div>
+        <Reveal>
+          <SectionHeader title="Стенограмма, протокол и краткая выжимка" titleId="pr-capabilities-title" />
+        </Reveal>
 
         <ol className="nb-capabilities__list">
           {prCapabilities.map((item, index) => (
@@ -76,6 +71,10 @@ export function PrCapabilities() {
             </li>
           ))}
         </ol>
+
+        <Reveal>
+          <p className="nb-capabilities__combine">{prCapabilitiesNote}</p>
+        </Reveal>
       </div>
     </section>
   );

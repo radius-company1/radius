@@ -46,22 +46,12 @@ export function CcChannels() {
   return (
     <section className="section cc-channels" id="cc-channels" aria-labelledby="cc-channels-title">
       <div className="container cc-channels__layout">
-        <div className="cc-channels__intro">
-          <Reveal>
-            <SectionHeader
-              title="Обращения из разных каналов — по единым правилам обработки"
-              titleId="cc-channels-title"
-            />
-          </Reveal>
-          <Reveal delay={60}>
-            <aside className="cc-channels__bot">
-              <span className="cc-channels__bot-mark" aria-hidden="true">
-                MAX · виджет
-              </span>
-              <p>{channelBotNote}</p>
-            </aside>
-          </Reveal>
-        </div>
+        <Reveal>
+          <SectionHeader
+            title="Обращения из разных каналов — по единым правилам обработки"
+            titleId="cc-channels-title"
+          />
+        </Reveal>
 
         <Reveal delay={80}>
           <GlassSurface className="cc-channels__panel" radius="xl" depth="raised" tint="blue" tier="matte">
@@ -76,6 +66,12 @@ export function CcChannels() {
                 </li>
               ))}
             </ul>
+            <aside className="cc-channels__bot">
+              <span className="cc-channels__bot-mark" aria-hidden="true">
+                MAX · виджет
+              </span>
+              <p>{channelBotNote}</p>
+            </aside>
           </GlassSurface>
         </Reveal>
       </div>

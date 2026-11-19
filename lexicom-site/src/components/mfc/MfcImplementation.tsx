@@ -21,11 +21,11 @@ export function MfcImplementation() {
         <ol className="mfc-implementation__route">
           {mfcImplementationSteps.map((step, index) => (
             <li key={step.title} className="mfc-implementation__step">
-              <span className="mfc-implementation__num" aria-hidden="true">
-                {index + 1}
-              </span>
               <Reveal delay={index * 50}>
                 <GlassSurface className="mfc-implementation__card" radius="lg" depth="raised" tint="mfc">
+                  <span className="mfc-implementation__num" aria-hidden="true">
+                    {index + 1}
+                  </span>
                   <h3>{step.title}</h3>
                   <p>{step.text}</p>
                 </GlassSurface>

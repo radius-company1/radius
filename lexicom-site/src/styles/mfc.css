@@ -836,31 +836,40 @@
 }
 
 .mfc-implementation__step {
-  display: grid;
-  grid-template-columns: 2.2rem minmax(0, 1fr);
-  gap: 0.75rem;
-  align-items: start;
+  display: flex;
   min-width: 0;
 }
 
 .mfc-implementation__step > .reveal {
+  display: flex;
+  flex: 1;
   min-width: 0;
 }
 
+.mfc-implementation__card > .glass-surface__content {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  column-gap: 0.85rem;
+}
+
+.mfc-implementation__card > .glass-surface__content > :not(.mfc-implementation__num) {
+  grid-column: 2;
+}
+
 .mfc-implementation__num {
-  width: 2.2rem;
-  height: 2.2rem;
+  grid-row: span 2;
+  width: 2rem;
+  height: 2rem;
   border-radius: 50%;
   display: grid;
   place-items: center;
-  background: rgba(46, 211, 255, 0.16);
-  border: 1px solid rgba(46, 211, 255, 0.35);
-  font-size: 0.88rem;
-  font-weight: 800;
-  color: #1a5f8a;
+  background: var(--step-num-bg);
+  color: var(--step-num-ink);
+  font-size: 0.9rem;
+  font-weight: 700;
 }
 
-.mfc-implementation__card { padding: 1rem 1.1rem; }
+.mfc-implementation__card { width: 100%; padding: 1rem 1.1rem; }
 
 .mfc-implementation__card h3 {
   margin: 0 0 0.4rem;

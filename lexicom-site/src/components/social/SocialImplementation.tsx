@@ -21,11 +21,11 @@ export function SocialImplementation() {
         <ol className="social-implementation__route">
           {socialImplementationSteps.map((step, index) => (
             <li key={step.title} className="social-implementation__step">
-              <span className="social-implementation__num" aria-hidden="true">
-                {index + 1}
-              </span>
               <Reveal delay={index * 40}>
                 <GlassSurface className="social-implementation__card" radius="lg" depth="raised" tint="social">
+                  <span className="social-implementation__num" aria-hidden="true">
+                    {index + 1}
+                  </span>
                   <h3>{step.title}</h3>
                   <p>{step.text}</p>
                 </GlassSurface>

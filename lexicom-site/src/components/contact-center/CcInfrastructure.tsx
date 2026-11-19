@@ -1,8 +1,13 @@
 import { infrastructurePoints } from '../../data/contactCenterPage';
+import { Icon, type IconName } from '../ui/Icon';
 import { Reveal } from '../ui/Reveal';
 import { SectionHeader } from '../ui/SectionHeader';
 
-const connections = ['Телефония', 'Информационные системы', 'Роли и права доступа'] as const;
+const connections: { label: string; text: string; icon: IconName }[] = [
+  { label: 'Телефония', text: 'Подключение действующей телефонии', icon: 'phone' },
+  { label: 'Информационные системы', text: 'Обмен данными по доступным интерфейсам', icon: 'chart' },
+  { label: 'Роли и права доступа', text: 'Настройка под структуру организации', icon: 'shield' },
+];
 
 export function CcInfrastructure() {
   return (
@@ -36,7 +41,11 @@ export function CcInfrastructure() {
               </div>
               <ul className="cc-infra__links">
                 {connections.map((item) => (
-                  <li key={item}>{item}</li>
+                  <li key={item.label}>
+                    <span className="cc-infra__link-icon" aria-hidden="true"><Icon name={item.icon} size={18} /></span>
+                    <strong>{item.label}</strong>
+                    <span>{item.text}</span>
+                  </li>
                 ))}
               </ul>
             </div>

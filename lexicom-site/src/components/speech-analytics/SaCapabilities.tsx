@@ -6,14 +6,9 @@ export function SaCapabilities() {
   return (
     <section className="section nb-capabilities" id="sa-capabilities" aria-labelledby="sa-capabilities-title">
       <div className="container nb-capabilities__layout">
-        <div className="nb-capabilities__intro">
-          <Reveal>
-            <SectionHeader title="Что показывает анализ разговоров" titleId="sa-capabilities-title" />
-          </Reveal>
-          <Reveal delay={60}>
-            <p className="nb-capabilities__combine">{saCapabilitiesNote}</p>
-          </Reveal>
-        </div>
+        <Reveal>
+          <SectionHeader title="Что показывает анализ разговоров" titleId="sa-capabilities-title" />
+        </Reveal>
 
         <ol className="nb-capabilities__list">
           {saCapabilities.map((item, index) => (
@@ -30,6 +25,10 @@ export function SaCapabilities() {
             </li>
           ))}
         </ol>
+
+        <Reveal>
+          <p className="nb-capabilities__combine">{saCapabilitiesNote}</p>
+        </Reveal>
       </div>
     </section>
   );

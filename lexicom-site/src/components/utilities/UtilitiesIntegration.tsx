@@ -28,7 +28,7 @@ export function UtilitiesIntegration() {
 
         <Reveal>
           <GlassSurface className="utilities-integration__sources" radius="xl" depth="raised" tint="utilities">
-            <p className="utilities-integration__label">Возможные источники и системы</p>
+            <h3 className="utilities-integration__label">Возможные источники и системы</h3>
             <ul>
               {utilitiesIntegrationSources.map((item) => (
                 <li key={item}>{item}</li>
