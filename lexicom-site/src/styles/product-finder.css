@@ -2,8 +2,9 @@
 .product-finder fieldset { border:0; padding:0; margin:0; min-width:0; }
 .product-finder legend { font-size:22px; font-weight:650; padding:0; }
 .product-finder__intro { color:var(--color-text-muted); margin:8px 0 20px; }
-.product-finder__options { display:grid; grid-template-columns:1fr 1fr; gap:8px; }
-.product-finder__option { display:flex; align-items:center; gap:10px; min-height:58px; padding:12px; border:1px solid #66759155; border-radius:12px; cursor:pointer; background:#ffffff70; font-size:14px; line-height:1.4; }
+.product-finder__options { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:8px; }
+.product-finder__option { display:flex; align-items:center; gap:10px; min-width:0; min-height:58px; padding:12px; border:1px solid #66759155; border-radius:12px; cursor:pointer; background:#ffffff70; font-size:14px; line-height:1.4; }
+.product-finder__option > span { min-width:0; overflow-wrap:anywhere; }
 .product-finder__option input { flex:0 0 auto; accent-color:#3347a5; }
 .product-finder__option.is-selected { border-color:#3347a5; background:#fff; }
 .product-finder__option:focus-within { outline:2px solid #3347a5; outline-offset:2px; }
@@ -17,8 +18,8 @@
 .product-finder__result h3 { margin:0 0 12px; font-size:24px; }
 .product-finder__result p { line-height:1.55; }
 .product-finder__result a { display:inline-block; padding-block:12px; color:#273b91; font-weight:600; text-underline-offset:4px; }
-@media(max-width:767px) { .product-finder { grid-template-columns:1fr; padding:20px; gap:20px; } .product-finder legend { font-size:20px; } .product-finder__result { padding:20px; } }
-@media(max-width:359px) { .product-finder__options { grid-template-columns:1fr; } }
+@media(max-width:1023px) { .product-finder { grid-template-columns:1fr; padding:20px; gap:20px; } .product-finder legend { font-size:20px; } .product-finder__result { padding:20px; } }
+@media(max-width:480px) { .product-finder__options { grid-template-columns:minmax(0,1fr); } }
 
 .product-finder .product-finder__disclosure { border:0; }
 @media(max-width:639px) {

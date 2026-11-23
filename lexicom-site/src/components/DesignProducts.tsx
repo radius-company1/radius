@@ -33,6 +33,8 @@ export function DesignProducts() {
   const ready = useClientReady();
   const [selected, setSelected] = useState<(typeof softwareProductIds)[number]>(softwareProductIds[0]);
   const [wide, setWide] = useState(false);
+  const [narrow, setNarrow] = useState(false);
+  const verticalTabs = wide || narrow;
   const tabs = useRef<Array<HTMLButtonElement | null>>([]);
   const marker = useRef<HTMLSpanElement>(null);
   const grid = useRef<HTMLDivElement>(null);
@@ -64,10 +66,18 @@ export function DesignProducts() {
   }, [selected, wide]);
   useEffect(() => {
     const query = window.matchMedia('(min-width: 1101px)');
-    const update = () => setWide(query.matches);
+    const narrowQuery = window.matchMedia('(max-width: 359px)');
+    const update = () => {
+      setWide(query.matches);
+      setNarrow(narrowQuery.matches);
+    };
     update();
     query.addEventListener('change', update);
-    return () => query.removeEventListener('change', update);
+    narrowQuery.addEventListener('change', update);
+    return () => {
+      query.removeEventListener('change', update);
+      narrowQuery.removeEventListener('change', update);
+    };
   }, []);
   const [demo, setDemo] = useState<ProductDemo | null>(null);
   const trigger = useRef<HTMLButtonElement | null>(null);
@@ -89,7 +99,7 @@ export function DesignProducts() {
       <div className={`final-product-showcase${ready ? ' is-interactive' : ''}`}>
         <div className="final-product-selector">
           <p className="final-product-selector__label">Выберите продукт</p>
-          <div role="tablist" aria-label="Продукты Lexicom" aria-orientation={wide ? 'vertical' : 'horizontal'}>
+          <div role="tablist" aria-label="Продукты Lexicom" aria-orientation={verticalTabs ? 'vertical' : 'horizontal'}>
             <span ref={marker} className="final-product-marker" aria-hidden="true" />
             {softwareProductIds.map((id, index) => <button
               key={id} id={`product-tab-${id}`} role="tab" type="button"
@@ -98,8 +108,8 @@ export function DesignProducts() {
               tabIndex={selected === id ? 0 : -1}
               onClick={() => setSelected(id)}
               onKeyDown={event => {
-                const forward = wide ? 'ArrowDown' : 'ArrowRight';
-                const backward = wide ? 'ArrowUp' : 'ArrowLeft';
+                const forward = verticalTabs ? 'ArrowDown' : 'ArrowRight';
+                const backward = verticalTabs ? 'ArrowUp' : 'ArrowLeft';
                 const keys = [forward, backward, 'Home', 'End'];
                 if (!keys.includes(event.key)) return;
                 event.preventDefault();
@@ -107,7 +117,7 @@ export function DesignProducts() {
                 setSelected(softwareProductIds[next]);
                 tabs.current[next]?.focus();
               }}
-            ><span className="final-product-selector__name">{products.find(p => p.id === id)!.title}<Icon name="arrow-right" /></span><span className="final-product-selector__task">{copy[id].task}</span></button>)}
+            ><span className="final-product-selector__name"><span className="final-product-selector__title">{products.find(p => p.id === id)!.title}</span><Icon name="arrow-right" /></span><span className="final-product-selector__task">{copy[id].task}</span></button>)}
           </div>
         </div>
       <div ref={grid} className="design-products__grid">

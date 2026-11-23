@@ -892,6 +892,9 @@
 
 .mfc-demo__diagram .btn {
   margin-top: 1.75rem;
+  min-width: 0;
+  max-width: 100%;
+  white-space: normal;
 }
 
 .mfc-demo__track {
